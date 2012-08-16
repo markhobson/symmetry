@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<window xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+	<label value="VBox"/>
+
+	<vbox>
+		<button label="A"/>
+		<button label="B"/>
+		<button label="C"/>
+	</vbox>
+	
+	<label value="VBox with flex"/>
+
+	<vbox flex="1">
+		<button label="A"/>
+		<button label="B" flex="1"/>
+		<button label="C"/>
+	</vbox>
+	
+</window>

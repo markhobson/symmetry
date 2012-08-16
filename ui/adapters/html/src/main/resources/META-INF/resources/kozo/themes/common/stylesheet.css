@@ -1,0 +1,474 @@
+/* $HeadURL: https://svn.iizuka.co.uk/components/kozo/tags/0.6.0-beta-1/ui/adapters/html/src/main/resources/META-INF/resources/kozo/themes/common/stylesheet.css $ */
+
+@import url("debug.css");
+
+/* html */
+
+body
+{
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-size: 80%;
+}
+* html body
+{
+	font-size: 70%;
+}
+
+* html body table
+{
+	font-size: 100%;
+}
+
+acronym, abbr
+{
+	cursor: help;
+	border-bottom: dotted 1px gray;
+}
+
+code
+{
+	font-size: 130%;
+}
+
+img
+{
+	border: none;
+}
+
+p, ul, ol
+{
+	margin: 6px 0 0 0;
+}
+
+.mnemonic
+{
+	font-style: normal;
+	text-decoration: underline;
+}
+
+/* common */
+
+.flexed
+{
+	width: 100%;
+}
+
+/* box (container as flow) */
+
+span.hbox-child
+{
+	display: inline-block;
+}
+
+/* box (table) */
+
+table.hbox, table.vbox
+{
+	border-spacing: 0;
+}
+
+td.hbox-child, td.vbox-child
+{
+	padding: 0;
+}
+
+td.hbox-child
+{
+	vertical-align: baseline;
+}
+
+/* box (all) */
+
+.hbox-child
+{
+	margin-right: 6px;
+}
+
+.vbox-child
+{
+	margin-bottom: 6px;
+}
+
+/* button */
+
+.button
+{
+	display: block;
+	padding: 3px 0;
+}
+
+.button a
+{
+	border: solid 1px;
+	background: top repeat-x;
+	padding: 3px 6px;
+	font-weight: bold;
+	color: black;
+	text-decoration: none;
+}
+
+.button a:hover
+{
+	background: top repeat-x;
+}
+
+.button-disabled a, .button-disabled a:hover
+{
+	background: top repeat-x;
+	border-color: #7E7E7E !important;
+	color: #7E7E7E;
+}
+
+.button-selected a
+{
+	background: white !important;
+}
+
+/* checkbox */
+
+.checkbox-disabled
+{
+	color: #7E7E7E;
+}
+
+/* combobox */
+
+.combobox
+{
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-size: 100%;
+}
+
+/* filechooser */
+
+.filechooser
+{
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-size: 100%;
+}
+
+/* grid */
+
+.grid
+{
+	padding: 3px;
+}
+
+/* groupbox */
+
+.groupbox
+{
+	border: solid 1px;
+	padding: 6px;
+}
+
+* html .groupbox
+{
+	padding: 0 6px 6px 0;
+}
+
+.groupbox legend
+{
+	padding: 0 3px;
+}
+
+* html .groupbox div.grouppanel
+{
+	padding: 6px 0 0 6px;
+}
+
+/* label */
+
+h1.label
+{
+	margin: 0 0 6px 0;
+	border-bottom: solid 1px;
+	padding-bottom: 3px;
+	font-size: 230%;
+	font-weight: normal;
+}
+
+h2.label
+{
+	margin: 6px 0 3px 0;
+	border-bottom: solid 1px;
+	padding-bottom: 3px;
+	font-size: 100%;
+}
+
+.label-warning
+{
+	color: #C60;
+}
+
+.label-error
+{
+	color: red;
+	font-weight: bold;
+}
+
+/* listbox */
+
+.listbox
+{
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-size: 100%;
+}
+
+/* radio */
+
+.radio-disabled
+{
+	color: #7E7E7E;
+}
+
+/* tabbox */
+
+.tabs
+{
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+.tab
+{
+	display: block;
+	float: left;
+	position: relative;
+	top: 1px;
+	margin-right: 3px;
+	border: solid 1px;
+	background: top repeat-x;
+	white-space: nowrap;
+}
+
+.tab a
+{
+	display: block;
+	padding: 3px 6px;
+	color: black;
+	text-decoration: none;
+}
+
+* html .tab a
+{
+	width: 1%;
+}
+
+.tab a:hover
+{
+	background: top repeat-x;
+}
+
+.tabs .selected
+{
+	border-bottom: none !important;
+	background: white !important;
+	padding-bottom: 1px;
+}
+
+.tabs .selected a:hover
+{
+	background: white !important;
+}
+
+.tabpanel
+{
+	clear: left;
+	padding: 3px;
+	border: solid 1px;
+	background: white;
+}
+
+* html .tabpanel
+{
+	height: 1%;
+}
+
+/* table */
+
+.table
+{
+	border: solid 1px;
+	border-spacing: 0;
+}
+
+.table a
+{
+	color: black;
+	text-decoration: none;
+}
+
+.table thead th
+{
+	padding: 0;
+	border-left: solid 1px;
+	border-bottom: solid 1px;
+	background: top repeat-x;
+	text-align: left;
+	font-weight: bold;
+	white-space: nowrap;
+}
+
+.table thead th.table-nolink
+{
+	padding: 3px 6px;
+}
+
+.table thead th a
+{
+	display: block;
+	padding: 3px 6px;
+}
+
+* html .table thead th a
+{
+	height: 1%;
+}
+
+.table thead th a:hover
+{
+	background: top repeat-x;
+}
+
+.table thead th p, .table tbody td p
+{
+	margin: 0;
+}
+
+.table tbody td
+{
+	background: white;
+	padding: 3px 6px;
+	border-left: solid 1px #ddd;
+	vertical-align: top;
+}
+
+.table tbody td a:hover span.label, * html .table tbody td a:hover
+{
+	text-decoration: underline;
+}
+
+.table tfoot td
+{
+	padding: 0;
+}
+
+.table tfoot ul
+{
+	list-style: none;
+	margin: 0;
+	border-left: solid 1px;
+	border-top: solid 1px;
+	background: top repeat-x;
+	padding: 3px 3px;
+	font-weight: bold;
+	white-space: nowrap;
+}
+
+.table tfoot li
+{
+	display: inline;
+	padding: 0 3px;
+}
+
+.table tfoot li.separated
+{
+	margin: 0 3px;
+	padding: 0 6px;
+	border-left: solid 1px black;
+	border-right: solid 1px black;
+}
+
+.table tfoot a:hover
+{
+	text-decoration: underline;
+}
+
+/* textbox */
+
+.textbox
+{
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-size: 100%;
+}
+
+/* tree */
+
+ul.tree, .tree ul
+{
+	list-style: none;
+	padding-left: 0;
+}
+
+.tree ul
+{
+	margin: 0;
+}
+
+.tree ul, .tree li
+{
+	padding-left: 15px;
+}
+
+.tree li.selected
+{
+	padding-left: 12px;
+}
+
+.tree li.container
+{
+	padding-left: 0;
+}
+
+.tree li
+{
+	margin: 6px 3px;
+}
+
+.tree li a
+{
+	color: black;
+	text-decoration: none;
+}
+
+.tree li a:hover
+{
+	text-decoration: underline;
+}
+
+.tree li.selected a
+{
+	padding: 3px;
+}
+
+.tree li.selected a:hover
+{
+	color: black;
+	text-decoration: none;
+}
+
+.tree li.selected a.control, .tree li.selected .tree li a
+{
+	background: none;
+	padding: 0;
+}
+
+.tree a.control img, .tree li.selected .tree a.control img
+{
+	margin-right: 6px;
+}
+
+.tree li.selected a.control img
+{
+	margin-right: 3px;
+}
+
+/* window */
+
+.window
+{
+	margin: 6px;
+	background: top repeat-x;
+}

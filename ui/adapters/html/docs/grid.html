@@ -1,0 +1,293 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Grid Rendering</title>
+		<link rel="stylesheet" type="text/css" href="stylesheet.css"/>
+		<style>
+		
+			.grid
+			{
+				background: #efe;
+			}
+			
+			.grid-row
+			{
+			}
+			
+			.grid-cell
+			{
+				border: solid 3px #0e0;
+				padding: 3px;
+			}
+		
+			.child
+			{
+				background: #ccc;
+				border: solid 1px #888;
+				font-family: monospace;
+				white-space: pre;
+			}
+			
+			.flexed
+			{
+				width: 100%;
+			}
+		
+			/* flow */
+			
+			.flow .grid-cell
+			{
+				display: inline-block;
+			}
+			
+			/* table */
+		
+			.table
+			{
+				border-collapse: collapse;
+			}
+			
+		</style>
+	</head>
+	<body>
+	
+		<h1>Grid Rendering</h1>
+		
+		<p>
+			This page summarises the various ways that Grids can be rendered using HTML and CSS.  We will assess each
+			method on the following criteria:
+		</p>
+
+		<ol style="list-style-type: lower-alpha;">
+			<li><em>Flexible</em> &mdash; can we stretch the grid to fill the remaining available horizontal space?</li>
+			<li><em>Fixed columns</em> &mdash; can we constrain columns to a specific width?</li>
+			<li><em>Flexed columns</em> &mdash; can we stretch to fill the remaining available horizontal space?</li>
+			<li><em>Mixed columns</em> &mdash; can we both fix and stretch columns?</li>
+			<li><em>Horizontal alignment</em> &mdash; can we control the horizontal alignment of children?</li>
+			<li><em>Vertical alignment</em> &mdash; can we control the vertical alignment of children?</li>
+			<li><em>Column span</em> &mdash; can we span children across multiple columns?</li>
+			<li><em>Row span</em> &mdash; can we span children across multiple rows?</li>
+			<li><em>Semantic</em> &mdash; does the method use semantic markup?</li>
+			<li><em>IE6</em> &mdash; does this method work in IE6?</li>
+		</ol>
+
+		<p>Each method is covered in detail below.</p>
+
+
+		
+		<!-- flow -->
+				
+		<h3 id="flow">Method #1: Flow</h3>
+		
+		<p>
+			Children are placed in the <a href="http://www.w3.org/TR/CSS21/visuren.html#normal-flow">normal flow</a> of
+			the page:
+		</p>
+		
+		<div class="grid flow">
+			<div class="grid-row">
+				<span class="grid-cell"><span class="child">     I1     </span></span>
+				<span class="grid-cell"><span class="child">     I2     </span></span>
+			</div>
+			<div class="grid-row">
+				<span class="grid-cell"><span class="child">     I3     </span></span>
+				<span class="grid-cell"><span class="child">     I4     </span></span>
+			</div>
+		</div>
+		
+		<div class="yes">
+			<p>Flexible &mdash; we can stretch the grid to fill the remaining available horizontal space</p>
+			<div class="grid flow">
+				<div class="grid-row">
+					<span class="grid-cell"><span class="child">     I1     </span></span>
+					<span class="grid-cell"><span class="child">     I2     </span></span>
+					<span class="grid-cell"><span class="child">     I3     </span></span>
+				</div>
+			</div>
+		</div>
+
+		<div class="yes">
+			<p>Fixed columns &mdash; we can constrain columns to a specific width</p>
+			<div class="grid flow">
+				<div class="grid-row">
+					<span class="grid-cell"><span class="child">     I1     </span></span>
+					<span class="grid-cell" style="width: 200px"><span class="child">     I2     </span></span>
+					<span class="grid-cell"><span class="child">     I3     </span></span>
+				</div>
+			</div>
+		</div>
+
+		<div class="no">
+			<p>Flexed columns &mdash; we cannot stretch to fill the remaining available horizontal space</p>
+			<div class="grid flow">
+				<div class="grid-row">
+					<span class="grid-cell"><span class="child">     I1     </span></span>
+					<span class="grid-cell" style="width: 100%"><span class="child">     I2     </span></span>
+					<span class="grid-cell"><span class="child">     I3     </span></span>
+				</div>
+			</div>
+		</div>
+		
+		<div class="no">
+			<p>Mixed columns &mdash; we cannot both fix and stretch columns</p>
+			<div class="grid flow">
+				<div class="grid-row">
+					<span class="grid-cell" style="width: 200px"><span class="child">     I1     </span></span>
+					<span class="grid-cell" style="width: 100%"><span class="child">     I2     </span></span>
+					<span class="grid-cell"><span class="child">     I3     </span></span>
+				</div>
+			</div>
+		</div>
+		
+		<p>TODO: remaining criteria</p>
+		
+		
+
+		<!-- table model -->
+
+		<h3 id="table-model">Method #2: Table Model</h3>
+		
+		<p>
+			Children are laid out using the <a href="http://www.w3.org/TR/CSS21/tables.html#table-display">table
+			model</a>:
+		<p>
+		
+		<p>TODO</p>
+		
+		
+
+		<!-- table -->
+
+		<h3 id="table">Method #3: Table</h3>
+		
+		<p>Tables as layout:<p>
+		
+		<table class="grid table">
+			<tr class="grid-row">
+				<td class="grid-cell"><span class="child">     I1     </span></td>
+				<td class="grid-cell"><span class="child">     I2     </span></td>
+			</tr>
+			<tr class="grid-row">
+				<td class="grid-cell"><span class="child">     I3     </span></td>
+				<td class="grid-cell"><span class="child">     I4     </span></td>
+			</tr>
+		</table>
+		
+		<div class="yes">
+			<p>Flexible &mdash; we can stretch the grid to fill the remaining available horizontal space</p>
+			<table class="grid table flexed">
+				<tr class="grid-row">
+					<td class="grid-cell"><span class="child">     I1     </span></td>
+					<td class="grid-cell"><span class="child">     I2     </span></td>
+					<td class="grid-cell"><span class="child">     I3     </span></td>
+				</tr>
+			</table>
+		</div>
+		
+		<div class="yes">
+			<p>Fixed columns &mdash; we can constrain columns to a specific width</p>
+			<table class="grid table">
+				<col/>
+				<col width="200px"/>
+				<tr class="grid-row">
+					<td class="grid-cell"><span class="child">     I1     </span></td>
+					<td class="grid-cell"><span class="child">     I2     </span></td>
+					<td class="grid-cell"><span class="child">     I3     </span></td>
+				</tr>
+			</table>
+		</div>
+		
+		<div class="yes">
+			<p>Flexed columns &mdash; we can stretch to fill the remaining available horizontal space</p>
+			<table class="grid table flexed">
+				<col/>
+				<col width="100%"/>
+				<tr class="grid-row">
+					<td class="grid-cell"><span class="child">     I1     </span></td>
+					<td class="grid-cell"><span class="child">     I2     </span></td>
+					<td class="grid-cell"><span class="child">     I3     </span></td>
+				</tr>
+			</table>
+		</div>
+		
+		<div class="no">
+			<p>Mixed columns &mdash; we cannot both fix and stretch columns</p>
+			<table class="grid table flexed">
+				<col width="200px"/>
+				<col width="100%"/>
+				<tr class="grid-row">
+					<td class="grid-cell"><span class="child">     I1     </span></td>
+					<td class="grid-cell"><span class="child">     I2     </span></td>
+					<td class="grid-cell"><span class="child">     I3     </span></td>
+				</tr>
+			</table>
+		</div>
+		
+		<div class="yes">
+			<p>Horizontal alignment &mdash; we can control the horizontal alignment of children</p>
+			<table class="grid table">
+				<tr class="grid-row">
+					<td class="grid-cell"><div class="child" style="width: 200px">     B1     </div></td>
+				</tr>
+				<tr class="grid-row">
+					<td class="grid-cell" style="text-align: left"><span class="child">     I1     </span></td>
+				</tr>
+				<tr class="grid-row">
+					<td class="grid-cell" style="text-align: center"><span class="child">     I2     </span></td>
+				</tr>
+				<tr class="grid-row">
+					<td class="grid-cell" style="text-align: right"><span class="child">     I3     </span></td>
+				</tr>
+			</table>
+		</div>
+		
+		<div class="yes">
+			<p>Vertical alignment &mdash; we can control the vertical alignment of children</p>
+			<table class="grid table">
+				<tr class="grid-row">
+					<td class="grid-cell">
+						<div class="child" style="height: 50px">     B1     </div>
+					</td>
+					<td class="grid-cell" style="vertical-align: top"><span class="child">     I1     </span></td>
+					<td class="grid-cell" style="vertical-align: middle"><span class="child">     I2     </span></td>
+					<td class="grid-cell" style="vertical-align: bottom"><span class="child">     I3     </span></td>
+				</tr>
+			</table>
+		</div>
+		
+		<div class="yes">
+			<p>Column span &mdash; we can span children across multiple columns</p>
+			<table class="grid table">
+				<tr class="grid-row">
+					<td class="grid-cell"><span class="child">     I1     </span></td>
+					<td class="grid-cell"><span class="child">     I2     </span></td>
+				</tr>
+				<tr class="grid-row">
+					<td class="grid-cell" colspan="2" style="text-align: center"><span class="child">     I3     </span></td>
+				</tr>
+			</table>
+		</div>
+		
+		<div class="yes">
+			<p>Row span &mdash; we can span children across multiple rows</p>
+			<table class="grid table">
+				<tr class="grid-row">
+					<td class="grid-cell"><span class="child">     I1     </span></td>
+					<td class="grid-cell" rowspan="2"><span class="child">     I2     </span></td>
+				</tr>
+				<tr class="grid-row">
+					<td class="grid-cell"><span class="child">     I3     </span></td>
+				</tr>
+			</table>
+		</div>
+		
+		<p class="no">
+			Semantic &mdash; method does not use semantic markup; it uses
+			<a href="http://shouldiusetablesforlayout.com/">tables</a>
+		</p>
+
+
+		
+	</body>
+</html>

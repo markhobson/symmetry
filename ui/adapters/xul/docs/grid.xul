@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+
+<window xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+	<label value="Grid"/>
+
+	<grid>
+		<columns>
+			<column/>
+			<column/>
+		</columns>
+		<rows>
+			<row>
+				<button label="A"/>
+				<button label="B"/>
+			</row>
+			<row>
+				<button label="C"/>
+				<button label="D"/>
+			</row>
+		</rows>
+	</grid>
+	
+	<label value="Grid with column flex"/>
+
+	<grid>
+		<columns>
+			<column flex="1"/>
+			<column/>
+		</columns>
+		<rows>
+			<row>
+				<button label="A"/>
+				<button label="B"/>
+			</row>
+			<row>
+				<button label="C"/>
+				<button label="D"/>
+			</row>
+		</rows>
+	</grid>
+	
+	<label value="Grid with row flex"/>
+
+	<grid flex="1">
+		<columns>
+			<column/>
+			<column/>
+		</columns>
+		<rows>
+			<row flex="1">
+				<button label="A"/>
+				<button label="B"/>
+			</row>
+			<row>
+				<button label="C"/>
+				<button label="D"/>
+			</row>
+		</rows>
+	</grid>
+	
+</window>

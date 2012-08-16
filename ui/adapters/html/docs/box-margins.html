@@ -1,0 +1,313 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Box Margins</TITLE>
+		<!--[if lt IE 9]>
+		<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+		<![endif]-->
+		<style>
+		
+			body
+			{
+				font-family: arial;
+			}
+			
+			.hbox,
+			.vbox
+			{
+				border: solid 1px #0c0;
+			}
+			
+			/* box (all) -------------------------------------------------------------------------------------------- */
+			
+			/* margins between children */
+			
+			.hbox-child
+			{
+				margin: 0 0.5em; /* half vertical margin since horizontal margins are not collapsed */
+			}
+			
+			.vbox-child
+			{
+				margin: 1em 0;
+			}
+			
+			/* remove childrens' first and last margins as they will not be collapsed */
+			
+			.hbox-child:first-child
+			{
+				margin-left: 0;
+			}
+			
+			.hbox-child:last-child
+			{
+				margin-right: 0;
+			}
+			
+			.vbox-child:first-child
+			{
+				margin-top: 0;
+			}
+			
+			.vbox-child:last-child
+			{
+				margin-bottom: 0;
+			}
+			
+			/* remove box childrens' vertical margin as their margins will not be collapsed */
+						
+			.hbox-child > *
+			{
+				margin-top: 0;
+				margin-bottom: 0;
+			}
+			
+			.vbox-child > *:first-child
+			{
+				margin-top: 0;
+			}
+			
+			.vbox-child > *:last-child
+			{
+				margin-bottom: 0;
+			}
+			
+			/* box (container as flow) ------------------------------------------------------------------------------ */
+			
+			span.hbox-child
+			{
+				display: inline-block;
+			}
+
+			/* box (table) ------------------------------------------------------------------------------------------ */
+		
+			table.hbox, table.vbox
+			{
+				display: block;
+				border-spacing: 0;
+			}
+			
+			/* reapply the generic box rules to use padding as table cells do not support margins */ 
+			
+			td.hbox-child
+			{
+				padding: 0 0.5em;
+			}
+			
+			td.vbox-child
+			{
+				padding: 0.5em 0; /* half normal spacing since padding is not collapsed */
+			}
+			
+			td.hbox-child:first-child
+			{
+				padding-left: 0;
+			}
+			
+			td.hbox-child:last-child
+			{
+				padding-right: 0;
+			}
+			
+			tr:first-child > td.vbox-child
+			{
+				padding-top: 0;
+			}
+			
+			tr:last-child > td.vbox-child
+			{
+				padding-bottom: 0;
+			}
+			
+		</style>
+	</head>
+	<body>
+	
+		<h1>Box Margins</h1>
+		
+		<p>
+			This page enumerates the various configurations of boxes in order to demonstrate how their interrelated
+			margins are handled.
+		</p>
+	
+	  	<h3>Container</h3>
+	  	
+		<div class="vbox">
+			<div class="vbox-child">
+				<!-- element with margins -->
+				<p>X</p>
+			</div>
+			<div class="vbox-child">
+				<!-- hbox -->
+				<div class="hbox">
+					<span class="hbox-child"><p>H1</p></span><!--
+				 --><span class="hbox-child"><p>H2</p></span><!--
+				 --><span class="hbox-child"><p>H3</p></span>
+				</div>
+			</div>
+			<div class="vbox-child">
+				<!-- hbox with embedded hbox -->
+				<div class="hbox">
+					<span class="hbox-child"><p>H1</p></span><!--
+				 --><span class="hbox-child">
+						<div class="hbox">
+							<span class="hbox-child"><p>H1</p></span><!--
+						 --><span class="hbox-child"><p>H2</p></span><!--
+						 --><span class="hbox-child"><p>H3</p></span>
+						</div>
+				 	</span><!--
+				 --><span class="hbox-child"><p>H3</p></span>
+				</div>
+			</div>
+			<div class="vbox-child">
+				<!-- vbox -->
+				<div class="vbox">
+					<div class="vbox-child"><p>V1</p></div>
+					<div class="vbox-child"><p>V2</p></div>
+					<div class="vbox-child"><p>V3</p></div>
+				</div>
+			</div>
+			<div class="vbox-child">
+				<!-- vbox with embedded vbox -->
+				<div class="vbox">
+					<div class="vbox-child"><p>V1</p></div>
+					<div class="vbox-child">
+						<div class="vbox">
+							<div class="vbox-child"><p>V1</p></div>
+							<div class="vbox-child"><p>V2</p></div>
+							<div class="vbox-child"><p>V3</p></div>
+						</div>
+					</div>
+					<div class="vbox-child"><p>V3</p></div>
+				</div>
+			</div>
+			<div class="vbox-child">
+				<!-- hbox with embedded vbox -->
+				<div class="hbox">
+					<span class="hbox-child"><p>H1</p></span><!--
+				 --><span class="hbox-child">
+						<div class="vbox">
+							<div class="vbox-child"><p>V1</p></div>
+							<div class="vbox-child"><p>V2</p></div>
+							<div class="vbox-child"><p>V3</p></div>
+						</div>
+					</span><!--
+				 --><span class="hbox-child"><p>H3</p></span>
+				</div>
+			</div>
+		</div>
+	
+		<h3>Table</h3>
+	
+		<table class="vbox">
+			<tr>
+				<td class="vbox-child">
+					<!-- element with margins -->
+					<p>X</p>
+				</td>
+			</tr>
+			<tr>
+				<td class="vbox-child">
+					<!-- hbox -->
+					<table class="hbox">
+						<tr>
+							<td class="hbox-child"><p>H1</p></td>
+							<td class="hbox-child"><p>H2</p></td>
+							<td class="hbox-child"><p>H3</p></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td class="vbox-child">
+					<!-- hbox with embedded hbox -->
+					<table class="hbox">
+						<tr>
+							<td class="hbox-child"><p>H1</p></td>
+							<td class="hbox-child">
+								<table class="hbox">
+									<tr>
+										<td class="hbox-child"><p>H1</p></td>
+										<td class="hbox-child"><p>H2</p></td>
+										<td class="hbox-child"><p>H3</p></td>
+									</tr>
+								</table>
+							</td>
+							<td class="hbox-child"><p>H3</p></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td class="vbox-child">
+					<!-- vbox -->
+					<table class="vbox">
+						<tr>
+							<td class="vbox-child"><p>V1</p></td>
+						</tr>
+						<tr>
+							<td class="vbox-child"><p>V2</p></td>
+						</tr>
+						<tr>
+							<td class="vbox-child"><p>V3</p></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td class="vbox-child">
+					<!-- vbox with embedded vbox -->
+					<table class="vbox">
+						<tr>
+							<td class="vbox-child"><p>V1</p></td>
+						</tr>
+						<tr>
+							<td class="vbox-child">
+								<table class="vbox">
+									<tr>
+										<td class="vbox-child"><p>V1</p></td>
+									</tr>
+									<tr>
+										<td class="vbox-child"><p>V2</p></td>
+									</tr>
+									<tr>
+										<td class="vbox-child"><p>V3</p></td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td class="vbox-child"><p>V3</p></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td class="vbox-child">
+					<!-- hbox with embedded vbox -->
+					<table class="hbox">
+						<tr>
+							<td class="hbox-child"><p>H1</p></td>
+							<td class="hbox-child">
+								<table class="vbox">
+									<tr>
+										<td class="vbox-child"><p>V1</p></td>
+									</tr>
+									<tr>
+										<td class="vbox-child"><p>V2</p></td>
+									</tr>
+									<tr>
+										<td class="vbox-child"><p>V3</p></td>
+									</tr>
+								</table>
+							</td>
+							<td class="hbox-child"><p>H3</p></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+		
+	</body>
+</html>

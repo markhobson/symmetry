@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+	$HeadURL: https://svn.iizuka.co.uk/components/kozo/tags/0.6.0-beta-1/ui/test-support/pom.xml $
+	
+	(c) 2010 IIZUKA Software Technologies Ltd.  All rights reserved.
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<parent>
+		<groupId>uk.co.iizuka.kozo</groupId>
+		<artifactId>kozo-ui-parent</artifactId>
+		<version>0.6.0-beta-1</version>
+	</parent>
+
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>kozo-ui-test-support</artifactId>
+	<packaging>jar</packaging>
+	
+	<name>Kozo UI Test Support</name>
+	
+	<scm>
+		<connection>scm:svn:https://svn.iizuka.co.uk/components/kozo/tags/0.6.0-beta-1/ui/test-support</connection>
+		<developerConnection>scm:svn:https://svn.iizuka.co.uk/components/kozo/tags/0.6.0-beta-1/ui/test-support</developerConnection>
+		<url>https://svn.iizuka.co.uk/components/kozo/tags/0.6.0-beta-1/ui/test-support</url>
+	</scm>
+	
+	<dependencies>
+	
+		<dependency>
+			<groupId>uk.co.iizuka.kozo</groupId>
+			<artifactId>kozo-ui</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.jmock</groupId>
+			<artifactId>jmock-junit4</artifactId>
+		</dependency>
+	
+	</dependencies>
+
+</project>

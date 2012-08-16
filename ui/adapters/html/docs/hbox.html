@@ -1,0 +1,682 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>HBox Rendering</title>
+		<link rel="stylesheet" type="text/css" href="stylesheet.css"/>
+		<style>
+		
+			.vbox
+			{
+			}
+			
+			.hbox
+			{
+				background: #efe;
+				border: solid 3px #0e0;
+			}
+			
+			.hbox-child
+			{
+			}
+			
+			.child
+			{
+				background: #ccc;
+				border: solid 1px #888;
+				font-family: monospace;
+				white-space: pre;
+			}
+			
+			.large
+			{
+				font-size: xx-large;
+			}
+			
+			.squash
+			{
+				width: 200px;
+			}
+			
+			/* flow */
+			
+			.flow
+			{
+				white-space: nowrap;
+			}
+			
+			.flow .hbox-child
+			{
+				display: inline-block;
+			}
+			
+			/* float */
+			
+			.float .hbox-child
+			{
+				float: left;
+			}
+			
+			.float .hbox-after
+			{
+				display: block;
+				clear: left;
+			}
+			
+			/* absolute */
+			
+			.absolute
+			{
+				position: relative;
+			}
+			
+			.absolute .hbox-child
+			{
+				position: absolute;
+			}
+			
+			/* table-model */
+			
+			.table-model
+			{
+				display: table;
+			}
+			
+			.table-model .hbox-child
+			{
+				display: table-cell;
+			}
+			
+			/* table */
+			
+			.table
+			{
+				border-spacing: 0;
+			}
+			
+			.table td
+			{
+				padding: 0;
+				vertical-align: baseline;
+			}
+			
+		</style>
+	</head>
+	<body>
+	
+		<h1>HBox Rendering</h1>
+		
+		<p>
+			This page summarises the various ways that HBoxes can be rendered using HTML and CSS.  We will assess each
+			method on the following criteria:
+		</p>
+		
+		<ol style="list-style-type: lower-alpha;">
+			<li><em>Elastic</em> &mdash; are children dynamically sized by their content?</li>
+			<li><em>Blocks</em> &mdash; are block children correctly laid out?</li>
+			<li><em>Baseline</em> &mdash; are children vertically aligned on the baseline?</li>
+			<li><em>Flex</em> &mdash; can block children be stretched to fill the remaining available horizontal space?</li>
+			<li><em>Wrap</em> &mdash; can we control whether children that overflow are wrapped?</li>
+			<li><em>Semantic</em> &mdash; does the method use semantic markup?</li>
+			<li><em>Whitespace</em> &mdash; is markup whitespace significant in the layout?</li>
+			<li><em>IE6</em> &mdash; does this method work in IE6?</li>
+		</ol>
+		
+		<p>Each method is covered in detail below.  The following table summarises the results:</p>
+		
+		<table class="summary">
+			<thead>
+				<tr>
+					<th>Method</th>
+					<th>Elastic</th>
+					<th>Blocks</th>
+					<th>Baseline</th>
+					<th>Flex</th>
+					<th>Wrap</th>
+					<th>Semantic</th>
+					<th>Whitespace</th>
+					<th>IE6</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><a href="#flow">Flow</a></td>
+					<td><img src="yes.gif"/></td>
+					<td><img src="yes.gif"/></td>
+					<td><img src="yes.gif"/></td>
+					<td><img src="no.gif"/></td>
+					<td><img src="yes.gif"/></td>
+					<td><img src="yes.gif"/></td>
+					<td><img src="no.gif"/></td>
+					<td><img src="yes.gif"/></td>
+				</tr>
+				<tr>
+					<td><a href="#float">Floats</a></td>
+					<td><img src="yes.gif"/></td>
+					<td><img src="yes.gif"/></td>
+					<td><img src="no.gif"/></td>
+					<td><img src="no.gif"/></td>
+					<td><img src="no.gif"/></td>
+					<td><img src="yes.gif"/></td>
+					<td><img src="yes.gif"/></td>
+					<td><img src="no.gif"/></td>
+				</tr>
+				<tr>
+					<td><a href="#absolute">Absolute Positioning</a></td>
+					<td><img src="no.gif"/></td>
+					<td><img src="yes.gif"/></td>
+					<td><img src="no.gif"/></td>
+					<td><img src="yes.gif"/></td>
+					<td><img src="no.gif"/></td>
+					<td><img src="yes.gif"/></td>
+					<td><img src="yes.gif"/></td>
+					<td><img src="no.gif"/></td>
+				</tr>
+				<tr>
+					<td><a href="#table-model">Table Model</a></td>
+					<td><img src="yes.gif"/></td>
+					<td><img src="yes.gif"/></td>
+					<td><img src="yes.gif"/></td>
+					<td><img src="yes.gif"/></td>
+					<td><img src="no.gif"/></td>
+					<td><img src="yes.gif"/></td>
+					<td><img src="yes.gif"/></td>
+					<td><img src="no.gif"/></td>
+				</tr>
+				<tr>
+					<td><a href="#table">Tables</a></td>
+					<td><img src="yes.gif"/></td>
+					<td><img src="yes.gif"/></td>
+					<td><img src="yes.gif"/></td>
+					<td><img src="yes.gif"/></td>
+					<td><img src="no.gif"/></td>
+					<td><img src="no.gif"/></td>
+					<td><img src="yes.gif"/></td>
+					<td><img src="yes.gif"/></td>
+				</tr>
+			</tbody>
+		</table>
+		
+		
+		
+		<!-- flow -->
+
+		<h3 id="flow">Method #1: Flow</h3>
+		
+		<p>
+			Children are placed in the <a href="http://www.w3.org/TR/CSS21/visuren.html#normal-flow">normal flow</a> of
+			the page:
+		</p>
+		<div class="hbox flow">
+			<span class="hbox-child"><span class="child">     I1     </span></span>
+			<span class="hbox-child"><span class="child">     I2     </span></span>
+			<span class="hbox-child"><span class="child">     I3     </span></span>
+			<span class="hbox-after"></span>
+		</div>
+		
+		<div class="yes">
+			<p>Elastic &mdash; children are dynamically sized by their content:</p>
+			<div class="hbox flow">
+				<span class="hbox-child"><span class="child">     I1     </span></span>
+				<span class="hbox-child"><span class="child">     Lorem ipsum dolor sit amet, consectetur adipiscing elit.     </span></span>
+				<span class="hbox-child"><span class="child">     I3     </span></span>
+				<span class="hbox-after"></span>
+			</div>
+		</div>
+		
+		<div class="yes">
+			<p>
+				Blocks &mdash; block children stay inline using
+				<a href="http://www.w3.org/TR/CSS21/visuren.html#display-prop">inline-block</a>:
+			</p>
+			<div class="hbox flow">
+				<span class="hbox-child"><span class="child">     I1     </span></span>
+				<span class="hbox-child"><span class="child">     I2     </span></span>
+				<span class="hbox-child"><span class="child">     I3     </span></span>
+				<span class="hbox-child"><div class="child">     B1     </div></span>
+				<span class="hbox-after"></span>
+			</div>
+			<p>As do nested block children:</p>
+			<div class="hbox flow">
+				<span class="hbox-child"><span class="child">     I1     </span></span>
+				<span class="hbox-child"><span class="child">     I2     </span></span>
+				<span class="hbox-child"><span class="child">     I3     </span></span>
+				<span class="hbox-child">
+					<div>
+						<div class="child">     B1     </div>
+						<div class="child">     B2     </div>
+						<div class="child">     B3     </div>
+					</div>
+				</span>
+				<span class="hbox-after"></span>
+			</div>
+		</div>
+		
+		<div class="yes">
+			<p>Baseline &mdash; children are vertically aligned on the baseline:</p>
+			<div class="hbox flow">
+				<span class="hbox-child"><span class="child">     I1     </span></span>
+				<span class="hbox-child"><span class="child large">     I2     </span></span>
+				<span class="hbox-child"><span class="child">     I3     </span></span>
+				<span class="hbox-after"></span>
+			</div>
+		</div>
+		
+		<div class="no">
+			<p>Flex &mdash; cannot stretch block children to fill the remaining available horizontal space</p>
+			<p>The closest we can get is to specify an explicit width:</p>
+			<div class="hbox flow">
+				<span class="hbox-child"><span class="child">     I1     </span></span>
+				<span class="hbox-child"><div class="child" style="width: 500px">     B1     </div></span>
+				<span class="hbox-child"><span class="child">     I2     </span></span>
+				<span class="hbox-after"></span>
+			</div>
+		</div>
+		
+		<div class="yes">
+			<p>Wrap &mdash; can prevent children from being wrapped:</p>
+			<div class="hbox flow squash">
+				<span class="hbox-child"><span class="child">     I1     </span></span>
+				<span class="hbox-child"><span class="child">     I2     </span></span>
+				<span class="hbox-child"><span class="child">     I3     </span></span>
+				<span class="hbox-after"></span>
+			</div>
+			<p>Can also allow children to be wrapped:</p>
+			<div class="hbox flow squash" style="white-space: normal">
+				<span class="hbox-child"><span class="child">     I1     </span></span>
+				<span class="hbox-child"><span class="child">     I2     </span></span>
+				<span class="hbox-child"><span class="child">     I3     </span></span>
+				<span class="hbox-after"></span>
+			</div>
+		</div>
+		
+		<p class="yes">Semantic &mdash; method uses semantic markup</p>
+		
+		<p class="no">Whitespace &mdash; markup whitespace is rendered as gaps between children</p>
+		
+		<p class="yes">IE6</p>
+		
+		
+		
+		<!-- floats -->
+		
+		<h3 id="float">Method #2: Floats</h3>
+		
+		<p>Children are <a href="http://www.w3.org/TR/CSS21/visuren.html#floats">floated</a> to the left:</p>
+		<div class="hbox float">
+			<span class="hbox-child"><span class="child">     I1     </span></span>
+			<span class="hbox-child"><span class="child">     I2     </span></span>
+			<span class="hbox-child"><span class="child">     I3     </span></span>
+			<span class="hbox-after"></span>
+		</div>
+		
+		<div class="yes">
+			<p>Elastic &mdash; children are dynamically sized by their content:</p>
+			<div class="hbox float">
+				<span class="hbox-child"><span class="child">     I1     </span></span>
+				<span class="hbox-child"><span class="child">     Lorem ipsum dolor sit amet, consectetur adipiscing elit.     </span></span>
+				<span class="hbox-child"><span class="child">     I3     </span></span>
+				<span class="hbox-after"></span>
+			</div>
+		</div>
+		
+		<div class="yes">
+			<p>Blocks &mdash; block children stay inline:</p>
+			<div class="hbox float">
+				<span class="hbox-child"><span class="child">     I1     </span></span>
+				<span class="hbox-child"><span class="child">     I2     </span></span>
+				<span class="hbox-child"><span class="child">     I3     </span></span>
+				<span class="hbox-child"><div><span class="child">     B1     </span></div></span>
+				<span class="hbox-after"></span>
+			</div>
+			<p>As do nested block children:</p>
+			<div class="hbox float">
+				<span class="hbox-child"><span class="child">     I1     </span></span>
+				<span class="hbox-child"><span class="child">     I2     </span></span>
+				<span class="hbox-child"><span class="child">     I3     </span></span>
+				<span class="hbox-child">
+					<div>
+						<div class="child">     B1     </div>
+						<div class="child">     B2     </div>
+						<div class="child">     B3     </div>
+					</div>
+				</span>
+				<span class="hbox-after"></span>
+			</div>
+		</div>
+		
+		<div class="no">
+			<p>Baseline &mdash; cannot vertically align children on the baseline:</p>
+			<div class="hbox float" style="white-space: normal">
+				<span class="hbox-child"><span class="child">     I1     </span></span>
+				<span class="hbox-child"><span class="child large">     I2     </span></span>
+				<span class="hbox-child"><span class="child">     I3     </span></span>
+				<span class="hbox-after"></span>
+			</div>
+		</div>
+		
+		<div class="no">
+			<p>Flex &mdash; cannot stretch block children to fill the remaining available horizontal space</p>
+			<p>Floating children to the right does not stretch flexed child:</p>
+			<div class="hbox float">
+				<span class="hbox-child"><span class="child">     I1     </span></span>
+				<span class="hbox-child"><div class="child">     B1     </div></span>
+				<span class="hbox-child" style="float: right"><span class="child">     I2     </span></span>
+				<span class="hbox-after"></span>
+			</div>
+			<p>But we can flex a <em>single</em> block child by embedding it within the parent box:</p>
+			<div class="hbox float">
+				<span class="hbox-child"><span class="child">     I1     </span></span>
+				<span class="hbox-child" style="float: right"><span class="child">     I2     </span></span>
+				<div class="child">     B1     </div>
+				<span class="hbox-after"></span>
+			</div>
+			<p>Although this means that we then cannot constrain nested block children to a particular column:</p>
+			<div class="hbox float">
+				<span class="hbox-child"><span class="child">     I1     </span></span>
+				<span class="hbox-child" style="float: right"><span class="child">     I2     </span></span>
+				<div>
+					<div class="child">     B1     </div>
+					<div class="child">     B2     </div>
+					<div class="child">     B3     </div>
+				</div>
+				<span class="hbox-after"></span>
+			</div>
+		</div>
+		
+		<div class="no">
+			<p>Wrap &mdash; cannot prevent children from being wrapped:</p>
+			<div class="hbox float squash">
+				<span class="hbox-child"><span class="child">     I1     </span></span>
+				<span class="hbox-child"><span class="child">     I2     </span></span>
+				<span class="hbox-child"><span class="child">     I3     </span></span>
+				<span class="hbox-after"></span>
+			</div>
+		</div>
+		
+		<p class="yes">Semantic &mdash; method uses semantic markup</p>
+		
+		<p class="yes">Whitespace &mdash; markup whitespace is ignored</p>
+		
+		<p class="no">IE6 &mdash; various float bug fixes are required</p>
+		
+		
+		
+		<!-- absolute -->
+		
+		<h3 id="absolute">Method #3: Absolute Positioning</h3>
+		
+		<p>
+			Children are <a href="http://www.w3.org/TR/CSS21/visuren.html#absolute-positioning">absolutely
+			positioned</a> within the box:
+		</p>
+		<div class="hbox absolute" style="height: 18px">
+			<span class="hbox-child" style="left: 0; width: 100px"><span class="child">     I1     </span></span>
+			<span class="hbox-child" style="left: 100px; width: 100px"><span class="child">     I2     </span></span>
+			<span class="hbox-child" style="left: 200px; width: 100px"><span class="child">     I3     </span></span>
+			<span class="hbox-after"></span>
+		</div>
+		
+		<div class="no">
+			<p>Elastic &mdash; children are not dynamically sized by their content; all positions are explicit:</p>
+			<div class="hbox absolute" style="height: 18px">
+				<span class="hbox-child" style="left: 0; width: 100px"><span class="child">     I1     </span></span>
+				<span class="hbox-child" style="left: 100px; width: 100px"><span class="child">     Lorem ipsum dolor sit amet, consectetur adipiscing elit.     </span></span>
+				<span class="hbox-child" style="left: 200px; width: 100px"><span class="child">     I3     </span></span>
+				<span class="hbox-after"></span>
+			</div>
+		</div>
+		
+		<div class="yes">
+			<p>Blocks &mdash; block children stay inline:</p>
+			<div class="hbox absolute" style="height: 18px">
+				<span class="hbox-child" style="left: 0; width: 100px"><span class="child">     I1     </span></span>
+				<span class="hbox-child" style="left: 100px; width: 100px"><span class="child">     I2     </span></span>
+				<span class="hbox-child" style="left: 200px; width: 100px"><span class="child">     I3     </span></span>
+				<span class="hbox-child" style="left: 300px; width: 100px"><div class="child">     B1     </div></span>
+				<span class="hbox-after"></span>
+			</div>
+			<p>As do nested block children:</p>
+			<div class="hbox absolute" style="height: 54px">
+				<span class="hbox-child" style="left: 0; width: 100px"><span class="child">     I1     </span></span>
+				<span class="hbox-child" style="left: 100px; width: 100px"><span class="child">     I2     </span></span>
+				<span class="hbox-child" style="left: 200px; width: 100px"><span class="child">     I3     </span></span>
+				<span class="hbox-child" style="left: 300px; width: 100px">
+					<div>
+						<div class="child">     B1     </div>
+						<div class="child">     B2     </div>
+						<div class="child">     B3     </div>
+					</div>
+				</span>
+				<span class="hbox-after"></span>
+			</div>
+		</div>
+		
+		<div class="no">
+			<p>Baseline &mdash; cannot vertically align children on the baseline:</p>
+			<div class="hbox absolute" style="height: 30px">
+				<span class="hbox-child" style="left: 0; width: 100px"><span class="child">     I1     </span></span>
+				<span class="hbox-child" style="left: 100px; right: 100px"><span class="child large">     I2     </span></span>
+				<span class="hbox-child" style="left: 300px; width: 100px"><span class="child">     I3     </span></span>
+				<span class="hbox-after"></span>
+			</div>
+		</div>
+		
+		<div class="yes">
+			<p>Flex &mdash; can stretch block children to fill the remaining available horizontal space:</p>
+			<div class="hbox absolute" style="height: 18px">
+				<span class="hbox-child" style="left: 0; width: 100px"><span class="child">     I1     </span></span>
+				<span class="hbox-child" style="left: 100px; right: 100px"><div class="child">     B1     </div></span>
+				<span class="hbox-child" style="right: 0; width: 100px"><span class="child">     I2     </span></span>
+				<span class="hbox-after"></span>
+			</div>
+		</div>
+		
+		<div class="no">
+			<p>Wrap &mdash; cannot wrap children:</p>
+			<div class="hbox absolute squash" style="height: 18px">
+				<span class="hbox-child" style="left: 0; width: 100px"><span class="child">     I1     </span></span>
+				<span class="hbox-child" style="left: 100px; width: 100px"><span class="child">     I2     </span></span>
+				<span class="hbox-child" style="left: 200px; width: 100px"><span class="child">     I3     </span></span>
+				<span class="hbox-after"></span>
+			</div>
+		</div>
+
+		<p class="yes">Semantic &mdash; method uses semantic markup</p>
+		
+		<p class="yes">Whitespace &mdash; markup whitespace is ignored</p>
+		
+		<p class="no">IE6 &mdash; flex bug fixes required</p>
+		
+		
+		
+		<!-- table model -->
+
+		<h3 id="table-model">Method #4: Table Model</h3>
+		
+		<p>
+			Children are laid out using the <a href="http://www.w3.org/TR/CSS21/tables.html#table-display">table
+			model</a>:
+		<p>
+		<div class="hbox table-model">
+			<span class="hbox-child"><span class="child">     I1     </span></span>
+			<span class="hbox-child"><span class="child">     I2     </span></span>
+			<span class="hbox-child"><span class="child">     I3     </span></span>
+			<span class="hbox-after"></span>
+		</div>
+		
+		<div class="yes">
+			<p>Elastic &mdash; children are dynamically sized by their content:</p>
+			<div class="hbox table-model">
+				<span class="hbox-child"><span class="child">     I1     </span></span>
+				<span class="hbox-child"><span class="child">     Lorem ipsum dolor sit amet, consectetur adipiscing elit.     </span></span>
+				<span class="hbox-child"><span class="child">     I3     </span></span>
+				<span class="hbox-after"></span>
+			</div>
+		</div>
+		
+		<div class="yes">
+			<p>Blocks &mdash; block children stay inline:</p>
+			<div class="hbox table-model">
+				<span class="hbox-child"><span class="child">     I1     </span></span>
+				<span class="hbox-child"><span class="child">     I2     </span></span>
+				<span class="hbox-child"><span class="child">     I3     </span></span>
+				<span class="hbox-child"><div><span class="child">     B1     </span></div></span>
+				<span class="hbox-after"></span>
+			</div>
+			<p>As do nested block children:</p>
+			<div class="hbox table-model">
+				<span class="hbox-child"><span class="child">     I1     </span></span>
+				<span class="hbox-child"><span class="child">     I2     </span></span>
+				<span class="hbox-child"><span class="child">     I3     </span></span>
+				<span class="hbox-child">
+					<div>
+						<div class="child">     B1     </div>
+						<div class="child">     B2     </div>
+						<div class="child">     B3     </div>
+					</div>
+				</span>
+				<span class="hbox-after"></span>
+			</div>
+		</div>
+
+		<div class="yes">
+			<p>Baseline &mdash; can vertically align children on the baseline:</p>
+			<div class="hbox table-model">
+				<span class="hbox-child"><span class="child">     I1     </span></span>
+				<span class="hbox-child"><span class="child large">     I2     </span></span>
+				<span class="hbox-child"><span class="child">     I3     </span></span>
+				<span class="hbox-after"></span>
+			</div>
+		</div>
+		
+		<div class="yes">
+			<p>Flex &mdash; can stretch block children to fill the remaining available horizontal space:</p>
+			<div class="hbox table-model">
+				<span class="hbox-child"><span class="child">     I1     </span></span>
+				<span class="hbox-child" style="width: 100%"><div class="child">     B1     </div></span>
+				<span class="hbox-child"><span class="child">     I2     </span></span>
+				<span class="hbox-after"></span>
+			</div>
+		</div>
+		
+		<div class="no">
+			<p>Wrap &mdash; cannot wrap children:</p>
+			<div class="hbox table-model squash">
+				<span class="hbox-child"><span class="child">     I1     </span></span>
+				<span class="hbox-child"><span class="child">     I2     </span></span>
+				<span class="hbox-child"><span class="child">     I3     </span></span>
+				<span class="hbox-after"></span>
+			</div>
+		</div>
+		
+		<p class="yes">Semantic &mdash; method uses semantic markup</p>
+		
+		<p class="yes">Whitespace &mdash; markup whitespace is ignored</p>
+		
+		<p class="no">IE6 &mdash; not supported by IE6-7 nor by <a href="http://code.google.com/p/ie7-js/issues/detail?id=259">IE7-js</a></p>
+		
+		
+		
+		<!-- table -->
+		
+		<h3 id="table">Method #5: Tables</h3>
+		
+		<p>Tables as layout:<p>
+		<table class="hbox table">
+			<tr>
+				<td class="hbox-child"><span class="child">     I1     </span></td>
+				<td class="hbox-child"><span class="child">     I2     </span></td>
+				<td class="hbox-child"><span class="child">     I3     </span></td>
+			</tr>
+		</table>
+		
+		<div class="yes">
+			<p>Elastic &mdash; children are dynamically sized by their content:</p>
+			<table class="hbox table">
+				<tr>
+					<td class="hbox-child"><span class="child">     I1     </span></td>
+					<td class="hbox-child"><span class="child">     Lorem ipsum dolor sit amet, consectetur adipiscing elit.     </span></td>
+					<td class="hbox-child"><span class="child">     I3     </span></td>
+				</tr>
+			</table>
+		</div>
+		
+		<div class="yes">
+			<p>Blocks &mdash; block children stay inline:</p>
+			<table class="hbox table">
+				<tr>
+					<td class="hbox-child"><span class="child">     I1     </span></td>
+					<td class="hbox-child"><span class="child">     I2     </span></td>
+					<td class="hbox-child"><span class="child">     I3     </span></td>
+					<td class="hbox-child"><div class="child">     B1     </div></td>
+				</tr>
+			</table>
+			<p>As do nested block children:</p>
+			<table class="hbox table">
+				<tr>
+					<td class="hbox-child"><span class="child">     I1     </span></td>
+					<td class="hbox-child"><span class="child">     I2     </span></td>
+					<td class="hbox-child"><span class="child">     I3     </span></td>
+					<td class="hbox-child">
+						<div>
+							<div class="child">     B1     </div>
+							<div class="child">     B2     </div>
+							<div class="child">     B3     </div>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+		
+		<div class="yes">
+			<p>Baseline &mdash; can vertically align children on the baseline:</p>
+			<table class="hbox table">
+				<tr>
+					<td class="hbox-child"><span class="child">     I1     </span></td>
+					<td class="hbox-child"><span class="child large">     I2     </span></td>
+					<td class="hbox-child"><span class="child">     I3     </span></td>
+				</tr>
+			</table>
+		</div>
+		
+		<div class="yes">
+			<p>Flex &mdash; can stretch block children to fill the remaining available horizontal space:</p>
+			<table class="hbox table">
+				<tr>
+					<td class="hbox-child"><span class="child">     I1     </span></td>
+					<td class="hbox-child" style="width: 100%"><div class="child">     B1     </div></td>
+					<td class="hbox-child"><span class="child">     I2     </span></td>
+				</tr>
+			</table>
+		</div>
+		
+		<div class="no">
+			<p>Wrap &mdash; cannot wrap children</p>
+			<table class="hbox table squash">
+				<tr>
+					<td class="hbox-child"><span class="child">     I1     </span></td>
+					<td class="hbox-child"><span class="child">     I2     </span></td>
+					<td class="hbox-child"><span class="child">     I3     </span></td>
+				</tr>
+			</table>
+		</div>
+		
+		<p class="no">
+			Semantic &mdash; method does not use semantic markup; it uses
+			<a href="http://shouldiusetablesforlayout.com/">tables</a>
+		</p>
+		
+		<p class="yes">Whitespace &mdash; markup whitespace is ignored</p>
+		
+		<p class="yes">
+			IE6 &mdash; works in IE6 (with either an explicit
+			<a href="http://www.w3.org/TR/html4/struct/tables.html#adef-cellspacing">cellspacing</a> attribute or by
+			using <a href="http://code.google.com/p/ie7-js/">IE7-js</a> to support
+			<a href="http://www.w3.org/TR/CSS21/tables.html#propdef-border-spacing">border-spacing</a> style)
+		</p>
+		
+		
+		
+	</body>
+</html>

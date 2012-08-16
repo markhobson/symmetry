@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE web-app PUBLIC
+	"-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+	"http://java.sun.com/dtd/web-app_2_3.dtd"
+>
+
+<web-app>
+
+	<display-name>KozoSet Demo</display-name>
+	<description>KozoSet Demo</description>
+
+	<servlet>
+		<servlet-name>KozoServlet</servlet-name>
+		<servlet-class>uk.co.iizuka.kozo.http.KozoServlet</servlet-class>
+		<init-param>
+			<param-name>componentClassName</param-name>
+			<param-value>kozoset.KozoSetWindow</param-value>
+		</init-param>
+		<init-param>
+			<param-name>peerManagerClassName</param-name>
+			<param-value>${peerManagerClassName}</param-value>
+		</init-param>
+		<init-param>
+			<param-name>renderKitClassName</param-name>
+			<param-value>${renderKitClassName}</param-value>
+		</init-param>
+		<!--<init-param>
+			<param-name>debug</param-name>
+			<param-value>true</param-value>
+		</init-param>-->
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>KozoServlet</servlet-name>
+		<url-pattern>/*</url-pattern>
+	</servlet-mapping>
+
+</web-app>

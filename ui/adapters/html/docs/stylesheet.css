@@ -1,0 +1,43 @@
+body
+{
+	font-family: arial;
+}
+
+.summary
+{
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.summary th
+{
+	background: #eee;
+	min-width: 80px;
+}
+
+.summary th, .summary td
+{
+	border: solid 1px #888;
+	padding: 3px;
+	text-align: center;
+}
+
+.summary td:first-child
+{
+	text-align: left;
+}
+
+.yes, .no
+{
+	padding-left: 20px;
+}
+
+.yes
+{
+	background: url("yes.gif") no-repeat;
+}
+
+.no
+{
+	background: url("no.gif") no-repeat;
+}

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+	$HeadURL: https://svn.iizuka.co.uk/components/kozo/tags/0.6.0-beta-1/demo/kozoset/pom.xml $
+	
+	(c) 2011 IIZUKA Software Technologies Ltd.  All rights reserved.
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<parent>
+		<groupId>uk.co.iizuka.kozo.demo</groupId>
+		<artifactId>kozo-demo-parent</artifactId>
+		<version>0.6.0-beta-1</version>
+	</parent>
+
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>kozo-demo-kozoset</artifactId>
+	<packaging>war</packaging>
+	
+	<name>Kozo KozoSet Demo</name>
+
+	<scm>
+		<connection>scm:svn:https://svn.iizuka.co.uk/components/kozo/tags/0.6.0-beta-1/demo/kozoset</connection>
+		<developerConnection>scm:svn:https://svn.iizuka.co.uk/components/kozo/tags/0.6.0-beta-1/demo/kozoset</developerConnection>
+		<url>https://svn.iizuka.co.uk/components/kozo/tags/0.6.0-beta-1/demo/kozoset</url>
+	</scm>
+
+	<properties>
+		<kozoMainComponent>kozoset.KozoSetWindow</kozoMainComponent>
+	</properties>
+
+</project>

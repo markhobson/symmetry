@@ -1,0 +1,139 @@
+/* $HeadURL: https://svn.iizuka.co.uk/components/kozo/tags/0.6.0-beta-1/ui/adapters/html/src/main/resources/META-INF/resources/kozo/themes/green/stylesheet.css $ */
+
+@import url("../common/stylesheet.css");
+
+/* button */
+
+.button a
+{
+	border-color: #474;
+	background-color: #6c6;
+	background-image: url("images/button-bg.png");
+}
+
+.button a:hover
+{
+	background-color: #4a4;
+	background-image: url("images/button-hover-bg.png");
+}
+
+.button-disabled a, .button-disabled a:hover
+{
+	background-color: #B1B1B1;
+	background-image: url("images/button-disabled-bg.png");
+}
+
+/* groupbox */
+
+.groupbox
+{
+	border-color: #9b9;
+}
+
+.groupbox legend
+{
+	color: #474;
+}
+
+/* label */
+
+.label a
+{
+	color: #474;
+}
+
+.label a:hover
+{
+	color: #203a20;
+}
+
+h1.label, h2.label
+{
+	border-bottom-color: #9b9;
+	color: #474;
+}
+
+/* tabbox */
+
+.tab
+{
+	border-color: #474;
+	background-image: url("images/button-bg.png");
+	background-color: #6c6;
+}
+
+.tab a:hover
+{
+	background-image: url("images/button-hover-bg.png");
+	background-color: #4a4;
+}
+
+.tabpanel
+{
+	border-color: #474;
+}
+
+/* table */
+
+.table table
+{
+	border-color: #474;
+}
+
+.table thead th
+{
+	border-left-color: #6c6;
+	border-bottom-color: #6c6;
+	background-image: url("images/button-bg.png");
+	background-color: #6c6;
+}
+
+.table thead th a:hover
+{
+	background-image: url("images/button-hover-bg.png");
+	background-color: #4a4;
+}
+
+.table tbody tr.table-row-even td
+{
+	background-color: #dfd;
+}
+
+.table tbody td a:hover span.label, * html .table tbody td a:hover
+{
+	color: #474;
+}
+
+.table tfoot ul
+{
+	border-left-color: #6c6;
+	border-top-color: #6c6;
+	background-image: url("images/button-bg.png");
+	background-color: #6c6;
+}
+
+.table tfoot li.disabled
+{
+	color: #5a5;
+}
+
+/* tree */
+
+.tree li a:hover
+{
+	color: #474;
+}
+
+.tree li.selected a
+{
+	background-image: url("images/button-bg.png");
+	background-color: #6c6;
+}
+
+/* window */
+
+.window
+{
+	background-image: url("images/window-bg.png");
+	background-color: #f7fff7;
+}

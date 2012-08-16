@@ -1,0 +1,39 @@
+/* $HeadURL: https://svn.iizuka.co.uk/components/kozo/tags/0.6.0-beta-1/ui/adapters/html/src/main/resources/META-INF/resources/kozo/themes/common/debug.css $ */
+
+#debug
+{
+	border: solid 1px gray;
+	padding: 4px;
+	background-color: white;
+	color: gray;
+}
+
+#debug .title
+{
+	color: black;
+	border-bottom: solid 1px silver;
+	padding-bottom: 2px;
+	margin-bottom: 4px;
+}
+
+#debug .property
+{
+	margin-bottom: 4px;
+}
+
+#debug .bean
+{
+	color: blue;
+}
+
+#debug .name
+{
+	padding-right: 4px;
+	color: red;
+}
+
+#debug .value
+{
+	padding-left: 4px;
+	color: fuchsia;
+}

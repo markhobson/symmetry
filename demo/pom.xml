@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+	$HeadURL: https://svn.iizuka.co.uk/components/kozo/tags/0.6.0-beta-1/demo/pom.xml $
+	
+	(c) 2011 IIZUKA Software Technologies Ltd.  All rights reserved.
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<parent>
+		<groupId>uk.co.iizuka.kozo</groupId>
+		<artifactId>kozo-parent</artifactId>
+		<version>0.6.0-beta-1</version>
+	</parent>
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>uk.co.iizuka.kozo.demo</groupId>
+	<artifactId>kozo-demo-parent</artifactId>
+	<packaging>pom</packaging>
+	
+	<name>Kozo Demo Parent</name>
+	<description>Demonstrations of using Kozo.</description>
+	
+	<scm>
+		<connection>scm:svn:https://svn.iizuka.co.uk/components/kozo/tags/0.6.0-beta-1/demo</connection>
+		<developerConnection>scm:svn:https://svn.iizuka.co.uk/components/kozo/tags/0.6.0-beta-1/demo</developerConnection>
+		<url>https://svn.iizuka.co.uk/components/kozo/tags/0.6.0-beta-1/demo</url>
+	</scm>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>exec-maven-plugin</artifactId>
+					<version>1.1-beta-1</version>
+				</plugin>
+				<plugin>
+					<groupId>org.mortbay.jetty</groupId>
+					<artifactId>maven-jetty-plugin</artifactId>
+					<version>6.1.8</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<configuration>
+					<webResources>
+						<resource>
+							<directory>src/main/webapp</directory>
+							<filtering>true</filtering>
+							<includes>
+								<include>WEB-INF/web.xml</include>
+							</includes>
+						</resource>
+					</webResources>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<dependencies>
+		<dependency>
+			<groupId>uk.co.iizuka.kozo</groupId>
+			<artifactId>kozo-ui</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>${staxImplGroupId}</groupId>
+			<artifactId>${staxImplArtifactId}</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+	</dependencies>
+
+	<profiles>
+	
+		<profile>
+			<id>swing</id>
+			<build>
+				<defaultGoal>exec:java</defaultGoal>
+				<plugins>
+					<plugin>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>exec-maven-plugin</artifactId>
+						<executions>
+							<execution>
+								<goals>
+									<goal>java</goal>
+								</goals>
+							</execution>
+						</executions>
+						<configuration>
+							<mainClass>uk.co.iizuka.kozo.Kozo</mainClass>
+							<arguments>
+								<argument>${kozoMainComponent}</argument>
+								<argument>uk.co.iizuka.kozo.ui.swing.SwingPeerManager</argument>
+							</arguments>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+			<dependencies>
+				<dependency>
+					<groupId>uk.co.iizuka.kozo</groupId>
+					<artifactId>kozo-swing</artifactId>
+					<version>${project.version}</version>
+					<scope>runtime</scope>
+				</dependency>
+				<dependency>
+					<groupId>uk.co.iizuka.kozo</groupId>
+					<artifactId>kozo-ui-swing</artifactId>
+					<version>${project.version}</version>
+					<scope>runtime</scope>
+				</dependency>
+			</dependencies>
+		</profile>
+		
+		<profile>
+			<id>swt</id>
+			<build>
+				<defaultGoal>exec:java</defaultGoal>
+				<plugins>
+					<plugin>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>exec-maven-plugin</artifactId>
+						<executions>
+							<execution>
+								<goals>
+									<goal>java</goal>
+								</goals>
+							</execution>
+						</executions>
+						<configuration>
+							<mainClass>uk.co.iizuka.kozo.Kozo</mainClass>
+							<arguments>
+								<argument>${kozoMainComponent}</argument>
+								<argument>uk.co.iizuka.kozo.ui.swt.SwtPeerManager</argument>
+							</arguments>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+			<dependencies>
+				<dependency>
+					<groupId>uk.co.iizuka.kozo</groupId>
+					<artifactId>kozo-swt</artifactId>
+					<version>${project.version}</version>
+					<scope>runtime</scope>
+				</dependency>
+				<dependency>
+					<groupId>uk.co.iizuka.kozo</groupId>
+					<artifactId>kozo-ui-swt</artifactId>
+					<version>${project.version}</version>
+					<scope>runtime</scope>
+				</dependency>
+			</dependencies>
+		</profile>
+		
+		<profile>
+			<id>html</id>
+			<build>
+				<defaultGoal>org.mortbay.jetty:maven-jetty-plugin:run-exploded</defaultGoal>
+			</build>
+			<properties>
+				<peerManagerClassName>uk.co.iizuka.kozo.ui.html.HtmlPeerManager</peerManagerClassName>
+				<renderKitClassName>uk.co.iizuka.kozo.ui.html.HtmlRenderKit</renderKitClassName>
+			</properties>
+			<dependencies>
+				<dependency>
+					<groupId>uk.co.iizuka.kozo</groupId>
+					<artifactId>kozo-web</artifactId>
+					<version>${project.version}</version>
+					<scope>runtime</scope>
+				</dependency>
+				<dependency>
+					<groupId>uk.co.iizuka.kozo</groupId>
+					<artifactId>kozo-ui-html</artifactId>
+					<version>${project.version}</version>
+					<scope>runtime</scope>
+				</dependency>
+			</dependencies>
+		</profile>
+		
+		<profile>
+			<id>xul</id>
+			<build>
+				<defaultGoal>org.mortbay.jetty:maven-jetty-plugin:run-exploded</defaultGoal>
+			</build>
+			<properties>
+				<peerManagerClassName>uk.co.iizuka.kozo.ui.xul.XulPeerManager</peerManagerClassName>
+				<renderKitClassName>uk.co.iizuka.kozo.ui.xul.XulRenderKit</renderKitClassName>
+			</properties>
+			<dependencies>
+				<dependency>
+					<groupId>uk.co.iizuka.kozo</groupId>
+					<artifactId>kozo-web</artifactId>
+					<version>${project.version}</version>
+					<scope>runtime</scope>
+				</dependency>
+				<dependency>
+					<groupId>uk.co.iizuka.kozo</groupId>
+					<artifactId>kozo-ui-xul</artifactId>
+					<version>${project.version}</version>
+					<scope>runtime</scope>
+				</dependency>
+			</dependencies>
+		</profile>
+		
+	</profiles>
+	
+	<modules>
+		<module>helloworld</module>
+		<module>jax-rs</module>
+		<module>kozoset</module>
+	</modules>
+
+</project>

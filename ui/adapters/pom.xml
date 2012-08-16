@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+	$HeadURL: https://svn.iizuka.co.uk/components/kozo/tags/0.6.0-beta-1/ui/adapters/pom.xml $
+	
+	(c) 2011 IIZUKA Software Technologies Ltd.  All rights reserved.
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<parent>
+		<groupId>uk.co.iizuka.kozo</groupId>
+		<artifactId>kozo-ui-parent</artifactId>
+		<version>0.6.0-beta-1</version>
+	</parent>
+
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>kozo-ui-adapters</artifactId>
+	<packaging>pom</packaging>
+	
+	<name>Kozo UI Adapter Parent</name>
+	<description>Kozo UI provides a basic UI toolkit for use with Kozo.</description>
+
+	<scm>
+		<connection>scm:svn:https://svn.iizuka.co.uk/components/kozo/tags/0.6.0-beta-1/ui/adapters</connection>
+		<developerConnection>scm:svn:https://svn.iizuka.co.uk/components/kozo/tags/0.6.0-beta-1/ui/adapters</developerConnection>
+		<url>https://svn.iizuka.co.uk/components/kozo/tags/0.6.0-beta-1/ui/adapters</url>
+	</scm>
+
+	<dependencies>
+	
+		<dependency>
+			<groupId>uk.co.iizuka.kozo</groupId>
+			<artifactId>kozo-ui</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		
+	</dependencies>
+
+	<modules>
+		<module>common</module>
+		<module>common-test-support</module>
+		<module>html</module>
+		<module>html-test-support</module>
+		<module>swing</module>
+		<module>swt</module>
+		<module>xml-test-support</module>
+		<module>xul</module>
+	</modules>
+	
+</project>

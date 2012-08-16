@@ -1,0 +1,139 @@
+/* $HeadURL: https://svn.iizuka.co.uk/components/kozo/tags/0.6.0-beta-1/ui/adapters/html/src/main/resources/META-INF/resources/kozo/themes/blue/stylesheet.css $ */
+
+@import url("../common/stylesheet.css");
+
+/* button */
+
+.button a
+{
+	border-color: #3D80DF;
+	background-color: #81B5FF;
+	background-image: url("images/button-bg.png");
+}
+
+.button a:hover
+{
+	background-color: #4291FF;
+	background-image: url("images/button-hover-bg.png");
+}
+
+.button-disabled a, .button-disabled a:hover
+{
+	background-color: #B1B1B1;
+	background-image: url("images/button-disabled-bg.png");
+}
+
+/* groupbox */
+
+.groupbox
+{
+	border-color: #3D80DF;
+}
+
+.groupbox legend
+{
+	color: #3D80DF;
+}
+
+/* label */
+
+.label a
+{
+	color: #3D80DF;
+}
+
+.label a:hover
+{
+	color: #1E406F;
+}
+
+h1.label, h2.label
+{
+	border-bottom-color: #BCBFEF;
+	color: #3D80DF;
+}
+
+/* tabbox */
+
+.tab
+{
+	border-color: #3D80DF;
+	background-image: url("images/button-bg.png");
+	background-color: #81B5FF;
+}
+
+.tab a:hover
+{
+	background-image: url("images/button-hover-bg.png");
+	background-color: #4291FF;
+}
+
+.tabpanel
+{
+	border-color: #3D80DF;
+}
+
+/* table */
+
+.table table
+{
+	border-color: #3D80DF;
+}
+
+.table thead th
+{
+	border-left-color: #A3BAD9;
+	border-bottom-color: #D6E7FE;
+	background-image: url("images/button-bg.png");
+	background-color: #81B5FF;
+}
+
+.table thead th a:hover
+{
+	background-image: url("images/button-hover-bg.png");
+	background-color: #4291FF;
+}
+
+.table tbody tr.table-row-even td
+{
+	background-color: #EDF3FE;
+}
+
+.table tbody td a:hover span.label, * html .table tbody td a:hover
+{
+	color: #3D80DF;
+}
+
+.table tfoot ul
+{
+	border-left-color: #A3BAD9;
+	border-top-color: #D6E7FE;
+	background-image: url("images/button-bg.png");
+	background-color: #81B5FF;
+}
+
+.table tfoot li.disabled
+{
+	color: #7E7E7E;
+}
+
+/* tree */
+
+.tree li a:hover
+{
+	color: #3D80DF;
+}
+
+.tree li.selected a
+{
+	background-image: url("images/button-bg.png");
+	background-color: #81B5FF;
+}
+
+/* window */
+
+.window
+{
+	background-image: url("images/window-bg.png");
+	background-color: #f7f9fc;
+}
