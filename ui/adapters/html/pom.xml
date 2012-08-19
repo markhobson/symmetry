@@ -8,13 +8,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
 	<parent>
-		<groupId>uk.co.iizuka.kozo</groupId>
-		<artifactId>kozo-ui-adapters</artifactId>
-		<version>0.6.0-beta-1</version>
+		<groupId>org.hobsoft.symmetry</groupId>
+		<artifactId>symmetry-ui-adapters</artifactId>
+		<version>0.1.0-SNAPSHOT</version>
 	</parent>
 
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>kozo-ui-html</artifactId>
+	<artifactId>symmetry-ui-html</artifactId>
 	<packaging>jar</packaging>
 	
 	<name>Kozo UI HTML</name>
@@ -29,20 +29,20 @@
 	<dependencies>
 	
 		<dependency>
-			<groupId>uk.co.iizuka.kozo</groupId>
-			<artifactId>kozo-core</artifactId>
+			<groupId>org.hobsoft.symmetry</groupId>
+			<artifactId>symmetry-core</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		
 		<dependency>
-			<groupId>uk.co.iizuka.kozo</groupId>
-			<artifactId>kozo-ui-common</artifactId>
+			<groupId>org.hobsoft.symmetry</groupId>
+			<artifactId>symmetry-ui-common</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		
 		<dependency>
-			<groupId>uk.co.iizuka.kozo</groupId>
-			<artifactId>kozo-xml</artifactId>
+			<groupId>org.hobsoft.symmetry</groupId>
+			<artifactId>symmetry-xml</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		
@@ -61,29 +61,29 @@
 		</dependency>
 		
 		<dependency>
-			<groupId>uk.co.iizuka.kozo</groupId>
-			<artifactId>kozo-ui-xml-test-support</artifactId>
+			<groupId>org.hobsoft.symmetry</groupId>
+			<artifactId>symmetry-ui-xml-test-support</artifactId>
 			<version>${project.version}</version>
 			<scope>test</scope>
 		</dependency>
 
 		<dependency>
-			<groupId>uk.co.iizuka.kozo</groupId>
-			<artifactId>kozo-ui-common-test-support</artifactId>
+			<groupId>org.hobsoft.symmetry</groupId>
+			<artifactId>symmetry-ui-common-test-support</artifactId>
 			<version>${project.version}</version>
 			<scope>test</scope>
 		</dependency>
 
 		<dependency>
-			<groupId>uk.co.iizuka.kozo</groupId>
-			<artifactId>kozo-ui-test-support</artifactId>
+			<groupId>org.hobsoft.symmetry</groupId>
+			<artifactId>symmetry-ui-test-support</artifactId>
 			<version>${project.version}</version>
 			<scope>test</scope>
 		</dependency>
 
 		<dependency>
-			<groupId>uk.co.iizuka.kozo</groupId>
-			<artifactId>kozo-xml-test-support</artifactId>
+			<groupId>org.hobsoft.symmetry</groupId>
+			<artifactId>symmetry-xml-test-support</artifactId>
 			<version>${project.version}</version>
 			<scope>test</scope>
 		</dependency>

@@ -8,13 +8,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
 	<parent>
-		<groupId>uk.co.iizuka.kozo.demo</groupId>
-		<artifactId>kozo-demo-parent</artifactId>
-		<version>0.6.0-beta-1</version>
+		<groupId>org.hobsoft.symmetry.demo</groupId>
+		<artifactId>symmetry-demo-parent</artifactId>
+		<version>0.1.0-SNAPSHOT</version>
 	</parent>
 
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>kozo-demo-kozoset</artifactId>
+	<artifactId>symmetry-demo-kozoset</artifactId>
 	<packaging>war</packaging>
 	
 	<name>Kozo KozoSet Demo</name>

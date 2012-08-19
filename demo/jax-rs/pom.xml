@@ -8,14 +8,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
 	<parent>
-		<groupId>uk.co.iizuka.kozo</groupId>
-		<artifactId>kozo-parent</artifactId>
-		<version>0.6.0-beta-1</version>
+		<groupId>org.hobsoft.symmetry</groupId>
+		<artifactId>symmetry-parent</artifactId>
+		<version>0.1.0-SNAPSHOT</version>
 		<relativePath>../../pom.xml</relativePath>
 	</parent>
 
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>kozo-demo-jax-rs</artifactId>
+	<artifactId>symmetry-demo-jax-rs</artifactId>
 	<packaging>war</packaging>
 	
 	<name>Kozo JAX-RS Demo</name>
@@ -29,14 +29,14 @@
 	<dependencies>
 	
 		<dependency>
-			<groupId>uk.co.iizuka.kozo</groupId>
-			<artifactId>kozo-jax-rs</artifactId>
+			<groupId>org.hobsoft.symmetry</groupId>
+			<artifactId>symmetry-jax-rs</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 	
 		<dependency>
-			<groupId>uk.co.iizuka.kozo</groupId>
-			<artifactId>kozo-ui-html</artifactId>
+			<groupId>org.hobsoft.symmetry</groupId>
+			<artifactId>symmetry-ui-html</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 	
