@@ -86,9 +86,8 @@
 		</dependency>
 		
 		<dependency>
-			<groupId>com.sun.xml.stream</groupId>
-			<artifactId>sjsxp</artifactId>
-			<version>1.0.2</version>
+			<groupId>${staxImplGroupId}</groupId>
+			<artifactId>${staxImplArtifactId}</artifactId>
 			<scope>test</scope>
 		</dependency>
 		
