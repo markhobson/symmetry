@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+	$HeadURL: https://svn.iizuka.co.uk/common/codec/tags/1.2.0-beta-1/pom.xml $
+	
+	(c) 2007 IIZUKA Software Technologies Ltd.  All rights reserved.
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<parent>
+		<groupId>uk.co.iizuka</groupId>
+		<artifactId>iizuka-parent</artifactId>
+		<version>3.1.0-beta-2</version>
+	</parent>
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>uk.co.iizuka.common</groupId>
+	<artifactId>common-codec</artifactId>
+	<packaging>jar</packaging>
+	<version>1.2.0-beta-1</version>
+	
+	<name>Common Codec</name>
+	
+	<scm>
+		<connection>scm:svn:https://svn.iizuka.co.uk/common/codec/tags/1.2.0-beta-1</connection>
+		<developerConnection>scm:svn:https://svn.iizuka.co.uk/common/codec/tags/1.2.0-beta-1</developerConnection>
+		<url>https://svn.iizuka.co.uk/common/codec/tags/1.2.0-beta-1</url>
+	</scm>
+	
+	<dependencies>
+	
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>2.4</version>
+		</dependency>
+		
+		<!-- test -->
+		
+		<dependency>
+			<groupId>org.jmock</groupId>
+			<artifactId>jmock-junit4</artifactId>
+			<version>2.5.1</version>
+			<scope>test</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>1.4</version>
+			<scope>test</scope>
+		</dependency>
+		
+	</dependencies>
+	
+</project>
