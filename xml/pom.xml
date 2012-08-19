@@ -41,9 +41,9 @@
 		</dependency>
 		
 		<dependency>
-			<groupId>uk.co.iizuka.common</groupId>
-			<artifactId>common-xml</artifactId>
-			<version>0.12.0-beta-1</version>
+			<groupId>org.hobsoft.symmetry</groupId>
+			<artifactId>symmetry-support-xml</artifactId>
+			<version>${project.version}</version>
 		</dependency>
 		
 		<!-- test -->
