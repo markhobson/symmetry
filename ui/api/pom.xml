@@ -30,8 +30,9 @@
 	<dependencies>
 	
 		<dependency>
-			<groupId>uk.co.iizuka.common</groupId>
-			<artifactId>common-bean</artifactId>
+			<groupId>org.hobsoft.symmetry</groupId>
+			<artifactId>symmetry-support-bean</artifactId>
+			<version>${project.version}</version>
 		</dependency>
 		
 		<dependency>
