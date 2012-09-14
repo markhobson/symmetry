@@ -14,7 +14,7 @@
 	</parent>
 
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>kozo-ui-common</artifactId>
+	<artifactId>symmetry-ui-common</artifactId>
 	<packaging>jar</packaging>
 	
 	<name>Kozo UI Common</name>
