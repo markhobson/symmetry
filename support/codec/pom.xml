@@ -19,12 +19,6 @@
 	
 	<name>Common Codec</name>
 	
-	<scm>
-		<connection>scm:svn:https://svn.iizuka.co.uk/common/codec/tags/1.2.0-beta-1</connection>
-		<developerConnection>scm:svn:https://svn.iizuka.co.uk/common/codec/tags/1.2.0-beta-1</developerConnection>
-		<url>https://svn.iizuka.co.uk/common/codec/tags/1.2.0-beta-1</url>
-	</scm>
-	
 	<dependencies>
 	
 		<dependency>

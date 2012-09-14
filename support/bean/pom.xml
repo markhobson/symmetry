@@ -20,12 +20,6 @@
 	<name>Common Bean</name>
 	<description>Common Bean provides utility classes to work with JavaBeans.</description>
 	
-	<scm>
-		<connection>scm:svn:https://svn.iizuka.co.uk/common/bean/tags/0.4.0-beta-1</connection>
-		<developerConnection>scm:svn:https://svn.iizuka.co.uk/common/bean/tags/0.4.0-beta-1</developerConnection>
-		<url>https://svn.iizuka.co.uk/common/bean/tags/0.4.0-beta-1</url>
-	</scm>
-
 	<dependencies>
 	
 		<!-- test -->

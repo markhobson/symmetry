@@ -20,12 +20,6 @@
 	<name>Common Test</name>
 	<description>Provides utility classes for use by unit tests.</description>
 	
-	<scm>
-		<connection>scm:svn:https://svn.iizuka.co.uk/common/test/tags/1.2.0-beta-1</connection>
-		<developerConnection>scm:svn:https://svn.iizuka.co.uk/common/test/tags/1.2.0-beta-1</developerConnection>
-		<url>https://svn.iizuka.co.uk/common/test/tags/1.2.0-beta-1</url>
-	</scm>
-	
 	<dependencies>
 	
 		<dependency>

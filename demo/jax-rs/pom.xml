@@ -20,12 +20,6 @@
 	
 	<name>Kozo JAX-RS Demo</name>
 
-	<scm>
-		<connection>scm:svn:https://svn.iizuka.co.uk/components/kozo/tags/0.6.0-beta-1/demo/jaxrs</connection>
-		<developerConnection>scm:svn:https://svn.iizuka.co.uk/components/kozo/tags/0.6.0-beta-1/demo/jaxrs</developerConnection>
-		<url>https://svn.iizuka.co.uk/components/kozo/tags/0.6.0-beta-1/demo/jaxrs</url>
-	</scm>
-	
 	<dependencies>
 	
 		<dependency>

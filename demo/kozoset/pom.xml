@@ -19,12 +19,6 @@
 	
 	<name>Kozo KozoSet Demo</name>
 
-	<scm>
-		<connection>scm:svn:https://svn.iizuka.co.uk/components/kozo/tags/0.6.0-beta-1/demo/kozoset</connection>
-		<developerConnection>scm:svn:https://svn.iizuka.co.uk/components/kozo/tags/0.6.0-beta-1/demo/kozoset</developerConnection>
-		<url>https://svn.iizuka.co.uk/components/kozo/tags/0.6.0-beta-1/demo/kozoset</url>
-	</scm>
-
 	<properties>
 		<kozoMainComponent>kozoset.KozoSetWindow</kozoMainComponent>
 	</properties>

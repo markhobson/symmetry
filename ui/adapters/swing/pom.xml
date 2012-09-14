@@ -20,12 +20,6 @@
 	<name>Kozo UI Swing</name>
 	<description>Kozo UI Swing provides a Kozo Swing adapter for the UI toolkit.</description>
 	
-	<scm>
-		<connection>scm:svn:https://svn.iizuka.co.uk/components/kozo/tags/0.6.0-beta-1/ui/adapters/swing</connection>
-		<developerConnection>scm:svn:https://svn.iizuka.co.uk/components/kozo/tags/0.6.0-beta-1/ui/adapters/swing</developerConnection>
-		<url>https://svn.iizuka.co.uk/components/kozo/tags/0.6.0-beta-1/ui/adapters/swing</url>
-	</scm>
-
 	<dependencies>
 	
 		<dependency>

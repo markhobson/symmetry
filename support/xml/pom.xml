@@ -20,12 +20,6 @@
 	<name>Common XML</name>
 	<description>Common XML provides utility classes for working with XML.</description>
 	
-	<scm>
-		<connection>scm:svn:https://svn.iizuka.co.uk/common/xml/main/tags/0.12.0-beta-1</connection>
-		<developerConnection>scm:svn:https://svn.iizuka.co.uk/common/xml/main/tags/0.12.0-beta-1</developerConnection>
-		<url>https://svn.iizuka.co.uk/common/xml/main/tags/0.12.0-beta-1</url>
-	</scm>
-
 	<!-- TODO: split test classes into unit tests and common-xml-test module -->
 	<build>
 		<plugins>

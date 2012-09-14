@@ -20,12 +20,6 @@
 	<name>Kozo UI HTML</name>
 	<description>Kozo UI HTML provides a Kozo HTML adapter for the UI toolkit.</description>
 
-	<scm>
-		<connection>scm:svn:https://svn.iizuka.co.uk/components/kozo/tags/0.6.0-beta-1/ui/adapters/html</connection>
-		<developerConnection>scm:svn:https://svn.iizuka.co.uk/components/kozo/tags/0.6.0-beta-1/ui/adapters/html</developerConnection>
-		<url>https://svn.iizuka.co.uk/components/kozo/tags/0.6.0-beta-1/ui/adapters/html</url>
-	</scm>
-
 	<dependencies>
 	
 		<dependency>

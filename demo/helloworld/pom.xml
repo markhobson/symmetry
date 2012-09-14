@@ -19,12 +19,6 @@
 	
 	<name>Kozo Hello World Demo</name>
 	
-	<scm>
-		<connection>scm:svn:https://svn.iizuka.co.uk/components/kozo/tags/0.6.0-beta-1/demo/helloworld</connection>
-		<developerConnection>scm:svn:https://svn.iizuka.co.uk/components/kozo/tags/0.6.0-beta-1/demo/helloworld</developerConnection>
-		<url>https://svn.iizuka.co.uk/components/kozo/tags/0.6.0-beta-1/demo/helloworld</url>
-	</scm>
-
 	<properties>
 		<kozoMainComponent>helloworld.HelloWorldWindow</kozoMainComponent>
 	</properties>

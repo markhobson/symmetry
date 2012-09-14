@@ -20,12 +20,6 @@
 	<name>Kozo UI XUL</name>
 	<description>Kozo UI XUL provides a Kozo XUL adapter for the UI toolkit.</description>
 	
-	<scm>
-		<connection>scm:svn:https://svn.iizuka.co.uk/components/kozo/tags/0.6.0-beta-1/ui/adapters/xul</connection>
-		<developerConnection>scm:svn:https://svn.iizuka.co.uk/components/kozo/tags/0.6.0-beta-1/ui/adapters/xul</developerConnection>
-		<url>https://svn.iizuka.co.uk/components/kozo/tags/0.6.0-beta-1/ui/adapters/xul</url>
-	</scm>
-
 	<dependencies>
 	
 		<dependency>
