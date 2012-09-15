@@ -213,9 +213,9 @@
 	</profiles>
 	
 	<modules>
+		<module>gallery</module>
 		<module>helloworld</module>
 		<module>jax-rs</module>
-		<module>kozoset</module>
 	</modules>
 
 </project>

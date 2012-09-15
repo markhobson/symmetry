@@ -22,10 +22,10 @@
 	</parent>
 
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>symmetry-demo-kozoset</artifactId>
+	<artifactId>symmetry-demo-gallery</artifactId>
 	<packaging>war</packaging>
 	
-	<name>Symmetry KozoSet Demo</name>
+	<name>Symmetry Gallery Demo</name>
 
 	<properties>
 		<symmetryMainComponent>org.hobsoft.symmetry.demo.kozoset.KozoSetWindow</symmetryMainComponent>
