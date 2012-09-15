@@ -128,7 +128,7 @@ public class ClassicStateCodec implements StateCodec
 	{
 		Class<?> klass = bean.getClass();
 		
-		// FIXME: don't restrict to kozo.ui package
+		// FIXME: don't restrict to symmetry.ui package
 		while (!"org.hobsoft.symmetry.ui".equals(klass.getPackage().getName()))
 		{
 			klass = klass.getSuperclass();
