@@ -94,10 +94,10 @@
 							</execution>
 						</executions>
 						<configuration>
-							<mainClass>uk.co.iizuka.kozo.Kozo</mainClass>
+							<mainClass>org.hobsoft.symmetry.Kozo</mainClass>
 							<arguments>
 								<argument>${kozoMainComponent}</argument>
-								<argument>uk.co.iizuka.kozo.ui.swing.SwingPeerManager</argument>
+								<argument>org.hobsoft.symmetry.ui.swing.SwingPeerManager</argument>
 							</arguments>
 						</configuration>
 					</plugin>
@@ -135,10 +135,10 @@
 							</execution>
 						</executions>
 						<configuration>
-							<mainClass>uk.co.iizuka.kozo.Kozo</mainClass>
+							<mainClass>org.hobsoft.symmetry.Kozo</mainClass>
 							<arguments>
 								<argument>${kozoMainComponent}</argument>
-								<argument>uk.co.iizuka.kozo.ui.swt.SwtPeerManager</argument>
+								<argument>org.hobsoft.symmetry.ui.swt.SwtPeerManager</argument>
 							</arguments>
 						</configuration>
 					</plugin>
@@ -166,8 +166,8 @@
 				<defaultGoal>org.mortbay.jetty:maven-jetty-plugin:run-exploded</defaultGoal>
 			</build>
 			<properties>
-				<peerManagerClassName>uk.co.iizuka.kozo.ui.html.HtmlPeerManager</peerManagerClassName>
-				<renderKitClassName>uk.co.iizuka.kozo.ui.html.HtmlRenderKit</renderKitClassName>
+				<peerManagerClassName>org.hobsoft.symmetry.ui.html.HtmlPeerManager</peerManagerClassName>
+				<renderKitClassName>org.hobsoft.symmetry.ui.html.HtmlRenderKit</renderKitClassName>
 			</properties>
 			<dependencies>
 				<dependency>
@@ -191,8 +191,8 @@
 				<defaultGoal>org.mortbay.jetty:maven-jetty-plugin:run-exploded</defaultGoal>
 			</build>
 			<properties>
-				<peerManagerClassName>uk.co.iizuka.kozo.ui.xul.XulPeerManager</peerManagerClassName>
-				<renderKitClassName>uk.co.iizuka.kozo.ui.xul.XulRenderKit</renderKitClassName>
+				<peerManagerClassName>org.hobsoft.symmetry.ui.xul.XulPeerManager</peerManagerClassName>
+				<renderKitClassName>org.hobsoft.symmetry.ui.xul.XulRenderKit</renderKitClassName>
 			</properties>
 			<dependencies>
 				<dependency>
