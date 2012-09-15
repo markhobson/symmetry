@@ -28,7 +28,7 @@
 	<name>Symmetry Hello World Demo</name>
 	
 	<properties>
-		<kozoMainComponent>helloworld.HelloWorldWindow</kozoMainComponent>
+		<symmetryMainComponent>helloworld.HelloWorldWindow</symmetryMainComponent>
 	</properties>
 	
 </project>

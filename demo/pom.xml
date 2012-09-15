@@ -96,7 +96,7 @@
 						<configuration>
 							<mainClass>org.hobsoft.symmetry.Kozo</mainClass>
 							<arguments>
-								<argument>${kozoMainComponent}</argument>
+								<argument>${symmetryMainComponent}</argument>
 								<argument>org.hobsoft.symmetry.ui.swing.SwingPeerManager</argument>
 							</arguments>
 						</configuration>
@@ -137,7 +137,7 @@
 						<configuration>
 							<mainClass>org.hobsoft.symmetry.Kozo</mainClass>
 							<arguments>
-								<argument>${kozoMainComponent}</argument>
+								<argument>${symmetryMainComponent}</argument>
 								<argument>org.hobsoft.symmetry.ui.swt.SwtPeerManager</argument>
 							</arguments>
 						</configuration>
