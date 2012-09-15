@@ -21,7 +21,6 @@ import org.junit.Test;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: SwtLabelPeerTest.java 97402 2011-12-30 13:16:45Z mark@IIZUKA.CO.UK $
  */
 public class SwtLabelPeerTest
 {

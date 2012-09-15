@@ -21,7 +21,6 @@ import org.xml.sax.helpers.AttributesImpl;
  * Tests <code>DOM2SAX</code>.
  * 
  * @author Mark Hobson
- * @version $Id: DOM2SAXTest.java 69822 2010-01-21 17:57:20Z mark@IIZUKA.CO.UK $
  * @see DOM2SAX
  */
 public class DOM2SAXTest extends AbstractDOMTestCase

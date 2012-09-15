@@ -14,7 +14,6 @@ import org.junit.Test;
  * Tests {@code MediaTypes}.
  * 
  * @author Mark Hobson
- * @version $Id: MediaTypesTest.java 95600 2011-11-28 12:54:36Z mark@IIZUKA.CO.UK $
  * @see MediaTypes
  */
 public class MediaTypesTest

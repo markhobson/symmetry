@@ -27,7 +27,6 @@ import static org.hobsoft.symmetry.xml.XmlUtils.writeId;
  * Hydrator that dehydrates a {@code TextArea} component to an HTML {@code <textarea/>} tag.
  * 
  * @author Mark Hobson
- * @version $Id: HtmlTextAreaDehydrator.java 98843 2012-02-29 10:01:13Z mark@IIZUKA.CO.UK $
  * @see TextArea
  * @param <T>
  *            the text area type this visitor can visit

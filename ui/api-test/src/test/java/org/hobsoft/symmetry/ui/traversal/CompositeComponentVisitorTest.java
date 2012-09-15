@@ -24,7 +24,6 @@ import org.junit.runner.RunWith;
  * Tests {@code CompositeComponentVisitor}.
  * 
  * @author Mark Hobson
- * @version $Id: CompositeComponentVisitorTest.java 95942 2011-12-05 18:08:39Z mark@IIZUKA.CO.UK $
  * @see CompositeComponentVisitor
  */
 @RunWith(JMock.class)

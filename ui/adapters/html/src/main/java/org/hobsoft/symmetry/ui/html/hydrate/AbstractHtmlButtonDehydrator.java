@@ -14,7 +14,6 @@ import org.hobsoft.symmetry.ui.common.hydrate.NullHierarchicalComponentHydrator;
  * Base hydrator for dehydrating a {@code Button} component to HTML.
  * 
  * @author Mark Hobson
- * @version $Id: AbstractHtmlButtonDehydrator.java 98843 2012-02-29 10:01:13Z mark@IIZUKA.CO.UK $
  * @see Button
  * @param <T>
  *            the button type this visitor can visit

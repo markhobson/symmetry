@@ -21,7 +21,6 @@ import org.junit.Test;
  * Tests {@code AbstractBeanTableModel}.
  * 
  * @author Mark Hobson
- * @version $Id: AbstractBeanTableModelTest.java 95908 2011-12-05 10:20:51Z mark@IIZUKA.CO.UK $
  * @see AbstractBeanTableModel
  */
 public class AbstractBeanTableModelTest

@@ -26,7 +26,6 @@ import static org.hobsoft.symmetry.ui.xml.test.hydrate.StubXmlComponentHydrators
  * Tests {@code HtmlGroupBoxHydrator}.
  * 
  * @author Mark Hobson
- * @version $Id: HtmlGroupBoxHydratorTest.java 99112 2012-03-09 15:21:08Z mark@IIZUKA.CO.UK $
  * @see HtmlGroupBoxHydrator
  */
 public class HtmlGroupBoxHydratorTest extends AbstractXmlRenderKitTest<GroupBox>

@@ -12,7 +12,6 @@ import org.w3c.dom.Node;
  * A node closure that removes a child from it's parent.
  * 
  * @author Mark Hobson
- * @version $Id: RemoveChildClosure.java 69819 2010-01-21 15:54:06Z mark@IIZUKA.CO.UK $
  */
 public class RemoveChildClosure implements NodeClosure
 {

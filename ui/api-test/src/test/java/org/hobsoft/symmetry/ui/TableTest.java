@@ -32,7 +32,6 @@ import org.junit.Test;
  * Tests {@code Table}.
  * 
  * @author Mark Hobson
- * @version $Id: TableTest.java 99653 2012-03-16 17:37:26Z mark@IIZUKA.CO.UK $
  * @see Table
  */
 public class TableTest extends AbstractComponentTest<Table>

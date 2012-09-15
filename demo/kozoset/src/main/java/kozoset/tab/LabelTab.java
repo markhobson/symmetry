@@ -16,7 +16,6 @@ import org.hobsoft.symmetry.ui.VBox;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: LabelTab.java 99566 2012-03-15 16:00:09Z mark@IIZUKA.CO.UK $
  */
 public class LabelTab extends Tab
 {

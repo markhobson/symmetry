@@ -27,7 +27,6 @@ import org.junit.Before;
  * Provides support for testing component render kits.
  * 
  * @author Mark Hobson
- * @version $Id: AbstractRenderKitTest.java 95640 2011-11-29 12:28:54Z mark@IIZUKA.CO.UK $
  * @param <T>
  *            the component type that this test tests
  */

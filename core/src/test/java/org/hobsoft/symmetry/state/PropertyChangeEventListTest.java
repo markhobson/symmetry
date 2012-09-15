@@ -16,7 +16,6 @@ import org.junit.Test;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: PropertyChangeEventListTest.java 98789 2012-02-27 12:01:42Z mark@IIZUKA.CO.UK $
  */
 public class PropertyChangeEventListTest
 {

@@ -25,7 +25,6 @@ import org.hobsoft.symmetry.ui.view.TableCellRenderer;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: SwingTablePeer.java 99628 2012-03-16 14:32:20Z mark@IIZUKA.CO.UK $
  */
 public class SwingTablePeer extends AbstractPeerHandler
 {

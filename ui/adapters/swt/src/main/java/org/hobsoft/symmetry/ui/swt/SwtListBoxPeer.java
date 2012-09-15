@@ -22,7 +22,6 @@ import org.hobsoft.symmetry.ui.model.ListModel;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: SwtListBoxPeer.java 97979 2012-01-24 16:18:07Z mark@IIZUKA.CO.UK $
  */
 public class SwtListBoxPeer extends AbstractPeerHandler
 {

@@ -11,7 +11,6 @@ import java.util.Iterator;
  * A compound DTD element content model whose comprising content models must occur sequentially.
  * 
  * @author Mark Hobson
- * @version $Id: DTDSequenceContent.java 69819 2010-01-21 15:54:06Z mark@IIZUKA.CO.UK $
  */
 public class DTDSequenceContent extends DTDContentContainer
 {

@@ -11,7 +11,6 @@ import org.hobsoft.symmetry.KozoException;
  * Indicates that a serious problem was encountered whilst encoding or decoding a bean's state.
  * 
  * @author Mark Hobson
- * @version $Id: StateException.java 95220 2011-11-16 15:04:18Z mark@IIZUKA.CO.UK $
  */
 public class StateException extends KozoException
 {

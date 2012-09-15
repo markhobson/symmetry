@@ -17,7 +17,6 @@ import org.junit.Test;
  * Tests {@code EnumToStringCodec}.
  * 
  * @author Mark Hobson
- * @version $Id: EnumToStringCodecTest.java 75409 2010-07-27 09:58:20Z mark@IIZUKA.CO.UK $
  * @see EnumToStringCodec
  */
 public class EnumToStringCodecTest

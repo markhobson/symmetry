@@ -29,7 +29,6 @@ import static org.hobsoft.symmetry.xml.XmlUtils.writeId;
  * Hydrator that dehydrates a {@code TextBox} component to an HTML {@code <input/>} tag.
  * 
  * @author Mark Hobson
- * @version $Id: HtmlTextBoxDehydrator.java 98843 2012-02-29 10:01:13Z mark@IIZUKA.CO.UK $
  * @see TextBox
  * @param <T>
  *            the text box type this visitor can visit

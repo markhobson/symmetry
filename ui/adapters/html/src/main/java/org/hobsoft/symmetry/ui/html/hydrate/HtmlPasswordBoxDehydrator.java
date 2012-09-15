@@ -27,7 +27,6 @@ import static org.hobsoft.symmetry.xml.XmlUtils.writeId;
  * Hydrator that dehydrates a {@code PasswordBox} component to an HTML {@code <input/>} tag.
  * 
  * @author Mark Hobson
- * @version $Id: HtmlPasswordBoxDehydrator.java 98843 2012-02-29 10:01:13Z mark@IIZUKA.CO.UK $
  * @see PasswordBox
  * @param <T>
  *            the password box type this visitor can visit

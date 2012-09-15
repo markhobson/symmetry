@@ -23,7 +23,6 @@ import org.junit.Test;
  * Tests {@code State}.
  * 
  * @author Mark Hobson
- * @version $Id: StateTest.java 93650 2011-10-06 17:13:29Z mark@IIZUKA.CO.UK $
  * @see State
  */
 public class StateTest

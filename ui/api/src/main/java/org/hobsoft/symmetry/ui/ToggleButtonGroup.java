@@ -14,7 +14,6 @@ import java.beans.PropertyChangeListener;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: ToggleButtonGroup.java 99065 2012-03-08 13:00:14Z mark@IIZUKA.CO.UK $
  */
 public class ToggleButtonGroup extends Box
 {

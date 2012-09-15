@@ -9,7 +9,6 @@ package org.hobsoft.symmetry.state;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: TypeUtils.java 94241 2011-10-11 08:32:01Z mark@IIZUKA.CO.UK $
  */
 final class TypeUtils
 {

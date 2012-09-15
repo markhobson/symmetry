@@ -11,7 +11,6 @@ import org.apache.commons.lang.Validate;
  * Decoder that delegates decoding to another decoder.
  * 
  * @author Mark Hobson
- * @version $Id: DelegatingDecoder.java 75370 2010-07-26 10:10:09Z mark@IIZUKA.CO.UK $
  * @param <X>
  *            the object type that this decoder can decode
  * @param <Y>

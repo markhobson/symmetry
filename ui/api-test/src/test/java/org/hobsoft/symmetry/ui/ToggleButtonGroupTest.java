@@ -15,7 +15,6 @@ import org.junit.Test;
  * Tests {@code ToggleButtonGroup}.
  * 
  * @author Mark Hobson
- * @version $Id: ToggleButtonGroupTest.java 97895 2012-01-18 18:00:21Z mark@IIZUKA.CO.UK $
  * @see ToggleButtonGroup
  */
 public class ToggleButtonGroupTest

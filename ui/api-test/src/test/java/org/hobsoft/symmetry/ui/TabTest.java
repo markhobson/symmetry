@@ -26,7 +26,6 @@ import org.junit.Test;
  * Tests {@code Tab}.
  * 
  * @author Mark Hobson
- * @version $Id: TabTest.java 95624 2011-11-29 11:53:24Z mark@IIZUKA.CO.UK $
  * @see Tab
  */
 public class TabTest extends AbstractComponentTest<Tab>

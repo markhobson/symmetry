@@ -12,7 +12,6 @@ import java.io.IOException;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: StringDataOutput.java 98798 2012-02-27 13:11:29Z mark@IIZUKA.CO.UK $
  */
 public class StringDataOutput implements DataOutput
 {

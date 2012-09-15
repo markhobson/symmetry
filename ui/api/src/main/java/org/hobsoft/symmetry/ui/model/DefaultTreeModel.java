@@ -9,7 +9,6 @@ package org.hobsoft.symmetry.ui.model;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: DefaultTreeModel.java 95332 2011-11-18 12:22:38Z mark@IIZUKA.CO.UK $
  */
 public class DefaultTreeModel extends AbstractTreeModel
 {

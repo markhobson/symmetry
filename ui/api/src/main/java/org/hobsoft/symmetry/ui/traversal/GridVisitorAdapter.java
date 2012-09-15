@@ -11,7 +11,6 @@ import org.hobsoft.symmetry.ui.Grid;
  * Adapts a {@code ContainerVisitor} to a {@code GridVisitor}.
  * 
  * @author Mark Hobson
- * @version $Id: GridVisitorAdapter.java 100092 2012-03-30 11:49:15Z mark@IIZUKA.CO.UK $
  * @param <T>
  *            the component type this visitor can visit
  * @param <P>

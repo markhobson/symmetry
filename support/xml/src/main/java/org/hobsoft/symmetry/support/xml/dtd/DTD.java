@@ -18,7 +18,6 @@ import org.w3c.dom.Element;
  * Represents a XML document type definition that provides a grammar for a class of documents.
  * 
  * @author Mark Hobson
- * @version $Id: DTD.java 69819 2010-01-21 15:54:06Z mark@IIZUKA.CO.UK $
  * @see <a href="http://www.w3.org/TR/REC-xml/#sec-prolog-dtd">2.8 Prolog and Document Type Declaration</a>
  * @see <a href="http://www.w3.org/TR/REC-xml/#elemdecls">3.2 Element Type Declarations</a>
  * @see <a href="http://www.w3.org/TR/REC-xml/#attdecls">3.3 Attribute-List Declarations</a>

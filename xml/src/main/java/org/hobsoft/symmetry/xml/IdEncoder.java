@@ -11,7 +11,6 @@ import org.hobsoft.symmetry.support.codec.Encoder;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: IdEncoder.java 95597 2011-11-28 12:44:19Z mark@IIZUKA.CO.UK $
  */
 public interface IdEncoder extends Encoder<Object, String>
 {

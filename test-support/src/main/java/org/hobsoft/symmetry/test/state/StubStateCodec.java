@@ -20,7 +20,6 @@ import org.hobsoft.symmetry.support.bean.Properties;
  * State codec stub for use in testing.
  * 
  * @author Mark Hobson
- * @version $Id: StubStateCodec.java 95586 2011-11-28 12:30:05Z mark@IIZUKA.CO.UK $
  */
 public class StubStateCodec implements StateCodec
 {

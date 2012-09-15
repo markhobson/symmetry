@@ -25,7 +25,6 @@ import org.xml.sax.ext.LexicalHandler;
  * This class is typically used to test classes that produce SAX events.
  * 
  * @author Mark Hobson
- * @version $Id: MockSAX.java 69822 2010-01-21 17:57:20Z mark@IIZUKA.CO.UK $
  */
 public class MockSAX extends DefaultHandler2
 {

@@ -18,7 +18,6 @@ import static org.hobsoft.symmetry.ui.internal.Preconditions.checkPositive;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: GridLayoutData.java 99813 2012-03-22 17:33:54Z mark@IIZUKA.CO.UK $
  */
 public final class GridLayoutData
 {

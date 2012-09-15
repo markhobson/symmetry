@@ -16,7 +16,6 @@ import org.w3c.dom.NodeList;
  * Provides methods to assert the equality of DOM Core objects.
  * 
  * @author Mark Hobson
- * @version $Id: DOMAssert.java 69821 2010-01-21 16:46:57Z mark@IIZUKA.CO.UK $
  */
 public final class DOMAssert
 {

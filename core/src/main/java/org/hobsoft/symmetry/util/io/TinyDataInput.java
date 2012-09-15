@@ -12,7 +12,6 @@ import java.io.InputStream;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: TinyDataInput.java 86025 2011-03-23 12:14:38Z mark@IIZUKA.CO.UK $
  */
 public class TinyDataInput extends DefaultDataInput
 {

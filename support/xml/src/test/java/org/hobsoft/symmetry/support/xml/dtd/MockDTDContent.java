@@ -9,7 +9,6 @@ package org.hobsoft.symmetry.support.xml.dtd;
  * No-op <code>DTDContent</code> implementation for use with tests.
  * 
  * @author Mark Hobson
- * @version $Id: MockDTDContent.java 69819 2010-01-21 15:54:06Z mark@IIZUKA.CO.UK $
  */
 public class MockDTDContent implements DTDContent
 {

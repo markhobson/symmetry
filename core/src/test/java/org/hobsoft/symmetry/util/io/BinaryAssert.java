@@ -13,7 +13,6 @@ import junit.framework.Assert;
  * Provides assertion methods for binary data.
  * 
  * @author Mark Hobson
- * @version $Id: BinaryAssert.java 73508 2010-04-02 15:56:49Z mark@IIZUKA.CO.UK $
  */
 public final class BinaryAssert
 {

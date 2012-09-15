@@ -16,7 +16,6 @@ import static org.hobsoft.symmetry.ui.internal.Preconditions.checkPositive;
  * A component that provides editing for a single-line of text.
  * 
  * @author Mark Hobson
- * @version $Id: TextBox.java 99066 2012-03-08 13:02:09Z mark@IIZUKA.CO.UK $
  */
 public class TextBox extends Component implements Enableable
 {

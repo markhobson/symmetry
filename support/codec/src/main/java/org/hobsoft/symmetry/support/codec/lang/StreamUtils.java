@@ -15,7 +15,6 @@ import java.io.Reader;
  * Provides utility methods for working with streams.
  * 
  * @author Mark Hobson
- * @version $Id: StreamUtils.java 75587 2010-08-02 20:41:05Z mark@IIZUKA.CO.UK $
  */
 final class StreamUtils
 {

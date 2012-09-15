@@ -12,7 +12,6 @@ import java.io.ObjectInput;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: SerializerObjectInput.java 94748 2011-10-24 14:57:43Z mark@IIZUKA.CO.UK $
  */
 public class SerializerObjectInput extends DelegatingObjectInput implements SerializerContext
 {

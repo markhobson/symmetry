@@ -28,7 +28,6 @@ import org.xml.sax.SAXException;
  * Tests <code>NodeUtils</code>.
  * 
  * @author Mark Hobson
- * @version $Id: NodeUtilsTest.java 69822 2010-01-21 17:57:20Z mark@IIZUKA.CO.UK $
  * @see NodeUtils
  */
 public class NodeUtilsTest extends AbstractDOMTestCase

@@ -16,7 +16,6 @@ import org.hobsoft.symmetry.support.bean.Properties;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: BeanPropertyEvaluator.java 87543 2011-05-02 15:54:57Z mark@IIZUKA.CO.UK $
  */
 final class BeanPropertyEvaluator
 {

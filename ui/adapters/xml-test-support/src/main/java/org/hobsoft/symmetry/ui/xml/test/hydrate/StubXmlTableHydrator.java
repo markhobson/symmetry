@@ -18,7 +18,6 @@ import static org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.Vis
  * 
  * 
  * @author Mark Hobson
- * @version $Id: StubXmlTableHydrator.java 100088 2012-03-30 10:37:50Z mark@IIZUKA.CO.UK $
  * @param <T>
  *            the component type this visitor can visit
  */

@@ -16,7 +16,6 @@ import org.hobsoft.symmetry.ui.MultiLineLabel;
  * Hydrator that dehydrates a {@code MultiLineLabel} component to an HTML {@code <p/>} tag.
  * 
  * @author Mark Hobson
- * @version $Id: HtmlMultiLineLabelDehydrator.java 98843 2012-02-29 10:01:13Z mark@IIZUKA.CO.UK $
  * @see MultiLineLabel
  * @param <T>
  *            the multi-line label type this visitor can visit

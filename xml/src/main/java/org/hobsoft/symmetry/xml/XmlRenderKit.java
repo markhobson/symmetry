@@ -19,7 +19,6 @@ import org.hobsoft.symmetry.hydrate.HydrationException;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: XmlRenderKit.java 95653 2011-11-29 15:03:04Z mark@IIZUKA.CO.UK $
  * @param <T>
  *            the base component type this kit can render
  */

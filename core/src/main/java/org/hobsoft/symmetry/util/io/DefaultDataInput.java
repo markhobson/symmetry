@@ -16,7 +16,6 @@ import java.io.InputStream;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: DefaultDataInput.java 95220 2011-11-16 15:04:18Z mark@IIZUKA.CO.UK $
  */
 public class DefaultDataInput implements DataInput, Closeable
 {

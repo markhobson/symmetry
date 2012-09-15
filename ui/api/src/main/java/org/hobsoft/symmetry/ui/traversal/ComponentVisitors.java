@@ -27,7 +27,6 @@ import static org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.Vis
  * 
  * 
  * @author Mark Hobson
- * @version $Id: ComponentVisitors.java 100650 2012-04-23 10:07:01Z mark@IIZUKA.CO.UK $
  */
 public final class ComponentVisitors
 {

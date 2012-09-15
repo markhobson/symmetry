@@ -19,7 +19,6 @@ import org.junit.Test;
  * Tests {@code AbstractCharStreamEncoder}.
  * 
  * @author Mark Hobson
- * @version $Id: AbstractCharStreamEncoderTest.java 75581 2010-08-02 18:51:27Z mark@IIZUKA.CO.UK $
  * @see AbstractCharStreamEncoder
  */
 public class AbstractCharStreamEncoderTest

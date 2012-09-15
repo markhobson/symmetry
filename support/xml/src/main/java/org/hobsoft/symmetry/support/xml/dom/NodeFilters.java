@@ -23,7 +23,6 @@ import org.w3c.dom.traversal.NodeFilter;
  * A factory to build various node filters.
  * 
  * @author Mark Hobson
- * @version $Id: NodeFilters.java 69819 2010-01-21 15:54:06Z mark@IIZUKA.CO.UK $
  */
 public final class NodeFilters
 {

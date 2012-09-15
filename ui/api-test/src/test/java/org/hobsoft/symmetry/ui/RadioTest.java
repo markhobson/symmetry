@@ -13,7 +13,6 @@ import com.googlecode.jtype.Generic;
  * Tests {@code Radio}.
  * 
  * @author Mark Hobson
- * @version $Id: RadioTest.java 95528 2011-11-25 19:00:17Z mark@IIZUKA.CO.UK $
  * @see Radio
  */
 public class RadioTest extends AbstractComponentTest<Radio>

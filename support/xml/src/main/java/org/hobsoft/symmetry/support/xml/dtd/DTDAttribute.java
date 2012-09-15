@@ -9,7 +9,6 @@ package org.hobsoft.symmetry.support.xml.dtd;
  * Represents an attribute list item declaration within a DTD.
  * 
  * @author Mark Hobson
- * @version $Id: DTDAttribute.java 69819 2010-01-21 15:54:06Z mark@IIZUKA.CO.UK $
  * @see <a href="http://www.w3.org/TR/REC-xml/#attdecls">3.3 Attribute-List Declarations</a>
  */
 public class DTDAttribute

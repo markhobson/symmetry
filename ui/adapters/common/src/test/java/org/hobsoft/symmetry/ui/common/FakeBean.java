@@ -9,7 +9,6 @@ package org.hobsoft.symmetry.ui.common;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: FakeBean.java 98421 2012-02-13 16:38:55Z mark@IIZUKA.CO.UK $
  */
 public class FakeBean
 {

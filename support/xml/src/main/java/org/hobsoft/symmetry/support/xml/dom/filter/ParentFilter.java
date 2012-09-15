@@ -12,7 +12,6 @@ import org.w3c.dom.traversal.NodeFilter;
  * A <code>NodeFilter</code> that accepts a node if and only if a given filter accepts its parent node.
  * 
  * @author Mark Hobson
- * @version $Id: ParentFilter.java 69819 2010-01-21 15:54:06Z mark@IIZUKA.CO.UK $
  */
 public class ParentFilter implements NodeFilter
 {

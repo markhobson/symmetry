@@ -15,7 +15,6 @@ import static org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.Vis
  * 
  * 
  * @author Mark Hobson
- * @version $Id: VisibleNodeTreeVisitor.java 100649 2012-04-23 10:05:30Z mark@IIZUKA.CO.UK $
  * @param <T>
  *            the component type this visitor can visit
  * @param <P>

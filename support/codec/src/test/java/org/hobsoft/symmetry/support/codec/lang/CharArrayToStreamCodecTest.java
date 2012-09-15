@@ -22,7 +22,6 @@ import org.junit.Test;
  * Tests {@code CharArrayToStreamCodec}.
  * 
  * @author Mark Hobson
- * @version $Id: CharArrayToStreamCodecTest.java 75588 2010-08-02 20:52:50Z mark@IIZUKA.CO.UK $
  * @see CharArrayToStreamCodec
  */
 public class CharArrayToStreamCodecTest

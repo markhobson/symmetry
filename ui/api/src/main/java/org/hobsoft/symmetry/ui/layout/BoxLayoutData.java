@@ -14,7 +14,6 @@ import com.google.common.base.Objects;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: BoxLayoutData.java 99869 2012-03-23 17:26:34Z mark@IIZUKA.CO.UK $
  */
 public final class BoxLayoutData
 {

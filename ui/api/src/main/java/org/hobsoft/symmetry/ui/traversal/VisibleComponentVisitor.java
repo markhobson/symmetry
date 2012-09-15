@@ -22,7 +22,6 @@ import static org.hobsoft.symmetry.ui.traversal.ComponentVisitors.visibleRows;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: VisibleComponentVisitor.java 100651 2012-04-23 10:18:53Z mark@IIZUKA.CO.UK $
  * @param <P>
  *            the parameter type this visitor takes
  * @param <E>

@@ -11,7 +11,6 @@ import org.hobsoft.symmetry.ui.functor.Function;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: StubFunction.java 94748 2011-10-24 14:57:43Z mark@IIZUKA.CO.UK $
  * @param <T>
  *            the output type
  */

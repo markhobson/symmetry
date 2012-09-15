@@ -18,7 +18,6 @@ import org.junit.Test;
  * Tests {@code Component}.
  * 
  * @author Mark Hobson
- * @version $Id: ComponentTest.java 95528 2011-11-25 19:00:17Z mark@IIZUKA.CO.UK $
  * @see Component
  */
 public class ComponentTest extends AbstractComponentTest<DummyComponent>

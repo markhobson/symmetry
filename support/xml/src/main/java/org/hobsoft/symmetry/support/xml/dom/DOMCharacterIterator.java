@@ -18,7 +18,6 @@ import org.w3c.dom.traversal.TreeWalker;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: DOMCharacterIterator.java 69825 2010-01-21 18:03:52Z mark@IIZUKA.CO.UK $
  */
 public class DOMCharacterIterator implements CharacterIterator
 {

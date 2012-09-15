@@ -30,7 +30,6 @@ import org.junit.Test;
  * Tests {@code VisibleComponentVisitor}.
  * 
  * @author Mark Hobson
- * @version $Id: VisibleComponentVisitorTest.java 100651 2012-04-23 10:18:53Z mark@IIZUKA.CO.UK $
  * @see VisibleComponentVisitor
  */
 public class VisibleComponentVisitorTest

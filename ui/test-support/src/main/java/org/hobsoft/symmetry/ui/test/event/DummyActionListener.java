@@ -12,7 +12,6 @@ import org.hobsoft.symmetry.ui.event.ActionListener;
  * Dummy action listener for use in tests.
  * 
  * @author Mark Hobson
- * @version $Id: DummyActionListener.java 99606 2012-03-16 12:46:26Z mark@IIZUKA.CO.UK $
  */
 public class DummyActionListener implements ActionListener
 {

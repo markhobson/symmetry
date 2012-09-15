@@ -37,7 +37,6 @@ import static org.hobsoft.symmetry.support.xml.stax.filter.TypeEventFilters.proc
  * 
  * 
  * @author Mark Hobson
- * @version $Id: XmlUtils.java 95597 2011-11-28 12:44:19Z mark@IIZUKA.CO.UK $
  */
 public final class XmlUtils
 {

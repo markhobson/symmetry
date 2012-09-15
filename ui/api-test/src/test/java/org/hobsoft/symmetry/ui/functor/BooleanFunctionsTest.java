@@ -14,7 +14,6 @@ import org.junit.Test;
  * Tests {@code BooleanFunctions}.
  * 
  * @author Mark Hobson
- * @version $Id: BooleanFunctionsTest.java 89166 2011-06-21 17:17:33Z mark@IIZUKA.CO.UK $
  * @see BooleanFunctions
  */
 public class BooleanFunctionsTest

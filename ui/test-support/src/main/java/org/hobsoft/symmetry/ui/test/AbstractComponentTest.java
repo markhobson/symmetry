@@ -31,7 +31,6 @@ import org.junit.runner.RunWith;
  * Shared tests for {@code Component} implementations.
  * 
  * @author Mark Hobson
- * @version $Id: AbstractComponentTest.java 95609 2011-11-28 15:23:29Z mark@IIZUKA.CO.UK $
  * @param <T>
  *            the type of component that this test tests
  * @see Component

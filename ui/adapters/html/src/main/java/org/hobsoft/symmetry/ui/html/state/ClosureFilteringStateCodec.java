@@ -20,7 +20,6 @@ import org.hobsoft.symmetry.ui.functor.Closure;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: ClosureFilteringStateCodec.java 95170 2011-11-15 17:17:14Z mark@IIZUKA.CO.UK $
  * @param <T>
  *            the command type
  */

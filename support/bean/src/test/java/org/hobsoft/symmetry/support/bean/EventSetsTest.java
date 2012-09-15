@@ -20,7 +20,6 @@ import org.junit.Test;
  * Tests {@code EventSets}.
  * 
  * @author Mark Hobson
- * @version $Id: EventSetsTest.java 97397 2011-12-30 11:53:48Z mark@IIZUKA.CO.UK $
  * @see EventSets
  */
 public class EventSetsTest

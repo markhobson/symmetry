@@ -26,7 +26,6 @@ import org.junit.runner.RunWith;
  * Tests {@code PostorderComponentVisitor}.
  * 
  * @author Mark Hobson
- * @version $Id: PostorderComponentVisitorTest.java 95608 2011-11-28 15:21:07Z mark@IIZUKA.CO.UK $
  * @see PostorderComponentVisitor
  */
 @RunWith(JMock.class)

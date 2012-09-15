@@ -11,7 +11,6 @@ import java.beans.PropertyDescriptor;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: StateCodec.java 93015 2011-09-29 08:45:13Z mark@IIZUKA.CO.UK $
  */
 public interface StateCodec
 {

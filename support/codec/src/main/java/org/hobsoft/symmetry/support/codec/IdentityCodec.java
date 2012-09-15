@@ -9,7 +9,6 @@ package org.hobsoft.symmetry.support.codec;
  * Identity codec that encodes and decodes an object to itself.
  * 
  * @author Mark Hobson
- * @version $Id: IdentityCodec.java 75376 2010-07-26 12:41:52Z mark@IIZUKA.CO.UK $
  * @param <X>
  *            the object type that this codec can accept
  */

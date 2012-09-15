@@ -23,7 +23,6 @@ import static org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.Vis
  * 
  * 
  * @author Mark Hobson
- * @version $Id: HtmlComponentHydrators.java 98868 2012-02-29 11:10:57Z mark@IIZUKA.CO.UK $
  */
 public final class HtmlComponentHydrators
 {

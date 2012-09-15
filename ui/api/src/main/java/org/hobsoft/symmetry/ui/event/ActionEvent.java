@@ -11,7 +11,6 @@ import org.hobsoft.symmetry.ui.Component;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: ActionEvent.java 93605 2011-10-06 14:57:04Z mark@IIZUKA.CO.UK $
  */
 public final class ActionEvent extends ComponentEvent
 {

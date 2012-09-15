@@ -16,7 +16,6 @@ import org.xml.sax.XMLReader;
  * Tests <code>RecreateWhitespaceXMLFilter</code>.
  * 
  * @author Mark Hobson
- * @version $Id: RecreateWhitespaceXMLFilterTest.java 69822 2010-01-21 17:57:20Z mark@IIZUKA.CO.UK $
  * @see RecreateWhitespaceXMLFilter
  */
 public class RecreateWhitespaceXMLFilterTest extends AbstractXMLFilterTest

@@ -28,7 +28,6 @@ import org.junit.Test;
  * Tests {@code TinyObjectOutput}.
  * 
  * @author Mark Hobson
- * @version $Id: TinyObjectOutputTest.java 95224 2011-11-16 15:37:43Z mark@IIZUKA.CO.UK $
  * @see TinyObjectOutput
  */
 public class TinyObjectOutputTest

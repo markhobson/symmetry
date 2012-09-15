@@ -16,7 +16,6 @@ import javax.activation.DataSource;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: DummyDataSource.java 98452 2012-02-14 15:00:23Z mark@IIZUKA.CO.UK $
  */
 public class DummyDataSource implements DataSource
 {

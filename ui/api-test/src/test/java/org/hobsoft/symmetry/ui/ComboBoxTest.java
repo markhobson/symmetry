@@ -38,7 +38,6 @@ import org.junit.Test;
  * Tests {@code ComboBox}.
  * 
  * @author Mark Hobson
- * @version $Id: ComboBoxTest.java 99052 2012-03-08 11:58:53Z mark@IIZUKA.CO.UK $
  * @see ComboBox
  */
 public class ComboBoxTest extends AbstractComponentTest<ComboBox<?>>

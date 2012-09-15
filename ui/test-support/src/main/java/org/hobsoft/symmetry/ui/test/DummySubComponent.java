@@ -12,7 +12,6 @@ import org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.EndVisit;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: DummySubComponent.java 98541 2012-02-16 17:13:08Z mark@IIZUKA.CO.UK $
  */
 public class DummySubComponent extends DummyComponent
 {

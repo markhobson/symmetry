@@ -18,7 +18,6 @@ import org.hobsoft.symmetry.ui.model.TableModel;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: Functions.java 98450 2012-02-14 14:47:35Z mark@IIZUKA.CO.UK $
  */
 public final class Functions
 {

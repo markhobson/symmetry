@@ -9,7 +9,6 @@ package org.hobsoft.symmetry.support.bean.editor;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: EnumEditor.java 97934 2012-01-23 12:21:34Z mark@IIZUKA.CO.UK $
  * @param <E>
  *            the enum type
  */

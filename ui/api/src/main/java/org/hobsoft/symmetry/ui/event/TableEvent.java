@@ -15,7 +15,6 @@ import org.hobsoft.symmetry.ui.Table;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: TableEvent.java 88174 2011-05-18 09:26:41Z mark@IIZUKA.CO.UK $
  */
 public final class TableEvent extends ComponentEvent
 {

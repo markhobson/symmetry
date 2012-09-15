@@ -23,7 +23,6 @@ import org.junit.Test;
  * Tests {@code StringToBytesCodec}.
  * 
  * @author Mark Hobson
- * @version $Id: StringToCharStreamCodecTest.java 75587 2010-08-02 20:41:05Z mark@IIZUKA.CO.UK $
  * @see StringToCharStreamCodec
  */
 public class StringToCharStreamCodecTest

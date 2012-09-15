@@ -12,7 +12,6 @@ import org.hobsoft.symmetry.support.codec.EncoderException;
  * Encoder that encodes an object to a string.
  * 
  * @author Mark Hobson
- * @version $Id: ObjectToStringEncoder.java 75578 2010-08-02 18:30:22Z mark@IIZUKA.CO.UK $
  * @param <X>
  *            the object type that this encoder can encode
  */

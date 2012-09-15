@@ -19,7 +19,6 @@ import static org.hobsoft.symmetry.ui.internal.Preconditions.checkNonNegative;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: ListModels.java 99067 2012-03-08 13:04:22Z mark@IIZUKA.CO.UK $
  */
 public final class ListModels
 {

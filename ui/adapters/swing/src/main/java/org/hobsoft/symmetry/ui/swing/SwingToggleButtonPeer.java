@@ -17,7 +17,6 @@ import org.hobsoft.symmetry.ui.ToggleButton;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: SwingToggleButtonPeer.java 73508 2010-04-02 15:56:49Z mark@IIZUKA.CO.UK $
  */
 public class SwingToggleButtonPeer extends SwingButtonPeer
 {

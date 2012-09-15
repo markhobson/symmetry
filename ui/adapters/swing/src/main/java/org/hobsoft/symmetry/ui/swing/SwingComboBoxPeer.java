@@ -22,7 +22,6 @@ import org.hobsoft.symmetry.ui.swing.model.ComboBoxModelAdapter;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: SwingComboBoxPeer.java 94748 2011-10-24 14:57:43Z mark@IIZUKA.CO.UK $
  */
 public class SwingComboBoxPeer extends AbstractPeerHandler
 {

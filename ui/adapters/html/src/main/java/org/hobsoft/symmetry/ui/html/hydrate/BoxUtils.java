@@ -12,7 +12,6 @@ import org.hobsoft.symmetry.ui.layout.BoxLayoutData;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: BoxUtils.java 100091 2012-03-30 10:58:09Z mark@IIZUKA.CO.UK $
  */
 final class BoxUtils
 {

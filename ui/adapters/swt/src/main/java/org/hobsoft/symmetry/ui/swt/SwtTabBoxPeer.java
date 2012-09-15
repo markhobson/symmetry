@@ -22,7 +22,6 @@ import org.hobsoft.symmetry.ui.TabBox;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: SwtTabBoxPeer.java 98503 2012-02-15 15:07:03Z mark@IIZUKA.CO.UK $
  */
 public class SwtTabBoxPeer extends AbstractPeerHandler
 {

@@ -9,7 +9,6 @@ package org.hobsoft.symmetry.support.xml.dtd;
  * Builds <code>DTDContent</code> instances from their DTD string representations.
  * 
  * @author Mark Hobson
- * @version $Id: DTDContentParser.java 69819 2010-01-21 15:54:06Z mark@IIZUKA.CO.UK $
  * @see DTDContent
  */
 public final class DTDContentParser

@@ -14,7 +14,6 @@ import java.util.List;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: EventListeners.java 92540 2011-09-20 09:25:58Z mark@IIZUKA.CO.UK $
  */
 public final class EventListeners
 {

@@ -14,7 +14,6 @@ import org.hobsoft.symmetry.ui.view.TreeNodeRenderer;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: NullComponentTreeNodeRenderer.java 99606 2012-03-16 12:46:26Z mark@IIZUKA.CO.UK $
  */
 public class NullComponentTreeNodeRenderer implements TreeNodeRenderer
 {

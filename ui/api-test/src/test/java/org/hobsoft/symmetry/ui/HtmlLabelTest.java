@@ -13,7 +13,6 @@ import com.googlecode.jtype.Generic;
  * Tests {@code HtmlLabel}.
  * 
  * @author Mark Hobson
- * @version $Id: HtmlLabelTest.java 95528 2011-11-25 19:00:17Z mark@IIZUKA.CO.UK $
  * @see HtmlLabel
  */
 public class HtmlLabelTest extends AbstractComponentTest<HtmlLabel>

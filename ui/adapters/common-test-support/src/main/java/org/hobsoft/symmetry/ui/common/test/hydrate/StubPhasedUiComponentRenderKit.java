@@ -19,7 +19,6 @@ import org.hobsoft.symmetry.ui.traversal.ComponentVisitors;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: StubPhasedUiComponentRenderKit.java 98843 2012-02-29 10:01:13Z mark@IIZUKA.CO.UK $
  * @param <T>
  *            the base component type this kit can render
  */

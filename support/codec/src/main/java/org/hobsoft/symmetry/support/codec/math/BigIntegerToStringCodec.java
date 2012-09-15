@@ -16,7 +16,6 @@ import org.hobsoft.symmetry.support.codec.lang.LangEncoders;
  * Codec that encodes a big integer to a string and vice-versa.
  * 
  * @author Mark Hobson
- * @version $Id: BigIntegerToStringCodec.java 75578 2010-08-02 18:30:22Z mark@IIZUKA.CO.UK $
  */
 class BigIntegerToStringCodec implements Codec<BigInteger, String>
 {

@@ -18,7 +18,6 @@ import org.junit.Test;
  * Tests {@code ComponentFilters}.
  * 
  * @author Mark Hobson
- * @version $Id: ComponentFiltersTest.java 100646 2012-04-23 10:00:25Z mark@IIZUKA.CO.UK $
  * @see ComponentFilters
  */
 public class ComponentFiltersTest

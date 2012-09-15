@@ -14,7 +14,6 @@ import javax.xml.stream.events.XMLEvent;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: WellFormedEventFilter.java 88594 2011-05-27 10:31:46Z mark@IIZUKA.CO.UK $
  */
 class WellFormedEventFilter extends DelegatingEventFilter
 {

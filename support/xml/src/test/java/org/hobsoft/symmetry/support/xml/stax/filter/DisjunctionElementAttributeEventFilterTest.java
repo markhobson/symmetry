@@ -19,7 +19,6 @@ import org.junit.Test;
  * Tests {@code DisjunctionElementAttributeEventFilter}.
  * 
  * @author Mark Hobson
- * @version $Id: DisjunctionElementAttributeEventFilterTest.java 88590 2011-05-27 09:55:44Z mark@IIZUKA.CO.UK $
  * @see DisjunctionElementAttributeEventFilter
  */
 public class DisjunctionElementAttributeEventFilterTest extends AbstractXMLEventTest

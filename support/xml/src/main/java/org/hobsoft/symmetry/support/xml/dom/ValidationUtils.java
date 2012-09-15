@@ -11,7 +11,6 @@ import org.w3c.dom.Node;
  * Provides various utility methods for working with the DOM Validation API.
  * 
  * @author Mark Hobson
- * @version $Id: ValidationUtils.java 69819 2010-01-21 15:54:06Z mark@IIZUKA.CO.UK $
  * @see <a href="http://www.w3.org/TR/2004/REC-DOM-Level-3-Val-20040127/">Document Object Model (DOM) Level 3 Validation
  *      Specification</a>
  */

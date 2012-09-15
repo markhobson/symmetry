@@ -14,7 +14,6 @@ import org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.EndVisit;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: FileChooser.java 98451 2012-02-14 14:59:30Z mark@IIZUKA.CO.UK $
  */
 public class FileChooser extends Component
 {

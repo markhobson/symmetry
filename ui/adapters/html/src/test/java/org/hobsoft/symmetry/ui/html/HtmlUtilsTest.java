@@ -18,7 +18,6 @@ import org.junit.Test;
  * Tests {@code HtmlUtils}.
  * 
  * @author Mark Hobson
- * @version $Id: HtmlUtilsTest.java 95604 2011-11-28 13:02:25Z mark@IIZUKA.CO.UK $
  * @see HtmlUtils
  */
 public class HtmlUtilsTest extends AbstractStaxTest

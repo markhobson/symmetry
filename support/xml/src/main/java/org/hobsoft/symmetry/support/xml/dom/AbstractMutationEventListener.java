@@ -13,7 +13,6 @@ import org.w3c.dom.events.MutationEvent;
  * An event listener that delegates mutation events to strongly-typed handler methods.
  * 
  * @author Mark Hobson
- * @version $Id: AbstractMutationEventListener.java 69819 2010-01-21 15:54:06Z mark@IIZUKA.CO.UK $
  */
 public abstract class AbstractMutationEventListener implements EventListener
 {

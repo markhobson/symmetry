@@ -14,7 +14,6 @@ import org.jmock.Mockery;
  * Factory for mock {@code ActionListener}s.
  * 
  * @author Mark Hobson
- * @version $Id: MockActionListeners.java 95269 2011-11-17 15:45:14Z mark@IIZUKA.CO.UK $
  */
 public final class MockActionListeners
 {

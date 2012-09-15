@@ -13,7 +13,6 @@ import com.googlecode.jtype.Generic;
  * Tests {@code CheckBox}.
  * 
  * @author Mark Hobson
- * @version $Id: CheckBoxTest.java 95528 2011-11-25 19:00:17Z mark@IIZUKA.CO.UK $
  * @see CheckBox
  */
 public class CheckBoxTest extends AbstractComponentTest<CheckBox>

@@ -11,7 +11,6 @@ import org.hobsoft.symmetry.KozoException;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: ComponentPoolException.java 95220 2011-11-16 15:04:18Z mark@IIZUKA.CO.UK $
  */
 public class ComponentPoolException extends KozoException
 {

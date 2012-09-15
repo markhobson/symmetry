@@ -13,7 +13,6 @@ import org.hobsoft.symmetry.ui.Button;
  * Phased hydrator that dehydrates and rehydrates a {@code Button} component using an HTML {@code <button/>} tag.
  * 
  * @author Mark Hobson
- * @version $Id: ButtonHtmlButtonHydrator.java 98843 2012-02-29 10:01:13Z mark@IIZUKA.CO.UK $
  * @see Button
  * @param <T>
  *            the button type this visitor can visit

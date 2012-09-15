@@ -14,7 +14,6 @@ import java.util.StringTokenizer;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: StringDataInput.java 98796 2012-02-27 13:09:09Z mark@IIZUKA.CO.UK $
  */
 public class StringDataInput implements DataInput
 {

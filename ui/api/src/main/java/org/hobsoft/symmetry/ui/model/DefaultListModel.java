@@ -21,7 +21,6 @@ import static org.hobsoft.symmetry.ui.model.Utilities.setSize;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: DefaultListModel.java 99067 2012-03-08 13:04:22Z mark@IIZUKA.CO.UK $
  * @param <T>
  *            the item type
  */

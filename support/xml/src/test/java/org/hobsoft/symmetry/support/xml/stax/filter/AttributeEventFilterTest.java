@@ -14,7 +14,6 @@ import org.junit.Test;
  * Tests {@code AttributeEventFilter}.
  * 
  * @author Mark Hobson
- * @version $Id: AttributeEventFilterTest.java 88579 2011-05-26 17:10:58Z mark@IIZUKA.CO.UK $
  * @see AttributeEventFilter
  */
 public class AttributeEventFilterTest extends AbstractXMLEventTest

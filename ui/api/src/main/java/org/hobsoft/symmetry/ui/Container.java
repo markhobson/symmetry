@@ -31,7 +31,6 @@ import static org.hobsoft.symmetry.ui.traversal.Visits.nullEndVisit;
  * A component that can contain other components.
  * 
  * @author Mark Hobson
- * @version $Id: Container.java 101286 2012-05-15 14:33:36Z mark@IIZUKA.CO.UK $
  */
 public abstract class Container extends Component implements Iterable<Component>
 {

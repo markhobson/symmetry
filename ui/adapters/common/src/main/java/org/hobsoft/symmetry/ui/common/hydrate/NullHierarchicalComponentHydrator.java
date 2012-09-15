@@ -14,7 +14,6 @@ import org.hobsoft.symmetry.ui.traversal.NullHierarchicalComponentVisitor;
  * Convenience class that adapts a {@code NullHierarchicalComponentVisitor} to a {@code HierarchicalComponentHydrator}.
  * 
  * @author Mark Hobson
- * @version $Id: NullHierarchicalComponentHydrator.java 98863 2012-02-29 10:48:53Z mark@IIZUKA.CO.UK $
  * @param <T>
  *            the component type this visitor can visit
  */

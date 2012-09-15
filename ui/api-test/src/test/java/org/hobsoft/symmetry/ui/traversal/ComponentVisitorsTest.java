@@ -46,7 +46,6 @@ import org.junit.runner.RunWith;
  * Tests {@code ComponentVisitors}.
  * 
  * @author Mark Hobson
- * @version $Id: ComponentVisitorsTest.java 100092 2012-03-30 11:49:15Z mark@IIZUKA.CO.UK $
  * @see ComponentVisitors
  */
 @RunWith(JMock.class)

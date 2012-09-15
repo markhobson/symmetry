@@ -17,7 +17,6 @@ import org.hobsoft.symmetry.ui.functor.Functions;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: ListCellRenderers.java 99067 2012-03-08 13:04:22Z mark@IIZUKA.CO.UK $
  */
 public final class ListCellRenderers
 {

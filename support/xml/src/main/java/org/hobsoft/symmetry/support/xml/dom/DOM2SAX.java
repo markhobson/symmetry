@@ -33,7 +33,6 @@ import org.xml.sax.helpers.AttributesImpl;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: DOM2SAX.java 69825 2010-01-21 18:03:52Z mark@IIZUKA.CO.UK $
  */
 public class DOM2SAX extends AbstractXMLReader
 {

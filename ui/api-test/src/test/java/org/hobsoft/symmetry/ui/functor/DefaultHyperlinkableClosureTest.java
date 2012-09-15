@@ -16,7 +16,6 @@ import org.junit.Test;
  * Tests {@code DefaultHyperlinkableClosure}.
  * 
  * @author Mark Hobson
- * @version $Id: DefaultHyperlinkableClosureTest.java 88711 2011-06-03 15:44:30Z mark@IIZUKA.CO.UK $
  * @see DefaultHyperlinkableClosure
  */
 public class DefaultHyperlinkableClosureTest

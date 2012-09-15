@@ -14,7 +14,6 @@ import java.util.Map.Entry;
  * 
  * 
  * @author Mark Hobson
- * @version $Id$
  * @param <X>
  *            the object type that this codec can encode
  * @param <Y>

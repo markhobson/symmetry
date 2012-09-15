@@ -17,7 +17,6 @@ import com.googlecode.jtype.Generic;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: ComponentHydrator.java 95595 2011-11-28 12:38:59Z mark@IIZUKA.CO.UK $
  */
 public interface ComponentHydrator extends ComponentVisitor<HydrationContext, HydrationException>
 {

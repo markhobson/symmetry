@@ -13,7 +13,6 @@ import org.w3c.dom.Node;
  * A node closure that replaces nodes with their children.
  * 
  * @author Mark Hobson
- * @version $Id: UnsurroundClosure.java 69819 2010-01-21 15:54:06Z mark@IIZUKA.CO.UK $
  */
 public class UnsurroundClosure implements NodeClosure
 {

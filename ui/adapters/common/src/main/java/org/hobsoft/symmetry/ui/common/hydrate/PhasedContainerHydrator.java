@@ -17,7 +17,6 @@ import org.hobsoft.symmetry.ui.traversal.DelegatingContainerVisitor;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: PhasedContainerHydrator.java 99112 2012-03-09 15:21:08Z mark@IIZUKA.CO.UK $
  * @param <T>
  *            the component type this visitor can visit
  */

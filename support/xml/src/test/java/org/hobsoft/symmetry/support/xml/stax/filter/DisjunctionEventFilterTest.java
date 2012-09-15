@@ -16,7 +16,6 @@ import org.junit.Test;
  * Tests <code>DisjunctionEventFilter</code>.
  * 
  * @author Mark Hobson
- * @version $Id: DisjunctionEventFilterTest.java 88550 2011-05-26 10:11:55Z mark@IIZUKA.CO.UK $
  * @see DisjunctionEventFilter
  */
 public class DisjunctionEventFilterTest

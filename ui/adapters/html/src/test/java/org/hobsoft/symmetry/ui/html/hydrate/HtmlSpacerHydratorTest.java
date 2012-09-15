@@ -16,7 +16,6 @@ import org.junit.Test;
  * Tests {@code HtmlSpacerHydrator}.
  * 
  * @author Mark Hobson
- * @version $Id: HtmlSpacerHydratorTest.java 98843 2012-02-29 10:01:13Z mark@IIZUKA.CO.UK $
  * @see HtmlSpacerHydrator
  */
 public class HtmlSpacerHydratorTest extends AbstractXmlRenderKitTest<Spacer>

@@ -14,7 +14,6 @@ import org.hobsoft.symmetry.support.codec.builder.CompoundParticle;
  * Factory class for building codecs.
  * 
  * @author Mark Hobson
- * @version $Id: Codecs.java 92871 2011-09-23 12:49:17Z mark@IIZUKA.CO.UK $
  */
 public final class Codecs
 {

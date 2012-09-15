@@ -22,7 +22,6 @@ import org.xml.sax.helpers.XMLFilterImpl;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: AbstractWhitespaceXMLFilter.java 69819 2010-01-21 15:54:06Z mark@IIZUKA.CO.UK $
  */
 public class AbstractWhitespaceXMLFilter extends XMLFilterImpl
 {

@@ -21,7 +21,6 @@ import org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.EndVisit;
  * A container that lays its children out on top of one another.
  * 
  * @author Mark Hobson
- * @version $Id: Deck.java 99112 2012-03-09 15:21:08Z mark@IIZUKA.CO.UK $
  */
 public class Deck extends Box
 {

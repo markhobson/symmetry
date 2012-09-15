@@ -15,7 +15,6 @@ import org.w3c.dom.Element;
  * Tests <code>AttrFilter</code>.
  * 
  * @author Mark Hobson
- * @version $Id: AttrFilterTest.java 69822 2010-01-21 17:57:20Z mark@IIZUKA.CO.UK $
  * @see AttrFilter
  */
 public class AttrFilterTest extends AbstractNodeFilterTest

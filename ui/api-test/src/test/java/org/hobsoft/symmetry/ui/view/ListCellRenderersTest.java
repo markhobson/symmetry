@@ -18,7 +18,6 @@ import org.junit.Test;
  * Tests {@code ListCellRenderers}.
  * 
  * @author Mark Hobson
- * @version $Id: ListCellRenderersTest.java 95444 2011-11-22 17:25:00Z mark@IIZUKA.CO.UK $
  * @see ListCellRenderers
  */
 public class ListCellRenderersTest

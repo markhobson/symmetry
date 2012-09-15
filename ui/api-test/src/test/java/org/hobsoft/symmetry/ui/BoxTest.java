@@ -30,7 +30,6 @@ import org.junit.Test;
  * Tests {@code Box}.
  * 
  * @author Mark Hobson
- * @version $Id: BoxTest.java 99566 2012-03-15 16:00:09Z mark@IIZUKA.CO.UK $
  * @see Box
  */
 public class BoxTest extends AbstractComponentTest<Box>

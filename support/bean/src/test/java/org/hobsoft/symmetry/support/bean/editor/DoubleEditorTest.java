@@ -22,7 +22,6 @@ import org.junit.runner.RunWith;
  * Tests {@code DoubleEditor}.
  * 
  * @author Mark Hobson
- * @version $Id: DoubleEditorTest.java 97413 2011-12-30 17:52:58Z mark@IIZUKA.CO.UK $
  * @see DoubleEditor
  */
 @RunWith(JMock.class)

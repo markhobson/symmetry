@@ -11,7 +11,6 @@ import javax.xml.stream.events.XMLEvent;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: EventTransformer.java 69819 2010-01-21 15:54:06Z mark@IIZUKA.CO.UK $
  */
 public interface EventTransformer
 {

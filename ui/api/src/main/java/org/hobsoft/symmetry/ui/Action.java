@@ -13,7 +13,6 @@ import org.hobsoft.symmetry.ui.event.ActionListener;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: Action.java 73508 2010-04-02 15:56:49Z mark@IIZUKA.CO.UK $
  */
 public interface Action extends ActionListener
 {

@@ -28,7 +28,6 @@ import org.junit.Test;
  * Tests {@code HtmlRadioHydrator}.
  * 
  * @author Mark Hobson
- * @version $Id: HtmlRadioHydratorTest.java 98843 2012-02-29 10:01:13Z mark@IIZUKA.CO.UK $
  * @see HtmlRadioHydrator
  */
 public class HtmlRadioHydratorTest extends AbstractXmlRenderKitTest<Radio>

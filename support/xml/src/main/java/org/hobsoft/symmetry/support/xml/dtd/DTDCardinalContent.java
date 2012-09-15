@@ -9,7 +9,6 @@ package org.hobsoft.symmetry.support.xml.dtd;
  * An abstract DTD element content model that provides support for occurring a different number of times.
  * 
  * @author Mark Hobson
- * @version $Id: DTDCardinalContent.java 69819 2010-01-21 15:54:06Z mark@IIZUKA.CO.UK $
  */
 public abstract class DTDCardinalContent implements DTDContent
 {

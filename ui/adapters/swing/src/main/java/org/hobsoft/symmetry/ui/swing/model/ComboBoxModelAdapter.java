@@ -13,7 +13,6 @@ import org.hobsoft.symmetry.ui.model.ListModel;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: ComboBoxModelAdapter.java 94748 2011-10-24 14:57:43Z mark@IIZUKA.CO.UK $
  */
 public class ComboBoxModelAdapter extends ListModelAdapter implements ComboBoxModel
 {

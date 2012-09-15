@@ -16,7 +16,6 @@ import org.hobsoft.symmetry.support.codec.lang.LangEncoders;
  * Codec that encodes a big decimal to a string and vice-versa.
  * 
  * @author Mark Hobson
- * @version $Id: BigDecimalToStringCodec.java 75578 2010-08-02 18:30:22Z mark@IIZUKA.CO.UK $
  */
 class BigDecimalToStringCodec implements Codec<BigDecimal, String>
 {

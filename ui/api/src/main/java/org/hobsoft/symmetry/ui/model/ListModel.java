@@ -9,7 +9,6 @@ package org.hobsoft.symmetry.ui.model;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: ListModel.java 87354 2011-04-27 21:59:27Z mark@IIZUKA.CO.UK $
  * @param <T>
  *            the item type
  */

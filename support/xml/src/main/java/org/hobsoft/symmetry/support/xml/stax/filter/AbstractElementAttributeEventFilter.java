@@ -15,7 +15,6 @@ import javax.xml.stream.events.XMLEvent;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: AbstractElementAttributeEventFilter.java 88560 2011-05-26 13:50:49Z mark@IIZUKA.CO.UK $
  */
 abstract class AbstractElementAttributeEventFilter extends DelegatingEventFilter
 {

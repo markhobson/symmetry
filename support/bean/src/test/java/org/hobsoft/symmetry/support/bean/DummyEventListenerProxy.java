@@ -12,7 +12,6 @@ import java.util.EventListenerProxy;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: DummyEventListenerProxy.java 87666 2011-05-04 16:48:53Z mark@IIZUKA.CO.UK $
  */
 public class DummyEventListenerProxy extends EventListenerProxy
 {

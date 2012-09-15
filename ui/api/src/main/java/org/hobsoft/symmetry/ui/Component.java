@@ -25,7 +25,6 @@ import static org.hobsoft.symmetry.ui.traversal.Visits.nullEndVisit;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: Component.java 99566 2012-03-15 16:00:09Z mark@IIZUKA.CO.UK $
  */
 public abstract class Component extends AbstractBean
 {

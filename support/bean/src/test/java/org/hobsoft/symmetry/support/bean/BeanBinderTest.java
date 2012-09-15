@@ -24,7 +24,6 @@ import org.junit.runner.RunWith;
  * Tests {@code BeanBinder}.
  * 
  * @author Mark Hobson
- * @version $Id: BeanBinderTest.java 86815 2011-04-12 09:46:06Z mark@IIZUKA.CO.UK $
  * @see BeanBinder
  */
 @RunWith(JMock.class)

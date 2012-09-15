@@ -9,7 +9,6 @@ package org.hobsoft.symmetry.util.io;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: SerializerContext.java 58746 2009-03-27 22:56:13Z mark@IIZUKA.CO.UK $
  */
 public interface SerializerContext
 {

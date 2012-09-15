@@ -20,7 +20,6 @@ import org.xml.sax.SAXException;
  * 
  * @author Mark Hobson
  * @author Mike Atkin
- * @version $Id: SAX2Stream.java 69819 2010-01-21 15:54:06Z mark@IIZUKA.CO.UK $
  */
 public class SAX2Stream extends AbstractSAXHandler
 {

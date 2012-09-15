@@ -13,7 +13,6 @@ import com.googlecode.jtype.Generic;
  * Tests {@code PasswordBox}.
  * 
  * @author Mark Hobson
- * @version $Id: PasswordBoxTest.java 96224 2011-12-09 16:24:18Z mark@IIZUKA.CO.UK $
  * @see PasswordBox
  */
 public class PasswordBoxTest extends AbstractComponentTest<PasswordBox>

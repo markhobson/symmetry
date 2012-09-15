@@ -12,7 +12,6 @@ import org.hobsoft.symmetry.hydrate.ComponentRenderKit;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: KozoServletConfig.java 95595 2011-11-28 12:38:59Z mark@IIZUKA.CO.UK $
  */
 public class KozoServletConfig
 {

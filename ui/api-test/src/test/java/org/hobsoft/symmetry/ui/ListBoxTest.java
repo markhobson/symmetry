@@ -32,7 +32,6 @@ import org.junit.Test;
  * Tests {@code ListBox}.
  * 
  * @author Mark Hobson
- * @version $Id: ListBoxTest.java 99052 2012-03-08 11:58:53Z mark@IIZUKA.CO.UK $
  * @see ListBox
  */
 public class ListBoxTest extends AbstractComponentTest<ListBox<?>>

@@ -17,7 +17,6 @@ import org.junit.Test;
  * Tests {@code ArrayUtils}.
  * 
  * @author Mark Hobson
- * @version $Id: ArrayUtilsTest.java 98228 2012-02-02 11:29:46Z mark@IIZUKA.CO.UK $
  * @see ArrayUtils
  */
 public class ArrayUtilsTest

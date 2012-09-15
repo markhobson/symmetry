@@ -15,7 +15,6 @@ import static org.hobsoft.symmetry.ui.internal.Preconditions.checkNonNegative;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: Length.java 99930 2012-03-27 11:01:49Z mark@IIZUKA.CO.UK $
  */
 public final class Length
 {

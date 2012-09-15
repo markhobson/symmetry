@@ -13,7 +13,6 @@ import java.util.logging.Logger;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: DefaultPropertyEditorErrorHandler.java 97399 2011-12-30 11:55:45Z mark@IIZUKA.CO.UK $
  */
 public class DefaultPropertyEditorErrorHandler implements PropertyEditorErrorHandler
 {

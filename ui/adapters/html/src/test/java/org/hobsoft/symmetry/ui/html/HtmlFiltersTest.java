@@ -23,7 +23,6 @@ import org.junit.Test;
  * Tests {@code HtmlFilters}.
  * 
  * @author Mark Hobson
- * @version $Id: HtmlFiltersTest.java 89487 2011-07-01 09:48:38Z mark@IIZUKA.CO.UK $
  * @see HtmlFilters
  */
 public class HtmlFiltersTest

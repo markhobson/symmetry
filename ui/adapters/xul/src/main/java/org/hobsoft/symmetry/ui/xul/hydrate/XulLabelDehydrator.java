@@ -20,7 +20,6 @@ import static org.hobsoft.symmetry.xml.XmlUtils.writeAttributeIfNotEmpty;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: XulLabelDehydrator.java 99566 2012-03-15 16:00:09Z mark@IIZUKA.CO.UK $
  * @param <T>
  *            the component type this visitor can visit
  */

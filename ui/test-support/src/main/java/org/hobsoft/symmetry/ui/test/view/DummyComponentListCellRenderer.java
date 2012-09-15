@@ -14,7 +14,6 @@ import org.hobsoft.symmetry.ui.view.ListCellRenderer;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: DummyComponentListCellRenderer.java 95834 2011-12-01 09:40:04Z mark@IIZUKA.CO.UK $
  * @param <T>
  *            the item type
  */

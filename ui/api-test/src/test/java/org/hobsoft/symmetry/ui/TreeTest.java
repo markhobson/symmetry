@@ -23,7 +23,6 @@ import org.junit.Test;
  * Tests {@code Tree}.
  * 
  * @author Mark Hobson
- * @version $Id: TreeTest.java 95615 2011-11-29 10:04:50Z mark@IIZUKA.CO.UK $
  * @see Tree
  */
 public class TreeTest extends AbstractComponentTest<Tree>

@@ -14,7 +14,6 @@ import org.junit.Test;
  * Tests <code>DTDCardinalContent</code>.
  * 
  * @author Mark Hobson
- * @version $Id: DTDCardinalContentTest.java 69822 2010-01-21 17:57:20Z mark@IIZUKA.CO.UK $
  * @see DTDCardinalContent
  */
 public class DTDCardinalContentTest

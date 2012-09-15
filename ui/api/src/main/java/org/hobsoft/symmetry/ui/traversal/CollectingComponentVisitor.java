@@ -16,7 +16,6 @@ import com.googlecode.jtype.Generic;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: CollectingComponentVisitor.java 99716 2012-03-21 15:00:49Z mark@IIZUKA.CO.UK $
  */
 public class CollectingComponentVisitor extends NullComponentVisitor<Void, RuntimeException>
 {

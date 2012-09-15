@@ -11,7 +11,6 @@ import org.hobsoft.symmetry.support.xml.dom.visitor.ClosureNodeVisitor;
  * A factory to build various node visitors.
  * 
  * @author Mark Hobson
- * @version $Id: NodeVisitors.java 69819 2010-01-21 15:54:06Z mark@IIZUKA.CO.UK $
  */
 public final class NodeVisitors
 {

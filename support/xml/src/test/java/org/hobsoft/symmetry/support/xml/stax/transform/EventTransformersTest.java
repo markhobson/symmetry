@@ -19,7 +19,6 @@ import org.junit.Test;
  * Tests {@code EventTransformers}.
  * 
  * @author Mark Hobson
- * @version $Id: EventTransformersTest.java 88599 2011-05-27 11:54:07Z mark@IIZUKA.CO.UK $
  * @see EventTransformers
  */
 public class EventTransformersTest extends AbstractXMLEventTest

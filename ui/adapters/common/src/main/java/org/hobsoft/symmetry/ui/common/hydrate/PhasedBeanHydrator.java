@@ -16,7 +16,6 @@ import static org.hobsoft.symmetry.ui.common.hydrate.ComponentHydrators.beanProp
  * 
  * 
  * @author Mark Hobson
- * @version $Id: PhasedBeanHydrator.java 98843 2012-02-29 10:01:13Z mark@IIZUKA.CO.UK $
  * @param <T>
  *            the component type this visitor can visit
  */

@@ -19,7 +19,6 @@ import static org.hobsoft.symmetry.support.xml.stax.filter.TypeEventFilters.char
  * 
  * 
  * @author Mark Hobson
- * @version $Id: HtmlFilters.java 95182 2011-11-16 10:19:23Z mark@IIZUKA.CO.UK $
  */
 public final class HtmlFilters
 {

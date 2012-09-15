@@ -20,7 +20,6 @@ import static org.hobsoft.symmetry.ui.xml.test.hydrate.StubXmlComponentHydrators
  * Tests {@code XulTabBoxDehydrator}.
  * 
  * @author Mark Hobson
- * @version $Id: XulTabBoxDehydratorTest.java 98843 2012-02-29 10:01:13Z mark@IIZUKA.CO.UK $
  * @see XulTabBoxDehydrator
  */
 public class XulTabBoxDehydratorTest extends AbstractXmlRenderKitTest<TabBox>

@@ -20,7 +20,6 @@ import static org.hobsoft.symmetry.ui.html.HtmlUtils.writeStyle;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: HtmlTableUtils.java 100106 2012-03-30 16:22:57Z mark@IIZUKA.CO.UK $
  */
 final class HtmlTableUtils
 {

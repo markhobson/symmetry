@@ -13,7 +13,6 @@ import org.hobsoft.symmetry.ui.view.TableCellRenderer;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: NullComponentTableCellRenderer.java 99606 2012-03-16 12:46:26Z mark@IIZUKA.CO.UK $
  */
 public class NullComponentTableCellRenderer implements TableCellRenderer
 {

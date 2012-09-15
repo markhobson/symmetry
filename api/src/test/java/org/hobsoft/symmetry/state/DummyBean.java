@@ -13,7 +13,6 @@ import javax.swing.event.EventListenerList;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: DummyBean.java 98171 2012-01-30 19:46:18Z mark@IIZUKA.CO.UK $
  */
 public class DummyBean
 {

@@ -22,7 +22,6 @@ import static org.hobsoft.symmetry.ui.xml.test.hydrate.StubXmlComponentHydrators
  * Tests {@code HtmlTabHydrator}.
  * 
  * @author Mark Hobson
- * @version $Id: HtmlTabHydratorTest.java 98871 2012-02-29 11:44:00Z mark@IIZUKA.CO.UK $
  * @see HtmlTabHydrator
  */
 public class HtmlTabHydratorTest extends AbstractXmlRenderKitTest<Tab>

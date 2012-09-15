@@ -21,7 +21,6 @@ import org.junit.runner.RunWith;
  * Tests {@code ComponentUtils}.
  * 
  * @author Mark Hobson
- * @version $Id: ComponentUtilsTest.java 95330 2011-11-18 12:00:44Z mark@IIZUKA.CO.UK $
  * @see ComponentUtils
  */
 @RunWith(JMock.class)

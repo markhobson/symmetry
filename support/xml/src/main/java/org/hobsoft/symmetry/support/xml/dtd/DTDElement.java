@@ -19,7 +19,6 @@ import org.w3c.dom.Node;
  * Represents an element type declaration within a DTD.
  * 
  * @author Mark Hobson
- * @version $Id: DTDElement.java 69819 2010-01-21 15:54:06Z mark@IIZUKA.CO.UK $
  * @see <a href="http://www.w3.org/TR/REC-xml/#elemdecls">3.2 Element Type Declarations</a>
  */
 public class DTDElement implements Iterable<DTDAttribute>

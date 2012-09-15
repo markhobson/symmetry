@@ -18,7 +18,6 @@ import org.hobsoft.symmetry.support.codec.EncoderException;
  * Codec that encodes a char array to a char stream and vice-versa.
  * 
  * @author Mark Hobson
- * @version $Id: CharArrayToStreamCodec.java 75588 2010-08-02 20:52:50Z mark@IIZUKA.CO.UK $
  */
 class CharArrayToStreamCodec extends AbstractCharStreamEncoder<char[]> implements CharStreamCodec<char[]>
 {

@@ -9,7 +9,6 @@ package org.hobsoft.symmetry.support.bean;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: BeanException.java 86792 2011-04-11 20:47:20Z mark@IIZUKA.CO.UK $
  */
 public class BeanException extends RuntimeException
 {

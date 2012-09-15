@@ -34,7 +34,6 @@ import org.junit.Before;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: AbstractXMLEventTest.java 88631 2011-05-31 15:52:29Z mark@IIZUKA.CO.UK $
  */
 public abstract class AbstractXMLEventTest
 {

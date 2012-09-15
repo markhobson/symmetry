@@ -18,7 +18,6 @@ import org.junit.Test;
  * Tests {@code TinyDataInput}.
  * 
  * @author Mark Hobson
- * @version $Id: TinyDataInputTest.java 98789 2012-02-27 12:01:42Z mark@IIZUKA.CO.UK $
  * @see TinyDataInput
  */
 public class TinyDataInputTest

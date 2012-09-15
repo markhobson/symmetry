@@ -17,7 +17,6 @@ import com.googlecode.jtype.Generic;
  * discussion of this pattern.
  * 
  * @author Mark Hobson
- * @version $Id: HierarchicalComponentVisitorContainer.java 95528 2011-11-25 19:00:17Z mark@IIZUKA.CO.UK $
  * @param <P>
  *            the parameter type this visitor takes
  * @param <E>

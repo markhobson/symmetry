@@ -9,7 +9,6 @@ package org.hobsoft.symmetry.ui;
  * A type-safe enumeration of component orientations.
  * 
  * @author Mark Hobson
- * @version $Id: Orientation.java 73508 2010-04-02 15:56:49Z mark@IIZUKA.CO.UK $
  * @see org.hobsoft.symmetry.ui.Box#setOrientation(Orientation)
  */
 public enum Orientation

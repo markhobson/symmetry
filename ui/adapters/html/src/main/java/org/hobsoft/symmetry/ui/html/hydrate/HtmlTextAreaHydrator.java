@@ -13,7 +13,6 @@ import org.hobsoft.symmetry.ui.TextArea;
  * Phased hydrator that dehydrates and rehydrates a {@code TextArea} component using an HTML {@code <textarea/>} tag.
  * 
  * @author Mark Hobson
- * @version $Id: HtmlTextAreaHydrator.java 98843 2012-02-29 10:01:13Z mark@IIZUKA.CO.UK $
  * @see TextArea
  * @param <T>
  *            the text area type this visitor can visit

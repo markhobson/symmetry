@@ -11,7 +11,6 @@ import java.beans.PropertyEditor;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: GenericPropertyEditor.java 86783 2011-04-11 18:18:45Z mark@IIZUKA.CO.UK $
  */
 public interface GenericPropertyEditor extends PropertyEditor
 {

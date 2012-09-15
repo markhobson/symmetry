@@ -16,7 +16,6 @@ import org.junit.Test;
  * Tests {@code XulButtonDehydrator}.
  * 
  * @author Mark Hobson
- * @version $Id: XulButtonDehydratorTest.java 98843 2012-02-29 10:01:13Z mark@IIZUKA.CO.UK $
  * @see XulButtonDehydrator
  */
 public class XulButtonDehydratorTest extends AbstractXmlRenderKitTest<Button>

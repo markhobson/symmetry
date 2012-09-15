@@ -16,7 +16,6 @@ import org.junit.Test;
  * Tests {@code NullCodec}.
  * 
  * @author Mark Hobson
- * @version $Id: NullCodecTest.java 75370 2010-07-26 10:10:09Z mark@IIZUKA.CO.UK $
  * @see NullCodec
  */
 public class NullCodecTest

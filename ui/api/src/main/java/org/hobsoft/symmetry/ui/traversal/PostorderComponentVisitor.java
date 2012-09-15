@@ -15,7 +15,6 @@ import static org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.End
  * 
  * 
  * @author Mark Hobson
- * @version $Id: PostorderComponentVisitor.java 99716 2012-03-21 15:00:49Z mark@IIZUKA.CO.UK $
  * @param <P>
  *            the parameter type this visitor takes
  * @param <E>

@@ -17,7 +17,6 @@ import org.junit.Test;
  * Tests {@code SelectionEvent}.
  * 
  * @author Mark Hobson
- * @version $Id: SelectionEventTest.java 88173 2011-05-18 09:24:49Z mark@IIZUKA.CO.UK $
  * @see SelectionEvent
  */
 public class SelectionEventTest

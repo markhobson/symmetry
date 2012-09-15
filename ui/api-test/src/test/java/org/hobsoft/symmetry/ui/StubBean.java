@@ -9,7 +9,6 @@ package org.hobsoft.symmetry.ui;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: StubBean.java 86967 2011-04-19 08:50:19Z mark@IIZUKA.CO.UK $
  */
 public class StubBean
 {

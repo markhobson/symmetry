@@ -18,7 +18,6 @@ import org.hobsoft.symmetry.ui.layout.Length.Unit;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: LengthUtils.java 100108 2012-03-30 16:24:51Z mark@IIZUKA.CO.UK $
  */
 final class LengthUtils
 {

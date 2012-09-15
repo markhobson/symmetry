@@ -21,7 +21,6 @@ import org.jmock.Mockery;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: ListModelSupport.java 95614 2011-11-29 09:52:09Z mark@IIZUKA.CO.UK $
  */
 public final class ListModelSupport
 {

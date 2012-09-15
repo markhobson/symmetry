@@ -20,7 +20,6 @@ import static org.hobsoft.symmetry.ui.traversal.ComponentVisitors.asContainerVis
  * 
  * 
  * @author Mark Hobson
- * @version $Id: StubXmlComponentHydrators.java 99143 2012-03-09 16:50:29Z mark@IIZUKA.CO.UK $
  */
 public final class StubXmlComponentHydrators
 {

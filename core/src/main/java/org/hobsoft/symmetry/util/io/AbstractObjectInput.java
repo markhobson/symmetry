@@ -15,7 +15,6 @@ import java.io.ObjectInput;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: AbstractObjectInput.java 94748 2011-10-24 14:57:43Z mark@IIZUKA.CO.UK $
  */
 public abstract class AbstractObjectInput extends DelegatingDataInput implements ObjectInput
 {

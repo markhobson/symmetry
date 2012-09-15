@@ -9,7 +9,6 @@ package org.hobsoft.symmetry.ui.model;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: BeanTableModel.java 86766 2011-04-11 15:06:48Z mark@IIZUKA.CO.UK $
  * @param <T>
  *            the bean type
  */

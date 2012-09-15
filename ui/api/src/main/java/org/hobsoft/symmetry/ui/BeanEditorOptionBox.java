@@ -12,7 +12,6 @@ import org.hobsoft.symmetry.ui.event.OptionListener;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: BeanEditorOptionBox.java 94748 2011-10-24 14:57:43Z mark@IIZUKA.CO.UK $
  * @param <T>
  *            the bean type
  */

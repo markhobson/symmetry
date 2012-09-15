@@ -9,7 +9,6 @@ package org.hobsoft.symmetry.support.bean;
  * Tests {@code DefaultBeanIntrospector} against the TCK.
  * 
  * @author Mark Hobson
- * @version $Id: DefaultBeanIntrospectorTest.java 86795 2011-04-11 21:03:44Z mark@IIZUKA.CO.UK $
  * @see DefaultBeanIntrospector
  */
 public class DefaultBeanIntrospectorTest extends BeanIntrospectorTck

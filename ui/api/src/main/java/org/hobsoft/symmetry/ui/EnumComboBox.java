@@ -12,7 +12,6 @@ import org.hobsoft.symmetry.ui.view.ListCellRenderers;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: EnumComboBox.java 89153 2011-06-21 15:35:18Z mark@IIZUKA.CO.UK $
  * @param <E>
  *            the enum type
  */

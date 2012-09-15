@@ -9,7 +9,6 @@ package org.hobsoft.symmetry.ui;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: Style.java 87270 2011-04-26 09:43:44Z mark@IIZUKA.CO.UK $
  */
 public enum Style
 {

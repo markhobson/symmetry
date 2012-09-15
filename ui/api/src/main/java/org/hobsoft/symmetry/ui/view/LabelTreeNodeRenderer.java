@@ -16,7 +16,6 @@ import org.hobsoft.symmetry.ui.model.TreePath;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: LabelTreeNodeRenderer.java 100497 2012-04-16 15:42:05Z mark@IIZUKA.CO.UK $
  */
 public class LabelTreeNodeRenderer extends Label implements TreeNodeRenderer
 {

@@ -22,7 +22,6 @@ import org.hobsoft.symmetry.ui.Orientation;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: SwingBoxPeer.java 94748 2011-10-24 14:57:43Z mark@IIZUKA.CO.UK $
  */
 public class SwingBoxPeer extends AbstractPeerHandler
 {

@@ -13,7 +13,6 @@ import java.beans.Introspector;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: JdkBeanIntrospector.java 97399 2011-12-30 11:55:45Z mark@IIZUKA.CO.UK $
  */
 public class JdkBeanIntrospector extends AbstractBeanIntrospector
 {

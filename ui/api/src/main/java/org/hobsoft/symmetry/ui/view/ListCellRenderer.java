@@ -12,7 +12,6 @@ import org.hobsoft.symmetry.ui.Component;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: ListCellRenderer.java 87354 2011-04-27 21:59:27Z mark@IIZUKA.CO.UK $
  * @param <T>
  *            the item type
  */

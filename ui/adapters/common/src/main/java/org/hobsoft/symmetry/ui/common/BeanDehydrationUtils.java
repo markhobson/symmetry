@@ -24,7 +24,6 @@ import org.hobsoft.symmetry.support.bean.Properties;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: BeanDehydrationUtils.java 98416 2012-02-13 14:31:52Z mark@IIZUKA.CO.UK $
  */
 public final class BeanDehydrationUtils
 {

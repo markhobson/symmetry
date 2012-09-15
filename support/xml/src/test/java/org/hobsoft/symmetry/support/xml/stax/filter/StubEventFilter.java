@@ -12,7 +12,6 @@ import javax.xml.stream.events.XMLEvent;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: StubEventFilter.java 88560 2011-05-26 13:50:49Z mark@IIZUKA.CO.UK $
  */
 public class StubEventFilter implements EventFilter
 {

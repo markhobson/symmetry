@@ -9,7 +9,6 @@ package org.hobsoft.symmetry.ui;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: FakeEnum.java 90330 2011-07-08 11:17:36Z mark@IIZUKA.CO.UK $
  */
 public enum FakeEnum
 {

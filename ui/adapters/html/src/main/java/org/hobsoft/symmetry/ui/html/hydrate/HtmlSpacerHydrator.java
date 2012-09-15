@@ -12,7 +12,6 @@ import org.hobsoft.symmetry.ui.common.hydrate.PhasedBeanHydrator;
  * Phased hydrator that dehydrates and rehydrates a {@code Spacer} component using state alone.
  * 
  * @author Mark Hobson
- * @version $Id: HtmlSpacerHydrator.java 98843 2012-02-29 10:01:13Z mark@IIZUKA.CO.UK $
  * @see Spacer
  * @param <T>
  *            the spacer type this visitor can visit

@@ -31,7 +31,6 @@ import org.apache.commons.fileupload.util.Streams;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: HttpUtils.java 98454 2012-02-14 15:02:32Z mark@IIZUKA.CO.UK $
  */
 public final class HttpUtils
 {

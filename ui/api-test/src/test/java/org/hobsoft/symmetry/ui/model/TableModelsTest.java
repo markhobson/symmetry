@@ -18,7 +18,6 @@ import org.junit.runner.RunWith;
  * Tests {@code TableModels}.
  * 
  * @author Mark Hobson
- * @version $Id: TableModelsTest.java 91222 2011-08-03 09:53:13Z mark@IIZUKA.CO.UK $
  * @see TableModels
  */
 @RunWith(JMock.class)

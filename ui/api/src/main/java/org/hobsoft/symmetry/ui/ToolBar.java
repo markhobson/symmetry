@@ -12,7 +12,6 @@ import org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.EndVisit;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: ToolBar.java 99112 2012-03-09 15:21:08Z mark@IIZUKA.CO.UK $
  */
 public class ToolBar extends Box
 {

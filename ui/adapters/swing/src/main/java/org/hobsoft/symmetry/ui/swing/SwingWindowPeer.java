@@ -21,7 +21,6 @@ import org.hobsoft.symmetry.ui.Window;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: SwingWindowPeer.java 86750 2011-04-11 13:12:01Z mark@IIZUKA.CO.UK $
  */
 public class SwingWindowPeer extends SwingBoxPeer
 {

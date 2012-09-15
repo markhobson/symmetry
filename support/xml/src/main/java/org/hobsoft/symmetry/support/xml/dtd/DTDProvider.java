@@ -9,7 +9,6 @@ package org.hobsoft.symmetry.support.xml.dtd;
  * Defines an API for objects to provide DTD instances.
  * 
  * @author Mark Hobson
- * @version $Id: DTDProvider.java 69819 2010-01-21 15:54:06Z mark@IIZUKA.CO.UK $
  * @see DTD
  */
 public interface DTDProvider

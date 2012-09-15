@@ -35,7 +35,6 @@ import static org.hobsoft.symmetry.xml.XmlUtils.writeAttribute;
  * Hydrator that dehydrates a {@code Grid} component to an HTML {@code <table/>} tag.
  * 
  * @author Mark Hobson
- * @version $Id: HtmlGridDehydrator.java 100110 2012-03-30 16:31:26Z mark@IIZUKA.CO.UK $
  * @see Grid
  * @param <T>
  *            the grid type this visitor can visit

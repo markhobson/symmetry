@@ -12,7 +12,6 @@ import java.io.ObjectOutput;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: SerializerObjectOutput.java 94748 2011-10-24 14:57:43Z mark@IIZUKA.CO.UK $
  */
 public class SerializerObjectOutput extends DelegatingObjectOutput implements SerializerContext
 {

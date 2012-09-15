@@ -20,7 +20,6 @@ import org.junit.Test;
  * Tests {@code Label}.
  * 
  * @author Mark Hobson
- * @version $Id: LabelTest.java 95554 2011-11-25 23:15:51Z mark@IIZUKA.CO.UK $
  * @see Label
  */
 public class LabelTest extends AbstractComponentTest<Label>

@@ -21,7 +21,6 @@ import static org.hobsoft.symmetry.support.test.matcher.PropertyChangeEventMatch
  * Tests {@code PropertyChangeSupport2}.
  * 
  * @author Mark Hobson
- * @version $Id: PropertyChangeSupport2Test.java 97518 2012-01-04 16:28:52Z mark@IIZUKA.CO.UK $
  * @see PropertyChangeSupport2
  */
 @RunWith(JMock.class)

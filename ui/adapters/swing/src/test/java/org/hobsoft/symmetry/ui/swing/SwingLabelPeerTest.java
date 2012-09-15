@@ -20,7 +20,6 @@ import org.junit.Test;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: SwingLabelPeerTest.java 97403 2011-12-30 13:27:56Z mark@IIZUKA.CO.UK $
  */
 public class SwingLabelPeerTest
 {

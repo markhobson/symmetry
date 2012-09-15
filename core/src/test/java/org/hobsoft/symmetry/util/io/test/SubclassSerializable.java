@@ -9,7 +9,6 @@ package org.hobsoft.symmetry.util.io.test;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: SubclassSerializable.java 93651 2011-10-06 20:39:46Z mark@IIZUKA.CO.UK $
  */
 public class SubclassSerializable extends SimpleSerializable
 {

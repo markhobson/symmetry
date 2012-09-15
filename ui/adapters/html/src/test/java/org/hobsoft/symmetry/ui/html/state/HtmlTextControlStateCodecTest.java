@@ -20,7 +20,6 @@ import org.junit.Test;
  * Tests {@code HtmlTextControlStateCodec}.
  * 
  * @author Mark Hobson
- * @version $Id: HtmlTextControlStateCodecTest.java 94233 2011-10-10 16:51:01Z mark@IIZUKA.CO.UK $
  * @see HtmlTextControlStateCodec
  */
 public class HtmlTextControlStateCodecTest

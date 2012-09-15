@@ -14,7 +14,6 @@ import javax.xml.stream.util.EventReaderDelegate;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: EventReaderTransformer.java 88689 2011-06-02 14:10:49Z mark@IIZUKA.CO.UK $
  */
 public class EventReaderTransformer extends EventReaderDelegate
 {

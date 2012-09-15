@@ -18,7 +18,6 @@ import org.hobsoft.symmetry.ui.Component;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: SwtSpacerPeer.java 94748 2011-10-24 14:57:43Z mark@IIZUKA.CO.UK $
  */
 public class SwtSpacerPeer extends AbstractPeerHandler
 {

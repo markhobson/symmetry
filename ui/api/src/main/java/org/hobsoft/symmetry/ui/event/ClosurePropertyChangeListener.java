@@ -14,7 +14,6 @@ import org.hobsoft.symmetry.ui.functor.Closure;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: ClosurePropertyChangeListener.java 94748 2011-10-24 14:57:43Z mark@IIZUKA.CO.UK $
  */
 public final class ClosurePropertyChangeListener extends AbstractClosureEventListener<PropertyChangeEvent>
 	implements PropertyChangeListener

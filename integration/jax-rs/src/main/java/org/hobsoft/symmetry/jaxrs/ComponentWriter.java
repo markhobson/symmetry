@@ -29,7 +29,6 @@ import org.hobsoft.symmetry.state.State;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: ComponentWriter.java 95640 2011-11-29 12:28:54Z mark@IIZUKA.CO.UK $
  */
 @Provider
 public class ComponentWriter implements MessageBodyWriter<Object>

@@ -21,7 +21,6 @@ import org.junit.Test;
  * Tests {@code StringPropertyValueStateCodec}.
  * 
  * @author Mark Hobson
- * @version $Id: StringPropertyValueStateCodecTest.java 101085 2012-05-04 14:51:36Z mark@IIZUKA.CO.UK $
  * @see StringPropertyValueStateCodec
  */
 public class StringPropertyValueStateCodecTest

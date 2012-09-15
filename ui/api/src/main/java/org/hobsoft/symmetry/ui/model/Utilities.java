@@ -13,7 +13,6 @@ import java.util.List;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: Utilities.java 99430 2012-03-13 11:22:29Z mark@IIZUKA.CO.UK $
  */
 final class Utilities
 {

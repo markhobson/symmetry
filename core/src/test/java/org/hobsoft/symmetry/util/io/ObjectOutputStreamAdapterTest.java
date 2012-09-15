@@ -18,7 +18,6 @@ import org.junit.Test;
  * Tests {@code ObjectOutputStreamAdapter}.
  * 
  * @author Mark Hobson
- * @version $Id: ObjectOutputStreamAdapterTest.java 95224 2011-11-16 15:37:43Z mark@IIZUKA.CO.UK $
  * @see ObjectOutputStreamAdapter
  */
 public class ObjectOutputStreamAdapterTest

@@ -23,7 +23,6 @@ import org.junit.Test;
  * Tests {@code DefaultListModel}.
  * 
  * @author Mark Hobson
- * @version $Id: DefaultListModelTest.java 95444 2011-11-22 17:25:00Z mark@IIZUKA.CO.UK $
  * @see DefaultListModel
  */
 public class DefaultListModelTest

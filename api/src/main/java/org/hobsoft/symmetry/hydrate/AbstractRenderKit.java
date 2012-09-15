@@ -14,7 +14,6 @@ import org.hobsoft.symmetry.state.StateException;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: AbstractRenderKit.java 95658 2011-11-29 15:18:50Z mark@IIZUKA.CO.UK $
  * @param <T>
  *            the base component type this kit can render
  */

@@ -31,7 +31,6 @@ import static org.hobsoft.symmetry.xml.XmlUtils.writeAttributeIfNotNull;
  * Hydrator that dehydrates a {@code ListBox} component to an HTML {@code <select/>} tag.
  * 
  * @author Mark Hobson
- * @version $Id: HtmlListBoxDehydrator.java 100086 2012-03-30 10:28:05Z mark@IIZUKA.CO.UK $
  * @see ListBox
  * @param <T>
  *            the list box type this visitor can visit

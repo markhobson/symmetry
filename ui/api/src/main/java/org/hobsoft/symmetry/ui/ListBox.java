@@ -33,7 +33,6 @@ import static org.hobsoft.symmetry.ui.internal.Preconditions.checkNonNegative;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: ListBox.java 99067 2012-03-08 13:04:22Z mark@IIZUKA.CO.UK $
  * @param <T>
  *            the item type
  */

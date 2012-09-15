@@ -25,7 +25,6 @@ import org.junit.Test;
  * Tests {@code HtmlTextBoxHydrator}.
  * 
  * @author Mark Hobson
- * @version $Id: HtmlTextBoxHydratorTest.java 98843 2012-02-29 10:01:13Z mark@IIZUKA.CO.UK $
  * @see HtmlTextBoxHydrator
  */
 public class HtmlTextBoxHydratorTest extends AbstractXmlRenderKitTest<TextBox>

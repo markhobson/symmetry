@@ -14,7 +14,6 @@ import org.hobsoft.symmetry.ui.test.DummyComponent;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: DummyComponentRehydrator.java 98880 2012-02-29 17:06:58Z mark@IIZUKA.CO.UK $
  */
 public class DummyComponentRehydrator extends NullHierarchicalComponentHydrator<DummyComponent>
 {

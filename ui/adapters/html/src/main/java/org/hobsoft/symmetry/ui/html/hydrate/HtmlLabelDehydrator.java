@@ -27,7 +27,6 @@ import static org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.Vis
  * Hydrator that dehydrates a {@code Label} component to an HTML {@code <p/>} tag.
  * 
  * @author Mark Hobson
- * @version $Id: HtmlLabelDehydrator.java 98843 2012-02-29 10:01:13Z mark@IIZUKA.CO.UK $
  * @see Label
  * @param <T>
  *            the label type this visitor can visit

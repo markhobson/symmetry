@@ -11,7 +11,6 @@ import java.util.NoSuchElementException;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: StringScanner.java 69819 2010-01-21 15:54:06Z mark@IIZUKA.CO.UK $
  */
 class StringScanner
 {

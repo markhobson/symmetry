@@ -26,7 +26,6 @@ import org.junit.Test;
  * Tests {@code HtmlPasswordBoxHydrator}.
  * 
  * @author Mark Hobson
- * @version $Id: HtmlPasswordBoxHydratorTest.java 98843 2012-02-29 10:01:13Z mark@IIZUKA.CO.UK $
  * @see HtmlPasswordBoxHydrator
  */
 public class HtmlPasswordBoxHydratorTest extends AbstractXmlRenderKitTest<PasswordBox>

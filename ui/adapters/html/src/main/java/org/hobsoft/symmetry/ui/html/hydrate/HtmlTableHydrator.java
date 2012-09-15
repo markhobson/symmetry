@@ -17,7 +17,6 @@ import static org.hobsoft.symmetry.ui.traversal.ComponentVisitors.asTableVisitor
  * Phased hydrator that dehydrates and rehydrates a {@code Table} component using an HTML {@code <table/>} tag.
  * 
  * @author Mark Hobson
- * @version $Id: HtmlTableHydrator.java 99705 2012-03-20 16:49:55Z mark@IIZUKA.CO.UK $
  * @see Table
  * @param <T>
  *            the table type this visitor can visit

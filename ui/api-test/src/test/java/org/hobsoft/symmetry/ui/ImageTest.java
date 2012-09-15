@@ -22,7 +22,6 @@ import org.junit.Test;
  * Tests {@code Image}.
  * 
  * @author Mark Hobson
- * @version $Id: ImageTest.java 89638 2011-07-06 14:14:52Z mark@IIZUKA.CO.UK $
  * @see Image
  */
 public class ImageTest

@@ -17,7 +17,6 @@ import org.junit.Test;
  * Tests {@code WellFormedEventFilter}.
  * 
  * @author Mark Hobson
- * @version $Id: WellFormedEventFilterTest.java 88594 2011-05-27 10:31:46Z mark@IIZUKA.CO.UK $
  * @see WellFormedEventFilter
  */
 public class WellFormedEventFilterTest extends AbstractXMLEventTest

@@ -9,7 +9,6 @@ package org.hobsoft.symmetry.support.xml.dtd;
  * Defines a DTD element content model.
  * 
  * @author Mark Hobson
- * @version $Id: DTDContent.java 69819 2010-01-21 15:54:06Z mark@IIZUKA.CO.UK $
  */
 public interface DTDContent
 {

@@ -37,7 +37,6 @@ import org.w3c.dom.Text;
  * </p>
  * 
  * @author Mark Hobson
- * @version $Id: AbstractNodeVisitor.java 69819 2010-01-21 15:54:06Z mark@IIZUKA.CO.UK $
  */
 public class AbstractNodeVisitor implements NodeVisitor
 {

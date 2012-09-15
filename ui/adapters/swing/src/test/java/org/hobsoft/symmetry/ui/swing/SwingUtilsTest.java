@@ -21,7 +21,6 @@ import org.junit.Test;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: SwingUtilsTest.java 97405 2011-12-30 13:36:34Z mark@IIZUKA.CO.UK $
  */
 public class SwingUtilsTest
 {

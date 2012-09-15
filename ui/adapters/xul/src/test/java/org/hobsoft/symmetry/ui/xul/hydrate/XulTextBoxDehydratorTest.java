@@ -16,7 +16,6 @@ import org.junit.Test;
  * Tests {@code XulTextBoxDehydrator}.
  * 
  * @author Mark Hobson
- * @version $Id: XulTextBoxDehydratorTest.java 98843 2012-02-29 10:01:13Z mark@IIZUKA.CO.UK $
  * @see XulTextBoxDehydrator
  */
 public class XulTextBoxDehydratorTest extends AbstractXmlRenderKitTest<TextBox>

@@ -11,7 +11,6 @@ import java.util.EventListener;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: FooListener.java 86783 2011-04-11 18:18:45Z mark@IIZUKA.CO.UK $
  */
 public interface FooListener extends EventListener
 {

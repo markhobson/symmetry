@@ -9,7 +9,6 @@ package org.hobsoft.symmetry.support.xml.dtd;
  * Indicates that an error occurred whilst trying to parse a DTD.
  * 
  * @author Mark Hobson
- * @version $Id: DTDParseException.java 69819 2010-01-21 15:54:06Z mark@IIZUKA.CO.UK $
  */
 public class DTDParseException extends Exception
 {

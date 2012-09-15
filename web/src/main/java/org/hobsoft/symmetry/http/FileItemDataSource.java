@@ -17,7 +17,6 @@ import org.apache.commons.fileupload.FileItem;
  * Adapts Commons FileUpload's {@code FileItem} to a {@code DataSource}.
  * 
  * @author Mark Hobson
- * @version $Id: FileItemDataSource.java 98454 2012-02-14 15:02:32Z mark@IIZUKA.CO.UK $
  * @see FileItem
  * @see DataSource
  */

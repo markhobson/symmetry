@@ -32,7 +32,6 @@ import static org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.Vis
  * Hydrator that dehydrates a {@code Table} component to an HTML {@code <table/>} tag.
  * 
  * @author Mark Hobson
- * @version $Id: HtmlTableDehydrator.java 100104 2012-03-30 16:02:52Z mark@IIZUKA.CO.UK $
  * @see Table
  * @param <T>
  *            the table type this visitor can visit

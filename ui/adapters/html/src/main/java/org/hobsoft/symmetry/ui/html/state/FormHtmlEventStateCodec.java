@@ -17,7 +17,6 @@ import org.hobsoft.symmetry.ui.html.state.HtmlEventStateCodec.Parameters;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: FormHtmlEventStateCodec.java 98843 2012-02-29 10:01:13Z mark@IIZUKA.CO.UK $
  */
 public class FormHtmlEventStateCodec extends DelegatingStateCodec
 {

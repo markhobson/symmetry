@@ -9,7 +9,6 @@ package org.hobsoft.symmetry.ui.layout;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: VerticalAlignment.java 99813 2012-03-22 17:33:54Z mark@IIZUKA.CO.UK $
  */
 public enum VerticalAlignment
 {

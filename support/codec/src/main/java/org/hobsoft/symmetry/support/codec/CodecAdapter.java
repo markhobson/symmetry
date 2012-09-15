@@ -9,7 +9,6 @@ package org.hobsoft.symmetry.support.codec;
  * Codec that adapts an encoder and a corresponding decoder.
  * 
  * @author Mark Hobson
- * @version $Id: CodecAdapter.java 75370 2010-07-26 10:10:09Z mark@IIZUKA.CO.UK $
  * @param <X>
  *            the object type that this codec can encode
  * @param <Y>

@@ -16,7 +16,6 @@ import java.util.Arrays;
  * Provides methods to assert the equality of JavaBean objects.
  * 
  * @author Mark Hobson
- * @version $Id: BeanAssert.java 87501 2011-05-01 16:30:45Z mark@IIZUKA.CO.UK $
  */
 public final class BeanAssert
 {

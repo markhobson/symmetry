@@ -9,7 +9,6 @@ package org.hobsoft.symmetry.ui.model;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: TableModels.java 91222 2011-08-03 09:53:13Z mark@IIZUKA.CO.UK $
  */
 public final class TableModels
 {

@@ -14,7 +14,6 @@ import org.hobsoft.symmetry.ui.model.TreePath;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: TreeModelEvent.java 88175 2011-05-18 09:28:23Z mark@IIZUKA.CO.UK $
  */
 public final class TreeModelEvent extends EventObject
 {

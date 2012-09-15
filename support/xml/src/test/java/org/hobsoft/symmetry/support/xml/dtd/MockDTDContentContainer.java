@@ -9,7 +9,6 @@ package org.hobsoft.symmetry.support.xml.dtd;
  * No-op <code>DTDContentContainer</code> implementation to make non-abstract.
  * 
  * @author Mark Hobson
- * @version $Id: MockDTDContentContainer.java 69819 2010-01-21 15:54:06Z mark@IIZUKA.CO.UK $
  */
 public class MockDTDContentContainer extends DTDContentContainer
 {

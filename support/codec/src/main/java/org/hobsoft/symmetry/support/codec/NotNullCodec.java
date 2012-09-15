@@ -9,7 +9,6 @@ package org.hobsoft.symmetry.support.codec;
  * Codec decorator that raises an exception when encoding or decoding null objects.
  * 
  * @author Mark Hobson
- * @version $Id: NotNullCodec.java 75370 2010-07-26 10:10:09Z mark@IIZUKA.CO.UK $
  * @param <X>
  *            the object type that this codec can encode
  * @param <Y>

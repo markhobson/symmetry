@@ -12,7 +12,6 @@ import org.hobsoft.symmetry.ui.Window;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: DemoWindow.java 88032 2011-05-13 19:04:22Z mark@IIZUKA.CO.UK $
  */
 public class DemoWindow extends Window
 {

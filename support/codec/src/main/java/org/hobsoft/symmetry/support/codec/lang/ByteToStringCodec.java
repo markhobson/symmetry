@@ -13,7 +13,6 @@ import org.hobsoft.symmetry.support.codec.EncoderException;
  * Codec that encodes a byte to a string and vice-versa.
  * 
  * @author Mark Hobson
- * @version $Id: ByteToStringCodec.java 75578 2010-08-02 18:30:22Z mark@IIZUKA.CO.UK $
  */
 class ByteToStringCodec implements Codec<Byte, String>
 {

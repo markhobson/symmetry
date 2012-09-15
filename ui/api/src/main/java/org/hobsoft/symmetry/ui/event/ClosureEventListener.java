@@ -14,7 +14,6 @@ import org.hobsoft.symmetry.ui.functor.Closure;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: ClosureEventListener.java 86766 2011-04-11 15:06:48Z mark@IIZUKA.CO.UK $
  * @param <T>
  *            the event type
  */

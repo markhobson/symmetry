@@ -12,7 +12,6 @@ import java.net.URL;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: UrlEditor.java 97413 2011-12-30 17:52:58Z mark@IIZUKA.CO.UK $
  */
 public class UrlEditor extends PropertyEditorSupport2
 {

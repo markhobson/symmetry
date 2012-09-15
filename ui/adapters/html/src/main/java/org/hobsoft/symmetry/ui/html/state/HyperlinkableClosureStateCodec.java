@@ -17,7 +17,6 @@ import org.hobsoft.symmetry.ui.functor.HyperlinkableClosure;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: HyperlinkableClosureStateCodec.java 95170 2011-11-15 17:17:14Z mark@IIZUKA.CO.UK $
  */
 public class HyperlinkableClosureStateCodec
 	extends ClosureFilteringStateCodec<HyperlinkableClosure<? super EventObject>>

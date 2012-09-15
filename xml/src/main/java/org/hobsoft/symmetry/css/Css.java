@@ -9,7 +9,6 @@ package org.hobsoft.symmetry.css;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: Css.java 100887 2012-04-30 10:01:47Z mark@IIZUKA.CO.UK $
  */
 public final class Css
 {

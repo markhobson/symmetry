@@ -14,7 +14,6 @@ import org.w3c.dom.traversal.NodeFilter;
  * Tests <code>ShowFilter</code>.
  * 
  * @author Mark Hobson
- * @version $Id: ShowFilterTest.java 69822 2010-01-21 17:57:20Z mark@IIZUKA.CO.UK $
  * @see ShowFilter
  */
 public class ShowFilterTest extends AbstractNodeFilterTest

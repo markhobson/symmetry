@@ -13,7 +13,6 @@ import org.w3c.dom.traversal.NodeFilter;
  * A <code>NodeFilter</code> that accepts <code>CharacterData</code> nodes with no content and skips everything else.
  * 
  * @author Mark Hobson
- * @version $Id: EmptyCharacterDataFilter.java 69819 2010-01-21 15:54:06Z mark@IIZUKA.CO.UK $
  */
 public class EmptyCharacterDataFilter implements NodeFilter
 {

@@ -12,7 +12,6 @@ import org.hobsoft.symmetry.ui.event.ActionEvent;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: DefaultAction.java 94748 2011-10-24 14:57:43Z mark@IIZUKA.CO.UK $
  */
 public class DefaultAction extends AbstractBean implements Action
 {

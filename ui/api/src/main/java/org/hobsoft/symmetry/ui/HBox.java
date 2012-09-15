@@ -10,7 +10,6 @@ package org.hobsoft.symmetry.ui;
  * horizontal orientation.
  * 
  * @author Mark Hobson
- * @version $Id: HBox.java 95220 2011-11-16 15:04:18Z mark@IIZUKA.CO.UK $
  * @see Box
  */
 public class HBox extends Box

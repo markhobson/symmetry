@@ -45,7 +45,6 @@ import static org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.Vis
  * Hydrator that dehydrates a {@code Window} component to an HTML {@code <html/>} tag.
  * 
  * @author Mark Hobson
- * @version $Id: HtmlWindowDehydrator.java 99112 2012-03-09 15:21:08Z mark@IIZUKA.CO.UK $
  * @see Window
  * @param <T>
  *            the window type this visitor can visit

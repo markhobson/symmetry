@@ -9,7 +9,6 @@ package org.hobsoft.symmetry;
  * The superclass for all Kozo exceptions.
  * 
  * @author Mark Hobson
- * @version $Id: KozoException.java 95220 2011-11-16 15:04:18Z mark@IIZUKA.CO.UK $
  */
 public class KozoException extends Exception
 {

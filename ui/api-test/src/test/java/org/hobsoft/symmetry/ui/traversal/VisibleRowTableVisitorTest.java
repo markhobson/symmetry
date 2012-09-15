@@ -18,7 +18,6 @@ import org.junit.Test;
  * Tests {@code VisibleRowTableVisitor}.
  * 
  * @author Mark Hobson
- * @version $Id: VisibleRowTableVisitorTest.java 100648 2012-04-23 10:05:10Z mark@IIZUKA.CO.UK $
  * @see VisibleRowTableVisitor
  */
 public class VisibleRowTableVisitorTest

@@ -13,7 +13,6 @@ import org.hobsoft.symmetry.ui.event.TableModelListener;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: DelegatingTableModel.java 99065 2012-03-08 13:00:14Z mark@IIZUKA.CO.UK $
  */
 public abstract class DelegatingTableModel implements TableModel
 {

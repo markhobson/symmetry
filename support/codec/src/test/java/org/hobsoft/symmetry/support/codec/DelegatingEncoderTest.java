@@ -21,7 +21,6 @@ import org.junit.runner.RunWith;
  * Tests {@code DelegatingEncoder}.
  * 
  * @author Mark Hobson
- * @version $Id: DelegatingEncoderTest.java 75370 2010-07-26 10:10:09Z mark@IIZUKA.CO.UK $
  * @see DelegatingEncoder
  */
 @RunWith(JMock.class)

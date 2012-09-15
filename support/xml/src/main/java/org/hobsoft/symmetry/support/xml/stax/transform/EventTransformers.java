@@ -14,7 +14,6 @@ import org.hobsoft.symmetry.support.xml.stax.EventTransformer;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: EventTransformers.java 88599 2011-05-27 11:54:07Z mark@IIZUKA.CO.UK $
  */
 public final class EventTransformers
 {

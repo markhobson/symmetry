@@ -16,7 +16,6 @@ import javax.xml.stream.events.XMLEvent;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: PathEventFilter.java 88632 2011-05-31 15:54:50Z mark@IIZUKA.CO.UK $
  */
 class PathEventFilter extends AbstractDepthEventFilter
 {

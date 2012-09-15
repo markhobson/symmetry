@@ -20,7 +20,6 @@ import static org.hobsoft.symmetry.hydrate.Utilities.checkNotNull;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: HydrationContext.java 95595 2011-11-28 12:38:59Z mark@IIZUKA.CO.UK $
  */
 public abstract class HydrationContext
 {

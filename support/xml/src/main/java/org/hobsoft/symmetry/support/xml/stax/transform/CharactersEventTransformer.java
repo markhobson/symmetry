@@ -20,7 +20,6 @@ import org.hobsoft.symmetry.support.xml.stax.EventTransformer;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: CharactersEventTransformer.java 88591 2011-05-27 10:06:03Z mark@IIZUKA.CO.UK $
  */
 class CharactersEventTransformer implements EventTransformer
 {

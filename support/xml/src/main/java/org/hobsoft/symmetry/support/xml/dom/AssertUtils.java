@@ -9,7 +9,6 @@ package org.hobsoft.symmetry.support.xml.dom;
  * Provides methods to validate arguments.
  * 
  * @author Mark Hobson
- * @version $Id: AssertUtils.java 69825 2010-01-21 18:03:52Z mark@IIZUKA.CO.UK $
  */
 final class AssertUtils
 {

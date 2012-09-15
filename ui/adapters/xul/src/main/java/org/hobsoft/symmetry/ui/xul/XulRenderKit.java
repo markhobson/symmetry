@@ -20,7 +20,6 @@ import org.hobsoft.symmetry.xml.XmlRenderKit;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: XulRenderKit.java 95658 2011-11-29 15:18:50Z mark@IIZUKA.CO.UK $
  */
 public class XulRenderKit extends XmlRenderKit<Component>
 {

@@ -12,7 +12,6 @@ import java.io.OutputStream;
  * Encodes an object into a stream of bytes.
  * 
  * @author Mark Hobson
- * @version $Id: ByteStreamEncoder.java 75577 2010-08-02 17:54:34Z mark@IIZUKA.CO.UK $
  * @param <X>
  *            the object type that this encoder can encode
  */

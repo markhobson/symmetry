@@ -22,7 +22,6 @@ import static org.hobsoft.symmetry.support.bean.Utilities.nullEquals;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: EventSets.java 97397 2011-12-30 11:53:48Z mark@IIZUKA.CO.UK $
  */
 public final class EventSets
 {

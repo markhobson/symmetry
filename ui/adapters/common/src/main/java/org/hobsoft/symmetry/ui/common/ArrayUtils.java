@@ -13,7 +13,6 @@ import java.util.Collection;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: ArrayUtils.java 98237 2012-02-02 16:27:34Z mark@IIZUKA.CO.UK $
  */
 final class ArrayUtils
 {

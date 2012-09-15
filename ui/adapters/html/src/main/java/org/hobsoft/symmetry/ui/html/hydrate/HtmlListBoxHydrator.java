@@ -16,7 +16,6 @@ import static org.hobsoft.symmetry.ui.traversal.ComponentVisitors.asListBoxVisit
  * Phased hydrator that dehydrates and rehydrates a {@code ListBox} component using an HTML {@code <select/>} tag.
  * 
  * @author Mark Hobson
- * @version $Id: HtmlListBoxHydrator.java 98878 2012-02-29 16:54:12Z mark@IIZUKA.CO.UK $
  * @see ListBox
  * @param <T>
  *            the list box type this visitor can visit

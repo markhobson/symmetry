@@ -9,7 +9,6 @@ package org.hobsoft.symmetry.ui;
  * A type-safe enumeration of sorting methods.
  * 
  * @author Mark Hobson
- * @version $Id: SortOrder.java 95220 2011-11-16 15:04:18Z mark@IIZUKA.CO.UK $
  */
 public enum SortOrder
 {

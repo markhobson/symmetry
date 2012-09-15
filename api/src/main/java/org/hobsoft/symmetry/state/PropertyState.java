@@ -12,7 +12,6 @@ import java.lang.reflect.Array;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: PropertyState.java 98229 2012-02-02 11:31:33Z mark@IIZUKA.CO.UK $
  */
 public class PropertyState
 {

@@ -43,7 +43,6 @@ import org.junit.runner.RunWith;
  * Tests {@code HtmlComboBoxHydrator}.
  * 
  * @author Mark Hobson
- * @version $Id: HtmlComboBoxHydratorTest.java 99704 2012-03-20 16:49:00Z mark@IIZUKA.CO.UK $
  * @see HtmlComboBoxHydrator
  */
 @RunWith(JMock.class)

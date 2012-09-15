@@ -18,7 +18,6 @@ import static org.hobsoft.symmetry.support.bean.Utilities.checkNotNull;
  * An abstract implementation of a JavaBean that provides property change support.
  * 
  * @author Mark Hobson
- * @version $Id: AbstractBean.java 98494 2012-02-15 14:35:48Z mark@IIZUKA.CO.UK $
  */
 public abstract class AbstractBean
 {

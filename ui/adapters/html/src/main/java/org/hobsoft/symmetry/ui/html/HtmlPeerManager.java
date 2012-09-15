@@ -13,7 +13,6 @@ import org.hobsoft.symmetry.ui.traversal.PostorderComponentVisitor;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: HtmlPeerManager.java 95187 2011-11-16 10:59:27Z mark@IIZUKA.CO.UK $
  */
 public class HtmlPeerManager extends StatePeerManager
 {

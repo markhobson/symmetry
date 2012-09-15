@@ -19,7 +19,6 @@ import org.xml.sax.helpers.AttributesImpl;
  * Tests <code>SAX2Stream</code>.
  * 
  * @author Mark Hobson
- * @version $Id: SAX2StreamTest.java 69822 2010-01-21 17:57:20Z mark@IIZUKA.CO.UK $
  * @see SAX2Stream
  */
 public class SAX2StreamTest

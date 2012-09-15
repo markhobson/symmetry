@@ -46,7 +46,6 @@ import static org.hobsoft.symmetry.ui.traversal.Visits.nullEndVisit;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: Table.java 99631 2012-03-16 15:38:01Z mark@IIZUKA.CO.UK $
  */
 public class Table extends Component
 {

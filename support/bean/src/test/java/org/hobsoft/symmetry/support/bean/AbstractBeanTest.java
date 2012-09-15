@@ -21,7 +21,6 @@ import org.junit.runner.RunWith;
  * Tests {@code AbstractBean}.
  * 
  * @author Mark Hobson
- * @version $Id: AbstractBeanTest.java 98495 2012-02-15 14:40:12Z mark@IIZUKA.CO.UK $
  * @see AbstractBean
  */
 @RunWith(JMock.class)

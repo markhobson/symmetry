@@ -15,7 +15,6 @@ import org.hobsoft.symmetry.ui.Table;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: LabelTableHeaderRenderer.java 100497 2012-04-16 15:42:05Z mark@IIZUKA.CO.UK $
  */
 public class LabelTableHeaderRenderer extends Label implements TableCellRenderer
 {

@@ -25,7 +25,6 @@ import java.util.regex.Pattern;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: DefaultBeanIntrospector.java 97399 2011-12-30 11:55:45Z mark@IIZUKA.CO.UK $
  */
 public class DefaultBeanIntrospector extends AbstractBeanIntrospector
 {

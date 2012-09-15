@@ -11,7 +11,6 @@ import org.w3c.dom.Text;
  * A node visitor that splits text nodes at a specified character.
  * 
  * @author Mark Hobson
- * @version $Id: SplitNodeVisitor.java 69819 2010-01-21 15:54:06Z mark@IIZUKA.CO.UK $
  */
 public class SplitNodeVisitor extends AbstractNodeVisitor
 {

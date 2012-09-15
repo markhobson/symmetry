@@ -13,7 +13,6 @@ import javax.xml.stream.events.XMLEvent;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: EventFilters.java 88634 2011-05-31 15:55:20Z mark@IIZUKA.CO.UK $
  */
 public final class EventFilters
 {

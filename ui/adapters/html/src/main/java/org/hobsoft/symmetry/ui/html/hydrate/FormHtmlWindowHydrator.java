@@ -18,7 +18,6 @@ import static org.hobsoft.symmetry.hydrate.HydrationPhase.DEHYDRATE;
  * {@code <form/>}.
  * 
  * @author Mark Hobson
- * @version $Id: FormHtmlWindowHydrator.java 99112 2012-03-09 15:21:08Z mark@IIZUKA.CO.UK $
  * @see Window
  * @param <T>
  *            the window type this visitor can visit

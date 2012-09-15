@@ -29,7 +29,6 @@ import org.hobsoft.symmetry.support.bean.editor.UrlEditor;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: PropertyEditors.java 100797 2012-04-25 14:00:11Z mark@IIZUKA.CO.UK $
  */
 public final class PropertyEditors
 {

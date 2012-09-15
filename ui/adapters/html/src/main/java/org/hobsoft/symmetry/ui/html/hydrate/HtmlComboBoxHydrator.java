@@ -19,7 +19,6 @@ import static org.hobsoft.symmetry.ui.traversal.ComponentVisitors.asListBoxVisit
  * Phased hydrator that dehydrates and rehydrates a {@code ComboBox} component using an HTML {@code <select/>} tag.
  * 
  * @author Mark Hobson
- * @version $Id: HtmlComboBoxHydrator.java 99704 2012-03-20 16:49:00Z mark@IIZUKA.CO.UK $
  * @see ComboBox
  * @param <T>
  *            the combo box type this visitor can visit

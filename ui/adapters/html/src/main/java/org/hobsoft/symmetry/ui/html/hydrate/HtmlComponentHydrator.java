@@ -38,7 +38,6 @@ import static org.hobsoft.symmetry.ui.traversal.ComponentVisitors.visibleNodes;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: HtmlComponentHydrator.java 100114 2012-03-30 17:01:39Z mark@IIZUKA.CO.UK $
  */
 public class HtmlComponentHydrator extends CompositeComponentHydrator
 {

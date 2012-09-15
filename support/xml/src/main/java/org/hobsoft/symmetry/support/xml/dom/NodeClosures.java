@@ -15,7 +15,6 @@ import org.hobsoft.symmetry.support.xml.dom.closure.UnsurroundClosure;
  * A factory to build various node closures.
  * 
  * @author Mark Hobson
- * @version $Id: NodeClosures.java 69819 2010-01-21 15:54:06Z mark@IIZUKA.CO.UK $
  */
 public final class NodeClosures
 {

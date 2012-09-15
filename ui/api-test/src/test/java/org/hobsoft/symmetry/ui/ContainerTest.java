@@ -31,7 +31,6 @@ import org.junit.Test;
  * Tests {@code Container}.
  * 
  * @author Mark Hobson
- * @version $Id: ContainerTest.java 99112 2012-03-09 15:21:08Z mark@IIZUKA.CO.UK $
  * @see Container
  */
 public class ContainerTest extends AbstractComponentTest<FakeContainer>

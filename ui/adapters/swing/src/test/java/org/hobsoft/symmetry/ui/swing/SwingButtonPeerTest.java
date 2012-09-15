@@ -28,7 +28,6 @@ import org.junit.runner.RunWith;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: SwingButtonPeerTest.java 97404 2011-12-30 13:32:15Z mark@IIZUKA.CO.UK $
  */
 @RunWith(JMock.class)
 public class SwingButtonPeerTest

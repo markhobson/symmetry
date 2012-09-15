@@ -18,7 +18,6 @@ import org.junit.Test;
  * Tests {@code LabelTreeNodeRenderer}.
  * 
  * @author Mark Hobson
- * @version $Id: LabelTreeNodeRendererTest.java 100497 2012-04-16 15:42:05Z mark@IIZUKA.CO.UK $
  * @see LabelTreeNodeRenderer
  */
 public class LabelTreeNodeRendererTest

@@ -12,7 +12,6 @@ import java.text.ParseException;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: NumberEditor.java 100796 2012-04-25 13:59:09Z mark@IIZUKA.CO.UK $
  */
 public class NumberEditor extends PropertyEditorSupport2
 {

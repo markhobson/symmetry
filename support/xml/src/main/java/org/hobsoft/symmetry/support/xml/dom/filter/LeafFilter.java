@@ -12,7 +12,6 @@ import org.w3c.dom.traversal.NodeFilter;
  * A <code>NodeFilter</code> that only accepts nodes without any children.
  * 
  * @author Mark Hobson
- * @version $Id: LeafFilter.java 69819 2010-01-21 15:54:06Z mark@IIZUKA.CO.UK $
  */
 public class LeafFilter implements NodeFilter
 {

@@ -14,7 +14,6 @@ import org.junit.Test;
  * Tests <code>DTDContentContainer</code>.
  * 
  * @author Mark Hobson
- * @version $Id: DTDContentContainerTest.java 69822 2010-01-21 17:57:20Z mark@IIZUKA.CO.UK $
  * @see DTDContentContainer
  */
 public class DTDContentContainerTest

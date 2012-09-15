@@ -20,7 +20,6 @@ import org.junit.Test;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: SwingSpacerPeerTest.java 97405 2011-12-30 13:36:34Z mark@IIZUKA.CO.UK $
  */
 public class SwingSpacerPeerTest
 {

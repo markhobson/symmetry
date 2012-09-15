@@ -19,7 +19,6 @@ import static org.hobsoft.symmetry.ui.xml.test.hydrate.StubXmlComponentHydrators
  * Tests {@code HtmlPagedTableDehydrator}.
  * 
  * @author Mark Hobson
- * @version $Id: HtmlPagedTableDehydratorTest.java 99706 2012-03-20 16:50:54Z mark@IIZUKA.CO.UK $
  * @see HtmlPagedTableDehydrator
  */
 public class HtmlPagedTableDehydratorTest extends AbstractXmlRenderKitTest<Table>

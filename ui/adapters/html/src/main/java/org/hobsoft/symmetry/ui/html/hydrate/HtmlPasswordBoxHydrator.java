@@ -13,7 +13,6 @@ import org.hobsoft.symmetry.ui.PasswordBox;
  * Phased hydrator that dehydrates and rehydrates a {@code PasswordBox} component using an HTML {@code <input/>} tag.
  * 
  * @author Mark Hobson
- * @version $Id: HtmlPasswordBoxHydrator.java 98843 2012-02-29 10:01:13Z mark@IIZUKA.CO.UK $
  * @see PasswordBox
  * @param <T>
  *            the password box type this visitor can visit

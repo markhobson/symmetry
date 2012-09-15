@@ -14,7 +14,6 @@ import org.junit.Test;
  * Tests {@code EnumListModel}.
  * 
  * @author Mark Hobson
- * @version $Id: EnumListModelTest.java 87343 2011-04-27 15:55:00Z mark@IIZUKA.CO.UK $
  * @see EnumListModel
  */
 public class EnumListModelTest

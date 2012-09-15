@@ -20,7 +20,6 @@ import org.hobsoft.symmetry.ui.view.LabelTableHeaderRenderer;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: SortableTable.java 99628 2012-03-16 14:32:20Z mark@IIZUKA.CO.UK $
  */
 public class SortableTable extends Table
 {

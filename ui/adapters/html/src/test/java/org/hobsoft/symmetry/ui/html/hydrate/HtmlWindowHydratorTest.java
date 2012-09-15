@@ -22,7 +22,6 @@ import static org.hobsoft.symmetry.ui.xml.test.hydrate.StubXmlComponentHydrators
  * Tests {@code HtmlWindowHydrator}.
  * 
  * @author Mark Hobson
- * @version $Id: HtmlWindowHydratorTest.java 99112 2012-03-09 15:21:08Z mark@IIZUKA.CO.UK $
  * @see HtmlWindowHydrator
  */
 public class HtmlWindowHydratorTest extends AbstractXmlRenderKitTest<Window>

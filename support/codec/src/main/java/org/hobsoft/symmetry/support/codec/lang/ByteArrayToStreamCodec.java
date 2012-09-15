@@ -18,7 +18,6 @@ import org.hobsoft.symmetry.support.codec.EncoderException;
  * Codec that encodes a byte array to a byte stream and vice-versa.
  * 
  * @author Mark Hobson
- * @version $Id: ByteArrayToStreamCodec.java 75589 2010-08-02 20:54:55Z mark@IIZUKA.CO.UK $
  */
 class ByteArrayToStreamCodec extends AbstractByteStreamEncoder<byte[]> implements ByteStreamCodec<byte[]>
 {

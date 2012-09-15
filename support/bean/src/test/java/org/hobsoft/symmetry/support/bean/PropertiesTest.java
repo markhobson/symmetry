@@ -20,7 +20,6 @@ import org.junit.Test;
  * Tests {@code Properties}.
  * 
  * @author Mark Hobson
- * @version $Id: PropertiesTest.java 97397 2011-12-30 11:53:48Z mark@IIZUKA.CO.UK $
  * @see Properties
  */
 public class PropertiesTest

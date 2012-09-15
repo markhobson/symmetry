@@ -24,7 +24,6 @@ import static org.hobsoft.symmetry.ui.internal.Preconditions.checkNonNegative;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: TableColumn.java 99804 2012-03-22 17:25:54Z mark@IIZUKA.CO.UK $
  */
 public final class TableColumn
 {

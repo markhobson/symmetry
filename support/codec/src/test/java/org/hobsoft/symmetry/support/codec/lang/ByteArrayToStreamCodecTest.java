@@ -22,7 +22,6 @@ import org.junit.Test;
  * Tests {@code ByteArrayToStreamCodec}.
  * 
  * @author Mark Hobson
- * @version $Id: ByteArrayToStreamCodecTest.java 75589 2010-08-02 20:54:55Z mark@IIZUKA.CO.UK $
  * @see ByteArrayToStreamCodec
  */
 public class ByteArrayToStreamCodecTest

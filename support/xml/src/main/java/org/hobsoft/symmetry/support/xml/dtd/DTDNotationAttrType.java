@@ -9,7 +9,6 @@ package org.hobsoft.symmetry.support.xml.dtd;
  * A DTD attribute type that represents an enumeration of notation values.
  * 
  * @author Mark Hobson
- * @version $Id: DTDNotationAttrType.java 69819 2010-01-21 15:54:06Z mark@IIZUKA.CO.UK $
  */
 public class DTDNotationAttrType extends DTDValuedAttrType
 {

@@ -22,7 +22,6 @@ import kozoset.tab.WizardTab;
  * The KozoSet demo.
  * 
  * @author Mark Hobson
- * @version $Id: KozoSetWindow.java 95168 2011-11-15 17:09:21Z mark@IIZUKA.CO.UK $
  */
 public class KozoSetWindow extends Window
 {

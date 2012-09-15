@@ -10,7 +10,6 @@ package org.hobsoft.symmetry.support.xml.dtd;
  * <code>#FIXED</code> declaration in DTD.
  * 
  * @author Mark Hobson
- * @version $Id: DTDFixedAttrDecl.java 69819 2010-01-21 15:54:06Z mark@IIZUKA.CO.UK $
  */
 public class DTDFixedAttrDecl extends DTDValuedAttrDecl
 {

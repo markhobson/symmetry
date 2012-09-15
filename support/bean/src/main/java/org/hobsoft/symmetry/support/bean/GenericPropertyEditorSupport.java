@@ -12,7 +12,6 @@ import java.beans.PropertyEditorSupport;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: GenericPropertyEditorSupport.java 97399 2011-12-30 11:55:45Z mark@IIZUKA.CO.UK $
  */
 public class GenericPropertyEditorSupport extends PropertyEditorSupport implements GenericPropertyEditor
 {

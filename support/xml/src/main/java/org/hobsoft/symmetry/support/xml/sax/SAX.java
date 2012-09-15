@@ -9,7 +9,6 @@ package org.hobsoft.symmetry.support.xml.sax;
  * Provides constants used by the SAX API.
  * 
  * @author Mark Hobson
- * @version $Id: SAX.java 69819 2010-01-21 15:54:06Z mark@IIZUKA.CO.UK $
  * @see org.xml.sax
  */
 public final class SAX

@@ -11,7 +11,6 @@ import java.util.EventListener;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: OptionListener.java 86764 2011-04-11 14:43:52Z mark@IIZUKA.CO.UK $
  */
 public interface OptionListener extends EventListener
 {

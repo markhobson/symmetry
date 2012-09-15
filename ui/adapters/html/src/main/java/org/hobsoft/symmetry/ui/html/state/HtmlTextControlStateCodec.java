@@ -15,7 +15,6 @@ import org.hobsoft.symmetry.state.StateException;
  * Codec for text input controls in HTML form data sets.
  * 
  * @author Mark Hobson
- * @version $Id: HtmlTextControlStateCodec.java 98230 2012-02-02 11:34:34Z mark@IIZUKA.CO.UK $
  */
 public class HtmlTextControlStateCodec extends PropertyValueStateCodec<String>
 {

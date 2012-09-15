@@ -14,7 +14,6 @@ import org.hobsoft.symmetry.support.xml.stax.EventTransformer;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: AppendingCharactersTransformer.java 88598 2011-05-27 11:18:52Z mark@IIZUKA.CO.UK $
  */
 public class AppendingCharactersTransformer implements EventTransformer
 {

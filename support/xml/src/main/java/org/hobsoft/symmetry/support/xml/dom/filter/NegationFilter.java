@@ -21,7 +21,6 @@ import org.w3c.dom.traversal.NodeFilter;
  * </ul>
  * 
  * @author Mark Hobson
- * @version $Id: NegationFilter.java 69819 2010-01-21 15:54:06Z mark@IIZUKA.CO.UK $
  * @see <a href="http://en.wikipedia.org/wiki/Ternary_logic">Ternary logic</a>
  */
 public class NegationFilter implements NodeFilter

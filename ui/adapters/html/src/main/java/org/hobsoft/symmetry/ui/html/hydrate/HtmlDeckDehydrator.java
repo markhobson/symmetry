@@ -23,7 +23,6 @@ import static org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.Vis
  * Hydrator that dehydrates a {@code Deck} component to an HTML {@code <div/>} tag.
  * 
  * @author Mark Hobson
- * @version $Id: HtmlDeckDehydrator.java 99112 2012-03-09 15:21:08Z mark@IIZUKA.CO.UK $
  * @see Deck
  * @param <T>
  *            the deck type this visitor can visit

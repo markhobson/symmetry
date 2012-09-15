@@ -14,7 +14,6 @@ import java.util.Set;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: EncodedState.java 93650 2011-10-06 17:13:29Z mark@IIZUKA.CO.UK $
  */
 public final class EncodedState
 {

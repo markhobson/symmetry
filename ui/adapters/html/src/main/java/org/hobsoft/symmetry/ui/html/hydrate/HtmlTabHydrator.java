@@ -13,7 +13,6 @@ import org.hobsoft.symmetry.ui.Tab;
  * Phased hydrator that dehydrates and rehydrates a {@code Tab} component using an HTML {@code <div/>} tag.
  * 
  * @author Mark Hobson
- * @version $Id: HtmlTabHydrator.java 98843 2012-02-29 10:01:13Z mark@IIZUKA.CO.UK $
  * @see Tab
  * @param <T>
  *            the tab type this visitor can visit

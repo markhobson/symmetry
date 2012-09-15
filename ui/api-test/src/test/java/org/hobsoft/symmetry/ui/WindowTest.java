@@ -17,7 +17,6 @@ import org.junit.Test;
  * Tests {@code Window}.
  * 
  * @author Mark Hobson
- * @version $Id: WindowTest.java 95554 2011-11-25 23:15:51Z mark@IIZUKA.CO.UK $
  * @see Window
  */
 public class WindowTest extends AbstractComponentTest<Window>

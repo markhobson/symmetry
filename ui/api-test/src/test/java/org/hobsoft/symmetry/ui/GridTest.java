@@ -20,7 +20,6 @@ import org.junit.Test;
  * Tests {@code Grid}.
  * 
  * @author Mark Hobson
- * @version $Id: GridTest.java 99433 2012-03-13 11:47:01Z mark@IIZUKA.CO.UK $
  * @see Grid
  */
 public class GridTest extends AbstractComponentTest<Grid>

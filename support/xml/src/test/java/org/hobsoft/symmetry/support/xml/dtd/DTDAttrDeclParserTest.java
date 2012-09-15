@@ -13,7 +13,6 @@ import org.junit.Test;
  * Tests <code>DTDAttrDeclParser</code>.
  * 
  * @author Mark Hobson
- * @version $Id: DTDAttrDeclParserTest.java 69822 2010-01-21 17:57:20Z mark@IIZUKA.CO.UK $
  * @see DTDAttrDeclParser
  */
 public class DTDAttrDeclParserTest

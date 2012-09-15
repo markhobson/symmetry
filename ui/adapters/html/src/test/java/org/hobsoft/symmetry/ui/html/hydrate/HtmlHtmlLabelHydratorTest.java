@@ -17,7 +17,6 @@ import org.junit.Test;
  * Tests {@code HtmlHtmlLabelHydrator}.
  * 
  * @author Mark Hobson
- * @version $Id: HtmlHtmlLabelHydratorTest.java 98843 2012-02-29 10:01:13Z mark@IIZUKA.CO.UK $
  * @see HtmlHtmlLabelHydrator
  */
 public class HtmlHtmlLabelHydratorTest extends AbstractXmlRenderKitTest<HtmlLabel>

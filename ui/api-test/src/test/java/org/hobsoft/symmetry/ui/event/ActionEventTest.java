@@ -17,7 +17,6 @@ import org.junit.Test;
  * Tests {@code ActionEvent}.
  * 
  * @author Mark Hobson
- * @version $Id: ActionEventTest.java 95330 2011-11-18 12:00:44Z mark@IIZUKA.CO.UK $
  * @see ActionEvent
  */
 public class ActionEventTest

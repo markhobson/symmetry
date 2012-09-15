@@ -15,7 +15,6 @@ import org.junit.Test;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: StringScannerTest.java 69822 2010-01-21 17:57:20Z mark@IIZUKA.CO.UK $
  */
 public class StringScannerTest
 {

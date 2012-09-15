@@ -22,7 +22,6 @@ import static org.hobsoft.symmetry.ui.model.Utilities.setSize;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: DefaultBeanTableModel.java 101287 2012-05-15 15:10:25Z mark@IIZUKA.CO.UK $
  * @param <T>
  *            the bean type
  */

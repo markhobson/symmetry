@@ -29,7 +29,6 @@ import org.hobsoft.symmetry.ui.functor.Command;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: InputTab.java 99566 2012-03-15 16:00:09Z mark@IIZUKA.CO.UK $
  */
 public class InputTab extends Tab
 {

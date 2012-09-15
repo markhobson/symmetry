@@ -30,7 +30,6 @@ import static org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.Vis
  * Hydrator that dehydrates a {@code TabBox} component to an HTML {@code <div/>} tag.
  * 
  * @author Mark Hobson
- * @version $Id: HtmlTabBoxDehydrator.java 98843 2012-02-29 10:01:13Z mark@IIZUKA.CO.UK $
  * @see TabBox
  * @param <T>
  *            the tab box type this visitor can visit

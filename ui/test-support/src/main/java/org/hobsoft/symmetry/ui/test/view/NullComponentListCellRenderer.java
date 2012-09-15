@@ -13,7 +13,6 @@ import org.hobsoft.symmetry.ui.view.ListCellRenderer;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: NullComponentListCellRenderer.java 99606 2012-03-16 12:46:26Z mark@IIZUKA.CO.UK $
  * @param <T>
  *            the item type
  */

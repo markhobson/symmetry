@@ -16,7 +16,6 @@ import org.junit.Test;
  * Tests {@code XulCheckBoxDehydrator}.
  * 
  * @author Mark Hobson
- * @version $Id: XulCheckBoxDehydratorTest.java 98843 2012-02-29 10:01:13Z mark@IIZUKA.CO.UK $
  * @see XulCheckBoxDehydrator
  */
 public class XulCheckBoxDehydratorTest extends AbstractXmlRenderKitTest<CheckBox>

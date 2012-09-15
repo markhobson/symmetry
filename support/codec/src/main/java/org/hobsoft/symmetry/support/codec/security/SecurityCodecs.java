@@ -16,7 +16,6 @@ import org.hobsoft.symmetry.support.codec.Codec;
  * Factory class for building security codecs.
  * 
  * @author Mark Hobson
- * @version $Id: SecurityCodecs.java 75578 2010-08-02 18:30:22Z mark@IIZUKA.CO.UK $
  */
 public final class SecurityCodecs
 {

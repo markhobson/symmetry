@@ -16,7 +16,6 @@ import org.xml.sax.ext.DeclHandler;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: DTDDeclHandler.java 69819 2010-01-21 15:54:06Z mark@IIZUKA.CO.UK $
  */
 public class DTDDeclHandler implements DeclHandler, DTDProvider
 {

@@ -11,7 +11,6 @@ import java.beans.PropertyEditor;
  * A {@code PropertyEditor} decorator that converts empty strings to null in {@link #setAsText(String)}.
  * 
  * @author Mark Hobson
- * @version $Id: EmptyStringPropertyEditor.java 93028 2011-09-29 14:53:01Z mark@IIZUKA.CO.UK $
  */
 class EmptyStringPropertyEditor extends DelegatingPropertyEditor
 {

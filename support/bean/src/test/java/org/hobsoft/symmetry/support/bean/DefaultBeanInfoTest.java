@@ -23,7 +23,6 @@ import org.junit.Test;
  * Tests {@code DefaultBeanInfo}.
  * 
  * @author Mark Hobson
- * @version $Id: DefaultBeanInfoTest.java 87504 2011-05-01 16:44:23Z mark@IIZUKA.CO.UK $
  * @see DefaultBeanInfo
  */
 public class DefaultBeanInfoTest

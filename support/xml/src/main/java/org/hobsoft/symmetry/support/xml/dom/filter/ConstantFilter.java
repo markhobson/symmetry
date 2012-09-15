@@ -12,7 +12,6 @@ import org.w3c.dom.traversal.NodeFilter;
  * A <code>NodeFilter</code> that always returns the same filter result for all nodes.
  * 
  * @author Mark Hobson
- * @version $Id: ConstantFilter.java 69819 2010-01-21 15:54:06Z mark@IIZUKA.CO.UK $
  */
 public class ConstantFilter implements NodeFilter
 {

@@ -18,7 +18,6 @@ import org.hobsoft.symmetry.ui.Deck;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: SwingDeckPeer.java 73508 2010-04-02 15:56:49Z mark@IIZUKA.CO.UK $
  */
 public class SwingDeckPeer extends SwingBoxPeer
 {

@@ -15,7 +15,6 @@ import org.hobsoft.symmetry.ui.Component;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: SwtRadioPeer.java 88029 2011-05-13 18:53:16Z mark@IIZUKA.CO.UK $
  */
 public class SwtRadioPeer extends SwtToggleButtonPeer
 {

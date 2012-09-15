@@ -14,7 +14,6 @@ import org.hobsoft.symmetry.hydrate.RehydrationContext;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: StubComponentRenderKit.java 95595 2011-11-28 12:38:59Z mark@IIZUKA.CO.UK $
  * @param <T>
  *            the base component type this kit can render
  */

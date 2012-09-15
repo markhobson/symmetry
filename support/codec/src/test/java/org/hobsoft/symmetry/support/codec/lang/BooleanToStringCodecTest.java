@@ -19,7 +19,6 @@ import org.junit.Test;
  * Tests {@code BooleanToStringCodec}.
  * 
  * @author Mark Hobson
- * @version $Id: BooleanToStringCodecTest.java 75370 2010-07-26 10:10:09Z mark@IIZUKA.CO.UK $
  * @see BooleanToStringCodec
  */
 public class BooleanToStringCodecTest

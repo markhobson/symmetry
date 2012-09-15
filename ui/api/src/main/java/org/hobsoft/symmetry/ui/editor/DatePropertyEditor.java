@@ -24,7 +24,6 @@ import org.hobsoft.symmetry.ui.util.DateFormatSymbolsFactory;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: DatePropertyEditor.java 94748 2011-10-24 14:57:43Z mark@IIZUKA.CO.UK $
  */
 public class DatePropertyEditor extends AbstractPropertyEditor implements PropertyEditorErrorHandler
 {

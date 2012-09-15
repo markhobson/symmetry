@@ -37,7 +37,6 @@ import org.hobsoft.symmetry.state.StateSession;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: KozoServlet.java 98417 2012-02-13 14:34:23Z mark@IIZUKA.CO.UK $
  */
 public class KozoServlet extends HttpServlet
 {

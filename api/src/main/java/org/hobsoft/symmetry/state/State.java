@@ -16,7 +16,6 @@ import java.util.Map;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: State.java 93650 2011-10-06 17:13:29Z mark@IIZUKA.CO.UK $
  */
 public class State implements Cloneable
 {

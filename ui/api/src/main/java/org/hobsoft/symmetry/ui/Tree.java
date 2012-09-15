@@ -38,7 +38,6 @@ import static org.hobsoft.symmetry.ui.traversal.Visits.nullEndVisit;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: Tree.java 99065 2012-03-08 13:00:14Z mark@IIZUKA.CO.UK $
  */
 public class Tree extends Component
 {

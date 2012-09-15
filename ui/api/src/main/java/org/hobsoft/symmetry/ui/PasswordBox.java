@@ -12,7 +12,6 @@ import org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.EndVisit;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: PasswordBox.java 96224 2011-12-09 16:24:18Z mark@IIZUKA.CO.UK $
  */
 public class PasswordBox extends TextBox
 {

@@ -21,7 +21,6 @@ import org.hobsoft.symmetry.support.bean.Properties;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: StatePeerManager.java 94748 2011-10-24 14:57:43Z mark@IIZUKA.CO.UK $
  */
 public abstract class StatePeerManager implements PeerManager, PropertyChangeListener
 {

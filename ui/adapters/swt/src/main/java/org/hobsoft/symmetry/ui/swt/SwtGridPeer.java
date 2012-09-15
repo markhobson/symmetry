@@ -19,7 +19,6 @@ import org.hobsoft.symmetry.ui.Window;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: SwtGridPeer.java 99082 2012-03-08 17:55:52Z mark@IIZUKA.CO.UK $
  */
 public class SwtGridPeer extends SwtBoxPeer
 {

@@ -20,7 +20,6 @@ import org.junit.Test;
  * Tests {@code CharByteStreamCodecAdapter}.
  * 
  * @author Mark Hobson
- * @version $Id: CharByteStreamCodecAdapterTest.java 75587 2010-08-02 20:41:05Z mark@IIZUKA.CO.UK $
  * @see CharByteStreamCodecAdapter
  */
 public class CharByteStreamCodecAdapterTest

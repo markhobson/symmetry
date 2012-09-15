@@ -13,7 +13,6 @@ import org.w3c.dom.Node;
  * A node closure that removes a named attribute from elements.
  * 
  * @author Mark Hobson
- * @version $Id: RemoveAttributeClosure.java 69819 2010-01-21 15:54:06Z mark@IIZUKA.CO.UK $
  */
 public class RemoveAttributeClosure implements NodeClosure
 {

@@ -32,7 +32,6 @@ import static org.hobsoft.symmetry.xml.XmlUtils.writeId;
  * Hydrator that dehydrates a {@code CheckBox} component to an HTML {@code <input/>} tag.
  * 
  * @author Mark Hobson
- * @version $Id: HtmlCheckBoxDehydrator.java 98843 2012-02-29 10:01:13Z mark@IIZUKA.CO.UK $
  * @see CheckBox
  * @param <T>
  *            the check box type this visitor can visit

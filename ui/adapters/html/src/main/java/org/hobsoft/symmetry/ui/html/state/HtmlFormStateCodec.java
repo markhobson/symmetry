@@ -22,7 +22,6 @@ import static org.hobsoft.symmetry.support.bean.Properties.getDescriptor;
  * must always represent their value as some CDATA value for checked and {@code null} for unchecked.
  * 
  * @author Mark Hobson
- * @version $Id: HtmlFormStateCodec.java 98453 2012-02-14 15:00:35Z mark@IIZUKA.CO.UK $
  * @see <a href="http://www.w3.org/TR/html4/interact/forms.html#h-17.13.3">HTML 4.01 Specification</a>
  */
 public class HtmlFormStateCodec extends DelegatingStateCodec

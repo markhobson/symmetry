@@ -33,7 +33,6 @@ import static org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.Vis
  * Phased hydrator that dehydrates and rehydrates a {@code Radio} component using an HTML {@code <input/>} tag.
  * 
  * @author Mark Hobson
- * @version $Id: HtmlRadioHydrator.java 98868 2012-02-29 11:10:57Z mark@IIZUKA.CO.UK $
  * @see Radio
  * @param <T>
  *            the component type this visitor can visit

@@ -9,7 +9,6 @@ package org.hobsoft.symmetry.support.bean.editor;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: BooleanEditor.java 97413 2011-12-30 17:52:58Z mark@IIZUKA.CO.UK $
  */
 public class BooleanEditor extends PropertyEditorSupport2
 {

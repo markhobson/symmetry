@@ -19,7 +19,6 @@ import static org.hobsoft.symmetry.ui.traversal.Visits.nullEndVisit;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: Tab.java 95624 2011-11-29 11:53:24Z mark@IIZUKA.CO.UK $
  */
 public class Tab extends Button
 {

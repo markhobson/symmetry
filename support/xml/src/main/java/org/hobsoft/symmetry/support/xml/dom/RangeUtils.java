@@ -27,7 +27,6 @@ import org.w3c.dom.traversal.TreeWalker;
  * Provides various utility methods for working with the DOM Range API.
  * 
  * @author Mark Hobson
- * @version $Id: RangeUtils.java 69819 2010-01-21 15:54:06Z mark@IIZUKA.CO.UK $
  * @see <a href="http://www.w3.org/TR/2000/REC-DOM-Level-2-Traversal-Range-20001113/">Document Object Model (DOM) Level
  *      2 Traversal and Range Specification</a>
  */

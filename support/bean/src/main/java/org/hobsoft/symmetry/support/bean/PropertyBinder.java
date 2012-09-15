@@ -15,7 +15,6 @@ import static org.hobsoft.symmetry.support.bean.Utilities.checkNotNull;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: PropertyBinder.java 97399 2011-12-30 11:55:45Z mark@IIZUKA.CO.UK $
  */
 class PropertyBinder implements PropertyChangeListener
 {

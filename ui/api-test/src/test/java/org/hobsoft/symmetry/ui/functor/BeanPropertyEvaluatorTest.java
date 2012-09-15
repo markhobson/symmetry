@@ -15,7 +15,6 @@ import org.junit.Test;
  * Tests {@code BeanPropertyEvaluator}.
  * 
  * @author Mark Hobson
- * @version $Id: BeanPropertyEvaluatorTest.java 98679 2012-02-22 11:10:01Z mark@IIZUKA.CO.UK $
  * @see BeanPropertyEvaluator
  */
 public class BeanPropertyEvaluatorTest

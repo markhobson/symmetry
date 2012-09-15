@@ -14,7 +14,6 @@ import org.xml.sax.SAXException;
  * A content handler that simply delegates to another content handler.
  * 
  * @author Mark Hobson
- * @version $Id: DelegatingContentHandler.java 51272 2008-07-30 14:08:56Z mark@IIZUKA.CO.UK $
  */
 public abstract class DelegatingContentHandler implements ContentHandler
 {

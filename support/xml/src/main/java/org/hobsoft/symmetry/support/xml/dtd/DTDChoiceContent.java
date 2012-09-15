@@ -9,7 +9,6 @@ package org.hobsoft.symmetry.support.xml.dtd;
  * A compound DTD element content model whose comprising content models are mutually-exclusive.
  * 
  * @author Mark Hobson
- * @version $Id: DTDChoiceContent.java 69819 2010-01-21 15:54:06Z mark@IIZUKA.CO.UK $
  */
 public class DTDChoiceContent extends DTDChoiceContainer
 {

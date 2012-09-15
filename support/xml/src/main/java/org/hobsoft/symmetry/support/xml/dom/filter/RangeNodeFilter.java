@@ -23,7 +23,6 @@ import org.w3c.dom.traversal.NodeFilter;
  * </ul>
  * 
  * @author Mark Hobson
- * @version $Id: RangeNodeFilter.java 69819 2010-01-21 15:54:06Z mark@IIZUKA.CO.UK $
  */
 public class RangeNodeFilter implements NodeFilter
 {

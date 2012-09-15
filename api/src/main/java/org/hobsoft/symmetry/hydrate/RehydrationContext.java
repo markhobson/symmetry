@@ -11,7 +11,6 @@ import org.hobsoft.symmetry.state.EncodedState;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: RehydrationContext.java 95637 2011-11-29 12:17:44Z mark@IIZUKA.CO.UK $
  */
 public class RehydrationContext extends HydrationContext
 {

@@ -11,7 +11,6 @@ import java.beans.PropertyDescriptor;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: EncodedPropertyState.java 95586 2011-11-28 12:30:05Z mark@IIZUKA.CO.UK $
  */
 final class EncodedPropertyState
 {

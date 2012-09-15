@@ -19,7 +19,6 @@ import org.junit.runner.RunWith;
  * Tests {@code ClosureAction}.
  * 
  * @author Mark Hobson
- * @version $Id: ClosureActionTest.java 95330 2011-11-18 12:00:44Z mark@IIZUKA.CO.UK $
  * @see ClosureAction
  */
 @RunWith(JMock.class)

@@ -13,7 +13,6 @@ import java.io.ObjectOutput;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: Serializer.java 93651 2011-10-06 20:39:46Z mark@IIZUKA.CO.UK $
  * @param <T>
  *            the type that this serializer can read and write
  */

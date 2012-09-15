@@ -21,7 +21,6 @@ import org.junit.Test;
  * Tests {@code RehydrationContext}.
  * 
  * @author Mark Hobson
- * @version $Id: RehydrationContextTest.java 95595 2011-11-28 12:38:59Z mark@IIZUKA.CO.UK $
  * @see RehydrationContext
  */
 public class RehydrationContextTest

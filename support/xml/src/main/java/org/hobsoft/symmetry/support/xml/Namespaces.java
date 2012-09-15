@@ -9,7 +9,6 @@ package org.hobsoft.symmetry.support.xml;
  * Provides constants related to the W3C XML Namespaces specification.
  * 
  * @author Mark Hobson
- * @version $Id: Namespaces.java 69819 2010-01-21 15:54:06Z mark@IIZUKA.CO.UK $
  * @see <a href="http://www.w3.org/TR/REC-xml-names/">Namespaces in XML</a>
  */
 public final class Namespaces

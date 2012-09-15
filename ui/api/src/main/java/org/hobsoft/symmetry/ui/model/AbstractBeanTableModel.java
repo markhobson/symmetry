@@ -18,7 +18,6 @@ import org.hobsoft.symmetry.support.bean.Properties;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: AbstractBeanTableModel.java 99065 2012-03-08 13:00:14Z mark@IIZUKA.CO.UK $
  * @param <T>
  *            the bean type
  */

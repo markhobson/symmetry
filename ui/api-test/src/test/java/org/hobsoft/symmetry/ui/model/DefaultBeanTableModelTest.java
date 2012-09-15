@@ -30,7 +30,6 @@ import org.junit.runner.RunWith;
  * Tests {@code DefaultBeanTableModel}.
  * 
  * @author Mark Hobson
- * @version $Id: DefaultBeanTableModelTest.java 101287 2012-05-15 15:10:25Z mark@IIZUKA.CO.UK $
  * @see DefaultBeanTableModel
  */
 @RunWith(JMock.class)

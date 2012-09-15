@@ -9,7 +9,6 @@ package org.hobsoft.symmetry.support.xml.dtd;
  * Builds <code>DTDAttrDecl</code> instances from their DTD string representations.
  * 
  * @author Mark Hobson
- * @version $Id: DTDAttrDeclParser.java 69819 2010-01-21 15:54:06Z mark@IIZUKA.CO.UK $
  * @see DTDAttrDecl
  */
 public final class DTDAttrDeclParser

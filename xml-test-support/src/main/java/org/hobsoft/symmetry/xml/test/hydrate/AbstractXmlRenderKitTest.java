@@ -23,7 +23,6 @@ import org.junit.Before;
  * Provides support for testing XML-based component render kits.
  * 
  * @author Mark Hobson
- * @version $Id: AbstractXmlRenderKitTest.java 95604 2011-11-28 13:02:25Z mark@IIZUKA.CO.UK $
  * @param <T>
  *            the component type that this test tests
  */

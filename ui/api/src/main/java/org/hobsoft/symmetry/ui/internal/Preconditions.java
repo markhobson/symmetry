@@ -13,7 +13,6 @@ import java.util.Arrays;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: Preconditions.java 99068 2012-03-08 13:05:12Z mark@IIZUKA.CO.UK $
  */
 public final class Preconditions
 {

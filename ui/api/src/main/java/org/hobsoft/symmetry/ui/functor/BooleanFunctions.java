@@ -9,7 +9,6 @@ package org.hobsoft.symmetry.ui.functor;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: BooleanFunctions.java 94748 2011-10-24 14:57:43Z mark@IIZUKA.CO.UK $
  */
 public final class BooleanFunctions
 {

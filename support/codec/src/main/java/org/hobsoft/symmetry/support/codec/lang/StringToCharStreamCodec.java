@@ -18,7 +18,6 @@ import org.hobsoft.symmetry.support.codec.EncoderException;
  * Codec that encodes strings to char streams and vice-versa.
  * 
  * @author Mark Hobson
- * @version $Id: StringToCharStreamCodec.java 75587 2010-08-02 20:41:05Z mark@IIZUKA.CO.UK $
  */
 class StringToCharStreamCodec extends AbstractCharStreamEncoder<String> implements CharStreamCodec<String>
 {

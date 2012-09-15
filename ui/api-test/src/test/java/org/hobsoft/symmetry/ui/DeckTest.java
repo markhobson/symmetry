@@ -21,7 +21,6 @@ import org.junit.Test;
  * Tests {@code Deck}.
  * 
  * @author Mark Hobson
- * @version $Id: DeckTest.java 99052 2012-03-08 11:58:53Z mark@IIZUKA.CO.UK $
  * @see Deck
  */
 public class DeckTest extends AbstractComponentTest<Deck>

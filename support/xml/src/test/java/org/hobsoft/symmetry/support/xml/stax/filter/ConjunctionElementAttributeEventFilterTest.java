@@ -19,7 +19,6 @@ import org.junit.Test;
  * Tests {@code ConjunctionElementAttributeEventFilter}.
  * 
  * @author Mark Hobson
- * @version $Id: ConjunctionElementAttributeEventFilterTest.java 88590 2011-05-27 09:55:44Z mark@IIZUKA.CO.UK $
  * @see ConjunctionElementAttributeEventFilter
  */
 public class ConjunctionElementAttributeEventFilterTest extends AbstractXMLEventTest

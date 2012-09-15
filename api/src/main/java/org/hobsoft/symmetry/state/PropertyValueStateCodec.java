@@ -11,7 +11,6 @@ import java.beans.PropertyDescriptor;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: PropertyValueStateCodec.java 98230 2012-02-02 11:34:34Z mark@IIZUKA.CO.UK $
  * @param <T>
  *            the property type
  */

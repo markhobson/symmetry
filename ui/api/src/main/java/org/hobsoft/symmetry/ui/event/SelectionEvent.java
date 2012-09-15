@@ -11,7 +11,6 @@ import org.hobsoft.symmetry.ui.ComboBox;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: SelectionEvent.java 88178 2011-05-18 10:16:42Z mark@IIZUKA.CO.UK $
  */
 public final class SelectionEvent extends ComponentEvent
 {

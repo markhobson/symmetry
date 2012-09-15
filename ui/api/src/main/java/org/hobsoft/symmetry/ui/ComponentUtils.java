@@ -22,7 +22,6 @@ import org.hobsoft.symmetry.ui.traversal.ComponentFilters;
  * Provides various utility methods for working with components.
  * 
  * @author Mark Hobson
- * @version $Id: ComponentUtils.java 94252 2011-10-11 14:30:14Z mark@IIZUKA.CO.UK $
  * @see Component
  */
 public final class ComponentUtils

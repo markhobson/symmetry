@@ -13,7 +13,6 @@ import org.hobsoft.symmetry.support.codec.EncoderException;
  * Codec that encodes a character to a string and vice-versa.
  * 
  * @author Mark Hobson
- * @version $Id: CharacterToStringCodec.java 75578 2010-08-02 18:30:22Z mark@IIZUKA.CO.UK $
  */
 class CharacterToStringCodec implements Codec<Character, String>
 {

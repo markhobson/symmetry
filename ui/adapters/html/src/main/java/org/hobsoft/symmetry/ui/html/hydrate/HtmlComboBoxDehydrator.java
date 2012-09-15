@@ -34,7 +34,6 @@ import static org.hobsoft.symmetry.xml.XmlUtils.writeId;
  * Hydrator that dehydrates a {@code ComboBox} component to an HTML {@code <select/>} tag.
  * 
  * @author Mark Hobson
- * @version $Id: HtmlComboBoxDehydrator.java 100086 2012-03-30 10:28:05Z mark@IIZUKA.CO.UK $
  * @see ComboBox
  * @param <T>
  *            the combo box type this visitor can visit

@@ -38,7 +38,6 @@ import static org.hobsoft.symmetry.ui.traversal.Visits.nullEndVisit;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: ComboBox.java 99065 2012-03-08 13:00:14Z mark@IIZUKA.CO.UK $
  * @param <T>
  *            the item type
  */

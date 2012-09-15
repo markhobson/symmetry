@@ -15,7 +15,6 @@ import static org.hobsoft.symmetry.ui.traversal.ComponentVisitors.asGridVisitor;
  * Phased hydrator that dehydrates and rehydrates a {@code Grid} component using an HTML {@code <table/>} tag.
  * 
  * @author Mark Hobson
- * @version $Id: HtmlGridHydrator.java 99169 2012-03-09 17:09:04Z mark@IIZUKA.CO.UK $
  * @see Grid
  * @param <T>
  *            the grid type this visitor can visit

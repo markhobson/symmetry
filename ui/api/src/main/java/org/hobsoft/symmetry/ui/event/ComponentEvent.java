@@ -13,7 +13,6 @@ import org.hobsoft.symmetry.ui.Component;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: ComponentEvent.java 88174 2011-05-18 09:26:41Z mark@IIZUKA.CO.UK $
  */
 public abstract class ComponentEvent extends EventObject
 {

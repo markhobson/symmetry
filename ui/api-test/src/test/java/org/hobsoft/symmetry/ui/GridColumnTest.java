@@ -19,7 +19,6 @@ import org.junit.Test;
  * Tests {@code GridColumn}.
  * 
  * @author Mark Hobson
- * @version $Id: GridColumnTest.java 99804 2012-03-22 17:25:54Z mark@IIZUKA.CO.UK $
  * @see GridColumn
  */
 public class GridColumnTest

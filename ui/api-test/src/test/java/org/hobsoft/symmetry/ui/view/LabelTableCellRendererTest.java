@@ -18,7 +18,6 @@ import org.junit.Test;
  * Tests {@code LabelTableCellRenderer}.
  * 
  * @author Mark Hobson
- * @version $Id: LabelTableCellRendererTest.java 100497 2012-04-16 15:42:05Z mark@IIZUKA.CO.UK $
  * @see LabelTableCellRenderer
  */
 public class LabelTableCellRendererTest

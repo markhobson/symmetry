@@ -14,7 +14,6 @@ import org.hobsoft.symmetry.support.codec.EncoderException;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: DefaultIdEncoder.java 95597 2011-11-28 12:44:19Z mark@IIZUKA.CO.UK $
  */
 class DefaultIdEncoder implements IdEncoder
 {

@@ -26,7 +26,6 @@ import org.junit.runner.RunWith;
  * Tests {@code PreorderComponentVisitor}.
  * 
  * @author Mark Hobson
- * @version $Id: PreorderComponentVisitorTest.java 95608 2011-11-28 15:21:07Z mark@IIZUKA.CO.UK $
  * @see PreorderComponentVisitor
  */
 @RunWith(JMock.class)

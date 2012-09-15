@@ -22,7 +22,6 @@ import org.hobsoft.symmetry.ui.model.TableModel;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: SwtTablePeer.java 99628 2012-03-16 14:32:20Z mark@IIZUKA.CO.UK $
  */
 public class SwtTablePeer extends AbstractPeerHandler
 {

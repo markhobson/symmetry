@@ -9,7 +9,6 @@ package org.hobsoft.symmetry.ui.functor;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: HyperlinkableClosure.java 88711 2011-06-03 15:44:30Z mark@IIZUKA.CO.UK $
  * @param <T>
  *            the input type
  */

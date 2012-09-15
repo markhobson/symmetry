@@ -12,7 +12,6 @@ import java.beans.PropertyChangeSupport;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: BoundBean.java 86812 2011-04-12 09:01:17Z mark@IIZUKA.CO.UK $
  */
 public class BoundBean
 {

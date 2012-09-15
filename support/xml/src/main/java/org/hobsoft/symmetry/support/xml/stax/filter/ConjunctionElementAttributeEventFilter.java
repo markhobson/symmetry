@@ -14,7 +14,6 @@ import javax.xml.stream.events.Attribute;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: ConjunctionElementAttributeEventFilter.java 88560 2011-05-26 13:50:49Z mark@IIZUKA.CO.UK $
  */
 class ConjunctionElementAttributeEventFilter extends AbstractElementAttributeEventFilter
 {

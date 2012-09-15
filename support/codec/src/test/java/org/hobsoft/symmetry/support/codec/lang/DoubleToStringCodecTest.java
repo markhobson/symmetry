@@ -17,7 +17,6 @@ import org.junit.Test;
  * Tests {@code DoubleToStringCodec}.
  * 
  * @author Mark Hobson
- * @version $Id: DoubleToStringCodecTest.java 75370 2010-07-26 10:10:09Z mark@IIZUKA.CO.UK $
  * @see DoubleToStringCodec
  */
 public class DoubleToStringCodecTest

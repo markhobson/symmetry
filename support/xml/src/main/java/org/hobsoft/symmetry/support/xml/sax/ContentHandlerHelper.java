@@ -14,7 +14,6 @@ import org.xml.sax.helpers.AttributesImpl;
  * Wraps a content handler to provide convenience methods. 
  * 
  * @author Mark Hobson
- * @version $Id: ContentHandlerHelper.java 51307 2008-07-31 16:13:42Z mark@IIZUKA.CO.UK $
  */
 public class ContentHandlerHelper extends DelegatingContentHandler
 {

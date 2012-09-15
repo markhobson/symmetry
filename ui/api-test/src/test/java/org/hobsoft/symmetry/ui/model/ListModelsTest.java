@@ -18,7 +18,6 @@ import org.junit.runner.RunWith;
  * Tests {@code ListModels}.
  * 
  * @author Mark Hobson
- * @version $Id: ListModelsTest.java 99055 2012-03-08 12:14:03Z mark@IIZUKA.CO.UK $
  * @see ListModels
  */
 @RunWith(JMock.class)

@@ -11,7 +11,6 @@ import org.w3c.dom.Node;
  * Defines a closure that operates upon nodes.
  * 
  * @author Mark Hobson
- * @version $Id: NodeClosure.java 69819 2010-01-21 15:54:06Z mark@IIZUKA.CO.UK $
  */
 public interface NodeClosure
 {

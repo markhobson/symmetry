@@ -29,7 +29,6 @@ import javax.xml.stream.EventFilter;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: TypeEventFilters.java 88550 2011-05-26 10:11:55Z mark@IIZUKA.CO.UK $
  */
 public final class TypeEventFilters
 {

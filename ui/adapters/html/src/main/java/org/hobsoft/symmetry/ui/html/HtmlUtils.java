@@ -37,7 +37,6 @@ import static org.hobsoft.symmetry.support.xml.stax.transform.EventTransformers.
  * 
  * 
  * @author Mark Hobson
- * @version $Id: HtmlUtils.java 95642 2011-11-29 12:42:30Z mark@IIZUKA.CO.UK $
  */
 public final class HtmlUtils
 {

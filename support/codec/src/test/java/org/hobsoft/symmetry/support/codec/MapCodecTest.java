@@ -20,7 +20,6 @@ import org.junit.Test;
  * Tests {@code MapCodec}.
  * 
  * @author Mark Hobson
- * @version $Id$
  * @see MapCodec
  */
 public class MapCodecTest

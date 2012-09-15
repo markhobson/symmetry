@@ -21,7 +21,6 @@ import org.junit.runner.RunWith;
  * Tests {@code DelegatingDecoder}.
  * 
  * @author Mark Hobson
- * @version $Id: DelegatingDecoderTest.java 75370 2010-07-26 10:10:09Z mark@IIZUKA.CO.UK $
  * @see DelegatingDecoder
  */
 @RunWith(JMock.class)

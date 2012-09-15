@@ -35,7 +35,6 @@ import static org.hobsoft.symmetry.ui.traversal.Visits.nullEndVisit;
  * A container that lays its children out in columns.
  * 
  * @author Mark Hobson
- * @version $Id: Grid.java 100095 2012-03-30 14:47:33Z mark@IIZUKA.CO.UK $
  */
 public class Grid extends Container
 {

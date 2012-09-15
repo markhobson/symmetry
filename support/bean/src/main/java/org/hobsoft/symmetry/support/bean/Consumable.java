@@ -9,7 +9,6 @@ package org.hobsoft.symmetry.support.bean;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: Consumable.java 86783 2011-04-11 18:18:45Z mark@IIZUKA.CO.UK $
  */
 public interface Consumable
 {

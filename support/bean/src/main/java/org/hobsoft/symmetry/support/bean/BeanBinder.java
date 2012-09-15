@@ -18,7 +18,6 @@ import static org.hobsoft.symmetry.support.bean.Properties.getDescriptor;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: BeanBinder.java 92525 2011-09-19 14:21:38Z mark@IIZUKA.CO.UK $
  */
 public final class BeanBinder
 {

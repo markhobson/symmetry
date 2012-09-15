@@ -15,7 +15,6 @@ import static org.hobsoft.symmetry.ui.traversal.ComponentVisitors.selectedCompon
  * Phased hydrator that dehydrates and rehydrates a {@code TabBox} component using an HTML {@code <div/>} tag.
  * 
  * @author Mark Hobson
- * @version $Id: HtmlTabBoxHydrator.java 99112 2012-03-09 15:21:08Z mark@IIZUKA.CO.UK $
  * @see TabBox
  * @param <T>
  *            the tab box type this visitor can visit

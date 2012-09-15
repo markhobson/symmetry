@@ -14,7 +14,6 @@ import org.junit.Test;
  * Tests {@code CssClassBuilder}.
  * 
  * @author Mark Hobson
- * @version $Id: CssClassBuilderTest.java 95597 2011-11-28 12:44:19Z mark@IIZUKA.CO.UK $
  * @see CssClassBuilder
  */
 public class CssClassBuilderTest

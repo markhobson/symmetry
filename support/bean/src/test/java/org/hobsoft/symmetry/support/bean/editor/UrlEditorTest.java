@@ -24,7 +24,6 @@ import org.junit.runner.RunWith;
  * Tests {@code UrlEditor}.
  * 
  * @author Mark Hobson
- * @version $Id: UrlEditorTest.java 97413 2011-12-30 17:52:58Z mark@IIZUKA.CO.UK $
  * @see UrlEditor
  */
 @RunWith(JMock.class)

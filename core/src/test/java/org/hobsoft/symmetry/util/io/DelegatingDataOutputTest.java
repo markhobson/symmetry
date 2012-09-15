@@ -20,7 +20,6 @@ import org.junit.Test;
  * Tests {@code DelegatingDataOutput}.
  * 
  * @author Mark Hobson
- * @version $Id: DelegatingDataOutputTest.java 95224 2011-11-16 15:37:43Z mark@IIZUKA.CO.UK $
  * @see DelegatingDataOutput
  */
 public class DelegatingDataOutputTest

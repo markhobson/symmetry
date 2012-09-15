@@ -13,7 +13,6 @@ import org.hobsoft.symmetry.ui.functor.Closure;
  * An action that executes a closure when performed.
  * 
  * @author Mark Hobson
- * @version $Id: ClosureAction.java 94748 2011-10-24 14:57:43Z mark@IIZUKA.CO.UK $
  */
 public class ClosureAction extends DefaultAction implements ClosureEventListener<ActionEvent>
 {

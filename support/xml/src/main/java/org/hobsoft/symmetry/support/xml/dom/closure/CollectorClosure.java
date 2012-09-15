@@ -18,7 +18,6 @@ import org.w3c.dom.Node;
  * A node closure that collects nodes and makes them accessible for further processing.
  * 
  * @author Mark Hobson
- * @version $Id: CollectorClosure.java 69819 2010-01-21 15:54:06Z mark@IIZUKA.CO.UK $
  */
 public class CollectorClosure implements NodeClosure
 {

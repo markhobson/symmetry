@@ -12,7 +12,6 @@ import org.hobsoft.symmetry.ui.event.TableEvent;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: DummyTableCellListener.java 99606 2012-03-16 12:46:26Z mark@IIZUKA.CO.UK $
  */
 public class DummyTableCellListener implements TableCellListener
 {

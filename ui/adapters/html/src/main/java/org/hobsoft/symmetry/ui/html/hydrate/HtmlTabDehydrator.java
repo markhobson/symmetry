@@ -22,7 +22,6 @@ import static org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.Vis
  * Hydrator that dehydrates a {@code Tab} component to an HTML {@code <div/>} tag.
  * 
  * @author Mark Hobson
- * @version $Id: HtmlTabDehydrator.java 98843 2012-02-29 10:01:13Z mark@IIZUKA.CO.UK $
  * @see Tab
  * @param <T>
  *            the tab type this visitor can visit

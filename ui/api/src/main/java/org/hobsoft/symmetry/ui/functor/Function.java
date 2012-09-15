@@ -9,7 +9,6 @@ package org.hobsoft.symmetry.ui.functor;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: Function.java 86838 2011-04-12 14:32:18Z mark@IIZUKA.CO.UK $
  * @param <T>
  *            the input type
  * @param <U>

@@ -17,7 +17,6 @@ import org.junit.Test;
  * Tests {@code TableCellRenderers}.
  * 
  * @author Mark Hobson
- * @version $Id: TableCellRenderersTest.java 90330 2011-07-08 11:17:36Z mark@IIZUKA.CO.UK $
  * @see TableCellRenderers
  */
 public class TableCellRenderersTest

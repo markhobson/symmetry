@@ -15,7 +15,6 @@ import static org.hobsoft.symmetry.ui.traversal.ComponentVisitors.asContainerVis
  * Phased base hydrator for dehydrating and rehydrating a {@code Container} component using HTML.
  * 
  * @author Mark Hobson
- * @version $Id: AbstractHtmlContainerHydrator.java 99169 2012-03-09 17:09:04Z mark@IIZUKA.CO.UK $
  * @see Container
  * @param <T>
  *            the box type this visitor can visit

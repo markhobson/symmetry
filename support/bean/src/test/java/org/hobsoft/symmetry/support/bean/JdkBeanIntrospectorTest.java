@@ -9,7 +9,6 @@ package org.hobsoft.symmetry.support.bean;
  * Tests {@code JdkBeanIntrospector} against the TCK.
  * 
  * @author Mark Hobson
- * @version $Id: JdkBeanIntrospectorTest.java 86795 2011-04-11 21:03:44Z mark@IIZUKA.CO.UK $
  * @see JdkBeanIntrospector
  */
 public class JdkBeanIntrospectorTest extends BeanIntrospectorTck

@@ -18,7 +18,6 @@ import org.junit.Test;
  * Tests {@code BoxLayoutData}.
  * 
  * @author Mark Hobson
- * @version $Id: BoxLayoutDataTest.java 99869 2012-03-23 17:26:34Z mark@IIZUKA.CO.UK $
  * @see BoxLayoutData
  */
 public class BoxLayoutDataTest

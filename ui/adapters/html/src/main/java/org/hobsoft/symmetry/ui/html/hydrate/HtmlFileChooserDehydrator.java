@@ -22,7 +22,6 @@ import static org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.Vis
  * Hydrator that dehydrates a {@code FileChooser} component to an HTML {@code <input/>} tag.
  * 
  * @author Mark Hobson
- * @version $Id: HtmlFileChooserDehydrator.java 98843 2012-02-29 10:01:13Z mark@IIZUKA.CO.UK $
  * @see FileChooser
  * @param <T>
  *            the file chooser type this visitor can visit

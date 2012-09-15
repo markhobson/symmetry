@@ -17,7 +17,6 @@ import org.xml.sax.XMLReader;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: ExplicitDTDXMLFilter.java 69819 2010-01-21 15:54:06Z mark@IIZUKA.CO.UK $
  */
 public class ExplicitDTDXMLFilter extends AbstractDTDXMLFilter
 {

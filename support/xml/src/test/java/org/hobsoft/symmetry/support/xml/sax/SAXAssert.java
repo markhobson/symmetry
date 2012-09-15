@@ -12,7 +12,6 @@ import org.xml.sax.Attributes;
  * Provides methods to assert the equality of SAX objects.
  * 
  * @author Mark Hobson
- * @version $Id: SAXAssert.java 69821 2010-01-21 16:46:57Z mark@IIZUKA.CO.UK $
  */
 public final class SAXAssert
 {

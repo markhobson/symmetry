@@ -15,7 +15,6 @@ import static org.hobsoft.symmetry.ui.traversal.ComponentVisitors.nullHierarchic
  * 
  * 
  * @author Mark Hobson
- * @version $Id: NullComponentVisitor.java 99743 2012-03-22 10:15:29Z mark@IIZUKA.CO.UK $
  * @param <P>
  *            the parameter type this visitor takes
  * @param <E>

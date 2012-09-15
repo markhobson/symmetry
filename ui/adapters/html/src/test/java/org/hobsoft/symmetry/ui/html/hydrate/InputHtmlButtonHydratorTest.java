@@ -26,7 +26,6 @@ import org.junit.runner.RunWith;
  * Tests {@code InputHtmlButtonHydrator}.
  * 
  * @author Mark Hobson
- * @version $Id: InputHtmlButtonHydratorTest.java 98843 2012-02-29 10:01:13Z mark@IIZUKA.CO.UK $
  * @see InputHtmlButtonHydrator
  */
 @RunWith(JMock.class)

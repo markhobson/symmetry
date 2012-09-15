@@ -25,7 +25,6 @@ import static org.hobsoft.symmetry.ui.xml.test.hydrate.StubXmlComponentHydrators
  * Tests {@code CellWidthHtmlGridDehydrator}.
  * 
  * @author Mark Hobson
- * @version $Id: CellWidthHtmlGridDehydratorTest.java 100133 2012-04-02 10:09:45Z mark@IIZUKA.CO.UK $
  * @see CellWidthHtmlGridDehydrator
  */
 public class CellWidthHtmlGridDehydratorTest extends AbstractXmlRenderKitTest<Grid>

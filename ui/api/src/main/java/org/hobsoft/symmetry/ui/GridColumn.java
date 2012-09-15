@@ -13,7 +13,6 @@ import com.google.common.base.Objects;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: GridColumn.java 99804 2012-03-22 17:25:54Z mark@IIZUKA.CO.UK $
  */
 public final class GridColumn
 {

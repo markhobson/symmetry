@@ -9,7 +9,6 @@ package org.hobsoft.symmetry.hydrate;
  * Utility methods for working with media types.
  * 
  * @author Mark Hobson
- * @version $Id: MediaTypes.java 95595 2011-11-28 12:38:59Z mark@IIZUKA.CO.UK $
  * @see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec3.html#sec3.7">Media Types</a>
  */
 final class MediaTypes

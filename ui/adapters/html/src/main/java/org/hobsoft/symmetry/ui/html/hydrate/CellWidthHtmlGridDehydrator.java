@@ -20,7 +20,6 @@ import static org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.End
  * This works around issues in Chrome 18, Safari 5 and Opera 11.
  * 
  * @author Mark Hobson
- * @version $Id: CellWidthHtmlGridDehydrator.java 100133 2012-04-02 10:09:45Z mark@IIZUKA.CO.UK $
  * @see <a href="http://code.google.com/p/chromium/issues/detail?id=120886">Chrome issue 120886</a>
  * @param <T>
  *            the grid type this visitor can visit

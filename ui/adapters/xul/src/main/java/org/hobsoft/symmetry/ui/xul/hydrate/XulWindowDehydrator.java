@@ -21,7 +21,6 @@ import static org.hobsoft.symmetry.xml.XmlUtils.writeAttributeIfNotEmpty;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: XulWindowDehydrator.java 98843 2012-02-29 10:01:13Z mark@IIZUKA.CO.UK $
  * @param <T>
  *            the component type this visitor can visit
  */

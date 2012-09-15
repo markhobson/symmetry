@@ -14,7 +14,6 @@ import org.hobsoft.symmetry.support.bean.EventSets;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: FilteringStateCodec.java 93015 2011-09-29 08:45:13Z mark@IIZUKA.CO.UK $
  */
 public abstract class FilteringStateCodec extends DelegatingStateCodec
 {

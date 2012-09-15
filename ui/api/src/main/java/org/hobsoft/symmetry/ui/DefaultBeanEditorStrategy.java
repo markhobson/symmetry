@@ -16,7 +16,6 @@ import org.hobsoft.symmetry.support.bean.Properties;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: DefaultBeanEditorStrategy.java 94748 2011-10-24 14:57:43Z mark@IIZUKA.CO.UK $
  */
 public class DefaultBeanEditorStrategy implements BeanEditorStrategy
 {

@@ -11,7 +11,6 @@ import java.beans.PropertyChangeListener;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: StateSession.java 92869 2011-09-23 11:10:31Z mark@IIZUKA.CO.UK $
  */
 public interface StateSession extends PropertyChangeListener
 {

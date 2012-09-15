@@ -16,7 +16,6 @@ import org.hobsoft.symmetry.ui.Grid;
  * This works around issues in Chrome 18, Safari 5 and Opera 11.
  * 
  * @author Mark Hobson
- * @version $Id: CellWidthHtmlGridHydrator.java 100113 2012-03-30 17:00:28Z mark@IIZUKA.CO.UK $
  * @see <a href="http://code.google.com/p/chromium/issues/detail?id=120886">Chrome issue 120886</a>
  * @param <T>
  *            the grid type this visitor can visit

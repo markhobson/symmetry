@@ -18,7 +18,6 @@ import static org.hobsoft.symmetry.ui.traversal.ComponentVisitors.selectedCompon
  * Phased hydrator that dehydrates and rehydrates a {@code Deck} component using an HTML {@code <div/>} tag.
  * 
  * @author Mark Hobson
- * @version $Id: HtmlDeckHydrator.java 99169 2012-03-09 17:09:04Z mark@IIZUKA.CO.UK $
  * @see Deck
  * @param <T>
  *            the deck type this visitor can visit

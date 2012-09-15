@@ -16,7 +16,6 @@ import org.junit.Test;
  * Tests {@code EventListeners}.
  * 
  * @author Mark Hobson
- * @version $Id: EventListenersTest.java 92540 2011-09-20 09:25:58Z mark@IIZUKA.CO.UK $
  * @see EventListeners
  */
 public class EventListenersTest

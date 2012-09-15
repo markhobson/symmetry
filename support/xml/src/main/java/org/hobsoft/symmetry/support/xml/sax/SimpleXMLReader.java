@@ -14,7 +14,6 @@ import org.xml.sax.SAXException;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: SimpleXMLReader.java 69819 2010-01-21 15:54:06Z mark@IIZUKA.CO.UK $
  */
 public class SimpleXMLReader extends AbstractXMLReader
 {

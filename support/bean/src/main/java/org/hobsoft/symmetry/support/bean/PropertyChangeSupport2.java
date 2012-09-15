@@ -15,7 +15,6 @@ import java.beans.PropertyChangeSupport;
  * values are both {@code null}.
  * 
  * @author Mark Hobson
- * @version $Id: PropertyChangeSupport2.java 97518 2012-01-04 16:28:52Z mark@IIZUKA.CO.UK $
  * @see PropertyChangeSupport
  * @see <a href="http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=4763463">Bug 4763463</a>
  */

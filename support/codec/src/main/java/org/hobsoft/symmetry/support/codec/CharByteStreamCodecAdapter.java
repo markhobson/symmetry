@@ -18,7 +18,6 @@ import java.nio.charset.Charset;
  * Encoder that adapts a character stream codec into a byte stream codec.
  * 
  * @author Mark Hobson
- * @version $Id: CharByteStreamCodecAdapter.java 75587 2010-08-02 20:41:05Z mark@IIZUKA.CO.UK $
  * @param <X>
  *            the object type that this encoder can encode
  */

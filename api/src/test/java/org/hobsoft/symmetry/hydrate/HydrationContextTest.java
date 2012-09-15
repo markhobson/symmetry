@@ -19,7 +19,6 @@ import org.junit.Test;
  * Tests {@code HydrationContext}.
  * 
  * @author Mark Hobson
- * @version $Id: HydrationContextTest.java 95595 2011-11-28 12:38:59Z mark@IIZUKA.CO.UK $
  * @see HydrationContext
  */
 public class HydrationContextTest

@@ -20,7 +20,6 @@ import org.junit.Test;
  * Tests {@code DateToStringCodec}.
  * 
  * @author Mark Hobson
- * @version $Id: DateToStringCodecTest.java 75370 2010-07-26 10:10:09Z mark@IIZUKA.CO.UK $
  * @see DateToStringCodec
  */
 public class DateToStringCodecTest

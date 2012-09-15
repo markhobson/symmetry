@@ -19,7 +19,6 @@ import org.junit.runner.RunWith;
  * Tests {@code EmptyStringPropertyEditor}.
  * 
  * @author Mark Hobson
- * @version $Id: EmptyStringPropertyEditorTest.java 93028 2011-09-29 14:53:01Z mark@IIZUKA.CO.UK $
  * @see EmptyStringPropertyEditor
  */
 @RunWith(JMock.class)

@@ -19,7 +19,6 @@ import org.junit.Test;
  * Tests {@code BeanUtils}.
  * 
  * @author Mark Hobson
- * @version $Id: BeanUtilsTest.java 87484 2011-05-01 15:32:12Z mark@IIZUKA.CO.UK $
  * @see BeanUtils
  */
 public class BeanUtilsTest

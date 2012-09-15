@@ -23,7 +23,6 @@ import org.hobsoft.symmetry.ui.Wizard;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: WizardTab.java 99566 2012-03-15 16:00:09Z mark@IIZUKA.CO.UK $
  */
 public class WizardTab extends Tab
 {

@@ -18,7 +18,6 @@ import org.hobsoft.symmetry.support.bean.Properties;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: BeanAssert.java 98277 2012-02-06 16:52:40Z mark@IIZUKA.CO.UK $
  */
 public final class BeanAssert
 {

@@ -34,7 +34,6 @@ import org.junit.Test;
  * Tests {@code HtmlTabBoxHydrator}.
  * 
  * @author Mark Hobson
- * @version $Id: HtmlTabBoxHydratorTest.java 98881 2012-02-29 17:07:14Z mark@IIZUKA.CO.UK $
  * @see HtmlTabBoxHydrator
  */
 public class HtmlTabBoxHydratorTest extends AbstractXmlRenderKitTest<TabBox>

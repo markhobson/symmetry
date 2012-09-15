@@ -18,7 +18,6 @@ import static org.hobsoft.symmetry.support.bean.Utilities.checkNotNull;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: Properties.java 98170 2012-01-30 19:45:16Z mark@IIZUKA.CO.UK $
  */
 public final class Properties
 {

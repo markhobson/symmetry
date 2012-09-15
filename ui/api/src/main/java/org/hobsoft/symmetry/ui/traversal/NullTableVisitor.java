@@ -14,7 +14,6 @@ import static org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.Vis
  * 
  * 
  * @author Mark Hobson
- * @version $Id: NullTableVisitor.java 100087 2012-03-30 10:31:08Z mark@IIZUKA.CO.UK $
  * @param <T>
  *            the component type this visitor can visit
  * @param <P>

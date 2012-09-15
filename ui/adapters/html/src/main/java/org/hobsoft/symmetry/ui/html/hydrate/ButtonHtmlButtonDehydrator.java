@@ -19,7 +19,6 @@ import static org.hobsoft.symmetry.ui.html.HtmlUtils.writeText;
  * Hydrator that dehydrates a {@code Button} component to an HTML {@code <button/>} tag.
  * 
  * @author Mark Hobson
- * @version $Id: ButtonHtmlButtonDehydrator.java 98843 2012-02-29 10:01:13Z mark@IIZUKA.CO.UK $
  * @see Button
  * @param <T>
  *            the button type this visitor can visit

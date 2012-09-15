@@ -28,7 +28,6 @@ import static org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.End
  * Table dehydrator decorator that only dehydrates visible rows and adds a table footer.
  * 
  * @author Mark Hobson
- * @version $Id: HtmlPagedTableDehydrator.java 99706 2012-03-20 16:50:54Z mark@IIZUKA.CO.UK $
  * @see Table
  * @param <T>
  *            the table type this visitor can visit

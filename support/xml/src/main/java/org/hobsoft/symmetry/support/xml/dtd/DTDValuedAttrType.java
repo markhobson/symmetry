@@ -14,7 +14,6 @@ import java.util.List;
  * An abstract DTD attribute type that can hold a list of string values.
  * 
  * @author Mark Hobson
- * @version $Id: DTDValuedAttrType.java 69819 2010-01-21 15:54:06Z mark@IIZUKA.CO.UK $
  */
 public abstract class DTDValuedAttrType implements DTDAttrType, Iterable<String>
 {

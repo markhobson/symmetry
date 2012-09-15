@@ -26,7 +26,6 @@ import org.junit.Test;
  * Tests {@code HtmlDeckHydrator}.
  * 
  * @author Mark Hobson
- * @version $Id: HtmlDeckHydratorTest.java 98880 2012-02-29 17:06:58Z mark@IIZUKA.CO.UK $
  * @see HtmlDeckHydrator
  */
 public class HtmlDeckHydratorTest extends AbstractXmlRenderKitTest<Deck>

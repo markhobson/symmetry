@@ -15,7 +15,6 @@ import static org.hobsoft.symmetry.ui.traversal.ComponentVisitors.skipChildren;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: FilteringComponentVisitor.java 95528 2011-11-25 19:00:17Z mark@IIZUKA.CO.UK $
  * @param <P>
  *            the parameter type this visitor takes
  * @param <E>

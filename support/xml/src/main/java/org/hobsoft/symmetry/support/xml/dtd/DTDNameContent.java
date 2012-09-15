@@ -9,7 +9,6 @@ package org.hobsoft.symmetry.support.xml.dtd;
  * A DTD element content model that represents an element with a corresponding cardinality.
  * 
  * @author Mark Hobson
- * @version $Id: DTDNameContent.java 69819 2010-01-21 15:54:06Z mark@IIZUKA.CO.UK $
  */
 public class DTDNameContent extends DTDCardinalContent
 {

@@ -29,7 +29,6 @@ import static org.hobsoft.symmetry.xml.XmlUtils.writeId;
  * Base hydrator for dehydrating a {@code Button} component to an HTML form control.
  * 
  * @author Mark Hobson
- * @version $Id: AbstractControlHtmlButtonDehydrator.java 98843 2012-02-29 10:01:13Z mark@IIZUKA.CO.UK $
  * @see Button
  * @param <T>
  *            the button type this visitor can visit

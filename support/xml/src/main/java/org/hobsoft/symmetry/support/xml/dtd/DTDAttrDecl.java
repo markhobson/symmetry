@@ -9,7 +9,6 @@ package org.hobsoft.symmetry.support.xml.dtd;
  * A tag interface for DTD attribute declarations.
  * 
  * @author Mark Hobson
- * @version $Id: DTDAttrDecl.java 69819 2010-01-21 15:54:06Z mark@IIZUKA.CO.UK $
  * @see <a href="http://www.w3.org/TR/REC-xml/#sec-attr-defaults">3.3.2 Attribute Defaults</a>
  */
 public interface DTDAttrDecl

@@ -16,7 +16,6 @@ import org.hobsoft.symmetry.ui.ComponentUtils;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: ComponentFilters.java 100646 2012-04-23 10:00:25Z mark@IIZUKA.CO.UK $
  */
 public final class ComponentFilters
 {

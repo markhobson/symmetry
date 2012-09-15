@@ -19,7 +19,6 @@ import org.xml.sax.ext.LexicalHandler;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: AbstractSAXHandler.java 69819 2010-01-21 15:54:06Z mark@IIZUKA.CO.UK $
  */
 public abstract class AbstractSAXHandler implements ContentHandler, LexicalHandler
 {

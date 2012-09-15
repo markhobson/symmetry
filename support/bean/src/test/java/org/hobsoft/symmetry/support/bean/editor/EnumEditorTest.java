@@ -21,7 +21,6 @@ import org.junit.Test;
  * Tests {@code EnumEditor}.
  * 
  * @author Mark Hobson
- * @version $Id: EnumEditorTest.java 97934 2012-01-23 12:21:34Z mark@IIZUKA.CO.UK $
  * @see EnumEditor
  */
 public class EnumEditorTest

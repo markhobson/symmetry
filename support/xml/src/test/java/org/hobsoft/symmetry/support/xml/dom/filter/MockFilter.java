@@ -12,7 +12,6 @@ import org.w3c.dom.traversal.NodeFilter;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: MockFilter.java 69819 2010-01-21 15:54:06Z mark@IIZUKA.CO.UK $
  */
 public class MockFilter implements NodeFilter
 {

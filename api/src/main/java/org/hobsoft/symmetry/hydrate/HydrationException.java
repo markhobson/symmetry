@@ -11,7 +11,6 @@ import org.hobsoft.symmetry.KozoException;
  * Indicates that a serious problem was encountered during hydration.
  * 
  * @author Mark Hobson
- * @version $Id: HydrationException.java 95595 2011-11-28 12:38:59Z mark@IIZUKA.CO.UK $
  * @since 0.1
  */
 public class HydrationException extends KozoException

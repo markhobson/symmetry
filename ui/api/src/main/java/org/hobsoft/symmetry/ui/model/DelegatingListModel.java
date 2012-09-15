@@ -11,7 +11,6 @@ import static com.google.common.base.Preconditions.checkNotNull;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: DelegatingListModel.java 99065 2012-03-08 13:00:14Z mark@IIZUKA.CO.UK $
  * @param <T>
  *            the item type
  */

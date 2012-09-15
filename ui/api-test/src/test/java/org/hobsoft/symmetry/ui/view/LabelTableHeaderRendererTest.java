@@ -18,7 +18,6 @@ import org.junit.Test;
  * Tests {@code LabelTableHeaderRenderer}.
  * 
  * @author Mark Hobson
- * @version $Id: LabelTableHeaderRendererTest.java 100497 2012-04-16 15:42:05Z mark@IIZUKA.CO.UK $
  * @see LabelTableHeaderRenderer
  */
 public class LabelTableHeaderRendererTest

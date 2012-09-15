@@ -16,7 +16,6 @@ import org.junit.Test;
  * Tests {@code Length}.
  * 
  * @author Mark Hobson
- * @version $Id: LengthTest.java 99930 2012-03-27 11:01:49Z mark@IIZUKA.CO.UK $
  * @see Length
  */
 public class LengthTest

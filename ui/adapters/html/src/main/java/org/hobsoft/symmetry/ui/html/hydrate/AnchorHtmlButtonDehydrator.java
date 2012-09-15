@@ -26,7 +26,6 @@ import static org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.Vis
  * Hydrator that dehydrates a {@code Button} component to an HTML {@code <a/>} tag.
  * 
  * @author Mark Hobson
- * @version $Id: AnchorHtmlButtonDehydrator.java 98843 2012-02-29 10:01:13Z mark@IIZUKA.CO.UK $
  * @see Button
  * @param <T>
  *            the button type this visitor can visit

@@ -15,7 +15,6 @@ import org.junit.Test;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: DefaultIdEncoderTest.java 95597 2011-11-28 12:44:19Z mark@IIZUKA.CO.UK $
  */
 public class DefaultIdEncoderTest
 {

@@ -37,7 +37,6 @@ import static org.hobsoft.symmetry.ui.traversal.ComponentVisitors.filter;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: HtmlRenderKit.java 98897 2012-03-01 11:09:38Z mark@IIZUKA.CO.UK $
  */
 public class HtmlRenderKit extends XmlRenderKit<Component>
 {

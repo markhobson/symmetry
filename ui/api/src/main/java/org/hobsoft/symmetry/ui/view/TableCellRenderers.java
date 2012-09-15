@@ -14,7 +14,6 @@ import org.hobsoft.symmetry.ui.functor.Functions;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: TableCellRenderers.java 88032 2011-05-13 19:04:22Z mark@IIZUKA.CO.UK $
  */
 public final class TableCellRenderers
 {

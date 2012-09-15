@@ -14,7 +14,6 @@ import static org.hobsoft.symmetry.ui.internal.Preconditions.checkPositive;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: TextArea.java 99057 2012-03-08 12:29:24Z mark@IIZUKA.CO.UK $
  */
 public class TextArea extends TextBox
 {

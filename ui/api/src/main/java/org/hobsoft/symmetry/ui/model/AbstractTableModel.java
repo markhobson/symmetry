@@ -15,7 +15,6 @@ import org.hobsoft.symmetry.ui.event.TableModelListener;
 /**
  * 
  * @author Mark Hobson
- * @version $Id: AbstractTableModel.java 99065 2012-03-08 13:00:14Z mark@IIZUKA.CO.UK $
  */
 public abstract class AbstractTableModel implements TableModel
 {

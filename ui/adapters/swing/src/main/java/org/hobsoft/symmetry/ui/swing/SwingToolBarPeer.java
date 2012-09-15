@@ -17,7 +17,6 @@ import org.hobsoft.symmetry.ui.ToolBar;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: SwingToolBarPeer.java 73508 2010-04-02 15:56:49Z mark@IIZUKA.CO.UK $
  */
 public class SwingToolBarPeer extends SwingBoxPeer
 {

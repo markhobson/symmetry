@@ -28,7 +28,6 @@ import net.sf.cglib.proxy.MethodProxy;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: TableCellRendererAdapter.java 95168 2011-11-15 17:09:21Z mark@IIZUKA.CO.UK $
  */
 public class TableCellRendererAdapter extends AbstractAdapter implements javax.swing.table.TableCellRenderer
 {

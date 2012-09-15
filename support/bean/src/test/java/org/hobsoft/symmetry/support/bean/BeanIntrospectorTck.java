@@ -23,7 +23,6 @@ import org.junit.Test;
  * Provides a TCK to test {@code BeanIntrospector} implementations against.
  * 
  * @author Mark Hobson
- * @version $Id: BeanIntrospectorTck.java 86795 2011-04-11 21:03:44Z mark@IIZUKA.CO.UK $
  * @see BeanIntrospector
  */
 public abstract class BeanIntrospectorTck

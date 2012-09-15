@@ -19,7 +19,6 @@ import org.xml.sax.helpers.AttributesImpl;
  * Tests <code>CompoundXMLReader</code>.
  * 
  * @author Mark Hobson
- * @version $Id: CompoundXMLReaderTest.java 69823 2010-01-21 17:58:46Z mark@IIZUKA.CO.UK $
  * @see CompoundXMLReader
  */
 public class CompoundXMLReaderTest

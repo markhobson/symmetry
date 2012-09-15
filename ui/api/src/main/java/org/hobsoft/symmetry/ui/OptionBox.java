@@ -19,7 +19,6 @@ import org.hobsoft.symmetry.ui.functor.Closure;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: OptionBox.java 95601 2011-11-28 12:55:42Z mark@IIZUKA.CO.UK $
  */
 public class OptionBox extends VBox
 {

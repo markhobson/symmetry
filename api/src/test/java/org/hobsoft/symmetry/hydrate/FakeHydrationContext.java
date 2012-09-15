@@ -9,7 +9,6 @@ package org.hobsoft.symmetry.hydrate;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: FakeHydrationContext.java 95595 2011-11-28 12:38:59Z mark@IIZUKA.CO.UK $
  */
 public class FakeHydrationContext extends HydrationContext
 {

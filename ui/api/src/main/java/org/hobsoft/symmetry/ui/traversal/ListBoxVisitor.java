@@ -11,7 +11,6 @@ import org.hobsoft.symmetry.ui.ComboBox;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: ListBoxVisitor.java 100086 2012-03-30 10:28:05Z mark@IIZUKA.CO.UK $
  * @param <T>
  *            the component type this visitor can visit
  * @param <P>

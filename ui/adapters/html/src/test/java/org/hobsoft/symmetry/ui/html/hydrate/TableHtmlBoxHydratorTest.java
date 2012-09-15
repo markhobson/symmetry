@@ -25,7 +25,6 @@ import static org.hobsoft.symmetry.ui.xml.test.hydrate.StubXmlComponentHydrators
  * Tests {@code TableHtmlBoxHydrator}.
  * 
  * @author Mark Hobson
- * @version $Id: TableHtmlBoxHydratorTest.java 99869 2012-03-23 17:26:34Z mark@IIZUKA.CO.UK $
  * @see TableHtmlBoxHydrator
  */
 public class TableHtmlBoxHydratorTest extends AbstractXmlRenderKitTest<Box>

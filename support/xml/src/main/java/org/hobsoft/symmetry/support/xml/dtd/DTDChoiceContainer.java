@@ -11,7 +11,6 @@ import java.util.Iterator;
  * An abstract compound DTD element content model whose comprising content models are mutually-exclusive.
  * 
  * @author Mark Hobson
- * @version $Id: DTDChoiceContainer.java 69819 2010-01-21 15:54:06Z mark@IIZUKA.CO.UK $
  */
 public abstract class DTDChoiceContainer extends DTDContentContainer
 {

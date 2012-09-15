@@ -18,7 +18,6 @@ import org.junit.Test;
  * Tests {@code PropertyState}.
  * 
  * @author Mark Hobson
- * @version $Id: PropertyStateTest.java 98228 2012-02-02 11:29:46Z mark@IIZUKA.CO.UK $
  * @see PropertyState
  */
 public class PropertyStateTest

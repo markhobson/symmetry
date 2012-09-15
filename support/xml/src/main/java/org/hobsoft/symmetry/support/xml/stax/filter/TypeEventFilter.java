@@ -28,7 +28,6 @@ import javax.xml.stream.events.XMLEvent;
  * An event filter that accepts events of a specific type.
  * 
  * @author Mark Hobson
- * @version $Id: TypeEventFilter.java 88550 2011-05-26 10:11:55Z mark@IIZUKA.CO.UK $
  */
 class TypeEventFilter implements EventFilter
 {

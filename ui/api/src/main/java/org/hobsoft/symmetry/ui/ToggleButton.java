@@ -14,7 +14,6 @@ import org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.EndVisit;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: ToggleButton.java 95168 2011-11-15 17:09:21Z mark@IIZUKA.CO.UK $
  */
 public class ToggleButton extends Button implements Selectable
 {

@@ -27,7 +27,6 @@ import static org.hobsoft.symmetry.ui.xml.test.hydrate.StubXmlComponentHydrators
  * Tests {@code HtmlGridHydrator}.
  * 
  * @author Mark Hobson
- * @version $Id: HtmlGridHydratorTest.java 100101 2012-03-30 15:08:55Z mark@IIZUKA.CO.UK $
  * @see HtmlGridHydrator
  */
 public class HtmlGridHydratorTest extends AbstractXmlRenderKitTest<Grid>

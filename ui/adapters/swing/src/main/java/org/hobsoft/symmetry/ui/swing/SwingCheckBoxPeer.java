@@ -13,7 +13,6 @@ import org.hobsoft.symmetry.PeerManager;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: SwingCheckBoxPeer.java 73508 2010-04-02 15:56:49Z mark@IIZUKA.CO.UK $
  */
 public class SwingCheckBoxPeer extends SwingToggleButtonPeer
 {

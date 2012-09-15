@@ -20,7 +20,6 @@ import org.hobsoft.symmetry.ui.traversal.NullContainerVisitor;
  * Base hydrator for dehydrating a {@code Box} component to HTML.
  * 
  * @author Mark Hobson
- * @version $Id: AbstractHtmlBoxDehydrator.java 100091 2012-03-30 10:58:09Z mark@IIZUKA.CO.UK $
  * @see Box
  * @param <T>
  *            the box type this visitor can visit

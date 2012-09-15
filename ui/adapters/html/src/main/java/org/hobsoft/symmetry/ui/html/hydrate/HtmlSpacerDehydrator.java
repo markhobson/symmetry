@@ -12,7 +12,6 @@ import org.hobsoft.symmetry.ui.common.hydrate.NullHierarchicalComponentHydrator;
  * Hydrator that dehydrates a {@code Spacer} component to nothing.
  * 
  * @author Mark Hobson
- * @version $Id: HtmlSpacerDehydrator.java 98843 2012-02-29 10:01:13Z mark@IIZUKA.CO.UK $
  * @see Spacer
  * @param <T>
  *            the spacer type this visitor can visit

@@ -35,7 +35,6 @@ import org.w3c.dom.traversal.NodeFilter;
  * Provides various utility methods for working with the DOM Core API.
  * 
  * @author Mark Hobson
- * @version $Id: NodeUtils.java 69819 2010-01-21 15:54:06Z mark@IIZUKA.CO.UK $
  * @see org.w3c.dom
  * @see <a href="http://www.w3.org/TR/2000/REC-DOM-Level-2-Core-20001113/">Document Object Model (DOM) Level 2 Core
  *      Specification</a>

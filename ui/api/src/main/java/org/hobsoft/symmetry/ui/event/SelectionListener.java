@@ -11,7 +11,6 @@ import java.util.EventListener;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: SelectionListener.java 88173 2011-05-18 09:24:49Z mark@IIZUKA.CO.UK $
  */
 public interface SelectionListener extends EventListener
 {

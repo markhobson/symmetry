@@ -30,7 +30,6 @@ import org.hobsoft.symmetry.util.io.TinyObjectOutput;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: ClassicStateCodec.java 98792 2012-02-27 12:47:49Z mark@IIZUKA.CO.UK $
  */
 public class ClassicStateCodec implements StateCodec
 {

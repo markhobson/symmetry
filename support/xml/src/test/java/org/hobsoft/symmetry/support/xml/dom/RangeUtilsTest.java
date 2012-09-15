@@ -30,7 +30,6 @@ import org.xml.sax.SAXException;
  * Tests <code>RangeUtils</code>.
  * 
  * @author Mark Hobson
- * @version $Id: RangeUtilsTest.java 69822 2010-01-21 17:57:20Z mark@IIZUKA.CO.UK $
  * @see RangeUtils
  */
 public class RangeUtilsTest extends AbstractDOMTestCase

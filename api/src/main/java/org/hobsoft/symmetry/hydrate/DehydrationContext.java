@@ -14,7 +14,6 @@ import org.hobsoft.symmetry.state.State;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: DehydrationContext.java 95640 2011-11-29 12:28:54Z mark@IIZUKA.CO.UK $
  */
 public class DehydrationContext extends HydrationContext
 {

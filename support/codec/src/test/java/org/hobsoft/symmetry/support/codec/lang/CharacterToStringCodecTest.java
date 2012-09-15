@@ -17,7 +17,6 @@ import org.junit.Test;
  * Tests {@code CharacterToStringCodec}.
  * 
  * @author Mark Hobson
- * @version $Id: CharacterToStringCodecTest.java 75370 2010-07-26 10:10:09Z mark@IIZUKA.CO.UK $
  * @see CharacterToStringCodec
  */
 public class CharacterToStringCodecTest

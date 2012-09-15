@@ -15,7 +15,6 @@ import org.hobsoft.symmetry.ui.traversal.PreorderComponentVisitor;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: IntegerIdComponentVisitor.java 95168 2011-11-15 17:09:21Z mark@IIZUKA.CO.UK $
  */
 class IntegerIdComponentVisitor extends PreorderComponentVisitor<Void, RuntimeException>
 {

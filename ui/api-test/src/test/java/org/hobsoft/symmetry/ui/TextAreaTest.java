@@ -17,7 +17,6 @@ import org.junit.Test;
  * Tests {@code TextArea}.
  * 
  * @author Mark Hobson
- * @version $Id: TextAreaTest.java 96255 2011-12-09 17:37:52Z mark@IIZUKA.CO.UK $
  * @see TextArea
  */
 public class TextAreaTest extends AbstractComponentTest<TextArea>

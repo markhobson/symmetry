@@ -28,7 +28,6 @@ import static org.hobsoft.symmetry.ui.html.HtmlUtils.writeHtmlFragment;
  * Hydrator that dehydrates an {@code HtmlLabel} component to an HTML {@code <p/>} tag.
  * 
  * @author Mark Hobson
- * @version $Id: HtmlHtmlLabelDehydrator.java 98843 2012-02-29 10:01:13Z mark@IIZUKA.CO.UK $
  * @see HtmlLabel
  * @param <T>
  *            the HTML label type this visitor can visit

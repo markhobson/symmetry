@@ -15,7 +15,6 @@ import java.beans.PropertyEditor;
  * A {@code PropertyEditor} implementation that delegates to another.
  * 
  * @author Mark Hobson
- * @version $Id: DelegatingPropertyEditor.java 97399 2011-12-30 11:55:45Z mark@IIZUKA.CO.UK $
  * @see PropertyEditor
  */
 abstract class DelegatingPropertyEditor implements PropertyEditor

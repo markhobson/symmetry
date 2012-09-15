@@ -12,7 +12,6 @@ import java.io.Writer;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: StubCharStreamEncoder.java 75577 2010-08-02 17:54:34Z mark@IIZUKA.CO.UK $
  */
 public class StubCharStreamEncoder extends AbstractCharStreamEncoder<String>
 {

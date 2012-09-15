@@ -13,7 +13,6 @@ import org.hobsoft.symmetry.ui.traversal.PostorderComponentVisitor;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: XulPeerManager.java 95189 2011-11-16 11:00:18Z mark@IIZUKA.CO.UK $
  */
 public class XulPeerManager extends StatePeerManager
 {

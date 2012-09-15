@@ -11,7 +11,6 @@ import org.hobsoft.symmetry.support.codec.Encoder;
  * Factory class for building lang encoders.
  * 
  * @author Mark Hobson
- * @version $Id: LangEncoders.java 75578 2010-08-02 18:30:22Z mark@IIZUKA.CO.UK $
  */
 public final class LangEncoders
 {

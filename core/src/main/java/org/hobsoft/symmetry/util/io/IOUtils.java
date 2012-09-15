@@ -15,7 +15,6 @@ import java.io.ObjectOutput;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: IOUtils.java 98792 2012-02-27 12:47:49Z mark@IIZUKA.CO.UK $
  */
 public final class IOUtils
 {

@@ -13,7 +13,6 @@ import com.googlecode.jtype.Generic;
  * Tests {@code ToggleButton}.
  * 
  * @author Mark Hobson
- * @version $Id: ToggleButtonTest.java 95528 2011-11-25 19:00:17Z mark@IIZUKA.CO.UK $
  * @see ToggleButton
  */
 public class ToggleButtonTest extends AbstractComponentTest<ToggleButton>

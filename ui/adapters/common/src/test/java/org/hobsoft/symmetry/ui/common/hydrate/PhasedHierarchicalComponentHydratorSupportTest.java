@@ -23,7 +23,6 @@ import org.junit.Test;
  * Tests {@code PhasedHierarchicalComponentHydratorSupport}.
  * 
  * @author Mark Hobson
- * @version $Id: PhasedHierarchicalComponentHydratorSupportTest.java 98885 2012-02-29 17:37:56Z mark@IIZUKA.CO.UK $
  * @see PhasedHierarchicalComponentHydratorSupport
  */
 public class PhasedHierarchicalComponentHydratorSupportTest

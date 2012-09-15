@@ -28,7 +28,6 @@ import org.junit.runner.RunWith;
  * Tests {@code FilteringComponentVisitor}.
  * 
  * @author Mark Hobson
- * @version $Id: FilteringComponentVisitorTest.java 95609 2011-11-28 15:23:29Z mark@IIZUKA.CO.UK $
  * @see FilteringComponentVisitor
  */
 @RunWith(JMock.class)

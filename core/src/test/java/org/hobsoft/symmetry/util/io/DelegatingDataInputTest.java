@@ -22,7 +22,6 @@ import org.junit.Test;
  * Tests {@code DelegatingDataInput}.
  * 
  * @author Mark Hobson
- * @version $Id: DelegatingDataInputTest.java 95224 2011-11-16 15:37:43Z mark@IIZUKA.CO.UK $
  * @see DelegatingDataInput
  */
 public class DelegatingDataInputTest

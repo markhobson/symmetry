@@ -22,7 +22,6 @@ import org.hobsoft.symmetry.ui.common.hydrate.CompositeComponentHydrator;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: XulComponentHydrator.java 98843 2012-02-29 10:01:13Z mark@IIZUKA.CO.UK $
  */
 public class XulComponentHydrator extends CompositeComponentHydrator
 {

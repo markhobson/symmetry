@@ -9,7 +9,6 @@ package org.hobsoft.symmetry.state;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: FakeBean.java 101083 2012-05-04 14:50:47Z mark@IIZUKA.CO.UK $
  */
 public class FakeBean
 {

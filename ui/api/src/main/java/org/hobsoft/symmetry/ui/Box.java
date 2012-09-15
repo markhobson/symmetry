@@ -22,7 +22,6 @@ import org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.EndVisit;
  * A container that lays its children out along an axis.
  * 
  * @author Mark Hobson
- * @version $Id: Box.java 99616 2012-03-16 12:57:47Z mark@IIZUKA.CO.UK $
  * @see org.hobsoft.symmetry.ui.HBox
  * @see org.hobsoft.symmetry.ui.VBox
  */

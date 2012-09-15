@@ -22,7 +22,6 @@ import org.xml.sax.helpers.AttributesImpl;
  * </p>
  * 
  * @author Mark Hobson
- * @version $Id: MockXMLReader.java 69819 2010-01-21 15:54:06Z mark@IIZUKA.CO.UK $
  */
 public class MockXMLReader extends AbstractXMLReader
 {

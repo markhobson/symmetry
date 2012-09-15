@@ -13,7 +13,6 @@ import org.hobsoft.symmetry.ui.Component;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: DelegatingHierarchicalComponentVisitor.java 99745 2012-03-22 10:17:52Z mark@IIZUKA.CO.UK $
  * @param <T>
  *            the component type this visitor can visit
  * @param <P>

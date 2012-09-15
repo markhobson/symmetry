@@ -22,7 +22,6 @@ import org.w3c.dom.Text;
  * A hierarchical visitor for DOM nodes.
  * 
  * @author Mark Hobson
- * @version $Id: NodeVisitor.java 69819 2010-01-21 15:54:06Z mark@IIZUKA.CO.UK $
  * @see NodeUtils#accept(org.w3c.dom.Node, NodeVisitor)
  * @see <a href="http://c2.com/cgi/wiki?HierarchicalVisitorPattern">HierarchicalVisitorPattern</a>
  */

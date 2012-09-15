@@ -14,7 +14,6 @@ import org.w3c.dom.Node;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: DOMCharacterIteratorUtils.java 69825 2010-01-21 18:03:52Z mark@IIZUKA.CO.UK $
  */
 public final class DOMCharacterIteratorUtils
 {

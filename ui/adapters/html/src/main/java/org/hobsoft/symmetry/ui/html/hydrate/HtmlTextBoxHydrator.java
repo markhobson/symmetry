@@ -18,7 +18,6 @@ import static org.hobsoft.symmetry.ui.html.hydrate.HtmlComponentHydrators.form;
  * Phased hydrator that dehydrates and rehydrates a {@code TextBox} component using an HTML {@code <input/>} tag.
  * 
  * @author Mark Hobson
- * @version $Id: HtmlTextBoxHydrator.java 98868 2012-02-29 11:10:57Z mark@IIZUKA.CO.UK $
  * @see TextBox
  * @param <T>
  *            the text box type this visitor can visit

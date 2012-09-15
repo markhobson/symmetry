@@ -17,7 +17,6 @@ import org.w3c.dom.Node;
  * A node visitor that pretty prints every node to a writer.
  * 
  * @author Mark Hobson
- * @version $Id: PrintNodeVisitor.java 69819 2010-01-21 15:54:06Z mark@IIZUKA.CO.UK $
  */
 public class PrintNodeVisitor extends AbstractNodeVisitor
 {

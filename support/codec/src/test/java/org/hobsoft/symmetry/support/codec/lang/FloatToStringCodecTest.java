@@ -17,7 +17,6 @@ import org.junit.Test;
  * Tests {@code FloatToStringCodec}.
  * 
  * @author Mark Hobson
- * @version $Id: FloatToStringCodecTest.java 75370 2010-07-26 10:10:09Z mark@IIZUKA.CO.UK $
  * @see FloatToStringCodec
  */
 public class FloatToStringCodecTest

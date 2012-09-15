@@ -22,7 +22,6 @@ import org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.EndVisit;
  * A clickable component that can display text, an image, or both.
  * 
  * @author Mark Hobson
- * @version $Id: Button.java 95601 2011-11-28 12:55:42Z mark@IIZUKA.CO.UK $
  */
 public class Button extends Label implements Enableable
 {

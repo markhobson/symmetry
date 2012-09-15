@@ -15,7 +15,6 @@ import org.hobsoft.symmetry.ui.Label;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: LabelListCellRenderer.java 100497 2012-04-16 15:42:05Z mark@IIZUKA.CO.UK $
  * @param <T>
  *            the item type
  */

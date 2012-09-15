@@ -25,7 +25,6 @@ import static org.hobsoft.symmetry.support.bean.Utilities.nullEquals;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: BeanUtils.java 88817 2011-06-08 17:09:49Z mark@IIZUKA.CO.UK $
  */
 public final class BeanUtils
 {

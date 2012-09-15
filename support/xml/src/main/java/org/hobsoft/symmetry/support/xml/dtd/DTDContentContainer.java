@@ -14,7 +14,6 @@ import java.util.List;
  * An abstract compound DTD element content model that consists of a number of other content models.
  * 
  * @author Mark Hobson
- * @version $Id: DTDContentContainer.java 69819 2010-01-21 15:54:06Z mark@IIZUKA.CO.UK $
  */
 public abstract class DTDContentContainer extends DTDCardinalContent implements Iterable<DTDContent>
 {

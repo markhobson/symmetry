@@ -12,7 +12,6 @@ import java.util.EventObject;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: EventSetState.java 93324 2011-10-03 10:42:33Z mark@IIZUKA.CO.UK $
  */
 public class EventSetState
 {

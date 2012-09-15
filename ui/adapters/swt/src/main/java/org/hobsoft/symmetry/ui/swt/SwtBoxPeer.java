@@ -29,7 +29,6 @@ import org.hobsoft.symmetry.ui.layout.Length.Unit;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: SwtBoxPeer.java 99869 2012-03-23 17:26:34Z mark@IIZUKA.CO.UK $
  */
 public class SwtBoxPeer extends AbstractPeerHandler
 {

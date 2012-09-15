@@ -9,7 +9,6 @@ package org.hobsoft.symmetry.ui;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: Enableable.java 86683 2011-04-07 22:02:49Z mark@IIZUKA.CO.UK $
  */
 public interface Enableable
 {

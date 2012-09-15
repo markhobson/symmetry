@@ -17,7 +17,6 @@ import org.junit.Test;
  * Tests {@code GroupBox}.
  * 
  * @author Mark Hobson
- * @version $Id: GroupBoxTest.java 95554 2011-11-25 23:15:51Z mark@IIZUKA.CO.UK $
  * @see GroupBox
  */
 public class GroupBoxTest extends AbstractComponentTest<GroupBox>

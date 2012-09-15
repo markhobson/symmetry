@@ -30,7 +30,6 @@ import org.junit.Test;
  * Tests {@code TabBox}.
  * 
  * @author Mark Hobson
- * @version $Id: TabBoxTest.java 99052 2012-03-08 11:58:53Z mark@IIZUKA.CO.UK $
  * @see TabBox
  */
 public class TabBoxTest extends AbstractComponentTest<TabBox>

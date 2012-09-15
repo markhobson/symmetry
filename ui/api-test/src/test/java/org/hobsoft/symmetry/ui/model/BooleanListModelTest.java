@@ -14,7 +14,6 @@ import org.junit.Test;
  * Tests {@code BooleanListModel}.
  * 
  * @author Mark Hobson
- * @version $Id: BooleanListModelTest.java 89152 2011-06-21 15:32:40Z mark@IIZUKA.CO.UK $
  * @see BooleanListModel
  */
 public class BooleanListModelTest

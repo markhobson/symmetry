@@ -22,7 +22,6 @@ import org.junit.Test;
  * Tests {@code EncodedState}.
  * 
  * @author Mark Hobson
- * @version $Id: EncodedStateTest.java 93651 2011-10-06 20:39:46Z mark@IIZUKA.CO.UK $
  * @see EncodedState
  */
 public class EncodedStateTest

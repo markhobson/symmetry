@@ -13,7 +13,6 @@ import java.io.InputStream;
  * Provides a base for encoders that encode an object into a stream of bytes.
  * 
  * @author Mark Hobson
- * @version $Id: AbstractByteStreamEncoder.java 75581 2010-08-02 18:51:27Z mark@IIZUKA.CO.UK $
  * @param <X>
  *            the object type that this encoder can encode
  */

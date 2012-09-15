@@ -16,7 +16,6 @@ import org.hobsoft.symmetry.support.xml.stax.EventTransformer;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: StubEventTransformer.java 88597 2011-05-27 11:01:49Z mark@IIZUKA.CO.UK $
  */
 public class StubEventTransformer implements EventTransformer
 {

@@ -17,7 +17,6 @@ import org.jmock.Mockery;
  * Matcher for {@code PropertyChangeEvent}s.
  * 
  * @author Mark Hobson
- * @version $Id: PropertyChangeEventMatcher.java 85710 2011-03-10 17:12:04Z mark@IIZUKA.CO.UK $
  * @see PropertyChangeEvent
  */
 public class PropertyChangeEventMatcher extends TypeSafeMatcher<PropertyChangeEvent>

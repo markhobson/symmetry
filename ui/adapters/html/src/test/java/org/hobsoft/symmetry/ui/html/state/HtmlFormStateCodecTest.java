@@ -12,7 +12,6 @@ import org.junit.Test;
  * Tests {@code HtmlFormStateCodec}.
  * 
  * @author Mark Hobson
- * @version $Id: HtmlFormStateCodecTest.java 98223 2012-02-02 11:04:03Z mark@IIZUKA.CO.UK $
  * @see HtmlFormStateCodec
  */
 public class HtmlFormStateCodecTest

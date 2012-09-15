@@ -14,7 +14,6 @@ import org.junit.Test;
  * Tests <code>DTDEnumAttrType</code>.
  * 
  * @author Mark Hobson
- * @version $Id: DTDEnumAttrTypeTest.java 69822 2010-01-21 17:57:20Z mark@IIZUKA.CO.UK $
  * @see DTDEnumAttrType
  */
 public class DTDEnumAttrTypeTest

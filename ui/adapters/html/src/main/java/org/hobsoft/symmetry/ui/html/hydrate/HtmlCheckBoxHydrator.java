@@ -19,7 +19,6 @@ import static org.hobsoft.symmetry.ui.html.hydrate.HtmlComponentHydrators.form;
  * Phased hydrator that dehydrates and rehydrates a {@code CheckBox} component using an HTML {@code <input/>} tag.
  * 
  * @author Mark Hobson
- * @version $Id: HtmlCheckBoxHydrator.java 98878 2012-02-29 16:54:12Z mark@IIZUKA.CO.UK $
  * @see CheckBox
  * @param <T>
  *            the check box type this visitor can visit

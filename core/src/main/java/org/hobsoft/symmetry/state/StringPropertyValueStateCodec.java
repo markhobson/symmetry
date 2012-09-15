@@ -20,7 +20,6 @@ import org.hobsoft.symmetry.util.io.TinyObjectOutput;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: StringPropertyValueStateCodec.java 101084 2012-05-04 14:50:55Z mark@IIZUKA.CO.UK $
  */
 public class StringPropertyValueStateCodec extends DelegatingStateCodec
 {

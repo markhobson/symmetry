@@ -23,7 +23,6 @@ import static org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.Vis
  * Phased base hydrator for dehydrating and rehydrating a {@code Button} component using an HTML form control.
  * 
  * @author Mark Hobson
- * @version $Id: AbstractControlHtmlButtonHydrator.java 98868 2012-02-29 11:10:57Z mark@IIZUKA.CO.UK $
  * @see Button
  * @param <T>
  *            the button type this visitor can visit

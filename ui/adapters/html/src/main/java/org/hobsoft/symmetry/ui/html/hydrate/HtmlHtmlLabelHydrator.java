@@ -12,7 +12,6 @@ import org.hobsoft.symmetry.ui.HtmlLabel;
  * Phased hydrator that dehydrates and rehydrates an {@code HtmlLabel} component using an HTML {@code <p/>} tag.
  * 
  * @author Mark Hobson
- * @version $Id: HtmlHtmlLabelHydrator.java 98843 2012-02-29 10:01:13Z mark@IIZUKA.CO.UK $
  * @see HtmlLabel
  * @param <T>
  *            the HTML label type this visitor can visit

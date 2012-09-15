@@ -18,7 +18,6 @@ import org.xml.sax.helpers.AttributesImpl;
  * Tests <code>ImplicitDTDXMLFilter</code>.
  * 
  * @author Mark Hobson
- * @version $Id: ImplicitDTDXMLFilterTest.java 69822 2010-01-21 17:57:20Z mark@IIZUKA.CO.UK $
  * @see ImplicitDTDXMLFilter
  */
 public class ImplicitDTDXMLFilterTest extends AbstractXMLFilterTest

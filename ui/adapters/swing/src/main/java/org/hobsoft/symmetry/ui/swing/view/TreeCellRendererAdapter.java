@@ -27,7 +27,6 @@ import net.sf.cglib.proxy.MethodProxy;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: TreeCellRendererAdapter.java 94748 2011-10-24 14:57:43Z mark@IIZUKA.CO.UK $
  */
 public class TreeCellRendererAdapter extends AbstractAdapter implements javax.swing.tree.TreeCellRenderer
 {

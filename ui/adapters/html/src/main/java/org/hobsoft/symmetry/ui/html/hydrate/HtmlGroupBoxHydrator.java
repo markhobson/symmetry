@@ -17,7 +17,6 @@ import static org.hobsoft.symmetry.hydrate.HydrationPhase.DEHYDRATE;
  * Phased hydrator that dehydrates and rehydrates a {@code GroupBox} component using an HTML {@code <fieldset/>} tag.
  * 
  * @author Mark Hobson
- * @version $Id: HtmlGroupBoxHydrator.java 99169 2012-03-09 17:09:04Z mark@IIZUKA.CO.UK $
  * @see GroupBox
  * @param <T>
  *            the group box type this visitor can visit

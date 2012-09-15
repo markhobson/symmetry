@@ -14,7 +14,6 @@ import org.apache.commons.io.IOUtils;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: StubCharStreamCodec.java 75587 2010-08-02 20:41:05Z mark@IIZUKA.CO.UK $
  */
 public class StubCharStreamCodec extends StubCharStreamEncoder implements CharStreamCodec<String>
 {

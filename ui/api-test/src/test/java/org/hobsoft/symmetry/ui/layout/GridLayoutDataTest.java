@@ -17,7 +17,6 @@ import org.junit.Test;
  * Tests {@code GridLayoutData}.
  * 
  * @author Mark Hobson
- * @version $Id: GridLayoutDataTest.java 99813 2012-03-22 17:33:54Z mark@IIZUKA.CO.UK $
  * @see GridLayoutData
  */
 public class GridLayoutDataTest

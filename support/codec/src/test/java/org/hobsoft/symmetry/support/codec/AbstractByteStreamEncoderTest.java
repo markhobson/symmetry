@@ -20,7 +20,6 @@ import org.junit.Test;
  * Tests {@code AbstractByteStreamEncoder}.
  * 
  * @author Mark Hobson
- * @version $Id: AbstractByteStreamEncoderTest.java 75581 2010-08-02 18:51:27Z mark@IIZUKA.CO.UK $
  * @see AbstractByteStreamEncoder
  */
 public class AbstractByteStreamEncoderTest

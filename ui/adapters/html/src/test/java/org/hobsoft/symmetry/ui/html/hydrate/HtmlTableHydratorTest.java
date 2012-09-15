@@ -35,7 +35,6 @@ import org.junit.Test;
  * Tests {@code HtmlTableHydrator}.
  * 
  * @author Mark Hobson
- * @version $Id: HtmlTableHydratorTest.java 100101 2012-03-30 15:08:55Z mark@IIZUKA.CO.UK $
  * @see HtmlTableHydrator
  */
 public class HtmlTableHydratorTest extends AbstractXmlRenderKitTest<Table>

@@ -16,7 +16,6 @@ import org.xml.sax.XMLReader;
  * Tests <code>IgnoreWhitespaceXMLFilter</code>.
  * 
  * @author Mark Hobson
- * @version $Id: IgnoreWhitespaceXMLFilterTest.java 69822 2010-01-21 17:57:20Z mark@IIZUKA.CO.UK $
  * @see IgnoreWhitespaceXMLFilter
  */
 public class IgnoreWhitespaceXMLFilterTest extends AbstractXMLFilterTest

@@ -12,7 +12,6 @@ import org.hobsoft.symmetry.ui.model.TreePath;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: TreeVisitor.java 95168 2011-11-15 17:09:21Z mark@IIZUKA.CO.UK $
  * @param <T>
  *            the component type this visitor can visit
  * @param <P>

@@ -21,7 +21,6 @@ import org.junit.Test;
  * Tests {@code CharactersEventTransformer}.
  * 
  * @author Mark Hobson
- * @version $Id: CharactersEventTransformerTest.java 88593 2011-05-27 10:31:19Z mark@IIZUKA.CO.UK $
  * @see CharactersEventTransformer
  */
 public class CharactersEventTransformerTest extends AbstractXMLEventTest

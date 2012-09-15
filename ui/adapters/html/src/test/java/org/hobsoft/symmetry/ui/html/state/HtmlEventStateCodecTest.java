@@ -19,7 +19,6 @@ import org.junit.Test;
  * Tests {@code HtmlEventStateCodec}.
  * 
  * @author Mark Hobson
- * @version $Id: HtmlEventStateCodecTest.java 95586 2011-11-28 12:30:05Z mark@IIZUKA.CO.UK $
  * @see HtmlEventStateCodec
  */
 public class HtmlEventStateCodecTest

@@ -20,7 +20,6 @@ import org.junit.Test;
  * Tests {@code NamespaceEventTransformer}.
  * 
  * @author Mark Hobson
- * @version $Id: NamespaceEventTransformerTest.java 88449 2011-05-25 00:09:01Z mark@IIZUKA.CO.UK $
  * @see NamespaceEventTransformer
  */
 public class NamespaceEventTransformerTest

@@ -20,7 +20,6 @@ import org.junit.Test;
  * Tests {@code VisibleNodeTreeVisitor}.
  * 
  * @author Mark Hobson
- * @version $Id: VisibleNodeTreeVisitorTest.java 100649 2012-04-23 10:05:30Z mark@IIZUKA.CO.UK $
  * @see VisibleNodeTreeVisitor
  */
 public class VisibleNodeTreeVisitorTest

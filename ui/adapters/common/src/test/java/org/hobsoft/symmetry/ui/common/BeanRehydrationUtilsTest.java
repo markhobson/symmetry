@@ -26,7 +26,6 @@ import org.junit.Test;
  * Tests {@code BeanRehydrationUtils}.
  * 
  * @author Mark Hobson
- * @version $Id: BeanRehydrationUtilsTest.java 98421 2012-02-13 16:38:55Z mark@IIZUKA.CO.UK $
  * @see BeanRehydrationUtils
  */
 public class BeanRehydrationUtilsTest

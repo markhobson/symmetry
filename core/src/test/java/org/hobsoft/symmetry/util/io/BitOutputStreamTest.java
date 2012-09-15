@@ -15,7 +15,6 @@ import org.junit.Test;
  * Tests {@code BitOutputStream}.
  * 
  * @author Mark Hobson
- * @version $Id: BitOutputStreamTest.java 98789 2012-02-27 12:01:42Z mark@IIZUKA.CO.UK $
  * @see BitOutputStream
  */
 public class BitOutputStreamTest

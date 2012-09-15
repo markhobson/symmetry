@@ -13,7 +13,6 @@ import org.hobsoft.symmetry.ui.event.ActionListener;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: ActionListenerAdapter.java 94748 2011-10-24 14:57:43Z mark@IIZUKA.CO.UK $
  */
 public class ActionListenerAdapter extends AbstractAdapter implements java.awt.event.ActionListener
 {

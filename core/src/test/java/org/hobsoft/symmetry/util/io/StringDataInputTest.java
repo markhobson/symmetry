@@ -18,7 +18,6 @@ import org.junit.Test;
  * Tests {@code StringDataInput}.
  * 
  * @author Mark Hobson
- * @version $Id: StringDataInputTest.java 98795 2012-02-27 13:08:46Z mark@IIZUKA.CO.UK $
  * @see StringDataInput
  */
 public class StringDataInputTest

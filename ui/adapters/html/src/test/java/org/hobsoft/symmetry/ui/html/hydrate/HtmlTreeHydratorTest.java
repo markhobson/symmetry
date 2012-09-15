@@ -27,7 +27,6 @@ import static org.hobsoft.symmetry.ui.xml.test.hydrate.StubXmlComponentHydrators
  * Tests {@code HtmlTreeHydrator}.
  * 
  * @author Mark Hobson
- * @version $Id: HtmlTreeHydratorTest.java 98871 2012-02-29 11:44:00Z mark@IIZUKA.CO.UK $
  * @see HtmlTreeHydrator
  */
 public class HtmlTreeHydratorTest extends AbstractXmlRenderKitTest<Tree>

@@ -15,7 +15,6 @@ import org.hobsoft.symmetry.ui.layout.Length;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: Lengths.java 100133 2012-04-02 10:09:45Z mark@IIZUKA.CO.UK $
  */
 final class Lengths
 {

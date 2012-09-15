@@ -14,7 +14,6 @@ import org.hobsoft.symmetry.ui.event.TreeModelListener;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: AbstractTreeModel.java 94748 2011-10-24 14:57:43Z mark@IIZUKA.CO.UK $
  */
 public abstract class AbstractTreeModel implements TreeModel
 {

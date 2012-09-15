@@ -13,7 +13,6 @@ import org.hobsoft.symmetry.ui.Orientation;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: SwingUtils.java 73508 2010-04-02 15:56:49Z mark@IIZUKA.CO.UK $
  */
 public final class SwingUtils
 {

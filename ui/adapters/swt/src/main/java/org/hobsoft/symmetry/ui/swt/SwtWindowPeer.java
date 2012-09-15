@@ -20,7 +20,6 @@ import org.hobsoft.symmetry.ui.Window;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: SwtWindowPeer.java 88029 2011-05-13 18:53:16Z mark@IIZUKA.CO.UK $
  */
 public class SwtWindowPeer extends SwtBoxPeer
 {

@@ -16,7 +16,6 @@ import org.junit.Test;
  * Tests {@code StringDataOutput}.
  * 
  * @author Mark Hobson
- * @version $Id: StringDataOutputTest.java 98797 2012-02-27 13:11:09Z mark@IIZUKA.CO.UK $
  * @see StringDataOutput
  */
 public class StringDataOutputTest

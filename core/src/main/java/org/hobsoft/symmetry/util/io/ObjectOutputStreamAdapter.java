@@ -13,7 +13,6 @@ import java.io.ObjectOutputStream;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: ObjectOutputStreamAdapter.java 73508 2010-04-02 15:56:49Z mark@IIZUKA.CO.UK $
  */
 public class ObjectOutputStreamAdapter extends ObjectOutputStream
 {

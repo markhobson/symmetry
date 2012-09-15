@@ -15,7 +15,6 @@ import org.w3c.dom.traversal.NodeFilter;
  * Provides a basis for <code>NodeFilter</code> tests.
  * 
  * @author Mark Hobson
- * @version $Id: AbstractNodeFilterTest.java 69822 2010-01-21 17:57:20Z mark@IIZUKA.CO.UK $
  */
 public abstract class AbstractNodeFilterTest extends AbstractDOMTestCase
 {

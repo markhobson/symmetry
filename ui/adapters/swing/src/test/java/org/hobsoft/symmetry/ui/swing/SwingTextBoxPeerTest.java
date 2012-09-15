@@ -25,7 +25,6 @@ import org.junit.runner.RunWith;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: SwingTextBoxPeerTest.java 97403 2011-12-30 13:27:56Z mark@IIZUKA.CO.UK $
  */
 @RunWith(JMock.class)
 public class SwingTextBoxPeerTest

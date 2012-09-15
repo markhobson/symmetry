@@ -44,7 +44,6 @@ import org.junit.runner.RunWith;
  * Tests {@code HtmlListBoxHydrator}.
  * 
  * @author Mark Hobson
- * @version $Id: HtmlListBoxHydratorTest.java 99704 2012-03-20 16:49:00Z mark@IIZUKA.CO.UK $
  * @see HtmlListBoxHydrator
  */
 @RunWith(JMock.class)

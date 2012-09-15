@@ -14,7 +14,6 @@ import javax.ws.rs.core.MediaType;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: DemoResource.java 88032 2011-05-13 19:04:22Z mark@IIZUKA.CO.UK $
  */
 @Path("/")
 public class DemoResource

@@ -14,7 +14,6 @@ import org.junit.Test;
  * Tests <code>DTDAnyContent</code>.
  * 
  * @author Mark Hobson
- * @version $Id: DTDAnyContentTest.java 69822 2010-01-21 17:57:20Z mark@IIZUKA.CO.UK $
  * @see DTDAnyContent
  */
 public class DTDAnyContentTest

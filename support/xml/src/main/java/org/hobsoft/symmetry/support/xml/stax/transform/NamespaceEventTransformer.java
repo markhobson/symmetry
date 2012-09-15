@@ -18,7 +18,6 @@ import org.hobsoft.symmetry.support.xml.stax.EventTransformer;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: NamespaceEventTransformer.java 88563 2011-05-26 14:03:25Z mark@IIZUKA.CO.UK $
  */
 class NamespaceEventTransformer implements EventTransformer
 {

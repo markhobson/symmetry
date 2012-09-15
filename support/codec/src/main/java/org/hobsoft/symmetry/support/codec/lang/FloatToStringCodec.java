@@ -13,7 +13,6 @@ import org.hobsoft.symmetry.support.codec.EncoderException;
  * Codec that encodes a float to a string and vice-versa.
  * 
  * @author Mark Hobson
- * @version $Id: FloatToStringCodec.java 75578 2010-08-02 18:30:22Z mark@IIZUKA.CO.UK $
  */
 class FloatToStringCodec implements Codec<Float, String>
 {

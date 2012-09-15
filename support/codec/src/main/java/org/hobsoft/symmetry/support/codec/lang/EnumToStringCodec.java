@@ -14,7 +14,6 @@ import org.hobsoft.symmetry.support.codec.EncoderException;
  * Codec that encodes an enum to a string and vice-versa.
  * 
  * @author Mark Hobson
- * @version $Id: EnumToStringCodec.java 75578 2010-08-02 18:30:22Z mark@IIZUKA.CO.UK $
  * @param <E>
  *            the enum type that this codec can encode
  */

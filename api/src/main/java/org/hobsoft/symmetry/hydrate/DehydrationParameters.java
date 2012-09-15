@@ -9,7 +9,6 @@ package org.hobsoft.symmetry.hydrate;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: DehydrationParameters.java 95601 2011-11-28 12:55:42Z mark@IIZUKA.CO.UK $
  */
 public final class DehydrationParameters
 {

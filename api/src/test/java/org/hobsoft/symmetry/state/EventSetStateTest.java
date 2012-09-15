@@ -19,7 +19,6 @@ import org.junit.Test;
  * Tests {@code EventSetState}.
  * 
  * @author Mark Hobson
- * @version $Id: EventSetStateTest.java 93651 2011-10-06 20:39:46Z mark@IIZUKA.CO.UK $
  * @see EventSetState
  */
 public class EventSetStateTest

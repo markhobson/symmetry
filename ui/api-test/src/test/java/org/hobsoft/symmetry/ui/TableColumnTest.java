@@ -22,7 +22,6 @@ import org.junit.Test;
  * Tests {@code TableColumn}.
  * 
  * @author Mark Hobson
- * @version $Id: TableColumnTest.java 99804 2012-03-22 17:25:54Z mark@IIZUKA.CO.UK $
  * @see TableColumn
  */
 public class TableColumnTest

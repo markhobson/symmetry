@@ -39,7 +39,6 @@ import org.xml.sax.helpers.AttributesImpl;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: AbstractXMLFilterTest.java 69822 2010-01-21 17:57:20Z mark@IIZUKA.CO.UK $
  */
 public abstract class AbstractXMLFilterTest
 {

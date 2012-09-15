@@ -14,7 +14,6 @@ import java.util.Map;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: PropertyEditorMap.java 86783 2011-04-11 18:18:45Z mark@IIZUKA.CO.UK $
  */
 public class PropertyEditorMap
 {

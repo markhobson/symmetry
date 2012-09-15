@@ -14,7 +14,6 @@ import org.junit.Test;
  * Tests {@code DefaultTreeModel}.
  * 
  * @author Mark Hobson
- * @version $Id: DefaultTreeModelTest.java 95332 2011-11-18 12:22:38Z mark@IIZUKA.CO.UK $
  * @see DefaultTreeModel
  */
 public class DefaultTreeModelTest

@@ -23,7 +23,6 @@ import org.junit.runner.RunWith;
  * Tests {@code BooleanEditor}.
  * 
  * @author Mark Hobson
- * @version $Id: BooleanEditorTest.java 97413 2011-12-30 17:52:58Z mark@IIZUKA.CO.UK $
  * @see BooleanEditor
  */
 @RunWith(JMock.class)

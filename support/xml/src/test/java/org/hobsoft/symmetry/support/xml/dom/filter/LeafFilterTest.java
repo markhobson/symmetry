@@ -16,7 +16,6 @@ import org.w3c.dom.traversal.NodeFilter;
  * Tests <code>LeafFilter</code>.
  * 
  * @author Mark Hobson
- * @version $Id: LeafFilterTest.java 69822 2010-01-21 17:57:20Z mark@IIZUKA.CO.UK $
  * @see LeafFilter
  */
 public class LeafFilterTest extends AbstractNodeFilterTest

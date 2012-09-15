@@ -14,7 +14,6 @@ import org.w3c.dom.traversal.NodeFilter;
  * Tests <code>ElementFilter</code>.
  * 
  * @author Mark Hobson
- * @version $Id: ElementFilterTest.java 69822 2010-01-21 17:57:20Z mark@IIZUKA.CO.UK $
  * @see ElementFilter
  */
 public class ElementFilterTest extends AbstractNodeFilterTest

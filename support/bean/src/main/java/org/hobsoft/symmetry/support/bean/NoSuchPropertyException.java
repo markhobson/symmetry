@@ -11,7 +11,6 @@ import java.beans.BeanInfo;
  * Indicates that a named property could not be found.
  * 
  * @author Mark Hobson
- * @version $Id: NoSuchPropertyException.java 86792 2011-04-11 20:47:20Z mark@IIZUKA.CO.UK $
  */
 public final class NoSuchPropertyException extends BeanException
 {

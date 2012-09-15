@@ -14,7 +14,6 @@ import org.w3c.dom.traversal.NodeFilter;
  * Tests <code>ConstantFilter</code>.
  * 
  * @author Mark Hobson
- * @version $Id: ConstantFilterTest.java 69822 2010-01-21 17:57:20Z mark@IIZUKA.CO.UK $
  * @see ConstantFilter
  */
 public class ConstantFilterTest extends AbstractNodeFilterTest

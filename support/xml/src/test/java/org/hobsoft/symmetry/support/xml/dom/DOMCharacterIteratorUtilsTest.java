@@ -18,7 +18,6 @@ import org.w3c.dom.Text;
  * Tests <code>DOMCharacterIteratorUtils</code>.
  * 
  * @author Mark Hobson
- * @version $Id: DOMCharacterIteratorUtilsTest.java 69822 2010-01-21 17:57:20Z mark@IIZUKA.CO.UK $
  * @see DOMCharacterIteratorUtils
  */
 public class DOMCharacterIteratorUtilsTest extends AbstractDOMTestCase

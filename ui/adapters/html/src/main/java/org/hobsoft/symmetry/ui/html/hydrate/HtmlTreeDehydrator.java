@@ -32,7 +32,6 @@ import static org.hobsoft.symmetry.xml.XmlUtils.createFilteredWriter;
  * Hydrator that dehydrates a {@code Tree} component to an HTML {@code <ul/>} tag.
  * 
  * @author Mark Hobson
- * @version $Id: HtmlTreeDehydrator.java 98843 2012-02-29 10:01:13Z mark@IIZUKA.CO.UK $
  * @see Tree
  * @param <T>
  *            the tree type this visitor can visit

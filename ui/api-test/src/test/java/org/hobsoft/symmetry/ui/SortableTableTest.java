@@ -15,7 +15,6 @@ import org.junit.Test;
  * Tests {@code SortableTable}.
  * 
  * @author Mark Hobson
- * @version $Id: SortableTableTest.java 87836 2011-05-10 17:40:10Z mark@IIZUKA.CO.UK $
  * @see SortableTable
  */
 public class SortableTableTest

@@ -21,7 +21,6 @@ import static org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.Vis
  * Hydrator that dehydrates a {@code Box} component to an HTML {@code <div/>} tag.
  * 
  * @author Mark Hobson
- * @version $Id: ContainerHtmlBoxDehydrator.java 100084 2012-03-30 10:23:59Z mark@IIZUKA.CO.UK $
  * @see Box
  * @param <T>
  *            the box type this visitor can visit

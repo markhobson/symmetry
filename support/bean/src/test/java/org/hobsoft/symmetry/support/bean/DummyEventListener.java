@@ -11,7 +11,6 @@ import java.util.EventListener;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: DummyEventListener.java 87666 2011-05-04 16:48:53Z mark@IIZUKA.CO.UK $
  */
 public class DummyEventListener implements EventListener
 {

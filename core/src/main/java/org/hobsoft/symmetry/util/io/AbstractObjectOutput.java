@@ -15,7 +15,6 @@ import java.io.ObjectOutput;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: AbstractObjectOutput.java 94748 2011-10-24 14:57:43Z mark@IIZUKA.CO.UK $
  */
 public abstract class AbstractObjectOutput extends DelegatingDataOutput implements ObjectOutput
 {

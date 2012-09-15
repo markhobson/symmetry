@@ -13,7 +13,6 @@ import org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.EndVisit;
  * Dummy component for tests.
  * 
  * @author Mark Hobson
- * @version $Id: DummyComponent.java 95444 2011-11-22 17:25:00Z mark@IIZUKA.CO.UK $
  */
 public class DummyComponent extends Component
 {

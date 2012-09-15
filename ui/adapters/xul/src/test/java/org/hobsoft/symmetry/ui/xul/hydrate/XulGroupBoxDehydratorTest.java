@@ -16,7 +16,6 @@ import org.junit.Test;
  * Tests {@code XulGroupBoxDehydrator}.
  * 
  * @author Mark Hobson
- * @version $Id: XulGroupBoxDehydratorTest.java 98843 2012-02-29 10:01:13Z mark@IIZUKA.CO.UK $
  * @see XulGroupBoxDehydrator
  */
 public class XulGroupBoxDehydratorTest extends AbstractXmlRenderKitTest<GroupBox>

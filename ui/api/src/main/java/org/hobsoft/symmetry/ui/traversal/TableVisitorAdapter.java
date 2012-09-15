@@ -11,7 +11,6 @@ import org.hobsoft.symmetry.ui.Table;
  * Adapts a {@code HierarchicalComponentVisitor} to a {@code TableVisitor}.
  * 
  * @author Mark Hobson
- * @version $Id: TableVisitorAdapter.java 100087 2012-03-30 10:31:08Z mark@IIZUKA.CO.UK $
  * @param <T>
  *            the component type this visitor can visit
  * @param <P>

@@ -14,7 +14,6 @@ import org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.EndVisit;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: FakeContainer.java 99113 2012-03-09 15:21:45Z mark@IIZUKA.CO.UK $
  */
 public class FakeContainer extends Container
 {

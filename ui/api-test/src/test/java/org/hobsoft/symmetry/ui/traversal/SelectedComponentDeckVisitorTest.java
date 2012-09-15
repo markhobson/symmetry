@@ -20,7 +20,6 @@ import org.junit.Test;
  * Tests {@code SelectedComponentDeckVisitor}.
  * 
  * @author Mark Hobson
- * @version $Id: SelectedComponentDeckVisitorTest.java 100650 2012-04-23 10:07:01Z mark@IIZUKA.CO.UK $
  * @see SelectedComponentDeckVisitor
  */
 public class SelectedComponentDeckVisitorTest

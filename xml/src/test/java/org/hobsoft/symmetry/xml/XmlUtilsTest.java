@@ -23,7 +23,6 @@ import org.junit.runner.RunWith;
  * Tests {@code XmlUtils}.
  * 
  * @author Mark Hobson
- * @version $Id: XmlUtilsTest.java 95597 2011-11-28 12:44:19Z mark@IIZUKA.CO.UK $
  * @see XmlUtils
  */
 @RunWith(JMock.class)

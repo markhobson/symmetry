@@ -21,7 +21,6 @@ import org.hobsoft.symmetry.ui.html.HtmlDocument.Script;
  * Custom assertions for {@code HtmlDocument}.
  * 
  * @author Mark Hobson
- * @version $Id: HtmlDocumentAssert.java 99008 2012-03-05 15:41:20Z mark@IIZUKA.CO.UK $
  * @see HtmlDocument
  */
 public final class HtmlDocumentAssert

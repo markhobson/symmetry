@@ -13,7 +13,6 @@ import org.junit.Ignore;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: TestBean.java 86783 2011-04-11 18:18:45Z mark@IIZUKA.CO.UK $
  */
 // TODO: remove @Ignore when Maven no longer tries to run this as a test
 @Ignore

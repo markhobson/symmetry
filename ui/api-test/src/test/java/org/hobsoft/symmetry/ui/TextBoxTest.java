@@ -21,7 +21,6 @@ import org.junit.Test;
  * Tests {@code TextBox}.
  * 
  * @author Mark Hobson
- * @version $Id: TextBoxTest.java 96255 2011-12-09 17:37:52Z mark@IIZUKA.CO.UK $
  * @see TextBox
  */
 public class TextBoxTest extends AbstractComponentTest<TextBox>

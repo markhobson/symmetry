@@ -47,7 +47,6 @@ import org.hobsoft.symmetry.util.io.TinyDataOutput;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: Base64StateCodec.java 95625 2011-11-29 11:54:23Z mark@IIZUKA.CO.UK $
  */
 public class Base64StateCodec implements StateCodec
 {

@@ -20,7 +20,6 @@ import static org.hobsoft.symmetry.ui.model.Utilities.grow;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: DefaultTableModel.java 101287 2012-05-15 15:10:25Z mark@IIZUKA.CO.UK $
  */
 public class DefaultTableModel extends AbstractTableModel
 {

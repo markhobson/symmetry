@@ -13,7 +13,6 @@ import org.junit.Assert;
  * Provides access to private members in classes.
  * 
  * @author Mark Hobson
- * @version $Id: PrivateAccessor.java 69783 2010-01-21 11:40:28Z mark@IIZUKA.CO.UK $
  * @see <a href="http://junit.sourceforge.net/doc/faq/faq.htm#tests_11">JUnit FAQ</a>
  * @see <a href="http://www.onjava.com/pub/a/onjava/2003/11/12/reflection.html">PrivilegedAccessor</a>
  */

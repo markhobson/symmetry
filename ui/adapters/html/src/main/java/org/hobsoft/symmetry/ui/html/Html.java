@@ -9,7 +9,6 @@ package org.hobsoft.symmetry.ui.html;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: Html.java 88158 2011-05-17 22:39:18Z mark@IIZUKA.CO.UK $
  */
 public final class Html
 {

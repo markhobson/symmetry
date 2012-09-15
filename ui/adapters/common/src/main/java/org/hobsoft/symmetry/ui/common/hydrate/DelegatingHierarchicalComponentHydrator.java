@@ -16,7 +16,6 @@ import org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor;
  * {@code HierarchicalComponentHydrator}.
  * 
  * @author Mark Hobson
- * @version $Id: DelegatingHierarchicalComponentHydrator.java 98863 2012-02-29 10:48:53Z mark@IIZUKA.CO.UK $
  * @param <T>
  *            the component type this visitor can visit
  */

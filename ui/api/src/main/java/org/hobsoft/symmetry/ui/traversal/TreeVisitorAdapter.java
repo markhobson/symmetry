@@ -12,7 +12,6 @@ import org.hobsoft.symmetry.ui.model.TreePath;
  * Adapts a {@code HierarchicalComponentVisitor} to a {@code TreeVisitor}.
  * 
  * @author Mark Hobson
- * @version $Id: TreeVisitorAdapter.java 98874 2012-02-29 16:14:38Z mark@IIZUKA.CO.UK $
  * @param <T>
  *            the component type this visitor can visit
  * @param <P>

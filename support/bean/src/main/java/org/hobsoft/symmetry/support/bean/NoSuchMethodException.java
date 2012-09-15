@@ -11,7 +11,6 @@ import java.beans.EventSetDescriptor;
  * Indicates that a named method could not be found.
  * 
  * @author Mark Hobson
- * @version $Id: NoSuchMethodException.java 86792 2011-04-11 20:47:20Z mark@IIZUKA.CO.UK $
  */
 public final class NoSuchMethodException extends BeanException
 {

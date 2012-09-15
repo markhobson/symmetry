@@ -18,7 +18,6 @@ import static org.hobsoft.symmetry.xml.XmlUtils.writeAttributeIfNotEmpty;
  * Hydrator that dehydrates a {@code Button} component to an HTML {@code <input/>} tag.
  * 
  * @author Mark Hobson
- * @version $Id: InputHtmlButtonDehydrator.java 98843 2012-02-29 10:01:13Z mark@IIZUKA.CO.UK $
  * @see Button
  * @param <T>
  *            the button type this visitor can visit

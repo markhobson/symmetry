@@ -12,7 +12,6 @@ import org.w3c.dom.traversal.NodeFilter;
  * Provides constants related to the W3C XLink specification.
  * 
  * @author Mark Hobson
- * @version $Id: XLink.java 69819 2010-01-21 15:54:06Z mark@IIZUKA.CO.UK $
  * @see <a href="http://www.w3.org/TR/xlink/">XML Linking Language (XLink) Version 1.0</a>
  */
 public final class XLink

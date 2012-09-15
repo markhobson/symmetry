@@ -19,7 +19,6 @@ import org.hobsoft.symmetry.ui.GroupBox;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: SwtGroupBoxPeer.java 88029 2011-05-13 18:53:16Z mark@IIZUKA.CO.UK $
  */
 public class SwtGroupBoxPeer extends SwtBoxPeer
 {

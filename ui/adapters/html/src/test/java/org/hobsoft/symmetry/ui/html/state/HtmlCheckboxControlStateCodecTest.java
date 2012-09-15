@@ -21,7 +21,6 @@ import org.junit.Test;
  * Tests {@code HtmlCheckboxControlStateCodec}.
  * 
  * @author Mark Hobson
- * @version $Id: HtmlCheckboxControlStateCodecTest.java 94233 2011-10-10 16:51:01Z mark@IIZUKA.CO.UK $
  * @see HtmlCheckboxControlStateCodec
  */
 public class HtmlCheckboxControlStateCodecTest

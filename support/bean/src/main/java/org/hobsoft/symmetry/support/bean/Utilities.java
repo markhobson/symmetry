@@ -9,7 +9,6 @@ package org.hobsoft.symmetry.support.bean;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: Utilities.java 97397 2011-12-30 11:53:48Z mark@IIZUKA.CO.UK $
  */
 final class Utilities
 {

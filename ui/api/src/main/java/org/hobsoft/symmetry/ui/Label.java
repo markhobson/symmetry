@@ -15,7 +15,6 @@ import org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.EndVisit;
  * A component that can display text, an image, or both.
  * 
  * @author Mark Hobson
- * @version $Id: Label.java 99066 2012-03-08 13:02:09Z mark@IIZUKA.CO.UK $
  */
 public class Label extends Component
 {

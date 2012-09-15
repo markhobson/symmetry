@@ -9,7 +9,6 @@ package org.hobsoft.symmetry.support.codec;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: Encoders.java 75587 2010-08-02 20:41:05Z mark@IIZUKA.CO.UK $
  */
 public final class Encoders
 {

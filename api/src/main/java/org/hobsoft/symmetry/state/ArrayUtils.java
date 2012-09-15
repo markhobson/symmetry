@@ -11,7 +11,6 @@ import java.util.Arrays;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: ArrayUtils.java 98228 2012-02-02 11:29:46Z mark@IIZUKA.CO.UK $
  */
 final class ArrayUtils
 {

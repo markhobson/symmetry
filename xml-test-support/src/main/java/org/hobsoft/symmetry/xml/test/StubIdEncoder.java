@@ -15,7 +15,6 @@ import org.hobsoft.symmetry.xml.IdEncoder;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: StubIdEncoder.java 95604 2011-11-28 13:02:25Z mark@IIZUKA.CO.UK $
  */
 public class StubIdEncoder implements IdEncoder
 {

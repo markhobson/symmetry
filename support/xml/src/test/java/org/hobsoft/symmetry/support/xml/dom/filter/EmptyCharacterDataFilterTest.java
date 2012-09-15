@@ -13,7 +13,6 @@ import org.w3c.dom.traversal.NodeFilter;
  * Tests <code>EmptyCharacterDataFilter</code>.
  * 
  * @author Mark Hobson
- * @version $Id: EmptyCharacterDataFilterTest.java 69822 2010-01-21 17:57:20Z mark@IIZUKA.CO.UK $
  * @see EmptyCharacterDataFilter
  */
 public class EmptyCharacterDataFilterTest extends AbstractNodeFilterTest

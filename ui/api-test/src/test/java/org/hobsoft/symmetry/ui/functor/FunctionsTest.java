@@ -22,7 +22,6 @@ import org.junit.Test;
  * Tests {@code Functions}.
  * 
  * @author Mark Hobson
- * @version $Id: FunctionsTest.java 98450 2012-02-14 14:47:35Z mark@IIZUKA.CO.UK $
  * @see Functions
  */
 public class FunctionsTest

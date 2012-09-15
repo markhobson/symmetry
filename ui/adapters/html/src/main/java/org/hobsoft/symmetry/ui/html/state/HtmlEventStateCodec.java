@@ -15,7 +15,6 @@ import org.hobsoft.symmetry.state.StateException;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: HtmlEventStateCodec.java 95399 2011-11-22 11:25:40Z mark@IIZUKA.CO.UK $
  */
 public class HtmlEventStateCodec extends DelegatingStateCodec
 {

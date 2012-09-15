@@ -16,7 +16,6 @@ import org.hobsoft.symmetry.ui.html.HtmlRenderKit;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: HtmlRenderKitProvider.java 95595 2011-11-28 12:38:59Z mark@IIZUKA.CO.UK $
  */
 @Provider
 public class HtmlRenderKitProvider implements ContextResolver<ComponentRenderKit>

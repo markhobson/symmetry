@@ -11,7 +11,6 @@ import java.io.PrintStream;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: Kozo.java 94748 2011-10-24 14:57:43Z mark@IIZUKA.CO.UK $
  */
 public class Kozo implements Runnable
 {

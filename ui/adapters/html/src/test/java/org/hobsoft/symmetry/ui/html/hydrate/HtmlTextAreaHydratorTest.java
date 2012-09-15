@@ -26,7 +26,6 @@ import org.junit.Test;
  * Tests {@code HtmlTextAreaHydrator}.
  * 
  * @author Mark Hobson
- * @version $Id: HtmlTextAreaHydratorTest.java 98843 2012-02-29 10:01:13Z mark@IIZUKA.CO.UK $
  * @see HtmlTextAreaHydrator
  */
 public class HtmlTextAreaHydratorTest extends AbstractXmlRenderKitTest<TextArea>

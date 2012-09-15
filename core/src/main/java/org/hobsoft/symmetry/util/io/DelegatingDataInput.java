@@ -12,7 +12,6 @@ import java.io.IOException;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: DelegatingDataInput.java 94748 2011-10-24 14:57:43Z mark@IIZUKA.CO.UK $
  */
 public class DelegatingDataInput implements DataInput
 {

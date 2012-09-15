@@ -25,7 +25,6 @@ import static org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.Vis
  * Hydrator that dehydrates a {@code GroupBox} component to an HTML {@code <fieldset/>} tag.
  * 
  * @author Mark Hobson
- * @version $Id: HtmlGroupBoxDehydrator.java 99112 2012-03-09 15:21:08Z mark@IIZUKA.CO.UK $
  * @see GroupBox
  * @param <T>
  *            the group box type this visitor can visit
