@@ -28,7 +28,7 @@
 	<name>Symmetry KozoSet Demo</name>
 
 	<properties>
-		<symmetryMainComponent>kozoset.KozoSetWindow</symmetryMainComponent>
+		<symmetryMainComponent>org.hobsoft.symmetry.demo.kozoset.KozoSetWindow</symmetryMainComponent>
 	</properties>
 
 </project>

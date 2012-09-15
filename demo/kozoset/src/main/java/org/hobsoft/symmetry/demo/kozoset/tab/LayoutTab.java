@@ -11,7 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package kozoset.tab;
+package org.hobsoft.symmetry.demo.kozoset.tab;
 
 import org.hobsoft.symmetry.ui.Box;
 import org.hobsoft.symmetry.ui.Grid;
