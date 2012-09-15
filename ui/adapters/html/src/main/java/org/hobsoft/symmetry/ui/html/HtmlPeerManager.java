@@ -24,7 +24,7 @@ import org.hobsoft.symmetry.ui.traversal.PostorderComponentVisitor;
  */
 public class HtmlPeerManager extends StatePeerManager
 {
-	// TODO: move to kozo-ui-common
+	// TODO: move to symmetry-ui-common
 	
 	// PeerManager methods ----------------------------------------------------
 	

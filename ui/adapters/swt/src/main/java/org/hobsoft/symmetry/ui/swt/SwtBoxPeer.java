@@ -225,7 +225,7 @@ public class SwtBoxPeer extends AbstractPeerHandler
 	
 	// private methods --------------------------------------------------------
 	
-	// TODO: share with kozo-ui-html's FlexUtils
+	// TODO: share with symmetry-ui-html's FlexUtils
 	
 	private static int getFlex(Length length)
 	{

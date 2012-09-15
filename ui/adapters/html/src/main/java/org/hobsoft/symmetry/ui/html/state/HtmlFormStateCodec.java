@@ -22,7 +22,7 @@ import org.hobsoft.symmetry.ui.TextBox;
 import static org.hobsoft.symmetry.support.bean.Properties.getDescriptor;
 
 /**
- * Kozo UI component state codec for HTML form data sets.
+ * Symmetry UI component state codec for HTML form data sets.
  * <p>
  * This codec decorator handles encoding and decoding state that is outside of a typical {@code StateCodec}'s control
  * as it is part of the HTML specification.  For example, HTML text input controls must always represent their value as

@@ -30,7 +30,7 @@ import static org.junit.Assert.assertEquals;
  */
 public abstract class AbstractStaxTest
 {
-	// TODO: avoid duplication with kozo-xml-test's AbstractStaxTest
+	// TODO: avoid duplication with symmetry-xml-test-support's AbstractStaxTest
 	
 	// fields -----------------------------------------------------------------
 	
