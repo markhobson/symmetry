@@ -76,7 +76,7 @@ public class KozoServlet extends HttpServlet
 	
 	// fields -----------------------------------------------------------------
 	
-	private KozoServletConfig config;
+	private SymmetryServletConfig config;
 	
 	// GenericServlet methods -------------------------------------------------
 	
@@ -103,7 +103,7 @@ public class KozoServlet extends HttpServlet
 		// TODO: better
 		((StatePeerManager) peerManager).setComponentClass(componentClass);
 		
-		this.config = new KozoServletConfig(peerManager, renderKit);
+		this.config = new SymmetryServletConfig(peerManager, renderKit);
 		this.config.setResolveState(resolveState);
 		this.config.setDebug(debug);
 		this.config.setTheme(theme);

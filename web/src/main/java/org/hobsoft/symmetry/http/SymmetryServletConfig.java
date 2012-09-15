@@ -21,7 +21,7 @@ import org.hobsoft.symmetry.hydrate.ComponentRenderKit;
  * 
  * @author Mark Hobson
  */
-public class KozoServletConfig
+public class SymmetryServletConfig
 {
 	// TODO: think of more generic way to configure themes
 	
@@ -39,7 +39,7 @@ public class KozoServletConfig
 	
 	// constructors -----------------------------------------------------------
 	
-	public KozoServletConfig(PeerManager peerManager, ComponentRenderKit<?> renderKit)
+	public SymmetryServletConfig(PeerManager peerManager, ComponentRenderKit<?> renderKit)
 	{
 		this.peerManager = peerManager;
 		this.renderKit = renderKit;
