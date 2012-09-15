@@ -46,7 +46,7 @@ import org.hobsoft.symmetry.state.StateSession;
  * 
  * @author Mark Hobson
  */
-public class KozoServlet extends HttpServlet
+public class SymmetryServlet extends HttpServlet
 {
 	// TODO: encode empty state
 	

@@ -11,8 +11,8 @@
 	<description>Kozo HelloWorld Demo</description>
 
 	<servlet>
-		<servlet-name>KozoServlet</servlet-name>
-		<servlet-class>org.hobsoft.symmetry.http.KozoServlet</servlet-class>
+		<servlet-name>SymmetryServlet</servlet-name>
+		<servlet-class>org.hobsoft.symmetry.http.SymmetryServlet</servlet-class>
 		<init-param>
 			<param-name>componentClassName</param-name>
 			<param-value>helloworld.HelloWorldWindow</param-value>
@@ -29,7 +29,7 @@
 	</servlet>
 
 	<servlet-mapping>
-		<servlet-name>KozoServlet</servlet-name>
+		<servlet-name>SymmetryServlet</servlet-name>
 		<url-pattern>/*</url-pattern>
 	</servlet-mapping>
 
