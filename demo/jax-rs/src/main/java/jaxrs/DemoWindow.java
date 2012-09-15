@@ -5,8 +5,8 @@
  */
 package jaxrs;
 
-import uk.co.iizuka.kozo.ui.Label;
-import uk.co.iizuka.kozo.ui.Window;
+import org.hobsoft.symmetry.ui.Label;
+import org.hobsoft.symmetry.ui.Window;
 
 /**
  * 

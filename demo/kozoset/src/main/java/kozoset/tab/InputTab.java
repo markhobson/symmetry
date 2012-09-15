@@ -8,22 +8,22 @@ package kozoset.tab;
 import java.io.IOException;
 import java.io.InputStream;
 
-import uk.co.iizuka.kozo.ui.Box;
-import uk.co.iizuka.kozo.ui.Button;
-import uk.co.iizuka.kozo.ui.CheckBox;
-import uk.co.iizuka.kozo.ui.ComboBox;
-import uk.co.iizuka.kozo.ui.FileChooser;
-import uk.co.iizuka.kozo.ui.GroupBox;
-import uk.co.iizuka.kozo.ui.HBox;
-import uk.co.iizuka.kozo.ui.Label;
-import uk.co.iizuka.kozo.ui.ListBox;
-import uk.co.iizuka.kozo.ui.Radio;
-import uk.co.iizuka.kozo.ui.SelectionMode;
-import uk.co.iizuka.kozo.ui.Tab;
-import uk.co.iizuka.kozo.ui.TextBox;
-import uk.co.iizuka.kozo.ui.ToggleButtonGroup;
-import uk.co.iizuka.kozo.ui.VBox;
-import uk.co.iizuka.kozo.ui.functor.Command;
+import org.hobsoft.symmetry.ui.Box;
+import org.hobsoft.symmetry.ui.Button;
+import org.hobsoft.symmetry.ui.CheckBox;
+import org.hobsoft.symmetry.ui.ComboBox;
+import org.hobsoft.symmetry.ui.FileChooser;
+import org.hobsoft.symmetry.ui.GroupBox;
+import org.hobsoft.symmetry.ui.HBox;
+import org.hobsoft.symmetry.ui.Label;
+import org.hobsoft.symmetry.ui.ListBox;
+import org.hobsoft.symmetry.ui.Radio;
+import org.hobsoft.symmetry.ui.SelectionMode;
+import org.hobsoft.symmetry.ui.Tab;
+import org.hobsoft.symmetry.ui.TextBox;
+import org.hobsoft.symmetry.ui.ToggleButtonGroup;
+import org.hobsoft.symmetry.ui.VBox;
+import org.hobsoft.symmetry.ui.functor.Command;
 
 /**
  * 

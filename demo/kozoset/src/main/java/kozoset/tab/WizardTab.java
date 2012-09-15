@@ -5,19 +5,19 @@
  */
 package kozoset.tab;
 
-import uk.co.iizuka.kozo.ui.Box;
-import uk.co.iizuka.kozo.ui.CheckBox;
-import uk.co.iizuka.kozo.ui.ComboBox;
-import uk.co.iizuka.kozo.ui.Component;
-import uk.co.iizuka.kozo.ui.GroupBox;
-import uk.co.iizuka.kozo.ui.Label;
-import uk.co.iizuka.kozo.ui.ListBox;
-import uk.co.iizuka.kozo.ui.Radio;
-import uk.co.iizuka.kozo.ui.Tab;
-import uk.co.iizuka.kozo.ui.ToggleButton;
-import uk.co.iizuka.kozo.ui.ToggleButtonGroup;
-import uk.co.iizuka.kozo.ui.VBox;
-import uk.co.iizuka.kozo.ui.Wizard;
+import org.hobsoft.symmetry.ui.Box;
+import org.hobsoft.symmetry.ui.CheckBox;
+import org.hobsoft.symmetry.ui.ComboBox;
+import org.hobsoft.symmetry.ui.Component;
+import org.hobsoft.symmetry.ui.GroupBox;
+import org.hobsoft.symmetry.ui.Label;
+import org.hobsoft.symmetry.ui.ListBox;
+import org.hobsoft.symmetry.ui.Radio;
+import org.hobsoft.symmetry.ui.Tab;
+import org.hobsoft.symmetry.ui.ToggleButton;
+import org.hobsoft.symmetry.ui.ToggleButtonGroup;
+import org.hobsoft.symmetry.ui.VBox;
+import org.hobsoft.symmetry.ui.Wizard;
 
 /**
  * 

@@ -5,17 +5,17 @@
  */
 package kozoset.tab;
 
-import uk.co.iizuka.kozo.ui.Box;
-import uk.co.iizuka.kozo.ui.Button;
-import uk.co.iizuka.kozo.ui.GroupBox;
-import uk.co.iizuka.kozo.ui.Label;
-import uk.co.iizuka.kozo.ui.Orientation;
-import uk.co.iizuka.kozo.ui.Tab;
-import uk.co.iizuka.kozo.ui.ToggleButton;
-import uk.co.iizuka.kozo.ui.ToggleButtonGroup;
-import uk.co.iizuka.kozo.ui.VBox;
-import uk.co.iizuka.kozo.ui.functor.Closures;
-import uk.co.iizuka.kozo.ui.functor.Command;
+import org.hobsoft.symmetry.ui.Box;
+import org.hobsoft.symmetry.ui.Button;
+import org.hobsoft.symmetry.ui.GroupBox;
+import org.hobsoft.symmetry.ui.Label;
+import org.hobsoft.symmetry.ui.Orientation;
+import org.hobsoft.symmetry.ui.Tab;
+import org.hobsoft.symmetry.ui.ToggleButton;
+import org.hobsoft.symmetry.ui.ToggleButtonGroup;
+import org.hobsoft.symmetry.ui.VBox;
+import org.hobsoft.symmetry.ui.functor.Closures;
+import org.hobsoft.symmetry.ui.functor.Command;
 
 /**
  * 

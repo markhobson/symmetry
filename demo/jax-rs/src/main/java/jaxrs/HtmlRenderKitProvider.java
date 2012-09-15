@@ -8,8 +8,9 @@ package jaxrs;
 import javax.ws.rs.ext.ContextResolver;
 import javax.ws.rs.ext.Provider;
 
-import uk.co.iizuka.kozo.hydrate.ComponentRenderKit;
-import uk.co.iizuka.kozo.ui.html.HtmlRenderKit;
+import org.hobsoft.symmetry.hydrate.ComponentRenderKit;
+import org.hobsoft.symmetry.ui.html.HtmlRenderKit;
+
 
 /**
  * 

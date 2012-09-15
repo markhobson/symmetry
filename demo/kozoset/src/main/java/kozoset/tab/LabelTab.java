@@ -5,12 +5,12 @@
  */
 package kozoset.tab;
 
-import uk.co.iizuka.kozo.ui.Box;
-import uk.co.iizuka.kozo.ui.GroupBox;
-import uk.co.iizuka.kozo.ui.HtmlLabel;
-import uk.co.iizuka.kozo.ui.Label;
-import uk.co.iizuka.kozo.ui.Tab;
-import uk.co.iizuka.kozo.ui.VBox;
+import org.hobsoft.symmetry.ui.Box;
+import org.hobsoft.symmetry.ui.GroupBox;
+import org.hobsoft.symmetry.ui.HtmlLabel;
+import org.hobsoft.symmetry.ui.Label;
+import org.hobsoft.symmetry.ui.Tab;
+import org.hobsoft.symmetry.ui.VBox;
 
 /**
  * 
