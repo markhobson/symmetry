@@ -86,16 +86,16 @@ public class HtmlRenderKit extends XmlRenderKit<Component>
 		super.preDehydrate(component, context);
 		
 		HtmlDocument document = new HtmlDocument();
-		document.addExternalCss("kozo/themes/blue/stylesheet.css");
+		document.addExternalCss("symmetry/themes/blue/stylesheet.css");
 		// TODO: reinstate when alternate stylesheets are supported again
-//		stylesheets.put("Kozo Green", "kozo/themes/green/stylesheet.css");
-		document.addExternalJavaScript("kozo/themes/common/javascript.js");
+//		stylesheets.put("Kozo Green", "symmetry/themes/green/stylesheet.css");
+		document.addExternalJavaScript("symmetry/themes/common/javascript.js");
 		document.addHttpMetadata("Content-Type", getContentType());
 		context.set(HtmlDocument.class, document);
 		
 		HtmlTreeDehydrator.Parameters treeParameters = new HtmlTreeDehydrator.Parameters();
-		treeParameters.setCollapseImageUri("kozo/themes/common/images/collapse.png");
-		treeParameters.setExpandImageUri("kozo/themes/common/images/expand.png");
+		treeParameters.setCollapseImageUri("symmetry/themes/common/images/collapse.png");
+		treeParameters.setExpandImageUri("symmetry/themes/common/images/expand.png");
 		context.set(HtmlTreeDehydrator.Parameters.class, treeParameters);
 	}
 	
