@@ -28,22 +28,6 @@
 	<name>Symmetry Support XML</name>
 	<description>Symmetry Support XML provides utility classes for working with XML.</description>
 	
-	<!-- TODO: split test classes into unit tests and common-xml-test module -->
-	<build>
-		<plugins>
-			<plugin>
-				<artifactId>maven-jar-plugin</artifactId>
-				<executions>
-					<execution>
-						<goals>
-							<goal>test-jar</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-		</plugins>
-	</build>
-	
 	<dependencies>
 	
 		<dependency>
