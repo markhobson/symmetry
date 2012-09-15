@@ -11,15 +11,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.hobsoft.symmetry.demo.kozoset;
+package org.hobsoft.symmetry.demo.gallery;
 
-import org.hobsoft.symmetry.demo.kozoset.tab.ButtonTab;
-import org.hobsoft.symmetry.demo.kozoset.tab.InputTab;
-import org.hobsoft.symmetry.demo.kozoset.tab.LabelTab;
-import org.hobsoft.symmetry.demo.kozoset.tab.LayoutTab;
-import org.hobsoft.symmetry.demo.kozoset.tab.TableTab;
-import org.hobsoft.symmetry.demo.kozoset.tab.TreeTab;
-import org.hobsoft.symmetry.demo.kozoset.tab.WizardTab;
+import org.hobsoft.symmetry.demo.gallery.tab.ButtonTab;
+import org.hobsoft.symmetry.demo.gallery.tab.InputTab;
+import org.hobsoft.symmetry.demo.gallery.tab.LabelTab;
+import org.hobsoft.symmetry.demo.gallery.tab.LayoutTab;
+import org.hobsoft.symmetry.demo.gallery.tab.TableTab;
+import org.hobsoft.symmetry.demo.gallery.tab.TreeTab;
+import org.hobsoft.symmetry.demo.gallery.tab.WizardTab;
 import org.hobsoft.symmetry.ui.Label;
 import org.hobsoft.symmetry.ui.TabBox;
 import org.hobsoft.symmetry.ui.Window;

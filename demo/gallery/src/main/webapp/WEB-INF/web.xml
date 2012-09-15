@@ -15,7 +15,7 @@
 		<servlet-class>org.hobsoft.symmetry.http.SymmetryServlet</servlet-class>
 		<init-param>
 			<param-name>componentClassName</param-name>
-			<param-value>org.hobsoft.symmetry.demo.kozoset.KozoSetWindow</param-value>
+			<param-value>org.hobsoft.symmetry.demo.gallery.KozoSetWindow</param-value>
 		</init-param>
 		<init-param>
 			<param-name>peerManagerClassName</param-name>
