@@ -23,7 +23,6 @@ import java.io.OutputStream;
  * Utilities for working with Base64.
  * 
  * @author	Mark Hobson
- * @version	$Id: Base64Utils.java 75372 2010-07-26 10:34:40Z mark@IIZUKA.CO.UK $
  */
 public final class Base64Utils
 {

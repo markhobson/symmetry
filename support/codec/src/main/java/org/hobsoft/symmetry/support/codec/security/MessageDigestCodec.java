@@ -24,7 +24,6 @@ import org.hobsoft.symmetry.support.codec.EncoderException;
  * Codec that appends a digest when encoding and removes and validates the digest when decoding.
  * 
  * @author	Mark Hobson
- * @version	$Id: MessageDigestCodec.java 75578 2010-08-02 18:30:22Z mark@IIZUKA.CO.UK $
  */
 class MessageDigestCodec implements Codec<byte[], byte[]>
 {

@@ -26,7 +26,6 @@ import static org.junit.Assert.assertEquals;
  * Tests <code>Base64InputStream</code>.
  * 
  * @author	Mark Hobson
- * @version	$Id: Base64InputStreamTest.java 75358 2010-07-23 11:34:52Z mark@IIZUKA.CO.UK $
  * @see		Base64InputStream
  */
 public class Base64InputStreamTest

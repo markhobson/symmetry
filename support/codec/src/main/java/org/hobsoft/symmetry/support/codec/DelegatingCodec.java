@@ -19,7 +19,6 @@ import org.apache.commons.lang.Validate;
  * Codec that delegates encoding and decoding to another codec.
  * 
  * @author	Mark Hobson
- * @version	$Id: DelegatingCodec.java 75367 2010-07-23 17:59:07Z mark@IIZUKA.CO.UK $
  * @param	<X>
  * 				the object type that this codec can encode
  * @param	<Y>

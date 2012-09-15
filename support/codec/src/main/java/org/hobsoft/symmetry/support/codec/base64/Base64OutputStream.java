@@ -24,7 +24,6 @@ import org.hobsoft.symmetry.support.codec.EncoderException;
  * in RFC 2045, 6.8. Base64 Content-Transfer-Encoding.
  * 
  * @author	Mark Hobson
- * @version	$Id: Base64OutputStream.java 66071 2009-10-12 11:32:47Z mark@IIZUKA.CO.UK $
  * @see		<a href="http://www.ietf.org/rfc/rfc2045.txt">RFC 2045</a>
  */
 public class Base64OutputStream extends FilterOutputStream

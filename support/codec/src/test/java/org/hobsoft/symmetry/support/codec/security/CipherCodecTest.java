@@ -34,7 +34,6 @@ import static org.junit.Assert.assertTrue;
  * Tests <code>CipherCodec</code>.
  * 
  * @author	Mark Hobson
- * @version	$Id: CipherCodecTest.java 75371 2010-07-26 10:24:46Z mark@IIZUKA.CO.UK $
  * @see		CipherCodec
  */
 public class CipherCodecTest

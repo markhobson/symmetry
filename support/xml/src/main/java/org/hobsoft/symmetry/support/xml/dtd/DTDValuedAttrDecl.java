@@ -17,7 +17,6 @@ package org.hobsoft.symmetry.support.xml.dtd;
  * An abstract DTD attribute declaration that can hold a string value.
  * 
  * @author	Mark Hobson
- * @version	$Id: DTDValuedAttrDecl.java 69819 2010-01-21 15:54:06Z mark@IIZUKA.CO.UK $
  */
 public abstract class DTDValuedAttrDecl implements DTDAttrDecl
 {

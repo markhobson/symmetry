@@ -23,7 +23,6 @@ import org.hobsoft.symmetry.support.codec.Codecs;
  * <p>This class is not intended to be used standalone; see <code>Codecs</code> for the intended usage.</p>
  * 
  * @author	Mark Hobson
- * @version	$Id: CompoundParticle.java 75576 2010-08-02 17:23:56Z mark@IIZUKA.CO.UK $
  * @param	<X>
  * 				the object type that this builder particle can encode
  * @param	<Y>

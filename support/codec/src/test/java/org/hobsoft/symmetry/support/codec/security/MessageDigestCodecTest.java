@@ -30,7 +30,6 @@ import static org.junit.Assert.assertTrue;
  * Tests <code>MessageDigestCodec</code>.
  * 
  * @author	Mark Hobson
- * @version	$Id: MessageDigestCodecTest.java 75371 2010-07-26 10:24:46Z mark@IIZUKA.CO.UK $
  * @see		MessageDigestCodec
  */
 public class MessageDigestCodecTest

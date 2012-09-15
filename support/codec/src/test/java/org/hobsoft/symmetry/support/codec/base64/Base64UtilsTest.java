@@ -24,7 +24,6 @@ import static org.junit.Assert.assertTrue;
  * Tests <code>Base64Utils</code>.
  * 
  * @author	Mark Hobson
- * @version	$Id: Base64UtilsTest.java 75358 2010-07-23 11:34:52Z mark@IIZUKA.CO.UK $
  * @see		Base64Utils
  */
 public class Base64UtilsTest

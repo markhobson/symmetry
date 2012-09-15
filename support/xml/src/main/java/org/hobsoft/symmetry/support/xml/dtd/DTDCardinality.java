@@ -17,7 +17,6 @@ package org.hobsoft.symmetry.support.xml.dtd;
  * An enumeration of the various occurrence types used by DTD content models.
  * 
  * @author	Mark Hobson
- * @version	$Id: DTDCardinality.java 69819 2010-01-21 15:54:06Z mark@IIZUKA.CO.UK $
  */
 public enum DTDCardinality
 {

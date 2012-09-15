@@ -25,7 +25,6 @@ import javax.xml.stream.events.XMLEvent;
  * A XML event writer that delegates events to another XML event writer that are accepted by an event filter. 
  *
  * @author	Mark Hobson
- * @version	$Id: EventWriterFilter.java 88477 2011-05-25 10:34:47Z mark@IIZUKA.CO.UK $
  * @see		XMLEventWriter
  */
 public class EventWriterFilter extends EventWriterDelegate

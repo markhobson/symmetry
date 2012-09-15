@@ -29,7 +29,6 @@ import org.hobsoft.symmetry.support.codec.EncoderException;
  * Codec that uses a cipher to perform the encoding and decoding.
  * 
  * @author	Mark Hobson
- * @version	$Id: CipherCodec.java 75578 2010-08-02 18:30:22Z mark@IIZUKA.CO.UK $
  */
 class CipherCodec implements Codec<byte[], byte[]>
 {

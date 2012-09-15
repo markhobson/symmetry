@@ -17,7 +17,6 @@ package org.hobsoft.symmetry.support.codec;
  * Indicates an error occurred when decoding an object.
  * 
  * @author	Mark Hobson
- * @version	$Id: DecoderException.java 66071 2009-10-12 11:32:47Z mark@IIZUKA.CO.UK $
  */
 public class DecoderException extends CodecException
 {

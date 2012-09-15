@@ -23,7 +23,6 @@ import org.hobsoft.symmetry.support.codec.EncoderException;
  * Codec that encodes and decodes using the Base 64 algorithm.
  * 
  * @author	Mark Hobson
- * @version	$Id: Base64Codec.java 75547 2010-08-02 08:59:47Z mark@IIZUKA.CO.UK $
  */
 public class Base64Codec implements Codec<byte[], byte[]>
 {

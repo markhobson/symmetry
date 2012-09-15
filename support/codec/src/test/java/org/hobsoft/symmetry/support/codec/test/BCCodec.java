@@ -20,7 +20,6 @@ import org.hobsoft.symmetry.support.codec.EncoderException;
  * Codec that encodes <code>B</code> to <code>C</code> and vice-versa, for use by tests.
  * 
  * @author	Mark Hobson
- * @version	$Id: BCCodec.java 66071 2009-10-12 11:32:47Z mark@IIZUKA.CO.UK $
  */
 public class BCCodec extends AbstractTestCodec<B, C>
 {

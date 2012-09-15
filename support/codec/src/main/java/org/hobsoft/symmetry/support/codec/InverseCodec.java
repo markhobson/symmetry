@@ -19,7 +19,6 @@ import org.apache.commons.lang.Validate;
  * Reverses a codec so encoding becomes decoding and vice-versa.
  * 
  * @author	Mark Hobson
- * @version	$Id: InverseCodec.java 75575 2010-08-02 17:22:56Z mark@IIZUKA.CO.UK $
  * @param	<X>
  * 				the object type that this codec can encode
  * @param	<Y>

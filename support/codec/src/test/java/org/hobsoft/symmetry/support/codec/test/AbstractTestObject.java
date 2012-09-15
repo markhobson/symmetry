@@ -17,7 +17,6 @@ package org.hobsoft.symmetry.support.codec.test;
  * Base for test objects used to test codecs.
  * 
  * @author	Mark Hobson
- * @version	$Id: AbstractTestObject.java 66071 2009-10-12 11:32:47Z mark@IIZUKA.CO.UK $
  */
 public abstract class AbstractTestObject
 {

@@ -24,7 +24,6 @@ import org.w3c.dom.traversal.NodeFilter;
  * A node filter that accepts specific attributes and skips everything else.
  * 
  * @author	Mark Hobson
- * @version	$Id: AttrFilter.java 69819 2010-01-21 15:54:06Z mark@IIZUKA.CO.UK $
  */
 public class AttrFilter implements NodeFilter
 {

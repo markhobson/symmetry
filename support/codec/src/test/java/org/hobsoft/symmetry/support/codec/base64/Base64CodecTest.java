@@ -27,7 +27,6 @@ import static org.junit.Assert.assertTrue;
  * Tests <code>Base64Codec</code>.
  * 
  * @author	Mark Hobson
- * @version	$Id: Base64CodecTest.java 75547 2010-08-02 08:59:47Z mark@IIZUKA.CO.UK $
  * @see		Base64Codec
  */
 public class Base64CodecTest

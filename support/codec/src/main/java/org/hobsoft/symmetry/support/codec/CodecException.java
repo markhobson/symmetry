@@ -17,7 +17,6 @@ package org.hobsoft.symmetry.support.codec;
  * Convenience base class for all codec exceptions.
  * 
  * @author	Mark Hobson
- * @version	$Id: CodecException.java 66071 2009-10-12 11:32:47Z mark@IIZUKA.CO.UK $
  */
 public abstract class CodecException extends Exception
 {

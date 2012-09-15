@@ -23,7 +23,6 @@ import org.hobsoft.symmetry.support.codec.EncoderException;
  * Defines an alphabet for use when encoding and decoding Base64.
  * 
  * @author	Mark Hobson
- * @version	$Id: Base64Alphabet.java 75372 2010-07-26 10:34:40Z mark@IIZUKA.CO.UK $
  */
 public class Base64Alphabet
 {

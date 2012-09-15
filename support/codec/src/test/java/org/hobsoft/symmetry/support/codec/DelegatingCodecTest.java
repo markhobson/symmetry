@@ -29,7 +29,6 @@ import static org.junit.Assert.assertEquals;
  * Tests <code>DelegatingCodec</code>.
  * 
  * @author	Mark Hobson
- * @version	$Id: DelegatingCodecTest.java 75367 2010-07-23 17:59:07Z mark@IIZUKA.CO.UK $
  * @see		DelegatingCodec
  */
 @RunWith(JMock.class)

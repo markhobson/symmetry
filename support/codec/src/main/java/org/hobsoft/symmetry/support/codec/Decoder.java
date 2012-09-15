@@ -17,7 +17,6 @@ package org.hobsoft.symmetry.support.codec;
  * Decodes an object into another object.
  * 
  * @author	Mark Hobson
- * @version	$Id: Decoder.java 66071 2009-10-12 11:32:47Z mark@IIZUKA.CO.UK $
  * @param	<X>
  * 				the object type that this decoder can decode
  * @param	<Y>

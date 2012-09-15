@@ -19,7 +19,6 @@ import junit.framework.TestCase;
  * Tests <code>PrivateAccessor</code>.
  *
  * @author	Mark Hobson
- * @version	$Id: PrivateAccessorTest.java 69784 2010-01-21 11:40:46Z mark@IIZUKA.CO.UK $
  * @see		PrivateAccessor
  */
 public class PrivateAccessorTest extends TestCase

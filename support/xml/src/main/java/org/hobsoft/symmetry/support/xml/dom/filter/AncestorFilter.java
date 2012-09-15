@@ -22,7 +22,6 @@ import org.w3c.dom.traversal.NodeFilter;
  * a given node.
  * 
  * @author	Mark Hobson
- * @version	$Id: AncestorFilter.java 69819 2010-01-21 15:54:06Z mark@IIZUKA.CO.UK $
  */
 public class AncestorFilter implements NodeFilter
 {

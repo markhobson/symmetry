@@ -21,7 +21,6 @@ import org.apache.commons.lang.builder.HashCodeBuilder;
  * Codec that chains together two other compatible codecs.
  * 
  * @author	Mark Hobson
- * @version	$Id: CompoundCodec.java 75575 2010-08-02 17:22:56Z mark@IIZUKA.CO.UK $
  * @param	<X>
  * 				the object type that the first codec can encode from
  * @param	<Y>

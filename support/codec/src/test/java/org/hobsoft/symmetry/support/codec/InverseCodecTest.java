@@ -29,7 +29,6 @@ import static org.junit.Assert.assertTrue;
  * Tests <code>InverseCodec</code>.
  * 
  * @author	Mark Hobson
- * @version	$Id: InverseCodecTest.java 75358 2010-07-23 11:34:52Z mark@IIZUKA.CO.UK $
  * @see		InverseCodec
  */
 public class InverseCodecTest

@@ -24,7 +24,6 @@ import static org.junit.Assert.assertEquals;
  * Tests <code>Base64Alphabet</code>.
  * 
  * @author	Mark Hobson
- * @version	$Id: Base64AlphabetTest.java 75358 2010-07-23 11:34:52Z mark@IIZUKA.CO.UK $
  * @see		Base64Alphabet
  */
 public class Base64AlphabetTest

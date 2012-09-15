@@ -17,7 +17,6 @@ package org.hobsoft.symmetry.support.test;
  * Dummy object for use by tests.
  *
  * @author	Mark Hobson
- * @version	$Id: DummyBean.java 69784 2010-01-21 11:40:46Z mark@IIZUKA.CO.UK $
  */
 public class DummyBean
 {

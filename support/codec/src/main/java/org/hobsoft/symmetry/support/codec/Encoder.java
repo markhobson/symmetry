@@ -17,7 +17,6 @@ package org.hobsoft.symmetry.support.codec;
  * Encodes an object into another object.
  * 
  * @author	Mark Hobson
- * @version	$Id: Encoder.java 66071 2009-10-12 11:32:47Z mark@IIZUKA.CO.UK $
  * @param	<X>
  * 				the object type that this encoder can encode
  * @param	<Y>
