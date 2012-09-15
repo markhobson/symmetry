@@ -20,7 +20,7 @@ import java.io.PrintStream;
  * 
  * @author Mark Hobson
  */
-public class Kozo implements Runnable
+public class Symmetry implements Runnable
 {
 	// constants --------------------------------------------------------------
 	
@@ -34,7 +34,7 @@ public class Kozo implements Runnable
 	
 	// constructors -----------------------------------------------------------
 	
-	public Kozo(String componentClassName, String peerManagerClassName) throws SymmetryException
+	public Symmetry(String componentClassName, String peerManagerClassName) throws SymmetryException
 	{
 		try
 		{
@@ -83,13 +83,13 @@ public class Kozo implements Runnable
 	{
 		if (args.length != 2)
 		{
-			ERR.println("Usage: java " + Kozo.class.getName() + " <component-class> <peer-manager-class>");
+			ERR.println("Usage: java " + Symmetry.class.getName() + " <component-class> <peer-manager-class>");
 			System.exit(1);
 		}
 		
 		String componentClassName = args[0];
 		String peerManagerClassName = args[1];
 		
-		new Kozo(componentClassName, peerManagerClassName).run();
+		new Symmetry(componentClassName, peerManagerClassName).run();
 	}
 }
