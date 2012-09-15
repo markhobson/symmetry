@@ -27,7 +27,7 @@ public class DemoWindow extends Window
 	
 	public DemoWindow()
 	{
-		super("Kozo JAX-RS Demo");
+		super("Symmetry JAX-RS Demo");
 		
 		add(new Label("Hello World!"));
 		

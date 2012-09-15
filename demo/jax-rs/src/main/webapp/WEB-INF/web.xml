@@ -5,8 +5,8 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
 >
-	<display-name>Kozo JAX-RS Demo</display-name>
-	<description>Kozo JAX-RS Demo</description>
+	<display-name>Symmetry JAX-RS Demo</display-name>
+	<description>Symmetry JAX-RS Demo</description>
 
 	<servlet>
 		<servlet-name>Jersey Web Application</servlet-name>
