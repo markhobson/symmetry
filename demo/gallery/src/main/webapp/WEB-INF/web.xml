@@ -7,8 +7,8 @@
 
 <web-app>
 
-	<display-name>KozoSet Demo</display-name>
-	<description>KozoSet Demo</description>
+	<display-name>Symmetry Gallery Demo</display-name>
+	<description>Symmetry Gallery Demo</description>
 
 	<servlet>
 		<servlet-name>SymmetryServlet</servlet-name>
