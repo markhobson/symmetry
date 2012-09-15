@@ -31,15 +31,6 @@
 	<description>Kozo is a component-based application framework.</description>
 	<inceptionYear>2004</inceptionYear>
 	
-	<mailingLists>
-		<mailingList>
-			<name>Kozo Development List</name>
-			<subscribe>kozo-dev-request@iizuka.co.uk?subject=subscribe</subscribe>
-			<unsubscribe>kozo-dev-request@iizuka.co.uk?subject=unsubscribe</unsubscribe>
-			<archive>https://mail.iizuka.co.uk/mailman/private/kozo-dev/</archive>
-		</mailingList>
-	</mailingLists>
-	
 	<scm>
 		<connection>scm:git:git@github.com:markhobson/symmetry.git</connection>
 		<developerConnection>scm:git:git@github.com:markhobson/symmetry.git</developerConnection>
