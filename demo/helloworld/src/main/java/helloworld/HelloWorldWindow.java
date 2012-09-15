@@ -17,7 +17,7 @@ import org.hobsoft.symmetry.ui.Label;
 import org.hobsoft.symmetry.ui.Window;
 
 /**
- * The Kozo Hello World demo.
+ * The Symmetry Hello World demo.
  * 
  * @author Mark Hobson
  */

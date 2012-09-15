@@ -7,8 +7,8 @@
 
 <web-app>
 
-	<display-name>Kozo HelloWorld Demo</display-name>
-	<description>Kozo HelloWorld Demo</description>
+	<display-name>Symmetry HelloWorld Demo</display-name>
+	<description>Symmetry HelloWorld Demo</description>
 
 	<servlet>
 		<servlet-name>SymmetryServlet</servlet-name>
