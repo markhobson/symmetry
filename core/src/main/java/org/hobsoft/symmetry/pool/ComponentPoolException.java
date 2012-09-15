@@ -13,14 +13,14 @@
  */
 package org.hobsoft.symmetry.pool;
 
-import org.hobsoft.symmetry.KozoException;
+import org.hobsoft.symmetry.SymmetryException;
 
 /**
  * 
  * 
  * @author Mark Hobson
  */
-public class ComponentPoolException extends KozoException
+public class ComponentPoolException extends SymmetryException
 {
 	// constants --------------------------------------------------------------
 	

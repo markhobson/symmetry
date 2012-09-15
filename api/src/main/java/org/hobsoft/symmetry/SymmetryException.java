@@ -14,11 +14,11 @@
 package org.hobsoft.symmetry;
 
 /**
- * The superclass for all Kozo exceptions.
+ * The superclass for all Symmetry exceptions.
  * 
  * @author Mark Hobson
  */
-public class KozoException extends Exception
+public class SymmetryException extends Exception
 {
 	// constants --------------------------------------------------------------
 	
@@ -30,44 +30,44 @@ public class KozoException extends Exception
 	// constructors -----------------------------------------------------------
 	
 	/**
-	 * Creates a new {@code KozoException} with no message or cause.
+	 * Creates a new {@code SymmetryException} with no message or cause.
 	 */
-	public KozoException()
+	public SymmetryException()
 	{
 		super();
 	}
 	
 	/**
-	 * Creates a new {@code KozoException} with the specified message and no cause.
+	 * Creates a new {@code SymmetryException} with the specified message and no cause.
 	 * 
 	 * @param message
 	 *            the message for this exception
 	 */
-	public KozoException(String message)
+	public SymmetryException(String message)
 	{
 		super(message);
 	}
 	
 	/**
-	 * Creates a new {@code KozoException} with no message and the specified cause.
+	 * Creates a new {@code SymmetryException} with no message and the specified cause.
 	 * 
 	 * @param cause
 	 *            the cause of this exception
 	 */
-	public KozoException(Throwable cause)
+	public SymmetryException(Throwable cause)
 	{
 		super(cause);
 	}
 	
 	/**
-	 * Creates a new {@code KozoException} with the specified message and cause.
+	 * Creates a new {@code SymmetryException} with the specified message and cause.
 	 * 
 	 * @param message
 	 *            the message for this exception
 	 * @param cause
 	 *            the cause of this exception
 	 */
-	public KozoException(String message, Throwable cause)
+	public SymmetryException(String message, Throwable cause)
 	{
 		super(message, cause);
 	}

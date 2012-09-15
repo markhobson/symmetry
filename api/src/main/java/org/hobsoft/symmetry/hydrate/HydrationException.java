@@ -13,7 +13,7 @@
  */
 package org.hobsoft.symmetry.hydrate;
 
-import org.hobsoft.symmetry.KozoException;
+import org.hobsoft.symmetry.SymmetryException;
 
 /**
  * Indicates that a serious problem was encountered during hydration.
@@ -21,7 +21,7 @@ import org.hobsoft.symmetry.KozoException;
  * @author Mark Hobson
  * @since 0.1
  */
-public class HydrationException extends KozoException
+public class HydrationException extends SymmetryException
 {
 	// constants --------------------------------------------------------------
 	

@@ -13,14 +13,14 @@
  */
 package org.hobsoft.symmetry.state;
 
-import org.hobsoft.symmetry.KozoException;
+import org.hobsoft.symmetry.SymmetryException;
 
 /**
  * Indicates that a serious problem was encountered whilst encoding or decoding a bean's state.
  * 
  * @author Mark Hobson
  */
-public class StateException extends KozoException
+public class StateException extends SymmetryException
 {
 	// constants --------------------------------------------------------------
 	

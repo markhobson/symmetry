@@ -34,7 +34,7 @@ public class Kozo implements Runnable
 	
 	// constructors -----------------------------------------------------------
 	
-	public Kozo(String componentClassName, String peerManagerClassName) throws KozoException
+	public Kozo(String componentClassName, String peerManagerClassName) throws SymmetryException
 	{
 		try
 		{
@@ -43,15 +43,15 @@ public class Kozo implements Runnable
 		}
 		catch (ClassNotFoundException exception)
 		{
-			throw new KozoException(exception);
+			throw new SymmetryException(exception);
 		}
 		catch (InstantiationException exception)
 		{
-			throw new KozoException(exception);
+			throw new SymmetryException(exception);
 		}
 		catch (IllegalAccessException exception)
 		{
-			throw new KozoException(exception);
+			throw new SymmetryException(exception);
 		}
 	}
 	
@@ -79,7 +79,7 @@ public class Kozo implements Runnable
 	
 	// main -------------------------------------------------------------------
 	
-	public static void main(String[] args) throws KozoException
+	public static void main(String[] args) throws SymmetryException
 	{
 		if (args.length != 2)
 		{
