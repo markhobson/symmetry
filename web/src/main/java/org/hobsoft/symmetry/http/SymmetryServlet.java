@@ -88,7 +88,6 @@ public class SymmetryServlet extends HttpServlet
 	{
 		super.init(config);
 		
-		// TODO: allow codec customisation in kozo.xml rather than servlet config
 		Class<?> componentClass = HttpUtils.getInitParamClass(config, COMPONENT_PARAM, null);
 		Class<?> peerManagerClass = HttpUtils.getInitParamClass(config, PEER_MANAGER_PARAM, null);
 		Class<?> renderKitClass = HttpUtils.getInitParamClass(config, RENDER_KIT_PARAM, null);
