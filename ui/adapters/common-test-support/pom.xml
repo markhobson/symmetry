@@ -25,7 +25,7 @@
 	<artifactId>symmetry-ui-common-test-support</artifactId>
 	<packaging>jar</packaging>
 	
-	<name>Kozo UI Common Test Support</name>
+	<name>Symmetry UI Common Test Support</name>
 	
 	<dependencies>
 	

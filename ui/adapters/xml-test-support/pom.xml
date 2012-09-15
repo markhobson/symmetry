@@ -25,7 +25,7 @@
 	<artifactId>symmetry-ui-xml-test-support</artifactId>
 	<packaging>jar</packaging>
 	
-	<name>Kozo UI XML Test Support</name>
+	<name>Symmetry UI XML Test Support</name>
 	
 	<dependencies>
 	

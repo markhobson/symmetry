@@ -25,7 +25,7 @@
 	<artifactId>symmetry-demo-helloworld</artifactId>
 	<packaging>war</packaging>
 	
-	<name>Kozo Hello World Demo</name>
+	<name>Symmetry Hello World Demo</name>
 	
 	<properties>
 		<kozoMainComponent>helloworld.HelloWorldWindow</kozoMainComponent>

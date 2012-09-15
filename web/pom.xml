@@ -25,8 +25,8 @@
 	<artifactId>symmetry-web</artifactId>
 	<packaging>jar</packaging>
 	
-	<name>Kozo Web</name>
-	<description>Kozo Web provides a HTTP adapter for Kozo.</description>
+	<name>Symmetry Web</name>
+	<description>Symmetry Web provides a HTTP adapter for Symmetry.</description>
 
 	<dependencies>
 	

@@ -25,7 +25,7 @@
 	<artifactId>symmetry-ui-test</artifactId>
 	<packaging>jar</packaging>
 	
-	<name>Kozo UI Test</name>
+	<name>Symmetry UI Test</name>
 	
 	<dependencies>
 	

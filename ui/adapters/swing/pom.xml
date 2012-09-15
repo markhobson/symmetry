@@ -25,8 +25,8 @@
 	<artifactId>symmetry-ui-swing</artifactId>
 	<packaging>jar</packaging>
 	
-	<name>Kozo UI Swing</name>
-	<description>Kozo UI Swing provides a Kozo Swing adapter for the UI toolkit.</description>
+	<name>Symmetry UI Swing</name>
+	<description>Symmetry UI Swing provides a Symmetry Swing adapter for the UI toolkit.</description>
 	
 	<dependencies>
 	

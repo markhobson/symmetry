@@ -26,8 +26,8 @@
 	<artifactId>symmetry-demo-parent</artifactId>
 	<packaging>pom</packaging>
 	
-	<name>Kozo Demo Parent</name>
-	<description>Demonstrations of using Kozo.</description>
+	<name>Symmetry Demo Parent</name>
+	<description>Demonstrations of using Symmetry.</description>
 	
 	<build>
 		<pluginManagement>

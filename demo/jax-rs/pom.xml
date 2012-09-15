@@ -26,7 +26,7 @@
 	<artifactId>symmetry-demo-jax-rs</artifactId>
 	<packaging>war</packaging>
 	
-	<name>Kozo JAX-RS Demo</name>
+	<name>Symmetry JAX-RS Demo</name>
 
 	<dependencies>
 	

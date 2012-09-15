@@ -25,8 +25,8 @@
 	<artifactId>symmetry-api</artifactId>
 	<packaging>jar</packaging>
 	
-	<name>Kozo API</name>
-	<description>Kozo API defines the contract to interface with Kozo.</description>
+	<name>Symmetry API</name>
+	<description>Symmetry API defines the contract to interface with Symmetry.</description>
 	
 	<dependencies>
 	

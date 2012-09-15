@@ -25,8 +25,8 @@
 	<artifactId>symmetry-ui-xul</artifactId>
 	<packaging>jar</packaging>
 	
-	<name>Kozo UI XUL</name>
-	<description>Kozo UI XUL provides a Kozo XUL adapter for the UI toolkit.</description>
+	<name>Symmetry UI XUL</name>
+	<description>Symmetry UI XUL provides a Symmetry XUL adapter for the UI toolkit.</description>
 	
 	<dependencies>
 	

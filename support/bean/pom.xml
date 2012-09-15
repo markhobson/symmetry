@@ -25,8 +25,8 @@
 	<artifactId>symmetry-support-bean</artifactId>
 	<packaging>jar</packaging>
 	
-	<name>Common Bean</name>
-	<description>Common Bean provides utility classes to work with JavaBeans.</description>
+	<name>Symmetry Support Bean</name>
+	<description>Symmetry Support Bean provides utility classes to work with JavaBeans.</description>
 	
 	<dependencies>
 	

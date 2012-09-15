@@ -27,8 +27,8 @@
 	<packaging>pom</packaging>
 	<version>0.1.0-SNAPSHOT</version>
 	
-	<name>Kozo Parent</name>
-	<description>Kozo is a component-based application framework.</description>
+	<name>Symmetry Parent</name>
+	<description>Symmetry is a component-based application framework.</description>
 	<inceptionYear>2004</inceptionYear>
 	
 	<scm>

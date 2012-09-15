@@ -25,8 +25,8 @@
 	<artifactId>symmetry-ui-adapters</artifactId>
 	<packaging>pom</packaging>
 	
-	<name>Kozo UI Adapter Parent</name>
-	<description>Kozo UI provides a basic UI toolkit for use with Kozo.</description>
+	<name>Symmetry UI Adapter Parent</name>
+	<description>Symmetry UI provides a basic UI toolkit for use with Symmetry.</description>
 
 	<dependencies>
 	

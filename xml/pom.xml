@@ -25,8 +25,8 @@
 	<artifactId>symmetry-xml</artifactId>
 	<packaging>jar</packaging>
 	
-	<name>Kozo XML</name>
-	<description>Kozo XML provides classes to write XML-based Kozo adapters.</description>
+	<name>Symmetry XML</name>
+	<description>Symmetry XML provides classes to write XML-based Symmetry adapters.</description>
 	
 	<dependencies>
 	

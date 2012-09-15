@@ -25,7 +25,7 @@
 	<artifactId>symmetry-support-test</artifactId>
 	<packaging>jar</packaging>
 	
-	<name>Common Test</name>
+	<name>Symmetry Support Test</name>
 	<description>Provides utility classes for use by unit tests.</description>
 	
 	<dependencies>

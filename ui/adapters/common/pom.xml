@@ -25,7 +25,7 @@
 	<artifactId>symmetry-ui-common</artifactId>
 	<packaging>jar</packaging>
 	
-	<name>Kozo UI Common</name>
+	<name>Symmetry UI Common</name>
 	
 	<dependencies>
 	

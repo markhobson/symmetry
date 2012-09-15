@@ -25,8 +25,8 @@
 	<artifactId>symmetry-swt</artifactId>
 	<packaging>jar</packaging>
 	
-	<name>Kozo SWT</name>
-	<description>Kozo SWT provides a SWT adapter for Kozo.</description>
+	<name>Symmetry SWT</name>
+	<description>Symmetry SWT provides a SWT adapter for Symmetry.</description>
 	
 	<build>
 		<plugins>

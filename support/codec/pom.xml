@@ -25,7 +25,7 @@
 	<artifactId>symmetry-support-codec</artifactId>
 	<packaging>jar</packaging>
 	
-	<name>Common Codec</name>
+	<name>Symmetry Support Codec</name>
 	
 	<dependencies>
 	

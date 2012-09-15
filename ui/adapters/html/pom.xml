@@ -25,8 +25,8 @@
 	<artifactId>symmetry-ui-html</artifactId>
 	<packaging>jar</packaging>
 	
-	<name>Kozo UI HTML</name>
-	<description>Kozo UI HTML provides a Kozo HTML adapter for the UI toolkit.</description>
+	<name>Symmetry UI HTML</name>
+	<description>Symmetry UI HTML provides a Symmetry HTML adapter for the UI toolkit.</description>
 
 	<dependencies>
 	
