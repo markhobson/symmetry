@@ -19,7 +19,6 @@ import javax.ws.rs.ext.Provider;
 import org.hobsoft.symmetry.hydrate.ComponentRenderKit;
 import org.hobsoft.symmetry.ui.html.HtmlRenderKit;
 
-
 /**
  * 
  * 

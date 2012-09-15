@@ -24,7 +24,6 @@ import org.hobsoft.symmetry.ui.Label;
 import org.hobsoft.symmetry.ui.TabBox;
 import org.hobsoft.symmetry.ui.Window;
 
-
 /**
  * The Symmetry Gallery demo.
  * 

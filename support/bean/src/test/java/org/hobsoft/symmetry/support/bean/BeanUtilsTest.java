@@ -60,8 +60,10 @@ public class BeanUtilsTest
 	{
 		BeanDescriptor descriptor = new BeanDescriptor(Bean.class);
 		
-		assertEquals("java.beans.BeanDescriptor[beanClass=org.hobsoft.symmetry.support.bean.model.Bean,customizerClass=null]",
-			BeanUtils.toString(descriptor));
+		String expected = "java.beans.BeanDescriptor[beanClass=org.hobsoft.symmetry.support.bean.model.Bean,"
+			+ "customizerClass=null]";
+		
+		assertEquals(expected, BeanUtils.toString(descriptor));
 	}
 	
 	@Test

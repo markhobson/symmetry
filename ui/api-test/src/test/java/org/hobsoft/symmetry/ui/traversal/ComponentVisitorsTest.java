@@ -163,7 +163,8 @@ public class ComponentVisitorsTest
 	@Test
 	public void skipChildrenWithDelegateVisit() throws Exception
 	{
-		final HierarchicalComponentVisitor<Component, String, RuntimeException> delegate = createHierarchicalVisitor(mockery);
+		final HierarchicalComponentVisitor<Component, String, RuntimeException> delegate = createHierarchicalVisitor(
+			mockery);
 		final DummyComponent component = new DummyComponent();
 		
 		mockery.checking(new Expectations() { {
