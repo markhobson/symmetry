@@ -27,7 +27,6 @@
 	
 	<name>Kozo UI</name>
 	<description>Kozo UI provides a basic UI toolkit for use with Kozo.</description>
-	<url>http://maven.iizuka.co.uk/docs/kozo/kozo-ui</url>
 	
 	<dependencies>
 	
