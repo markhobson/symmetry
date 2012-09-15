@@ -28,7 +28,7 @@
 	<name>Symmetry Gallery Demo</name>
 
 	<properties>
-		<symmetryMainComponent>org.hobsoft.symmetry.demo.gallery.KozoSetWindow</symmetryMainComponent>
+		<symmetryMainComponent>org.hobsoft.symmetry.demo.gallery.GalleryWindow</symmetryMainComponent>
 	</properties>
 
 </project>

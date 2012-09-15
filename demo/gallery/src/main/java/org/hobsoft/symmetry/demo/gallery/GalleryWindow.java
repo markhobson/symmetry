@@ -26,20 +26,20 @@ import org.hobsoft.symmetry.ui.Window;
 
 
 /**
- * The KozoSet demo.
+ * The Symmetry Gallery demo.
  * 
  * @author Mark Hobson
  */
-public class KozoSetWindow extends Window
+public class GalleryWindow extends Window
 {
 	// constructors -----------------------------------------------------------
 	
-	public KozoSetWindow()
+	public GalleryWindow()
 	{
-		setTitle("KozoSet");
+		setTitle("Symmetry Gallery");
 		
 		add(
-			new Label("KozoSet 0.6.0-SNAPSHOT"),
+			new Label("Symmetry Gallery 0.1.0-SNAPSHOT"),
 			new TabBox(
 				new LabelTab(),
 				new ButtonTab(),
