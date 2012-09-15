@@ -53,8 +53,8 @@ public class LabelTab extends Tab
 						+ "</li>"
 					+ "</ul>"
 				),
-				new HtmlLabel("This can be used to provide hyperlinks to <a href=\"http://www.iizuka.co.uk/\">cool "
-					+ "places</a>."),
+				new HtmlLabel("This can be used to provide hyperlinks to "
+					+ "<a href=\"https://github.com/markhobson/symmetry\">cool places</a>."),
 				new HtmlLabel("Unrecognised namespaces are also <format dir=\"c:\" xmlns=\"ant\">escaped accordingly"
 					+ "</format>.")
 			)
