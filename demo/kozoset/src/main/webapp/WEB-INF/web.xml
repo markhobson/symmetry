@@ -12,7 +12,7 @@
 
 	<servlet>
 		<servlet-name>KozoServlet</servlet-name>
-		<servlet-class>uk.co.iizuka.kozo.http.KozoServlet</servlet-class>
+		<servlet-class>org.hobsoft.symmetry.http.http.KozoServlet</servlet-class>
 		<init-param>
 			<param-name>componentClassName</param-name>
 			<param-value>kozoset.KozoSetWindow</param-value>
