@@ -88,7 +88,7 @@ public class HtmlRenderKit extends XmlRenderKit<Component>
 		HtmlDocument document = new HtmlDocument();
 		document.addExternalCss("symmetry/themes/blue/stylesheet.css");
 		// TODO: reinstate when alternate stylesheets are supported again
-//		stylesheets.put("Kozo Green", "symmetry/themes/green/stylesheet.css");
+//		stylesheets.put("Symmetry Green", "symmetry/themes/green/stylesheet.css");
 		document.addExternalJavaScript("symmetry/themes/common/javascript.js");
 		document.addHttpMetadata("Content-Type", getContentType());
 		context.set(HtmlDocument.class, document);
