@@ -5,7 +5,6 @@
  */
 package org.hobsoft.symmetry.support.xml.stax.transform;
 
-import static org.junit.Assert.assertTrue;
 import javanet.staxutils.helpers.EventMatcher;
 
 import javax.xml.stream.XMLEventFactory;
@@ -15,6 +14,8 @@ import javax.xml.stream.events.XMLEvent;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import static org.junit.Assert.assertTrue;
 
 /**
  * Tests {@code NamespaceEventTransformer}.

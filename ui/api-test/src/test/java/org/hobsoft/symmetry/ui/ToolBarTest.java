@@ -5,18 +5,18 @@
  */
 package org.hobsoft.symmetry.ui;
 
-import static org.junit.Assert.assertEquals;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
-import com.googlecode.jtype.Generic;
 
 import org.hobsoft.symmetry.ui.test.AbstractComponentTest;
 import org.hobsoft.symmetry.ui.test.DummyComponent;
 import org.junit.Before;
 import org.junit.Test;
+
+import com.googlecode.jtype.Generic;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * Tests {@code ToolBar}.

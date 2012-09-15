@@ -5,9 +5,6 @@
  */
 package org.hobsoft.symmetry.support.codec.lang;
 
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertNull;
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -17,6 +14,9 @@ import org.hobsoft.symmetry.support.codec.DecoderException;
 import org.hobsoft.symmetry.support.codec.EncoderException;
 import org.junit.Before;
 import org.junit.Test;
+
+import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertNull;
 
 /**
  * Tests {@code ByteArrayToStreamCodec}.

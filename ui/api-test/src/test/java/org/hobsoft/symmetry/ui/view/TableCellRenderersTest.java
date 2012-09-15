@@ -5,13 +5,13 @@
  */
 package org.hobsoft.symmetry.ui.view;
 
-import static org.junit.Assert.assertEquals;
-
 import org.hobsoft.symmetry.ui.FakeEnum;
 import org.hobsoft.symmetry.ui.Label;
 import org.hobsoft.symmetry.ui.Table;
 import org.hobsoft.symmetry.ui.model.DefaultTableModel;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * Tests {@code TableCellRenderers}.

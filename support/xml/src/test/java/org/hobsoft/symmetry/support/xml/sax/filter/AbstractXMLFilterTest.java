@@ -5,8 +5,6 @@
  */
 package org.hobsoft.symmetry.support.xml.sax.filter;
 
-import static org.junit.Assert.assertEquals;
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -34,6 +32,8 @@ import org.xml.sax.XMLReader;
 import org.xml.sax.ext.DeclHandler;
 import org.xml.sax.ext.LexicalHandler;
 import org.xml.sax.helpers.AttributesImpl;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * 

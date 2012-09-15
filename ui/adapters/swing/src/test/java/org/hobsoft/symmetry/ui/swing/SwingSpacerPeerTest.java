@@ -5,16 +5,15 @@
  */
 package org.hobsoft.symmetry.ui.swing;
 
-import static org.junit.Assert.assertEquals;
-
 import java.beans.PropertyChangeEvent;
 
 import javax.swing.Box;
 
 import org.hobsoft.symmetry.ui.Spacer;
-import org.hobsoft.symmetry.ui.swing.SwingSpacerPeer;
 import org.junit.Before;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * 

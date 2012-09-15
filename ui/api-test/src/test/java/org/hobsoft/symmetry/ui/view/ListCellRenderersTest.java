@@ -5,14 +5,14 @@
  */
 package org.hobsoft.symmetry.ui.view;
 
-import static org.hobsoft.symmetry.ui.test.model.ListModelSupport.createItem;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertSame;
-
 import org.hobsoft.symmetry.ui.ComboBox;
 import org.hobsoft.symmetry.ui.FakeEnum;
 import org.hobsoft.symmetry.ui.Label;
 import org.junit.Test;
+
+import static org.hobsoft.symmetry.ui.test.model.ListModelSupport.createItem;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertSame;
 
 /**
  * Tests {@code ListCellRenderers}.

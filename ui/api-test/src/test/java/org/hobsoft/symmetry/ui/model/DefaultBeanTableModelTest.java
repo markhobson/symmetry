@@ -5,9 +5,6 @@
  */
 package org.hobsoft.symmetry.ui.model;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertSame;
-
 import java.beans.BeanInfo;
 import java.util.Arrays;
 import java.util.Collection;
@@ -25,6 +22,9 @@ import org.jmock.integration.junit4.JUnit4Mockery;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertSame;
 
 /**
  * Tests {@code DefaultBeanTableModel}.

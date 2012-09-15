@@ -5,9 +5,6 @@
  */
 package org.hobsoft.symmetry.ui.html.test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -16,6 +13,9 @@ import org.hobsoft.symmetry.ui.html.HtmlDocument;
 import org.hobsoft.symmetry.ui.html.HtmlDocument.ExternalScript;
 import org.hobsoft.symmetry.ui.html.HtmlDocument.ExternalStyle;
 import org.hobsoft.symmetry.ui.html.HtmlDocument.Script;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Custom assertions for {@code HtmlDocument}.

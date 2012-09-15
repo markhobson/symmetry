@@ -5,12 +5,12 @@
  */
 package org.hobsoft.symmetry.support.codec.base64;
 
-import static org.junit.Assert.assertTrue;
-
 import java.io.IOException;
 import java.util.Arrays;
 
 import org.junit.Test;
+
+import static org.junit.Assert.assertTrue;
 
 /**
  * Tests <code>Base64Utils</code>.

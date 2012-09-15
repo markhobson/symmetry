@@ -5,12 +5,12 @@
  */
 package org.hobsoft.symmetry.support.codec.base64;
 
-import static org.junit.Assert.assertEquals;
-
 import org.hobsoft.symmetry.support.codec.DecoderException;
 import org.hobsoft.symmetry.support.codec.EncoderException;
 import org.junit.Before;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * Tests <code>Base64Alphabet</code>.

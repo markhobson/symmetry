@@ -5,8 +5,6 @@
  */
 package org.hobsoft.symmetry.ui;
 
-import static com.google.common.base.Preconditions.checkArgument;
-
 import java.util.AbstractList;
 import java.util.List;
 
@@ -14,6 +12,8 @@ import org.hobsoft.symmetry.ui.event.ActionEvent;
 import org.hobsoft.symmetry.ui.event.ActionListener;
 import org.hobsoft.symmetry.ui.traversal.ComponentVisitor;
 import org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.EndVisit;
+
+import static com.google.common.base.Preconditions.checkArgument;
 
 /**
  * 

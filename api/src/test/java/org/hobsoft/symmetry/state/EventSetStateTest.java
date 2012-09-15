@@ -5,15 +5,15 @@
  */
 package org.hobsoft.symmetry.state;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
-
 import java.beans.EventSetDescriptor;
 import java.util.EventObject;
 
 import org.hobsoft.symmetry.support.bean.EventSets;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Tests {@code EventSetState}.

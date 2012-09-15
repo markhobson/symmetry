@@ -5,9 +5,6 @@
  */
 package org.hobsoft.symmetry.ui;
 
-import static com.google.common.base.Preconditions.checkArgument;
-import static com.google.common.base.Preconditions.checkElementIndex;
-
 import java.beans.IndexedPropertyChangeEvent;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
@@ -16,6 +13,9 @@ import org.hobsoft.symmetry.ui.functor.Closure;
 import org.hobsoft.symmetry.ui.functor.Command;
 import org.hobsoft.symmetry.ui.traversal.ComponentVisitor;
 import org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.EndVisit;
+
+import static com.google.common.base.Preconditions.checkArgument;
+import static com.google.common.base.Preconditions.checkElementIndex;
 
 /**
  * A container that lays its children out on top of one another.

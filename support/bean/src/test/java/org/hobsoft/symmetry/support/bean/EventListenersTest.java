@@ -5,12 +5,12 @@
  */
 package org.hobsoft.symmetry.support.bean;
 
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertEquals;
-
 import java.util.EventListener;
 
 import org.junit.Test;
+
+import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
 
 /**
  * Tests {@code EventListeners}.

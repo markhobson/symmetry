@@ -5,14 +5,14 @@
  */
 package org.hobsoft.symmetry.ui.layout;
 
-import static com.google.common.base.Preconditions.checkNotNull;
-
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 
 import com.google.common.base.Objects;
 
 import static org.hobsoft.symmetry.ui.internal.Preconditions.checkPositive;
+
+import static com.google.common.base.Preconditions.checkNotNull;
 
 /**
  * 

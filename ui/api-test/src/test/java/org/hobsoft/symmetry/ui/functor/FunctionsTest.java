@@ -5,11 +5,6 @@
  */
 package org.hobsoft.symmetry.ui.functor;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertTrue;
-
 import java.beans.PropertyChangeEvent;
 import java.util.Collections;
 import java.util.Map;
@@ -17,6 +12,11 @@ import java.util.Map;
 import org.hobsoft.symmetry.ui.FakeEnum;
 import org.hobsoft.symmetry.ui.StubBean;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Tests {@code Functions}.

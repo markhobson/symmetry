@@ -5,9 +5,9 @@
  */
 package org.hobsoft.symmetry.ui.internal;
 
-import static com.google.common.base.Preconditions.checkArgument;
-
 import java.util.Arrays;
+
+import static com.google.common.base.Preconditions.checkArgument;
 
 /**
  * 

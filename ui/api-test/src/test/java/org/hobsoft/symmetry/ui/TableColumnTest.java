@@ -5,11 +5,6 @@
  */
 package org.hobsoft.symmetry.ui;
 
-import static org.hobsoft.symmetry.ui.layout.Length.pixels;
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
-
 import org.hobsoft.symmetry.ui.event.TableCellListener;
 import org.hobsoft.symmetry.ui.model.DefaultTableModel;
 import org.hobsoft.symmetry.ui.test.event.DummyTableCellListener;
@@ -17,6 +12,11 @@ import org.hobsoft.symmetry.ui.test.view.NullComponentTableCellRenderer;
 import org.hobsoft.symmetry.ui.view.TableCellRenderer;
 import org.junit.Before;
 import org.junit.Test;
+
+import static org.hobsoft.symmetry.ui.layout.Length.pixels;
+import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 /**
  * Tests {@code TableColumn}.

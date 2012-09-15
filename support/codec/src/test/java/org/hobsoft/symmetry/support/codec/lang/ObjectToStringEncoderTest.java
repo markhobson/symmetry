@@ -5,10 +5,10 @@
  */
 package org.hobsoft.symmetry.support.codec.lang;
 
-import static org.junit.Assert.assertEquals;
-
 import org.hobsoft.symmetry.support.codec.EncoderException;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * Tests {@code ObjectToStringEncoder}.

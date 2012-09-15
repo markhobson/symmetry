@@ -5,9 +5,6 @@
  */
 package org.hobsoft.symmetry.ui.html;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
-
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -18,6 +15,9 @@ import javax.xml.stream.events.StartElement;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Tests {@code HtmlFilters}.

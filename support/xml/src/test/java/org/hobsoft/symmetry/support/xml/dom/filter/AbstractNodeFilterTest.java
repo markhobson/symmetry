@@ -5,11 +5,11 @@
  */
 package org.hobsoft.symmetry.support.xml.dom.filter;
 
-import static org.junit.Assert.fail;
-
 import org.hobsoft.symmetry.support.xml.dom.AbstractDOMTestCase;
 import org.w3c.dom.Node;
 import org.w3c.dom.traversal.NodeFilter;
+
+import static org.junit.Assert.fail;
 
 /**
  * Provides a basis for <code>NodeFilter</code> tests.

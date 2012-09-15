@@ -5,9 +5,6 @@
  */
 package org.hobsoft.symmetry.ui.html.hydrate;
 
-import static org.hobsoft.symmetry.ui.test.event.MockActionListeners.createMockActionListener;
-import static org.junit.Assert.assertTrue;
-
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -27,6 +24,9 @@ import org.jmock.integration.junit4.JMock;
 import org.jmock.integration.junit4.JUnit4Mockery;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+
+import static org.hobsoft.symmetry.ui.test.event.MockActionListeners.createMockActionListener;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Tests {@code ButtonHtmlButtonHydrator}.

@@ -5,6 +5,22 @@
  */
 package org.hobsoft.symmetry.ui;
 
+import java.util.Collection;
+import java.util.List;
+
+import org.hobsoft.symmetry.ui.event.SelectionEvent;
+import org.hobsoft.symmetry.ui.event.SelectionListener;
+import org.hobsoft.symmetry.ui.functor.Closure;
+import org.hobsoft.symmetry.ui.model.DefaultListModel;
+import org.hobsoft.symmetry.ui.model.ListModel;
+import org.hobsoft.symmetry.ui.test.AbstractComponentTest;
+import org.hobsoft.symmetry.ui.test.model.ListModelSupport;
+import org.hobsoft.symmetry.ui.view.LabelListCellRenderer;
+import org.jmock.Expectations;
+import org.junit.Test;
+
+import com.googlecode.jtype.Generic;
+
 import static org.hobsoft.symmetry.ui.BeanAssert.assertProperty;
 import static org.hobsoft.symmetry.ui.BeanAssert.assertReadableProperty;
 import static org.hobsoft.symmetry.ui.BeanAssert.assertWritableProperty;
@@ -17,22 +33,6 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
-
-import java.util.Collection;
-import java.util.List;
-
-import com.googlecode.jtype.Generic;
-
-import org.hobsoft.symmetry.ui.event.SelectionEvent;
-import org.hobsoft.symmetry.ui.event.SelectionListener;
-import org.hobsoft.symmetry.ui.functor.Closure;
-import org.hobsoft.symmetry.ui.model.DefaultListModel;
-import org.hobsoft.symmetry.ui.model.ListModel;
-import org.hobsoft.symmetry.ui.test.AbstractComponentTest;
-import org.hobsoft.symmetry.ui.test.model.ListModelSupport;
-import org.hobsoft.symmetry.ui.view.LabelListCellRenderer;
-import org.jmock.Expectations;
-import org.junit.Test;
 
 /**
  * Tests {@code ComboBox}.

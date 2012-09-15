@@ -5,11 +5,11 @@
  */
 package org.hobsoft.symmetry.xml;
 
-import static org.junit.Assert.assertEquals;
-
 import org.hobsoft.symmetry.support.codec.EncoderException;
 import org.junit.Before;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * 

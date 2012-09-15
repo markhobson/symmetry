@@ -5,9 +5,9 @@
  */
 package org.hobsoft.symmetry.ui.html.hydrate;
 
-import static org.hobsoft.symmetry.hydrate.HydrationPhase.DEHYDRATE;
-
 import org.hobsoft.symmetry.ui.PasswordBox;
+
+import static org.hobsoft.symmetry.hydrate.HydrationPhase.DEHYDRATE;
 
 /**
  * Phased hydrator that dehydrates and rehydrates a {@code PasswordBox} component using an HTML {@code <input/>} tag.

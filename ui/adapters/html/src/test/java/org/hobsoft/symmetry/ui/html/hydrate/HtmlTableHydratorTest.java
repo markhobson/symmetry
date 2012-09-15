@@ -5,16 +5,6 @@
  */
 package org.hobsoft.symmetry.ui.html.hydrate;
 
-import static org.hobsoft.symmetry.hydrate.HydrationPhase.DEHYDRATE;
-import static org.hobsoft.symmetry.hydrate.HydrationPhase.REHYDRATE_EVENTS;
-import static org.hobsoft.symmetry.hydrate.HydrationPhase.REHYDRATE_PARAMETERS;
-import static org.hobsoft.symmetry.hydrate.HydrationPhase.REHYDRATE_PROPERTIES;
-import static org.hobsoft.symmetry.ui.layout.Length.flex;
-import static org.hobsoft.symmetry.ui.layout.Length.pixels;
-import static org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.Visit.SKIP_CHILDREN;
-import static org.hobsoft.symmetry.ui.xml.test.hydrate.StubXmlComponentHydrators.stubXmlHierarchicalComponentHydrator;
-import static org.junit.Assert.assertEquals;
-
 import org.hobsoft.symmetry.hydrate.ComponentRenderKit;
 import org.hobsoft.symmetry.hydrate.HydrationException;
 import org.hobsoft.symmetry.hydrate.HydrationPhase;
@@ -30,6 +20,16 @@ import org.hobsoft.symmetry.ui.test.view.DummyComponentTableCellRenderer;
 import org.hobsoft.symmetry.ui.test.view.NullComponentTableCellRenderer;
 import org.hobsoft.symmetry.xml.test.hydrate.AbstractXmlRenderKitTest;
 import org.junit.Test;
+
+import static org.hobsoft.symmetry.hydrate.HydrationPhase.DEHYDRATE;
+import static org.hobsoft.symmetry.hydrate.HydrationPhase.REHYDRATE_EVENTS;
+import static org.hobsoft.symmetry.hydrate.HydrationPhase.REHYDRATE_PARAMETERS;
+import static org.hobsoft.symmetry.hydrate.HydrationPhase.REHYDRATE_PROPERTIES;
+import static org.hobsoft.symmetry.ui.layout.Length.flex;
+import static org.hobsoft.symmetry.ui.layout.Length.pixels;
+import static org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.Visit.SKIP_CHILDREN;
+import static org.hobsoft.symmetry.ui.xml.test.hydrate.StubXmlComponentHydrators.stubXmlHierarchicalComponentHydrator;
+import static org.junit.Assert.assertEquals;
 
 /**
  * Tests {@code HtmlTableHydrator}.

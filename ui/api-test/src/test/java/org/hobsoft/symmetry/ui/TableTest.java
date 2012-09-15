@@ -5,14 +5,8 @@
  */
 package org.hobsoft.symmetry.ui;
 
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertSame;
-
 import java.io.Serializable;
 import java.util.EventListener;
-
-import com.googlecode.jtype.Generic;
 
 import org.hobsoft.symmetry.support.bean.EventListeners;
 import org.hobsoft.symmetry.ui.event.TableCellListener;
@@ -27,6 +21,12 @@ import org.hobsoft.symmetry.ui.view.TableCellRenderer;
 import org.jmock.Expectations;
 import org.junit.Before;
 import org.junit.Test;
+
+import com.googlecode.jtype.Generic;
+
+import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertSame;
 
 /**
  * Tests {@code Table}.

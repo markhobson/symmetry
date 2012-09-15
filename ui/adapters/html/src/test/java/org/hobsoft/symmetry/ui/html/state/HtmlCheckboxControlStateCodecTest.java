@@ -5,9 +5,6 @@
  */
 package org.hobsoft.symmetry.ui.html.state;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
-
 import java.beans.PropertyDescriptor;
 
 import org.hobsoft.symmetry.state.NullStateCodec;
@@ -16,6 +13,9 @@ import org.hobsoft.symmetry.state.StateException;
 import org.hobsoft.symmetry.support.bean.Properties;
 import org.junit.Before;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 /**
  * Tests {@code HtmlCheckboxControlStateCodec}.

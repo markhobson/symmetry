@@ -5,9 +5,9 @@
  */
 package org.hobsoft.symmetry.ui.html.hydrate;
 
-import static org.hobsoft.symmetry.hydrate.HydrationPhase.DEHYDRATE;
-
 import org.hobsoft.symmetry.ui.Grid;
+
+import static org.hobsoft.symmetry.hydrate.HydrationPhase.DEHYDRATE;
 
 /**
  * Phased hydrator that dehydrates and rehydrates a {@code Grid} component using an HTML {@code <table/>} tag without

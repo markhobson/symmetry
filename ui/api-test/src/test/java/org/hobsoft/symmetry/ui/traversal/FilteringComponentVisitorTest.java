@@ -5,6 +5,16 @@
  */
 package org.hobsoft.symmetry.ui.traversal;
 
+import org.hobsoft.symmetry.ui.test.DummyComponent;
+import org.jmock.Expectations;
+import org.jmock.Mockery;
+import org.jmock.integration.junit4.JMock;
+import org.jmock.integration.junit4.JUnit4Mockery;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+
+import com.googlecode.jtype.Generic;
+
 import static org.hobsoft.symmetry.ui.test.traversal.MockComponentVisitors.createVisitor;
 import static org.hobsoft.symmetry.ui.test.traversal.MockComponentVisitors.createVisitorParameter;
 import static org.hobsoft.symmetry.ui.traversal.ComponentFilters.accept;
@@ -13,16 +23,6 @@ import static org.hobsoft.symmetry.ui.traversal.ComponentVisitors.nullHierarchic
 import static org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.Visit.SKIP_CHILDREN;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertSame;
-
-import com.googlecode.jtype.Generic;
-
-import org.hobsoft.symmetry.ui.test.DummyComponent;
-import org.jmock.Expectations;
-import org.jmock.Mockery;
-import org.jmock.integration.junit4.JMock;
-import org.jmock.integration.junit4.JUnit4Mockery;
-import org.junit.Test;
-import org.junit.runner.RunWith;
 
 /**
  * Tests {@code FilteringComponentVisitor}.

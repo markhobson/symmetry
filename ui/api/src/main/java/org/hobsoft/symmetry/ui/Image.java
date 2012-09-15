@@ -5,8 +5,6 @@
  */
 package org.hobsoft.symmetry.ui;
 
-import static com.google.common.base.Preconditions.checkNotNull;
-
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -14,6 +12,8 @@ import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
+
+import static com.google.common.base.Preconditions.checkNotNull;
 
 /**
  * 

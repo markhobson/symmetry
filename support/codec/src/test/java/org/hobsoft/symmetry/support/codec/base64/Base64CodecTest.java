@@ -5,15 +5,15 @@
  */
 package org.hobsoft.symmetry.support.codec.base64;
 
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertTrue;
-
 import java.util.Arrays;
 
 import org.hobsoft.symmetry.support.codec.DecoderException;
 import org.hobsoft.symmetry.support.codec.EncoderException;
 import org.junit.Before;
 import org.junit.Test;
+
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Tests <code>Base64Codec</code>.

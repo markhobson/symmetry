@@ -5,17 +5,6 @@
  */
 package org.hobsoft.symmetry.ui.html.hydrate;
 
-import static org.hobsoft.symmetry.hydrate.HydrationPhase.DEHYDRATE;
-import static org.hobsoft.symmetry.hydrate.HydrationPhase.REHYDRATE_EVENTS;
-import static org.hobsoft.symmetry.hydrate.HydrationPhase.REHYDRATE_PARAMETERS;
-import static org.hobsoft.symmetry.hydrate.HydrationPhase.REHYDRATE_PROPERTIES;
-import static org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.Visit.SKIP_CHILDREN;
-import static org.hobsoft.symmetry.ui.xml.test.hydrate.StubXmlComponentHydrators.stubXmlHierarchicalComponentHydrator;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-
-import com.googlecode.jtype.Generic;
-
 import org.hobsoft.symmetry.hydrate.ComponentRenderKit;
 import org.hobsoft.symmetry.hydrate.HydrationException;
 import org.hobsoft.symmetry.hydrate.HydrationPhase;
@@ -38,6 +27,17 @@ import org.jmock.integration.junit4.JMock;
 import org.jmock.integration.junit4.JUnit4Mockery;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+
+import com.googlecode.jtype.Generic;
+
+import static org.hobsoft.symmetry.hydrate.HydrationPhase.DEHYDRATE;
+import static org.hobsoft.symmetry.hydrate.HydrationPhase.REHYDRATE_EVENTS;
+import static org.hobsoft.symmetry.hydrate.HydrationPhase.REHYDRATE_PARAMETERS;
+import static org.hobsoft.symmetry.hydrate.HydrationPhase.REHYDRATE_PROPERTIES;
+import static org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.Visit.SKIP_CHILDREN;
+import static org.hobsoft.symmetry.ui.xml.test.hydrate.StubXmlComponentHydrators.stubXmlHierarchicalComponentHydrator;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Tests {@code HtmlComboBoxHydrator}.

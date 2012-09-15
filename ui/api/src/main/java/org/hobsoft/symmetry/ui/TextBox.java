@@ -5,12 +5,12 @@
  */
 package org.hobsoft.symmetry.ui;
 
-import static com.google.common.base.Strings.nullToEmpty;
-
 import org.hobsoft.symmetry.ui.traversal.ComponentVisitor;
 import org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.EndVisit;
 
 import static org.hobsoft.symmetry.ui.internal.Preconditions.checkPositive;
+
+import static com.google.common.base.Strings.nullToEmpty;
 
 /**
  * A component that provides editing for a single-line of text.

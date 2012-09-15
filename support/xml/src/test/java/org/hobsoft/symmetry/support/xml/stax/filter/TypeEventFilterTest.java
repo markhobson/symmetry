@@ -5,12 +5,6 @@
  */
 package org.hobsoft.symmetry.support.xml.stax.filter;
 
-import static javax.xml.stream.XMLStreamConstants.END_ELEMENT;
-import static javax.xml.stream.XMLStreamConstants.START_ELEMENT;
-
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
-
 import javanet.staxutils.events.EntityDeclarationEvent;
 import javanet.staxutils.events.NotationDeclarationEvent;
 
@@ -33,6 +27,12 @@ import javax.xml.stream.events.StartElement;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import static javax.xml.stream.XMLStreamConstants.END_ELEMENT;
+import static javax.xml.stream.XMLStreamConstants.START_ELEMENT;
+
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Tests <code>TypeEventFilter</code>.

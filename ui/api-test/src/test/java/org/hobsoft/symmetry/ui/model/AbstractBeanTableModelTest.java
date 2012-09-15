@@ -5,10 +5,6 @@
  */
 package org.hobsoft.symmetry.ui.model;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertSame;
-
 import java.beans.BeanInfo;
 
 import org.hobsoft.symmetry.support.bean.BeanUtils;
@@ -16,6 +12,10 @@ import org.hobsoft.symmetry.support.bean.DefaultBeanInfo;
 import org.hobsoft.symmetry.ui.StubBean;
 import org.junit.Before;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertSame;
 
 /**
  * Tests {@code AbstractBeanTableModel}.

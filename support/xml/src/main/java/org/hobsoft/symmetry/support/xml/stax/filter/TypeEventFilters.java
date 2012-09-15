@@ -5,6 +5,8 @@
  */
 package org.hobsoft.symmetry.support.xml.stax.filter;
 
+import javax.xml.stream.EventFilter;
+
 import static javax.xml.stream.XMLStreamConstants.ATTRIBUTE;
 import static javax.xml.stream.XMLStreamConstants.CDATA;
 import static javax.xml.stream.XMLStreamConstants.CHARACTERS;
@@ -22,8 +24,6 @@ import static javax.xml.stream.XMLStreamConstants.START_DOCUMENT;
 import static javax.xml.stream.XMLStreamConstants.START_ELEMENT;
 
 import static org.hobsoft.symmetry.support.xml.stax.filter.EventFilters.type;
-
-import javax.xml.stream.EventFilter;
 
 /**
  * 

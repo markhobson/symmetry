@@ -5,12 +5,12 @@
  */
 package org.hobsoft.symmetry.support.bean;
 
-import static org.junit.Assert.fail;
-
 import java.beans.BeanDescriptor;
 import java.beans.EventSetDescriptor;
 import java.beans.PropertyDescriptor;
 import java.util.Arrays;
+
+import static org.junit.Assert.fail;
 
 /**
  * Provides methods to assert the equality of JavaBean objects.

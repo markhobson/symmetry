@@ -5,14 +5,14 @@
  */
 package org.hobsoft.symmetry.ui;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
-
 import java.beans.IndexedPropertyDescriptor;
 import java.beans.PropertyDescriptor;
 
 import org.hobsoft.symmetry.support.bean.Properties;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 /**
  * 

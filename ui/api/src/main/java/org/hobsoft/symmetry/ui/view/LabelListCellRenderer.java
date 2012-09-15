@@ -5,11 +5,11 @@
  */
 package org.hobsoft.symmetry.ui.view;
 
-import static com.google.common.base.Objects.firstNonNull;
-import static com.google.common.base.Preconditions.checkNotNull;
-
 import org.hobsoft.symmetry.ui.ComboBox;
 import org.hobsoft.symmetry.ui.Label;
+
+import static com.google.common.base.Objects.firstNonNull;
+import static com.google.common.base.Preconditions.checkNotNull;
 
 /**
  * 

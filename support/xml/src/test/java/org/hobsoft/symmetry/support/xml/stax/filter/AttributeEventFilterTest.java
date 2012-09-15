@@ -5,10 +5,10 @@
  */
 package org.hobsoft.symmetry.support.xml.stax.filter;
 
-import static org.junit.Assert.assertTrue;
-
 import org.hobsoft.symmetry.support.xml.stax.AbstractXMLEventTest;
 import org.junit.Test;
+
+import static org.junit.Assert.assertTrue;
 
 /**
  * Tests {@code AttributeEventFilter}.

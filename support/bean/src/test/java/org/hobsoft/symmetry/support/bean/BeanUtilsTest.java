@@ -5,15 +5,15 @@
  */
 package org.hobsoft.symmetry.support.bean;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
-
 import java.beans.BeanDescriptor;
 
 import org.hobsoft.symmetry.support.bean.model.Bean;
 import org.hobsoft.symmetry.support.bean.model.BoundBean;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Tests {@code BeanUtils}.

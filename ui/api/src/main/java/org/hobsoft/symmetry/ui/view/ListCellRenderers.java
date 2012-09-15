@@ -5,13 +5,13 @@
  */
 package org.hobsoft.symmetry.ui.view;
 
-import static com.google.common.base.Objects.equal;
-
 import org.hobsoft.symmetry.ui.ComboBox;
 import org.hobsoft.symmetry.ui.Component;
 import org.hobsoft.symmetry.ui.Label;
 import org.hobsoft.symmetry.ui.functor.Function;
 import org.hobsoft.symmetry.ui.functor.Functions;
+
+import static com.google.common.base.Objects.equal;
 
 /**
  * 

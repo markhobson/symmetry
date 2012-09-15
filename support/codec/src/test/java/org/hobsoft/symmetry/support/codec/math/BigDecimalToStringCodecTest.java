@@ -5,15 +5,15 @@
  */
 package org.hobsoft.symmetry.support.codec.math;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
-
 import java.math.BigDecimal;
 
 import org.hobsoft.symmetry.support.codec.DecoderException;
 import org.hobsoft.symmetry.support.codec.EncoderException;
 import org.junit.Before;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 /**
  * Tests {@code BigDecimalToStringCodec}.

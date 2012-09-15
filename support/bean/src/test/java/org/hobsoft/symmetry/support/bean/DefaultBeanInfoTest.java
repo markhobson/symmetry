@@ -5,11 +5,6 @@
  */
 package org.hobsoft.symmetry.support.bean;
 
-import static org.hobsoft.symmetry.support.bean.BeanAssert.assertBeanDescriptor;
-import static org.hobsoft.symmetry.support.bean.BeanAssert.assertPropertyDescriptors;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
-
 import java.beans.BeanDescriptor;
 import java.beans.IntrospectionException;
 import java.beans.PropertyDescriptor;
@@ -18,6 +13,11 @@ import org.hobsoft.symmetry.support.bean.model.Bean;
 import org.hobsoft.symmetry.support.bean.model.TestBean;
 import org.junit.Before;
 import org.junit.Test;
+
+import static org.hobsoft.symmetry.support.bean.BeanAssert.assertBeanDescriptor;
+import static org.hobsoft.symmetry.support.bean.BeanAssert.assertPropertyDescriptors;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 /**
  * Tests {@code DefaultBeanInfo}.

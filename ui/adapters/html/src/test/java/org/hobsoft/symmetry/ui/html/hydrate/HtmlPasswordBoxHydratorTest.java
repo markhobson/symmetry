@@ -5,9 +5,6 @@
  */
 package org.hobsoft.symmetry.ui.html.hydrate;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-
 import java.beans.PropertyDescriptor;
 
 import org.hobsoft.symmetry.hydrate.ComponentRenderKit;
@@ -21,6 +18,9 @@ import org.hobsoft.symmetry.ui.common.test.hydrate.StubPhasedUiComponentRenderKi
 import org.hobsoft.symmetry.ui.html.hydrate.FormHtmlWindowDehydrator.Parameters;
 import org.hobsoft.symmetry.xml.test.hydrate.AbstractXmlRenderKitTest;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Tests {@code HtmlPasswordBoxHydrator}.

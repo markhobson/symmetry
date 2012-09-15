@@ -5,21 +5,20 @@
  */
 package org.hobsoft.symmetry.ui.swing;
 
-import static org.junit.Assert.assertEquals;
-
 import java.beans.PropertyChangeEvent;
 
 import javax.swing.JTextField;
 import javax.swing.event.DocumentListener;
 
 import org.hobsoft.symmetry.ui.TextBox;
-import org.hobsoft.symmetry.ui.swing.SwingTextBoxPeer;
 import org.jmock.Mockery;
 import org.jmock.integration.junit4.JMock;
 import org.jmock.integration.junit4.JUnit4Mockery;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * 

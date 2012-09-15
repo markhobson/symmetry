@@ -5,8 +5,6 @@
  */
 package org.hobsoft.symmetry.xml.test.hydrate;
 
-import static org.junit.Assert.fail;
-
 import java.io.OutputStream;
 
 import javax.xml.stream.XMLOutputFactory;
@@ -18,6 +16,8 @@ import org.hobsoft.symmetry.test.hydrate.AbstractRenderKitTest;
 import org.hobsoft.symmetry.xml.IdEncoder;
 import org.hobsoft.symmetry.xml.test.StubIdEncoder;
 import org.junit.Before;
+
+import static org.junit.Assert.fail;
 
 /**
  * Provides support for testing XML-based component render kits.

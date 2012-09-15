@@ -5,17 +5,17 @@
  */
 package org.hobsoft.symmetry.state;
 
-import static org.hamcrest.CoreMatchers.instanceOf;
-import static org.hobsoft.symmetry.support.bean.Properties.getDescriptor;
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThat;
-
 import java.beans.PropertyDescriptor;
 
 import org.hobsoft.symmetry.support.bean.Properties;
 import org.junit.Before;
 import org.junit.Test;
+
+import static org.hamcrest.CoreMatchers.instanceOf;
+import static org.hobsoft.symmetry.support.bean.Properties.getDescriptor;
+import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThat;
 
 /**
  * Tests {@code StringPropertyValueStateCodec}.

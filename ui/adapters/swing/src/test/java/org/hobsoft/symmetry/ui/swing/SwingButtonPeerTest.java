@@ -5,8 +5,6 @@
  */
 package org.hobsoft.symmetry.ui.swing;
 
-import static org.junit.Assert.assertEquals;
-
 import java.beans.PropertyChangeEvent;
 
 import javax.swing.JButton;
@@ -15,7 +13,6 @@ import org.hobsoft.symmetry.ui.Button;
 import org.hobsoft.symmetry.ui.Label;
 import org.hobsoft.symmetry.ui.event.ActionEvent;
 import org.hobsoft.symmetry.ui.event.ActionListener;
-import org.hobsoft.symmetry.ui.swing.SwingButtonPeer;
 import org.jmock.Expectations;
 import org.jmock.Mockery;
 import org.jmock.integration.junit4.JMock;
@@ -23,6 +20,8 @@ import org.jmock.integration.junit4.JUnit4Mockery;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * 

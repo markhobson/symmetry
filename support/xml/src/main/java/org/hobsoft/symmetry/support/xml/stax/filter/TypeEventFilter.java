@@ -5,6 +5,9 @@
  */
 package org.hobsoft.symmetry.support.xml.stax.filter;
 
+import javax.xml.stream.EventFilter;
+import javax.xml.stream.events.XMLEvent;
+
 import static javax.xml.stream.XMLStreamConstants.ATTRIBUTE;
 import static javax.xml.stream.XMLStreamConstants.CDATA;
 import static javax.xml.stream.XMLStreamConstants.CHARACTERS;
@@ -20,9 +23,6 @@ import static javax.xml.stream.XMLStreamConstants.PROCESSING_INSTRUCTION;
 import static javax.xml.stream.XMLStreamConstants.SPACE;
 import static javax.xml.stream.XMLStreamConstants.START_DOCUMENT;
 import static javax.xml.stream.XMLStreamConstants.START_ELEMENT;
-
-import javax.xml.stream.EventFilter;
-import javax.xml.stream.events.XMLEvent;
 
 /**
  * An event filter that accepts events of a specific type.

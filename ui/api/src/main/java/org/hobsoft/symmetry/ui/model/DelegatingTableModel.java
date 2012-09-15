@@ -5,9 +5,9 @@
  */
 package org.hobsoft.symmetry.ui.model;
 
-import static com.google.common.base.Preconditions.checkNotNull;
-
 import org.hobsoft.symmetry.ui.event.TableModelListener;
+
+import static com.google.common.base.Preconditions.checkNotNull;
 
 /**
  * 

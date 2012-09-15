@@ -5,14 +5,14 @@
  */
 package org.hobsoft.symmetry.ui.html;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
-
 import javax.xml.stream.XMLStreamException;
 
 import org.hobsoft.symmetry.xml.test.AbstractStaxTest;
 import org.junit.Ignore;
 import org.junit.Test;
+
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Tests {@code HtmlUtils}.

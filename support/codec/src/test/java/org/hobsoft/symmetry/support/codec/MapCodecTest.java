@@ -5,9 +5,6 @@
  */
 package org.hobsoft.symmetry.support.codec;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
-
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -15,6 +12,9 @@ import java.util.Map;
 import org.hobsoft.symmetry.support.codec.test.A;
 import org.hobsoft.symmetry.support.codec.test.B;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 /**
  * Tests {@code MapCodec}.

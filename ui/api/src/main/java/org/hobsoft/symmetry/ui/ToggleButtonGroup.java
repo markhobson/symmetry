@@ -5,10 +5,10 @@
  */
 package org.hobsoft.symmetry.ui;
 
-import static com.google.common.base.Preconditions.checkArgument;
-
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
+
+import static com.google.common.base.Preconditions.checkArgument;
 
 /**
  * 

@@ -5,16 +5,15 @@
  */
 package org.hobsoft.symmetry.ui.swing;
 
-import static org.junit.Assert.assertEquals;
-
 import java.beans.PropertyChangeEvent;
 
 import javax.swing.JLabel;
 
 import org.hobsoft.symmetry.ui.Label;
-import org.hobsoft.symmetry.ui.swing.SwingLabelPeer;
 import org.junit.Before;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * 

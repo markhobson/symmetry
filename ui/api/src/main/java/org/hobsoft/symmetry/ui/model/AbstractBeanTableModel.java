@@ -5,14 +5,14 @@
  */
 package org.hobsoft.symmetry.ui.model;
 
-import static com.google.common.base.Preconditions.checkArgument;
-import static com.google.common.base.Preconditions.checkNotNull;
-
 import java.beans.BeanInfo;
 import java.beans.PropertyDescriptor;
 
 import org.hobsoft.symmetry.support.bean.BeanUtils;
 import org.hobsoft.symmetry.support.bean.Properties;
+
+import static com.google.common.base.Preconditions.checkArgument;
+import static com.google.common.base.Preconditions.checkNotNull;
 
 /**
  * 

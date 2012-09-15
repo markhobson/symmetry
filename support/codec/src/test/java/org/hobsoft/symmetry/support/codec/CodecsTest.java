@@ -5,9 +5,9 @@
  */
 package org.hobsoft.symmetry.support.codec;
 
-import static org.junit.Assert.assertEquals;
-
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * Tests {@code Codecs}.

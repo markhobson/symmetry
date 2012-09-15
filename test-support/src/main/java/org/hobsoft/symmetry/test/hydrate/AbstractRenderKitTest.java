@@ -5,8 +5,6 @@
  */
 package org.hobsoft.symmetry.test.hydrate;
 
-import static org.junit.Assert.assertEquals;
-
 import java.io.ByteArrayOutputStream;
 import java.util.Arrays;
 import java.util.Collections;
@@ -22,6 +20,8 @@ import org.hobsoft.symmetry.state.State;
 import org.hobsoft.symmetry.state.StateCodec;
 import org.hobsoft.symmetry.test.state.StubStateCodec;
 import org.junit.Before;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * Provides support for testing component render kits.

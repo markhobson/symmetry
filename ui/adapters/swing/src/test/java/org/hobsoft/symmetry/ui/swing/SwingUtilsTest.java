@@ -5,17 +5,16 @@
  */
 package org.hobsoft.symmetry.ui.swing;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Modifier;
 
 import javax.swing.SwingConstants;
 
 import org.hobsoft.symmetry.ui.Orientation;
-import org.hobsoft.symmetry.ui.swing.SwingUtils;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 /**
  * 

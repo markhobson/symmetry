@@ -5,17 +5,6 @@
  */
 package org.hobsoft.symmetry.ui.traversal;
 
-import static org.hobsoft.symmetry.ui.traversal.ComponentVisitors.asContainerVisitor;
-import static org.hobsoft.symmetry.ui.traversal.ComponentVisitors.asTableVisitor;
-import static org.hobsoft.symmetry.ui.traversal.ComponentVisitors.asTreeVisitor;
-import static org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.EndVisit.SKIP_SIBLINGS;
-import static org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.EndVisit.VISIT_SIBLINGS;
-import static org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.Visit.SKIP_CHILDREN;
-import static org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.Visit.VISIT_CHILDREN;
-import static org.junit.Assert.assertEquals;
-
-import com.googlecode.jtype.Generic;
-
 import org.hobsoft.symmetry.ui.Deck;
 import org.hobsoft.symmetry.ui.Table;
 import org.hobsoft.symmetry.ui.Tree;
@@ -25,6 +14,17 @@ import org.hobsoft.symmetry.ui.model.TreePath;
 import org.hobsoft.symmetry.ui.test.DummyComponent;
 import org.junit.Before;
 import org.junit.Test;
+
+import com.googlecode.jtype.Generic;
+
+import static org.hobsoft.symmetry.ui.traversal.ComponentVisitors.asContainerVisitor;
+import static org.hobsoft.symmetry.ui.traversal.ComponentVisitors.asTableVisitor;
+import static org.hobsoft.symmetry.ui.traversal.ComponentVisitors.asTreeVisitor;
+import static org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.EndVisit.SKIP_SIBLINGS;
+import static org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.EndVisit.VISIT_SIBLINGS;
+import static org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.Visit.SKIP_CHILDREN;
+import static org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.Visit.VISIT_CHILDREN;
+import static org.junit.Assert.assertEquals;
 
 /**
  * Tests {@code VisibleComponentVisitor}.

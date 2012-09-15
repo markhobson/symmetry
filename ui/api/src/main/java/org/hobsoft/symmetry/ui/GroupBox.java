@@ -5,10 +5,10 @@
  */
 package org.hobsoft.symmetry.ui;
 
-import static com.google.common.base.Strings.nullToEmpty;
-
 import org.hobsoft.symmetry.ui.traversal.ComponentVisitor;
 import org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.EndVisit;
+
+import static com.google.common.base.Strings.nullToEmpty;
 
 /**
  * 

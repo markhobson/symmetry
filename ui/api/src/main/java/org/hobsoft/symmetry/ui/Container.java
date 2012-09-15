@@ -5,10 +5,6 @@
  */
 package org.hobsoft.symmetry.ui;
 
-import static com.google.common.base.Preconditions.checkElementIndex;
-import static com.google.common.base.Preconditions.checkNotNull;
-import static com.google.common.base.Preconditions.checkPositionIndex;
-
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -26,6 +22,10 @@ import static org.hobsoft.symmetry.ui.traversal.ComponentVisitors.nullHierarchic
 import static org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.EndVisit.SKIP_SIBLINGS;
 import static org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.Visit.SKIP_CHILDREN;
 import static org.hobsoft.symmetry.ui.traversal.Visits.nullEndVisit;
+
+import static com.google.common.base.Preconditions.checkElementIndex;
+import static com.google.common.base.Preconditions.checkNotNull;
+import static com.google.common.base.Preconditions.checkPositionIndex;
 
 /**
  * A component that can contain other components.

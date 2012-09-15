@@ -5,11 +5,11 @@
  */
 package org.hobsoft.symmetry.ui;
 
-import static com.google.common.base.Strings.nullToEmpty;
-
 import org.hobsoft.symmetry.ui.functor.Closure;
 import org.hobsoft.symmetry.ui.traversal.ComponentVisitor;
 import org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.EndVisit;
+
+import static com.google.common.base.Strings.nullToEmpty;
 
 /**
  * A component that can display text, an image, or both.

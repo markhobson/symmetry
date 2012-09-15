@@ -5,10 +5,6 @@
  */
 package org.hobsoft.symmetry.support.codec;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
-
 import org.hobsoft.symmetry.support.codec.test.A;
 import org.hobsoft.symmetry.support.codec.test.ABCodec;
 import org.hobsoft.symmetry.support.codec.test.B;
@@ -16,6 +12,10 @@ import org.hobsoft.symmetry.support.codec.test.BCCodec;
 import org.hobsoft.symmetry.support.codec.test.C;
 import org.junit.Before;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Tests <code>CompoundCodec</code>.

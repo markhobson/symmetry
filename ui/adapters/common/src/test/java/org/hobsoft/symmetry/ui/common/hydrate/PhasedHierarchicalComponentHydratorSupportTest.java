@@ -5,10 +5,6 @@
  */
 package org.hobsoft.symmetry.ui.common.hydrate;
 
-import static org.hobsoft.symmetry.hydrate.HydrationPhase.DEHYDRATE;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
-
 import org.hobsoft.symmetry.hydrate.HydrationContext;
 import org.hobsoft.symmetry.hydrate.HydrationException;
 import org.hobsoft.symmetry.hydrate.HydrationPhase;
@@ -18,6 +14,10 @@ import org.hobsoft.symmetry.ui.traversal.ComponentVisitors;
 import org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor;
 import org.junit.Before;
 import org.junit.Test;
+
+import static org.hobsoft.symmetry.hydrate.HydrationPhase.DEHYDRATE;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 /**
  * Tests {@code PhasedHierarchicalComponentHydratorSupport}.

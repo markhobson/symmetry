@@ -5,11 +5,6 @@
  */
 package org.hobsoft.symmetry.ui.traversal;
 
-import static org.hobsoft.symmetry.ui.test.traversal.MockComponentVisitors.createVisitorParameter;
-import static org.junit.Assert.assertNotNull;
-
-import com.googlecode.jtype.Generic;
-
 import org.hobsoft.symmetry.ui.Component;
 import org.hobsoft.symmetry.ui.test.DummyComponent;
 import org.hobsoft.symmetry.ui.test.DummySubComponent;
@@ -19,6 +14,11 @@ import org.jmock.integration.junit4.JMock;
 import org.jmock.integration.junit4.JUnit4Mockery;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+
+import com.googlecode.jtype.Generic;
+
+import static org.hobsoft.symmetry.ui.test.traversal.MockComponentVisitors.createVisitorParameter;
+import static org.junit.Assert.assertNotNull;
 
 /**
  * Tests {@code CompositeComponentVisitor}.

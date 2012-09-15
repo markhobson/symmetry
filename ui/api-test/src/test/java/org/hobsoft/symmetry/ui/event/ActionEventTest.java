@@ -5,13 +5,13 @@
  */
 package org.hobsoft.symmetry.ui.event;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
-
 import org.hobsoft.symmetry.ui.Component;
 import org.hobsoft.symmetry.ui.test.DummyComponent;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Tests {@code ActionEvent}.

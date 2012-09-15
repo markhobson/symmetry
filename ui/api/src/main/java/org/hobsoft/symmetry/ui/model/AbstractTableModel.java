@@ -5,12 +5,12 @@
  */
 package org.hobsoft.symmetry.ui.model;
 
-import static com.google.common.base.Preconditions.checkElementIndex;
-
 import javax.swing.event.EventListenerList;
 
 import org.hobsoft.symmetry.ui.event.TableModelEvent;
 import org.hobsoft.symmetry.ui.event.TableModelListener;
+
+import static com.google.common.base.Preconditions.checkElementIndex;
 
 /**
  * 

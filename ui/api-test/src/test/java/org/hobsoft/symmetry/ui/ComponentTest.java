@@ -5,14 +5,14 @@
  */
 package org.hobsoft.symmetry.ui;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
-
-import com.googlecode.jtype.Generic;
-
 import org.hobsoft.symmetry.ui.test.AbstractComponentTest;
 import org.hobsoft.symmetry.ui.test.DummyComponent;
 import org.junit.Test;
+
+import com.googlecode.jtype.Generic;
+
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Tests {@code Component}.

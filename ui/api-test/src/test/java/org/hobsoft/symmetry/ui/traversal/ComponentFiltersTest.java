@@ -5,14 +5,14 @@
  */
 package org.hobsoft.symmetry.ui.traversal;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
-
 import org.hobsoft.symmetry.ui.Box;
 import org.hobsoft.symmetry.ui.Component;
 import org.hobsoft.symmetry.ui.VBox;
 import org.hobsoft.symmetry.ui.test.DummyComponent;
 import org.junit.Test;
+
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Tests {@code ComponentFilters}.

@@ -5,10 +5,10 @@
  */
 package org.hobsoft.symmetry.ui.html.hydrate;
 
-import static org.hobsoft.symmetry.hydrate.HydrationPhase.DEHYDRATE;
-
 import org.hobsoft.symmetry.ui.Label;
 import org.hobsoft.symmetry.ui.common.hydrate.PhasedBeanHydrator;
+
+import static org.hobsoft.symmetry.hydrate.HydrationPhase.DEHYDRATE;
 
 /**
  * Phased hydrator that dehydrates and rehydrates a {@code Label} component using an HTML {@code <p/>} tag.

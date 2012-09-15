@@ -5,13 +5,13 @@
  */
 package org.hobsoft.symmetry.support.xml.dom;
 
-import static org.junit.Assert.assertEquals;
-
 import java.text.CharacterIterator;
 
 import org.junit.Test;
 import org.w3c.dom.Element;
 import org.w3c.dom.Text;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * Tests <code>DOMCharacterIterator</code>.

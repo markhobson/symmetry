@@ -5,13 +5,13 @@
  */
 package org.hobsoft.symmetry.support.codec.base64;
 
-import static org.junit.Assert.assertEquals;
-
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * Tests <code>Base64OutputStream</code>.

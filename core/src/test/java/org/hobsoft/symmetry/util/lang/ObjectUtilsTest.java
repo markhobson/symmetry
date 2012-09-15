@@ -5,13 +5,13 @@
  */
 package org.hobsoft.symmetry.util.lang;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
-
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Modifier;
 
 import org.junit.Test;
+
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 /**
  * 

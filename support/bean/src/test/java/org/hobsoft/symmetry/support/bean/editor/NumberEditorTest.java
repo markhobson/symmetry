@@ -5,13 +5,13 @@
  */
 package org.hobsoft.symmetry.support.bean.editor;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
-
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 /**
  * Tests {@code NumberEditor}.

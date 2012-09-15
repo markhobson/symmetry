@@ -5,9 +5,6 @@
  */
 package org.hobsoft.symmetry.support.bean;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-
 import java.beans.BeanDescriptor;
 import java.beans.BeanInfo;
 import java.beans.EventSetDescriptor;
@@ -18,6 +15,9 @@ import org.hobsoft.symmetry.support.bean.model.FooListener;
 import org.hobsoft.symmetry.support.bean.model.TestBean;
 import org.junit.Before;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 /**
  * Provides a TCK to test {@code BeanIntrospector} implementations against.

@@ -5,11 +5,11 @@
  */
 package org.hobsoft.symmetry.ui.functor;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
-
 import org.hobsoft.symmetry.ui.StubBean;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 /**
  * Tests {@code BeanPropertyEvaluator}.

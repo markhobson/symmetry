@@ -5,11 +5,11 @@
  */
 package org.hobsoft.symmetry.ui;
 
-import static org.junit.Assert.assertTrue;
-
 import org.hobsoft.symmetry.ui.model.SortableTableModel;
 import org.junit.Before;
 import org.junit.Test;
+
+import static org.junit.Assert.assertTrue;
 
 /**
  * Tests {@code SortableTable}.

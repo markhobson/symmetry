@@ -5,16 +5,16 @@
  */
 package org.hobsoft.symmetry.support.bean;
 
-import static org.hobsoft.symmetry.support.bean.BeanAssert.assertPropertyDescriptor;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotSame;
-
 import java.beans.BeanInfo;
 import java.beans.IntrospectionException;
 import java.beans.PropertyDescriptor;
 
 import org.hobsoft.symmetry.support.bean.model.TestBean;
 import org.junit.Test;
+
+import static org.hobsoft.symmetry.support.bean.BeanAssert.assertPropertyDescriptor;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotSame;
 
 /**
  * Tests {@code Properties}.

@@ -5,10 +5,10 @@
  */
 package org.hobsoft.symmetry.support.xml.dom.filter;
 
-import static org.junit.Assert.assertEquals;
-
 import org.junit.Test;
 import org.w3c.dom.traversal.NodeFilter;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * Tests <code>ConstantFilter</code>.

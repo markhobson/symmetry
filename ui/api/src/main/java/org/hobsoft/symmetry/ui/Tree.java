@@ -5,8 +5,6 @@
  */
 package org.hobsoft.symmetry.ui;
 
-import static com.google.common.base.Preconditions.checkNotNull;
-
 import java.util.Arrays;
 import java.util.LinkedHashSet;
 import java.util.List;
@@ -33,6 +31,8 @@ import static org.hobsoft.symmetry.ui.traversal.ComponentVisitors.asTreeVisitor;
 import static org.hobsoft.symmetry.ui.traversal.ComponentVisitors.nullHierarchicalVisitor;
 import static org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.Visit.SKIP_CHILDREN;
 import static org.hobsoft.symmetry.ui.traversal.Visits.nullEndVisit;
+
+import static com.google.common.base.Preconditions.checkNotNull;
 
 /**
  * 

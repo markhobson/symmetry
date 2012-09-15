@@ -5,19 +5,8 @@
  */
 package org.hobsoft.symmetry.ui;
 
-import static org.hobsoft.symmetry.support.test.matcher.PropertyChangeEventMatcher.mockPropertyChangeListener;
-import static org.hobsoft.symmetry.ui.test.traversal.MockComponentVisitors.createVisitor;
-import static org.hobsoft.symmetry.ui.test.traversal.MockComponentVisitors.createVisitorParameter;
-import static org.hobsoft.symmetry.ui.traversal.ComponentVisitors.nullHierarchicalVisitor;
-import static org.hobsoft.symmetry.ui.traversal.ComponentVisitors.skipChildren;
-import static org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.EndVisit.VISIT_SIBLINGS;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-
 import java.util.Arrays;
 import java.util.Collection;
-
-import com.googlecode.jtype.Generic;
 
 import org.hobsoft.symmetry.ui.test.AbstractComponentTest;
 import org.hobsoft.symmetry.ui.test.DummyComponent;
@@ -26,6 +15,17 @@ import org.hobsoft.symmetry.ui.traversal.ComponentVisitor;
 import org.jmock.Expectations;
 import org.junit.Before;
 import org.junit.Test;
+
+import com.googlecode.jtype.Generic;
+
+import static org.hobsoft.symmetry.support.test.matcher.PropertyChangeEventMatcher.mockPropertyChangeListener;
+import static org.hobsoft.symmetry.ui.test.traversal.MockComponentVisitors.createVisitor;
+import static org.hobsoft.symmetry.ui.test.traversal.MockComponentVisitors.createVisitorParameter;
+import static org.hobsoft.symmetry.ui.traversal.ComponentVisitors.nullHierarchicalVisitor;
+import static org.hobsoft.symmetry.ui.traversal.ComponentVisitors.skipChildren;
+import static org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.EndVisit.VISIT_SIBLINGS;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 /**
  * Tests {@code Container}.

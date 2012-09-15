@@ -5,16 +5,16 @@
  */
 package org.hobsoft.symmetry.ui.traversal;
 
-import static org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.Visit.SKIP_CHILDREN;
-import static org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.Visit.VISIT_CHILDREN;
-import static org.junit.Assert.assertEquals;
-
 import org.hobsoft.symmetry.ui.Tree;
 import org.hobsoft.symmetry.ui.model.DefaultTreeNode;
 import org.hobsoft.symmetry.ui.model.TreeNode;
 import org.hobsoft.symmetry.ui.model.TreePath;
 import org.junit.Before;
 import org.junit.Test;
+
+import static org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.Visit.SKIP_CHILDREN;
+import static org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.Visit.VISIT_CHILDREN;
+import static org.junit.Assert.assertEquals;
 
 /**
  * Tests {@code VisibleNodeTreeVisitor}.

@@ -5,9 +5,9 @@
  */
 package org.hobsoft.symmetry.util.lang;
 
-import static org.junit.Assert.assertEquals;
-
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * 

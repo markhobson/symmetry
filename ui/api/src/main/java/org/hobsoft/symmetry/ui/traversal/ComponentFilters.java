@@ -5,12 +5,12 @@
  */
 package org.hobsoft.symmetry.ui.traversal;
 
-import static com.google.common.base.Preconditions.checkNotNull;
-
 import java.util.Arrays;
 
 import org.hobsoft.symmetry.ui.Component;
 import org.hobsoft.symmetry.ui.ComponentUtils;
+
+import static com.google.common.base.Preconditions.checkNotNull;
 
 /**
  * 

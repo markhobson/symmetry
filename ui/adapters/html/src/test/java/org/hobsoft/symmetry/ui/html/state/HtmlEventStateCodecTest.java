@@ -5,8 +5,6 @@
  */
 package org.hobsoft.symmetry.ui.html.state;
 
-import static org.junit.Assert.assertEquals;
-
 import org.hobsoft.symmetry.state.EncodedState;
 import org.hobsoft.symmetry.state.State;
 import org.hobsoft.symmetry.state.StateException;
@@ -14,6 +12,8 @@ import org.hobsoft.symmetry.test.state.StubStateCodec;
 import org.hobsoft.symmetry.ui.html.state.HtmlEventStateCodec.Parameters;
 import org.junit.Before;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * Tests {@code HtmlEventStateCodec}.

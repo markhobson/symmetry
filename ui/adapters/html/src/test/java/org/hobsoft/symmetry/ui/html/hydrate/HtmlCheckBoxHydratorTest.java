@@ -5,9 +5,6 @@
  */
 package org.hobsoft.symmetry.ui.html.hydrate;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
-
 import org.hobsoft.symmetry.hydrate.ComponentRenderKit;
 import org.hobsoft.symmetry.hydrate.HydrationException;
 import org.hobsoft.symmetry.ui.CheckBox;
@@ -16,6 +13,9 @@ import org.hobsoft.symmetry.ui.common.test.hydrate.StubPhasedUiComponentRenderKi
 import org.hobsoft.symmetry.ui.html.hydrate.FormHtmlWindowDehydrator.Parameters;
 import org.hobsoft.symmetry.xml.test.hydrate.AbstractXmlRenderKitTest;
 import org.junit.Test;
+
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Tests {@code HtmlCheckBoxHydrator}.

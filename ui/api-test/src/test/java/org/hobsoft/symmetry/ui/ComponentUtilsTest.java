@@ -5,10 +5,6 @@
  */
 package org.hobsoft.symmetry.ui;
 
-import static org.hobsoft.symmetry.ui.traversal.ComponentFilters.accept;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertSame;
-
 import org.hobsoft.symmetry.ui.test.DummyComponent;
 import org.hobsoft.symmetry.ui.traversal.ComponentFilter;
 import org.jmock.Mockery;
@@ -16,6 +12,10 @@ import org.jmock.integration.junit4.JMock;
 import org.jmock.integration.junit4.JUnit4Mockery;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+
+import static org.hobsoft.symmetry.ui.traversal.ComponentFilters.accept;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertSame;
 
 /**
  * Tests {@code ComponentUtils}.

@@ -5,18 +5,6 @@
  */
 package org.hobsoft.symmetry.ui.test;
 
-import static org.hobsoft.symmetry.ui.test.traversal.MockComponentVisitors.createVisitor;
-import static org.hobsoft.symmetry.ui.test.traversal.MockComponentVisitors.createVisitorParameter;
-import static org.hobsoft.symmetry.ui.test.traversal.MockComponentVisitors.nullEndVisit;
-import static org.hobsoft.symmetry.ui.test.traversal.MockComponentVisitors.nullVisit;
-import static org.hobsoft.symmetry.ui.traversal.ComponentVisitors.nullHierarchicalVisitor;
-import static org.hobsoft.symmetry.ui.traversal.ComponentVisitors.skipSiblings;
-import static org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.EndVisit.SKIP_SIBLINGS;
-import static org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.EndVisit.VISIT_SIBLINGS;
-import static org.junit.Assert.assertEquals;
-
-import com.googlecode.jtype.Generic;
-
 import org.hobsoft.symmetry.ui.Component;
 import org.hobsoft.symmetry.ui.traversal.ComponentVisitor;
 import org.jmock.Expectations;
@@ -26,6 +14,18 @@ import org.jmock.integration.junit4.JUnit4Mockery;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+
+import com.googlecode.jtype.Generic;
+
+import static org.hobsoft.symmetry.ui.test.traversal.MockComponentVisitors.createVisitor;
+import static org.hobsoft.symmetry.ui.test.traversal.MockComponentVisitors.createVisitorParameter;
+import static org.hobsoft.symmetry.ui.test.traversal.MockComponentVisitors.nullEndVisit;
+import static org.hobsoft.symmetry.ui.test.traversal.MockComponentVisitors.nullVisit;
+import static org.hobsoft.symmetry.ui.traversal.ComponentVisitors.nullHierarchicalVisitor;
+import static org.hobsoft.symmetry.ui.traversal.ComponentVisitors.skipSiblings;
+import static org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.EndVisit.SKIP_SIBLINGS;
+import static org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.EndVisit.VISIT_SIBLINGS;
+import static org.junit.Assert.assertEquals;
 
 /**
  * Shared tests for {@code Component} implementations.

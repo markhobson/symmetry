@@ -5,9 +5,6 @@
  */
 package org.hobsoft.symmetry.xml.test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
-
 import java.io.StringWriter;
 
 import javax.xml.stream.XMLOutputFactory;
@@ -15,6 +12,9 @@ import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamWriter;
 
 import org.junit.Before;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
 /**
  * Provides support for testing classes that use StAX.

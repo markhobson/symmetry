@@ -5,6 +5,18 @@
  */
 package org.hobsoft.symmetry.ui;
 
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
+import org.hobsoft.symmetry.ui.model.DefaultListModel;
+import org.hobsoft.symmetry.ui.model.ListModel;
+import org.hobsoft.symmetry.ui.test.AbstractComponentTest;
+import org.junit.Ignore;
+import org.junit.Test;
+
+import com.googlecode.jtype.Generic;
+
 import static org.hobsoft.symmetry.ui.BeanAssert.assertIndexedProperty;
 import static org.hobsoft.symmetry.ui.BeanAssert.assertProperty;
 import static org.hobsoft.symmetry.ui.BeanAssert.assertReadableProperty;
@@ -15,18 +27,6 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
-
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-
-import com.googlecode.jtype.Generic;
-
-import org.hobsoft.symmetry.ui.model.DefaultListModel;
-import org.hobsoft.symmetry.ui.model.ListModel;
-import org.hobsoft.symmetry.ui.test.AbstractComponentTest;
-import org.junit.Ignore;
-import org.junit.Test;
 
 /**
  * Tests {@code ListBox}.

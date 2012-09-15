@@ -5,12 +5,6 @@
  */
 package org.hobsoft.symmetry.ui.html.hydrate;
 
-import static org.hobsoft.symmetry.hydrate.HydrationPhase.DEHYDRATE;
-import static org.hobsoft.symmetry.hydrate.HydrationPhase.REHYDRATE_PROPERTIES;
-import static org.hobsoft.symmetry.ui.xml.test.hydrate.StubXmlComponentHydrators.stubXmlHierarchicalComponentHydrator;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-
 import java.beans.PropertyDescriptor;
 
 import org.hobsoft.symmetry.hydrate.ComponentRenderKit;
@@ -29,6 +23,12 @@ import org.hobsoft.symmetry.ui.common.test.hydrate.StubPhasedUiComponentRenderKi
 import org.hobsoft.symmetry.ui.test.DummyComponent;
 import org.hobsoft.symmetry.xml.test.hydrate.AbstractXmlRenderKitTest;
 import org.junit.Test;
+
+import static org.hobsoft.symmetry.hydrate.HydrationPhase.DEHYDRATE;
+import static org.hobsoft.symmetry.hydrate.HydrationPhase.REHYDRATE_PROPERTIES;
+import static org.hobsoft.symmetry.ui.xml.test.hydrate.StubXmlComponentHydrators.stubXmlHierarchicalComponentHydrator;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Tests {@code HtmlTabBoxHydrator}.

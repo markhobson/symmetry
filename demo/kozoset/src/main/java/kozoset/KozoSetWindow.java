@@ -5,10 +5,6 @@
  */
 package kozoset;
 
-import org.hobsoft.symmetry.ui.Label;
-import org.hobsoft.symmetry.ui.TabBox;
-import org.hobsoft.symmetry.ui.Window;
-
 import kozoset.tab.ButtonTab;
 import kozoset.tab.InputTab;
 import kozoset.tab.LabelTab;
@@ -16,6 +12,10 @@ import kozoset.tab.LayoutTab;
 import kozoset.tab.TableTab;
 import kozoset.tab.TreeTab;
 import kozoset.tab.WizardTab;
+
+import org.hobsoft.symmetry.ui.Label;
+import org.hobsoft.symmetry.ui.TabBox;
+import org.hobsoft.symmetry.ui.Window;
 
 
 /**

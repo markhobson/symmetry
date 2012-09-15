@@ -5,12 +5,12 @@
  */
 package org.hobsoft.symmetry.state;
 
-import static org.junit.Assert.assertEquals;
-
 import java.beans.PropertyChangeEvent;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * 

@@ -5,9 +5,6 @@
  */
 package org.hobsoft.symmetry.support.bean;
 
-import static org.hobsoft.symmetry.support.bean.BeanAssert.assertEventSetDescriptor;
-import static org.junit.Assert.assertEquals;
-
 import java.beans.BeanInfo;
 import java.beans.EventSetDescriptor;
 import java.beans.IntrospectionException;
@@ -15,6 +12,9 @@ import java.beans.IntrospectionException;
 import org.hobsoft.symmetry.support.bean.model.FooListener;
 import org.hobsoft.symmetry.support.bean.model.TestBean;
 import org.junit.Test;
+
+import static org.hobsoft.symmetry.support.bean.BeanAssert.assertEventSetDescriptor;
+import static org.junit.Assert.assertEquals;
 
 /**
  * Tests {@code EventSets}.

@@ -5,8 +5,6 @@
  */
 package org.hobsoft.symmetry.ui;
 
-import static com.google.common.base.Preconditions.checkNotNull;
-
 import java.util.ArrayList;
 import java.util.EventListenerProxy;
 import java.util.List;
@@ -19,6 +17,8 @@ import org.hobsoft.symmetry.ui.layout.Length;
 import org.hobsoft.symmetry.ui.view.TableCellRenderer;
 
 import static org.hobsoft.symmetry.ui.internal.Preconditions.checkNonNegative;
+
+import static com.google.common.base.Preconditions.checkNotNull;
 
 /**
  * 

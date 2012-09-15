@@ -5,19 +5,19 @@
  */
 package org.hobsoft.symmetry.ui;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertSame;
-
-import com.googlecode.jtype.Generic;
-
 import org.hobsoft.symmetry.ui.model.DefaultTreeModel;
 import org.hobsoft.symmetry.ui.model.TreeModel;
 import org.hobsoft.symmetry.ui.test.AbstractComponentTest;
 import org.junit.Before;
 import org.junit.Test;
+
+import com.googlecode.jtype.Generic;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertSame;
 
 /**
  * Tests {@code Tree}.

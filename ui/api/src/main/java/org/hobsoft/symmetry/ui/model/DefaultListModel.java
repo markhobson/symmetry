@@ -5,8 +5,6 @@
  */
 package org.hobsoft.symmetry.ui.model;
 
-import static com.google.common.base.Objects.equal;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -16,6 +14,8 @@ import java.util.List;
 import static org.hobsoft.symmetry.ui.internal.Preconditions.checkNonNegative;
 import static org.hobsoft.symmetry.ui.model.Utilities.grow;
 import static org.hobsoft.symmetry.ui.model.Utilities.setSize;
+
+import static com.google.common.base.Objects.equal;
 
 /**
  * 

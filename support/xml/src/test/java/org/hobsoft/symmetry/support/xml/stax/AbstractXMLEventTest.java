@@ -5,8 +5,6 @@
  */
 package org.hobsoft.symmetry.support.xml.stax;
 
-import static org.junit.Assert.assertTrue;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -29,6 +27,8 @@ import javax.xml.stream.events.XMLEvent;
 
 import org.apache.commons.lang.RandomStringUtils;
 import org.junit.Before;
+
+import static org.junit.Assert.assertTrue;
 
 /**
  * 

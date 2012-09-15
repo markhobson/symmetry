@@ -5,16 +5,17 @@
  */
 package org.hobsoft.symmetry.ui;
 
-import static java.util.Arrays.asList;
-import static org.junit.Assert.assertEquals;
-
-import com.googlecode.jtype.Generic;
-
 import org.hobsoft.symmetry.ui.layout.GridLayoutData;
 import org.hobsoft.symmetry.ui.test.AbstractComponentTest;
 import org.hobsoft.symmetry.ui.test.DummyComponent;
 import org.junit.Before;
 import org.junit.Test;
+
+import com.googlecode.jtype.Generic;
+
+import static java.util.Arrays.asList;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * Tests {@code Grid}.

@@ -5,8 +5,6 @@
  */
 package org.hobsoft.symmetry.util.io;
 
-import static org.junit.Assert.assertSame;
-
 import java.io.DataOutput;
 import java.io.IOException;
 
@@ -15,6 +13,8 @@ import org.jmock.Mockery;
 import org.jmock.integration.junit4.JUnit4Mockery;
 import org.junit.Before;
 import org.junit.Test;
+
+import static org.junit.Assert.assertSame;
 
 /**
  * Tests {@code DelegatingDataOutput}.

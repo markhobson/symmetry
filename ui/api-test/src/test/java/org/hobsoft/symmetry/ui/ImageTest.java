@@ -5,9 +5,6 @@
  */
 package org.hobsoft.symmetry.ui;
 
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertEquals;
-
 import java.io.ByteArrayInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
@@ -17,6 +14,9 @@ import java.net.URISyntaxException;
 import java.net.URL;
 
 import org.junit.Test;
+
+import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
 
 /**
  * Tests {@code Image}.

@@ -5,9 +5,6 @@
  */
 package org.hobsoft.symmetry.support.xml.dom;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -25,6 +22,9 @@ import org.w3c.dom.Text;
 import org.w3c.dom.ranges.Range;
 import org.w3c.dom.traversal.NodeFilter;
 import org.xml.sax.SAXException;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 /**
  * Tests <code>RangeUtils</code>.

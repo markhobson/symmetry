@@ -5,8 +5,6 @@
  */
 package org.hobsoft.symmetry.ui;
 
-import static com.google.common.base.Preconditions.checkNotNull;
-
 import java.util.Arrays;
 import java.util.EnumSet;
 
@@ -20,6 +18,8 @@ import com.googlecode.jtype.Generic;
 
 import static org.hobsoft.symmetry.ui.traversal.ComponentVisitors.nullHierarchicalVisitor;
 import static org.hobsoft.symmetry.ui.traversal.Visits.nullEndVisit;
+
+import static com.google.common.base.Preconditions.checkNotNull;
 
 /**
  * 

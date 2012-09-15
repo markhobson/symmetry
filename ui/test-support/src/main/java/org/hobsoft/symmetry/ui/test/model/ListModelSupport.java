@@ -5,9 +5,6 @@
  */
 package org.hobsoft.symmetry.ui.test.model;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -16,6 +13,9 @@ import java.util.List;
 import org.hobsoft.symmetry.ui.model.ListModel;
 import org.jmock.Expectations;
 import org.jmock.Mockery;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 /**
  * 

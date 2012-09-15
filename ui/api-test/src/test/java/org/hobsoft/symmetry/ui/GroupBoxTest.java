@@ -5,13 +5,13 @@
  */
 package org.hobsoft.symmetry.ui;
 
-import static org.junit.Assert.assertEquals;
-
-import com.googlecode.jtype.Generic;
-
 import org.hobsoft.symmetry.ui.test.AbstractComponentTest;
 import org.junit.Before;
 import org.junit.Test;
+
+import com.googlecode.jtype.Generic;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * Tests {@code GroupBox}.

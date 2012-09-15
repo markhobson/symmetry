@@ -5,9 +5,9 @@
  */
 package org.hobsoft.symmetry.ui.traversal;
 
-import static com.google.common.base.Preconditions.checkState;
-
 import org.hobsoft.symmetry.ui.Component;
+
+import static com.google.common.base.Preconditions.checkState;
 
 /**
  * 

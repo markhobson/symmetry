@@ -5,8 +5,6 @@
  */
 package org.hobsoft.symmetry.support.xml.sax;
 
-import static org.junit.Assert.assertEquals;
-
 import java.io.ByteArrayOutputStream;
 
 import org.junit.Before;
@@ -14,6 +12,8 @@ import org.junit.Test;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.AttributesImpl;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * Tests <code>SAX2Stream</code>.

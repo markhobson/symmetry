@@ -5,13 +5,13 @@
  */
 package org.hobsoft.symmetry.support.codec;
 
-import static org.junit.Assert.assertEquals;
-
 import org.hobsoft.symmetry.support.codec.test.A;
 import org.hobsoft.symmetry.support.codec.test.ABCodec;
 import org.hobsoft.symmetry.support.codec.test.B;
 import org.junit.Before;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * Tests {@code NotNullCodec}.

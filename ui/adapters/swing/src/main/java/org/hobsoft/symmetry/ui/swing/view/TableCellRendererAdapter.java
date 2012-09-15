@@ -16,13 +16,13 @@ import javax.swing.UIManager;
 import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
 
-import org.hobsoft.symmetry.ui.Table;
-import org.hobsoft.symmetry.ui.swing.event.AbstractAdapter;
-import org.hobsoft.symmetry.ui.view.TableCellRenderer;
-
 import net.sf.cglib.proxy.Enhancer;
 import net.sf.cglib.proxy.MethodInterceptor;
 import net.sf.cglib.proxy.MethodProxy;
+
+import org.hobsoft.symmetry.ui.Table;
+import org.hobsoft.symmetry.ui.swing.event.AbstractAdapter;
+import org.hobsoft.symmetry.ui.view.TableCellRenderer;
 
 /**
  * 

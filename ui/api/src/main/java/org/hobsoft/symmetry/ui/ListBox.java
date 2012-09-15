@@ -5,10 +5,6 @@
  */
 package org.hobsoft.symmetry.ui;
 
-import static com.google.common.base.Objects.firstNonNull;
-import static com.google.common.base.Preconditions.checkArgument;
-import static com.google.common.base.Preconditions.checkNotNull;
-
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.util.AbstractList;
@@ -28,6 +24,10 @@ import com.googlecode.jtype.Generic;
 
 import static org.hobsoft.symmetry.ui.internal.Preconditions.checkElementIndexes;
 import static org.hobsoft.symmetry.ui.internal.Preconditions.checkNonNegative;
+
+import static com.google.common.base.Objects.firstNonNull;
+import static com.google.common.base.Preconditions.checkArgument;
+import static com.google.common.base.Preconditions.checkNotNull;
 
 /**
  * 

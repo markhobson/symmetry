@@ -5,6 +5,24 @@
  */
 package org.hobsoft.symmetry.ui.traversal;
 
+import org.hobsoft.symmetry.ui.ComboBox;
+import org.hobsoft.symmetry.ui.Component;
+import org.hobsoft.symmetry.ui.Container;
+import org.hobsoft.symmetry.ui.Grid;
+import org.hobsoft.symmetry.ui.Table;
+import org.hobsoft.symmetry.ui.Tree;
+import org.hobsoft.symmetry.ui.model.TreePath;
+import org.hobsoft.symmetry.ui.test.DummyComponent;
+import org.hobsoft.symmetry.ui.test.FakeContainer;
+import org.jmock.Expectations;
+import org.jmock.Mockery;
+import org.jmock.integration.junit4.JMock;
+import org.jmock.integration.junit4.JUnit4Mockery;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+
+import com.googlecode.jtype.Generic;
+
 import static org.hobsoft.symmetry.ui.test.traversal.MockComponentVisitors.createContainerVisitor;
 import static org.hobsoft.symmetry.ui.test.traversal.MockComponentVisitors.createGridVisitor;
 import static org.hobsoft.symmetry.ui.test.traversal.MockComponentVisitors.createHierarchicalVisitor;
@@ -23,24 +41,6 @@ import static org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.End
 import static org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.Visit.SKIP_CHILDREN;
 import static org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.Visit.VISIT_CHILDREN;
 import static org.junit.Assert.assertEquals;
-
-import com.googlecode.jtype.Generic;
-
-import org.hobsoft.symmetry.ui.ComboBox;
-import org.hobsoft.symmetry.ui.Component;
-import org.hobsoft.symmetry.ui.Container;
-import org.hobsoft.symmetry.ui.Grid;
-import org.hobsoft.symmetry.ui.Table;
-import org.hobsoft.symmetry.ui.Tree;
-import org.hobsoft.symmetry.ui.model.TreePath;
-import org.hobsoft.symmetry.ui.test.DummyComponent;
-import org.hobsoft.symmetry.ui.test.FakeContainer;
-import org.jmock.Expectations;
-import org.jmock.Mockery;
-import org.jmock.integration.junit4.JMock;
-import org.jmock.integration.junit4.JUnit4Mockery;
-import org.junit.Test;
-import org.junit.runner.RunWith;
 
 /**
  * Tests {@code ComponentVisitors}.

@@ -5,16 +5,16 @@
  */
 package org.hobsoft.symmetry.ui;
 
-import static org.hobsoft.symmetry.support.test.matcher.PropertyChangeEventMatcher.mockPropertyChangeListener;
-import static org.junit.Assert.assertEquals;
-
 import java.beans.PropertyChangeListener;
-
-import com.googlecode.jtype.Generic;
 
 import org.hobsoft.symmetry.ui.test.AbstractComponentTest;
 import org.junit.Before;
 import org.junit.Test;
+
+import com.googlecode.jtype.Generic;
+
+import static org.hobsoft.symmetry.support.test.matcher.PropertyChangeEventMatcher.mockPropertyChangeListener;
+import static org.junit.Assert.assertEquals;
 
 /**
  * Tests {@code Label}.

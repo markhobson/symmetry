@@ -5,8 +5,6 @@
  */
 package org.hobsoft.symmetry.support.xml.stax.transform;
 
-import static java.util.Collections.singletonMap;
-
 import java.util.Map;
 
 import javax.xml.namespace.QName;
@@ -16,6 +14,8 @@ import javax.xml.stream.events.XMLEvent;
 import org.hobsoft.symmetry.support.xml.stax.AbstractXMLEventTest;
 import org.junit.Before;
 import org.junit.Test;
+
+import static java.util.Collections.singletonMap;
 
 /**
  * Tests {@code CharactersEventTransformer}.

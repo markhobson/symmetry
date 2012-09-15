@@ -5,17 +5,16 @@
  */
 package org.hobsoft.symmetry.ui.swt;
 
-import static org.junit.Assert.assertEquals;
-
 import java.beans.PropertyChangeEvent;
 
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 import org.hobsoft.symmetry.ui.Label;
-import org.hobsoft.symmetry.ui.swt.SwtLabelPeer;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * 

@@ -5,9 +5,6 @@
  */
 package org.hobsoft.symmetry.support.bean;
 
-import static org.hobsoft.symmetry.support.test.matcher.PropertyChangeEventMatcher.mockPropertyChangeListener;
-import static org.junit.Assert.assertArrayEquals;
-
 import java.beans.PropertyChangeListener;
 
 import org.jmock.Mockery;
@@ -16,6 +13,9 @@ import org.jmock.integration.junit4.JUnit4Mockery;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+
+import static org.hobsoft.symmetry.support.test.matcher.PropertyChangeEventMatcher.mockPropertyChangeListener;
+import static org.junit.Assert.assertArrayEquals;
 
 /**
  * Tests {@code AbstractBean}.

@@ -5,15 +5,15 @@
  */
 package org.hobsoft.symmetry.support.xml.stax.filter;
 
-import static org.hobsoft.symmetry.support.xml.stax.filter.EventFilters.accept;
-import static org.hobsoft.symmetry.support.xml.stax.filter.EventFilters.reject;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
-
 import javax.xml.stream.EventFilter;
 
 import org.hobsoft.symmetry.support.xml.stax.AbstractXMLEventTest;
 import org.junit.Test;
+
+import static org.hobsoft.symmetry.support.xml.stax.filter.EventFilters.accept;
+import static org.hobsoft.symmetry.support.xml.stax.filter.EventFilters.reject;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Tests {@code DisjunctionElementAttributeEventFilter}.

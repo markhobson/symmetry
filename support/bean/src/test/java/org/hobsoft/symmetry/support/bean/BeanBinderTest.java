@@ -5,8 +5,6 @@
  */
 package org.hobsoft.symmetry.support.bean;
 
-import static org.junit.Assert.assertEquals;
-
 import java.beans.PropertyChangeListener;
 
 import org.hobsoft.symmetry.support.bean.model.Bean;
@@ -19,6 +17,8 @@ import org.jmock.integration.junit4.JUnit4Mockery;
 import org.jmock.lib.legacy.ClassImposteriser;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * Tests {@code BeanBinder}.

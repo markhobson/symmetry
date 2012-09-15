@@ -5,8 +5,6 @@
  */
 package org.hobsoft.symmetry.support.codec;
 
-import static org.junit.Assert.assertEquals;
-
 import org.hobsoft.symmetry.support.codec.test.A;
 import org.hobsoft.symmetry.support.codec.test.B;
 import org.jmock.Expectations;
@@ -16,6 +14,8 @@ import org.jmock.integration.junit4.JUnit4Mockery;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * Tests {@code DelegatingDecoder}.

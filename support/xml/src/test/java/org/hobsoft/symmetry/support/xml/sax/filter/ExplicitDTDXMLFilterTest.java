@@ -5,14 +5,14 @@
  */
 package org.hobsoft.symmetry.support.xml.sax.filter;
 
-import static org.junit.Assert.assertEquals;
-
 import org.junit.Test;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.XMLFilter;
 import org.xml.sax.XMLReader;
 import org.xml.sax.helpers.AttributesImpl;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * Tests <code>ExplicitDTDXMLFilter</code>.
