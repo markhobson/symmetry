@@ -28,7 +28,7 @@
 	<name>Symmetry Hello World Demo</name>
 	
 	<properties>
-		<symmetryMainComponent>helloworld.HelloWorldWindow</symmetryMainComponent>
+		<symmetryMainComponent>org.hobsoft.symmetry.demo.helloworld.HelloWorldWindow</symmetryMainComponent>
 	</properties>
 	
 </project>

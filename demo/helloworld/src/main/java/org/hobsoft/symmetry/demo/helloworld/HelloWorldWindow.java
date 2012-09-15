@@ -11,7 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package helloworld;
+package org.hobsoft.symmetry.demo.helloworld;
 
 import org.hobsoft.symmetry.ui.Label;
 import org.hobsoft.symmetry.ui.Window;
