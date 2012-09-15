@@ -1,4 +1,4 @@
-/* kozo html javascript */
+/* Symmetry HTML JavaScript */
 
 function doGet(url)
 {
