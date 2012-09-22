@@ -16,13 +16,13 @@ package org.hobsoft.symmetry.support.xml.stax.transform;
 import java.io.IOException;
 import java.io.StringWriter;
 
-import javanet.staxutils.io.XMLWriterUtils;
-
 import javax.xml.stream.XMLEventFactory;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.events.XMLEvent;
 
 import org.hobsoft.symmetry.support.xml.stax.EventTransformer;
+
+import javanet.staxutils.io.XMLWriterUtils;
 
 /**
  * 

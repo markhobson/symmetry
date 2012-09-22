@@ -23,13 +23,13 @@ import javax.swing.JTree;
 import javax.swing.UIManager;
 import javax.swing.plaf.basic.BasicGraphicsUtils;
 
-import net.sf.cglib.proxy.Enhancer;
-import net.sf.cglib.proxy.MethodInterceptor;
-import net.sf.cglib.proxy.MethodProxy;
-
 import org.hobsoft.symmetry.ui.Tree;
 import org.hobsoft.symmetry.ui.swing.event.AbstractAdapter;
 import org.hobsoft.symmetry.ui.view.TreeNodeRenderer;
+
+import net.sf.cglib.proxy.Enhancer;
+import net.sf.cglib.proxy.MethodInterceptor;
+import net.sf.cglib.proxy.MethodProxy;
 
 /**
  * 

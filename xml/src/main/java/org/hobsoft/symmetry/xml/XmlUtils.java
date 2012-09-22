@@ -16,9 +16,6 @@ package org.hobsoft.symmetry.xml;
 import java.io.Reader;
 import java.io.StringReader;
 
-import javanet.staxutils.XMLEventStreamWriter;
-import javanet.staxutils.XMLStreamEventWriter;
-
 import javax.xml.stream.EventFilter;
 import javax.xml.stream.XMLEventReader;
 import javax.xml.stream.XMLEventWriter;
@@ -32,6 +29,9 @@ import org.hobsoft.symmetry.support.codec.EncoderException;
 import org.hobsoft.symmetry.support.xml.stax.EventReaderTransformer;
 import org.hobsoft.symmetry.support.xml.stax.EventTransformer;
 import org.hobsoft.symmetry.support.xml.stax.EventWriterFilter;
+
+import javanet.staxutils.XMLEventStreamWriter;
+import javanet.staxutils.XMLStreamEventWriter;
 
 import static org.hobsoft.symmetry.support.xml.stax.filter.EventFilters.and;
 import static org.hobsoft.symmetry.support.xml.stax.filter.EventFilters.depthEq;

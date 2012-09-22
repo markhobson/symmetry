@@ -13,13 +13,13 @@
  */
 package org.hobsoft.symmetry.support.xml.stax;
 
-import javanet.staxutils.helpers.EventWriterDelegate;
-
 import javax.xml.stream.EventFilter;
 import javax.xml.stream.XMLEventReader;
 import javax.xml.stream.XMLEventWriter;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.events.XMLEvent;
+
+import javanet.staxutils.helpers.EventWriterDelegate;
 
 /**
  * A XML event writer that delegates events to another XML event writer that are accepted by an event filter. 
