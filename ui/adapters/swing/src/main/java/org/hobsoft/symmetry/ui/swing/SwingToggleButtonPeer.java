@@ -15,7 +15,6 @@ package org.hobsoft.symmetry.ui.swing;
 
 import java.beans.PropertyChangeEvent;
 
-import javax.swing.AbstractButton;
 import javax.swing.JToggleButton;
 
 import org.hobsoft.symmetry.PeerManager;
@@ -58,7 +57,7 @@ public class SwingToggleButtonPeer extends SwingButtonPeer
 		String name = event.getPropertyName();
 //		Object oldValue = event.getOldValue();
 		Object newValue = event.getNewValue();
-		AbstractButton button = (AbstractButton) getPeerManager().getPeer(component);
+		JToggleButton button = (JToggleButton) getPeerManager().getPeer(component);
 		
 		if (ToggleButton.SELECTED_PROPERTY.equals(name))
 		{
