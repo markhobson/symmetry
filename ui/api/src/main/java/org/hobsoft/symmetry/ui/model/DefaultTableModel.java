@@ -260,37 +260,55 @@ public class DefaultTableModel extends AbstractTableModel
 		
 		TableModel model = (TableModel) object;
 		
-		if (getColumnCount() != model.getColumnCount())
-		{
-			return false;
-		}
+		return (getColumnCount() == model.getColumnCount())
+			&& (getRowCount() == model.getRowCount())
+			&& areColumnNamesEqual(this, model)
+			&& areColumnClassesEqual(this, model)
+			&& areValuesEqual(this, model);
+	}
+	
+	// private methods --------------------------------------------------------
+	
+	private static boolean areColumnNamesEqual(TableModel model1, TableModel model2)
+	{
+		int columns = model1.getColumnCount();
 		
-		if (getRowCount() != model.getRowCount())
+		for (int column = 0; column < columns; column++)
 		{
-			return false;
-		}
-		
-		for (int column = 0; column < getColumnCount(); column++)
-		{
-			if (!equal(getColumnName(column), model.getColumnName(column)))
+			if (!equal(model1.getColumnName(column), model2.getColumnName(column)))
 			{
 				return false;
 			}
 		}
 		
-		for (int column = 0; column < getColumnCount(); column++)
+		return true;
+	}
+	
+	private static boolean areColumnClassesEqual(TableModel model1, TableModel model2)
+	{
+		int columns = model1.getColumnCount();
+		
+		for (int column = 0; column < columns; column++)
 		{
-			if (!equal(getColumnClass(column), model.getColumnClass(column)))
+			if (!equal(model1.getColumnClass(column), model2.getColumnClass(column)))
 			{
 				return false;
 			}
 		}
 
-		for (int row = 0; row < getRowCount(); row++)
+		return true;
+	}
+	
+	private static boolean areValuesEqual(TableModel model1, TableModel model2)
+	{
+		int rows = model1.getRowCount();
+		int columns = model1.getColumnCount();
+		
+		for (int row = 0; row < rows; row++)
 		{
-			for (int column = 0; column < getColumnCount(); column++)
+			for (int column = 0; column < columns; column++)
 			{
-				if (!equal(getValueAt(row, column), model.getValueAt(row, column)))
+				if (!equal(model1.getValueAt(row, column), model2.getValueAt(row, column)))
 				{
 					return false;
 				}
@@ -299,8 +317,6 @@ public class DefaultTableModel extends AbstractTableModel
 		
 		return true;
 	}
-	
-	// private methods --------------------------------------------------------
 	
 	private void setRowCountInternal(int rows)
 	{

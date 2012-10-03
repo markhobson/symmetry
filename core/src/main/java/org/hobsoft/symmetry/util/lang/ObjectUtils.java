@@ -39,59 +39,9 @@ public final class ObjectUtils
 			return (a == b);
 		}
 		
-		Class<?> aClass = a.getClass();
-		Class<?> bClass = b.getClass();
-		if (aClass.isArray() && bClass.isArray())
+		if (a.getClass().isArray() && b.getClass().isArray())
 		{
-			Class<?> aType = aClass.getComponentType();
-			Class<?> bType = bClass.getComponentType();
-			
-			if (aType != bType)
-			{
-				return false;
-			}
-			
-			if (aType == boolean.class)
-			{
-				return Arrays.equals((boolean[]) a, (boolean[]) b);
-			}
-			
-			if (aType == byte.class)
-			{
-				return Arrays.equals((byte[]) a, (byte[]) b);
-			}
-			
-			if (aType == char.class)
-			{
-				return Arrays.equals((char[]) a, (char[]) b);
-			}
-			
-			if (aType == double.class)
-			{
-				return Arrays.equals((double[]) a, (double[]) b);
-			}
-			
-			if (aType == float.class)
-			{
-				return Arrays.equals((float[]) a, (float[]) b);
-			}
-			
-			if (aType == int.class)
-			{
-				return Arrays.equals((int[]) a, (int[]) b);
-			}
-			
-			if (aType == long.class)
-			{
-				return Arrays.equals((long[]) a, (long[]) b);
-			}
-			
-			if (aType == double.class)
-			{
-				return Arrays.equals((short[]) a, (short[]) b);
-			}
-			
-			return Arrays.equals((Object[]) a, (Object[]) b);
+			return arraysEquals(a, b);
 		}
 		
 		return a.equals(b);
@@ -126,5 +76,58 @@ public final class ObjectUtils
 		}
 		builder.append(']');
 		return builder.toString();
+	}
+	
+	// private methods --------------------------------------------------------
+	
+	private static boolean arraysEquals(Object a, Object b)
+	{
+		Class<?> aType = a.getClass().getComponentType();
+		Class<?> bType = b.getClass().getComponentType();
+
+		boolean equals;
+		
+		if (aType != bType)
+		{
+			equals = false;
+		}
+		else if (aType == boolean.class)
+		{
+			equals = Arrays.equals((boolean[]) a, (boolean[]) b);
+		}
+		else if (aType == byte.class)
+		{
+			equals = Arrays.equals((byte[]) a, (byte[]) b);
+		}
+		else if (aType == char.class)
+		{
+			equals = Arrays.equals((char[]) a, (char[]) b);
+		}
+		else if (aType == double.class)
+		{
+			equals = Arrays.equals((double[]) a, (double[]) b);
+		}
+		else if (aType == float.class)
+		{
+			equals = Arrays.equals((float[]) a, (float[]) b);
+		}
+		else if (aType == int.class)
+		{
+			equals = Arrays.equals((int[]) a, (int[]) b);
+		}
+		else if (aType == long.class)
+		{
+			equals = Arrays.equals((long[]) a, (long[]) b);
+		}
+		else if (aType == double.class)
+		{
+			equals = Arrays.equals((short[]) a, (short[]) b);
+		}
+		else
+		{
+			equals = Arrays.equals((Object[]) a, (Object[]) b);
+		}
+		
+		return equals;
 	}
 }
