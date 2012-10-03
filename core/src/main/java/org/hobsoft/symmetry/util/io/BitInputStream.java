@@ -163,27 +163,29 @@ public class BitInputStream extends FilterInputStream
 		long actualBytes = skip(nBytes);
 		long actualBits = 8 * actualBytes;
 		
-		if (actualBytes == nBytes)
+		if (actualBytes != nBytes)
 		{
-			int nBits = (int) (n % 8);
+			return actualBits;
+		}
+
+		int nBits = (int) (n % 8);
+		
+		if (nBits <= length)
+		{
+			length -= nBits;
+			actualBits += nBits;
+		}
+		else
+		{
+			actualBits += length;
 			
-			if (nBits <= length)
+			buffer = super.read();
+			
+			if (buffer != EOF)
 			{
-				length -= nBits;
-				actualBits += nBits;
-			}
-			else
-			{
-				actualBits += length;
-				
-				buffer = super.read();
-				
-				if (buffer != EOF)
-				{
-					int extraBits = nBits - length;
-					length = 8 - extraBits;
-					actualBits += extraBits;
-				}
+				int extraBits = nBits - length;
+				length = 8 - extraBits;
+				actualBits += extraBits;
 			}
 		}
 		

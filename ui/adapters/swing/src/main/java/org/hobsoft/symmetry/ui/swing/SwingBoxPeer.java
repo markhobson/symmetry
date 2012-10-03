@@ -103,28 +103,7 @@ public class SwingBoxPeer extends AbstractPeerHandler
 		
 		if (Box.COMPONENTS_PROPERTY.equals(name))
 		{
-			if (event instanceof IndexedPropertyChangeEvent)
-			{
-				int index = ((IndexedPropertyChangeEvent) event).getIndex();
-				
-				if (oldValue == null)
-				{
-					container.add((java.awt.Component) getPeerManager().getPeer(newValue), index);
-				}
-				else if (newValue == null)
-				{
-					container.remove((java.awt.Component) getPeerManager().getPeer(oldValue));
-				}
-			}
-			else
-			{
-				container.removeAll();
-				
-				for (Component child : box)
-				{
-					container.add((java.awt.Component) getPeerManager().getPeer(child));
-				}
-			}
+			componentsChanged(event);
 		}
 		else if (Box.ORIENTATION_PROPERTY.equals(name))
 		{
@@ -138,5 +117,38 @@ public class SwingBoxPeer extends AbstractPeerHandler
 	protected Container getContainer(Box box)
 	{
 		return (Container) getPeerManager().getPeer(box);
+	}
+
+	// private methods --------------------------------------------------------
+	
+	private void componentsChanged(PropertyChangeEvent event)
+	{
+		Box box = (Box) event.getSource();
+		Object oldValue = event.getOldValue();
+		Object newValue = event.getNewValue();
+		Container container = getContainer(box);
+		
+		if (event instanceof IndexedPropertyChangeEvent)
+		{
+			int index = ((IndexedPropertyChangeEvent) event).getIndex();
+			
+			if (oldValue == null)
+			{
+				container.add((java.awt.Component) getPeerManager().getPeer(newValue), index);
+			}
+			else if (newValue == null)
+			{
+				container.remove((java.awt.Component) getPeerManager().getPeer(oldValue));
+			}
+		}
+		else
+		{
+			container.removeAll();
+			
+			for (Component child : box)
+			{
+				container.add((java.awt.Component) getPeerManager().getPeer(child));
+			}
+		}
 	}
 }

@@ -71,32 +71,40 @@ public class TreeCellRendererAdapter extends AbstractAdapter implements javax.sw
 			{
 				JComponent component = (JComponent) object;
 				Graphics graphics = (Graphics) args[0];
-				Color color = component.getBackground();
-				int width = component.getWidth();
-				int height = component.getHeight();
 				
-				if (color != null)
-				{
-					graphics.setColor(color);
-					graphics.fillRect(0, 0, width, height);
-				}
-				if (hasFocus)
-				{
-					if (selectionBorderColor != null && (selected || !drawDashedFocusIndicator))
-					{
-						graphics.setColor(selectionBorderColor);
-						graphics.drawRect(0, 0, width - 1, height - 1);
-					}
-					
-					if (drawDashedFocusIndicator)
-					{
-						graphics.setColor(new Color(~color.getRGB()));
-						BasicGraphicsUtils.drawDashedRect(graphics, 0, 0, width, height);
-					}
-				}
+				paint(component, graphics);
 			}
+			
 			boolean isPublic = Modifier.isPublic(method.getModifiers());
 			return (peer == null || !isPublic) ? proxy.invokeSuper(object, args) : proxy.invoke(peer, args);
+		}
+
+		private void paint(JComponent component, Graphics graphics)
+		{
+			Color color = component.getBackground();
+			int width = component.getWidth();
+			int height = component.getHeight();
+			
+			if (color != null)
+			{
+				graphics.setColor(color);
+				graphics.fillRect(0, 0, width, height);
+			}
+			
+			if (hasFocus)
+			{
+				if (selectionBorderColor != null && (selected || !drawDashedFocusIndicator))
+				{
+					graphics.setColor(selectionBorderColor);
+					graphics.drawRect(0, 0, width - 1, height - 1);
+				}
+				
+				if (drawDashedFocusIndicator)
+				{
+					graphics.setColor(new Color(~color.getRGB()));
+					BasicGraphicsUtils.drawDashedRect(graphics, 0, 0, width, height);
+				}
+			}
 		}
 	}
 	
