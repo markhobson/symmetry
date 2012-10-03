@@ -96,44 +96,11 @@ public class SwtBoxPeer extends AbstractPeerHandler
 	{
 		Box box = (Box) event.getSource();
 		String name = event.getPropertyName();
-		Object oldValue = event.getOldValue();
-		Object newValue = event.getNewValue();
 		Composite composite = (Composite) getPeerManager().getPeer(box);
 		
 		if (Box.COMPONENTS_PROPERTY.equals(name))
 		{
-			if (event instanceof IndexedPropertyChangeEvent)
-			{
-				int index = ((IndexedPropertyChangeEvent) event).getIndex();
-				
-				if (oldValue == null)
-				{
-					Component child = (Component) newValue;
-					addChild(child);
-					recalculateLayoutData(box);
-				}
-				else if (newValue == null)
-				{
-					Component child = (Component) oldValue;
-					removeChild(child);
-					recalculateLayoutData(box);
-				}
-			}
-			else
-			{
-				// TODO: reimplement
-//				for (Control child : composite.getChildren())
-//				{
-//					child.dispose();
-//				}
-				
-				for (Component child : box)
-				{
-					addChild(child);
-				}
-				
-				recalculateLayoutData(box);
-			}
+			componentsChanged(event);
 		}
 		else if (Box.ORIENTATION_PROPERTY.equals(name))
 		{
@@ -207,11 +174,7 @@ public class SwtBoxPeer extends AbstractPeerHandler
 				FormAttachment min = new FormAttachment(0, 2);
 				FormAttachment max = new FormAttachment(100, -2);
 				
-				FormData data = new FormData();
-				data.left = isHorizontal ? start : min;
-				data.right = isHorizontal ? end : max;
-				data.top = isHorizontal ? min : start;
-				data.bottom = isHorizontal ? max : end;
+				FormData data = createFormData(isHorizontal, start, end, min, max);
 				control.setLayoutData(data);
 				lastControl = control;
 				lastFlex = flex;
@@ -224,6 +187,57 @@ public class SwtBoxPeer extends AbstractPeerHandler
 	}
 	
 	// private methods --------------------------------------------------------
+	
+	private void componentsChanged(PropertyChangeEvent event)
+	{
+		Box box = (Box) event.getSource();
+		Object oldValue = event.getOldValue();
+		Object newValue = event.getNewValue();
+		
+		if (event instanceof IndexedPropertyChangeEvent)
+		{
+			int index = ((IndexedPropertyChangeEvent) event).getIndex();
+			
+			if (oldValue == null)
+			{
+				Component child = (Component) newValue;
+				addChild(child);
+				recalculateLayoutData(box);
+			}
+			else if (newValue == null)
+			{
+				Component child = (Component) oldValue;
+				removeChild(child);
+				recalculateLayoutData(box);
+			}
+		}
+		else
+		{
+			// TODO: reimplement
+//			for (Control child : composite.getChildren())
+//			{
+//				child.dispose();
+//			}
+			
+			for (Component child : box)
+			{
+				addChild(child);
+			}
+			
+			recalculateLayoutData(box);
+		}
+	}
+	
+	private static FormData createFormData(boolean isHorizontal, FormAttachment start, FormAttachment end,
+		FormAttachment min, FormAttachment max)
+	{
+		FormData data = new FormData();
+		data.left = isHorizontal ? start : min;
+		data.right = isHorizontal ? end : max;
+		data.top = isHorizontal ? min : start;
+		data.bottom = isHorizontal ? max : end;
+		return data;
+	}
 	
 	// TODO: share with symmetry-ui-html's FlexUtils
 	

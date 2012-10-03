@@ -86,8 +86,6 @@ public class HtmlPagedTableDehydrator<T extends Table>
 	
 	private static void writeFooter(Table table, HydrationContext context) throws HydrationException, XMLStreamException
 	{
-		// TODO: refactor into smaller methods!
-		
 		int pageSize = table.getVisibleRowCount();
 		
 		if (pageSize == 0)
@@ -95,6 +93,7 @@ public class HtmlPagedTableDehydrator<T extends Table>
 			return;
 		}
 		
+		// TODO: simplify this
 		TableModel model = table.getModel();
 		int columns = model.getColumnCount();
 		int rows = model.getRowCount();
@@ -118,6 +117,27 @@ public class HtmlPagedTableDehydrator<T extends Table>
 		out.writeStartElement("td");
 		out.writeAttribute("colspan", Integer.toString(columns));
 		out.writeStartElement("ul");
+		
+		writeFooterFirstLink(table, context, hasPrevious);
+		writeFooterPreviousLink(table, context, hasPrevious, previousPageRow);
+		writeFooterPosition(table, context, firstRow, lastRow);
+		writeFooterNextLink(table, context, hasNext, nextPageRow);
+		writeFooterLastLink(table, context, hasNext, lastPageRow);
+		
+		// ul
+		out.writeEndElement();
+		// td
+		out.writeEndElement();
+		// tr
+		out.writeEndElement();
+		// tfoot
+		out.writeEndElement();
+	}
+
+	private static void writeFooterFirstLink(Table table, HydrationContext context, boolean hasPrevious)
+		throws XMLStreamException, HydrationException
+	{
+		XMLStreamWriter out = context.get(XMLStreamWriter.class);
 		
 		// << first
 		out.writeStartElement("li");
@@ -143,6 +163,12 @@ public class HtmlPagedTableDehydrator<T extends Table>
 		
 		// li
 		out.writeEndElement();
+	}
+
+	private static void writeFooterPreviousLink(Table table, HydrationContext context, boolean hasPrevious,
+		int previousPageRow) throws XMLStreamException, HydrationException
+	{
+		XMLStreamWriter out = context.get(XMLStreamWriter.class);
 		
 		// < previous
 		out.writeStartElement("li");
@@ -169,6 +195,13 @@ public class HtmlPagedTableDehydrator<T extends Table>
 		
 		// li
 		out.writeEndElement();
+	}
+
+	private static void writeFooterPosition(Table table, HydrationContext context, int firstRow, int lastRow)
+		throws XMLStreamException
+	{
+		XMLStreamWriter out = context.get(XMLStreamWriter.class);
+		int rows = table.getModel().getRowCount();
 		
 		// position
 		out.writeStartElement("li");
@@ -180,6 +213,12 @@ public class HtmlPagedTableDehydrator<T extends Table>
 		out.writeCharacters(Integer.toString(rows));
 		// li
 		out.writeEndElement();
+	}
+
+	private static void writeFooterNextLink(Table table, HydrationContext context, boolean hasNext, int nextPageRow)
+		throws XMLStreamException, HydrationException
+	{
+		XMLStreamWriter out = context.get(XMLStreamWriter.class);
 		
 		// > next
 		out.writeStartElement("li");
@@ -206,6 +245,12 @@ public class HtmlPagedTableDehydrator<T extends Table>
 		
 		// li
 		out.writeEndElement();
+	}
+
+	private static void writeFooterLastLink(Table table, HydrationContext context, boolean hasNext, int lastPageRow)
+		throws XMLStreamException, HydrationException
+	{
+		XMLStreamWriter out = context.get(XMLStreamWriter.class);
 		
 		// >> last
 		out.writeStartElement("li");
@@ -231,15 +276,6 @@ public class HtmlPagedTableDehydrator<T extends Table>
 		}
 		
 		// li
-		out.writeEndElement();
-		
-		// ul
-		out.writeEndElement();
-		// td
-		out.writeEndElement();
-		// tr
-		out.writeEndElement();
-		// tfoot
 		out.writeEndElement();
 	}
 }
