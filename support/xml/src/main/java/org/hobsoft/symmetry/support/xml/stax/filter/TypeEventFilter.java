@@ -39,6 +39,27 @@ import static javax.xml.stream.XMLStreamConstants.START_ELEMENT;
  */
 class TypeEventFilter implements EventFilter
 {
+	// constants --------------------------------------------------------------
+	
+	private static final int[] VALID_EVENT_TYPES = new int[]
+	{
+		START_ELEMENT,
+		END_ELEMENT,
+		PROCESSING_INSTRUCTION,
+		CHARACTERS,
+		COMMENT,
+		SPACE,
+		START_DOCUMENT,
+		END_DOCUMENT,
+		ENTITY_REFERENCE,
+		ATTRIBUTE,
+		DTD,
+		CDATA,
+		NAMESPACE,
+		NOTATION_DECLARATION,
+		ENTITY_DECLARATION,
+	};
+	
 	// fields -----------------------------------------------------------------
 	
 	private final int[] eventTypes;
@@ -86,23 +107,14 @@ class TypeEventFilter implements EventFilter
 	
 	private void validateEventType(int eventType)
 	{
-		if (eventType != START_ELEMENT
-			&& eventType != END_ELEMENT
-			&& eventType != PROCESSING_INSTRUCTION
-			&& eventType != CHARACTERS
-			&& eventType != COMMENT
-			&& eventType != SPACE
-			&& eventType != START_DOCUMENT
-			&& eventType != END_DOCUMENT
-			&& eventType != ENTITY_REFERENCE
-			&& eventType != ATTRIBUTE
-			&& eventType != DTD
-			&& eventType != CDATA
-			&& eventType != NAMESPACE
-			&& eventType != NOTATION_DECLARATION
-			&& eventType != ENTITY_DECLARATION)
+		for (int validEventType : VALID_EVENT_TYPES)
 		{
-			throw new IllegalArgumentException("Unknown event type: " + eventType);
+			if (eventType == validEventType)
+			{
+				return;
+			}
 		}
+		
+		throw new IllegalArgumentException("Unknown event type: " + eventType);
 	}
 }

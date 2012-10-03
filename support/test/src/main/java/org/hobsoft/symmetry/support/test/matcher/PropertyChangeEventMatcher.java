@@ -101,6 +101,6 @@ public class PropertyChangeEventMatcher extends TypeSafeMatcher<PropertyChangeEv
 	
 	private static boolean nullEquals(Object a, Object b)
 	{
-		return (a == null && b == null) || (a != null && b != null && a.equals(b));
+		return (a == null) ? (b == null) : a.equals(b);
 	}
 }
