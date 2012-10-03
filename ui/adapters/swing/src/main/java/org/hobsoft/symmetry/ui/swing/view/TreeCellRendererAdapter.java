@@ -71,11 +71,9 @@ public class TreeCellRendererAdapter extends AbstractAdapter implements javax.sw
 			{
 				Class<?> klass = object.getClass();
 				Graphics graphics = (Graphics) args[0];
-				Color color = (Color) klass.getMethod("getBackground", (Class[]) null).invoke(object, (Object[]) null);
-				int width = ((Integer) klass.getMethod("getWidth", (Class[]) null).invoke(object, (Object[]) null))
-					.intValue();
-				int height = ((Integer) klass.getMethod("getHeight", (Class[]) null).invoke(object, (Object[]) null))
-					.intValue();
+				Color color = (Color) klass.getMethod("getBackground").invoke(object);
+				int width = (Integer) klass.getMethod("getWidth").invoke(object);
+				int height = (Integer) klass.getMethod("getHeight").invoke(object);
 				
 				if (color != null)
 				{
