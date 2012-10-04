@@ -20,8 +20,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import javanet.staxutils.helpers.EventMatcher;
-
 import javax.xml.namespace.QName;
 import javax.xml.stream.XMLEventFactory;
 import javax.xml.stream.events.Attribute;
@@ -35,6 +33,8 @@ import javax.xml.stream.events.XMLEvent;
 
 import org.apache.commons.lang.RandomStringUtils;
 import org.junit.Before;
+
+import javanet.staxutils.helpers.EventMatcher;
 
 import static org.junit.Assert.assertTrue;
 

@@ -13,8 +13,6 @@
  */
 package org.hobsoft.symmetry.support.xml.stax.transform;
 
-import javanet.staxutils.helpers.EventMatcher;
-
 import javax.xml.stream.XMLEventFactory;
 import javax.xml.stream.events.EndElement;
 import javax.xml.stream.events.StartElement;
@@ -22,6 +20,8 @@ import javax.xml.stream.events.XMLEvent;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import javanet.staxutils.helpers.EventMatcher;
 
 import static org.junit.Assert.assertTrue;
 
