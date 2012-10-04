@@ -25,7 +25,7 @@ import java.util.Map;
  * 
  * @author Mark Hobson
  */
-public class State implements Cloneable
+public class State
 {
 	// TODO: is it necessary that State API needs to expose details of its implementation - i.e. properties and events?
 	// TODO: rename to BeanState?
@@ -94,6 +94,16 @@ public class State implements Cloneable
 		events = new ArrayList<EventSetState>();
 		
 		parametersByName = new HashMap<String, Object>();
+	}
+	
+	public State(State state)
+	{
+		this();
+		
+		// TODO: use add(State) when parameters supported
+		state.properties = new LinkedHashMap<MultiKey, PropertyState>(state.properties);
+		state.events = new ArrayList<EventSetState>(state.events);
+		state.parametersByName = new HashMap<String, Object>(state.parametersByName);
 	}
 	
 	// public methods ---------------------------------------------------------
@@ -218,27 +228,5 @@ public class State implements Cloneable
 		return getProperties().equals(state.getProperties())
 			&& events.equals(state.getEvents())
 			&& parametersByName.equals(state.parametersByName);
-	}
-	
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	public State clone()
-	{
-		try
-		{
-			State state = (State) super.clone();
-			
-			state.properties = new LinkedHashMap<MultiKey, PropertyState>(state.properties);
-			state.events = new ArrayList<EventSetState>(state.events);
-			state.parametersByName = new HashMap<String, Object>(state.parametersByName);
-			
-			return state;
-		}
-		catch (CloneNotSupportedException exception)
-		{
-			throw new InternalError();
-		}
 	}
 }

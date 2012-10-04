@@ -114,7 +114,7 @@ public final class BeanDehydrationUtils
 	private static String encodeState(DehydrationContext context, PropertyState propertyState, EventSetState eventState)
 		throws HydrationException
 	{
-		State state = context.getState().clone();
+		State state = new State(context.getState());
 		
 		if (propertyState != null)
 		{

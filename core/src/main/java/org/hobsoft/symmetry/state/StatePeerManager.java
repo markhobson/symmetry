@@ -104,7 +104,7 @@ public abstract class StatePeerManager implements PeerManager, PropertyChangeLis
 				}
 			}
 			
-			return state.clone();
+			return new State(state);
 		}
 		
 		/**
