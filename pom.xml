@@ -210,6 +210,14 @@
 		</plugins>
 	</reporting>
 
+	<distributionManagement>
+		<site>
+			<id>site</id>
+			<name>Symmetry Maven Site</name>
+			<url>scm:git:git@github.com:markhobson/symmetry.git</url>
+		</site>
+	</distributionManagement>
+	
 	<modules>
 		<module>api</module>
 		<module>core</module>
