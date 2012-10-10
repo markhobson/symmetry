@@ -14,7 +14,7 @@
 package org.hobsoft.symmetry.ui.binding;
 
 import org.hobsoft.symmetry.ui.Deck;
-import org.hobsoft.symmetry.ui.binding.KozoObservables.DeckObservables;
+import org.hobsoft.symmetry.ui.binding.SymmetryObservables.DeckObservables;
 
 /**
  * Default {@code DeckObservables} implementation.

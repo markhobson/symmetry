@@ -16,7 +16,7 @@ package org.hobsoft.symmetry.ui.binding;
 import org.hobsoft.entangle.Observable;
 import org.hobsoft.entangle.Observables;
 import org.hobsoft.symmetry.ui.Selectable;
-import org.hobsoft.symmetry.ui.binding.KozoObservables.SelectableObservables;
+import org.hobsoft.symmetry.ui.binding.SymmetryObservables.SelectableObservables;
 
 /**
  * Default {@code SelectableObservables} implementation.

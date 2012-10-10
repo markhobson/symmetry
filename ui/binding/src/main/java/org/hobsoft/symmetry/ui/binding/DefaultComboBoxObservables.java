@@ -16,7 +16,7 @@ package org.hobsoft.symmetry.ui.binding;
 import org.hobsoft.entangle.Observable;
 import org.hobsoft.entangle.Observables;
 import org.hobsoft.symmetry.ui.ComboBox;
-import org.hobsoft.symmetry.ui.binding.KozoObservables.ComboBoxObservables;
+import org.hobsoft.symmetry.ui.binding.SymmetryObservables.ComboBoxObservables;
 
 /**
  * Default {@code ComboBoxObservables} implementation.

@@ -40,11 +40,11 @@ import org.hobsoft.symmetry.ui.Tree;
 import org.hobsoft.symmetry.ui.Window;
 
 /**
- * Factory to create observables for Kozo UI components.
+ * Factory to create observables for Symmetry UI components.
  * 
  * @author Mark Hobson
  */
-public final class KozoObservables
+public final class SymmetryObservables
 {
 	// TODO: could be replaced with Observables.property when generic bean API introduced
 	
@@ -322,7 +322,7 @@ public final class KozoObservables
 	
 	// constructors -----------------------------------------------------------
 	
-	private KozoObservables()
+	private SymmetryObservables()
 	{
 		throw new AssertionError();
 	}

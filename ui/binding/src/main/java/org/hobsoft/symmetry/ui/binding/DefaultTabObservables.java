@@ -14,7 +14,7 @@
 package org.hobsoft.symmetry.ui.binding;
 
 import org.hobsoft.symmetry.ui.Tab;
-import org.hobsoft.symmetry.ui.binding.KozoObservables.TabObservables;
+import org.hobsoft.symmetry.ui.binding.SymmetryObservables.TabObservables;
 
 /**
  * Default {@code TabObservables} implementation.

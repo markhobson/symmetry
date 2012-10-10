@@ -16,8 +16,8 @@ package org.hobsoft.symmetry.ui.binding;
 import org.hobsoft.entangle.Observable;
 import org.hobsoft.entangle.Observables;
 import org.hobsoft.symmetry.ui.TextBox;
-import org.hobsoft.symmetry.ui.binding.KozoObservables.EnableableObservables;
-import org.hobsoft.symmetry.ui.binding.KozoObservables.TextBoxObservables;
+import org.hobsoft.symmetry.ui.binding.SymmetryObservables.EnableableObservables;
+import org.hobsoft.symmetry.ui.binding.SymmetryObservables.TextBoxObservables;
 
 /**
  * Default {@code TextBoxObservables} implementation.

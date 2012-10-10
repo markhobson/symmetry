@@ -18,7 +18,7 @@ import javax.activation.DataSource;
 import org.hobsoft.entangle.Observable;
 import org.hobsoft.entangle.Observables;
 import org.hobsoft.symmetry.ui.FileChooser;
-import org.hobsoft.symmetry.ui.binding.KozoObservables.FileChooserObservables;
+import org.hobsoft.symmetry.ui.binding.SymmetryObservables.FileChooserObservables;
 
 /**
  * Default {@code FileChooserObservables} implementation.

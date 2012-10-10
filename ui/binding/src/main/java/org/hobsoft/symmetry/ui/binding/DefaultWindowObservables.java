@@ -14,7 +14,7 @@
 package org.hobsoft.symmetry.ui.binding;
 
 import org.hobsoft.symmetry.ui.Window;
-import org.hobsoft.symmetry.ui.binding.KozoObservables.WindowObservables;
+import org.hobsoft.symmetry.ui.binding.SymmetryObservables.WindowObservables;
 
 /**
  * Default {@code WindowObservables} implementation.

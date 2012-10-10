@@ -14,7 +14,7 @@
 package org.hobsoft.symmetry.ui.binding;
 
 import org.hobsoft.symmetry.ui.Box;
-import org.hobsoft.symmetry.ui.binding.KozoObservables.BoxObservables;
+import org.hobsoft.symmetry.ui.binding.SymmetryObservables.BoxObservables;
 
 /**
  * Default {@code BoxObservables} implementation.

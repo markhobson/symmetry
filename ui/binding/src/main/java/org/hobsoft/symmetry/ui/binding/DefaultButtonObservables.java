@@ -15,8 +15,8 @@ package org.hobsoft.symmetry.ui.binding;
 
 import org.hobsoft.entangle.Observable;
 import org.hobsoft.symmetry.ui.Button;
-import org.hobsoft.symmetry.ui.binding.KozoObservables.ButtonObservables;
-import org.hobsoft.symmetry.ui.binding.KozoObservables.EnableableObservables;
+import org.hobsoft.symmetry.ui.binding.SymmetryObservables.ButtonObservables;
+import org.hobsoft.symmetry.ui.binding.SymmetryObservables.EnableableObservables;
 
 /**
  * Default {@code ButtonObservables} implementation.

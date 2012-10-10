@@ -16,7 +16,7 @@ package org.hobsoft.symmetry.ui.binding;
 import org.hobsoft.entangle.Observable;
 import org.hobsoft.entangle.Observables;
 import org.hobsoft.symmetry.ui.Label;
-import org.hobsoft.symmetry.ui.binding.KozoObservables.LabelObservables;
+import org.hobsoft.symmetry.ui.binding.SymmetryObservables.LabelObservables;
 
 /**
  * Default {@code LabelObservables} implementation.

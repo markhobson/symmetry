@@ -14,7 +14,7 @@
 package org.hobsoft.symmetry.ui.binding;
 
 import org.hobsoft.symmetry.ui.Tree;
-import org.hobsoft.symmetry.ui.binding.KozoObservables.TreeObservables;
+import org.hobsoft.symmetry.ui.binding.SymmetryObservables.TreeObservables;
 
 /**
  * Default {@code TreeObservables} implementation.

@@ -14,7 +14,7 @@
 package org.hobsoft.symmetry.ui.binding;
 
 import org.hobsoft.symmetry.ui.TextArea;
-import org.hobsoft.symmetry.ui.binding.KozoObservables.TextAreaObservables;
+import org.hobsoft.symmetry.ui.binding.SymmetryObservables.TextAreaObservables;
 
 /**
  * Default {@code TextAreaObservables} implementation.

@@ -18,7 +18,7 @@ import java.util.List;
 import org.hobsoft.entangle.Observable;
 import org.hobsoft.entangle.Observables;
 import org.hobsoft.symmetry.ui.ListBox;
-import org.hobsoft.symmetry.ui.binding.KozoObservables.ListBoxObservables;
+import org.hobsoft.symmetry.ui.binding.SymmetryObservables.ListBoxObservables;
 
 /**
  * Default {@code ListBoxObservables} implementation.

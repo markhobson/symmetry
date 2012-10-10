@@ -14,7 +14,7 @@
 package org.hobsoft.symmetry.ui.binding;
 
 import org.hobsoft.symmetry.ui.Container;
-import org.hobsoft.symmetry.ui.binding.KozoObservables.ContainerObservables;
+import org.hobsoft.symmetry.ui.binding.SymmetryObservables.ContainerObservables;
 
 /**
  * Default {@code ContainerObservables} implementation.

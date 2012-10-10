@@ -14,7 +14,7 @@
 package org.hobsoft.symmetry.ui.binding;
 
 import org.hobsoft.symmetry.ui.GroupBox;
-import org.hobsoft.symmetry.ui.binding.KozoObservables.GroupBoxObservables;
+import org.hobsoft.symmetry.ui.binding.SymmetryObservables.GroupBoxObservables;
 
 /**
  * Default {@code GroupBoxObservables} implementation.

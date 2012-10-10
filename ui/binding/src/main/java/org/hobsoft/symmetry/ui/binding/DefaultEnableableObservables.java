@@ -16,7 +16,7 @@ package org.hobsoft.symmetry.ui.binding;
 import org.hobsoft.entangle.Observable;
 import org.hobsoft.entangle.Observables;
 import org.hobsoft.symmetry.ui.Enableable;
-import org.hobsoft.symmetry.ui.binding.KozoObservables.EnableableObservables;
+import org.hobsoft.symmetry.ui.binding.SymmetryObservables.EnableableObservables;
 
 /**
  * Default {@code EnableableObservables} implementation.

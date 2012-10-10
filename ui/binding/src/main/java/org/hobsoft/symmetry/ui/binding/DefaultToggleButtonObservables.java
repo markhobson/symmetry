@@ -15,8 +15,8 @@ package org.hobsoft.symmetry.ui.binding;
 
 import org.hobsoft.entangle.Observable;
 import org.hobsoft.symmetry.ui.ToggleButton;
-import org.hobsoft.symmetry.ui.binding.KozoObservables.SelectableObservables;
-import org.hobsoft.symmetry.ui.binding.KozoObservables.ToggleButtonObservables;
+import org.hobsoft.symmetry.ui.binding.SymmetryObservables.SelectableObservables;
+import org.hobsoft.symmetry.ui.binding.SymmetryObservables.ToggleButtonObservables;
 
 /**
  * Default {@code ToggleButtonObservables} implementation.

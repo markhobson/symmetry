@@ -14,7 +14,7 @@
 package org.hobsoft.symmetry.ui.binding;
 
 import org.hobsoft.symmetry.ui.Grid;
-import org.hobsoft.symmetry.ui.binding.KozoObservables.GridObservables;
+import org.hobsoft.symmetry.ui.binding.SymmetryObservables.GridObservables;
 
 /**
  * Default {@code GridObservables} implementation.

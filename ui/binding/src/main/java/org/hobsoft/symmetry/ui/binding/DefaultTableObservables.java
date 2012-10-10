@@ -14,7 +14,7 @@
 package org.hobsoft.symmetry.ui.binding;
 
 import org.hobsoft.symmetry.ui.Table;
-import org.hobsoft.symmetry.ui.binding.KozoObservables.TableObservables;
+import org.hobsoft.symmetry.ui.binding.SymmetryObservables.TableObservables;
 
 /**
  * Default {@code TableObservables} implementation.
