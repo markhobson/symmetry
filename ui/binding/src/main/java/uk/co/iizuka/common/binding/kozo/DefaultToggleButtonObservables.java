@@ -5,7 +5,8 @@
  */
 package uk.co.iizuka.common.binding.kozo;
 
-import uk.co.iizuka.common.binding.Observable;
+import org.hobsoft.entangle.Observable;
+
 import uk.co.iizuka.common.binding.kozo.KozoObservables.SelectableObservables;
 import uk.co.iizuka.common.binding.kozo.KozoObservables.ToggleButtonObservables;
 import uk.co.iizuka.kozo.ui.ToggleButton;

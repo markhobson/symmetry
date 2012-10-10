@@ -9,6 +9,8 @@ import static org.junit.Assert.assertEquals;
 import static uk.co.iizuka.common.binding.kozo.test.TestObservableListeners.mockObservableListener;
 import static uk.co.iizuka.common.binding.kozo.test.TestObservableListeners.mockObservableListenerWithValueChanged;
 
+import org.hobsoft.entangle.Observable;
+import org.hobsoft.entangle.ObservableListener;
 import org.jmock.Mockery;
 import org.jmock.integration.junit4.JMock;
 import org.jmock.integration.junit4.JUnit4Mockery;
@@ -16,8 +18,6 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import uk.co.iizuka.common.binding.Observable;
-import uk.co.iizuka.common.binding.ObservableListener;
 import uk.co.iizuka.kozo.ui.Label;
 
 /**

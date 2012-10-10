@@ -7,8 +7,9 @@ package uk.co.iizuka.common.binding.kozo;
 
 import java.util.List;
 
-import uk.co.iizuka.common.binding.Observable;
-import uk.co.iizuka.common.binding.Observables;
+import org.hobsoft.entangle.Observable;
+import org.hobsoft.entangle.Observables;
+
 import uk.co.iizuka.common.binding.kozo.KozoObservables.ListBoxObservables;
 import uk.co.iizuka.kozo.ui.ListBox;
 

@@ -9,7 +9,8 @@ import java.util.List;
 
 import javax.activation.DataSource;
 
-import uk.co.iizuka.common.binding.Observable;
+import org.hobsoft.entangle.Observable;
+
 import uk.co.iizuka.kozo.ui.Box;
 import uk.co.iizuka.kozo.ui.Button;
 import uk.co.iizuka.kozo.ui.ComboBox;

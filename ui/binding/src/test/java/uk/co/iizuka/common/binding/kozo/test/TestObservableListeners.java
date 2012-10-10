@@ -5,13 +5,12 @@
  */
 package uk.co.iizuka.common.binding.kozo.test;
 
+import org.hobsoft.entangle.Observable;
+import org.hobsoft.entangle.ObservableEvent;
+import org.hobsoft.entangle.ObservableListener;
 import org.jmock.Expectations;
 import org.jmock.Mockery;
 import org.junit.Ignore;
-
-import uk.co.iizuka.common.binding.Observable;
-import uk.co.iizuka.common.binding.ObservableEvent;
-import uk.co.iizuka.common.binding.ObservableListener;
 
 /**
  * 

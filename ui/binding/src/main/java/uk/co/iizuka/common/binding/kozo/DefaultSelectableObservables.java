@@ -5,8 +5,9 @@
  */
 package uk.co.iizuka.common.binding.kozo;
 
-import uk.co.iizuka.common.binding.Observable;
-import uk.co.iizuka.common.binding.Observables;
+import org.hobsoft.entangle.Observable;
+import org.hobsoft.entangle.Observables;
+
 import uk.co.iizuka.common.binding.kozo.KozoObservables.SelectableObservables;
 import uk.co.iizuka.kozo.ui.Selectable;
 

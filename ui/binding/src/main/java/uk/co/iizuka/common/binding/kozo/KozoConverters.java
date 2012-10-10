@@ -5,7 +5,8 @@
  */
 package uk.co.iizuka.common.binding.kozo;
 
-import uk.co.iizuka.common.binding.Converter;
+import org.hobsoft.entangle.Converter;
+
 import uk.co.iizuka.kozo.ui.functor.Function;
 
 /**

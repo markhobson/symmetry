@@ -8,9 +8,8 @@ package uk.co.iizuka.common.binding.kozo;
 import static org.junit.Assert.assertEquals;
 import static uk.co.iizuka.kozo.ui.functor.Functions.forMapEntry;
 
+import org.hobsoft.entangle.Converter;
 import org.junit.Test;
-
-import uk.co.iizuka.common.binding.Converter;
 
 /**
  * Tests {@code KozoConverters}.

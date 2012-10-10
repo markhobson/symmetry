@@ -9,9 +9,10 @@ import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.util.List;
 
-import uk.co.iizuka.common.binding.Observable;
-import uk.co.iizuka.common.binding.ObservableEvent;
-import uk.co.iizuka.common.binding.ObservableListener;
+import org.hobsoft.entangle.Observable;
+import org.hobsoft.entangle.ObservableEvent;
+import org.hobsoft.entangle.ObservableListener;
+
 import uk.co.iizuka.kozo.ui.ListBox;
 import uk.co.iizuka.kozo.ui.model.ListModels;
 
