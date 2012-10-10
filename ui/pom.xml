@@ -35,6 +35,7 @@
 		<module>api</module>
 		<module>api-test</module>
 		<module>adapters</module>
+		<module>binding</module>
 		<module>test-support</module>
 	</modules>
 	
