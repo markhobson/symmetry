@@ -11,16 +11,15 @@ import static uk.co.iizuka.common.binding.kozo.test.TestObservableListeners.mock
 import java.util.Arrays;
 import java.util.Collections;
 
+import org.hobsoft.symmetry.ui.ListBox;
+import org.hobsoft.symmetry.ui.SelectionMode;
+import org.hobsoft.symmetry.ui.model.DefaultListModel;
 import org.jmock.Mockery;
 import org.jmock.integration.junit4.JMock;
 import org.jmock.integration.junit4.JUnit4Mockery;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-
-import uk.co.iizuka.kozo.ui.ListBox;
-import uk.co.iizuka.kozo.ui.SelectionMode;
-import uk.co.iizuka.kozo.ui.model.DefaultListModel;
 
 /**
  * Tests {@code ListBoxSelectedItemsObservable}.

@@ -7,9 +7,9 @@ package uk.co.iizuka.common.binding.kozo;
 
 import org.hobsoft.entangle.Observable;
 import org.hobsoft.entangle.Observables;
+import org.hobsoft.symmetry.ui.Selectable;
 
 import uk.co.iizuka.common.binding.kozo.KozoObservables.SelectableObservables;
-import uk.co.iizuka.kozo.ui.Selectable;
 
 /**
  * Default {@code SelectableObservables} implementation.

@@ -6,10 +6,10 @@
 package uk.co.iizuka.common.binding.kozo;
 
 import org.hobsoft.entangle.Observable;
+import org.hobsoft.symmetry.ui.Button;
 
 import uk.co.iizuka.common.binding.kozo.KozoObservables.ButtonObservables;
 import uk.co.iizuka.common.binding.kozo.KozoObservables.EnableableObservables;
-import uk.co.iizuka.kozo.ui.Button;
 
 /**
  * Default {@code ButtonObservables} implementation.

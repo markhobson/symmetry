@@ -5,8 +5,9 @@
  */
 package uk.co.iizuka.common.binding.kozo;
 
+import org.hobsoft.symmetry.ui.Grid;
+
 import uk.co.iizuka.common.binding.kozo.KozoObservables.GridObservables;
-import uk.co.iizuka.kozo.ui.Grid;
 
 /**
  * Default {@code GridObservables} implementation.

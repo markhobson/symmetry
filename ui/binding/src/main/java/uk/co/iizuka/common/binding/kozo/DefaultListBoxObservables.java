@@ -9,9 +9,9 @@ import java.util.List;
 
 import org.hobsoft.entangle.Observable;
 import org.hobsoft.entangle.Observables;
+import org.hobsoft.symmetry.ui.ListBox;
 
 import uk.co.iizuka.common.binding.kozo.KozoObservables.ListBoxObservables;
-import uk.co.iizuka.kozo.ui.ListBox;
 
 /**
  * Default {@code ListBoxObservables} implementation.

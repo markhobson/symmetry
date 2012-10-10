@@ -6,8 +6,7 @@
 package uk.co.iizuka.common.binding.kozo;
 
 import org.hobsoft.entangle.Converter;
-
-import uk.co.iizuka.kozo.ui.functor.Function;
+import org.hobsoft.symmetry.ui.functor.Function;
 
 /**
  * Factory for adapting Kozo to converters.

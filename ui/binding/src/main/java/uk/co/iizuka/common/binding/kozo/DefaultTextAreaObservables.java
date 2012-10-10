@@ -5,8 +5,9 @@
  */
 package uk.co.iizuka.common.binding.kozo;
 
+import org.hobsoft.symmetry.ui.TextArea;
+
 import uk.co.iizuka.common.binding.kozo.KozoObservables.TextAreaObservables;
-import uk.co.iizuka.kozo.ui.TextArea;
 
 /**
  * Default {@code TextAreaObservables} implementation.

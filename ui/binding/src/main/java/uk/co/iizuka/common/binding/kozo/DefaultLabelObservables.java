@@ -7,9 +7,9 @@ package uk.co.iizuka.common.binding.kozo;
 
 import org.hobsoft.entangle.Observable;
 import org.hobsoft.entangle.Observables;
+import org.hobsoft.symmetry.ui.Label;
 
 import uk.co.iizuka.common.binding.kozo.KozoObservables.LabelObservables;
-import uk.co.iizuka.kozo.ui.Label;
 
 /**
  * Default {@code LabelObservables} implementation.

@@ -5,8 +5,9 @@
  */
 package uk.co.iizuka.common.binding.kozo;
 
+import org.hobsoft.symmetry.ui.Tree;
+
 import uk.co.iizuka.common.binding.kozo.KozoObservables.TreeObservables;
-import uk.co.iizuka.kozo.ui.Tree;
 
 /**
  * Default {@code TreeObservables} implementation.

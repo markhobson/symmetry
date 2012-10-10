@@ -6,10 +6,10 @@
 package uk.co.iizuka.common.binding.kozo;
 
 import org.hobsoft.entangle.Observable;
+import org.hobsoft.symmetry.ui.ToggleButton;
 
 import uk.co.iizuka.common.binding.kozo.KozoObservables.SelectableObservables;
 import uk.co.iizuka.common.binding.kozo.KozoObservables.ToggleButtonObservables;
-import uk.co.iizuka.kozo.ui.ToggleButton;
 
 /**
  * Default {@code ToggleButtonObservables} implementation.

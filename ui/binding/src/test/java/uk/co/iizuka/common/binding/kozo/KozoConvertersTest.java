@@ -5,8 +5,8 @@
  */
 package uk.co.iizuka.common.binding.kozo;
 
+import static org.hobsoft.symmetry.ui.functor.Functions.forMapEntry;
 import static org.junit.Assert.assertEquals;
-import static uk.co.iizuka.kozo.ui.functor.Functions.forMapEntry;
 
 import org.hobsoft.entangle.Converter;
 import org.junit.Test;

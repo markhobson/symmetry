@@ -7,9 +7,9 @@ package uk.co.iizuka.common.binding.kozo;
 
 import org.hobsoft.entangle.Observable;
 import org.hobsoft.entangle.Observables;
+import org.hobsoft.symmetry.ui.ComboBox;
 
 import uk.co.iizuka.common.binding.kozo.KozoObservables.ComboBoxObservables;
-import uk.co.iizuka.kozo.ui.ComboBox;
 
 /**
  * Default {@code ComboBoxObservables} implementation.

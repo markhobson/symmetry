@@ -11,14 +11,13 @@ import static uk.co.iizuka.common.binding.kozo.test.TestObservableListeners.mock
 
 import org.hobsoft.entangle.Observable;
 import org.hobsoft.entangle.ObservableListener;
+import org.hobsoft.symmetry.ui.Label;
 import org.jmock.Mockery;
 import org.jmock.integration.junit4.JMock;
 import org.jmock.integration.junit4.JUnit4Mockery;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-
-import uk.co.iizuka.kozo.ui.Label;
 
 /**
  * Tests {@code DefaultLabelObservables}.

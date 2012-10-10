@@ -5,8 +5,9 @@
  */
 package uk.co.iizuka.common.binding.kozo;
 
+import org.hobsoft.symmetry.ui.Container;
+
 import uk.co.iizuka.common.binding.kozo.KozoObservables.ContainerObservables;
-import uk.co.iizuka.kozo.ui.Container;
 
 /**
  * Default {@code ContainerObservables} implementation.

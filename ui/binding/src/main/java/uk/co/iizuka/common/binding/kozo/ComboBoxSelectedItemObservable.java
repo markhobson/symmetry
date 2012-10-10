@@ -11,8 +11,7 @@ import java.beans.PropertyChangeListener;
 import org.hobsoft.entangle.Observable;
 import org.hobsoft.entangle.ObservableEvent;
 import org.hobsoft.entangle.ObservableListener;
-
-import uk.co.iizuka.kozo.ui.ComboBox;
+import org.hobsoft.symmetry.ui.ComboBox;
 
 /**
  * 

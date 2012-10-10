@@ -7,10 +7,10 @@ package uk.co.iizuka.common.binding.kozo;
 
 import org.hobsoft.entangle.Observable;
 import org.hobsoft.entangle.Observables;
+import org.hobsoft.symmetry.ui.TextBox;
 
 import uk.co.iizuka.common.binding.kozo.KozoObservables.EnableableObservables;
 import uk.co.iizuka.common.binding.kozo.KozoObservables.TextBoxObservables;
-import uk.co.iizuka.kozo.ui.TextBox;
 
 /**
  * Default {@code TextBoxObservables} implementation.

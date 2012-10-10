@@ -9,9 +9,9 @@ import javax.activation.DataSource;
 
 import org.hobsoft.entangle.Observable;
 import org.hobsoft.entangle.Observables;
+import org.hobsoft.symmetry.ui.FileChooser;
 
 import uk.co.iizuka.common.binding.kozo.KozoObservables.FileChooserObservables;
-import uk.co.iizuka.kozo.ui.FileChooser;
 
 /**
  * Default {@code FileChooserObservables} implementation.

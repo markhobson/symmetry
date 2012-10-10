@@ -5,8 +5,9 @@
  */
 package uk.co.iizuka.common.binding.kozo;
 
+import org.hobsoft.symmetry.ui.Window;
+
 import uk.co.iizuka.common.binding.kozo.KozoObservables.WindowObservables;
-import uk.co.iizuka.kozo.ui.Window;
 
 /**
  * Default {@code WindowObservables} implementation.

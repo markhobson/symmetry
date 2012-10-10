@@ -5,8 +5,9 @@
  */
 package uk.co.iizuka.common.binding.kozo;
 
+import org.hobsoft.symmetry.ui.Tab;
+
 import uk.co.iizuka.common.binding.kozo.KozoObservables.TabObservables;
-import uk.co.iizuka.kozo.ui.Tab;
 
 /**
  * Default {@code TabObservables} implementation.

@@ -5,8 +5,9 @@
  */
 package uk.co.iizuka.common.binding.kozo;
 
+import org.hobsoft.symmetry.ui.GroupBox;
+
 import uk.co.iizuka.common.binding.kozo.KozoObservables.GroupBoxObservables;
-import uk.co.iizuka.kozo.ui.GroupBox;
 
 /**
  * Default {@code GroupBoxObservables} implementation.

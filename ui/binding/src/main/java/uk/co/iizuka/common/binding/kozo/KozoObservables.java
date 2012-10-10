@@ -10,27 +10,26 @@ import java.util.List;
 import javax.activation.DataSource;
 
 import org.hobsoft.entangle.Observable;
-
-import uk.co.iizuka.kozo.ui.Box;
-import uk.co.iizuka.kozo.ui.Button;
-import uk.co.iizuka.kozo.ui.ComboBox;
-import uk.co.iizuka.kozo.ui.Component;
-import uk.co.iizuka.kozo.ui.Container;
-import uk.co.iizuka.kozo.ui.Deck;
-import uk.co.iizuka.kozo.ui.FileChooser;
-import uk.co.iizuka.kozo.ui.Grid;
-import uk.co.iizuka.kozo.ui.GroupBox;
-import uk.co.iizuka.kozo.ui.Label;
-import uk.co.iizuka.kozo.ui.ListBox;
-import uk.co.iizuka.kozo.ui.Tab;
-import uk.co.iizuka.kozo.ui.TabBox;
-import uk.co.iizuka.kozo.ui.Table;
-import uk.co.iizuka.kozo.ui.TextArea;
-import uk.co.iizuka.kozo.ui.TextBox;
-import uk.co.iizuka.kozo.ui.ToggleButton;
-import uk.co.iizuka.kozo.ui.ToggleButtonGroup;
-import uk.co.iizuka.kozo.ui.Tree;
-import uk.co.iizuka.kozo.ui.Window;
+import org.hobsoft.symmetry.ui.Box;
+import org.hobsoft.symmetry.ui.Button;
+import org.hobsoft.symmetry.ui.ComboBox;
+import org.hobsoft.symmetry.ui.Component;
+import org.hobsoft.symmetry.ui.Container;
+import org.hobsoft.symmetry.ui.Deck;
+import org.hobsoft.symmetry.ui.FileChooser;
+import org.hobsoft.symmetry.ui.Grid;
+import org.hobsoft.symmetry.ui.GroupBox;
+import org.hobsoft.symmetry.ui.Label;
+import org.hobsoft.symmetry.ui.ListBox;
+import org.hobsoft.symmetry.ui.Tab;
+import org.hobsoft.symmetry.ui.TabBox;
+import org.hobsoft.symmetry.ui.Table;
+import org.hobsoft.symmetry.ui.TextArea;
+import org.hobsoft.symmetry.ui.TextBox;
+import org.hobsoft.symmetry.ui.ToggleButton;
+import org.hobsoft.symmetry.ui.ToggleButtonGroup;
+import org.hobsoft.symmetry.ui.Tree;
+import org.hobsoft.symmetry.ui.Window;
 
 /**
  * Factory to create observables for Kozo UI components.

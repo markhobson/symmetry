@@ -5,8 +5,9 @@
  */
 package uk.co.iizuka.common.binding.kozo;
 
+import org.hobsoft.symmetry.ui.Box;
+
 import uk.co.iizuka.common.binding.kozo.KozoObservables.BoxObservables;
-import uk.co.iizuka.kozo.ui.Box;
 
 /**
  * Default {@code BoxObservables} implementation.

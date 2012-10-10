@@ -5,8 +5,9 @@
  */
 package uk.co.iizuka.common.binding.kozo;
 
+import org.hobsoft.symmetry.ui.Table;
+
 import uk.co.iizuka.common.binding.kozo.KozoObservables.TableObservables;
-import uk.co.iizuka.kozo.ui.Table;
 
 /**
  * Default {@code TableObservables} implementation.

@@ -12,9 +12,8 @@ import java.util.List;
 import org.hobsoft.entangle.Observable;
 import org.hobsoft.entangle.ObservableEvent;
 import org.hobsoft.entangle.ObservableListener;
-
-import uk.co.iizuka.kozo.ui.ListBox;
-import uk.co.iizuka.kozo.ui.model.ListModels;
+import org.hobsoft.symmetry.ui.ListBox;
+import org.hobsoft.symmetry.ui.model.ListModels;
 
 /**
  * 

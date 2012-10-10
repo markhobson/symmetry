@@ -5,8 +5,9 @@
  */
 package uk.co.iizuka.common.binding.kozo;
 
+import org.hobsoft.symmetry.ui.Deck;
+
 import uk.co.iizuka.common.binding.kozo.KozoObservables.DeckObservables;
-import uk.co.iizuka.kozo.ui.Deck;
 
 /**
  * Default {@code DeckObservables} implementation.
