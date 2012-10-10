@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+	$HeadURL: https://svn.iizuka.co.uk/common/binding/kozo/tags/1.0.0-beta-1/pom.xml $
+	
+	(c) 2010 IIZUKA Software Technologies Ltd.  All rights reserved.
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<parent>
+		<groupId>uk.co.iizuka</groupId>
+		<artifactId>iizuka-parent</artifactId>
+		<version>3.1.0-beta-2</version>
+	</parent>
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>uk.co.iizuka.common</groupId>
+	<artifactId>common-binding-kozo</artifactId>
+	<packaging>jar</packaging>
+	<version>1.0.0-beta-1</version>
+	
+	<name>Common Binding Kozo Integration</name>
+	
+	<scm>
+		<connection>scm:svn:https://svn.iizuka.co.uk/common/binding/kozo/tags/1.0.0-beta-1</connection>
+		<developerConnection>scm:svn:https://svn.iizuka.co.uk/common/binding/kozo/tags/1.0.0-beta-1</developerConnection>
+		<url>https://svn.iizuka.co.uk/common/binding/kozo/tags/1.0.0-beta-1</url>
+	</scm>
+
+	<dependencies>
+	
+		<dependency>
+			<groupId>uk.co.iizuka.common</groupId>
+			<artifactId>common-binding</artifactId>
+			<version>1.1.0-beta-1</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>uk.co.iizuka.kozo</groupId>
+			<artifactId>kozo-ui</artifactId>
+			<version>0.6.0-beta-1</version>
+		</dependency>
+		
+		<!-- test -->
+		
+		<dependency>
+			<groupId>org.jmock</groupId>
+			<artifactId>jmock-junit4</artifactId>
+			<version>2.5.1</version>
+			<scope>test</scope>
+		</dependency>
+		
+	</dependencies>
+		
+</project>
