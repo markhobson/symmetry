@@ -27,7 +27,6 @@ import org.hobsoft.symmetry.ui.model.ListModels;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: ListBoxSelectedItemsObservable.java 98355 2012-02-08 12:04:55Z mark@IIZUKA.CO.UK $
  * @param <T> 
  *            the list box item type
  */

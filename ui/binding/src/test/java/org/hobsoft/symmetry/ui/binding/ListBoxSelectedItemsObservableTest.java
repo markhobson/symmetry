@@ -33,7 +33,6 @@ import static org.junit.Assert.assertEquals;
  * Tests {@code ListBoxSelectedItemsObservable}.
  * 
  * @author Mark Hobson
- * @version $Id: ListBoxSelectedItemsObservableTest.java 98355 2012-02-08 12:04:55Z mark@IIZUKA.CO.UK $
  * @see ListBoxSelectedItemsObservable
  */
 @RunWith(JMock.class)

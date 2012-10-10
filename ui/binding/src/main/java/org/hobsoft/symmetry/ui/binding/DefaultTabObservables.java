@@ -20,7 +20,6 @@ import org.hobsoft.symmetry.ui.binding.KozoObservables.TabObservables;
  * Default {@code TabObservables} implementation.
  * 
  * @author Mark Hobson
- * @version $Id: DefaultTabObservables.java 97523 2012-01-04 16:57:21Z mark@IIZUKA.CO.UK $
  * @see TabObservables
  */
 class DefaultTabObservables extends DefaultButtonObservables implements TabObservables

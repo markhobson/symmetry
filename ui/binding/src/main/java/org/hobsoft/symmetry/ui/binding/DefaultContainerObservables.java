@@ -20,7 +20,6 @@ import org.hobsoft.symmetry.ui.binding.KozoObservables.ContainerObservables;
  * Default {@code ContainerObservables} implementation.
  * 
  * @author Mark Hobson
- * @version $Id: DefaultContainerObservables.java 99159 2012-03-09 16:58:42Z mark@IIZUKA.CO.UK $
  * @see ContainerObservables
  */
 class DefaultContainerObservables extends DefaultComponentObservables implements ContainerObservables

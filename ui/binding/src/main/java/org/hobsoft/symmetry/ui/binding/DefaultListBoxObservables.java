@@ -24,7 +24,6 @@ import org.hobsoft.symmetry.ui.binding.KozoObservables.ListBoxObservables;
  * Default {@code ListBoxObservables} implementation.
  * 
  * @author Mark Hobson
- * @version $Id: DefaultListBoxObservables.java 98355 2012-02-08 12:04:55Z mark@IIZUKA.CO.UK $
  * @param <T>
  *            the item type
  * @see ListBoxObservables

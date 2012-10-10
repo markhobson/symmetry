@@ -23,7 +23,6 @@ import org.hobsoft.symmetry.ui.binding.KozoObservables.TextBoxObservables;
  * Default {@code TextBoxObservables} implementation.
  * 
  * @author Mark Hobson
- * @version $Id: DefaultTextBoxObservables.java 97533 2012-01-04 17:51:28Z mark@IIZUKA.CO.UK $
  * @see TextBoxObservables
  */
 class DefaultTextBoxObservables extends DefaultComponentObservables implements TextBoxObservables

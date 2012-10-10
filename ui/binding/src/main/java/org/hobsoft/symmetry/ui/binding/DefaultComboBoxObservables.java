@@ -22,7 +22,6 @@ import org.hobsoft.symmetry.ui.binding.KozoObservables.ComboBoxObservables;
  * Default {@code ComboBoxObservables} implementation.
  * 
  * @author Mark Hobson
- * @version $Id: DefaultComboBoxObservables.java 98273 2012-02-06 12:44:23Z mark@IIZUKA.CO.UK $
  * @param <T>
  *            the item type
  * @see ComboBoxObservables

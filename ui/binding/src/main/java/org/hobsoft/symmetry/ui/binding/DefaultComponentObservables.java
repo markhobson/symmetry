@@ -20,7 +20,6 @@ import org.hobsoft.symmetry.ui.binding.KozoObservables.ComponentObservables;
  * Default {@code ComponentObservables} implementation.
  * 
  * @author Mark Hobson
- * @version $Id: DefaultComponentObservables.java 97523 2012-01-04 16:57:21Z mark@IIZUKA.CO.UK $
  * @see ComponentObservables
  */
 class DefaultComponentObservables implements ComponentObservables

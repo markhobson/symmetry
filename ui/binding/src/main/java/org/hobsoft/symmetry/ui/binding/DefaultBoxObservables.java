@@ -20,7 +20,6 @@ import org.hobsoft.symmetry.ui.binding.KozoObservables.BoxObservables;
  * Default {@code BoxObservables} implementation.
  * 
  * @author Mark Hobson
- * @version $Id: DefaultBoxObservables.java 99159 2012-03-09 16:58:42Z mark@IIZUKA.CO.UK $
  * @see BoxObservables
  */
 class DefaultBoxObservables extends DefaultContainerObservables implements BoxObservables

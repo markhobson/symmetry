@@ -22,7 +22,6 @@ import org.hobsoft.symmetry.ui.binding.KozoObservables.EnableableObservables;
  * Default {@code ButtonObservables} implementation.
  * 
  * @author Mark Hobson
- * @version $Id: DefaultButtonObservables.java 97523 2012-01-04 16:57:21Z mark@IIZUKA.CO.UK $
  * @see ButtonObservables
  */
 class DefaultButtonObservables extends DefaultLabelObservables implements ButtonObservables

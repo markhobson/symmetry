@@ -23,7 +23,6 @@ import static org.junit.Assert.assertEquals;
  * Tests {@code KozoConverters}.
  * 
  * @author Mark Hobson
- * @version $Id: KozoConvertersTest.java 97383 2011-12-28 20:22:56Z mark@IIZUKA.CO.UK $
  * @see KozoConverters
  */
 public class KozoConvertersTest

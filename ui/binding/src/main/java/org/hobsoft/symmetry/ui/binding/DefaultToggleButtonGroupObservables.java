@@ -22,7 +22,6 @@ import org.hobsoft.symmetry.ui.binding.KozoObservables.ToggleButtonGroupObservab
  * Default {@code ToggleButtonGroupObservables} implementation.
  * 
  * @author Mark Hobson
- * @version $Id: DefaultToggleButtonGroupObservables.java 97896 2012-01-18 18:02:06Z mark@IIZUKA.CO.UK $
  * @see ToggleButtonGroupObservables
  */
 class DefaultToggleButtonGroupObservables extends DefaultBoxObservables implements ToggleButtonGroupObservables

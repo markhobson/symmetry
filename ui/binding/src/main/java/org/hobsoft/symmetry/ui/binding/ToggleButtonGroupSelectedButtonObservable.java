@@ -22,7 +22,6 @@ import org.hobsoft.symmetry.ui.ToggleButtonGroup;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: ToggleButtonGroupSelectedButtonObservable.java 97896 2012-01-18 18:02:06Z mark@IIZUKA.CO.UK $
  */
 class ToggleButtonGroupSelectedButtonObservable implements Observable<ToggleButton>
 {

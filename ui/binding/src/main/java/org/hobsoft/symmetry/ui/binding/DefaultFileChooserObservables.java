@@ -24,7 +24,6 @@ import org.hobsoft.symmetry.ui.binding.KozoObservables.FileChooserObservables;
  * Default {@code FileChooserObservables} implementation.
  * 
  * @author Mark Hobson
- * @version $Id: DefaultFileChooserObservables.java 98458 2012-02-14 15:07:51Z mark@IIZUKA.CO.UK $
  * @see FileChooserObservables
  */
 class DefaultFileChooserObservables extends DefaultComponentObservables implements FileChooserObservables

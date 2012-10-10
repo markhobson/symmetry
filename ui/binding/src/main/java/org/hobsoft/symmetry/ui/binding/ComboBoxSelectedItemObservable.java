@@ -25,7 +25,6 @@ import org.hobsoft.symmetry.ui.ComboBox;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: ComboBoxSelectedItemObservable.java 96845 2011-12-16 15:36:22Z mark@IIZUKA.CO.UK $
  * @param <T>
  *            the combo box item type
  */

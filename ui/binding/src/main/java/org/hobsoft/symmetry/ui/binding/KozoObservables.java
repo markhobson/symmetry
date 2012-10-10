@@ -43,7 +43,6 @@ import org.hobsoft.symmetry.ui.Window;
  * Factory to create observables for Kozo UI components.
  * 
  * @author Mark Hobson
- * @version $Id: KozoObservables.java 99170 2012-03-09 17:09:31Z mark@IIZUKA.CO.UK $
  */
 public final class KozoObservables
 {

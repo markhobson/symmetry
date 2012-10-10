@@ -20,7 +20,6 @@ import org.hobsoft.symmetry.ui.binding.KozoObservables.TableObservables;
  * Default {@code TableObservables} implementation.
  * 
  * @author Mark Hobson
- * @version $Id: DefaultTableObservables.java 97523 2012-01-04 16:57:21Z mark@IIZUKA.CO.UK $
  * @see TableObservables
  */
 class DefaultTableObservables extends DefaultComponentObservables implements TableObservables

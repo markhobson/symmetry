@@ -22,7 +22,6 @@ import org.hobsoft.symmetry.ui.binding.KozoObservables.SelectableObservables;
  * Default {@code SelectableObservables} implementation.
  * 
  * @author Mark Hobson
- * @version $Id: DefaultSelectableObservables.java 97529 2012-01-04 17:24:12Z mark@IIZUKA.CO.UK $
  * @see SelectableObservables
  */
 class DefaultSelectableObservables implements SelectableObservables

@@ -24,7 +24,6 @@ import org.junit.Ignore;
  * 
  * 
  * @author Mark Hobson
- * @version $Id: TestObservableListeners.java 97729 2012-01-11 16:17:41Z mark@IIZUKA.CO.UK $
  */
 // TODO: remove @Ignore when SUREFIRE-482 fixed
 @Ignore

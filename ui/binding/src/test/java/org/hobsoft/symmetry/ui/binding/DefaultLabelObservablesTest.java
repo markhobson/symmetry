@@ -31,7 +31,6 @@ import static org.junit.Assert.assertEquals;
  * Tests {@code DefaultLabelObservables}.
  * 
  * @author Mark Hobson
- * @version $Id: DefaultLabelObservablesTest.java 97729 2012-01-11 16:17:41Z mark@IIZUKA.CO.UK $
  * @see DefaultLabelObservables
  */
 @RunWith(JMock.class)

@@ -22,7 +22,6 @@ import org.hobsoft.symmetry.ui.binding.KozoObservables.LabelObservables;
  * Default {@code LabelObservables} implementation.
  * 
  * @author Mark Hobson
- * @version $Id: DefaultLabelObservables.java 97533 2012-01-04 17:51:28Z mark@IIZUKA.CO.UK $
  * @see LabelObservables
  */
 class DefaultLabelObservables extends DefaultComponentObservables implements LabelObservables

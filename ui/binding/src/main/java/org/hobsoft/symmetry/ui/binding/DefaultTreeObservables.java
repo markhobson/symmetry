@@ -20,7 +20,6 @@ import org.hobsoft.symmetry.ui.binding.KozoObservables.TreeObservables;
  * Default {@code TreeObservables} implementation.
  * 
  * @author Mark Hobson
- * @version $Id: DefaultTreeObservables.java 97523 2012-01-04 16:57:21Z mark@IIZUKA.CO.UK $
  * @see TreeObservables
  */
 class DefaultTreeObservables extends DefaultComponentObservables implements TreeObservables
