@@ -17,15 +17,15 @@ import org.hobsoft.entangle.Converter;
 import org.hobsoft.symmetry.ui.functor.Function;
 
 /**
- * Factory for adapting Kozo to converters.
+ * Factory for adapting Symmetry to converters.
  * 
  * @author Mark Hobson
  */
-public final class KozoConverters
+public final class SymmetryConverters
 {
 	// constructors -----------------------------------------------------------
 	
-	private KozoConverters()
+	private SymmetryConverters()
 	{
 		throw new AssertionError();
 	}

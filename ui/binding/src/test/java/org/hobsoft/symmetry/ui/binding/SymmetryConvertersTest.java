@@ -20,19 +20,19 @@ import static org.hobsoft.symmetry.ui.functor.Functions.forMapEntry;
 import static org.junit.Assert.assertEquals;
 
 /**
- * Tests {@code KozoConverters}.
+ * Tests {@code SymmetryConverters}.
  * 
  * @author Mark Hobson
- * @see KozoConverters
+ * @see SymmetryConverters
  */
-public class KozoConvertersTest
+public class SymmetryConvertersTest
 {
 	// tests ------------------------------------------------------------------
 	
 	@Test
 	public void forFunctionConvert()
 	{
-		Converter<String, Integer> converter = KozoConverters.forFunction(forMapEntry("a", 1));
+		Converter<String, Integer> converter = SymmetryConverters.forFunction(forMapEntry("a", 1));
 		
 		assertEquals((Integer) 1, converter.convert("a"));
 	}
@@ -40,7 +40,7 @@ public class KozoConvertersTest
 	@Test
 	public void forFunctionConvertWithSupertypeFrom()
 	{
-		Converter<String, Integer> converter = KozoConverters.forFunction(forMapEntry((Object) "a", 1));
+		Converter<String, Integer> converter = SymmetryConverters.forFunction(forMapEntry((Object) "a", 1));
 		
 		assertEquals((Integer) 1, converter.convert("a"));
 	}
@@ -48,7 +48,7 @@ public class KozoConvertersTest
 	@Test
 	public void forFunctionConvertWithSubtypeTo()
 	{
-		Converter<String, Number> converter = KozoConverters.<String, Number>forFunction(forMapEntry("a", 1));
+		Converter<String, Number> converter = SymmetryConverters.<String, Number>forFunction(forMapEntry("a", 1));
 		
 		assertEquals(1, converter.convert("a"));
 	}
@@ -56,7 +56,7 @@ public class KozoConvertersTest
 	@Test(expected = UnsupportedOperationException.class)
 	public void forFunctionUnconvert()
 	{
-		Converter<String, Integer> converter = KozoConverters.forFunction(forMapEntry("a", 1));
+		Converter<String, Integer> converter = SymmetryConverters.forFunction(forMapEntry("a", 1));
 		
 		converter.unconvert(1);
 	}
@@ -64,7 +64,7 @@ public class KozoConvertersTest
 	@Test
 	public void forFunctionWithInverseFunctionConvert()
 	{
-		Converter<String, Integer> converter = KozoConverters.forFunction(forMapEntry("a", 1), forMapEntry(1, "a"));
+		Converter<String, Integer> converter = SymmetryConverters.forFunction(forMapEntry("a", 1), forMapEntry(1, "a"));
 		
 		assertEquals((Integer) 1, converter.convert("a"));
 	}
@@ -72,7 +72,7 @@ public class KozoConvertersTest
 	@Test
 	public void forFunctionWithInverseFunctionAndSupertypeFromConvert()
 	{
-		Converter<String, Integer> converter = KozoConverters.forFunction(forMapEntry((Object) "a", 1),
+		Converter<String, Integer> converter = SymmetryConverters.forFunction(forMapEntry((Object) "a", 1),
 			forMapEntry(1, "a"));
 		
 		assertEquals((Integer) 1, converter.convert("a"));
@@ -81,7 +81,7 @@ public class KozoConvertersTest
 	@Test
 	public void forFunctionWithInverseFunctionAndSubtypeToConvert()
 	{
-		Converter<String, Number> converter = KozoConverters.<String, Number>forFunction(forMapEntry("a", 1),
+		Converter<String, Number> converter = SymmetryConverters.<String, Number>forFunction(forMapEntry("a", 1),
 			forMapEntry((Number) 1, "a"));
 		
 		assertEquals(1, converter.convert("a"));
@@ -90,7 +90,7 @@ public class KozoConvertersTest
 	@Test
 	public void forFunctionWithInverseFunctionAndInverseSupertypeFromConvert()
 	{
-		Converter<String, Integer> converter = KozoConverters.forFunction(forMapEntry("a", 1),
+		Converter<String, Integer> converter = SymmetryConverters.forFunction(forMapEntry("a", 1),
 			forMapEntry((Number) 1, "a"));
 		
 		assertEquals((Integer) 1, converter.convert("a"));
@@ -99,7 +99,7 @@ public class KozoConvertersTest
 	@Test
 	public void forFunctionWithInverseFunctionAndInverseSubtypeToConvert()
 	{
-		Converter<Object, Integer> converter = KozoConverters.<Object, Integer>forFunction(forMapEntry((Object) "a", 1),
+		Converter<Object, Integer> converter = SymmetryConverters.<Object, Integer>forFunction(forMapEntry((Object) "a", 1),
 			forMapEntry(1, "a"));
 		
 		assertEquals((Integer) 1, converter.convert("a"));
@@ -108,7 +108,7 @@ public class KozoConvertersTest
 	@Test
 	public void forFunctionWithInverseFunctionUnconvert()
 	{
-		Converter<String, Integer> converter = KozoConverters.forFunction(forMapEntry("a", 1), forMapEntry(1, "a"));
+		Converter<String, Integer> converter = SymmetryConverters.forFunction(forMapEntry("a", 1), forMapEntry(1, "a"));
 		
 		assertEquals("a", converter.unconvert(1));
 	}
@@ -116,6 +116,6 @@ public class KozoConvertersTest
 	@Test(expected = NullPointerException.class)
 	public void forFunctionWithNull()
 	{
-		KozoConverters.forFunction(null);
+		SymmetryConverters.forFunction(null);
 	}
 }
