@@ -13,9 +13,6 @@
  */
 package uk.co.iizuka.common.binding.kozo;
 
-import static org.junit.Assert.assertEquals;
-import static uk.co.iizuka.common.binding.kozo.test.TestObservableListeners.mockObservableListenerWithValueChanged;
-
 import java.util.Arrays;
 import java.util.Collections;
 
@@ -28,6 +25,10 @@ import org.jmock.integration.junit4.JUnit4Mockery;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+
+import static org.junit.Assert.assertEquals;
+
+import static uk.co.iizuka.common.binding.kozo.test.TestObservableListeners.mockObservableListenerWithValueChanged;
 
 /**
  * Tests {@code ListBoxSelectedItemsObservable}.

@@ -13,11 +13,11 @@
  */
 package uk.co.iizuka.common.binding.kozo;
 
-import static org.hobsoft.symmetry.ui.functor.Functions.forMapEntry;
-import static org.junit.Assert.assertEquals;
-
 import org.hobsoft.entangle.Converter;
 import org.junit.Test;
+
+import static org.hobsoft.symmetry.ui.functor.Functions.forMapEntry;
+import static org.junit.Assert.assertEquals;
 
 /**
  * Tests {@code KozoConverters}.

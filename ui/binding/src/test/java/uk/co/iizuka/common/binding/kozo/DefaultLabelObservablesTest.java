@@ -13,10 +13,6 @@
  */
 package uk.co.iizuka.common.binding.kozo;
 
-import static org.junit.Assert.assertEquals;
-import static uk.co.iizuka.common.binding.kozo.test.TestObservableListeners.mockObservableListener;
-import static uk.co.iizuka.common.binding.kozo.test.TestObservableListeners.mockObservableListenerWithValueChanged;
-
 import org.hobsoft.entangle.Observable;
 import org.hobsoft.entangle.ObservableListener;
 import org.hobsoft.symmetry.ui.Label;
@@ -26,6 +22,11 @@ import org.jmock.integration.junit4.JUnit4Mockery;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+
+import static org.junit.Assert.assertEquals;
+
+import static uk.co.iizuka.common.binding.kozo.test.TestObservableListeners.mockObservableListener;
+import static uk.co.iizuka.common.binding.kozo.test.TestObservableListeners.mockObservableListenerWithValueChanged;
 
 /**
  * Tests {@code DefaultLabelObservables}.
