@@ -99,8 +99,8 @@ public class SymmetryConvertersTest
 	@Test
 	public void forFunctionWithInverseFunctionAndInverseSubtypeToConvert()
 	{
-		Converter<Object, Integer> converter = SymmetryConverters.<Object, Integer>forFunction(forMapEntry((Object) "a", 1),
-			forMapEntry(1, "a"));
+		Converter<Object, Integer> converter = SymmetryConverters.<Object, Integer>forFunction(
+			forMapEntry((Object) "a", 1), forMapEntry(1, "a"));
 		
 		assertEquals((Integer) 1, converter.convert("a"));
 	}
