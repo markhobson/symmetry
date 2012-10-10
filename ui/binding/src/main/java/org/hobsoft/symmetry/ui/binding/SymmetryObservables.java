@@ -68,7 +68,7 @@ public final class SymmetryObservables
 	/**
 	 * Factory to create observables for {@code Selectable} properties.
 	 * 
-	 * @see uk.co.iizuka.kozo.ui.Selectable
+	 * @see org.hobsoft.symmetry.ui.Selectable
 	 */
 	public interface SelectableObservables
 	{
@@ -78,7 +78,7 @@ public final class SymmetryObservables
 	/**
 	 * Factory to create observables for {@code Enableable} properties.
 	 * 
-	 * @see uk.co.iizuka.kozo.ui.Enableable
+	 * @see org.hobsoft.symmetry.ui.Enableable
 	 */
 	public interface EnableableObservables
 	{
