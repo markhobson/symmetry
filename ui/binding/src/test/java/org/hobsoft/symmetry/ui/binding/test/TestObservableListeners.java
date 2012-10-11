@@ -29,7 +29,7 @@ import org.junit.Ignore;
 @Ignore
 public final class TestObservableListeners
 {
-	// TODO: share with common-binding's version when centralised
+	// TODO: share with entangle's version when centralised
 	
 	// constructors -----------------------------------------------------------
 	

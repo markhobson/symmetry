@@ -29,7 +29,7 @@ import static org.hobsoft.symmetry.support.bean.Properties.getDescriptor;
  */
 public final class BeanBinder
 {
-	// TODO: remove in preference to common-binding
+	// TODO: remove in preference to entangle
 	// TODO: add event-set-to-event-set bindings
 	// TODO: add property-to-event-set bindings and vice-versa
 	
