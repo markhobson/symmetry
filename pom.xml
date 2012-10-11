@@ -81,15 +81,6 @@
 					</configuration>
 				</plugin>
 				
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-site-plugin</artifactId>
-					<configuration>
-						<!-- use maven-scm-publish-plugin instead -->
-						<skipDeploy>true</skipDeploy>
-					</configuration>
-				</plugin>
-				
 			</plugins>
 			
 		</pluginManagement>
@@ -98,34 +89,7 @@
 		
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-site-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>stage-for-scm-publish</id>
-						<phase>post-site</phase>
-						<goals>
-							<goal>stage</goal>
-						</goals>
-						<configuration>
-							<!-- TODO: remove when MSITE-652 fixed -->
-							<skipDeploy>false</skipDeploy>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-		
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-scm-publish-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>scm-publish</id>
-						<phase>site-deploy</phase>
-						<goals>
-							<goal>publish-scm</goal>
-						</goals>
-					</execution>
-				</executions>
 				<configuration>
 					<scmBranch>gh-pages</scmBranch>
 				</configuration>
