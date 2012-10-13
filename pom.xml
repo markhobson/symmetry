@@ -144,15 +144,8 @@
 	</properties>
 	
 	<reporting>
+		<excludeDefaults>true</excludeDefaults>
 		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-project-info-reports-plugin</artifactId>
-				<version>2.5.1</version>
-				<reportSets>
-					<reportSet/>
-				</reportSets>
-			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
