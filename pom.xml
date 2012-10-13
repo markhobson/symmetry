@@ -182,6 +182,9 @@
 					<reportSet>
 						<id>aggregate</id>
 						<inherited>false</inherited>
+						<configuration>
+							<doctitle>Symmetry ${project.version}</doctitle>
+						</configuration>
 						<reports>
 							<report>aggregate</report>
 						</reports>
