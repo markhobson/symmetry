@@ -81,6 +81,14 @@
 					</configuration>
 				</plugin>
 				
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-scm-publish-plugin</artifactId>
+					<configuration>
+						<scmBranch>gh-pages</scmBranch>
+					</configuration>
+				</plugin>
+			
 			</plugins>
 			
 		</pluginManagement>
@@ -102,9 +110,6 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-scm-publish-plugin</artifactId>
-				<configuration>
-					<scmBranch>gh-pages</scmBranch>
-				</configuration>
 				<executions>
 					<!-- disable site deployment for child modules -->
 					<execution>
