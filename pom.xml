@@ -83,6 +83,15 @@
 				
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-release-plugin</artifactId>
+					<configuration>
+						<!-- maven-scm-publish-plugin cannot bind to site-deploy for multi-module projects -->
+						<goals>deploy site site:stage scm-publish:publish-scm</goals>
+					</configuration>
+				</plugin>
+				
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-scm-publish-plugin</artifactId>
 					<configuration>
 						<scmBranch>gh-pages</scmBranch>
