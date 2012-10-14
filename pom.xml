@@ -93,34 +93,6 @@
 			
 		</pluginManagement>
 		
-		<plugins>
-		
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-site-plugin</artifactId>
-				<executions>
-					<!-- disable site staging for child modules -->
-					<execution>
-						<id>stage-for-scm-publish</id>
-						<inherited>false</inherited>
-					</execution>
-				</executions>
-			</plugin>
-			
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-scm-publish-plugin</artifactId>
-				<executions>
-					<!-- disable site deployment for child modules -->
-					<execution>
-						<id>scm-publish</id>
-						<inherited>false</inherited>
-					</execution>
-				</executions>
-			</plugin>
-			
-		</plugins>
-		
 	</build>
 
 	<dependencyManagement>
