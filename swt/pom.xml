@@ -31,19 +31,6 @@
 	<name>Symmetry SWT</name>
 	<description>Symmetry SWT provides a SWT adapter for Symmetry.</description>
 	
-	<build>
-		<plugins>
-			<plugin>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<configuration>
-					<forkMode>once</forkMode>
-					<!-- TODO: remove when tests fixed -->
-					<skip>true</skip>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
-	
 	<profiles>
 	
 		<profile>
