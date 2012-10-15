@@ -15,6 +15,7 @@ package org.hobsoft.symmetry.ui.swing;
 
 import java.beans.PropertyChangeEvent;
 
+import javax.swing.AbstractButton;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -63,7 +64,7 @@ public class SwingButtonPeer extends AbstractPeerHandler
 		String name = event.getPropertyName();
 		Object oldValue = event.getOldValue();
 		Object newValue = event.getNewValue();
-		JButton peer = (JButton) getPeerManager().getPeer(component);
+		AbstractButton peer = (AbstractButton) getPeerManager().getPeer(component);
 		
 		if (Button.ACTION_LISTENERS_PROPERTY.equals(name))
 		{
