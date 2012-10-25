@@ -7,6 +7,7 @@ A user interface abstraction framework for Java.
 * [Javadocs](http://markhobson.github.com/symmetry/apidocs/)
 * [Mailing List](https://groups.google.com/d/forum/symmetry-users)
 
-# License
+License
+-------
 
 * [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0.html)
