@@ -111,6 +111,28 @@
 		</pluginManagement>
 		
 	</build>
+	
+	<profiles>
+	
+		<!-- release profile to skip deployment for SWT modules since they require the Eclipse repository -->
+		<profile>
+			<id>skipDeploy</id>
+			<build>
+				<pluginManagement>
+					<plugins>
+						<plugin>
+							<groupId>org.apache.maven.plugins</groupId>
+							<artifactId>maven-deploy-plugin</artifactId>
+							<configuration>
+								<skip>true</skip>
+							</configuration>
+						</plugin>
+					</plugins>
+				</pluginManagement>	
+			</build>
+		</profile>
+	
+	</profiles>
 
 	<dependencyManagement>
 	
