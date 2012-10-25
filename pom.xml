@@ -66,6 +66,14 @@
 		<url>https://github.com/markhobson/symmetry/issues</url>
 	</issueManagement>
 	
+	<mailingLists>
+		<mailingList>
+			<name>Symmetry User List</name>
+			<post>symmetry-users@googlegroups.com</post>
+			<archive>https://groups.google.com/d/forum/symmetry-users</archive>
+		</mailingList>
+	</mailingLists>
+	
 	<build>
 	
 		<pluginManagement>
