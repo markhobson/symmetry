@@ -1,4 +1,4 @@
-symmetry
+Symmetry
 ========
 
 A user interface abstraction framework for Java.
