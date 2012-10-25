@@ -31,7 +31,7 @@
 	<version>0.1.0-SNAPSHOT</version>
 	
 	<name>Symmetry Parent</name>
-	<description>Symmetry is a component-based application framework.</description>
+	<description>A user interface abstraction framework for Java.</description>
 	<url>https://github.com/markhobson/symmetry</url>
 	<inceptionYear>2004</inceptionYear>
 	
