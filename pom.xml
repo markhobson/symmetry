@@ -58,6 +58,7 @@
 	<scm>
 		<connection>scm:git:git@github.com:markhobson/symmetry.git</connection>
 		<developerConnection>scm:git:git@github.com:markhobson/symmetry.git</developerConnection>
+		<tag>HEAD</tag>
 		<url>https://github.com/markhobson/symmetry</url>
 	</scm>
 	
