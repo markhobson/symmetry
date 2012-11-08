@@ -38,6 +38,15 @@ public class StateTest
 	// tests ------------------------------------------------------------------
 	
 	@Test
+	public void constructWithState()
+	{
+		State state1 = createState();
+		State state2 = new State(state1);
+		
+		assertEquals(state1, state2);
+	}
+	
+	@Test
 	public void getPropertiesWithBeanWhenEmpty()
 	{
 		State state = new State();

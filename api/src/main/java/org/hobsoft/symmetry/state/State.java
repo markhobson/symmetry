@@ -101,9 +101,9 @@ public class State
 		this();
 		
 		// TODO: use add(State) when parameters supported
-		state.properties = new LinkedHashMap<MultiKey, PropertyState>(state.properties);
-		state.events = new ArrayList<EventSetState>(state.events);
-		state.parametersByName = new HashMap<String, Object>(state.parametersByName);
+		this.properties = new LinkedHashMap<MultiKey, PropertyState>(state.properties);
+		this.events = new ArrayList<EventSetState>(state.events);
+		this.parametersByName = new HashMap<String, Object>(state.parametersByName);
 	}
 	
 	// public methods ---------------------------------------------------------
