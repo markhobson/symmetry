@@ -23,6 +23,7 @@
 	</parent>
 
 	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.hobsoft.symmetry.demo</groupId>
 	<artifactId>symmetry-demo-jax-rs</artifactId>
 	<packaging>war</packaging>
 	
