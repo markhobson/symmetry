@@ -25,7 +25,7 @@
 	<groupId>org.hobsoft.symmetry</groupId>
 	<artifactId>symmetry-parent</artifactId>
 	<packaging>pom</packaging>
-	<version>0.1.1</version>
+	<version>0.1.2-SNAPSHOT</version>
 	
 	<name>Symmetry Parent</name>
 	<description>A user interface abstraction framework for Java.</description>
@@ -55,7 +55,7 @@
 	<scm>
 		<connection>scm:git:git@github.com:markhobson/symmetry.git</connection>
 		<developerConnection>scm:git:git@github.com:markhobson/symmetry.git</developerConnection>
-		<tag>0.1.1</tag>
+		<tag>HEAD</tag>
 		<url>https://github.com/markhobson/symmetry</url>
 	</scm>
 	
