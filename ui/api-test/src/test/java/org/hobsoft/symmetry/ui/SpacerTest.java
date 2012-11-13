@@ -15,7 +15,7 @@ package org.hobsoft.symmetry.ui;
 
 import org.hobsoft.symmetry.ui.test.AbstractComponentTest;
 
-import com.googlecode.jtype.Generic;
+import com.google.common.reflect.TypeToken;
 
 /**
  * Tests {@code Spacer}.
@@ -40,8 +40,8 @@ public class SpacerTest extends AbstractComponentTest<Spacer>
 	 * {@inheritDoc}
 	 */
 	@Override
-	protected Generic<Spacer> getComponentType()
+	protected TypeToken<Spacer> getComponentType()
 	{
-		return Generic.get(Spacer.class);
+		return TypeToken.of(Spacer.class);
 	}
 }

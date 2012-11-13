@@ -33,7 +33,7 @@ import org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.EndVisit;
 import org.hobsoft.symmetry.ui.view.LabelTreeNodeRenderer;
 import org.hobsoft.symmetry.ui.view.TreeNodeRenderer;
 
-import com.googlecode.jtype.Generic;
+import com.google.common.reflect.TypeToken;
 
 import static org.hobsoft.symmetry.ui.traversal.ComponentVisitors.asTreeVisitor;
 import static org.hobsoft.symmetry.ui.traversal.ComponentVisitors.nullHierarchicalVisitor;
@@ -578,11 +578,11 @@ public class Tree extends Component
 	protected static <T extends Tree, P, E extends Exception> EndVisit acceptTree(ComponentVisitor<P, E> visitor,
 		Class<T> treeType, T tree, P parameter) throws E
 	{
-		return acceptTree(visitor, Generic.get(treeType), tree, parameter);
+		return acceptTree(visitor, TypeToken.of(treeType), tree, parameter);
 	}
 	
 	protected static <T extends Tree, P, E extends Exception> EndVisit acceptTree(ComponentVisitor<P, E> visitor,
-		Generic<T> treeType, T tree, P parameter) throws E
+		TypeToken<T> treeType, T tree, P parameter) throws E
 	{
 		HierarchicalComponentVisitor<T, P, E> subvisitor = visitor.visit(treeType, tree, parameter);
 		

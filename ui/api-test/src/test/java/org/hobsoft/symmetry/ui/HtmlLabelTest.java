@@ -15,7 +15,7 @@ package org.hobsoft.symmetry.ui;
 
 import org.hobsoft.symmetry.ui.test.AbstractComponentTest;
 
-import com.googlecode.jtype.Generic;
+import com.google.common.reflect.TypeToken;
 
 /**
  * Tests {@code HtmlLabel}.
@@ -40,8 +40,8 @@ public class HtmlLabelTest extends AbstractComponentTest<HtmlLabel>
 	 * {@inheritDoc}
 	 */
 	@Override
-	protected Generic<HtmlLabel> getComponentType()
+	protected TypeToken<HtmlLabel> getComponentType()
 	{
-		return Generic.get(HtmlLabel.class);
+		return TypeToken.of(HtmlLabel.class);
 	}
 }

@@ -15,7 +15,7 @@ package org.hobsoft.symmetry.ui.traversal;
 
 import org.hobsoft.symmetry.ui.Component;
 
-import com.googlecode.jtype.Generic;
+import com.google.common.reflect.TypeToken;
 
 /**
  * 
@@ -34,7 +34,7 @@ public abstract class PreorderComponentVisitor<P, E extends Exception> extends N
 	 * {@inheritDoc}
 	 */
 	@Override
-	public final <T extends Component> HierarchicalComponentVisitor<T, P, E> visit(Generic<T> componentType,
+	public final <T extends Component> HierarchicalComponentVisitor<T, P, E> visit(TypeToken<T> componentType,
 		T component, P parameter) throws E
 	{
 		visit(component, parameter);

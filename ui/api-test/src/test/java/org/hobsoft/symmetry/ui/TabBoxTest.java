@@ -22,7 +22,7 @@ import org.jmock.Expectations;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.googlecode.jtype.Generic;
+import com.google.common.reflect.TypeToken;
 
 import static org.hobsoft.symmetry.ui.test.traversal.MockComponentVisitors.createVisitor;
 import static org.hobsoft.symmetry.ui.test.traversal.MockComponentVisitors.createVisitorParameter;
@@ -102,9 +102,9 @@ public class TabBoxTest extends AbstractComponentTest<TabBox>
 		final ComponentVisitor<Object, RuntimeException> visitor = createVisitor(getMockery());
 		
 		getMockery().checking(new Expectations() { {
-			oneOf(visitor).visit(Generic.get(TabBox.class), tabBox, parameter);
+			oneOf(visitor).visit(TypeToken.of(TabBox.class), tabBox, parameter);
 				will(returnValue(nullHierarchicalVisitor()));
-			oneOf(visitor).visit(Generic.get(Tab.class), tab, parameter);
+			oneOf(visitor).visit(TypeToken.of(Tab.class), tab, parameter);
 				will(returnValue(nullHierarchicalVisitor()));
 		} });
 		
@@ -121,7 +121,7 @@ public class TabBoxTest extends AbstractComponentTest<TabBox>
 		final ComponentVisitor<Object, RuntimeException> visitor = createVisitor(getMockery());
 		
 		getMockery().checking(new Expectations() { {
-			oneOf(visitor).visit(Generic.get(TabBox.class), tabBox, parameter); will(returnValue(skipChildren()));
+			oneOf(visitor).visit(TypeToken.of(TabBox.class), tabBox, parameter); will(returnValue(skipChildren()));
 		} });
 		
 		assertEquals(VISIT_SIBLINGS, tabBox.accept(visitor, parameter));
@@ -137,9 +137,9 @@ public class TabBoxTest extends AbstractComponentTest<TabBox>
 		final ComponentVisitor<Object, RuntimeException> visitor = createVisitor(getMockery());
 		
 		getMockery().checking(new Expectations() { {
-			oneOf(visitor).visit(Generic.get(TabBox.class), tabBox, parameter);
+			oneOf(visitor).visit(TypeToken.of(TabBox.class), tabBox, parameter);
 				will(returnValue(null));
-			oneOf(visitor).visit(Generic.get(Tab.class), tab, parameter);
+			oneOf(visitor).visit(TypeToken.of(Tab.class), tab, parameter);
 				will(returnValue(nullHierarchicalVisitor()));
 		} });
 		
@@ -289,9 +289,9 @@ public class TabBoxTest extends AbstractComponentTest<TabBox>
 	 * {@inheritDoc}
 	 */
 	@Override
-	protected Generic<TabBox> getComponentType()
+	protected TypeToken<TabBox> getComponentType()
 	{
-		return Generic.get(TabBox.class);
+		return TypeToken.of(TabBox.class);
 	}
 	
 	// private methods --------------------------------------------------------

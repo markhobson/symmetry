@@ -28,7 +28,7 @@ import org.hobsoft.symmetry.ui.model.ListModels;
 import org.hobsoft.symmetry.ui.traversal.ComponentVisitor;
 import org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.EndVisit;
 
-import com.googlecode.jtype.Generic;
+import com.google.common.reflect.TypeToken;
 
 import static org.hobsoft.symmetry.ui.internal.Preconditions.checkElementIndexes;
 import static org.hobsoft.symmetry.ui.internal.Preconditions.checkNonNegative;
@@ -155,7 +155,7 @@ public class ListBox<T> extends ComboBox<T>
 	@Override
 	public <P, E extends Exception> EndVisit accept(ComponentVisitor<P, E> visitor, P parameter) throws E
 	{
-		return acceptComboBox(visitor, new Generic<ListBox<?>>() { /**/ }, this, parameter);
+		return acceptComboBox(visitor, new TypeToken<ListBox<?>>() { /**/ }, this, parameter);
 	}
 	
 	// public methods ---------------------------------------------------------

@@ -15,7 +15,7 @@ package org.hobsoft.symmetry.ui;
 
 import org.hobsoft.symmetry.ui.test.AbstractComponentTest;
 
-import com.googlecode.jtype.Generic;
+import com.google.common.reflect.TypeToken;
 
 /**
  * Tests {@code CheckBox}.
@@ -40,8 +40,8 @@ public class CheckBoxTest extends AbstractComponentTest<CheckBox>
 	 * {@inheritDoc}
 	 */
 	@Override
-	protected Generic<CheckBox> getComponentType()
+	protected TypeToken<CheckBox> getComponentType()
 	{
-		return Generic.get(CheckBox.class);
+		return TypeToken.of(CheckBox.class);
 	}
 }

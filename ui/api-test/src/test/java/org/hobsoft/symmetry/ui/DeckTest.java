@@ -20,7 +20,7 @@ import org.hobsoft.symmetry.ui.test.DummyComponent;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.googlecode.jtype.Generic;
+import com.google.common.reflect.TypeToken;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -183,9 +183,9 @@ public class DeckTest extends AbstractComponentTest<Deck>
 	 * {@inheritDoc}
 	 */
 	@Override
-	protected Generic<Deck> getComponentType()
+	protected TypeToken<Deck> getComponentType()
 	{
-		return Generic.get(Deck.class);
+		return TypeToken.of(Deck.class);
 	}
 	
 	// private methods --------------------------------------------------------

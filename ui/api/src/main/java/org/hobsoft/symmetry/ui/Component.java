@@ -22,7 +22,7 @@ import org.hobsoft.symmetry.ui.traversal.ComponentVisitor;
 import org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor;
 import org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.EndVisit;
 
-import com.googlecode.jtype.Generic;
+import com.google.common.reflect.TypeToken;
 
 import static org.hobsoft.symmetry.ui.traversal.ComponentVisitors.nullHierarchicalVisitor;
 import static org.hobsoft.symmetry.ui.traversal.Visits.nullEndVisit;
@@ -246,11 +246,11 @@ public abstract class Component extends AbstractBean
 	protected static <T extends Component, P, E extends Exception> EndVisit accept(ComponentVisitor<P, E> visitor,
 		Class<T> componentType, T component, P parameter) throws E
 	{
-		return accept(visitor, Generic.get(componentType), component, parameter);
+		return accept(visitor, TypeToken.of(componentType), component, parameter);
 	}
 	
 	protected static <T extends Component, P, E extends Exception> EndVisit accept(ComponentVisitor<P, E> visitor,
-		Generic<T> componentType, T component, P parameter) throws E
+		TypeToken<T> componentType, T component, P parameter) throws E
 	{
 		checkNotNull(visitor, "visitor cannot be null");
 		

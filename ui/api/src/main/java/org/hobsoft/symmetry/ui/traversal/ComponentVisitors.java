@@ -13,7 +13,7 @@
  */
 package org.hobsoft.symmetry.ui.traversal;
 
-import java.lang.reflect.Type;
+import java.lang.reflect.TypeVariable;
 
 import org.hobsoft.symmetry.ui.ComboBox;
 import org.hobsoft.symmetry.ui.Component;
@@ -25,11 +25,12 @@ import org.hobsoft.symmetry.ui.Tree;
 import org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.EndVisit;
 import org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.Visit;
 
-import com.googlecode.jtype.Generic;
-import com.googlecode.jtype.TypeUtils;
+import com.google.common.reflect.TypeToken;
 
 import static org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.EndVisit.SKIP_SIBLINGS;
 import static org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.Visit.SKIP_CHILDREN;
+
+import static com.google.common.base.Preconditions.checkArgument;
 
 /**
  * 
@@ -190,10 +191,10 @@ public final class ComponentVisitors
 	public static <T extends Component, P, E extends Exception> ComponentVisitor<P, E> adapt(Class<T> componentType,
 		HierarchicalComponentVisitor<T, P, E> delegate)
 	{
-		return adapt(Generic.get(componentType), delegate);
+		return adapt(TypeToken.of(componentType), delegate);
 	}
 
-	public static <T extends Component, P, E extends Exception> ComponentVisitor<P, E> adapt(Generic<T> componentType,
+	public static <T extends Component, P, E extends Exception> ComponentVisitor<P, E> adapt(TypeToken<T> componentType,
 		HierarchicalComponentVisitor<T, P, E> delegate)
 	{
 		CompositeComponentVisitor<P, E> composite = new CompositeComponentVisitor<P, E>();
@@ -343,15 +344,17 @@ public final class ComponentVisitors
 	
 	// package methods --------------------------------------------------------
 	
-	static <T extends Component, P, E extends Exception> Generic<T> getComponentType(
+	static <T extends Component, P, E extends Exception> TypeToken<T> getComponentType(
 		HierarchicalComponentVisitor<T, P, E> visitor)
 	{
-		Type resolvedSupertype = TypeUtils.getResolvedSupertype(visitor.getClass(), HierarchicalComponentVisitor.class);
+		TypeToken<?> componentType = TypeToken.of(visitor.getClass())
+			.resolveType(HierarchicalComponentVisitor.class.getTypeParameters()[0]);
 		
-		Type componentType = TypeUtils.getActualTypeArgument(resolvedSupertype, 0);
+		checkArgument(!(componentType.getType() instanceof TypeVariable<?>),
+			"visitor cannot have a type variable component type");
 		
 		// typesafe by definition
-		return (Generic<T>) Generic.get(componentType);
+		return (TypeToken<T>) componentType;
 	}
 	
 	// private methods --------------------------------------------------------

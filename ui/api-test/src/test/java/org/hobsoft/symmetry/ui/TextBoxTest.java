@@ -19,7 +19,7 @@ import org.hobsoft.symmetry.ui.test.AbstractComponentTest;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.googlecode.jtype.Generic;
+import com.google.common.reflect.TypeToken;
 
 import static org.hobsoft.symmetry.support.test.matcher.PropertyChangeEventMatcher.mockPropertyChangeListener;
 import static org.junit.Assert.assertEquals;
@@ -144,8 +144,8 @@ public class TextBoxTest extends AbstractComponentTest<TextBox>
 	 * {@inheritDoc}
 	 */
 	@Override
-	protected Generic<TextBox> getComponentType()
+	protected TypeToken<TextBox> getComponentType()
 	{
-		return Generic.get(TextBox.class);
+		return TypeToken.of(TextBox.class);
 	}
 }

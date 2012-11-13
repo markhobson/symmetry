@@ -19,7 +19,7 @@ import org.hobsoft.symmetry.ui.Component;
 import org.hobsoft.symmetry.ui.traversal.ComponentVisitor;
 import org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor;
 
-import com.googlecode.jtype.Generic;
+import com.google.common.reflect.TypeToken;
 
 /**
  * 
@@ -37,5 +37,5 @@ public interface ComponentHydrator extends ComponentVisitor<HydrationContext, Hy
 	 */
 	@Override
 	<T extends Component> HierarchicalComponentVisitor<T, HydrationContext, HydrationException> visit(
-		Generic<T> componentType, T component, HydrationContext context) throws HydrationException;
+		TypeToken<T> componentType, T component, HydrationContext context) throws HydrationException;
 }

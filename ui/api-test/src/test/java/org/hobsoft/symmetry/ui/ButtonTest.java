@@ -17,7 +17,7 @@ import org.hobsoft.symmetry.ui.test.AbstractComponentTest;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.googlecode.jtype.Generic;
+import com.google.common.reflect.TypeToken;
 
 import static org.junit.Assert.assertEquals;
 
@@ -68,9 +68,9 @@ public class ButtonTest extends AbstractComponentTest<Button>
 	 * {@inheritDoc}
 	 */
 	@Override
-	protected Generic<Button> getComponentType()
+	protected TypeToken<Button> getComponentType()
 	{
-		return Generic.get(Button.class);
+		return TypeToken.of(Button.class);
 	}
 	
 	// private methods --------------------------------------------------------

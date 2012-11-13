@@ -15,7 +15,7 @@ package org.hobsoft.symmetry.ui;
 
 import org.hobsoft.symmetry.ui.test.AbstractComponentTest;
 
-import com.googlecode.jtype.Generic;
+import com.google.common.reflect.TypeToken;
 
 /**
  * Tests {@code PasswordBox}.
@@ -31,9 +31,9 @@ public class PasswordBoxTest extends AbstractComponentTest<PasswordBox>
 	 * {@inheritDoc}
 	 */
 	@Override
-	protected Generic<PasswordBox> getComponentType()
+	protected TypeToken<PasswordBox> getComponentType()
 	{
-		return Generic.get(PasswordBox.class);
+		return TypeToken.of(PasswordBox.class);
 	}
 	
 	/**

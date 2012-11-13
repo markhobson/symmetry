@@ -15,7 +15,7 @@ package org.hobsoft.symmetry.ui;
 
 import org.hobsoft.symmetry.ui.test.AbstractComponentTest;
 
-import com.googlecode.jtype.Generic;
+import com.google.common.reflect.TypeToken;
 
 /**
  * Tests {@code Radio}.
@@ -40,8 +40,8 @@ public class RadioTest extends AbstractComponentTest<Radio>
 	 * {@inheritDoc}
 	 */
 	@Override
-	protected Generic<Radio> getComponentType()
+	protected TypeToken<Radio> getComponentType()
 	{
-		return Generic.get(Radio.class);
+		return TypeToken.of(Radio.class);
 	}
 }

@@ -23,7 +23,7 @@ import org.jmock.integration.junit4.JUnit4Mockery;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import com.googlecode.jtype.Generic;
+import com.google.common.reflect.TypeToken;
 
 import static org.hobsoft.symmetry.ui.test.traversal.MockComponentVisitors.createVisitorParameter;
 import static org.junit.Assert.assertNotNull;
@@ -48,7 +48,7 @@ public class CompositeComponentVisitorTest
 	{
 		CompositeComponentVisitor<Void, RuntimeException> visitor = createCompositeVisitor();
 		
-		visitor.visit(Generic.get(Component.class), createComponent(), null);
+		visitor.visit(TypeToken.of(Component.class), createComponent(), null);
 	}
 	
 	@Test
@@ -59,7 +59,7 @@ public class CompositeComponentVisitorTest
 		visitor.setDelegate(DummyComponent.class, MockComponentVisitors
 			.<DummyComponent, Object, RuntimeException>createHierarchicalVisitor(mockery));
 		
-		assertNotNull(visitor.visit(Generic.get(DummyComponent.class), createComponent(), createVisitorParameter()));
+		assertNotNull(visitor.visit(TypeToken.of(DummyComponent.class), createComponent(), createVisitorParameter()));
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
@@ -70,7 +70,7 @@ public class CompositeComponentVisitorTest
 		visitor.setDelegate(DummyComponent.class, MockComponentVisitors
 			.<DummyComponent, Object, RuntimeException>createHierarchicalVisitor(mockery));
 		
-		visitor.visit(Generic.get(DummySubComponent.class), createSubtypeComponent(), createVisitorParameter());
+		visitor.visit(TypeToken.of(DummySubComponent.class), createSubtypeComponent(), createVisitorParameter());
 	}
 	
 	// private methods --------------------------------------------------------

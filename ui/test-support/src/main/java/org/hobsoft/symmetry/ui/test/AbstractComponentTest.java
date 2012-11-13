@@ -23,7 +23,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import com.googlecode.jtype.Generic;
+import com.google.common.reflect.TypeToken;
 
 import static org.hobsoft.symmetry.ui.test.traversal.MockComponentVisitors.createVisitor;
 import static org.hobsoft.symmetry.ui.test.traversal.MockComponentVisitors.createVisitorParameter;
@@ -50,7 +50,7 @@ public abstract class AbstractComponentTest<T extends Component>
 	
 	private Mockery mockery = new JUnit4Mockery();
 	
-	private Generic<T> componentType;
+	private TypeToken<T> componentType;
 	
 	private T component;
 	
@@ -155,5 +155,5 @@ public abstract class AbstractComponentTest<T extends Component>
 	
 	protected abstract T createComponent();
 	
-	protected abstract Generic<T> getComponentType();
+	protected abstract TypeToken<T> getComponentType();
 }

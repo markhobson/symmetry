@@ -19,7 +19,7 @@ import org.hobsoft.symmetry.ui.test.DummyComponent;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.googlecode.jtype.Generic;
+import com.google.common.reflect.TypeToken;
 
 import static java.util.Arrays.asList;
 
@@ -471,9 +471,9 @@ public class GridTest extends AbstractComponentTest<Grid>
 	 * {@inheritDoc}
 	 */
 	@Override
-	protected Generic<Grid> getComponentType()
+	protected TypeToken<Grid> getComponentType()
 	{
-		return Generic.get(Grid.class);
+		return TypeToken.of(Grid.class);
 	}
 	
 	// private methods --------------------------------------------------------

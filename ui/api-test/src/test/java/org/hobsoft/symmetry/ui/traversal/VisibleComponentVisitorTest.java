@@ -23,7 +23,7 @@ import org.hobsoft.symmetry.ui.test.DummyComponent;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.googlecode.jtype.Generic;
+import com.google.common.reflect.TypeToken;
 
 import static org.hobsoft.symmetry.ui.traversal.ComponentVisitors.asContainerVisitor;
 import static org.hobsoft.symmetry.ui.traversal.ComponentVisitors.asTableVisitor;
@@ -63,7 +63,7 @@ public class VisibleComponentVisitorTest
 		DummyComponent component = new DummyComponent();
 		
 		HierarchicalComponentVisitor<DummyComponent, Void, RuntimeException> subvisitor = visitor
-			.visit(Generic.get(DummyComponent.class), component, null);
+			.visit(TypeToken.of(DummyComponent.class), component, null);
 		
 		assertEquals(VISIT_CHILDREN, subvisitor.visit(component, null));
 	}
@@ -74,7 +74,7 @@ public class VisibleComponentVisitorTest
 		Deck deck = new Deck(new DummyComponent());
 		
 		HierarchicalComponentVisitor<Deck, Void, RuntimeException> subvisitor = visitor
-			.visit(Generic.get(Deck.class), deck, null);
+			.visit(TypeToken.of(Deck.class), deck, null);
 		
 		assertEquals(VISIT_CHILDREN, asContainerVisitor(subvisitor).visitChild(deck, null, 0));
 	}
@@ -85,7 +85,7 @@ public class VisibleComponentVisitorTest
 		Deck deck = new Deck(new DummyComponent(), new DummyComponent());
 		
 		HierarchicalComponentVisitor<Deck, Void, RuntimeException> subvisitor = visitor
-			.visit(Generic.get(Deck.class), deck, null);
+			.visit(TypeToken.of(Deck.class), deck, null);
 		
 		assertEquals(SKIP_CHILDREN, asContainerVisitor(subvisitor).visitChild(deck, null, 1));
 	}
@@ -96,7 +96,7 @@ public class VisibleComponentVisitorTest
 		Deck deck = new Deck(new DummyComponent());
 		
 		HierarchicalComponentVisitor<Deck, Void, RuntimeException> subvisitor = visitor
-			.visit(Generic.get(Deck.class), deck, null);
+			.visit(TypeToken.of(Deck.class), deck, null);
 		
 		assertEquals(SKIP_SIBLINGS, asContainerVisitor(subvisitor).endVisitChild(deck, null, 0));
 	}
@@ -108,7 +108,7 @@ public class VisibleComponentVisitorTest
 		deck.setSelectedIndex(1);
 		
 		HierarchicalComponentVisitor<Deck, Void, RuntimeException> subvisitor = visitor
-			.visit(Generic.get(Deck.class), deck, null);
+			.visit(TypeToken.of(Deck.class), deck, null);
 		
 		assertEquals(VISIT_SIBLINGS, asContainerVisitor(subvisitor).endVisitChild(deck, null, 0));
 	}
@@ -119,7 +119,7 @@ public class VisibleComponentVisitorTest
 		Deck deck = new Deck(new DummyComponent(), new DummyComponent());
 		
 		HierarchicalComponentVisitor<Deck, Void, RuntimeException> subvisitor = visitor
-			.visit(Generic.get(Deck.class), deck, null);
+			.visit(TypeToken.of(Deck.class), deck, null);
 		
 		assertEquals(SKIP_SIBLINGS, asContainerVisitor(subvisitor).endVisitChild(deck, null, 1));
 	}
@@ -130,7 +130,7 @@ public class VisibleComponentVisitorTest
 		Table table = createTableWithRows(1);
 		
 		HierarchicalComponentVisitor<Table, Void, RuntimeException> subvisitor = visitor
-			.visit(Generic.get(Table.class), table, null);
+			.visit(TypeToken.of(Table.class), table, null);
 		
 		assertEquals(VISIT_CHILDREN, asTableVisitor(subvisitor).visitRow(table, null, 0));
 	}
@@ -142,7 +142,7 @@ public class VisibleComponentVisitorTest
 		table.setFirstVisibleRowIndex(1);
 		
 		HierarchicalComponentVisitor<Table, Void, RuntimeException> subvisitor = visitor
-			.visit(Generic.get(Table.class), table, null);
+			.visit(TypeToken.of(Table.class), table, null);
 		
 		assertEquals(SKIP_CHILDREN, asTableVisitor(subvisitor).visitRow(table, null, 0));
 	}
@@ -154,7 +154,7 @@ public class VisibleComponentVisitorTest
 		table.setVisibleRowCount(1);
 		
 		HierarchicalComponentVisitor<Table, Void, RuntimeException> subvisitor = visitor
-			.visit(Generic.get(Table.class), table, null);
+			.visit(TypeToken.of(Table.class), table, null);
 		
 		assertEquals(SKIP_CHILDREN, asTableVisitor(subvisitor).visitRow(table, null, 1));
 	}
@@ -167,7 +167,7 @@ public class VisibleComponentVisitorTest
 		tree.setExpandedPaths(new TreePath[] {rootPath});
 		
 		HierarchicalComponentVisitor<Tree, Void, RuntimeException> subvisitor = visitor
-			.visit(Generic.get(Tree.class), tree, null);
+			.visit(TypeToken.of(Tree.class), tree, null);
 		
 		assertEquals(VISIT_CHILDREN, asTreeVisitor(subvisitor).visitNodeChildren(tree, null, rootPath));
 	}
@@ -179,7 +179,7 @@ public class VisibleComponentVisitorTest
 		TreePath rootPath = new TreePath(tree.getModel().getRoot());
 		
 		HierarchicalComponentVisitor<Tree, Void, RuntimeException> subvisitor = visitor
-			.visit(Generic.get(Tree.class), tree, null);
+			.visit(TypeToken.of(Tree.class), tree, null);
 		
 		assertEquals(SKIP_CHILDREN, asTreeVisitor(subvisitor).visitNodeChildren(tree, null, rootPath));
 	}

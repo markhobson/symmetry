@@ -23,7 +23,7 @@ import org.hobsoft.symmetry.ui.traversal.ComponentVisitor;
 import org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor;
 import org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.EndVisit;
 
-import com.googlecode.jtype.Generic;
+import com.google.common.reflect.TypeToken;
 
 import static org.hobsoft.symmetry.ui.traversal.ComponentVisitors.asContainerVisitor;
 import static org.hobsoft.symmetry.ui.traversal.ComponentVisitors.nullHierarchicalVisitor;
@@ -269,11 +269,11 @@ public abstract class Container extends Component implements Iterable<Component>
 	protected static <T extends Container, P, E extends Exception> EndVisit acceptContainer(
 		ComponentVisitor<P, E> visitor, Class<T> containerType, T container, P parameter) throws E
 	{
-		return acceptContainer(visitor, Generic.get(containerType), container, parameter);
+		return acceptContainer(visitor, TypeToken.of(containerType), container, parameter);
 	}
 	
 	protected static <T extends Container, P, E extends Exception> EndVisit acceptContainer(
-		ComponentVisitor<P, E> visitor, Generic<T> containerType, T container, P parameter) throws E
+		ComponentVisitor<P, E> visitor, TypeToken<T> containerType, T container, P parameter) throws E
 	{
 		HierarchicalComponentVisitor<T, P, E> subvisitor = visitor.visit(containerType, container, parameter);
 		

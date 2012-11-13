@@ -21,7 +21,7 @@ import org.jmock.integration.junit4.JUnit4Mockery;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import com.googlecode.jtype.Generic;
+import com.google.common.reflect.TypeToken;
 
 import static org.hobsoft.symmetry.ui.test.traversal.MockComponentVisitors.createVisitor;
 import static org.hobsoft.symmetry.ui.test.traversal.MockComponentVisitors.createVisitorParameter;
@@ -59,13 +59,13 @@ public class FilteringComponentVisitorTest
 		final ComponentVisitor<Object, RuntimeException> delegate = createVisitor(mockery);
 		
 		mockery.checking(new Expectations() { {
-			oneOf(delegate).visit(Generic.get(DummyComponent.class), component, parameter);
+			oneOf(delegate).visit(TypeToken.of(DummyComponent.class), component, parameter);
 				will(returnValue(subvisitor));
 		} });
 		
 		FilteringComponentVisitor<Object, RuntimeException> visitor = createFilteringVisitor(delegate, accept());
 		
-		assertSame(subvisitor, visitor.visit(Generic.get(DummyComponent.class), component, parameter));
+		assertSame(subvisitor, visitor.visit(TypeToken.of(DummyComponent.class), component, parameter));
 	}
 	
 	@Test
@@ -77,7 +77,7 @@ public class FilteringComponentVisitorTest
 		FilteringComponentVisitor<Object, RuntimeException> visitor = createFilteringVisitor(reject());
 		
 		HierarchicalComponentVisitor<DummyComponent, Object, RuntimeException> actual = visitor.visit(
-			Generic.get(DummyComponent.class), component, parameter);
+			TypeToken.of(DummyComponent.class), component, parameter);
 		
 		assertEquals(SKIP_CHILDREN, actual.visit(component, parameter));
 	}

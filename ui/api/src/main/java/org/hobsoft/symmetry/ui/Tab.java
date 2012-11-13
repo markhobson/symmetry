@@ -17,7 +17,7 @@ import org.hobsoft.symmetry.ui.traversal.ComponentVisitor;
 import org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor;
 import org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.EndVisit;
 
-import com.googlecode.jtype.Generic;
+import com.google.common.reflect.TypeToken;
 
 import static org.hobsoft.symmetry.ui.traversal.ComponentVisitors.nullHierarchicalVisitor;
 import static org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.Visit.SKIP_CHILDREN;
@@ -108,11 +108,11 @@ public class Tab extends Button
 	protected static <T extends Tab, P, E extends Exception> EndVisit acceptTab(ComponentVisitor<P, E> visitor,
 		Class<T> tabType, T tab, P parameter) throws E
 	{
-		return acceptTab(visitor, Generic.get(tabType), tab, parameter);
+		return acceptTab(visitor, TypeToken.of(tabType), tab, parameter);
 	}
 	
 	protected static <T extends Tab, P, E extends Exception> EndVisit acceptTab(ComponentVisitor<P, E> visitor,
-		Generic<T> tabType, T tab, P parameter) throws E
+		TypeToken<T> tabType, T tab, P parameter) throws E
 	{
 		HierarchicalComponentVisitor<T, P, E> subvisitor = visitor.visit(tabType, tab, parameter);
 		

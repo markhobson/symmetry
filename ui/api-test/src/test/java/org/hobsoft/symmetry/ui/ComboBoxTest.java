@@ -27,7 +27,7 @@ import org.hobsoft.symmetry.ui.view.LabelListCellRenderer;
 import org.jmock.Expectations;
 import org.junit.Test;
 
-import com.googlecode.jtype.Generic;
+import com.google.common.reflect.TypeToken;
 
 import static org.hobsoft.symmetry.ui.BeanAssert.assertProperty;
 import static org.hobsoft.symmetry.ui.BeanAssert.assertReadableProperty;
@@ -356,8 +356,8 @@ public class ComboBoxTest extends AbstractComponentTest<ComboBox<?>>
 	 * {@inheritDoc}
 	 */
 	@Override
-	protected Generic<ComboBox<?>> getComponentType()
+	protected TypeToken<ComboBox<?>> getComponentType()
 	{
-		return new Generic<ComboBox<?>>() { /**/ };
+		return new TypeToken<ComboBox<?>>() { /**/ };
 	}
 }

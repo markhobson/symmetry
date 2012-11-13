@@ -15,7 +15,7 @@ package org.hobsoft.symmetry.ui;
 
 import org.hobsoft.symmetry.ui.test.AbstractComponentTest;
 
-import com.googlecode.jtype.Generic;
+import com.google.common.reflect.TypeToken;
 
 /**
  * Tests {@code MultiLineLabel}.
@@ -40,8 +40,8 @@ public class MultiLineLabelTest extends AbstractComponentTest<MultiLineLabel>
 	 * {@inheritDoc}
 	 */
 	@Override
-	protected Generic<MultiLineLabel> getComponentType()
+	protected TypeToken<MultiLineLabel> getComponentType()
 	{
-		return Generic.get(MultiLineLabel.class);
+		return TypeToken.of(MultiLineLabel.class);
 	}
 }

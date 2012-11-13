@@ -15,7 +15,7 @@ package org.hobsoft.symmetry.ui.traversal;
 
 import org.hobsoft.symmetry.ui.Component;
 
-import com.googlecode.jtype.Generic;
+import com.google.common.reflect.TypeToken;
 
 import static org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.EndVisit.VISIT_SIBLINGS;
 
@@ -36,7 +36,7 @@ public abstract class PostorderComponentVisitor<P, E extends Exception> extends 
 	 * {@inheritDoc}
 	 */
 	@Override
-	public final <T extends Component> HierarchicalComponentVisitor<T, P, E> visit(Generic<T> componentType,
+	public final <T extends Component> HierarchicalComponentVisitor<T, P, E> visit(TypeToken<T> componentType,
 		T component, P parameter) throws E
 	{
 		// TODO: cache, although jmock-legacy does not call super constructors

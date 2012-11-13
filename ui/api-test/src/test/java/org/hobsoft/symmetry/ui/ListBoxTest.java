@@ -23,7 +23,7 @@ import org.hobsoft.symmetry.ui.test.AbstractComponentTest;
 import org.junit.Ignore;
 import org.junit.Test;
 
-import com.googlecode.jtype.Generic;
+import com.google.common.reflect.TypeToken;
 
 import static org.hobsoft.symmetry.ui.BeanAssert.assertIndexedProperty;
 import static org.hobsoft.symmetry.ui.BeanAssert.assertProperty;
@@ -642,9 +642,9 @@ public class ListBoxTest extends AbstractComponentTest<ListBox<?>>
 	 * {@inheritDoc}
 	 */
 	@Override
-	protected Generic<ListBox<?>> getComponentType()
+	protected TypeToken<ListBox<?>> getComponentType()
 	{
-		return new Generic<ListBox<?>>() { /**/ };
+		return new TypeToken<ListBox<?>>() { /**/ };
 	}
 	
 	// private methods --------------------------------------------------------

@@ -19,7 +19,7 @@ import org.hobsoft.symmetry.ui.test.AbstractComponentTest;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.googlecode.jtype.Generic;
+import com.google.common.reflect.TypeToken;
 
 import static org.hobsoft.symmetry.support.test.matcher.PropertyChangeEventMatcher.mockPropertyChangeListener;
 import static org.junit.Assert.assertEquals;
@@ -111,8 +111,8 @@ public class LabelTest extends AbstractComponentTest<Label>
 	 * {@inheritDoc}
 	 */
 	@Override
-	protected Generic<Label> getComponentType()
+	protected TypeToken<Label> getComponentType()
 	{
-		return Generic.get(Label.class);
+		return TypeToken.of(Label.class);
 	}
 }

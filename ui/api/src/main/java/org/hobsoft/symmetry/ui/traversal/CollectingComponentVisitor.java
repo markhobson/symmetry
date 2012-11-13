@@ -18,7 +18,7 @@ import java.util.List;
 
 import org.hobsoft.symmetry.ui.Component;
 
-import com.googlecode.jtype.Generic;
+import com.google.common.reflect.TypeToken;
 
 /**
  * 
@@ -44,8 +44,8 @@ public class CollectingComponentVisitor extends NullComponentVisitor<Void, Runti
 	 * {@inheritDoc}
 	 */
 	@Override
-	public <T extends Component> HierarchicalComponentVisitor<T, Void, RuntimeException> visit(Generic<T> componentType,
-		T component, Void parameter)
+	public <T extends Component> HierarchicalComponentVisitor<T, Void, RuntimeException> visit(
+		TypeToken<T> componentType, T component, Void parameter)
 	{
 		components.add(component);
 		

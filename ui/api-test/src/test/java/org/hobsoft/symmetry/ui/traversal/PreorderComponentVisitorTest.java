@@ -25,7 +25,7 @@ import org.jmock.lib.legacy.ClassImposteriser;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import com.googlecode.jtype.Generic;
+import com.google.common.reflect.TypeToken;
 
 import static org.hobsoft.symmetry.ui.test.traversal.MockComponentVisitors.createVisitorParameter;
 import static org.junit.Assert.assertNull;
@@ -89,7 +89,7 @@ public class PreorderComponentVisitorTest
 			allowing(visitor).visit(with(any(Component.class)), with(any(Object.class)));
 		} });
 		
-		assertNull(visitor.visit(Generic.get(DummyComponent.class), createComponent(), createVisitorParameter()));
+		assertNull(visitor.visit(TypeToken.of(DummyComponent.class), createComponent(), createVisitorParameter()));
 	}
 	
 	// private methods --------------------------------------------------------

@@ -15,7 +15,7 @@ package org.hobsoft.symmetry.ui.traversal;
 
 import org.hobsoft.symmetry.ui.Component;
 
-import com.googlecode.jtype.Generic;
+import com.google.common.reflect.TypeToken;
 
 import static org.hobsoft.symmetry.ui.traversal.ComponentVisitors.nullHierarchicalVisitor;
 
@@ -36,7 +36,7 @@ public class NullComponentVisitor<P, E extends Exception> implements ComponentVi
 	 * {@inheritDoc}
 	 */
 	@Override
-	public <T extends Component> HierarchicalComponentVisitor<T, P, E> visit(Generic<T> componentType, T component,
+	public <T extends Component> HierarchicalComponentVisitor<T, P, E> visit(TypeToken<T> componentType, T component,
 		P parameter) throws E
 	{
 		// TODO: return null

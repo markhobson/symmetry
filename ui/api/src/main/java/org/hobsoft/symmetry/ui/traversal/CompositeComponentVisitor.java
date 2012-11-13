@@ -18,7 +18,7 @@ import java.util.Collections;
 
 import org.hobsoft.symmetry.ui.Component;
 
-import com.googlecode.jtype.Generic;
+import com.google.common.reflect.TypeToken;
 
 /**
  * 
@@ -60,7 +60,7 @@ public class CompositeComponentVisitor<P, E extends Exception> extends NullCompo
 	 * {@inheritDoc}
 	 */
 	@Override
-	public <T extends Component> HierarchicalComponentVisitor<T, P, E> visit(Generic<T> componentType, T component,
+	public <T extends Component> HierarchicalComponentVisitor<T, P, E> visit(TypeToken<T> componentType, T component,
 		P parameter) throws E
 	{
 		HierarchicalComponentVisitor<T, P, E> visitor = getDelegate(componentType);
@@ -75,7 +75,7 @@ public class CompositeComponentVisitor<P, E extends Exception> extends NullCompo
 	
 	// public methods ---------------------------------------------------------
 	
-	public <T extends Component> HierarchicalComponentVisitor<T, P, E> getDelegate(Generic<T> componentType)
+	public <T extends Component> HierarchicalComponentVisitor<T, P, E> getDelegate(TypeToken<T> componentType)
 	{
 		return delegates.get(componentType);
 	}
@@ -83,10 +83,10 @@ public class CompositeComponentVisitor<P, E extends Exception> extends NullCompo
 	public <T extends Component> void setDelegate(Class<T> componentType,
 		HierarchicalComponentVisitor<T, P, E> delegate)
 	{
-		setDelegate(Generic.get(componentType), delegate);
+		setDelegate(TypeToken.of(componentType), delegate);
 	}
 	
-	public <T extends Component> void setDelegate(Generic<T> componentType,
+	public <T extends Component> void setDelegate(TypeToken<T> componentType,
 		HierarchicalComponentVisitor<T, P, E> delegate)
 	{
 		delegates.put(componentType, delegate);
@@ -101,7 +101,7 @@ public class CompositeComponentVisitor<P, E extends Exception> extends NullCompo
 	
 	private <T extends Component> void setDelegateCapture(HierarchicalComponentVisitor<T, P, E> delegate)
 	{
-		Generic<T> componentType = ComponentVisitors.getComponentType(delegate);
+		TypeToken<T> componentType = ComponentVisitors.getComponentType(delegate);
 		
 		setDelegate(componentType, delegate);
 	}

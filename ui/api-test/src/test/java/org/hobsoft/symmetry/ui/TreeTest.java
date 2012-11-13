@@ -19,7 +19,7 @@ import org.hobsoft.symmetry.ui.test.AbstractComponentTest;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.googlecode.jtype.Generic;
+import com.google.common.reflect.TypeToken;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -102,9 +102,9 @@ public class TreeTest extends AbstractComponentTest<Tree>
 	 * {@inheritDoc}
 	 */
 	@Override
-	protected Generic<Tree> getComponentType()
+	protected TypeToken<Tree> getComponentType()
 	{
-		return Generic.get(Tree.class);
+		return TypeToken.of(Tree.class);
 	}
 	
 	// private methods --------------------------------------------------------

@@ -26,7 +26,7 @@ import org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor;
 import org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.EndVisit;
 
 import com.google.common.primitives.Ints;
-import com.googlecode.jtype.Generic;
+import com.google.common.reflect.TypeToken;
 
 import static org.hobsoft.symmetry.ui.traversal.ComponentVisitors.asGridVisitor;
 import static org.hobsoft.symmetry.ui.traversal.ComponentVisitors.nullHierarchicalVisitor;
@@ -312,11 +312,11 @@ public class Grid extends Container
 	protected static <T extends Grid, P, E extends Exception> EndVisit acceptGrid(ComponentVisitor<P, E> visitor,
 		Class<T> gridType, T grid, P parameter) throws E
 	{
-		return acceptGrid(visitor, Generic.get(gridType), grid, parameter);
+		return acceptGrid(visitor, TypeToken.of(gridType), grid, parameter);
 	}
 	
 	protected static <T extends Grid, P, E extends Exception> EndVisit acceptGrid(ComponentVisitor<P, E> visitor,
-		Generic<T> gridType, T grid, P parameter) throws E
+		TypeToken<T> gridType, T grid, P parameter) throws E
 	{
 		HierarchicalComponentVisitor<T, P, E> subvisitor = visitor.visit(gridType, grid, parameter);
 		

@@ -36,7 +36,7 @@ import org.jmock.integration.junit4.JUnit4Mockery;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import com.googlecode.jtype.Generic;
+import com.google.common.reflect.TypeToken;
 
 import static org.hobsoft.symmetry.hydrate.HydrationPhase.DEHYDRATE;
 import static org.hobsoft.symmetry.hydrate.HydrationPhase.REHYDRATE_EVENTS;
@@ -74,7 +74,7 @@ public class HtmlListBoxHydratorTest extends AbstractXmlRenderKitTest<ListBox>
 	{
 		CompositeComponentHydrator hydrator = new CompositeComponentHydrator();
 		
-		hydrator.setDelegate(new Generic<ListBox<?>>() { /**/ }, createHydrator());
+		hydrator.setDelegate(new TypeToken<ListBox<?>>() { /**/ }, createHydrator());
 		
 		// TODO: remove unnecessary actual type argument when javac can cope
 		hydrator.setDelegate(DummyComponent.class, ComponentHydrators.<DummyComponent>phase(DEHYDRATE,

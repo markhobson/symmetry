@@ -18,7 +18,7 @@ import java.util.Map;
 
 import org.hobsoft.symmetry.ui.Component;
 
-import com.googlecode.jtype.Generic;
+import com.google.common.reflect.TypeToken;
 
 /**
  * A typesafe heterogeneous container for {@code ComponentVisitor}s. See Item 29 in Effective Java Second Edition for a
@@ -37,19 +37,20 @@ class HierarchicalComponentVisitorContainer<P, E extends Exception>
 	
 	// fields -----------------------------------------------------------------
 	
-	private final Map<Generic<? extends Component>, HierarchicalComponentVisitor<? extends Component, P, E>> container;
+	private final Map<TypeToken<? extends Component>, HierarchicalComponentVisitor<? extends Component, P, E>>
+		container;
 	
 	// constructors -----------------------------------------------------------
 	
 	public HierarchicalComponentVisitorContainer()
 	{
-		container = new HashMap<Generic<? extends Component>,
+		container = new HashMap<TypeToken<? extends Component>,
 			HierarchicalComponentVisitor<? extends Component, P, E>>();
 	}
 	
 	// public methods ---------------------------------------------------------
 	
-	public <T extends Component> HierarchicalComponentVisitor<T, P, E> get(Generic<T> componentType)
+	public <T extends Component> HierarchicalComponentVisitor<T, P, E> get(TypeToken<T> componentType)
 	{
 		// guaranteed by put()
 		@SuppressWarnings("unchecked")
@@ -59,7 +60,7 @@ class HierarchicalComponentVisitorContainer<P, E extends Exception>
 		return visitor;
 	}
 	
-	public <T extends Component> void put(Generic<T> componentType, HierarchicalComponentVisitor<T, P, E> visitor)
+	public <T extends Component> void put(TypeToken<T> componentType, HierarchicalComponentVisitor<T, P, E> visitor)
 	{
 		container.put(componentType, visitor);
 	}

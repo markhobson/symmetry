@@ -15,7 +15,7 @@ package org.hobsoft.symmetry.ui;
 
 import org.hobsoft.symmetry.ui.test.AbstractComponentTest;
 
-import com.googlecode.jtype.Generic;
+import com.google.common.reflect.TypeToken;
 
 /**
  * Tests {@code FileChooser}.
@@ -40,8 +40,8 @@ public class FileChooserTest extends AbstractComponentTest<FileChooser>
 	 * {@inheritDoc}
 	 */
 	@Override
-	protected Generic<FileChooser> getComponentType()
+	protected TypeToken<FileChooser> getComponentType()
 	{
-		return Generic.get(FileChooser.class);
+		return TypeToken.of(FileChooser.class);
 	}
 }

@@ -15,7 +15,7 @@ package org.hobsoft.symmetry.ui;
 
 import org.hobsoft.symmetry.ui.test.AbstractComponentTest;
 
-import com.googlecode.jtype.Generic;
+import com.google.common.reflect.TypeToken;
 
 /**
  * Tests {@code ToggleButton}.
@@ -40,8 +40,8 @@ public class ToggleButtonTest extends AbstractComponentTest<ToggleButton>
 	 * {@inheritDoc}
 	 */
 	@Override
-	protected Generic<ToggleButton> getComponentType()
+	protected TypeToken<ToggleButton> getComponentType()
 	{
-		return Generic.get(ToggleButton.class);
+		return TypeToken.of(ToggleButton.class);
 	}
 }

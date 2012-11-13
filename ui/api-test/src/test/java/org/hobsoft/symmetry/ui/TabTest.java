@@ -20,7 +20,7 @@ import org.jmock.Expectations;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.googlecode.jtype.Generic;
+import com.google.common.reflect.TypeToken;
 
 import static org.hobsoft.symmetry.ui.test.traversal.MockComponentVisitors.createVisitor;
 import static org.hobsoft.symmetry.ui.test.traversal.MockComponentVisitors.createVisitorParameter;
@@ -87,9 +87,9 @@ public class TabTest extends AbstractComponentTest<Tab>
 		final ComponentVisitor<Object, RuntimeException> visitor = createVisitor(getMockery());
 		
 		getMockery().checking(new Expectations() { {
-			oneOf(visitor).visit(Generic.get(Tab.class), tab, parameter);
+			oneOf(visitor).visit(TypeToken.of(Tab.class), tab, parameter);
 				will(returnValue(nullHierarchicalVisitor()));
-			oneOf(visitor).visit(Generic.get(DummyComponent.class), component, parameter);
+			oneOf(visitor).visit(TypeToken.of(DummyComponent.class), component, parameter);
 				will(returnValue(nullHierarchicalVisitor()));
 		} });
 		
@@ -103,7 +103,7 @@ public class TabTest extends AbstractComponentTest<Tab>
 		final Object parameter = createVisitorParameter();
 		
 		getMockery().checking(new Expectations() { {
-			oneOf(visitor).visit(Generic.get(Tab.class), tab, parameter); will(returnValue(nullHierarchicalVisitor()));
+			oneOf(visitor).visit(TypeToken.of(Tab.class), tab, parameter); will(returnValue(nullHierarchicalVisitor()));
 		} });
 		
 		assertEquals(VISIT_SIBLINGS, tab.accept(visitor, parameter));
@@ -119,7 +119,7 @@ public class TabTest extends AbstractComponentTest<Tab>
 		final ComponentVisitor<Object, RuntimeException> visitor = createVisitor(getMockery());
 		
 		getMockery().checking(new Expectations() { {
-			oneOf(visitor).visit(Generic.get(Tab.class), tab, parameter); will(returnValue(skipChildren()));
+			oneOf(visitor).visit(TypeToken.of(Tab.class), tab, parameter); will(returnValue(skipChildren()));
 		} });
 		
 		assertEquals(VISIT_SIBLINGS, tab.accept(visitor, parameter));
@@ -135,9 +135,9 @@ public class TabTest extends AbstractComponentTest<Tab>
 		final ComponentVisitor<Object, RuntimeException> visitor = createVisitor(getMockery());
 		
 		getMockery().checking(new Expectations() { {
-			oneOf(visitor).visit(Generic.get(Tab.class), tab, parameter);
+			oneOf(visitor).visit(TypeToken.of(Tab.class), tab, parameter);
 				will(returnValue(null));
-			oneOf(visitor).visit(Generic.get(DummyComponent.class), component, parameter);
+			oneOf(visitor).visit(TypeToken.of(DummyComponent.class), component, parameter);
 				will(returnValue(nullHierarchicalVisitor()));
 		} });
 		
@@ -202,8 +202,8 @@ public class TabTest extends AbstractComponentTest<Tab>
 	 * {@inheritDoc}
 	 */
 	@Override
-	protected Generic<Tab> getComponentType()
+	protected TypeToken<Tab> getComponentType()
 	{
-		return Generic.get(Tab.class);
+		return TypeToken.of(Tab.class);
 	}
 }

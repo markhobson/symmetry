@@ -31,7 +31,7 @@ import org.hobsoft.symmetry.ui.traversal.HierarchicalComponentVisitor.EndVisit;
 import org.hobsoft.symmetry.ui.view.LabelListCellRenderer;
 import org.hobsoft.symmetry.ui.view.ListCellRenderer;
 
-import com.googlecode.jtype.Generic;
+import com.google.common.reflect.TypeToken;
 
 import static org.hobsoft.symmetry.ui.traversal.ComponentVisitors.asListBoxVisitor;
 import static org.hobsoft.symmetry.ui.traversal.ComponentVisitors.nullHierarchicalVisitor;
@@ -143,7 +143,7 @@ public class ComboBox<T> extends Component
 	@Override
 	public <P, E extends Exception> EndVisit accept(ComponentVisitor<P, E> visitor, P parameter) throws E
 	{
-		return acceptComboBox(visitor, new Generic<ComboBox<?>>() { /**/ }, this, parameter);
+		return acceptComboBox(visitor, new TypeToken<ComboBox<?>>() { /**/ }, this, parameter);
 	}
 	
 	// public methods ---------------------------------------------------------
@@ -257,11 +257,11 @@ public class ComboBox<T> extends Component
 	protected static <T extends ComboBox<?>, P, E extends Exception> EndVisit acceptComboBox(
 		ComponentVisitor<P, E> visitor, Class<T> comboBoxType, T comboBox, P parameter) throws E
 	{
-		return accept(visitor, Generic.get(comboBoxType), comboBox, parameter);
+		return accept(visitor, TypeToken.of(comboBoxType), comboBox, parameter);
 	}
 	
 	protected static <T extends ComboBox<?>, P, E extends Exception> EndVisit acceptComboBox(
-		ComponentVisitor<P, E> visitor, Generic<T> comboBoxType, T comboBox, P parameter) throws E
+		ComponentVisitor<P, E> visitor, TypeToken<T> comboBoxType, T comboBox, P parameter) throws E
 	{
 		HierarchicalComponentVisitor<T, P, E> subvisitor = visitor.visit(comboBoxType, comboBox, parameter);
 		

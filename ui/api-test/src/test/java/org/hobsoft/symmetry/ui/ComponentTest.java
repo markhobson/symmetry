@@ -17,7 +17,7 @@ import org.hobsoft.symmetry.ui.test.AbstractComponentTest;
 import org.hobsoft.symmetry.ui.test.DummyComponent;
 import org.junit.Test;
 
-import com.googlecode.jtype.Generic;
+import com.google.common.reflect.TypeToken;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -56,8 +56,8 @@ public class ComponentTest extends AbstractComponentTest<DummyComponent>
 	 * {@inheritDoc}
 	 */
 	@Override
-	protected Generic<DummyComponent> getComponentType()
+	protected TypeToken<DummyComponent> getComponentType()
 	{
-		return Generic.get(DummyComponent.class);
+		return TypeToken.of(DummyComponent.class);
 	}
 }

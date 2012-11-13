@@ -38,7 +38,7 @@ import org.hobsoft.symmetry.ui.Tree;
 import org.hobsoft.symmetry.ui.Window;
 import org.hobsoft.symmetry.ui.common.hydrate.CompositeComponentHydrator;
 
-import com.googlecode.jtype.Generic;
+import com.google.common.reflect.TypeToken;
 
 import static org.hobsoft.symmetry.ui.traversal.ComponentVisitors.visibleNodes;
 
@@ -59,7 +59,7 @@ public class HtmlComponentHydrator extends CompositeComponentHydrator
 		
 		setDelegate(CheckBox.class, new HtmlCheckBoxHydrator<CheckBox>());
 		
-		setDelegate(new Generic<ComboBox<?>>() { /**/ }, new HtmlComboBoxHydrator<ComboBox<?>>());
+		setDelegate(new TypeToken<ComboBox<?>>() { /**/ }, new HtmlComboBoxHydrator<ComboBox<?>>());
 		
 		setDelegate(Deck.class, new HtmlDeckHydrator<Deck>());
 		
@@ -73,7 +73,7 @@ public class HtmlComponentHydrator extends CompositeComponentHydrator
 
 		setDelegate(Label.class, new HtmlLabelHydrator<Label>());
 
-		setDelegate(new Generic<ListBox<?>>() { /**/ }, new HtmlListBoxHydrator<ListBox<?>>());
+		setDelegate(new TypeToken<ListBox<?>>() { /**/ }, new HtmlListBoxHydrator<ListBox<?>>());
 
 		setDelegate(MultiLineLabel.class, new HtmlMultiLineLabelHydrator<MultiLineLabel>());
 		

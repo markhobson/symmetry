@@ -18,7 +18,7 @@ import org.hobsoft.symmetry.ui.Deck;
 import org.hobsoft.symmetry.ui.Table;
 import org.hobsoft.symmetry.ui.Tree;
 
-import com.googlecode.jtype.Generic;
+import com.google.common.reflect.TypeToken;
 
 import static org.hobsoft.symmetry.ui.traversal.ComponentVisitors.asContainerVisitor;
 import static org.hobsoft.symmetry.ui.traversal.ComponentVisitors.asTableVisitor;
@@ -53,14 +53,14 @@ class VisibleComponentVisitor<P, E extends Exception> extends DelegatingComponen
 	 * {@inheritDoc}
 	 */
 	@Override
-	public <T extends Component> HierarchicalComponentVisitor<T, P, E> visit(Generic<T> componentType, T component,
+	public <T extends Component> HierarchicalComponentVisitor<T, P, E> visit(TypeToken<T> componentType, T component,
 		P parameter) throws E
 	{
 		HierarchicalComponentVisitor<T, P, E> subvisitor = super.visit(componentType, component, parameter);
 		
 		// TODO: this isn't pretty
 		
-		if (Generic.get(Deck.class).equals(componentType))
+		if (TypeToken.of(Deck.class).equals(componentType))
 		{
 			HierarchicalComponentVisitor<Deck, P, E> deckVisitor =
 				(HierarchicalComponentVisitor<Deck, P, E>) subvisitor;
@@ -69,7 +69,7 @@ class VisibleComponentVisitor<P, E extends Exception> extends DelegatingComponen
 			
 			subvisitor = (HierarchicalComponentVisitor<T, P, E>) deckVisitor;
 		}
-		else if (Generic.get(Table.class).equals(componentType))
+		else if (TypeToken.of(Table.class).equals(componentType))
 		{
 			HierarchicalComponentVisitor<Table, P, E> tableVisitor =
 				(HierarchicalComponentVisitor<Table, P, E>) subvisitor;
@@ -78,7 +78,7 @@ class VisibleComponentVisitor<P, E extends Exception> extends DelegatingComponen
 			
 			subvisitor = (HierarchicalComponentVisitor<T, P, E>) tableVisitor;
 		}
-		else if (Generic.get(Tree.class).equals(componentType))
+		else if (TypeToken.of(Tree.class).equals(componentType))
 		{
 			HierarchicalComponentVisitor<Tree, P, E> treeVisitor =
 				(HierarchicalComponentVisitor<Tree, P, E>) subvisitor;

@@ -17,7 +17,7 @@ import org.hobsoft.symmetry.ui.test.AbstractComponentTest;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.googlecode.jtype.Generic;
+import com.google.common.reflect.TypeToken;
 
 import static org.junit.Assert.assertEquals;
 
@@ -72,8 +72,8 @@ public class WindowTest extends AbstractComponentTest<Window>
 	 * {@inheritDoc}
 	 */
 	@Override
-	protected Generic<Window> getComponentType()
+	protected TypeToken<Window> getComponentType()
 	{
-		return Generic.get(Window.class);
+		return TypeToken.of(Window.class);
 	}
 }

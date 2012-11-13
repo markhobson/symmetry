@@ -23,7 +23,7 @@ import org.jmock.Expectations;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.googlecode.jtype.Generic;
+import com.google.common.reflect.TypeToken;
 
 import static org.hobsoft.symmetry.support.test.matcher.PropertyChangeEventMatcher.mockPropertyChangeListener;
 import static org.hobsoft.symmetry.ui.test.traversal.MockComponentVisitors.createVisitor;
@@ -102,9 +102,9 @@ public class BoxTest extends AbstractComponentTest<Box>
 		final ComponentVisitor<Object, RuntimeException> visitor = createVisitor(getMockery());
 		
 		getMockery().checking(new Expectations() { {
-			oneOf(visitor).visit(Generic.get(Box.class), box, parameter);
+			oneOf(visitor).visit(TypeToken.of(Box.class), box, parameter);
 				will(returnValue(nullHierarchicalVisitor()));
-			oneOf(visitor).visit(Generic.get(DummyComponent.class), child, parameter);
+			oneOf(visitor).visit(TypeToken.of(DummyComponent.class), child, parameter);
 				will(returnValue(nullHierarchicalVisitor()));
 		} });
 		
@@ -121,7 +121,7 @@ public class BoxTest extends AbstractComponentTest<Box>
 		final ComponentVisitor<Object, RuntimeException> visitor = createVisitor(getMockery());
 		
 		getMockery().checking(new Expectations() { {
-			oneOf(visitor).visit(Generic.get(Box.class), box, parameter); will(returnValue(skipChildren()));
+			oneOf(visitor).visit(TypeToken.of(Box.class), box, parameter); will(returnValue(skipChildren()));
 		} });
 		
 		assertEquals(VISIT_SIBLINGS, box.accept(visitor, parameter));
@@ -137,8 +137,8 @@ public class BoxTest extends AbstractComponentTest<Box>
 		final ComponentVisitor<Object, RuntimeException> visitor = createVisitor(getMockery());
 		
 		getMockery().checking(new Expectations() { {
-			oneOf(visitor).visit(Generic.get(Box.class), box, parameter); will(returnValue(null));
-			oneOf(visitor).visit(Generic.get(DummyComponent.class), child, parameter);
+			oneOf(visitor).visit(TypeToken.of(Box.class), box, parameter); will(returnValue(null));
+			oneOf(visitor).visit(TypeToken.of(DummyComponent.class), child, parameter);
 				will(returnValue(nullHierarchicalVisitor()));
 		} });
 		
@@ -209,9 +209,9 @@ public class BoxTest extends AbstractComponentTest<Box>
 	 * {@inheritDoc}
 	 */
 	@Override
-	protected Generic<Box> getComponentType()
+	protected TypeToken<Box> getComponentType()
 	{
-		return Generic.get(Box.class);
+		return TypeToken.of(Box.class);
 	}
 	
 	// private methods --------------------------------------------------------

@@ -21,7 +21,7 @@ import org.hobsoft.symmetry.ui.test.DummyComponent;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.googlecode.jtype.Generic;
+import com.google.common.reflect.TypeToken;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -59,7 +59,7 @@ public class CollectingComponentVisitorTest
 	{
 		Component component = createComponent();
 		
-		assertNotNull(visitor.visit(Generic.get(Component.class), component, null));
+		assertNotNull(visitor.visit(TypeToken.of(Component.class), component, null));
 		
 		assertEquals(Collections.singletonList(component), visitor.getComponents());
 	}
@@ -73,9 +73,9 @@ public class CollectingComponentVisitorTest
 			createComponent()
 		};
 		
-		visitor.visit(Generic.get(Component.class), components[0], null);
-		visitor.visit(Generic.get(Component.class), components[1], null);
-		visitor.visit(Generic.get(Component.class), components[2], null);
+		visitor.visit(TypeToken.of(Component.class), components[0], null);
+		visitor.visit(TypeToken.of(Component.class), components[1], null);
+		visitor.visit(TypeToken.of(Component.class), components[2], null);
 		
 		assertEquals(Arrays.asList(components), visitor.getComponents());
 	}

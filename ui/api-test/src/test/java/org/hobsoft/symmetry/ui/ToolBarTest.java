@@ -22,7 +22,7 @@ import org.hobsoft.symmetry.ui.test.DummyComponent;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.googlecode.jtype.Generic;
+import com.google.common.reflect.TypeToken;
 
 import static org.junit.Assert.assertEquals;
 
@@ -117,9 +117,9 @@ public class ToolBarTest extends AbstractComponentTest<ToolBar>
 	 * {@inheritDoc}
 	 */
 	@Override
-	protected Generic<ToolBar> getComponentType()
+	protected TypeToken<ToolBar> getComponentType()
 	{
-		return Generic.get(ToolBar.class);
+		return TypeToken.of(ToolBar.class);
 	}
 	
 	// private methods --------------------------------------------------------

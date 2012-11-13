@@ -38,7 +38,7 @@ import org.hobsoft.symmetry.ui.view.LabelTableCellRenderer;
 import org.hobsoft.symmetry.ui.view.LabelTableHeaderRenderer;
 import org.hobsoft.symmetry.ui.view.TableCellRenderer;
 
-import com.googlecode.jtype.Generic;
+import com.google.common.reflect.TypeToken;
 
 import static org.hobsoft.symmetry.ui.internal.Preconditions.checkNonNegative;
 import static org.hobsoft.symmetry.ui.traversal.ComponentVisitors.asTableVisitor;
@@ -379,11 +379,11 @@ public class Table extends Component
 	protected static <T extends Table, P, E extends Exception> EndVisit acceptTable(ComponentVisitor<P, E> visitor,
 		Class<T> tableType, T table, P parameter) throws E
 	{
-		return acceptTable(visitor, Generic.get(tableType), table, parameter);
+		return acceptTable(visitor, TypeToken.of(tableType), table, parameter);
 	}
 	
 	protected static <T extends Table, P, E extends Exception> EndVisit acceptTable(ComponentVisitor<P, E> visitor,
-		Generic<T> tableType, T table, P parameter) throws E
+		TypeToken<T> tableType, T table, P parameter) throws E
 	{
 		HierarchicalComponentVisitor<T, P, E> subvisitor = visitor.visit(tableType, table, parameter);
 		

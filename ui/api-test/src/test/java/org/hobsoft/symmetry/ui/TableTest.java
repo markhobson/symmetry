@@ -30,7 +30,7 @@ import org.jmock.Expectations;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.googlecode.jtype.Generic;
+import com.google.common.reflect.TypeToken;
 
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
@@ -415,9 +415,9 @@ public class TableTest extends AbstractComponentTest<Table>
 	 * {@inheritDoc}
 	 */
 	@Override
-	protected Generic<Table> getComponentType()
+	protected TypeToken<Table> getComponentType()
 	{
-		return Generic.get(Table.class);
+		return TypeToken.of(Table.class);
 	}
 
 	// private methods --------------------------------------------------------

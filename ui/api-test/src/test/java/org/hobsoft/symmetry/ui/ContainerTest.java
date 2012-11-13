@@ -24,7 +24,7 @@ import org.jmock.Expectations;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.googlecode.jtype.Generic;
+import com.google.common.reflect.TypeToken;
 
 import static org.hobsoft.symmetry.support.test.matcher.PropertyChangeEventMatcher.mockPropertyChangeListener;
 import static org.hobsoft.symmetry.ui.test.traversal.MockComponentVisitors.createVisitor;
@@ -86,9 +86,9 @@ public class ContainerTest extends AbstractComponentTest<FakeContainer>
 		final ComponentVisitor<Object, RuntimeException> visitor = createVisitor(getMockery());
 		
 		getMockery().checking(new Expectations() { {
-			oneOf(visitor).visit(Generic.get(FakeContainer.class), container, parameter);
+			oneOf(visitor).visit(TypeToken.of(FakeContainer.class), container, parameter);
 				will(returnValue(nullHierarchicalVisitor()));
-			oneOf(visitor).visit(Generic.get(DummyComponent.class), child, parameter);
+			oneOf(visitor).visit(TypeToken.of(DummyComponent.class), child, parameter);
 				will(returnValue(nullHierarchicalVisitor()));
 		} });
 		
@@ -105,7 +105,7 @@ public class ContainerTest extends AbstractComponentTest<FakeContainer>
 		final ComponentVisitor<Object, RuntimeException> visitor = createVisitor(getMockery());
 		
 		getMockery().checking(new Expectations() { {
-			oneOf(visitor).visit(Generic.get(FakeContainer.class), container, parameter);
+			oneOf(visitor).visit(TypeToken.of(FakeContainer.class), container, parameter);
 				will(returnValue(skipChildren()));
 		} });
 		
@@ -122,9 +122,9 @@ public class ContainerTest extends AbstractComponentTest<FakeContainer>
 		final ComponentVisitor<Object, RuntimeException> visitor = createVisitor(getMockery());
 		
 		getMockery().checking(new Expectations() { {
-			oneOf(visitor).visit(Generic.get(FakeContainer.class), container, parameter);
+			oneOf(visitor).visit(TypeToken.of(FakeContainer.class), container, parameter);
 				will(returnValue(null));
-			oneOf(visitor).visit(Generic.get(DummyComponent.class), child, parameter);
+			oneOf(visitor).visit(TypeToken.of(DummyComponent.class), child, parameter);
 				will(returnValue(nullHierarchicalVisitor()));
 		} });
 		
@@ -391,9 +391,9 @@ public class ContainerTest extends AbstractComponentTest<FakeContainer>
 	 * {@inheritDoc}
 	 */
 	@Override
-	protected Generic<FakeContainer> getComponentType()
+	protected TypeToken<FakeContainer> getComponentType()
 	{
-		return Generic.get(FakeContainer.class);
+		return TypeToken.of(FakeContainer.class);
 	}
 	
 	// private methods --------------------------------------------------------

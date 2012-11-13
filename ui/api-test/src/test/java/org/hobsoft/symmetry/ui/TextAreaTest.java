@@ -17,7 +17,7 @@ import org.hobsoft.symmetry.ui.test.AbstractComponentTest;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.googlecode.jtype.Generic;
+import com.google.common.reflect.TypeToken;
 
 import static org.junit.Assert.assertEquals;
 
@@ -84,8 +84,8 @@ public class TextAreaTest extends AbstractComponentTest<TextArea>
 	 * {@inheritDoc}
 	 */
 	@Override
-	protected Generic<TextArea> getComponentType()
+	protected TypeToken<TextArea> getComponentType()
 	{
-		return Generic.get(TextArea.class);
+		return TypeToken.of(TextArea.class);
 	}
 }

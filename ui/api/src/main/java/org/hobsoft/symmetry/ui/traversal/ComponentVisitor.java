@@ -15,7 +15,7 @@ package org.hobsoft.symmetry.ui.traversal;
 
 import org.hobsoft.symmetry.ui.Component;
 
-import com.googlecode.jtype.Generic;
+import com.google.common.reflect.TypeToken;
 
 /**
  * Defines a hierarchical visitor pattern for components.
@@ -33,7 +33,7 @@ public interface ComponentVisitor<P, E extends Exception>
 	
 	// workaround checkstyle bug: "Unable to get class information for E"
 	// CHECKSTYLE:OFF
-	<T extends Component> HierarchicalComponentVisitor<T, P, E> visit(Generic<T> componentType, T component,
+	<T extends Component> HierarchicalComponentVisitor<T, P, E> visit(TypeToken<T> componentType, T component,
 		P parameter) throws E;
 	// CHECKSTYLE:ON
 }

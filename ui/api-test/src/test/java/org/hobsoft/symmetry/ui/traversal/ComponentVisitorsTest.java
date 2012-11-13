@@ -29,7 +29,7 @@ import org.jmock.integration.junit4.JUnit4Mockery;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import com.googlecode.jtype.Generic;
+import com.google.common.reflect.TypeToken;
 
 import static org.hobsoft.symmetry.ui.test.traversal.MockComponentVisitors.createContainerVisitor;
 import static org.hobsoft.symmetry.ui.test.traversal.MockComponentVisitors.createGridVisitor;
@@ -1512,14 +1512,14 @@ public class ComponentVisitorsTest
 	@Test
 	public void getComponentTypeWithClassImplementation()
 	{
-		assertEquals(Generic.get(DummyComponent.class),
+		assertEquals(TypeToken.of(DummyComponent.class),
 			ComponentVisitors.getComponentType(new ClassImplementationVisitor()));
 	}
 	
 	@Test
 	public void getComponentTypeWithParameterizedTypeImplementation()
 	{
-		assertEquals(new Generic<GenericDummyComponent<?>>() { /**/ },
+		assertEquals(new TypeToken<GenericDummyComponent<?>>() { /**/ },
 			ComponentVisitors.getComponentType(new ParameterizedTypeImplementationVisitor()));
 	}
 	
@@ -1532,14 +1532,14 @@ public class ComponentVisitorsTest
 	@Test
 	public void getComponentTypeWithSuperclassClassImplementation()
 	{
-		assertEquals(Generic.get(DummyComponent.class),
+		assertEquals(TypeToken.of(DummyComponent.class),
 			ComponentVisitors.getComponentType(new SuperclassClassImplementationVisitor()));
 	}
 	
 	@Test
 	public void getComponentTypeWithSuperinterfaceClassImplementation()
 	{
-		assertEquals(Generic.get(DummyComponent.class),
+		assertEquals(TypeToken.of(DummyComponent.class),
 			ComponentVisitors.getComponentType(new SuperinterfaceClassImplementationVisitor()));
 	}
 }
