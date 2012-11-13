@@ -38,7 +38,7 @@
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-deploy-plugin</artifactId>
 					<configuration>
-						<!-- cannot deploy this module since it requires the Eclipse repository -->
+						<!-- cannot deploy this module since it requires the Eclipse repository (see issue #1) -->
 						<skip>true</skip>
 					</configuration>
 				</plugin>
