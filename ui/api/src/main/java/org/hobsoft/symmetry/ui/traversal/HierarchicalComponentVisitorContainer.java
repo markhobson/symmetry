@@ -32,6 +32,7 @@ import com.google.common.reflect.TypeToken;
  */
 class HierarchicalComponentVisitorContainer<P, E extends Exception>
 {
+	// TODO: can this be replaced with a Guava TypeToInstanceMap?
 	// TODO: do we want to lower bound the container?
 	// TODO: do we want to relax value type to ComponentVisitor<? super U, P, E>?
 	
