@@ -15,9 +15,11 @@ package org.hobsoft.symmetry.support.codec.base64;
 
 import java.util.Arrays;
 
-import org.apache.commons.lang.Validate;
 import org.hobsoft.symmetry.support.codec.DecoderException;
 import org.hobsoft.symmetry.support.codec.EncoderException;
+
+import static org.hobsoft.symmetry.support.codec.base64.Utilities.checkArgument;
+import static org.hobsoft.symmetry.support.codec.base64.Utilities.checkNotNull;
 
 /**
  * Defines an alphabet for use when encoding and decoding Base64.
@@ -151,10 +153,10 @@ public class Base64Alphabet
 	 */
 	public Base64Alphabet(byte[] alphabet, byte padByte)
 	{
-		Validate.notNull(alphabet, "alphabet cannot be null");
-		Validate.isTrue(alphabet.length == BASE, "alphabet must contain " + BASE + " bytes");
-		Validate.isTrue(containsUniqueBytes(alphabet), "alphabet must not contain duplicate bytes");
-		Validate.isTrue(!contains(alphabet, padByte), "alphabet must not contain pad byte");
+		checkNotNull(alphabet, "alphabet");
+		checkArgument(alphabet.length == BASE, "alphabet must contain " + BASE + " bytes");
+		checkArgument(containsUniqueBytes(alphabet), "alphabet must not contain duplicate bytes");
+		checkArgument(!contains(alphabet, padByte), "alphabet must not contain pad byte");
 		
 		this.alphabet = alphabet.clone();
 		
@@ -235,7 +237,7 @@ public class Base64Alphabet
 			return null;
 		}
 		
-		Validate.isTrue(getMaxChar(alphabet) <= 0xFF, "alphabet must only contain 8-bit characters");
+		checkArgument(getMaxChar(alphabet) <= 0xFF, "alphabet must only contain 8-bit characters");
 		
 		return alphabet.getBytes();
 	}
@@ -251,7 +253,7 @@ public class Base64Alphabet
 	 */
 	private static byte toPadByte(char c)
 	{
-		Validate.isTrue(c <= 0xFF, "Invalid pad byte: " + c);
+		checkArgument(c <= 0xFF, "Invalid pad byte: " + c);
 		
 		return (byte) c;
 	}

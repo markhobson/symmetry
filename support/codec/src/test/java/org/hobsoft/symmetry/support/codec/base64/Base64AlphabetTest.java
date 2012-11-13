@@ -47,14 +47,14 @@ public class Base64AlphabetTest
 
 	// tests ------------------------------------------------------------------
 	
-	@Test(expected = IllegalArgumentException.class)
+	@Test(expected = NullPointerException.class)
 	public void createWithNullAlphabet()
 	{
 		try
 		{
 			new Base64Alphabet(null);
 		}
-		catch (IllegalArgumentException exception)
+		catch (NullPointerException exception)
 		{
 			assertEquals("alphabet cannot be null", exception.getMessage());
 			
