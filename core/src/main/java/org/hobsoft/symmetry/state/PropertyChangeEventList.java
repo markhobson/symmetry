@@ -18,7 +18,6 @@ import java.util.Collection;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-import org.apache.commons.collections.keyvalue.MultiKey;
 import org.hobsoft.symmetry.util.lang.ObjectUtils;
 
 /**
@@ -30,20 +29,20 @@ public class PropertyChangeEventList
 {
 	// fields -----------------------------------------------------------------
 	
-	private final Map<MultiKey, PropertyChangeEvent> eventMap;
+	private final Map<PropertyChangeEventKey, PropertyChangeEvent> eventMap;
 	
 	// constructors -----------------------------------------------------------
 	
 	public PropertyChangeEventList()
 	{
-		eventMap = new LinkedHashMap<MultiKey, PropertyChangeEvent>();
+		eventMap = new LinkedHashMap<PropertyChangeEventKey, PropertyChangeEvent>();
 	}
 	
 	// public methods ---------------------------------------------------------
 	
 	public void addPropertyChangeEvent(PropertyChangeEvent event)
 	{
-		MultiKey key = new MultiKey(event.getSource(), event.getPropertyName());
+		PropertyChangeEventKey key = new PropertyChangeEventKey(event);
 		PropertyChangeEvent oldEvent = eventMap.get(key);
 		if (oldEvent != null)
 		{
