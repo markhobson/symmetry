@@ -15,6 +15,8 @@ package org.hobsoft.symmetry.ui.functor;
 
 import org.hobsoft.symmetry.ui.functor.HyperlinkableClosure.Method;
 
+import com.google.common.base.Function;
+
 /**
  * 
  * 

@@ -15,8 +15,9 @@ package org.hobsoft.symmetry.ui.view;
 
 import org.hobsoft.symmetry.ui.Label;
 import org.hobsoft.symmetry.ui.Table;
-import org.hobsoft.symmetry.ui.functor.Function;
 import org.hobsoft.symmetry.ui.functor.Functions;
+
+import com.google.common.base.Function;
 
 /**
  * 

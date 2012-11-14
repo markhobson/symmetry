@@ -22,6 +22,8 @@ import org.hobsoft.symmetry.ui.event.TableModelEvent;
 import org.hobsoft.symmetry.ui.model.BeanTableModel;
 import org.hobsoft.symmetry.ui.model.TableModel;
 
+import com.google.common.base.Function;
+
 /**
  * 
  * 

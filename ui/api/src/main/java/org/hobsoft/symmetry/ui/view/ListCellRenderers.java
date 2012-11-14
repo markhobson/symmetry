@@ -16,8 +16,9 @@ package org.hobsoft.symmetry.ui.view;
 import org.hobsoft.symmetry.ui.ComboBox;
 import org.hobsoft.symmetry.ui.Component;
 import org.hobsoft.symmetry.ui.Label;
-import org.hobsoft.symmetry.ui.functor.Function;
 import org.hobsoft.symmetry.ui.functor.Functions;
+
+import com.google.common.base.Function;
 
 import static com.google.common.base.Objects.equal;
 

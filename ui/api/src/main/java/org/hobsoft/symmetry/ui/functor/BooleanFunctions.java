@@ -13,6 +13,8 @@
  */
 package org.hobsoft.symmetry.ui.functor;
 
+import com.google.common.base.Function;
+
 /**
  * 
  * 

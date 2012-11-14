@@ -13,7 +13,7 @@
  */
 package org.hobsoft.symmetry.ui.view;
 
-import org.hobsoft.symmetry.ui.functor.Function;
+import com.google.common.base.Function;
 
 /**
  * 
