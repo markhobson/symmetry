@@ -59,15 +59,6 @@ public final class Functions
 	
 	// constants --------------------------------------------------------------
 	
-	private static final Function<Object, Object> IDENTITY = new Function<Object, Object>()
-	{
-		@Override
-		public Object apply(Object input)
-		{
-			return input;
-		}
-	};
-	
 	private static final Function<Object, Boolean> NOT_NULL = new Function<Object, Boolean>()
 	{
 		@Override
@@ -150,15 +141,19 @@ public final class Functions
 	
 	// public methods ---------------------------------------------------------
 	
+	/**
+	 * @deprecated Use {@link com.google.common.base.Functions#identity()} instead.
+	 */
+	@Deprecated
 	public static <T> Function<T, T> identity()
 	{
-		// valid since function always returns input
-		@SuppressWarnings("unchecked")
-		Function<T, T> identity = (Function<T, T>) IDENTITY;
-		
-		return identity;
+		return com.google.common.base.Functions.identity();
 	}
 	
+	/**
+	 * @deprecated Use {@link com.google.common.base.Functions#constant(Object)} instead.
+	 */
+	@Deprecated
 	public static <T, U> Function<T, U> constant(final U value)
 	{
 		return new Function<T, U>()
@@ -180,16 +175,13 @@ public final class Functions
 		return notNull;
 	}
 	
+	/**
+	 * @deprecated Use {@link com.google.common.base.Functions#compose(Function, Function)} instead.
+	 */
+	@Deprecated
 	public static <T, U, V> Function<T, V> compose(final Function<T, U> first, final Function<U, V> second)
 	{
-		return new Function<T, V>()
-		{
-			@Override
-			public V apply(T input)
-			{
-				return second.apply(first.apply(input));
-			}
-		};
+		return com.google.common.base.Functions.compose(second, first);
 	}
 	
 	public static <T, U> Function<T, U> chain(final Function<T, U> first, final Function<T, U> second)
@@ -223,6 +215,11 @@ public final class Functions
 		};
 	}
 	
+	/**
+	 * @deprecated Use {@link com.google.common.base.Functions#toStringFunction()} instead. Note that Guava will throw a
+	 *             NullPointerException when applied to {@code null}.
+	 */
+	@Deprecated
 	public static <T> Function<T, String> toStringFunction()
 	{
 		// valid since T erases to Object
@@ -247,6 +244,11 @@ public final class Functions
 		return forMap(Collections.singletonMap(key, value));
 	}
 	
+	/**
+	 * @deprecated Use {@link com.google.common.base.Functions#forMap(Map)} instead. Note that Guava will throw an
+	 *             IllegalArgumentException if a key is not found.
+	 */
+	@Deprecated
 	public static <K, V> Function<K, V> forMap(final Map<K, V> map)
 	{
 		return new Function<K, V>()
