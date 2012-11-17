@@ -39,8 +39,13 @@
 				</plugin>
 				<plugin>
 					<groupId>org.mortbay.jetty</groupId>
-					<artifactId>maven-jetty-plugin</artifactId>
-					<version>6.1.8</version>
+					<artifactId>jetty-maven-plugin</artifactId>
+					<version>7.6.8.v20121106</version>
+					<configuration>
+						<webAppConfig>
+							<contextPath>/${project.artifactId}</contextPath>
+						</webAppConfig>
+					</configuration>
 				</plugin>
 			</plugins>
 		</pluginManagement>
@@ -163,7 +168,7 @@
 		<profile>
 			<id>html</id>
 			<build>
-				<defaultGoal>org.mortbay.jetty:maven-jetty-plugin:run-exploded</defaultGoal>
+				<defaultGoal>org.mortbay.jetty:jetty-maven-plugin:run-exploded</defaultGoal>
 			</build>
 			<properties>
 				<peerManagerClassName>org.hobsoft.symmetry.ui.html.HtmlPeerManager</peerManagerClassName>
@@ -188,7 +193,7 @@
 		<profile>
 			<id>xul</id>
 			<build>
-				<defaultGoal>org.mortbay.jetty:maven-jetty-plugin:run-exploded</defaultGoal>
+				<defaultGoal>org.mortbay.jetty:jetty-maven-plugin:run-exploded</defaultGoal>
 			</build>
 			<properties>
 				<peerManagerClassName>org.hobsoft.symmetry.ui.xul.XulPeerManager</peerManagerClassName>
