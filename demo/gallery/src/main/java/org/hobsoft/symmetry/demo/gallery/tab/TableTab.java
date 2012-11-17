@@ -13,7 +13,6 @@
  */
 package org.hobsoft.symmetry.demo.gallery.tab;
 
-import org.hobsoft.symmetry.ui.Box;
 import org.hobsoft.symmetry.ui.GroupBox;
 import org.hobsoft.symmetry.ui.Label;
 import org.hobsoft.symmetry.ui.SortableTable;
@@ -21,6 +20,7 @@ import org.hobsoft.symmetry.ui.Tab;
 import org.hobsoft.symmetry.ui.Table;
 import org.hobsoft.symmetry.ui.VBox;
 import org.hobsoft.symmetry.ui.model.DefaultTableModel;
+import org.hobsoft.symmetry.ui.model.TableModel;
 
 /**
  * 
@@ -33,8 +33,46 @@ public class TableTab extends Tab
 	
 	public TableTab()
 	{
+		setText("Table");
+		setComponent(new VBox(createTableBox(), createSortableTableBox()));
+	}
+
+	// private methods --------------------------------------------------------
+	
+	private static GroupBox createTableBox()
+	{
+		GroupBox box = new GroupBox("Table");
+		
+		box.add(new Label("A Table can display data in tabular form:"));
+		
+		Table table = new Table(createTableModel());
+		table.setVisibleRowCount(5);
+		box.add(table);
+		
+		box.add(new Label("The data is provided by a TableModel and can be paged by any number of rows, in this case "
+			+ "five."));
+		
+		return box;
+	}
+	
+	private static GroupBox createSortableTableBox()
+	{
+		GroupBox box = new GroupBox("SortableTable");
+		
+		box.add(new Label("A SortableTable also allows the user to sort data by clicking on the headings:"));
+		
+		SortableTable sortableTable = new SortableTable(createTableModel());
+		sortableTable.setVisibleRowCount(5);
+		box.add(sortableTable);
+		
+		return box;
+	}
+
+	private static TableModel createTableModel()
+	{
 		DefaultTableModel model = new DefaultTableModel();
 		model.setColumnNames("Animal", "Colour", "Food");
+		
 		model.addRow("Monkey", "Brown", "Bananas");
 		model.addRow("Pig", "Pink", "Swill");
 		model.addRow("Giraffe", "Yellow", "Leaves");
@@ -46,27 +84,6 @@ public class TableTab extends Tab
 		model.addRow("Stick Insect", "Green", "Other Insects");
 		model.addRow("Bat", "Dark Brown", "Insects");
 		
-		// TODO: use chainable setters when supported
-		Table table = new Table(model);
-		table.setVisibleRowCount(5);
-		
-		SortableTable sortableTable = new SortableTable(model);
-		sortableTable.setVisibleRowCount(5);
-		
-		Box box = new VBox(
-			new GroupBox("Table",
-				new Label("A Table can display data in tabular form:"),
-				table,
-				new Label("The data is provided by a TableModel and can be paged by any number of rows, in this case "
-					+ "five.")
-			),
-			new GroupBox("SortableTable",
-				new Label("A SortableTable also allows the user to sort data by clicking on the headings:"),
-				sortableTable
-			)
-		);
-		
-		setText("Table");
-		setComponent(box);
+		return model;
 	}
 }

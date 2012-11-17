@@ -13,7 +13,6 @@
  */
 package org.hobsoft.symmetry.demo.gallery.tab;
 
-import org.hobsoft.symmetry.ui.Box;
 import org.hobsoft.symmetry.ui.CheckBox;
 import org.hobsoft.symmetry.ui.ComboBox;
 import org.hobsoft.symmetry.ui.Component;
@@ -40,15 +39,15 @@ public class WizardTab extends Tab
 	{
 		// fields -----------------------------------------------------------------
 		
-		private TypePage typePage = new TypePage();
+		private final TypePage typePage;
 		
-		private FruitPage fruitPage = new FruitPage();
+		private final FruitPage fruitPage;
 		
-		private VegetablePage vegetablePage = new VegetablePage();
+		private final VegetablePage vegetablePage;
 		
-		private MeatPage meatPage = new MeatPage();
+		private final MeatPage meatPage;
 		
-		private SummaryPage summaryPage = new SummaryPage();
+		private final SummaryPage summaryPage;
 		
 		// types ------------------------------------------------------------------
 		
@@ -56,17 +55,13 @@ public class WizardTab extends Tab
 		{
 			// fields -----------------------------------------------------------------
 			
-			private ToggleButtonGroup group;
+			private final ToggleButtonGroup group;
 			
 			// constructors -----------------------------------------------------------
 			
 			public TypePage()
 			{
-				group = new ToggleButtonGroup(
-					new Radio("Fruit"),
-					new Radio("Vegetable"),
-					new Radio("Meat")
-					);
+				group = new ToggleButtonGroup(new Radio("Fruit"), new Radio("Vegetable"), new Radio("Meat"));
 				add(new Label("What would you like for dinner?"), group);
 			}
 			
@@ -83,7 +78,7 @@ public class WizardTab extends Tab
 		{
 			// fields -----------------------------------------------------------------
 			
-			private ComboBox<String> comboBox;
+			private final ComboBox<String> comboBox;
 			
 			// constructors -----------------------------------------------------------
 			
@@ -105,16 +100,20 @@ public class WizardTab extends Tab
 		{
 			// fields -----------------------------------------------------------------
 			
-			private CheckBox onion = new CheckBox("Onion");
+			private final CheckBox onion;
 			
-			private CheckBox pepper = new CheckBox("Pepper");
+			private final CheckBox pepper;
 			
-			private CheckBox carrot = new CheckBox("Carrot");
+			private final CheckBox carrot;
 			
 			// constructors -----------------------------------------------------------
 			
 			public VegetablePage()
 			{
+				onion = new CheckBox("Onion");
+				pepper = new CheckBox("Pepper");
+				carrot = new CheckBox("Carrot");
+				
 				add(new Label("Choose some vegetables for a stir-fry:"), onion, pepper, carrot);
 			}
 			
@@ -130,7 +129,7 @@ public class WizardTab extends Tab
 		{
 			// fields -----------------------------------------------------------------
 			
-			private ListBox<String> listBox;
+			private final ListBox<String> listBox;
 			
 			// constructors -----------------------------------------------------------
 			
@@ -150,7 +149,7 @@ public class WizardTab extends Tab
 		
 		private static class SummaryPage extends VBox
 		{
-			// public methods ---------------------------------------------------------
+			// constructors -----------------------------------------------------------
 			
 			public SummaryPage()
 			{
@@ -162,6 +161,12 @@ public class WizardTab extends Tab
 		
 		public DemoWizard()
 		{
+			typePage = new TypePage();
+			fruitPage = new FruitPage();
+			vegetablePage = new VegetablePage();
+			meatPage = new MeatPage();
+			summaryPage = new SummaryPage();
+
 			addPages(typePage, fruitPage, vegetablePage, meatPage, summaryPage);
 		}
 		
@@ -248,12 +253,17 @@ public class WizardTab extends Tab
 	
 	public WizardTab()
 	{
-		Box box = new GroupBox("Wizard",
-			new Label("A Wizard allows the user to navigate through various steps to achieve tasks:"),
-			new DemoWizard()
-		);
-		
 		setText("Wizard");
-		setComponent(box);
+		setComponent(createWizardBox());
+	}
+
+	// private methods --------------------------------------------------------
+	
+	private GroupBox createWizardBox()
+	{
+		GroupBox box = new GroupBox("Wizard");
+		box.add(new Label("A Wizard allows the user to navigate through various steps to achieve tasks:"));
+		box.add(new DemoWizard());
+		return box;
 	}
 }

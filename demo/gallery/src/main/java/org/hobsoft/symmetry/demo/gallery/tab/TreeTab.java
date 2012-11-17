@@ -38,10 +38,13 @@ import org.hobsoft.symmetry.ui.Tree;
 import org.hobsoft.symmetry.ui.VBox;
 import org.hobsoft.symmetry.ui.Window;
 import org.hobsoft.symmetry.ui.Wizard;
+import org.hobsoft.symmetry.ui.model.DefaultTreeModel;
 import org.hobsoft.symmetry.ui.model.DefaultTreeNode;
+import org.hobsoft.symmetry.ui.model.TreeModel;
 import org.hobsoft.symmetry.ui.model.TreeNode;
 import org.hobsoft.symmetry.ui.model.TreePath;
 import org.hobsoft.symmetry.ui.view.LabelTreeNodeRenderer;
+import org.hobsoft.symmetry.ui.view.TreeNodeRenderer;
 
 /**
  * 
@@ -50,59 +53,33 @@ import org.hobsoft.symmetry.ui.view.LabelTreeNodeRenderer;
  */
 public class TreeTab extends Tab
 {
-	// types ------------------------------------------------------------------
-	
-	private static class ClassTreeNodeRenderer extends LabelTreeNodeRenderer
-	{
-		// TreeNodeRenderer methods -----------------------------------------------
-
-		/**
-		 * {@inheritDoc}
-		 */
-		@Override
-		public Label getTreeNodeComponent(Tree tree, TreePath path)
-		{
-			Class<?> klass = (Class<?>) ((DefaultTreeNode) path.getNode()).getValue();
-			String name = klass.getName();
-			int dot = name.lastIndexOf('.');
-			String className = (dot == -1) ? name : name.substring(dot + 1);
-			String packageName = (dot == -1) ? "default package" : name.substring(0, dot);
-			String type = klass.isInterface() ? "interface" : "class";
-			
-			setText(className);
-			setToolTip(type + " in " + packageName);
-			return this;
-		}
-	}
-	
 	// constructors -----------------------------------------------------------
 	
 	public TreeTab()
 	{
-		Tree tree = new Tree(createTreeRoot());
-		tree.setTreeNodeRenderer(new ClassTreeNodeRenderer());
-		tree.setAutoExpand(true);
-		// TODO: remove this when TreePath serialization implemented properly
-		// TODO: reimplement when API stabilised
-//		SerializerManager.registerSerializer(TreePath.class, new TreePathSerializer(tree));
-		
-		Box box = new VBox(
-			new GroupBox("Tree",
-				new Label("A Tree can display data in hierarchical form:"),
-				tree
-			)
-		);
-		
 		setText("Tree");
-		setComponent(box);
+		setComponent(createTreeBox());
 	}
-	
+
 	// private methods --------------------------------------------------------
 	
-	private static TreeNode createTreeRoot()
+	private static GroupBox createTreeBox()
 	{
-		// TODO: dynamically generate this tree
-		return new DefaultTreeNode(Component.class,
+		GroupBox box = new GroupBox("Tree");
+		
+		box.add(new Label("A Tree can display data in hierarchical form:"));
+		
+		Tree tree = new Tree(createTreeModel());
+		tree.setTreeNodeRenderer(createClassTreeNodeRenderer());
+		tree.setAutoExpand(true);
+		box.add(tree);
+		
+		return box;
+	}
+	
+	private static TreeModel createTreeModel()
+	{
+		TreeNode rootNode = new DefaultTreeNode(Component.class,
 			new DefaultTreeNode(Box.class,
 				new DefaultTreeNode(Deck.class),
 				new DefaultTreeNode(Grid.class,
@@ -134,6 +111,24 @@ public class TreeTab extends Tab
 			new DefaultTreeNode(TabBox.class),
 			new DefaultTreeNode(Table.class),
 			new DefaultTreeNode(TextBox.class),
-			new DefaultTreeNode(Tree.class));
+			new DefaultTreeNode(Tree.class)
+		);
+		
+		return new DefaultTreeModel(rootNode);
+	}
+	
+	private static TreeNodeRenderer createClassTreeNodeRenderer()
+	{
+		return new LabelTreeNodeRenderer()
+		{
+			@Override
+			public Label getTreeNodeComponent(Tree tree, TreePath path)
+			{
+				Class<?> klass = (Class<?>) ((DefaultTreeNode) path.getNode()).getValue();
+				setText(klass.getSimpleName());
+				setToolTip(klass.getName());
+				return this;
+			}
+		};
 	}
 }

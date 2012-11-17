@@ -13,7 +13,6 @@
  */
 package org.hobsoft.symmetry.demo.gallery.tab;
 
-import org.hobsoft.symmetry.ui.Box;
 import org.hobsoft.symmetry.ui.GroupBox;
 import org.hobsoft.symmetry.ui.HtmlLabel;
 import org.hobsoft.symmetry.ui.Label;
@@ -31,36 +30,23 @@ public class LabelTab extends Tab
 	
 	public LabelTab()
 	{
-		// TODO: use chainable setters when supported
+		Label label1 = new Label("A Label can be a simple string like this.");
 		
-		Box box = new VBox(
-			new GroupBox("Label",
-				new Label("A Label can be a simple string like this."),
-				new HtmlLabel(
-					"Labels can also contain <abbr title=\"Extensible HyperText Markup Language\">XHTML</abbr> tags "
-					+ "to:"
-					+ "<ul>"
-						+ "<li>"
-							+ "<em>achieve</em>;"
-							+ "<ul>"
-								+ "<li>"
-									+ "<code>simple</code>;"
-									+ "<ul>"
-										+ "<li><strong>styling</strong>.</li>"
-									+ "</ul>"
-								+ "</li>"
-							+ "</ul>"
-						+ "</li>"
-					+ "</ul>"
-				),
-				new HtmlLabel("This can be used to provide hyperlinks to "
-					+ "<a href=\"https://github.com/markhobson/symmetry\">cool places</a>."),
-				new HtmlLabel("Unrecognised namespaces are also <format dir=\"c:\" xmlns=\"ant\">escaped accordingly"
-					+ "</format>.")
-			)
-		);
+		Label label2 = new HtmlLabel("Labels can also contain "
+			+ "<abbr title=\"Extensible HyperText Markup Language\">XHTML</abbr> tags to:"
+			+ "<ul><li><em>achieve</em>;"
+			+ "<ul><li><code>simple</code>;"
+			+ "<ul><li><strong>styling</strong>.</li></ul>"
+			+ "</li></ul>"
+			+ "</li></ul>");
+		
+		Label label3 = new HtmlLabel("This can be used to provide hyperlinks to "
+			+ "<a href=\"https://github.com/markhobson/symmetry\">cool places</a>.");
+		
+		Label label4 = new HtmlLabel("Unrecognised namespaces are also "
+			+ "<format dir=\"c:\" xmlns=\"ant\">escaped accordingly</format>.");
 		
 		setText("Label");
-		setComponent(box);
+		setComponent(new VBox(new GroupBox("Label", label1, label2, label3, label4)));
 	}
 }

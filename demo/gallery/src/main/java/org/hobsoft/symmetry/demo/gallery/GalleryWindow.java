@@ -37,18 +37,17 @@ public class GalleryWindow extends Window
 	{
 		setTitle("Symmetry Gallery");
 		
-		add(
-			new Label("Symmetry Gallery"),
-			new TabBox(
-				new LabelTab(),
-				new ButtonTab(),
-				new InputTab(),
-				new LayoutTab(),
-				new TableTab(),
-				new TreeTab(),
-				new WizardTab()
-			)
-		);
+		add(new Label("Symmetry Gallery"));
+		
+		TabBox tabBox = new TabBox();
+		tabBox.add(new LabelTab());
+		tabBox.add(new ButtonTab());
+		tabBox.add(new InputTab());
+		tabBox.add(new LayoutTab());
+		tabBox.add(new TableTab());
+		tabBox.add(new TreeTab());
+		tabBox.add(new WizardTab());
+		add(tabBox);
 		
 		setVisible(true);
 	}

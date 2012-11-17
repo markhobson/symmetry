@@ -16,7 +16,8 @@ package org.hobsoft.symmetry.demo.gallery.tab;
 import java.io.IOException;
 import java.io.InputStream;
 
-import org.hobsoft.symmetry.ui.Box;
+import javax.activation.DataSource;
+
 import org.hobsoft.symmetry.ui.Button;
 import org.hobsoft.symmetry.ui.CheckBox;
 import org.hobsoft.symmetry.ui.ComboBox;
@@ -44,80 +45,102 @@ public class InputTab extends Tab
 	
 	public InputTab()
 	{
+		setText("Input");
+		setComponent(new VBox(createTextBoxBox(), createCheckBoxBox(), createRadioBox(), createComboBoxBox(),
+			createListBoxBox(), createFileChooserBox()));
+	}
+
+	// private methods --------------------------------------------------------
+	
+	private static GroupBox createTextBoxBox()
+	{
+		GroupBox box = new GroupBox("TextBox");
+		box.add(new Label("A TextBox allows simple textual input:"));
+		box.add(new TextBox());
+		return box;
+	}
+	
+	private static GroupBox createCheckBoxBox()
+	{
+		GroupBox box = new GroupBox("CheckBox");
+		
+		box.add(new Label("A CheckBox provides a simple boolean input:"));
+		box.add(new CheckBox("CheckBox"));
+		
+		// TODO: bind checkBox.selected to textBox.enabled when implemented
+		CheckBox checkBox = new CheckBox("It can also be linked to other components", true);
+		TextBox textBox = new TextBox();
+		box.add(new HBox(checkBox, textBox));
+		
+		return box;
+	}
+
+	private static GroupBox createRadioBox()
+	{
+		GroupBox box = new GroupBox("Radio");
+		box.add(new Label("A Radio provides a multiple choice input:"));
+		box.add(new ToggleButtonGroup(new Radio("Fruit"), new Radio("Vegetable"), new Radio("Meat")));
+		return box;
+	}
+
+	private static GroupBox createComboBoxBox()
+	{
+		GroupBox box = new GroupBox("ComboBox");
+		box.add(new Label("A ComboBox allows the user to choose from a list of options:"));
+		box.add(new ComboBox<String>("Apple", "Banana", "Grapefruit", "Kiwi", "Lemon", "Orange"));
+		box.add(new Label("The options are provided using a ListModel."));
+		return box;
+	}
+
+	private static GroupBox createListBoxBox()
+	{
+		GroupBox box = new GroupBox("ListBox");
+		
+		box.add(new Label("A ListBox also allows the user to choose from a list of options, but in a more verbose "
+			+ "manner:"));
+		
+		ListBox<String> listBox = new ListBox<String>("Apple", "Banana", "Grapefruit", "Kiwi", "Lemon", "Orange");
+		listBox.setSelectionMode(SelectionMode.MULTIPLE);
+		box.add(listBox);
+		
+		box.add(new Label("Similarly, the options are provided using a ListModel."));
+		
+		return box;
+	}
+
+	private static GroupBox createFileChooserBox()
+	{
 		final FileChooser fileChooser = new FileChooser();
 		final Label label = new Label();
 		
-		Button uploadButton = new Button("Upload").onAction(new Command()
+		Button uploadButton = new Button("Upload");
+		
+		uploadButton.onAction(new Command()
 		{
 			@Override
 			public void execute()
 			{
-				try
-				{
-					InputStream in = fileChooser.getFile().getInputStream();
-					label.setText(getLength(in) + " bytes");
-				}
-				catch (IOException exception)
-				{
-					exception.printStackTrace();
-					label.setText("Error");
-				}
+				label.setText(getLength(fileChooser.getFile()) + " bytes");
 			}
 		});
 		
-		TextBox textBox = new TextBox();
-		
-		ListBox<String> listBox = new ListBox<String>("Apple", "Banana", "Grapefruit", "Kiwi", "Lemon", "Orange");
-		listBox.setSelectionMode(SelectionMode.MULTIPLE);
-		
-		Box box = new VBox(
-			new GroupBox("TextBox",
-				new Label("A TextBox allows simple textual input:"),
-				new TextBox()
-			),
-			new GroupBox("CheckBox",
-				new Label("A CheckBox provides a simple boolean input:"),
-				new CheckBox("CheckBox"),
-				new HBox(
-					// TODO: bind checkBox.selected to textBox.enabled when implemented
-					new CheckBox("It can also be linked to other components", true),
-					textBox
-				)
-			),
-			new GroupBox("Radio",
-				new Label("A Radio provides a multiple choice input:"),
-				new ToggleButtonGroup(
-					new Radio("Fruit"),
-					new Radio("Vegetable"),
-					new Radio("Meat")
-				)
-			),
-			new GroupBox("ComboBox",
-				new Label("A ComboBox allows the user to choose from a list of options:"),
-				new ComboBox<String>("Apple", "Banana", "Grapefruit", "Kiwi", "Lemon", "Orange"),
-				new Label("The options are provided using a ListModel.")
-			),
-			new GroupBox("ListBox",
-				new Label("A ListBox also allows the user to choose from a list of options, but in a more verbose "
-					+ "manner:"),
-				listBox,
-				new Label("Similarly, the options are provided using a ListModel.")
-			),
-			new GroupBox("FileChooser",
-				new Label("A FileChooser can be used to upload files to an application:"),
-				new HBox(
-					fileChooser,
-					uploadButton,
-					label
-				)
-			)
-		);
-		
-		setText("Input");
-		setComponent(box);
+		GroupBox box = new GroupBox("FileChooser");
+		box.add(new Label("A FileChooser can be used to upload files to an application:"));
+		box.add(new HBox(fileChooser, uploadButton, label));
+		return box;
 	}
-	
-	// private methods --------------------------------------------------------
+
+	private static int getLength(DataSource dataSource)
+	{
+		try
+		{
+			return getLength(dataSource.getInputStream());
+		}
+		catch (IOException exception)
+		{
+			return -1;
+		}
+	}
 	
 	private static int getLength(InputStream in) throws IOException
 	{
