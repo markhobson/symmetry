@@ -30,7 +30,6 @@ import org.eclipse.swt.widgets.TreeItem;
 import org.eclipse.swt.widgets.Widget;
 import org.hobsoft.symmetry.ui.Image;
 import org.hobsoft.symmetry.ui.Orientation;
-import org.hobsoft.symmetry.util.lang.ValuedRunnable;
 
 /**
  * 
@@ -187,20 +186,8 @@ public final class SwtUtils
 		Display.getDefault().asyncExec(new DebugRunnable(runnable));
 	}
 	
-	public static Object asyncExec(ValuedRunnable runnable)
-	{
-		Display.getDefault().asyncExec(new DebugRunnable(runnable));
-		return runnable.getValue();
-	}
-	
 	public static void syncExec(Runnable runnable)
 	{
 		Display.getDefault().syncExec(new DebugRunnable(runnable));
-	}
-	
-	public static Object syncExec(ValuedRunnable runnable)
-	{
-		Display.getDefault().syncExec(new DebugRunnable(runnable));
-		return runnable.getValue();
 	}
 }
