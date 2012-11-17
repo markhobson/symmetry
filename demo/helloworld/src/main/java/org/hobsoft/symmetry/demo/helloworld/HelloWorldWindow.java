@@ -25,7 +25,7 @@ public class HelloWorldWindow extends Window
 {
 	public HelloWorldWindow()
 	{
-		super("Hello World Demo");
+		setTitle("Hello World Demo");
 		
 		add(new Label("Hello World!"));
 		
