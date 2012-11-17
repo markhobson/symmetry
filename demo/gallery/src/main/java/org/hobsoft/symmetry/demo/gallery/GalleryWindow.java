@@ -38,7 +38,7 @@ public class GalleryWindow extends Window
 		setTitle("Symmetry Gallery");
 		
 		add(
-			new Label("Symmetry Gallery 0.2.0"),
+			new Label("Symmetry Gallery"),
 			new TabBox(
 				new LabelTab(),
 				new ButtonTab(),
