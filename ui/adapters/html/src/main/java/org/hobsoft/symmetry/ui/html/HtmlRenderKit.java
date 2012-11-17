@@ -22,7 +22,6 @@ import org.hobsoft.symmetry.hydrate.HydrationException;
 import org.hobsoft.symmetry.hydrate.RehydrationContext;
 import org.hobsoft.symmetry.state.Base64StateCodec;
 import org.hobsoft.symmetry.state.StateCodec;
-import org.hobsoft.symmetry.support.bean.JdkBeanIntrospector;
 import org.hobsoft.symmetry.support.codec.Codec;
 import org.hobsoft.symmetry.support.codec.Codecs;
 import org.hobsoft.symmetry.ui.Component;
@@ -113,8 +112,8 @@ public class HtmlRenderKit extends XmlRenderKit<Component>
 		DefaultSerializerFactory serializerFactory = new DefaultSerializerFactory();
 		serializerFactory.setSerializer(TreePath.class, new TreePathSerializer());
 		
-		StateCodec stateCodec = new Base64StateCodec(componentCodec, new JdkBeanIntrospector(), serializerFactory);
-//		StateCodec stateCodec = new ClassicStateCodec(componentCodec, new JdkBeanIntrospector());
+		StateCodec stateCodec = new Base64StateCodec(componentCodec, serializerFactory);
+//		StateCodec stateCodec = new ClassicStateCodec(componentCodec);
 		stateCodec = new HtmlFormStateCodec(stateCodec);
 		stateCodec = new FormHtmlEventStateCodec(stateCodec);
 		stateCodec = new HyperlinkableClosureStateCodec(stateCodec);

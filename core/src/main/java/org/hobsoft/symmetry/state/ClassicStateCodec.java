@@ -22,7 +22,7 @@ import java.io.ObjectOutput;
 import java.util.EventObject;
 
 import org.hobsoft.symmetry.support.bean.BeanException;
-import org.hobsoft.symmetry.support.bean.BeanIntrospector;
+import org.hobsoft.symmetry.support.bean.BeanUtils;
 import org.hobsoft.symmetry.support.bean.EventSets;
 import org.hobsoft.symmetry.support.bean.Properties;
 import org.hobsoft.symmetry.support.codec.Codec;
@@ -47,14 +47,11 @@ public class ClassicStateCodec implements StateCodec
 	
 	private final Codec<Object, Integer> componentCodec;
 	
-	private final BeanIntrospector introspector;
-	
 	// constructors -----------------------------------------------------------
 	
-	public ClassicStateCodec(Codec<Object, Integer> componentCodec, BeanIntrospector introspector)
+	public ClassicStateCodec(Codec<Object, Integer> componentCodec)
 	{
 		this.componentCodec = componentCodec;
-		this.introspector = introspector;
 	}
 	
 	// StateCodec methods -----------------------------------------------------
@@ -260,7 +257,7 @@ public class ClassicStateCodec implements StateCodec
 		
 		Object component = decodeBean(name.substring(0, end + 1));
 		String propertyName = name.substring(end + 1);
-		BeanInfo componentInfo = introspector.getBeanInfo(component.getClass());
+		BeanInfo componentInfo = BeanUtils.getBeanInfo(component.getClass());
 		PropertyDescriptor descriptor = Properties.getDescriptor(componentInfo, propertyName);
 		
 		Object propertyValue = decodePropertyValue(value, component, descriptor);
@@ -322,7 +319,7 @@ public class ClassicStateCodec implements StateCodec
 	{
 		try
 		{
-			BeanInfo info = introspector.getBeanInfo(beanClass);
+			BeanInfo info = BeanUtils.getBeanInfo(beanClass);
 			
 			return EventSets.getDescriptor(info, eventSetName, methodName);
 		}

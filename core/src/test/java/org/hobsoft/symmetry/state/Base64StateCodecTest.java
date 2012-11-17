@@ -15,7 +15,6 @@ package org.hobsoft.symmetry.state;
 
 import java.beans.PropertyDescriptor;
 
-import org.hobsoft.symmetry.support.bean.JdkBeanIntrospector;
 import org.hobsoft.symmetry.support.bean.Properties;
 import org.junit.Before;
 import org.junit.Test;
@@ -40,7 +39,7 @@ public class Base64StateCodecTest
 	public void setUp()
 	{
 		// TODO: use stub component codec
-		stateCodec = new Base64StateCodec(null, new JdkBeanIntrospector(), null);
+		stateCodec = new Base64StateCodec(null, null);
 	}
 
 	// tests ------------------------------------------------------------------

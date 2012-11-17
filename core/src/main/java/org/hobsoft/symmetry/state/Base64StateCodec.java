@@ -37,7 +37,7 @@ import java.util.Iterator;
 import java.util.List;
 
 import org.hobsoft.symmetry.support.bean.BeanException;
-import org.hobsoft.symmetry.support.bean.BeanIntrospector;
+import org.hobsoft.symmetry.support.bean.BeanUtils;
 import org.hobsoft.symmetry.support.codec.Codec;
 import org.hobsoft.symmetry.support.codec.DecoderException;
 import org.hobsoft.symmetry.support.codec.EncoderException;
@@ -100,17 +100,13 @@ public class Base64StateCodec implements StateCodec
 	
 	private final Codec<Object, Integer> componentCodec;
 	
-	private final BeanIntrospector introspector;
-	
 	private final SerializerFactory serializerFactory;
 	
 	// constructors -----------------------------------------------------------
 	
-	public Base64StateCodec(Codec<Object, Integer> componentCodec, BeanIntrospector introspector,
-		SerializerFactory serializerFactory)
+	public Base64StateCodec(Codec<Object, Integer> componentCodec, SerializerFactory serializerFactory)
 	{
 		this.componentCodec = componentCodec;
-		this.introspector = introspector;
 		this.serializerFactory = serializerFactory;
 	}
 	
@@ -428,14 +424,14 @@ public class Base64StateCodec implements StateCodec
 	
 	private int encodePropertyDescriptor(PropertyDescriptor descriptor, Class<?> beanClass)
 	{
-		BeanInfo info = introspector.getBeanInfo(beanClass);
+		BeanInfo info = BeanUtils.getBeanInfo(beanClass);
 		PropertyDescriptor[] descriptors = info.getPropertyDescriptors();
 		return encodeObject(descriptors, descriptor, FeatureDescriptorComparator.INSTANCE);
 	}
 	
 	private int encodeEventSetDescriptor(EventSetDescriptor eventSet, Class<?> beanClass)
 	{
-		BeanInfo info = introspector.getBeanInfo(beanClass);
+		BeanInfo info = BeanUtils.getBeanInfo(beanClass);
 		EventSetDescriptor[] eventSets = info.getEventSetDescriptors();
 		int eventSetId = encodeObject(eventSets, eventSet, FeatureDescriptorComparator.INSTANCE);
 		
@@ -564,7 +560,7 @@ public class Base64StateCodec implements StateCodec
 	
 	private PropertyDescriptor decodePropertyDescriptor(int id, Class<?> beanClass)
 	{
-		BeanInfo info = introspector.getBeanInfo(beanClass);
+		BeanInfo info = BeanUtils.getBeanInfo(beanClass);
 		PropertyDescriptor[] descriptors = info.getPropertyDescriptors();
 		return (id >= 0 && id < descriptors.length) ? descriptors[id] : null;
 	}
@@ -574,7 +570,7 @@ public class Base64StateCodec implements StateCodec
 		int eventSetId = (id >>> 4) & 0xF;
 		int methodId = id & 0xF;
 		
-		BeanInfo info = introspector.getBeanInfo(beanClass);
+		BeanInfo info = BeanUtils.getBeanInfo(beanClass);
 		EventSetDescriptor[] eventSets = info.getEventSetDescriptors();
 		EventSetDescriptor eventSet = (EventSetDescriptor) decodeObject(eventSets, eventSetId,
 			FeatureDescriptorComparator.INSTANCE);
