@@ -34,6 +34,9 @@ import org.hobsoft.symmetry.ui.ToggleButtonGroup;
 import org.hobsoft.symmetry.ui.VBox;
 import org.hobsoft.symmetry.ui.functor.Command;
 
+import com.google.common.io.ByteStreams;
+import com.google.common.io.InputSupplier;
+
 /**
  * 
  * 
@@ -120,7 +123,7 @@ public class InputTab extends Tab
 			@Override
 			public void execute()
 			{
-				label.setText(getLength(fileChooser.getFile()) + " bytes");
+				label.setText(length(fileChooser.getFile()) + " bytes");
 			}
 		});
 		
@@ -130,11 +133,11 @@ public class InputTab extends Tab
 		return box;
 	}
 
-	private static int getLength(DataSource dataSource)
+	private static long length(DataSource dataSource)
 	{
 		try
 		{
-			return getLength(dataSource.getInputStream());
+			return ByteStreams.length(newInputStreamSupplier(dataSource));
 		}
 		catch (IOException exception)
 		{
@@ -142,17 +145,15 @@ public class InputTab extends Tab
 		}
 	}
 	
-	private static int getLength(InputStream in) throws IOException
+	private static InputSupplier<InputStream> newInputStreamSupplier(final DataSource dataSource)
 	{
-		byte[] buffer = new byte[1024];
-		int length = 0;
-		int n;
-		
-		while ((n = in.read(buffer)) != -1)
+		return new InputSupplier<InputStream>()
 		{
-			length += n;
-		}
-		
-		return length;
+			@Override
+			public InputStream getInput() throws IOException
+			{
+				return dataSource.getInputStream();
+			}
+		};
 	}
 }
