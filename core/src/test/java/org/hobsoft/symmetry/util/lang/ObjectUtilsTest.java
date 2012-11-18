@@ -15,6 +15,7 @@ package org.hobsoft.symmetry.util.lang;
 
 import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
@@ -103,5 +104,71 @@ public class ObjectUtilsTest
 	public void equalsWithEqualShortArrays()
 	{
 		assertTrue(ObjectUtils.equals(new short[0], new short[0]));
+	}
+	
+	@Test
+	public void toStringWithNull()
+	{
+		assertEquals("null", ObjectUtils.toString(null));
+	}
+	
+	@Test
+	public void toStringWithObject()
+	{
+		assertEquals("x", ObjectUtils.toString("x"));
+	}
+	
+	@Test
+	public void toStringWithObjectArray()
+	{
+		assertEquals("[x,y]", ObjectUtils.toString(new Object[] {"x", "y"}));
+	}
+	
+	@Test
+	public void toStringWithBooleanArray()
+	{
+		assertEquals("[false,true]", ObjectUtils.toString(new boolean[] {false, true}));
+	}
+	
+	@Test
+	public void toStringWithByteArray()
+	{
+		assertEquals("[0,1]", ObjectUtils.toString(new byte[] {0, 1}));
+	}
+	
+	@Test
+	public void toStringWithCharArray()
+	{
+		assertEquals("[x,y]", ObjectUtils.toString(new char[] {'x', 'y'}));
+	}
+	
+	@Test
+	public void toStringWithDoubleArray()
+	{
+		assertEquals("[0.0,1.0]", ObjectUtils.toString(new double[] {0.0, 1.0}));
+	}
+	
+	@Test
+	public void toStringWithFloatArray()
+	{
+		assertEquals("[0.0,1.0]", ObjectUtils.toString(new float[] {0.0f, 1.0f}));
+	}
+	
+	@Test
+	public void toStringWithIntArray()
+	{
+		assertEquals("[0,1]", ObjectUtils.toString(new int[] {0, 1}));
+	}
+	
+	@Test
+	public void toStringWithLongArray()
+	{
+		assertEquals("[0,1]", ObjectUtils.toString(new long[] {0, 1}));
+	}
+	
+	@Test
+	public void toStringWithShortArray()
+	{
+		assertEquals("[0,1]", ObjectUtils.toString(new short[] {0, 1}));
 	}
 }
