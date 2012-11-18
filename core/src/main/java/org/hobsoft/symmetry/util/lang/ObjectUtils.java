@@ -13,7 +13,6 @@
  */
 package org.hobsoft.symmetry.util.lang;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 /**
@@ -56,26 +55,12 @@ public final class ObjectUtils
 		
 		Class<?> klass = object.getClass();
 		
-		if (!klass.isArray())
+		if (klass.isArray())
 		{
-			return object.toString();
+			return arrayToString(object);
 		}
 		
-		int length = Array.getLength(object);
-		
-		StringBuilder builder = new StringBuilder();
-		builder.append('[');
-		for (int i = 0; i < length; i++)
-		{
-			if (i > 0)
-			{
-				builder.append(',');
-			}
-			
-			builder.append(Array.get(object, i));
-		}
-		builder.append(']');
-		return builder.toString();
+		return object.toString();
 	}
 	
 	// private methods --------------------------------------------------------
@@ -129,5 +114,51 @@ public final class ObjectUtils
 		}
 		
 		return equals;
+	}
+	
+	private static String arrayToString(Object array)
+	{
+		Class<?> type = array.getClass().getComponentType();
+		
+		String string;
+		
+		if (type == boolean.class)
+		{
+			string = Arrays.toString((boolean[]) array);
+		}
+		else if (type == byte.class)
+		{
+			string = Arrays.toString((byte[]) array);
+		}
+		else if (type == char.class)
+		{
+			string = Arrays.toString((char[]) array);
+		}
+		else if (type == double.class)
+		{
+			string = Arrays.toString((double[]) array);
+		}
+		else if (type == float.class)
+		{
+			string = Arrays.toString((float[]) array);
+		}
+		else if (type == int.class)
+		{
+			string = Arrays.toString((int[]) array);
+		}
+		else if (type == long.class)
+		{
+			string = Arrays.toString((long[]) array);
+		}
+		else if (type == short.class)
+		{
+			string = Arrays.toString((short[]) array);
+		}
+		else
+		{
+			string = Arrays.toString((Object[]) array);
+		}
+		
+		return string;
 	}
 }
