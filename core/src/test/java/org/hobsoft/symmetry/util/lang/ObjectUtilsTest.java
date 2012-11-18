@@ -13,9 +13,6 @@
  */
 package org.hobsoft.symmetry.util.lang;
 
-import java.lang.reflect.Constructor;
-import java.lang.reflect.Modifier;
-
 import org.junit.Test;
 
 import static org.junit.Assert.assertFalse;
@@ -29,17 +26,6 @@ import static org.junit.Assert.assertTrue;
 public class ObjectUtilsTest
 {
 	// tests ------------------------------------------------------------------
-	
-	@Test
-	public void nonInstantiable()
-	{
-		Constructor<?>[] constructors = ObjectUtils.class.getConstructors();
-		
-		for (int i = 0; i < constructors.length; i++)
-		{
-			assertTrue(Modifier.isPrivate(constructors[i].getModifiers()));
-		}
-	}
 	
 	@Test
 	public void equalsOrNullBothNull()
