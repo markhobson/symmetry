@@ -53,9 +53,7 @@ public final class ObjectUtils
 			return "null";
 		}
 		
-		Class<?> klass = object.getClass();
-		
-		if (klass.isArray())
+		if (object.getClass().isArray())
 		{
 			return arrayToString(object);
 		}
