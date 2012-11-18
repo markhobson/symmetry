@@ -119,7 +119,7 @@ public final class ObjectUtils
 		{
 			equals = Arrays.equals((long[]) a, (long[]) b);
 		}
-		else if (aType == double.class)
+		else if (aType == short.class)
 		{
 			equals = Arrays.equals((short[]) a, (short[]) b);
 		}

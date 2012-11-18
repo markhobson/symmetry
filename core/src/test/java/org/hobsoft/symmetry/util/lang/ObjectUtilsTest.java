@@ -48,7 +48,60 @@ public class ObjectUtilsTest
 	@Test
 	public void equalsWithEqualObjects()
 	{
-		Object object = new Object();
-		assertTrue(ObjectUtils.equals(object, object));
+		assertTrue(ObjectUtils.equals("x", "x"));
+	}
+	
+	@Test
+	public void equalsWithEqualObjectArrays()
+	{
+		assertTrue(ObjectUtils.equals(new Object[0], new Object[0]));
+	}
+	
+	@Test
+	public void equalsWithEqualBooleanArrays()
+	{
+		assertTrue(ObjectUtils.equals(new boolean[0], new boolean[0]));
+	}
+	
+	@Test
+	public void equalsWithEqualByteArrays()
+	{
+		assertTrue(ObjectUtils.equals(new byte[0], new byte[0]));
+	}
+	
+	@Test
+	public void equalsWithEqualCharArrays()
+	{
+		assertTrue(ObjectUtils.equals(new char[0], new char[0]));
+	}
+	
+	@Test
+	public void equalsWithEqualDoubleArrays()
+	{
+		assertTrue(ObjectUtils.equals(new double[0], new double[0]));
+	}
+	
+	@Test
+	public void equalsWithEqualFloatArrays()
+	{
+		assertTrue(ObjectUtils.equals(new float[0], new float[0]));
+	}
+	
+	@Test
+	public void equalsWithEqualIntArrays()
+	{
+		assertTrue(ObjectUtils.equals(new int[0], new int[0]));
+	}
+	
+	@Test
+	public void equalsWithEqualLongArrays()
+	{
+		assertTrue(ObjectUtils.equals(new long[0], new long[0]));
+	}
+	
+	@Test
+	public void equalsWithEqualShortArrays()
+	{
+		assertTrue(ObjectUtils.equals(new short[0], new short[0]));
 	}
 }
