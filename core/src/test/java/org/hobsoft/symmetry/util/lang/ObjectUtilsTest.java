@@ -28,33 +28,27 @@ public class ObjectUtilsTest
 	// tests ------------------------------------------------------------------
 	
 	@Test
-	public void equalsOrNullBothNull()
+	public void equalsWithNullAndNull()
 	{
 		assertTrue(ObjectUtils.equals(null, null));
 	}
 	
 	@Test
-	public void equalsOrNullFirstNull()
+	public void equalsWithNullAndObject()
 	{
 		assertFalse(ObjectUtils.equals(null, new Object()));
 	}
 	
 	@Test
-	public void equalsOrNullSecondNull()
+	public void equalsWithObjectAndNull()
 	{
 		assertFalse(ObjectUtils.equals(new Object(), null));
 	}
 	
 	@Test
-	public void equalsOrNullSame()
+	public void equalsWithEqualObjects()
 	{
 		Object object = new Object();
 		assertTrue(ObjectUtils.equals(object, object));
-	}
-	
-	@Test
-	public void equalsOrNullEqual()
-	{
-		assertTrue(ObjectUtils.equals(123, 123));
 	}
 }
