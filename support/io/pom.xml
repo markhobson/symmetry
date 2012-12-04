@@ -17,56 +17,20 @@
 
 	<parent>
 		<groupId>org.hobsoft.symmetry</groupId>
-		<artifactId>symmetry-parent</artifactId>
+		<artifactId>symmetry-support-parent</artifactId>
 		<version>0.2.0-SNAPSHOT</version>
 	</parent>
 
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>symmetry-core</artifactId>
+	<artifactId>symmetry-support-io</artifactId>
 	<packaging>jar</packaging>
 	
-	<name>Symmetry Core</name>
-	<description>Symmetry Core provides functionality common to all deployments.</description>
+	<name>Symmetry Support I/O</name>
+	<description>Symmetry Support I/O provides utility classes to work with data streams.</description>
 	
 	<dependencies>
 	
-		<dependency>
-			<groupId>org.hobsoft.symmetry</groupId>
-			<artifactId>symmetry-api</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-		
-		<dependency>
-			<groupId>org.hobsoft.symmetry</groupId>
-			<artifactId>symmetry-support-bean</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-		
-		<dependency>
-			<groupId>org.hobsoft.symmetry</groupId>
-			<artifactId>symmetry-support-codec</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-		
-		<dependency>
-			<groupId>org.hobsoft.symmetry</groupId>
-			<artifactId>symmetry-support-io</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-		
-		<dependency>
-			<groupId>commons-pool</groupId>
-			<artifactId>commons-pool</artifactId>
-			<version>1.3</version>
-		</dependency>
-		
 		<!-- test -->
-		
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<scope>test</scope>
-		</dependency>
 		
 		<dependency>
 			<groupId>org.jmock</groupId>

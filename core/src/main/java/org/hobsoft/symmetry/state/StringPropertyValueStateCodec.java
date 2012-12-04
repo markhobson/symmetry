@@ -18,11 +18,11 @@ import java.io.IOException;
 import java.io.ObjectInput;
 import java.io.ObjectOutput;
 
-import org.hobsoft.symmetry.util.io.IOUtils;
-import org.hobsoft.symmetry.util.io.StringDataInput;
-import org.hobsoft.symmetry.util.io.StringDataOutput;
-import org.hobsoft.symmetry.util.io.TinyObjectInput;
-import org.hobsoft.symmetry.util.io.TinyObjectOutput;
+import org.hobsoft.symmetry.support.io.IOUtils;
+import org.hobsoft.symmetry.support.io.StringDataInput;
+import org.hobsoft.symmetry.support.io.StringDataOutput;
+import org.hobsoft.symmetry.support.io.TinyObjectInput;
+import org.hobsoft.symmetry.support.io.TinyObjectOutput;
 
 /**
  * 

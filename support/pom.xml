@@ -30,6 +30,7 @@
 	<modules>
 		<module>bean</module>
 		<module>codec</module>
+		<module>io</module>
 		<module>test</module>
 		<module>xml</module>
 	</modules>

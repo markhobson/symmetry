@@ -24,6 +24,7 @@ import org.hobsoft.symmetry.state.Base64StateCodec;
 import org.hobsoft.symmetry.state.StateCodec;
 import org.hobsoft.symmetry.support.codec.Codec;
 import org.hobsoft.symmetry.support.codec.Codecs;
+import org.hobsoft.symmetry.support.io.DefaultSerializerFactory;
 import org.hobsoft.symmetry.ui.Component;
 import org.hobsoft.symmetry.ui.common.hydrate.ComponentHydrator;
 import org.hobsoft.symmetry.ui.html.hydrate.HtmlComponentHydrator;
@@ -33,7 +34,6 @@ import org.hobsoft.symmetry.ui.html.state.HtmlFormStateCodec;
 import org.hobsoft.symmetry.ui.html.state.HyperlinkableClosureStateCodec;
 import org.hobsoft.symmetry.ui.model.TreePath;
 import org.hobsoft.symmetry.ui.traversal.ComponentFilter;
-import org.hobsoft.symmetry.util.io.DefaultSerializerFactory;
 import org.hobsoft.symmetry.xml.XmlRenderKit;
 
 import static org.hobsoft.symmetry.ui.traversal.ComponentFilters.accept;

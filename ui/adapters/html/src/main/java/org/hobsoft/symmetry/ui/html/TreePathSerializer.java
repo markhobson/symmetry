@@ -17,10 +17,10 @@ import java.io.IOException;
 import java.io.ObjectInput;
 import java.io.ObjectOutput;
 
+import org.hobsoft.symmetry.support.io.Serializer;
+import org.hobsoft.symmetry.support.io.SerializerContext;
 import org.hobsoft.symmetry.ui.Tree;
 import org.hobsoft.symmetry.ui.model.TreePath;
-import org.hobsoft.symmetry.util.io.Serializer;
-import org.hobsoft.symmetry.util.io.SerializerContext;
 
 /**
  * 

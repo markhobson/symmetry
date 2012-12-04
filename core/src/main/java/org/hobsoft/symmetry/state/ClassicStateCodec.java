@@ -28,11 +28,11 @@ import org.hobsoft.symmetry.support.bean.Properties;
 import org.hobsoft.symmetry.support.codec.Codec;
 import org.hobsoft.symmetry.support.codec.DecoderException;
 import org.hobsoft.symmetry.support.codec.EncoderException;
-import org.hobsoft.symmetry.util.io.IOUtils;
-import org.hobsoft.symmetry.util.io.StringDataInput;
-import org.hobsoft.symmetry.util.io.StringDataOutput;
-import org.hobsoft.symmetry.util.io.TinyObjectInput;
-import org.hobsoft.symmetry.util.io.TinyObjectOutput;
+import org.hobsoft.symmetry.support.io.IOUtils;
+import org.hobsoft.symmetry.support.io.StringDataInput;
+import org.hobsoft.symmetry.support.io.StringDataOutput;
+import org.hobsoft.symmetry.support.io.TinyObjectInput;
+import org.hobsoft.symmetry.support.io.TinyObjectOutput;
 
 /**
  * 

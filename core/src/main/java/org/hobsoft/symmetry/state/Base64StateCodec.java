@@ -44,12 +44,12 @@ import org.hobsoft.symmetry.support.codec.EncoderException;
 import org.hobsoft.symmetry.support.codec.base64.Base64Alphabet;
 import org.hobsoft.symmetry.support.codec.base64.Base64InputStream;
 import org.hobsoft.symmetry.support.codec.base64.Base64OutputStream;
-import org.hobsoft.symmetry.util.io.IOUtils;
-import org.hobsoft.symmetry.util.io.SerializerFactory;
-import org.hobsoft.symmetry.util.io.SerializerTinyObjectInput;
-import org.hobsoft.symmetry.util.io.SerializerTinyObjectOutput;
-import org.hobsoft.symmetry.util.io.TinyDataInput;
-import org.hobsoft.symmetry.util.io.TinyDataOutput;
+import org.hobsoft.symmetry.support.io.IOUtils;
+import org.hobsoft.symmetry.support.io.SerializerFactory;
+import org.hobsoft.symmetry.support.io.SerializerTinyObjectInput;
+import org.hobsoft.symmetry.support.io.SerializerTinyObjectOutput;
+import org.hobsoft.symmetry.support.io.TinyDataInput;
+import org.hobsoft.symmetry.support.io.TinyDataOutput;
 
 /**
  * 
