@@ -37,7 +37,6 @@ import org.hobsoft.symmetry.ui.html.HtmlDocument.Script;
 import org.hobsoft.symmetry.ui.html.HtmlDocument.Style;
 import org.hobsoft.symmetry.ui.traversal.ContainerVisitor;
 import org.hobsoft.symmetry.ui.traversal.DelegatingContainerVisitor;
-import org.hobsoft.symmetry.util.lang.ObjectUtils;
 
 import static org.hobsoft.symmetry.ui.html.HtmlUtils.writeClass;
 import static org.hobsoft.symmetry.ui.html.HtmlUtils.writeDocType;
@@ -303,7 +302,8 @@ public class HtmlWindowDehydrator<T extends Window>
 		
 		out.writeStartElement("span");
 		out.writeAttribute("class", "value");
-		out.writeCharacters(ObjectUtils.toString(property.getValue()));
+		// TODO: pretty print arrays as per org.hobsoft.symmetry.state.ObjectUtils
+		out.writeCharacters(String.valueOf(property.getValue()));
 		// span
 		out.writeEndElement();
 		

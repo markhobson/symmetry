@@ -11,7 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.hobsoft.symmetry.util.lang;
+package org.hobsoft.symmetry.state;
 
 import java.util.Arrays;
 
@@ -20,7 +20,7 @@ import java.util.Arrays;
  * 
  * @author Mark Hobson
  */
-public final class ObjectUtils
+final class ObjectUtils
 {
 	// constructors -----------------------------------------------------------
 	
