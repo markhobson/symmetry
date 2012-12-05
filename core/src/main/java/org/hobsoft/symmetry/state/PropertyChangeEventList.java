@@ -23,7 +23,7 @@ import java.util.Map;
  * 
  * @author Mark Hobson
  */
-public class PropertyChangeEventList
+class PropertyChangeEventList
 {
 	// fields -----------------------------------------------------------------
 	
