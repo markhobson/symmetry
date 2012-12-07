@@ -15,7 +15,6 @@ package org.hobsoft.symmetry.pool;
 
 import org.apache.commons.pool.PoolableObjectFactory;
 import org.apache.commons.pool.impl.GenericObjectPool;
-import org.hobsoft.symmetry.monitor.NoOpComponentPoolMonitor;
 
 /**
  * 
@@ -32,21 +31,12 @@ public class DefaultComponentPool implements ComponentPool
 	
 	// fields -----------------------------------------------------------------
 	
-	private final ComponentPoolMonitor monitor;
-	
 	private final GenericObjectPool pool;
 	
 	// constructors -----------------------------------------------------------
 	
 	public DefaultComponentPool(PoolableObjectFactory objectFactory)
 	{
-		this(objectFactory, NoOpComponentPoolMonitor.INSTANCE);
-	}
-	
-	public DefaultComponentPool(PoolableObjectFactory objectFactory, ComponentPoolMonitor monitor)
-	{
-		this.monitor = monitor;
-		
 		pool = new GenericObjectPool(objectFactory);
 		
 		pool.setMinIdle(POOL_SIZE);
@@ -68,8 +58,6 @@ public class DefaultComponentPool implements ComponentPool
 		{
 			Object component = pool.borrowObject();
 			
-			monitor.componentBorrowed(component);
-			
 			return component;
 		}
 		catch (Exception exception)
@@ -87,7 +75,6 @@ public class DefaultComponentPool implements ComponentPool
 		try
 		{
 			pool.invalidateObject(component);
-			monitor.componentInvalidated(component);
 		}
 		catch (Exception exception)
 		{
@@ -104,7 +91,6 @@ public class DefaultComponentPool implements ComponentPool
 		try
 		{
 			pool.returnObject(component);
-			monitor.componentReturned(component);
 		}
 		catch (Exception exception)
 		{
