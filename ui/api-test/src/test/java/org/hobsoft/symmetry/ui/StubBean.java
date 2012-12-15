@@ -23,6 +23,8 @@ public class StubBean
 	// fields -----------------------------------------------------------------
 	
 	private String name;
+	
+	private StubBean partner;
 
 	// constructors -----------------------------------------------------------
 	
@@ -41,5 +43,15 @@ public class StubBean
 	public void setName(String name)
 	{
 		this.name = name;
+	}
+	
+	public StubBean getPartner()
+	{
+		return partner;
+	}
+	
+	public void setPartner(StubBean partner)
+	{
+		this.partner = partner;
 	}
 }

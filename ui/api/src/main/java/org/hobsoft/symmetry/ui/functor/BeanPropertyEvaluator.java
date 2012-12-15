@@ -29,7 +29,14 @@ final class BeanPropertyEvaluator
 {
 	// constants --------------------------------------------------------------
 	
-	private static final Pattern TOKEN_PATTERN = Pattern.compile("\\{(\\w+)\\}");
+	private static final Pattern PROPERTY_NAME_PATTERN = Pattern.compile("\\w+");
+	
+	private static final Pattern SEPARATOR_PATTERN = Pattern.compile("\\.");
+	
+	private static final Pattern PROPERTY_PATH_PATTERN = Pattern.compile(PROPERTY_NAME_PATTERN + "(?:"
+		+ SEPARATOR_PATTERN + PROPERTY_NAME_PATTERN + ")*");
+	
+	private static final Pattern TOKEN_PATTERN = Pattern.compile("\\{(" + PROPERTY_PATH_PATTERN + ")\\}");
 	
 	// constructors -----------------------------------------------------------
 	
@@ -52,8 +59,8 @@ final class BeanPropertyEvaluator
 		
 		while (matcher.find())
 		{
-			String parameterName = matcher.group(1);
-			String replacement = evaluateToken(parameterName, bean);
+			String token = matcher.group(1);
+			String replacement = evaluateToken(token, bean);
 			
 			matcher.appendReplacement(buffer, replacement);
 		}
@@ -65,24 +72,41 @@ final class BeanPropertyEvaluator
 	
 	// private methods --------------------------------------------------------
 	
-	private static String evaluateToken(String name, Object bean)
+	private static String evaluateToken(String token, Object bean)
 	{
-		if (bean == null)
-		{
-			return defaultTokenValue(name);
-		}
-		
 		try
 		{
-			PropertyDescriptor propertyDescriptor = Properties.getDescriptor(bean.getClass(), name);
-			Object value = Properties.get(bean, propertyDescriptor);
-
-			return String.valueOf(value);
+			return String.valueOf(evaluatePropertyPath(token, bean));
 		}
 		catch (NoSuchPropertyException exception)
 		{
-			return defaultTokenValue(name);
+			return defaultTokenValue(token);
 		}
+	}
+	
+	private static Object evaluatePropertyPath(String propertyPath, Object bean)
+	{
+		String[] propertyNames = propertyPath.split(SEPARATOR_PATTERN.pattern());
+		
+		for (String propertyName : propertyNames)
+		{
+			if (bean == null)
+			{
+				throw new NoSuchPropertyException(null, propertyName);
+			}
+			
+			bean = evaluatePropertyName(propertyName, bean);
+		}
+		
+		return bean;
+	}
+	
+	private static Object evaluatePropertyName(String propertyName, Object bean)
+	{
+		PropertyDescriptor propertyDescriptor = Properties.getDescriptor(bean.getClass(), propertyName);
+		Object value = Properties.get(bean, propertyDescriptor);
+
+		return value;
 	}
 	
 	private static String defaultTokenValue(String name)
