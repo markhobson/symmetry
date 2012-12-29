@@ -20,8 +20,10 @@ import org.apache.commons.pool.impl.GenericObjectPool;
  * 
  * 
  * @author Mark Hobson
+ * @param <T>
+ *            the type of object managed by this pool
  */
-public class DefaultComponentPool implements ComponentPool
+public class DefaultComponentPool<T> implements ComponentPool<T>
 {
 	// constants --------------------------------------------------------------
 	
@@ -31,13 +33,13 @@ public class DefaultComponentPool implements ComponentPool
 	
 	// fields -----------------------------------------------------------------
 	
-	private final GenericObjectPool pool;
+	private final GenericObjectPool<T> pool;
 	
 	// constructors -----------------------------------------------------------
 	
-	public DefaultComponentPool(PoolableObjectFactory objectFactory)
+	public DefaultComponentPool(PoolableObjectFactory<T> objectFactory)
 	{
-		pool = new GenericObjectPool(objectFactory);
+		pool = new GenericObjectPool<T>(objectFactory);
 		
 		pool.setMinIdle(POOL_SIZE);
 		pool.setMaxActive(POOL_SIZE);
@@ -52,11 +54,11 @@ public class DefaultComponentPool implements ComponentPool
 	 * {@inheritDoc}
 	 */
 	@Override
-	public Object borrowComponent() throws ComponentPoolException
+	public T borrowComponent() throws ComponentPoolException
 	{
 		try
 		{
-			Object component = pool.borrowObject();
+			T component = pool.borrowObject();
 			
 			return component;
 		}
@@ -70,7 +72,7 @@ public class DefaultComponentPool implements ComponentPool
 	 * {@inheritDoc}
 	 */
 	@Override
-	public void invalidateComponent(Object component) throws ComponentPoolException
+	public void invalidateComponent(T component) throws ComponentPoolException
 	{
 		try
 		{
@@ -86,7 +88,7 @@ public class DefaultComponentPool implements ComponentPool
 	 * {@inheritDoc}
 	 */
 	@Override
-	public void returnComponent(Object component) throws ComponentPoolException
+	public void returnComponent(T component) throws ComponentPoolException
 	{
 		try
 		{

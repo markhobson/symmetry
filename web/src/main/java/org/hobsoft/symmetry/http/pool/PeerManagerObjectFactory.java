@@ -20,7 +20,7 @@ import org.hobsoft.symmetry.PeerManager;
  * 
  * @author Mark Hobson
  */
-public class PeerManagerObjectFactory extends InstantiatingPoolableObjectFactory
+public class PeerManagerObjectFactory extends InstantiatingPoolableObjectFactory<PeerManager>
 {
 	// fields -----------------------------------------------------------------
 	
@@ -41,9 +41,9 @@ public class PeerManagerObjectFactory extends InstantiatingPoolableObjectFactory
 	 * {@inheritDoc}
 	 */
 	@Override
-	public Object makeObject() throws Exception
+	public PeerManager makeObject() throws Exception
 	{
-		PeerManager peerManager = (PeerManager) super.makeObject();
+		PeerManager peerManager = super.makeObject();
 		
 		Object component = componentClass.newInstance();
 		peerManager.registerComponent(component);

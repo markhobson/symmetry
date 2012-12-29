@@ -19,16 +19,18 @@ import org.apache.commons.pool.BasePoolableObjectFactory;
  * 
  * 
  * @author Mark Hobson
+ * @param <T>
+ *            the type of object created by this factory
  */
-public class InstantiatingPoolableObjectFactory extends BasePoolableObjectFactory
+public class InstantiatingPoolableObjectFactory<T> extends BasePoolableObjectFactory<T>
 {
 	// fields -----------------------------------------------------------------
 	
-	private final Class<?> klass;
+	private final Class<? extends T> klass;
 	
 	// constructors -----------------------------------------------------------
 	
-	public InstantiatingPoolableObjectFactory(Class<?> klass)
+	public InstantiatingPoolableObjectFactory(Class<? extends T> klass)
 	{
 		this.klass = klass;
 	}
@@ -39,14 +41,14 @@ public class InstantiatingPoolableObjectFactory extends BasePoolableObjectFactor
 	 * {@inheritDoc}
 	 */
 	@Override
-	public Object makeObject() throws Exception
+	public T makeObject() throws Exception
 	{
 		return klass.newInstance();
 	}
 	
 	// public methods ---------------------------------------------------------
 	
-	public Class<?> getPoolableObjectClass()
+	public Class<? extends T> getPoolableObjectClass()
 	{
 		return klass;
 	}

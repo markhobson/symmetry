@@ -81,7 +81,7 @@ public class SymmetryServlet extends HttpServlet
 	
 	private SymmetryServletConfig config;
 	
-	private ComponentPool peerManagerPool;
+	private ComponentPool<PeerManager> peerManagerPool;
 	
 	// GenericServlet methods -------------------------------------------------
 	
@@ -108,7 +108,8 @@ public class SymmetryServlet extends HttpServlet
 		this.config.setDebug(debug);
 		this.config.setTheme(theme);
 		
-		peerManagerPool = new DefaultComponentPool(new PeerManagerObjectFactory(peerManagerClass, componentClass));
+		peerManagerPool = new DefaultComponentPool<PeerManager>(new PeerManagerObjectFactory(peerManagerClass,
+			componentClass));
 	}
 	
 	/**

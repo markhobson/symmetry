@@ -17,14 +17,16 @@ package org.hobsoft.symmetry.http.pool;
  * 
  * 
  * @author Mark Hobson
+ * @param <T>
+ *            the type of object managed by this pool
  */
-public interface ComponentPool
+public interface ComponentPool<T>
 {
-	Object borrowComponent() throws ComponentPoolException;
+	T borrowComponent() throws ComponentPoolException;
 	
-	void invalidateComponent(Object component) throws ComponentPoolException;
+	void invalidateComponent(T component) throws ComponentPoolException;
 	
-	void returnComponent(Object component) throws ComponentPoolException;
+	void returnComponent(T component) throws ComponentPoolException;
 	
 	void close() throws ComponentPoolException;
 }
