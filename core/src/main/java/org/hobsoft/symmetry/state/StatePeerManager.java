@@ -18,10 +18,6 @@ import java.beans.PropertyChangeListener;
 import java.beans.PropertyDescriptor;
 
 import org.hobsoft.symmetry.PeerManager;
-import org.hobsoft.symmetry.pool.ComponentObjectFactory;
-import org.hobsoft.symmetry.pool.ComponentPool;
-import org.hobsoft.symmetry.pool.ComponentPoolException;
-import org.hobsoft.symmetry.pool.DefaultComponentPool;
 import org.hobsoft.symmetry.support.bean.BeanUtils;
 import org.hobsoft.symmetry.support.bean.Properties;
 
@@ -34,137 +30,17 @@ public abstract class StatePeerManager implements PeerManager, PropertyChangeLis
 {
 	// fields -----------------------------------------------------------------
 	
-	private final ThreadLocal<StateSession> sessionLocal;
+	private final PropertyChangeEventList eventList;
 	
-	private ComponentPool componentPool;
-
-	// types ------------------------------------------------------------------
+	private State state;
 	
-	private class DefaultStateSession implements StateSession
-	{
-		// fields -----------------------------------------------------------------
-		
-		private final Object root;
-		
-		private final PropertyChangeEventList eventList;
-		
-		private State state;
-		
-		// constructors -----------------------------------------------------------
-		
-		public DefaultStateSession(Object root)
-		{
-			this.root = root;
-			eventList = new PropertyChangeEventList();
-			state = null;
-		}
-		
-		// PropertyChangeListener methods -----------------------------------------
-		
-		@Override
-		public void propertyChange(PropertyChangeEvent event)
-		{
-			ensureOpen();
-			eventList.addPropertyChangeEvent(event);
-			invalidate();
-		}
-		
-		// StateSession methods ---------------------------------------------------
-		
-		/**
-		 * {@inheritDoc}
-		 */
-		@Override
-		public Object getRoot()
-		{
-			return root;
-		}
-		
-		/**
-		 * {@inheritDoc}
-		 */
-		@Override
-		public State getState()
-		{
-			ensureOpen();
-			
-			if (state == null)
-			{
-				state = new State();
-				PropertyChangeEvent[] events = eventList.getPropertyChangeEvents();
-				
-				for (int i = 0; i < events.length; i++)
-				{
-					PropertyChangeEvent propertyEvent = events[i];
-					Object component = propertyEvent.getSource();
-					String propertyName = propertyEvent.getPropertyName();
-					PropertyDescriptor property = Properties.getDescriptor(component.getClass(),
-						propertyName);
-					state.addProperty(new PropertyState(component, property, propertyEvent.getNewValue()));
-				}
-			}
-			
-			return new State(state);
-		}
-		
-		/**
-		 * {@inheritDoc}
-		 */
-		@Override
-		public void close()
-		{
-			ensureOpen();
-			try
-			{
-				rollback();
-			}
-			finally
-			{
-				closeSession(this);
-			}
-		}
-		
-		// private methods --------------------------------------------------------
-		
-		private void ensureOpen()
-		{
-			StateSession session = getSession();
-			
-			if (session == null)
-			{
-				throw new IllegalStateException("Session not open");
-			}
-			
-			if (session != this)
-			{
-				throw new IllegalStateException("Another session is already open");
-			}
-		}
-		
-		private void invalidate()
-		{
-			state = null;
-		}
-		
-		private void rollback()
-		{
-			PropertyChangeEvent[] events = eventList.getPropertyChangeEvents();
-			
-			for (int i = events.length - 1; i >= 0; i--)
-			{
-				PropertyChangeEvent event = events[i];
-				Object component = event.getSource();
-				PropertyDescriptor property = Properties.getDescriptor(component.getClass(), event.getPropertyName());
-				Properties.set(component, property, event.getOldValue());
-			}
-		}
-	}
+	private Object component;
 	
 	// constructors -----------------------------------------------------------
 	
 	public StatePeerManager()
 	{
-		sessionLocal = new ThreadLocal<StateSession>();
+		eventList = new PropertyChangeEventList();
 	}
 	
 	// PeerManager methods ----------------------------------------------------
@@ -175,6 +51,11 @@ public abstract class StatePeerManager implements PeerManager, PropertyChangeLis
 	@Override
 	public void registerComponent(Object component)
 	{
+		if (this.component == null)
+		{
+			this.component = component;
+		}
+		
 		BeanUtils.addPropertyChangeListener(component, this);
 	}
 	
@@ -197,63 +78,57 @@ public abstract class StatePeerManager implements PeerManager, PropertyChangeLis
 	@Override
 	public void propertyChange(PropertyChangeEvent event)
 	{
-		StateSession session = getSession();
-		
-		if (session != null)
-		{
-			session.propertyChange(event);
-		}
+		eventList.addPropertyChangeEvent(event);
+		invalidate();
 	}
 	
 	// public methods ---------------------------------------------------------
 	
-	public void setComponentClass(Class<?> componentClass)
+	public Object getComponent()
 	{
-		componentPool = new DefaultComponentPool(new ComponentObjectFactory(this, componentClass));
+		return component;
 	}
 	
-	public StateSession openSession()
+	public State getState()
 	{
-		if (getSession() != null)
+		if (state == null)
 		{
-			throw new IllegalStateException("Session already open");
+			state = new State();
+			PropertyChangeEvent[] events = eventList.getPropertyChangeEvents();
+			
+			for (int i = 0; i < events.length; i++)
+			{
+				PropertyChangeEvent propertyEvent = events[i];
+				Object component = propertyEvent.getSource();
+				String propertyName = propertyEvent.getPropertyName();
+				PropertyDescriptor property = Properties.getDescriptor(component.getClass(),
+					propertyName);
+				state.addProperty(new PropertyState(component, property, propertyEvent.getNewValue()));
+			}
 		}
 		
-		Object root;
-		try
+		return new State(state);
+	}
+
+	public void rollback()
+	{
+		PropertyChangeEvent[] events = eventList.getPropertyChangeEvents();
+		
+		for (int i = events.length - 1; i >= 0; i--)
 		{
-			root = componentPool.borrowComponent();
-		}
-		catch (ComponentPoolException exception)
-		{
-			// TODO: handle better
-			throw new RuntimeException(exception);
+			PropertyChangeEvent event = events[i];
+			Object component = event.getSource();
+			PropertyDescriptor property = Properties.getDescriptor(component.getClass(), event.getPropertyName());
+			Properties.set(component, property, event.getOldValue());
 		}
 		
-		StateSession session = new DefaultStateSession(root);
-		sessionLocal.set(session);
-		return session;
+		eventList.clear();
 	}
 	
 	// private methods --------------------------------------------------------
 	
-	private StateSession getSession()
+	private void invalidate()
 	{
-		return sessionLocal.get();
-	}
-	
-	private void closeSession(StateSession session)
-	{
-		try
-		{
-			componentPool.returnComponent(session.getRoot());
-		}
-		catch (ComponentPoolException exception)
-		{
-			// TODO: handle better
-			throw new RuntimeException(exception);
-		}
-		
-		sessionLocal.set(null);
+		state = null;
 	}
 }

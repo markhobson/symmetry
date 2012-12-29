@@ -13,7 +13,6 @@
  */
 package org.hobsoft.symmetry.http;
 
-import org.hobsoft.symmetry.PeerManager;
 import org.hobsoft.symmetry.hydrate.ComponentRenderKit;
 
 /**
@@ -27,8 +26,6 @@ public class SymmetryServletConfig
 	
 	// fields -----------------------------------------------------------------
 	
-	private PeerManager peerManager;
-	
 	private ComponentRenderKit<?> renderKit;
 	
 	private boolean resolveState;
@@ -39,9 +36,8 @@ public class SymmetryServletConfig
 	
 	// constructors -----------------------------------------------------------
 	
-	public SymmetryServletConfig(PeerManager peerManager, ComponentRenderKit<?> renderKit)
+	public SymmetryServletConfig(ComponentRenderKit<?> renderKit)
 	{
-		this.peerManager = peerManager;
 		this.renderKit = renderKit;
 		resolveState = false;
 		debug = false;
@@ -49,11 +45,6 @@ public class SymmetryServletConfig
 	}
 	
 	// public methods ---------------------------------------------------------
-	
-	public PeerManager getPeerManager()
-	{
-		return peerManager;
-	}
 	
 	public ComponentRenderKit<?> getComponentRenderKit()
 	{

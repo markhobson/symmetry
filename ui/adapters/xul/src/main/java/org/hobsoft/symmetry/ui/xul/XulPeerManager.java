@@ -15,7 +15,7 @@ package org.hobsoft.symmetry.ui.xul;
 
 import org.hobsoft.symmetry.state.StatePeerManager;
 import org.hobsoft.symmetry.ui.Component;
-import org.hobsoft.symmetry.ui.traversal.PostorderComponentVisitor;
+import org.hobsoft.symmetry.ui.traversal.PreorderComponentVisitor;
 
 /**
  * 
@@ -34,7 +34,7 @@ public class XulPeerManager extends StatePeerManager
 	@Override
 	public void registerComponent(Object component)
 	{
-		((Component) component).accept(new PostorderComponentVisitor<Void, RuntimeException>()
+		((Component) component).accept(new PreorderComponentVisitor<Void, RuntimeException>()
 		{
 			@Override
 			protected void visit(Component component, Void parameter)

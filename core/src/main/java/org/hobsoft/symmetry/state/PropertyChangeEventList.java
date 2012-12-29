@@ -75,4 +75,9 @@ class PropertyChangeEventList
 		Collection<PropertyChangeEvent> values = eventMap.values();
 		return values.toArray(new PropertyChangeEvent[values.size()]);
 	}
+	
+	public void clear()
+	{
+		eventMap.clear();
+	}
 }

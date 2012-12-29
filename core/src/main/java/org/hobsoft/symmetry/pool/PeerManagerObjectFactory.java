@@ -20,19 +20,19 @@ import org.hobsoft.symmetry.PeerManager;
  * 
  * @author Mark Hobson
  */
-public class ComponentObjectFactory extends InstantiatingPoolableObjectFactory
+public class PeerManagerObjectFactory extends InstantiatingPoolableObjectFactory
 {
 	// fields -----------------------------------------------------------------
 	
-	private final PeerManager peerManager;
+	private final Class<?> componentClass;
 	
 	// constructors -----------------------------------------------------------
 	
-	public ComponentObjectFactory(PeerManager peerManager, Class<?> componentClass)
+	public PeerManagerObjectFactory(Class<? extends PeerManager> peerManagerClass, Class<?> componentClass)
 	{
-		super(componentClass);
+		super(peerManagerClass);
 		
-		this.peerManager = peerManager;
+		this.componentClass = componentClass;
 	}
 	
 	// PoolableObjectFactory methods ------------------------------------------
@@ -43,17 +43,11 @@ public class ComponentObjectFactory extends InstantiatingPoolableObjectFactory
 	@Override
 	public Object makeObject() throws Exception
 	{
-		Object component = super.makeObject();
+		PeerManager peerManager = (PeerManager) super.makeObject();
 		
+		Object component = componentClass.newInstance();
 		peerManager.registerComponent(component);
 		
-		return component;
-	}
-	
-	// public methods ---------------------------------------------------------
-	
-	public PeerManager getPeerManager()
-	{
 		return peerManager;
 	}
 }

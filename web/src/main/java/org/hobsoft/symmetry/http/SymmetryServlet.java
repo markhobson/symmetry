@@ -36,10 +36,13 @@ import org.hobsoft.symmetry.hydrate.DehydrationContext;
 import org.hobsoft.symmetry.hydrate.DehydrationParameters;
 import org.hobsoft.symmetry.hydrate.HydrationException;
 import org.hobsoft.symmetry.hydrate.RehydrationContext;
+import org.hobsoft.symmetry.pool.ComponentPool;
+import org.hobsoft.symmetry.pool.ComponentPoolException;
+import org.hobsoft.symmetry.pool.DefaultComponentPool;
+import org.hobsoft.symmetry.pool.PeerManagerObjectFactory;
 import org.hobsoft.symmetry.state.EncodedState;
 import org.hobsoft.symmetry.state.State;
 import org.hobsoft.symmetry.state.StatePeerManager;
-import org.hobsoft.symmetry.state.StateSession;
 
 /**
  * 
@@ -78,6 +81,8 @@ public class SymmetryServlet extends HttpServlet
 	
 	private SymmetryServletConfig config;
 	
+	private ComponentPool peerManagerPool;
+	
 	// GenericServlet methods -------------------------------------------------
 	
 	/**
@@ -89,7 +94,8 @@ public class SymmetryServlet extends HttpServlet
 		super.init(config);
 		
 		Class<?> componentClass = HttpUtils.getInitParamClass(config, COMPONENT_PARAM, null);
-		Class<?> peerManagerClass = HttpUtils.getInitParamClass(config, PEER_MANAGER_PARAM, null);
+		Class<? extends PeerManager> peerManagerClass = HttpUtils.getInitParamClass(config, PEER_MANAGER_PARAM, null)
+			.asSubclass(PeerManager.class);
 		Class<?> renderKitClass = HttpUtils.getInitParamClass(config, RENDER_KIT_PARAM, null);
 		boolean resolveState = HttpUtils.getInitParamBoolean(config, RESOLVE_STATE_PARAM, false);
 		boolean debug = HttpUtils.getInitParamBoolean(config, DEBUG_PARAM, false);
@@ -97,15 +103,12 @@ public class SymmetryServlet extends HttpServlet
 		
 		ComponentRenderKit<?> renderKit = (ComponentRenderKit<?>) newInstance(renderKitClass);
 		
-		PeerManager peerManager = (PeerManager) newInstance(peerManagerClass);
-		
-		// TODO: better
-		((StatePeerManager) peerManager).setComponentClass(componentClass);
-		
-		this.config = new SymmetryServletConfig(peerManager, renderKit);
+		this.config = new SymmetryServletConfig(renderKit);
 		this.config.setResolveState(resolveState);
 		this.config.setDebug(debug);
 		this.config.setTheme(theme);
+		
+		peerManagerPool = new DefaultComponentPool(new PeerManagerObjectFactory(peerManagerClass, componentClass));
 	}
 	
 	/**
@@ -219,20 +222,30 @@ public class SymmetryServlet extends HttpServlet
 	private void doApplication(HttpServletRequest request, HttpServletResponse response) throws ServletException,
 		IOException
 	{
-		StateSession session = null;
+		PeerManager peerManager = null;
+		
 		try
 		{
-			session = ((StatePeerManager) config.getPeerManager()).openSession();
-			Object root = session.getRoot();
+			peerManager = (PeerManager) peerManagerPool.borrowComponent();
+			
+			// TODO: introduce component into PeerManager API
+			Object component = ((StatePeerManager) peerManager).getComponent();
 			
 			// TODO: reinstate command concept
 			
-			rehydrate(root, request);
+			rehydrate(component, request);
 			
 			// TODO: resolve state: response.sendRedirect(contextPath + "/" + session.getState(null));
 			// TODO: fire end write transaction event, start read-only transaction?
 			
-			dehydrate(root, session.getState(), request.getLocale(), response);
+			// TODO: introduce state into PeerManager API
+			State state = ((StatePeerManager) peerManager).getState();
+			
+			dehydrate(component, state, request.getLocale(), response);
+		}
+		catch (ComponentPoolException exception)
+		{
+			throw new ServletException(exception);
 		}
 		catch (HydrationException exception)
 		{
@@ -242,10 +255,17 @@ public class SymmetryServlet extends HttpServlet
 		{
 			try
 			{
-				if (session != null)
+				if (peerManager != null)
 				{
-					session.close();
+					// TODO: introduce rollback into PeerManager API
+					((StatePeerManager) peerManager).rollback();
+					
+					peerManagerPool.returnComponent(peerManager);
 				}
+			}
+			catch (ComponentPoolException exception)
+			{
+				throw new ServletException(exception);
 			}
 			catch (RuntimeException exception)
 			{
