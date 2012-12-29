@@ -59,6 +59,8 @@ import com.google.common.io.BaseEncoding;
  */
 public class Base64StateCodec implements StateCodec
 {
+	// TODO: use explicit encoding when converting between byte and char streams
+	
 	// types ------------------------------------------------------------------
 	
 	private static class FeatureDescriptorComparator implements Comparator<FeatureDescriptor>
