@@ -11,28 +11,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.hobsoft.symmetry.pool;
+package org.hobsoft.symmetry.http.pool;
 
-import org.hobsoft.symmetry.PeerManager;
+import org.apache.commons.pool.BasePoolableObjectFactory;
 
 /**
  * 
  * 
  * @author Mark Hobson
  */
-public class PeerManagerObjectFactory extends InstantiatingPoolableObjectFactory
+public class InstantiatingPoolableObjectFactory extends BasePoolableObjectFactory
 {
 	// fields -----------------------------------------------------------------
 	
-	private final Class<?> componentClass;
+	private final Class<?> klass;
 	
 	// constructors -----------------------------------------------------------
 	
-	public PeerManagerObjectFactory(Class<? extends PeerManager> peerManagerClass, Class<?> componentClass)
+	public InstantiatingPoolableObjectFactory(Class<?> klass)
 	{
-		super(peerManagerClass);
-		
-		this.componentClass = componentClass;
+		this.klass = klass;
 	}
 	
 	// PoolableObjectFactory methods ------------------------------------------
@@ -43,11 +41,13 @@ public class PeerManagerObjectFactory extends InstantiatingPoolableObjectFactory
 	@Override
 	public Object makeObject() throws Exception
 	{
-		PeerManager peerManager = (PeerManager) super.makeObject();
-		
-		Object component = componentClass.newInstance();
-		peerManager.registerComponent(component);
-		
-		return peerManager;
+		return klass.newInstance();
+	}
+	
+	// public methods ---------------------------------------------------------
+	
+	public Class<?> getPoolableObjectClass()
+	{
+		return klass;
 	}
 }
