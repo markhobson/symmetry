@@ -25,9 +25,11 @@ import java.io.DataOutput;
 import java.io.EOFException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.ObjectInput;
 import java.io.ObjectOutput;
 import java.io.OutputStream;
+import java.io.OutputStreamWriter;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.Collections;
@@ -41,15 +43,14 @@ import org.hobsoft.symmetry.support.bean.BeanUtils;
 import org.hobsoft.symmetry.support.codec.Codec;
 import org.hobsoft.symmetry.support.codec.DecoderException;
 import org.hobsoft.symmetry.support.codec.EncoderException;
-import org.hobsoft.symmetry.support.codec.base64.Base64Alphabet;
-import org.hobsoft.symmetry.support.codec.base64.Base64InputStream;
-import org.hobsoft.symmetry.support.codec.base64.Base64OutputStream;
 import org.hobsoft.symmetry.support.io.IOUtils;
 import org.hobsoft.symmetry.support.io.SerializerFactory;
 import org.hobsoft.symmetry.support.io.SerializerTinyObjectInput;
 import org.hobsoft.symmetry.support.io.SerializerTinyObjectOutput;
 import org.hobsoft.symmetry.support.io.TinyDataInput;
 import org.hobsoft.symmetry.support.io.TinyDataOutput;
+
+import com.google.common.io.BaseEncoding;
 
 /**
  * 
@@ -102,12 +103,16 @@ public class Base64StateCodec implements StateCodec
 	
 	private final SerializerFactory serializerFactory;
 	
+	private final BaseEncoding baseEncoding;
+	
 	// constructors -----------------------------------------------------------
 	
 	public Base64StateCodec(Codec<Object, Integer> componentCodec, SerializerFactory serializerFactory)
 	{
 		this.componentCodec = componentCodec;
 		this.serializerFactory = serializerFactory;
+		
+		baseEncoding = BaseEncoding.base64Url().omitPadding();
 	}
 	
 	// StateCodec methods -----------------------------------------------------
@@ -306,7 +311,7 @@ public class Base64StateCodec implements StateCodec
 	
 	protected ObjectInput newObjectInput(InputStream in)
 	{
-		DataInput dataIn = new TinyDataInput(new Base64InputStream(in, Base64Alphabet.URL));
+		DataInput dataIn = new TinyDataInput(baseEncoding.decodingStream(new InputStreamReader(in)));
 		
 		// TODO: ideally do this if we could extend rather than delegate at runtime
 //		ObjectInput objectIn = new TinyObjectInput(dataIn);
@@ -317,7 +322,7 @@ public class Base64StateCodec implements StateCodec
 	
 	protected ObjectOutput newObjectOutput(OutputStream out)
 	{
-		DataOutput dataOut = new TinyDataOutput(new Base64OutputStream(out, Base64Alphabet.URL, false));
+		DataOutput dataOut = new TinyDataOutput(baseEncoding.encodingStream(new OutputStreamWriter(out)));
 		
 		// TODO: ideally do this if we could extend rather than delegate at runtime
 //		ObjectOutput objectOut = new TinyObjectOutput(dataOut);
