@@ -13,6 +13,7 @@
  */
 package org.hobsoft.symmetry.http.pool;
 
+import org.apache.commons.pool.BasePoolableObjectFactory;
 import org.hobsoft.symmetry.PeerManager;
 
 /**
@@ -20,9 +21,11 @@ import org.hobsoft.symmetry.PeerManager;
  * 
  * @author Mark Hobson
  */
-public class PeerManagerObjectFactory extends InstantiatingPoolableObjectFactory<PeerManager>
+class PeerManagerObjectFactory extends BasePoolableObjectFactory<PeerManager>
 {
 	// fields -----------------------------------------------------------------
+	
+	private final Class<? extends PeerManager> peerManagerClass;
 	
 	private final Class<?> componentClass;
 	
@@ -30,8 +33,7 @@ public class PeerManagerObjectFactory extends InstantiatingPoolableObjectFactory
 	
 	public PeerManagerObjectFactory(Class<? extends PeerManager> peerManagerClass, Class<?> componentClass)
 	{
-		super(peerManagerClass);
-		
+		this.peerManagerClass = peerManagerClass;
 		this.componentClass = componentClass;
 	}
 	
@@ -43,7 +45,7 @@ public class PeerManagerObjectFactory extends InstantiatingPoolableObjectFactory
 	@Override
 	public PeerManager makeObject() throws Exception
 	{
-		PeerManager peerManager = super.makeObject();
+		PeerManager peerManager = peerManagerClass.newInstance();
 		
 		Object component = componentClass.newInstance();
 		peerManager.registerComponent(component);

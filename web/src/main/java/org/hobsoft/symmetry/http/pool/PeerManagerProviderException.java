@@ -20,7 +20,7 @@ import org.hobsoft.symmetry.SymmetryException;
  * 
  * @author Mark Hobson
  */
-public class ComponentPoolException extends SymmetryException
+public class PeerManagerProviderException extends SymmetryException
 {
 	// constants --------------------------------------------------------------
 	
@@ -32,44 +32,44 @@ public class ComponentPoolException extends SymmetryException
 	// constructors -----------------------------------------------------------
 	
 	/**
-	 * Creates a new {@code ComponentPoolException} with no message or cause.
+	 * Creates a new {@code PeerManagerProviderException} with no message or cause.
 	 */
-	public ComponentPoolException()
+	public PeerManagerProviderException()
 	{
 		super();
 	}
 	
 	/**
-	 * Creates a new {@code ComponentPoolException} with the specified message and no cause.
+	 * Creates a new {@code PeerManagerProviderException} with the specified message and no cause.
 	 * 
 	 * @param message
 	 *            the message for this exception
 	 */
-	public ComponentPoolException(String message)
+	public PeerManagerProviderException(String message)
 	{
 		super(message);
 	}
 	
 	/**
-	 * Creates a new {@code ComponentPoolException} with no message and the specified cause.
+	 * Creates a new {@code PeerManagerProviderException} with no message and the specified cause.
 	 * 
 	 * @param cause
 	 *            the cause of this exception
 	 */
-	public ComponentPoolException(Throwable cause)
+	public PeerManagerProviderException(Throwable cause)
 	{
 		super(cause);
 	}
 	
 	/**
-	 * Creates a new {@code ComponentPoolException} with the specified message and cause.
+	 * Creates a new {@code PeerManagerProviderException} with the specified message and cause.
 	 * 
 	 * @param message
 	 *            the message for this exception
 	 * @param cause
 	 *            the cause of this exception
 	 */
-	public ComponentPoolException(String message, Throwable cause)
+	public PeerManagerProviderException(String message, Throwable cause)
 	{
 		super(message, cause);
 	}

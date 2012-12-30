@@ -31,10 +31,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.hobsoft.symmetry.PeerManager;
-import org.hobsoft.symmetry.http.pool.ComponentPool;
-import org.hobsoft.symmetry.http.pool.ComponentPoolException;
-import org.hobsoft.symmetry.http.pool.DefaultComponentPool;
-import org.hobsoft.symmetry.http.pool.PeerManagerObjectFactory;
+import org.hobsoft.symmetry.http.pool.PeerManagerProvider;
+import org.hobsoft.symmetry.http.pool.PeerManagerProviderException;
+import org.hobsoft.symmetry.http.pool.PooledPeerManagerProvider;
 import org.hobsoft.symmetry.hydrate.ComponentRenderKit;
 import org.hobsoft.symmetry.hydrate.DehydrationContext;
 import org.hobsoft.symmetry.hydrate.DehydrationParameters;
@@ -81,7 +80,7 @@ public class SymmetryServlet extends HttpServlet
 	
 	private SymmetryServletConfig config;
 	
-	private ComponentPool<PeerManager> peerManagerPool;
+	private PeerManagerProvider peerManagerProvider;
 	
 	// GenericServlet methods -------------------------------------------------
 	
@@ -108,8 +107,7 @@ public class SymmetryServlet extends HttpServlet
 		this.config.setDebug(debug);
 		this.config.setTheme(theme);
 		
-		peerManagerPool = new DefaultComponentPool<PeerManager>(new PeerManagerObjectFactory(peerManagerClass,
-			componentClass));
+		peerManagerProvider = new PooledPeerManagerProvider(peerManagerClass, componentClass);
 	}
 	
 	/**
@@ -227,7 +225,7 @@ public class SymmetryServlet extends HttpServlet
 		
 		try
 		{
-			peerManager = (PeerManager) peerManagerPool.borrowComponent();
+			peerManager = peerManagerProvider.get();
 			
 			// TODO: introduce component into PeerManager API
 			Object component = ((StatePeerManager) peerManager).getComponent();
@@ -244,7 +242,7 @@ public class SymmetryServlet extends HttpServlet
 			
 			dehydrate(component, state, request.getLocale(), response);
 		}
-		catch (ComponentPoolException exception)
+		catch (PeerManagerProviderException exception)
 		{
 			throw new ServletException(exception);
 		}
@@ -261,10 +259,10 @@ public class SymmetryServlet extends HttpServlet
 					// TODO: introduce rollback into PeerManager API
 					((StatePeerManager) peerManager).rollback();
 					
-					peerManagerPool.returnComponent(peerManager);
+					peerManagerProvider.release(peerManager);
 				}
 			}
-			catch (ComponentPoolException exception)
+			catch (PeerManagerProviderException exception)
 			{
 				throw new ServletException(exception);
 			}

@@ -13,20 +13,16 @@
  */
 package org.hobsoft.symmetry.http.pool;
 
+import org.hobsoft.symmetry.PeerManager;
+
 /**
  * 
  * 
  * @author Mark Hobson
- * @param <T>
- *            the type of object managed by this pool
  */
-public interface ComponentPool<T>
+public interface PeerManagerProvider
 {
-	T borrowComponent() throws ComponentPoolException;
+	PeerManager get() throws PeerManagerProviderException;
 	
-	void invalidateComponent(T component) throws ComponentPoolException;
-	
-	void returnComponent(T component) throws ComponentPoolException;
-	
-	void close() throws ComponentPoolException;
+	void release(PeerManager peerManager) throws PeerManagerProviderException;
 }
