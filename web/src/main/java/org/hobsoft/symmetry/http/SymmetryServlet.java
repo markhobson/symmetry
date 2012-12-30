@@ -31,9 +31,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.hobsoft.symmetry.PeerManager;
-import org.hobsoft.symmetry.http.pool.PeerManagerProvider;
-import org.hobsoft.symmetry.http.pool.PeerManagerProviderException;
-import org.hobsoft.symmetry.http.pool.PooledPeerManagerProvider;
+import org.hobsoft.symmetry.http.peer.PeerManagerProvider;
+import org.hobsoft.symmetry.http.peer.PeerManagerProviderException;
+import org.hobsoft.symmetry.http.peer.PooledPeerManagerProvider;
 import org.hobsoft.symmetry.hydrate.ComponentRenderKit;
 import org.hobsoft.symmetry.hydrate.DehydrationContext;
 import org.hobsoft.symmetry.hydrate.DehydrationParameters;
