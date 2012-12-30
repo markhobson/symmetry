@@ -40,7 +40,7 @@ import org.apache.commons.fileupload.util.Streams;
  * 
  * @author Mark Hobson
  */
-public final class HttpUtils
+final class HttpUtils
 {
 	// TODO: use common-servlet instead
 	

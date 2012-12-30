@@ -20,7 +20,7 @@ import org.hobsoft.symmetry.hydrate.ComponentRenderKit;
  * 
  * @author Mark Hobson
  */
-public class SymmetryServletConfig
+class SymmetryServletConfig
 {
 	// TODO: think of more generic way to configure themes
 	
