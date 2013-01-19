@@ -13,33 +13,41 @@
  */
 package org.hobsoft.symmetry.ui.swing;
 
-import java.beans.PropertyChangeEvent;
-import java.util.HashMap;
-import java.util.Map;
+import org.hobsoft.symmetry.PeerManager;
 
-import org.hobsoft.symmetry.AbstractPeerManager;
+import com.google.common.collect.BiMap;
+import com.google.common.collect.HashBiMap;
 
 /**
  * 
  * 
  * @author Mark Hobson
  */
-public class MockPeerManager extends AbstractPeerManager
+public class MockPeerManager implements PeerManager
 {
 	// TODO: centralise
 	
 	// fields -----------------------------------------------------------------
 	
-	private final Map<Object, Object> peersByComponent;
+	private final BiMap<Object, Object> peersByComponent;
 	
 	// constructors -----------------------------------------------------------
 	
 	public MockPeerManager()
 	{
-		peersByComponent = new HashMap<Object, Object>();
+		peersByComponent = HashBiMap.create();
 	}
 	
 	// PeerManager methods ----------------------------------------------------
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public void registerComponent(Object component)
+	{
+		// no-op
+	}
 	
 	/**
 	 * {@inheritDoc}
@@ -50,26 +58,13 @@ public class MockPeerManager extends AbstractPeerManager
 		return peersByComponent.get(component);
 	}
 	
-	// AbstractPeerManager methods --------------------------------------------
-	
 	/**
 	 * {@inheritDoc}
 	 */
 	@Override
-	public Object createPeer(Object component)
+	public Object getComponent(Object peer)
 	{
-		return null;
-	}
-	
-	// PropertyChangeListener methods -----------------------------------------
-	
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	public void propertyChange(PropertyChangeEvent event)
-	{
-		// no-op
+		return peersByComponent.inverse().get(peer);
 	}
 	
 	// public methods ---------------------------------------------------------
