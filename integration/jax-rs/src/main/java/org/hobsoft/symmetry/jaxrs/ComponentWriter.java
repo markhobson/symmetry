@@ -28,6 +28,7 @@ import javax.ws.rs.ext.MessageBodyWriter;
 import javax.ws.rs.ext.Provider;
 import javax.ws.rs.ext.Providers;
 
+import org.hobsoft.symmetry.PeerManager;
 import org.hobsoft.symmetry.hydrate.ComponentRenderKit;
 import org.hobsoft.symmetry.hydrate.DehydrationContext;
 import org.hobsoft.symmetry.hydrate.HydrationException;
@@ -43,12 +44,15 @@ public class ComponentWriter implements MessageBodyWriter<Object>
 {
 	// fields -----------------------------------------------------------------
 	
+	private final ContextResolver<PeerManager> peerManagerResolver;
+	
 	private final ContextResolver<ComponentRenderKit> renderKitResolver;
 	
 	// constructors -----------------------------------------------------------
 	
 	public ComponentWriter(@Context Providers providers)
 	{
+		peerManagerResolver = providers.getContextResolver(PeerManager.class, null);
 		renderKitResolver = providers.getContextResolver(ComponentRenderKit.class, null);
 	}
 	
@@ -84,11 +88,15 @@ public class ComponentWriter implements MessageBodyWriter<Object>
 	public void writeTo(Object component, Class<?> type, Type genericType, Annotation[] annotations,
 		MediaType mediaType, MultivaluedMap<String, Object> httpHeaders, OutputStream entityStream) throws IOException
 	{
+		PeerManager peerManager = getPeerManager(type);
+		peerManager.registerComponent(component);
+		
 		ComponentRenderKit<?> renderKit = getRenderKit(type);
 		State state = new State();
 		Locale locale = null;
 		
 		DehydrationContext context = new DehydrationContext(state, locale, entityStream);
+		context.set(PeerManager.class, peerManager);
 		
 		try
 		{
@@ -101,6 +109,11 @@ public class ComponentWriter implements MessageBodyWriter<Object>
 	}
 	
 	// private methods --------------------------------------------------------
+	
+	private PeerManager getPeerManager(Class<?> componentType)
+	{
+		return peerManagerResolver.getContext(componentType);
+	}
 	
 	private ComponentRenderKit<?> getRenderKit(Class<?> componentType)
 	{
