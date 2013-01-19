@@ -15,14 +15,13 @@ package org.hobsoft.symmetry.swt;
 
 import java.beans.BeanInfo;
 import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
 import java.beans.PropertyDescriptor;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.eclipse.swt.widgets.Display;
-import org.hobsoft.symmetry.CompositePeerManager;
 import org.hobsoft.symmetry.support.bean.BeanUtils;
 import org.hobsoft.symmetry.support.bean.Properties;
 
@@ -31,41 +30,28 @@ import org.hobsoft.symmetry.support.bean.Properties;
  * 
  * @author Mark Hobson
  */
-public abstract class AbstractSwtPeerManager extends CompositePeerManager
+public final class SwtPeerHandlerUtils
 {
 	// constants --------------------------------------------------------------
 	
-	private static final Logger LOG = Logger.getLogger(AbstractSwtPeerManager.class.getName());
-
-	// PeerManager methods ----------------------------------------------------
+	private static final Logger LOG = Logger.getLogger(SwtPeerHandlerUtils.class.getName());
 	
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	public void propertyChange(final PropertyChangeEvent event)
+	// constructors -----------------------------------------------------------
+	
+	private SwtPeerHandlerUtils()
 	{
-		Display.getDefault().syncExec(
-			new Runnable()
-			{
-				@Override
-				public void run()
-				{
-					AbstractSwtPeerManager.super.propertyChange(event);
-				}
-			}
-		);
+		throw new AssertionError();
 	}
 	
-	// protected methods ------------------------------------------------------
+	// public methods ---------------------------------------------------------
 	
-	protected void initComponent(Object component)
+	public static void initComponent(Object component, PropertyChangeListener listener)
 	{
 		for (PropertyChangeEvent event : getPropertyChangeEvents(component))
 		{
 			try
 			{
-				propertyChange(event);
+				listener.propertyChange(event);
 			}
 			catch (Throwable throwable)
 			{

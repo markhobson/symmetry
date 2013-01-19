@@ -14,7 +14,10 @@
 package org.hobsoft.symmetry.ui.swt;
 
 import org.eclipse.swt.widgets.Shell;
-import org.hobsoft.symmetry.swt.AbstractSwtPeerManager;
+import org.hobsoft.symmetry.CompositePeerManager;
+import org.hobsoft.symmetry.PeerHandler;
+import org.hobsoft.symmetry.swt.SwtPeerHandlerDecorator;
+import org.hobsoft.symmetry.swt.SwtPeerHandlerUtils;
 import org.hobsoft.symmetry.ui.Box;
 import org.hobsoft.symmetry.ui.Button;
 import org.hobsoft.symmetry.ui.CheckBox;
@@ -43,7 +46,7 @@ import org.hobsoft.symmetry.ui.traversal.PreorderComponentVisitor;
  * 
  * @author Mark Hobson
  */
-public class SwtPeerManager extends AbstractSwtPeerManager
+public class SwtPeerManager extends CompositePeerManager
 {
 	// constructors -----------------------------------------------------------
 	
@@ -93,11 +96,25 @@ public class SwtPeerManager extends AbstractSwtPeerManager
 			@Override
 			protected void visit(Component component, Void parameter)
 			{
-				initComponent(component);
+				SwtPeerHandlerUtils.initComponent(component, SwtPeerManager.this);
 			}
 		}, null);
 		
 		// TODO: reimplement this in SWTWindowPeer - need to handle the visible PCE last
 		((SwtWindowPeer) getPeerHandler(Window.class)).setVisible((Shell) getPeer(component), true);
+	}
+	
+	// CompositePeerManager methods -------------------------------------------
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public void setPeerHandler(Class<?> componentClass, PeerHandler handler)
+	{
+		// decorate handler
+		handler = new SwtPeerHandlerDecorator(handler);
+		
+		super.setPeerHandler(componentClass, handler);
 	}
 }
