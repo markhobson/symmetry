@@ -13,6 +13,7 @@
  */
 package org.hobsoft.symmetry.ui.swt;
 
+import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 import org.hobsoft.symmetry.CompositePeerManager;
 import org.hobsoft.symmetry.PeerHandler;
@@ -100,8 +101,8 @@ public class SwtPeerManager extends CompositePeerManager
 			}
 		}, null);
 		
-		// TODO: reimplement this in SWTWindowPeer - need to handle the visible PCE last
-		((SwtWindowPeer) getPeerHandler(Window.class)).setVisible((Shell) getPeer(component), true);
+		// TODO: we shouldn't assume that the top-level component is a window
+		readAndDispatch((Shell) getPeer(component));
 	}
 	
 	// CompositePeerManager methods -------------------------------------------
@@ -116,5 +117,22 @@ public class SwtPeerManager extends CompositePeerManager
 		handler = new SwtPeerHandlerDecorator(handler);
 		
 		super.setPeerHandler(componentClass, handler);
+	}
+	
+	// private methods --------------------------------------------------------
+	
+	private static void readAndDispatch(Shell shell)
+	{
+		Display display = shell.getDisplay();
+		
+		while (!shell.isDisposed())
+		{
+			if (!display.readAndDispatch())
+			{
+				display.sleep();
+			}
+		}
+		
+		display.sleep();
 	}
 }

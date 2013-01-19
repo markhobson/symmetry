@@ -78,8 +78,7 @@ public class SwtWindowPeer extends SwtBoxPeer
 		}
 		else if (Component.VISIBLE_PROPERTY.equals(name))
 		{
-			// TODO: reimplement
-//			setVisible(shell, ((Boolean) newValue).booleanValue());
+			setVisible(shell, ((Boolean) newValue).booleanValue());
 		}
 		else
 		{
@@ -87,9 +86,9 @@ public class SwtWindowPeer extends SwtBoxPeer
 		}
 	}
 	
-	// protected methods ------------------------------------------------------
+	// private methods --------------------------------------------------------
 	
-	protected void setVisible(Shell shell, boolean visible)
+	private static void setVisible(Shell shell, boolean visible)
 	{
 		if (visible)
 		{
@@ -100,16 +99,6 @@ public class SwtWindowPeer extends SwtBoxPeer
 			Point shellSize = shell.getSize();
 			shell.setLocation((screenBounds.width - shellSize.x) >> 1, (screenBounds.height - shellSize.y) >> 1);
 			shell.open();
-			
-			while (!shell.isDisposed())
-			{
-				if (!display.readAndDispatch())
-				{
-					display.sleep();
-				}
-			}
-			
-			display.sleep();
 		}
 		else
 		{
