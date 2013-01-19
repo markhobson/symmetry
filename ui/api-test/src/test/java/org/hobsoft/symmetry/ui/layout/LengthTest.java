@@ -145,7 +145,10 @@ public class LengthTest
 	{
 		Length length = Length.pixels(1);
 		
+		// workaround Checkstyle bug 2809655
+		// CHECKSTYLE:OFF
 		assertFalse(length.equals(null));
+		// CHECKSTYLE:ON
 	}
 	
 	@Test

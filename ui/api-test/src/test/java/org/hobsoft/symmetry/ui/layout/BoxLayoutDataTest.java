@@ -103,7 +103,10 @@ public class BoxLayoutDataTest
 	@Test
 	public void equalsWithNull()
 	{
+		// workaround Checkstyle bug 2809655
+		// CHECKSTYLE:OFF
 		assertFalse(data.equals(null));
+		// CHECKSTYLE:ON
 	}
 	
 	@Test
