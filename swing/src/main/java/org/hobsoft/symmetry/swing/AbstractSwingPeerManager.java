@@ -24,7 +24,7 @@ import java.util.logging.Logger;
 
 import javax.swing.SwingUtilities;
 
-import org.hobsoft.symmetry.DelegatingPeerManager;
+import org.hobsoft.symmetry.CompositePeerManager;
 import org.hobsoft.symmetry.support.bean.BeanUtils;
 import org.hobsoft.symmetry.support.bean.Properties;
 
@@ -33,7 +33,7 @@ import org.hobsoft.symmetry.support.bean.Properties;
  * 
  * @author Mark Hobson
  */
-public abstract class AbstractSwingPeerManager extends DelegatingPeerManager
+public abstract class AbstractSwingPeerManager extends CompositePeerManager
 {
 	// constants --------------------------------------------------------------
 	

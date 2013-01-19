@@ -22,17 +22,15 @@ import java.util.Map;
  * 
  * @author Mark Hobson
  */
-public abstract class DelegatingPeerManager extends AbstractPeerManager
+public abstract class CompositePeerManager extends AbstractPeerManager
 {
-	// TODO: rename class
-	
 	// fields -----------------------------------------------------------------
 	
 	private final Map<Class<?>, PeerHandler> handlersByComponentClass;
 	
 	// constructors -----------------------------------------------------------
 	
-	public DelegatingPeerManager()
+	public CompositePeerManager()
 	{
 		handlersByComponentClass = new HashMap<Class<?>, PeerHandler>();
 	}

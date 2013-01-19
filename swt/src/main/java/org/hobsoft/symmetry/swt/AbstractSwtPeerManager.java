@@ -22,7 +22,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import org.eclipse.swt.widgets.Display;
-import org.hobsoft.symmetry.DelegatingPeerManager;
+import org.hobsoft.symmetry.CompositePeerManager;
 import org.hobsoft.symmetry.support.bean.BeanUtils;
 import org.hobsoft.symmetry.support.bean.Properties;
 
@@ -31,7 +31,7 @@ import org.hobsoft.symmetry.support.bean.Properties;
  * 
  * @author Mark Hobson
  */
-public abstract class AbstractSwtPeerManager extends DelegatingPeerManager
+public abstract class AbstractSwtPeerManager extends CompositePeerManager
 {
 	// constants --------------------------------------------------------------
 	
