@@ -17,6 +17,7 @@ import java.beans.PropertyChangeEvent;
 
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
+import org.hobsoft.symmetry.test.StubPeerManager;
 import org.hobsoft.symmetry.ui.Label;
 import org.junit.After;
 import org.junit.Before;
@@ -46,7 +47,7 @@ public class SwtLabelPeerTest
 	@Before
 	public void setUp()
 	{
-		MockPeerManager peerManager = new MockPeerManager();
+		StubPeerManager peerManager = new StubPeerManager();
 		
 		shell = new Shell(Display.getDefault());
 		peerManager.setPeer(null, shell);

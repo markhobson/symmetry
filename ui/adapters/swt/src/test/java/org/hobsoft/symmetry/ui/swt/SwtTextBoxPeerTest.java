@@ -19,6 +19,7 @@ import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
+import org.hobsoft.symmetry.test.StubPeerManager;
 import org.hobsoft.symmetry.ui.TextBox;
 import org.jmock.Mockery;
 import org.jmock.integration.junit4.JMock;
@@ -55,7 +56,7 @@ public class SwtTextBoxPeerTest
 	@Before
 	public void setUp()
 	{
-		MockPeerManager peerManager = new MockPeerManager();
+		StubPeerManager peerManager = new StubPeerManager();
 		
 		shell = new Shell(Display.getDefault());
 		peerManager.setPeer(null, shell);
