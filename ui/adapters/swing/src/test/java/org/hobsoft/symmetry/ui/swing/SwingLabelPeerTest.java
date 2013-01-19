@@ -17,6 +17,7 @@ import java.beans.PropertyChangeEvent;
 
 import javax.swing.JLabel;
 
+import org.hobsoft.symmetry.test.StubPeerManager;
 import org.hobsoft.symmetry.ui.Label;
 import org.junit.Before;
 import org.junit.Test;

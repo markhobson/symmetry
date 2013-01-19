@@ -17,6 +17,7 @@ import java.beans.PropertyChangeEvent;
 
 import javax.swing.Box;
 
+import org.hobsoft.symmetry.test.StubPeerManager;
 import org.hobsoft.symmetry.ui.Spacer;
 import org.junit.Before;
 import org.junit.Test;

@@ -18,6 +18,7 @@ import java.beans.PropertyChangeEvent;
 import javax.swing.JTextField;
 import javax.swing.event.DocumentListener;
 
+import org.hobsoft.symmetry.test.StubPeerManager;
 import org.hobsoft.symmetry.ui.TextBox;
 import org.jmock.Mockery;
 import org.jmock.integration.junit4.JMock;

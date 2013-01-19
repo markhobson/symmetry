@@ -11,7 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.hobsoft.symmetry.ui.swing;
+package org.hobsoft.symmetry.test;
 
 import org.hobsoft.symmetry.PeerManager;
 
@@ -25,8 +25,6 @@ import com.google.common.collect.HashBiMap;
  */
 public class StubPeerManager implements PeerManager
 {
-	// TODO: centralise
-	
 	// fields -----------------------------------------------------------------
 	
 	private final BiMap<Object, Object> peersByComponent;
