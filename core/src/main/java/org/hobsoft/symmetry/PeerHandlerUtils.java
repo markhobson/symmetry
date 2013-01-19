@@ -11,7 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.hobsoft.symmetry.swt;
+package org.hobsoft.symmetry;
 
 import java.beans.BeanInfo;
 import java.beans.PropertyChangeEvent;
@@ -30,15 +30,15 @@ import org.hobsoft.symmetry.support.bean.Properties;
  * 
  * @author Mark Hobson
  */
-public final class SwtPeerHandlerUtils
+public final class PeerHandlerUtils
 {
 	// constants --------------------------------------------------------------
 	
-	private static final Logger LOG = Logger.getLogger(SwtPeerHandlerUtils.class.getName());
+	private static final Logger LOG = Logger.getLogger(PeerHandlerUtils.class.getName());
 	
 	// constructors -----------------------------------------------------------
 	
-	private SwtPeerHandlerUtils()
+	private PeerHandlerUtils()
 	{
 		throw new AssertionError();
 	}

@@ -16,8 +16,8 @@ package org.hobsoft.symmetry.ui.swt;
 import org.eclipse.swt.widgets.Shell;
 import org.hobsoft.symmetry.CompositePeerManager;
 import org.hobsoft.symmetry.PeerHandler;
+import org.hobsoft.symmetry.PeerHandlerUtils;
 import org.hobsoft.symmetry.swt.SwtPeerHandlerDecorator;
-import org.hobsoft.symmetry.swt.SwtPeerHandlerUtils;
 import org.hobsoft.symmetry.ui.Box;
 import org.hobsoft.symmetry.ui.Button;
 import org.hobsoft.symmetry.ui.CheckBox;
@@ -96,7 +96,7 @@ public class SwtPeerManager extends CompositePeerManager
 			@Override
 			protected void visit(Component component, Void parameter)
 			{
-				SwtPeerHandlerUtils.initComponent(component, SwtPeerManager.this);
+				PeerHandlerUtils.initComponent(component, SwtPeerManager.this);
 			}
 		}, null);
 		

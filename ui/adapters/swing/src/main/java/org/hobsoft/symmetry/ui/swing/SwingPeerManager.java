@@ -17,8 +17,8 @@ import javax.swing.UIManager;
 
 import org.hobsoft.symmetry.CompositePeerManager;
 import org.hobsoft.symmetry.PeerHandler;
+import org.hobsoft.symmetry.PeerHandlerUtils;
 import org.hobsoft.symmetry.swing.SwingPeerHandlerDecorator;
-import org.hobsoft.symmetry.swing.SwingPeerHandlerUtils;
 import org.hobsoft.symmetry.ui.Box;
 import org.hobsoft.symmetry.ui.Button;
 import org.hobsoft.symmetry.ui.CheckBox;
@@ -99,7 +99,7 @@ public class SwingPeerManager extends CompositePeerManager
 			@Override
 			protected void visit(Component component, Void parameter)
 			{
-				SwingPeerHandlerUtils.initComponent(component, SwingPeerManager.this);
+				PeerHandlerUtils.initComponent(component, SwingPeerManager.this);
 			}
 		}, null);
 	}
