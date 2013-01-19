@@ -120,7 +120,7 @@ public class ComponentVisitorsTest
 		// simple subtype
 	}
 	
-	private static interface IndirectHierarchicalComponentVisitor<T extends Component, P, E extends Exception>
+	private interface IndirectHierarchicalComponentVisitor<T extends Component, P, E extends Exception>
 		extends HierarchicalComponentVisitor<T, P, E>
 	{
 		// simple subtype for level of indirection
