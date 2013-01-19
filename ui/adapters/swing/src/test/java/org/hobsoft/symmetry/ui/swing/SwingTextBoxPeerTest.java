@@ -51,7 +51,7 @@ public class SwingTextBoxPeerTest
 	@Before
 	public void setUp()
 	{
-		MockPeerManager peerManager = new MockPeerManager();
+		StubPeerManager peerManager = new StubPeerManager();
 		
 		component = new TextBox();
 		listener = new SwingTextBoxPeer(peerManager);

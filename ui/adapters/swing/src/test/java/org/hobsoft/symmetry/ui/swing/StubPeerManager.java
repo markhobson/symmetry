@@ -23,7 +23,7 @@ import com.google.common.collect.HashBiMap;
  * 
  * @author Mark Hobson
  */
-public class MockPeerManager implements PeerManager
+public class StubPeerManager implements PeerManager
 {
 	// TODO: centralise
 	
@@ -33,7 +33,7 @@ public class MockPeerManager implements PeerManager
 	
 	// constructors -----------------------------------------------------------
 	
-	public MockPeerManager()
+	public StubPeerManager()
 	{
 		peersByComponent = HashBiMap.create();
 	}

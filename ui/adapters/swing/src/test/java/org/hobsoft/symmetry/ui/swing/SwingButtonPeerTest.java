@@ -54,7 +54,7 @@ public class SwingButtonPeerTest
 	@Before
 	public void setUp()
 	{
-		MockPeerManager peerManager = new MockPeerManager();
+		StubPeerManager peerManager = new StubPeerManager();
 		
 		component = new Button();
 		listener = new SwingButtonPeer(peerManager);

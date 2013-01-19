@@ -43,7 +43,7 @@ public class SwingSpacerPeerTest
 	@Before
 	public void setUp()
 	{
-		MockPeerManager peerManager = new MockPeerManager();
+		StubPeerManager peerManager = new StubPeerManager();
 		
 		component = new Spacer();
 		listener = new SwingSpacerPeer(peerManager);

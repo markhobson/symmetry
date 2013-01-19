@@ -43,7 +43,7 @@ public class SwingLabelPeerTest
 	@Before
 	public void setUp()
 	{
-		MockPeerManager peerManager = new MockPeerManager();
+		StubPeerManager peerManager = new StubPeerManager();
 		
 		component = new Label();
 		listener = new SwingLabelPeer(peerManager);
