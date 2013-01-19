@@ -11,7 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.hobsoft.symmetry;
+package org.hobsoft.symmetry.state;
 
 import java.beans.BeanInfo;
 import java.beans.PropertyChangeEvent;
@@ -30,15 +30,15 @@ import org.hobsoft.symmetry.support.bean.Properties;
  * 
  * @author Mark Hobson
  */
-public final class PeerHandlerUtils
+public final class StateUtils
 {
 	// constants --------------------------------------------------------------
 	
-	private static final Logger LOG = Logger.getLogger(PeerHandlerUtils.class.getName());
+	private static final Logger LOG = Logger.getLogger(StateUtils.class.getName());
 	
 	// constructors -----------------------------------------------------------
 	
-	private PeerHandlerUtils()
+	private StateUtils()
 	{
 		throw new AssertionError();
 	}
