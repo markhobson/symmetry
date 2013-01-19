@@ -13,18 +13,15 @@
  */
 package org.hobsoft.symmetry.swing;
 
-import java.awt.EventQueue;
 import java.beans.BeanInfo;
 import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
 import java.beans.PropertyDescriptor;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import javax.swing.SwingUtilities;
-
-import org.hobsoft.symmetry.CompositePeerManager;
 import org.hobsoft.symmetry.support.bean.BeanUtils;
 import org.hobsoft.symmetry.support.bean.Properties;
 
@@ -33,48 +30,28 @@ import org.hobsoft.symmetry.support.bean.Properties;
  * 
  * @author Mark Hobson
  */
-public abstract class AbstractSwingPeerManager extends CompositePeerManager
+public final class SwingPeerHandlerUtils
 {
 	// constants --------------------------------------------------------------
 	
-	private static final Logger LOG = Logger.getLogger(AbstractSwingPeerManager.class.getName());
-
-	// PeerManager methods ----------------------------------------------------
+	private static final Logger LOG = Logger.getLogger(SwingPeerHandlerUtils.class.getName());
 	
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	public void propertyChange(final PropertyChangeEvent event)
+	// constructors -----------------------------------------------------------
+	
+	private SwingPeerHandlerUtils()
 	{
-		if (EventQueue.isDispatchThread())
-		{
-			super.propertyChange(event);
-		}
-		else
-		{
-			SwingUtilities.invokeLater(
-				new Runnable()
-				{
-					@Override
-					public void run()
-					{
-						propertyChange(event);
-					}
-				}
-			);
-		}
+		throw new AssertionError();
 	}
 	
-	// protected methods ------------------------------------------------------
+	// public methods ---------------------------------------------------------
 	
-	protected void initComponent(Object component)
+	public static void initComponent(Object component, PropertyChangeListener listener)
 	{
 		for (PropertyChangeEvent event : getPropertyChangeEvents(component))
 		{
 			try
 			{
-				propertyChange(event);
+				listener.propertyChange(event);
 			}
 			catch (Throwable throwable)
 			{

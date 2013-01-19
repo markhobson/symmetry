@@ -15,7 +15,10 @@ package org.hobsoft.symmetry.ui.swing;
 
 import javax.swing.UIManager;
 
-import org.hobsoft.symmetry.swing.AbstractSwingPeerManager;
+import org.hobsoft.symmetry.CompositePeerManager;
+import org.hobsoft.symmetry.PeerHandler;
+import org.hobsoft.symmetry.swing.SwingPeerHandlerDecorator;
+import org.hobsoft.symmetry.swing.SwingPeerHandlerUtils;
 import org.hobsoft.symmetry.ui.Box;
 import org.hobsoft.symmetry.ui.Button;
 import org.hobsoft.symmetry.ui.CheckBox;
@@ -43,7 +46,7 @@ import org.hobsoft.symmetry.ui.traversal.PreorderComponentVisitor;
  * 
  * @author Mark Hobson
  */
-public class SwingPeerManager extends AbstractSwingPeerManager
+public class SwingPeerManager extends CompositePeerManager
 {
 	// constructors -----------------------------------------------------------
 	
@@ -96,8 +99,22 @@ public class SwingPeerManager extends AbstractSwingPeerManager
 			@Override
 			protected void visit(Component component, Void parameter)
 			{
-				initComponent(component);
+				SwingPeerHandlerUtils.initComponent(component, SwingPeerManager.this);
 			}
 		}, null);
+	}
+	
+	// CompositePeerManager methods -------------------------------------------
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public void setPeerHandler(Class<?> componentClass, PeerHandler handler)
+	{
+		// decorate handler
+		handler = new SwingPeerHandlerDecorator(handler);
+		
+		super.setPeerHandler(componentClass, handler);
 	}
 }
