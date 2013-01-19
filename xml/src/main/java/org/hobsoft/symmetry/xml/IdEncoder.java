@@ -13,14 +13,14 @@
  */
 package org.hobsoft.symmetry.xml;
 
-import org.hobsoft.symmetry.support.codec.Encoder;
+import com.google.common.base.Function;
 
 /**
  * 
  * 
  * @author Mark Hobson
  */
-public interface IdEncoder extends Encoder<Object, String>
+public interface IdEncoder extends Function<Object, String>
 {
 	// simple subtype
 }

@@ -13,6 +13,8 @@
  */
 package org.hobsoft.symmetry.support.codec;
 
+import com.google.common.base.Function;
+
 /**
  * Encodes and decodes objects to and from another object.
  * 
@@ -24,7 +26,9 @@ package org.hobsoft.symmetry.support.codec;
  * @see		Encoder
  * @see		Decoder
  */
-public interface Codec<X, Y> extends Encoder<X, Y>, Decoder<Y, X>
+public interface Codec<X, Y> extends Function<X, Y>
 {
-	// convenience interface
+	// TODO: replace with Guava's Converter when implemented (see #14)
+	
+	Function<Y, X> inverse();
 }

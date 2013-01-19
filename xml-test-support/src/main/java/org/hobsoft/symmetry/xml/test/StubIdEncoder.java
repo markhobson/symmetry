@@ -16,7 +16,6 @@ package org.hobsoft.symmetry.xml.test;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.hobsoft.symmetry.support.codec.EncoderException;
 import org.hobsoft.symmetry.xml.IdEncoder;
 
 /**
@@ -43,7 +42,7 @@ public class StubIdEncoder implements IdEncoder
 	 * {@inheritDoc}
 	 */
 	@Override
-	public String encode(Object object) throws EncoderException
+	public String apply(Object object)
 	{
 		return idsByObject.get(object);
 	}

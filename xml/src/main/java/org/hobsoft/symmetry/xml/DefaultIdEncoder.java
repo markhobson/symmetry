@@ -16,8 +16,6 @@ package org.hobsoft.symmetry.xml;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.hobsoft.symmetry.support.codec.EncoderException;
-
 /**
  * 
  * 
@@ -39,13 +37,13 @@ class DefaultIdEncoder implements IdEncoder
 		nextId = 0;
 	}
 
-	// Encoder methods --------------------------------------------------------
-	
+	// Function methods -------------------------------------------------------
+
 	/**
 	 * {@inheritDoc}
 	 */
 	@Override
-	public String encode(Object object) throws EncoderException
+	public String apply(Object object)
 	{
 		String id;
 		

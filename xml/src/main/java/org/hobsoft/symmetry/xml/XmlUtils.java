@@ -25,7 +25,6 @@ import javax.xml.stream.XMLStreamWriter;
 
 import org.hobsoft.symmetry.hydrate.HydrationContext;
 import org.hobsoft.symmetry.hydrate.HydrationException;
-import org.hobsoft.symmetry.support.codec.EncoderException;
 import org.hobsoft.symmetry.support.xml.stax.EventReaderTransformer;
 import org.hobsoft.symmetry.support.xml.stax.EventTransformer;
 import org.hobsoft.symmetry.support.xml.stax.EventWriterFilter;
@@ -191,14 +190,7 @@ public final class XmlUtils
 	
 	public static String getId(HydrationContext context, Object component) throws HydrationException
 	{
-		try
-		{
-			return context.get(IdEncoder.class).encode(component);
-		}
-		catch (EncoderException exception)
-		{
-			throw new HydrationException("Cannot get component id: " + component, exception);
-		}
+		return context.get(IdEncoder.class).apply(component);
 	}
 	
 	// private methods --------------------------------------------------------

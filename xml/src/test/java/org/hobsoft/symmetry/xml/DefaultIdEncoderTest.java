@@ -13,7 +13,6 @@
  */
 package org.hobsoft.symmetry.xml;
 
-import org.hobsoft.symmetry.support.codec.EncoderException;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -41,25 +40,25 @@ public class DefaultIdEncoderTest
 	// tests ------------------------------------------------------------------
 	
 	@Test
-	public void encodeOnce() throws EncoderException
+	public void encodeOnce()
 	{
-		assertEquals("0", encoder.encode(new Object()));
+		assertEquals("0", encoder.apply(new Object()));
 	}
 	
 	@Test
-	public void encodeTwice() throws EncoderException
+	public void encodeTwice()
 	{
-		encoder.encode(new Object());
+		encoder.apply(new Object());
 		
-		assertEquals("1", encoder.encode(new Object()));
+		assertEquals("1", encoder.apply(new Object()));
 	}
 	
 	@Test
-	public void encodeWithSameObject() throws EncoderException
+	public void encodeWithSameObject()
 	{
 		Object object = new Object();
-		encoder.encode(object);
+		encoder.apply(object);
 		
-		assertEquals("0", encoder.encode(object));
+		assertEquals("0", encoder.apply(object));
 	}
 }
