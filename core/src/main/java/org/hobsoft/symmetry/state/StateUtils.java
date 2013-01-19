@@ -47,8 +47,10 @@ public final class StateUtils
 	
 	public static void initComponent(Object component, PropertyChangeListener listener)
 	{
-		for (PropertyChangeEvent event : getPropertyChangeEvents(component))
+		for (PropertyState property : getProperties(component))
 		{
+			PropertyChangeEvent event = toEvent(property);
+			
 			try
 			{
 				listener.propertyChange(event);
@@ -64,25 +66,27 @@ public final class StateUtils
 	
 	// private methods --------------------------------------------------------
 	
-	private static List<PropertyChangeEvent> getPropertyChangeEvents(Object bean)
+	private static List<PropertyState> getProperties(Object bean)
 	{
-		// TODO: move to BeanUtils
-		
 		BeanInfo info = BeanUtils.getBeanInfo(bean.getClass());
-		List<PropertyChangeEvent> changes = new ArrayList<PropertyChangeEvent>();
+		List<PropertyState> properties = new ArrayList<PropertyState>();
 		
 		for (PropertyDescriptor descriptor : info.getPropertyDescriptors())
 		{
 			if (descriptor.getReadMethod() != null)
 			{
-				Object newValue = Properties.get(bean, descriptor);
+				Object value = Properties.get(bean, descriptor);
 				
-				PropertyChangeEvent change = new PropertyChangeEvent(bean, descriptor.getName(), null, newValue);
-				
-				changes.add(change);
+				properties.add(new PropertyState(bean, descriptor, value));
 			}
 		}
 		
-		return changes;
+		return properties;
+	}
+	
+	private static PropertyChangeEvent toEvent(PropertyState property)
+	{
+		return new PropertyChangeEvent(property.getBean(), property.getDescriptor().getName(), null,
+			property.getValue());
 	}
 }
