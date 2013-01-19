@@ -97,7 +97,7 @@ public class SwtPeerManager extends CompositePeerManager
 			@Override
 			protected void visit(Component component, Void parameter)
 			{
-				StateUtils.initComponent(component, SwtPeerManager.this);
+				StateUtils.setProperties(component, SwtPeerManager.this);
 			}
 		}, null);
 		

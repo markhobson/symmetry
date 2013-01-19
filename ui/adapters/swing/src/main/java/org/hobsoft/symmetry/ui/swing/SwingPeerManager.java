@@ -99,7 +99,7 @@ public class SwingPeerManager extends CompositePeerManager
 			@Override
 			protected void visit(Component component, Void parameter)
 			{
-				StateUtils.initComponent(component, SwingPeerManager.this);
+				StateUtils.setProperties(component, SwingPeerManager.this);
 			}
 		}, null);
 	}

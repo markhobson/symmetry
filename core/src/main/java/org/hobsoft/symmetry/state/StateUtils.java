@@ -45,9 +45,16 @@ public final class StateUtils
 	
 	// public methods ---------------------------------------------------------
 	
-	public static void initComponent(Object component, PropertyChangeListener listener)
+	public static void setProperties(Object bean, PropertyChangeListener listener)
 	{
-		for (PropertyState property : getProperties(component))
+		setProperties(getProperties(bean), listener);
+	}
+	
+	// private methods --------------------------------------------------------
+	
+	private static void setProperties(List<PropertyState> properties, PropertyChangeListener listener)
+	{
+		for (PropertyState property : properties)
 		{
 			PropertyChangeEvent event = toEvent(property);
 			
@@ -63,8 +70,6 @@ public final class StateUtils
 			}
 		}
 	}
-	
-	// private methods --------------------------------------------------------
 	
 	private static List<PropertyState> getProperties(Object bean)
 	{
