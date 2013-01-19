@@ -23,4 +23,6 @@ public interface PeerManager
 	void registerComponent(Object component);
 	
 	Object getPeer(Object component);
+	
+	Object getComponent(Object peer);
 }

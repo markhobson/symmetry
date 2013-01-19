@@ -13,17 +13,13 @@
  */
 package org.hobsoft.symmetry.ui.html;
 
-import java.util.HashMap;
-import java.util.Map;
-
+import org.hobsoft.symmetry.PeerManager;
 import org.hobsoft.symmetry.hydrate.DehydrationContext;
 import org.hobsoft.symmetry.hydrate.HydrationContext;
 import org.hobsoft.symmetry.hydrate.HydrationException;
 import org.hobsoft.symmetry.hydrate.RehydrationContext;
 import org.hobsoft.symmetry.state.Base64StateCodec;
 import org.hobsoft.symmetry.state.StateCodec;
-import org.hobsoft.symmetry.support.codec.Codec;
-import org.hobsoft.symmetry.support.codec.Codecs;
 import org.hobsoft.symmetry.support.io.DefaultSerializerFactory;
 import org.hobsoft.symmetry.ui.Component;
 import org.hobsoft.symmetry.ui.common.hydrate.ComponentHydrator;
@@ -104,16 +100,13 @@ public class HtmlRenderKit extends XmlRenderKit<Component>
 	@Override
 	protected StateCodec createStateCodec(Component component, HydrationContext context)
 	{
-		IntegerIdComponentVisitor idVisitor = new IntegerIdComponentVisitor();
-		component.accept(idVisitor, null);
-		Map<Component, Integer> idsByComponent = idVisitor.getIdsByComponent();
-		Codec<Object, Integer> componentCodec = Codecs.forMap(new HashMap<Object, Integer>(idsByComponent));
+		PeerManager peerManager = context.get(PeerManager.class);
 		
 		DefaultSerializerFactory serializerFactory = new DefaultSerializerFactory();
 		serializerFactory.setSerializer(TreePath.class, new TreePathSerializer());
 		
-		StateCodec stateCodec = new Base64StateCodec(componentCodec, serializerFactory);
-//		StateCodec stateCodec = new ClassicStateCodec(componentCodec);
+		StateCodec stateCodec = new Base64StateCodec(peerManager, serializerFactory);
+//		StateCodec stateCodec = new ClassicStateCodec(peerManager);
 		stateCodec = new HtmlFormStateCodec(stateCodec);
 		stateCodec = new FormHtmlEventStateCodec(stateCodec);
 		stateCodec = new HyperlinkableClosureStateCodec(stateCodec);

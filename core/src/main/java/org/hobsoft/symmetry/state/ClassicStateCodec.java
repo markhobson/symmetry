@@ -21,13 +21,11 @@ import java.io.ObjectInput;
 import java.io.ObjectOutput;
 import java.util.EventObject;
 
+import org.hobsoft.symmetry.PeerManager;
 import org.hobsoft.symmetry.support.bean.BeanException;
 import org.hobsoft.symmetry.support.bean.BeanUtils;
 import org.hobsoft.symmetry.support.bean.EventSets;
 import org.hobsoft.symmetry.support.bean.Properties;
-import org.hobsoft.symmetry.support.codec.Codec;
-import org.hobsoft.symmetry.support.codec.DecoderException;
-import org.hobsoft.symmetry.support.codec.EncoderException;
 import org.hobsoft.symmetry.support.io.IOUtils;
 import org.hobsoft.symmetry.support.io.StringDataInput;
 import org.hobsoft.symmetry.support.io.StringDataOutput;
@@ -45,13 +43,13 @@ public class ClassicStateCodec implements StateCodec
 	
 	// fields -----------------------------------------------------------------
 	
-	private final Codec<Object, Integer> componentCodec;
+	private final PeerManager peerManager;
 	
 	// constructors -----------------------------------------------------------
 	
-	public ClassicStateCodec(Codec<Object, Integer> componentCodec)
+	public ClassicStateCodec(PeerManager peerManager)
 	{
-		this.componentCodec = componentCodec;
+		this.peerManager = peerManager;
 	}
 	
 	// StateCodec methods -----------------------------------------------------
@@ -139,15 +137,8 @@ public class ClassicStateCodec implements StateCodec
 			className = className.substring(index + 1);
 		}
 		
-		int componentId;
-		try
-		{
-			componentId = componentCodec.encode(bean);
-		}
-		catch (EncoderException exception)
-		{
-			throw new StateException("Cannot encode bean: " + bean, exception);
-		}
+		// TODO: remove cast when PeerManager genericised
+		int componentId = (Integer) peerManager.getPeer(bean);
 		
 		return className.substring(0, 1).toLowerCase() + className.substring(1) + componentId;
 	}
@@ -167,14 +158,7 @@ public class ClassicStateCodec implements StateCodec
 		
 		int componentId = Integer.parseInt(encodedBean.substring(index + 1));
 		
-		try
-		{
-			return componentCodec.decode(componentId);
-		}
-		catch (DecoderException exception)
-		{
-			throw new StateException("Cannot decode bean: " + componentId, exception);
-		}
+		return peerManager.getComponent(componentId);
 	}
 	
 	/**

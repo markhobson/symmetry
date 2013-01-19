@@ -14,10 +14,11 @@
 package org.hobsoft.symmetry;
 
 import java.beans.PropertyChangeListener;
-import java.util.HashMap;
-import java.util.Map;
 
 import org.hobsoft.symmetry.support.bean.BeanUtils;
+
+import com.google.common.collect.BiMap;
+import com.google.common.collect.HashBiMap;
 
 /**
  * 
@@ -28,13 +29,13 @@ public abstract class AbstractPeerManager implements PeerManager, PropertyChange
 {
 	// fields -----------------------------------------------------------------
 	
-	private final Map<Object, Object> peersByComponent;
+	private final BiMap<Object, Object> peersByComponent;
 	
 	// constructors -----------------------------------------------------------
 	
 	public AbstractPeerManager()
 	{
-		peersByComponent = new HashMap<Object, Object>();
+		peersByComponent = HashBiMap.create();
 	}
 	
 	// PeerManager methods ----------------------------------------------------
@@ -50,6 +51,16 @@ public abstract class AbstractPeerManager implements PeerManager, PropertyChange
 		Object peer = createPeer(component);
 		peersByComponent.put(component, peer);
 	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public Object getComponent(Object peer)
+	{
+		// TODO: throw exception if not found?
+		return peersByComponent.inverse().get(peer);
+	}
 	
 	/**
 	 * {@inheritDoc}
@@ -57,6 +68,7 @@ public abstract class AbstractPeerManager implements PeerManager, PropertyChange
 	@Override
 	public Object getPeer(Object component)
 	{
+		// TODO: throw exception if not found?
 		return peersByComponent.get(component);
 	}
 	

@@ -38,11 +38,9 @@ import java.util.EventObject;
 import java.util.Iterator;
 import java.util.List;
 
+import org.hobsoft.symmetry.PeerManager;
 import org.hobsoft.symmetry.support.bean.BeanException;
 import org.hobsoft.symmetry.support.bean.BeanUtils;
-import org.hobsoft.symmetry.support.codec.Codec;
-import org.hobsoft.symmetry.support.codec.DecoderException;
-import org.hobsoft.symmetry.support.codec.EncoderException;
 import org.hobsoft.symmetry.support.io.IOUtils;
 import org.hobsoft.symmetry.support.io.SerializerFactory;
 import org.hobsoft.symmetry.support.io.SerializerTinyObjectInput;
@@ -101,7 +99,7 @@ public class Base64StateCodec implements StateCodec
 	
 	// fields -----------------------------------------------------------------
 	
-	private final Codec<Object, Integer> componentCodec;
+	private final PeerManager peerManager;
 	
 	private final SerializerFactory serializerFactory;
 	
@@ -109,9 +107,9 @@ public class Base64StateCodec implements StateCodec
 	
 	// constructors -----------------------------------------------------------
 	
-	public Base64StateCodec(Codec<Object, Integer> componentCodec, SerializerFactory serializerFactory)
+	public Base64StateCodec(PeerManager peerManager, SerializerFactory serializerFactory)
 	{
-		this.componentCodec = componentCodec;
+		this.peerManager = peerManager;
 		this.serializerFactory = serializerFactory;
 		
 		baseEncoding = BaseEncoding.base64Url().omitPadding();
@@ -367,21 +365,15 @@ public class Base64StateCodec implements StateCodec
 	
 	private void encodeBean(ObjectOutput out, Object bean) throws StateException, IOException
 	{
-		try
+		// TODO: remove cast when PeerManager genericised
+		Integer encodedBean = (Integer) peerManager.getPeer(bean);
+		
+		if (encodedBean == null)
 		{
-			Integer encodedBean = componentCodec.encode(bean);
-			
-			if (encodedBean == null)
-			{
-				throw new StateException("Cannot encode bean: " + bean);
-			}
-			
-			out.writeInt(encodedBean);
+			throw new StateException("Cannot encode bean: " + bean);
 		}
-		catch (EncoderException exception)
-		{
-			throw new StateException("Cannot encode bean: " + bean, exception);
-		}
+		
+		out.writeInt(encodedBean);
 	}
 	
 	private void encodePropertyValue(ObjectOutput out, PropertyState property) throws IOException
@@ -505,14 +497,7 @@ public class Base64StateCodec implements StateCodec
 	{
 		int beanId = in.readInt();
 		
-		try
-		{
-			return componentCodec.decode(beanId);
-		}
-		catch (DecoderException exception)
-		{
-			throw new StateException("Cannot decode bean: " + beanId, exception);
-		}
+		return peerManager.getComponent(beanId);
 	}
 	
 	private Object decodePropertyValue(ObjectInput in, Object bean, PropertyDescriptor descriptor) throws IOException,

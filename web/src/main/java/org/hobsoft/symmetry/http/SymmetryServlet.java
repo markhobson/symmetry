@@ -232,7 +232,7 @@ public class SymmetryServlet extends HttpServlet
 			
 			// TODO: reinstate command concept
 			
-			rehydrate(component, request);
+			rehydrate(peerManager, component, request);
 			
 			// TODO: resolve state: response.sendRedirect(contextPath + "/" + session.getState(null));
 			// TODO: fire end write transaction event, start read-only transaction?
@@ -240,7 +240,7 @@ public class SymmetryServlet extends HttpServlet
 			// TODO: introduce state into PeerManager API
 			State state = ((StatePeerManager) peerManager).getState();
 			
-			dehydrate(component, state, request.getLocale(), response);
+			dehydrate(peerManager, component, state, request.getLocale(), response);
 		}
 		catch (PeerManagerProviderException exception)
 		{
@@ -279,12 +279,13 @@ public class SymmetryServlet extends HttpServlet
 		}
 	}
 	
-	private void rehydrate(Object component, HttpServletRequest request) throws ServletException, IOException,
-		HydrationException
+	private void rehydrate(PeerManager peerManager, Object component, HttpServletRequest request)
+		throws ServletException, IOException, HydrationException
 	{
 		ComponentRenderKit<?> renderKit = config.getComponentRenderKit();
 		
 		RehydrationContext context = new RehydrationContext();
+		context.set(PeerManager.class, peerManager);
 		context.setEncodedState(getEncodedState(request));
 		
 		rehydrateCapture(renderKit, component, context);
@@ -298,8 +299,8 @@ public class SymmetryServlet extends HttpServlet
 		renderKit.rehydrate(castComponent, context);
 	}
 	
-	private void dehydrate(Object component, State state, Locale locale, HttpServletResponse response)
-		throws IOException, HydrationException
+	private void dehydrate(PeerManager peerManager, Object component, State state, Locale locale,
+		HttpServletResponse response) throws IOException, HydrationException
 	{
 		ComponentRenderKit<?> renderKit = config.getComponentRenderKit();
 		
@@ -307,6 +308,7 @@ public class SymmetryServlet extends HttpServlet
 		response.setContentType(renderKit.getContentType());
 		
 		DehydrationContext context = new DehydrationContext(state, locale, response.getOutputStream());
+		context.set(PeerManager.class, peerManager);
 		
 		DehydrationParameters parameters = new DehydrationParameters();
 		parameters.setDebug(config.isDebug());

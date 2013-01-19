@@ -14,11 +14,9 @@
 package org.hobsoft.symmetry.state;
 
 import java.beans.PropertyChangeEvent;
-import java.beans.PropertyChangeListener;
 import java.beans.PropertyDescriptor;
 
-import org.hobsoft.symmetry.PeerManager;
-import org.hobsoft.symmetry.support.bean.BeanUtils;
+import org.hobsoft.symmetry.AbstractPeerManager;
 import org.hobsoft.symmetry.support.bean.Properties;
 
 /**
@@ -26,7 +24,7 @@ import org.hobsoft.symmetry.support.bean.Properties;
  * 
  * @author Mark Hobson
  */
-public abstract class StatePeerManager implements PeerManager, PropertyChangeListener
+public abstract class StatePeerManager extends AbstractPeerManager
 {
 	// fields -----------------------------------------------------------------
 	
@@ -36,11 +34,14 @@ public abstract class StatePeerManager implements PeerManager, PropertyChangeLis
 	
 	private Object component;
 	
+	private int peerId;
+	
 	// constructors -----------------------------------------------------------
 	
 	public StatePeerManager()
 	{
 		eventList = new PropertyChangeEventList();
+		peerId = 1;
 	}
 	
 	// PeerManager methods ----------------------------------------------------
@@ -56,18 +57,18 @@ public abstract class StatePeerManager implements PeerManager, PropertyChangeLis
 			this.component = component;
 		}
 		
-		BeanUtils.addPropertyChangeListener(component, this);
+		super.registerComponent(component);
 	}
+	
+	// AbstractPeerManager methods --------------------------------------------
 	
 	/**
 	 * {@inheritDoc}
 	 */
 	@Override
-	public Object getPeer(Object component)
+	public Object createPeer(Object component)
 	{
-		// TODO: can we use the codec here?
-		
-		return null;
+		return peerId++;
 	}
 	
 	// PropertyChangeListener methods -----------------------------------------
