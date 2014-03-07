@@ -38,12 +38,6 @@
 		
 		<dependency>
 			<groupId>org.hobsoft.symmetry</groupId>
-			<artifactId>symmetry-support-codec</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-		
-		<dependency>
-			<groupId>org.hobsoft.symmetry</groupId>
 			<artifactId>symmetry-support-xml</artifactId>
 			<version>${project.version}</version>
 		</dependency>
