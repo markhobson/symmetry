@@ -16,4 +16,8 @@
 	
 	<name>Symmetry Parent</name>
 	
+	<modules>
+		<module>spring</module>
+	</modules>
+	
 </project>
