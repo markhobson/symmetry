@@ -16,6 +16,10 @@
 	
 	<name>Symmetry Parent</name>
 	
+	<properties>
+		<springVersion>3.2.11.RELEASE</springVersion>
+	</properties>
+	
 	<build>
 	
 		<pluginManagement>
@@ -36,6 +40,44 @@
 		</pluginManagement>
 	
 	</build>
+	
+	<dependencyManagement>
+	
+		<dependencies>
+		
+			<!-- JUnit -->
+			
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>4.11</version>
+			</dependency>
+		
+			<!-- Servlet -->
+			
+			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>javax.servlet-api</artifactId>
+				<version>3.1.0</version>
+			</dependency>
+			
+			<!-- Spring -->
+		
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-test</artifactId>
+				<version>${springVersion}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-webmvc</artifactId>
+				<version>${springVersion}</version>
+			</dependency>
+			
+		</dependencies>
+	
+	</dependencyManagement>
 
 	<modules>
 		<module>spring</module>
