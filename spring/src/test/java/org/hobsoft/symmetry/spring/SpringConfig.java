@@ -13,15 +13,29 @@
  */
 package org.hobsoft.symmetry.spring;
 
+import java.util.List;
+
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.converter.HttpMessageConverter;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 
 /**
  * Spring IoC configuration for integration tests.
  */
 @Configuration
 @ComponentScan
-public class SpringConfig
+public class SpringConfig extends WebMvcConfigurationSupport
 {
-	// no explicit beans
+	// ----------------------------------------------------------------------------------------------------------------
+	// WebMvcConfigurationSupport methods
+	// ----------------------------------------------------------------------------------------------------------------
+
+	@Override
+	protected void configureMessageConverters(List<HttpMessageConverter<?>> converters)
+	{
+		addDefaultHttpMessageConverters(converters);
+		
+		converters.add(new SymmetryHttpMessageConverter());
+	}
 }
