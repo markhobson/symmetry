@@ -11,11 +11,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.hobsoft.symmetry.spring;
+package org.hobsoft.symmetry.spring.it;
 
 import java.util.List;
 
-import org.hobsoft.symmetry.spring.support.FakeReflector;
+import org.hobsoft.symmetry.spring.SymmetryHttpMessageConverter;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.converter.HttpMessageConverter;
