@@ -17,7 +17,7 @@ import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
 
-import org.hobsoft.symmetry.ui.Component;
+import org.hobsoft.symmetry.Reflector;
 import org.springframework.http.HttpInputMessage;
 import org.springframework.http.HttpOutputMessage;
 import org.springframework.http.MediaType;
@@ -28,18 +28,29 @@ import com.google.common.base.Charsets;
 
 /**
  * Spring HTTP message converter for UI components.
+ * 
+ * @param <T>
+ *            the component type
  */
-public class SymmetryHttpMessageConverter extends AbstractHttpMessageConverter<Component>
+public class SymmetryHttpMessageConverter<T> extends AbstractHttpMessageConverter<T>
 {
+	// ----------------------------------------------------------------------------------------------------------------
+	// fields
+	// ----------------------------------------------------------------------------------------------------------------
+
+	private final Reflector<T> reflector;
+
 	// ----------------------------------------------------------------------------------------------------------------
 	// constructors
 	// ----------------------------------------------------------------------------------------------------------------
 
-	public SymmetryHttpMessageConverter()
+	public SymmetryHttpMessageConverter(Reflector<T> reflector)
 	{
 		super(MediaType.TEXT_HTML);
+
+		this.reflector = reflector;
 	}
-	
+
 	// ----------------------------------------------------------------------------------------------------------------
 	// HttpMessageConverter methods
 	// ----------------------------------------------------------------------------------------------------------------
@@ -57,17 +68,17 @@ public class SymmetryHttpMessageConverter extends AbstractHttpMessageConverter<C
 	@Override
 	protected boolean supports(Class<?> clazz)
 	{
-		return Component.class.isAssignableFrom(clazz);
+		return reflector.getComponentType().isAssignableFrom(clazz);
 	}
 
 	@Override
-	protected Component readInternal(Class<? extends Component> clazz, HttpInputMessage inputMessage) throws IOException
+	protected T readInternal(Class<? extends T> clazz, HttpInputMessage inputMessage) throws IOException
 	{
 		throw new HttpMessageNotReadableException("Cannot read components");
 	}
 
 	@Override
-	protected void writeInternal(Component component, HttpOutputMessage outputMessage) throws IOException
+	protected void writeInternal(T component, HttpOutputMessage outputMessage) throws IOException
 	{
 		Writer writer = new OutputStreamWriter(outputMessage.getBody(), Charsets.UTF_8);
 		writer.write("<html/>");

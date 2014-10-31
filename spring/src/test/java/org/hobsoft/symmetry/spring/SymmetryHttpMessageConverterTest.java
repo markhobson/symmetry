@@ -16,8 +16,7 @@ package org.hobsoft.symmetry.spring;
 import java.io.IOException;
 import java.util.List;
 
-import org.hobsoft.symmetry.ui.Component;
-import org.hobsoft.symmetry.ui.Window;
+import org.hobsoft.symmetry.Reflector;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.http.MediaType;
@@ -28,6 +27,8 @@ import org.springframework.mock.http.MockHttpOutputMessage;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.Matchers.contains;
 import static org.junit.Assert.assertThat;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 /**
  * Tests {@code SymmetryHttpMessageConverter}.
@@ -35,10 +36,24 @@ import static org.junit.Assert.assertThat;
 public class SymmetryHttpMessageConverterTest
 {
 	// ----------------------------------------------------------------------------------------------------------------
+	// types
+	// ----------------------------------------------------------------------------------------------------------------
+
+	private static class DummyComponent
+	{
+		// dummy type
+	}
+
+	private static class DummySubcomponent extends DummyComponent
+	{
+		// dummy type
+	}
+	
+	// ----------------------------------------------------------------------------------------------------------------
 	// fields
 	// ----------------------------------------------------------------------------------------------------------------
 
-	private SymmetryHttpMessageConverter converter;
+	private SymmetryHttpMessageConverter<DummyComponent> converter;
 	
 	// ----------------------------------------------------------------------------------------------------------------
 	// public methods
@@ -47,7 +62,10 @@ public class SymmetryHttpMessageConverterTest
 	@Before
 	public void setUp()
 	{
-		converter = new SymmetryHttpMessageConverter();
+		Reflector<DummyComponent> reflector = mock(Reflector.class);
+		when(reflector.getComponentType()).thenReturn(DummyComponent.class);
+		
+		converter = new SymmetryHttpMessageConverter<>(reflector);
 	}
 	
 	// ----------------------------------------------------------------------------------------------------------------
@@ -57,7 +75,7 @@ public class SymmetryHttpMessageConverterTest
 	@Test
 	public void canReadWithComponentAndHtmlReturnsFalse()
 	{
-		boolean actual = converter.canRead(Component.class, MediaType.TEXT_HTML);
+		boolean actual = converter.canRead(DummyComponent.class, MediaType.TEXT_HTML);
 		
 		assertThat(actual, is(false));
 	}
@@ -65,7 +83,7 @@ public class SymmetryHttpMessageConverterTest
 	@Test
 	public void canWriteWithComponentAndHtmlReturnsTrue()
 	{
-		boolean actual = converter.canWrite(Component.class, MediaType.TEXT_HTML);
+		boolean actual = converter.canWrite(DummyComponent.class, MediaType.TEXT_HTML);
 		
 		assertThat(actual, is(true));
 	}
@@ -73,7 +91,7 @@ public class SymmetryHttpMessageConverterTest
 	@Test
 	public void canWriteWithSubcomponentAndHtmlReturnsTrue()
 	{
-		boolean actual = converter.canWrite(Window.class, MediaType.TEXT_HTML);
+		boolean actual = converter.canWrite(DummySubcomponent.class, MediaType.TEXT_HTML);
 		
 		assertThat(actual, is(true));
 	}
@@ -91,13 +109,13 @@ public class SymmetryHttpMessageConverterTest
 	{
 		MockHttpInputMessage inputMessage = new MockHttpInputMessage(new byte[0]);
 		
-		converter.read(Component.class, inputMessage);
+		converter.read(DummyComponent.class, inputMessage);
 	}
 	
 	@Test
 	public void writeWithComponentWritesHtml() throws IOException
 	{
-		Component component = new Window();
+		DummyComponent component = new DummyComponent();
 		MockHttpOutputMessage outputMessage = new MockHttpOutputMessage();
 		
 		converter.write(component, MediaType.TEXT_HTML, outputMessage);

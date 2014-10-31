@@ -11,32 +11,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.hobsoft.symmetry.spring;
-
-import java.util.List;
-
-import org.hobsoft.symmetry.spring.support.FakeReflector;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.http.converter.HttpMessageConverter;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
+package org.hobsoft.symmetry;
 
 /**
- * Spring IoC configuration for integration tests.
+ * Defines an API to dehydrate UI components.
+ * 
+ * @param <T>
+ *            the component type
  */
-@Configuration
-@ComponentScan
-public class SpringConfig extends WebMvcConfigurationSupport
+public interface Reflector<T>
 {
 	// ----------------------------------------------------------------------------------------------------------------
-	// WebMvcConfigurationSupport methods
+	// public methods
 	// ----------------------------------------------------------------------------------------------------------------
 
-	@Override
-	protected void configureMessageConverters(List<HttpMessageConverter<?>> converters)
-	{
-		addDefaultHttpMessageConverters(converters);
-		
-		converters.add(new SymmetryHttpMessageConverter<>(new FakeReflector()));
-	}
+	Class<T> getComponentType();
 }
