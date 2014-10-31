@@ -16,13 +16,6 @@
 	
 	<dependencies>
 	
-		<!-- Guava -->
-		
-		<dependency>
-			<groupId>com.google.guava</groupId>
-			<artifactId>guava</artifactId>
-		</dependency>
-		
 		<!-- Spring -->
 		
 		<dependency>
@@ -35,6 +28,14 @@
 		<dependency>
 			<groupId>org.hobsoft.symmetry</groupId>
 			<artifactId>symmetry-api</artifactId>
+		</dependency>
+		
+		<!-- Guava -->
+		
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<scope>test</scope>
 		</dependency>
 		
 		<!-- JUnit -->
