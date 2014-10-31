@@ -13,7 +13,14 @@
  */
 package org.hobsoft.symmetry.spring.it;
 
+import java.io.IOException;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
+
 import org.hobsoft.symmetry.Reflector;
+
+import com.google.common.base.Charsets;
 
 /**
  * Fake reflector for use by integration tests.
@@ -34,5 +41,13 @@ public class FakeReflector implements Reflector<FakeComponent>
 	public String getContentType()
 	{
 		return "text/html";
+	}
+	
+	@Override
+	public void reflect(FakeComponent component, OutputStream outputStream) throws IOException
+	{
+		Writer writer = new OutputStreamWriter(outputStream, Charsets.UTF_8);
+		writer.write("<html/>");
+		writer.flush();
 	}
 }

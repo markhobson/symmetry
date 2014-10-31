@@ -13,6 +13,9 @@
  */
 package org.hobsoft.symmetry;
 
+import java.io.IOException;
+import java.io.OutputStream;
+
 /**
  * Defines an API to dehydrate UI components.
  * 
@@ -28,4 +31,6 @@ public interface Reflector<T>
 	Class<T> getComponentType();
 	
 	String getContentType();
+	
+	void reflect(T component, OutputStream outputStream) throws IOException;
 }

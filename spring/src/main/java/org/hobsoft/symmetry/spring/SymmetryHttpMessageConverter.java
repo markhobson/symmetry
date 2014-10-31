@@ -14,8 +14,6 @@
 package org.hobsoft.symmetry.spring;
 
 import java.io.IOException;
-import java.io.OutputStreamWriter;
-import java.io.Writer;
 
 import org.hobsoft.symmetry.Reflector;
 import org.springframework.http.HttpInputMessage;
@@ -23,8 +21,6 @@ import org.springframework.http.HttpOutputMessage;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.AbstractHttpMessageConverter;
 import org.springframework.http.converter.HttpMessageNotReadableException;
-
-import com.google.common.base.Charsets;
 
 /**
  * Spring HTTP message converter for UI components.
@@ -80,8 +76,6 @@ public class SymmetryHttpMessageConverter<T> extends AbstractHttpMessageConverte
 	@Override
 	protected void writeInternal(T component, HttpOutputMessage outputMessage) throws IOException
 	{
-		Writer writer = new OutputStreamWriter(outputMessage.getBody(), Charsets.UTF_8);
-		writer.write("<html/>");
-		writer.flush();
+		reflector.reflect(component, outputMessage.getBody());
 	}
 }
