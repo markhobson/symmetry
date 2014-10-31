@@ -56,9 +56,9 @@ public class SymmetryHttpMessageConverterTest
 	@Test
 	public void canReadWithComponentAndContentTypeReturnsFalse()
 	{
-		Reflector<DummyComponent> reflector = newReflector(DummyComponent.class, "text/plain");
+		Reflector<DummyComponent> reflector = newReflector(DummyComponent.class, "x/y");
 		
-		boolean actual = newConverter(reflector).canRead(DummyComponent.class, parseMediaType("text/plain"));
+		boolean actual = newConverter(reflector).canRead(DummyComponent.class, parseMediaType("x/y"));
 		
 		assertThat(actual, is(false));
 	}
@@ -66,9 +66,9 @@ public class SymmetryHttpMessageConverterTest
 	@Test
 	public void canWriteWithComponentAndContentTypeReturnsTrue()
 	{
-		Reflector<DummyComponent> reflector = newReflector(DummyComponent.class, "text/plain");
+		Reflector<DummyComponent> reflector = newReflector(DummyComponent.class, "x/y");
 		
-		boolean actual = newConverter(reflector).canWrite(DummyComponent.class, parseMediaType("text/plain"));
+		boolean actual = newConverter(reflector).canWrite(DummyComponent.class, parseMediaType("x/y"));
 		
 		assertThat(actual, is(true));
 	}
@@ -76,9 +76,9 @@ public class SymmetryHttpMessageConverterTest
 	@Test
 	public void canWriteWithSubcomponentAndContentTypeReturnsTrue()
 	{
-		Reflector<DummyComponent> reflector = newReflector(DummyComponent.class, "text/plain");
+		Reflector<DummyComponent> reflector = newReflector(DummyComponent.class, "x/y");
 		
-		boolean actual = newConverter(reflector).canWrite(DummySubcomponent.class, parseMediaType("text/plain"));
+		boolean actual = newConverter(reflector).canWrite(DummySubcomponent.class, parseMediaType("x/y"));
 		
 		assertThat(actual, is(true));
 	}
@@ -86,11 +86,11 @@ public class SymmetryHttpMessageConverterTest
 	@Test
 	public void getSupportedMediaTypesReturnsContentType()
 	{
-		Reflector<?> reflector = newReflector(anyComponentType(), "text/plain");
+		Reflector<?> reflector = newReflector(anyComponentType(), "x/y");
 		
 		List<MediaType> actuals = newConverter(reflector).getSupportedMediaTypes();
 		
-		assertThat(actuals, contains(parseMediaType("text/plain")));
+		assertThat(actuals, contains(parseMediaType("x/y")));
 	}
 	
 	@Test(expected = HttpMessageNotReadableException.class)
@@ -105,11 +105,11 @@ public class SymmetryHttpMessageConverterTest
 	@Test
 	public void writeWithComponentWritesHtml() throws IOException
 	{
-		Reflector<DummyComponent> reflector = newReflector(DummyComponent.class, "text/plain");
+		Reflector<DummyComponent> reflector = newReflector(DummyComponent.class, "x/y");
 		DummyComponent component = new DummyComponent();
 		MockHttpOutputMessage outputMessage = new MockHttpOutputMessage();
 		
-		newConverter(reflector).write(component, parseMediaType("text/plain"), outputMessage);
+		newConverter(reflector).write(component, parseMediaType("x/y"), outputMessage);
 		
 		assertThat(outputMessage.getBodyAsString(), is("<html/>"));
 	}
