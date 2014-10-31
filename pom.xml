@@ -67,6 +67,12 @@
 				<version>${project.version}</version>
 			</dependency>
 			
+			<dependency>
+				<groupId>org.hobsoft.symmetry</groupId>
+				<artifactId>symmetry-ui</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			
 			<!-- JUnit -->
 			
 			<dependency>

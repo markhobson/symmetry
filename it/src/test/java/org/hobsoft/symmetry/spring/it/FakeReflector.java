@@ -19,22 +19,23 @@ import java.io.OutputStreamWriter;
 import java.io.Writer;
 
 import org.hobsoft.symmetry.Reflector;
+import org.hobsoft.symmetry.ui.Component;
 
 import com.google.common.base.Charsets;
 
 /**
  * Fake reflector for use by integration tests.
  */
-public class FakeReflector implements Reflector<FakeComponent>
+public class FakeReflector implements Reflector<Component>
 {
 	// ----------------------------------------------------------------------------------------------------------------
 	// Reflector methods
 	// ----------------------------------------------------------------------------------------------------------------
 
 	@Override
-	public Class<FakeComponent> getComponentType()
+	public Class<Component> getComponentType()
 	{
-		return FakeComponent.class;
+		return Component.class;
 	}
 	
 	@Override
@@ -44,7 +45,7 @@ public class FakeReflector implements Reflector<FakeComponent>
 	}
 	
 	@Override
-	public void reflect(FakeComponent component, OutputStream outputStream) throws IOException
+	public void reflect(Component component, OutputStream outputStream) throws IOException
 	{
 		Writer writer = new OutputStreamWriter(outputStream, Charsets.UTF_8);
 		writer.write("<html/>");

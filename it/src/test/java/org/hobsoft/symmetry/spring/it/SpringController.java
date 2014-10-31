@@ -13,6 +13,8 @@
  */
 package org.hobsoft.symmetry.spring.it;
 
+import org.hobsoft.symmetry.ui.Component;
+import org.hobsoft.symmetry.ui.Window;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -30,8 +32,8 @@ public class SpringController
 
 	@RequestMapping(method = RequestMethod.GET, value = "/")
 	@ResponseBody
-	public FakeComponent get()
+	public Component get()
 	{
-		return new FakeComponent();
+		return new Window();
 	}
 }
