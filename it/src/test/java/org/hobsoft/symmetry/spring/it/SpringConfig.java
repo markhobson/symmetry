@@ -16,6 +16,7 @@ package org.hobsoft.symmetry.spring.it;
 import java.util.List;
 
 import org.hobsoft.symmetry.spring.SymmetryHttpMessageConverter;
+import org.hobsoft.symmetry.ui.html.HtmlReflector;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.converter.HttpMessageConverter;

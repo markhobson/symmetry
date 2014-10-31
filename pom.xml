@@ -63,6 +63,12 @@
 			
 			<dependency>
 				<groupId>org.hobsoft.symmetry</groupId>
+				<artifactId>symmetry-html</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.hobsoft.symmetry</groupId>
 				<artifactId>symmetry-spring</artifactId>
 				<version>${project.version}</version>
 			</dependency>
@@ -131,6 +137,7 @@
 
 	<modules>
 		<module>api</module>
+		<module>html</module>
 		<module>it</module>
 		<module>spring</module>
 		<module>ui</module>

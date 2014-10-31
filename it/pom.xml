@@ -58,6 +58,12 @@
 		
 		<dependency>
 			<groupId>org.hobsoft.symmetry</groupId>
+			<artifactId>symmetry-html</artifactId>
+			<scope>test</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.hobsoft.symmetry</groupId>
 			<artifactId>symmetry-spring</artifactId>
 			<scope>test</scope>
 		</dependency>
