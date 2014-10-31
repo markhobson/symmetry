@@ -14,16 +14,4 @@
 	
 	<name>Symmetry UI</name>
 	
-	<dependencies>
-	
-		<!-- JUnit -->
-		
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<scope>test</scope>
-		</dependency>
-		
-	</dependencies>
-	
 </project>
