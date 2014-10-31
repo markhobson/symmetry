@@ -61,6 +61,12 @@
 				<version>${project.version}</version>
 			</dependency>
 			
+			<dependency>
+				<groupId>org.hobsoft.symmetry</groupId>
+				<artifactId>symmetry-spring</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			
 			<!-- JUnit -->
 			
 			<dependency>
@@ -119,6 +125,7 @@
 
 	<modules>
 		<module>api</module>
+		<module>it</module>
 		<module>spring</module>
 		<module>ui</module>
 	</modules>

@@ -9,34 +9,13 @@
 	</parent>
 	
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>symmetry-spring</artifactId>
+	<artifactId>symmetry-it</artifactId>
 	<packaging>jar</packaging>
 	
-	<name>Symmetry Spring</name>
+	<name>Symmetry Integration Tests</name>
 	
 	<dependencies>
 	
-		<!-- Guava -->
-		
-		<dependency>
-			<groupId>com.google.guava</groupId>
-			<artifactId>guava</artifactId>
-		</dependency>
-		
-		<!-- Spring -->
-		
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-web</artifactId>
-		</dependency>
-	
-		<!-- Symmetry -->
-		
-		<dependency>
-			<groupId>org.hobsoft.symmetry</groupId>
-			<artifactId>symmetry-api</artifactId>
-		</dependency>
-		
 		<!-- JUnit -->
 		
 		<dependency>
@@ -45,20 +24,12 @@
 			<scope>test</scope>
 		</dependency>
 		
-		<!-- Hamcrest -->
+		<!-- Servlet -->
 		
 		<dependency>
-			<groupId>org.hamcrest</groupId>
-			<artifactId>hamcrest-library</artifactId>
-			<scope>test</scope>
-		</dependency>
-		
-		<!-- Mockito -->
-		
-		<dependency>
-			<groupId>org.mockito</groupId>
-			<artifactId>mockito-core</artifactId>
-			<scope>test</scope>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<scope>provided</scope>
 		</dependency>
 		
 		<!-- Spring -->
@@ -69,6 +40,20 @@
 			<scope>test</scope>
 		</dependency>
 	
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<scope>test</scope>
+		</dependency>
+	
+		<!-- Symmetry -->
+		
+		<dependency>
+			<groupId>org.hobsoft.symmetry</groupId>
+			<artifactId>symmetry-spring</artifactId>
+			<scope>test</scope>
+		</dependency>
+		
 	</dependencies>
 	
 </project>
