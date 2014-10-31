@@ -24,9 +24,9 @@ import org.hobsoft.symmetry.ui.Component;
 import com.google.common.base.Charsets;
 
 /**
- * Fake reflector for use by integration tests.
+ * HTML reflector for UI components.
  */
-public class FakeReflector implements Reflector<Component>
+public class HtmlReflector implements Reflector<Component>
 {
 	// ----------------------------------------------------------------------------------------------------------------
 	// Reflector methods

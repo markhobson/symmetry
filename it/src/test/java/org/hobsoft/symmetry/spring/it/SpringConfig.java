@@ -37,6 +37,6 @@ public class SpringConfig extends WebMvcConfigurationSupport
 	{
 		addDefaultHttpMessageConverters(converters);
 		
-		converters.add(new SymmetryHttpMessageConverter<>(new FakeReflector()));
+		converters.add(new SymmetryHttpMessageConverter<>(new HtmlReflector()));
 	}
 }
