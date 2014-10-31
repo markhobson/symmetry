@@ -46,7 +46,7 @@ public class SymmetryHttpMessageConverter<T> extends AbstractHttpMessageConverte
 
 	public SymmetryHttpMessageConverter(Reflector<T> reflector)
 	{
-		super(MediaType.TEXT_HTML);
+		super(MediaType.parseMediaType(reflector.getContentType()));
 
 		this.reflector = reflector;
 	}

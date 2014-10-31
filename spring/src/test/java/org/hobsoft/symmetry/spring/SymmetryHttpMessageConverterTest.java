@@ -29,6 +29,7 @@ import static org.hamcrest.Matchers.contains;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
+import static org.springframework.http.MediaType.parseMediaType;
 
 /**
  * Tests {@code SymmetryHttpMessageConverter}.
@@ -64,6 +65,7 @@ public class SymmetryHttpMessageConverterTest
 	{
 		Reflector<DummyComponent> reflector = mock(Reflector.class);
 		when(reflector.getComponentType()).thenReturn(DummyComponent.class);
+		when(reflector.getContentType()).thenReturn("text/plain");
 		
 		converter = new SymmetryHttpMessageConverter<>(reflector);
 	}
@@ -73,35 +75,35 @@ public class SymmetryHttpMessageConverterTest
 	// ----------------------------------------------------------------------------------------------------------------
 
 	@Test
-	public void canReadWithComponentAndHtmlReturnsFalse()
+	public void canReadWithComponentAndContentTypeReturnsFalse()
 	{
-		boolean actual = converter.canRead(DummyComponent.class, MediaType.TEXT_HTML);
+		boolean actual = converter.canRead(DummyComponent.class, parseMediaType("text/plain"));
 		
 		assertThat(actual, is(false));
 	}
 	
 	@Test
-	public void canWriteWithComponentAndHtmlReturnsTrue()
+	public void canWriteWithComponentAndContentTypeReturnsTrue()
 	{
-		boolean actual = converter.canWrite(DummyComponent.class, MediaType.TEXT_HTML);
+		boolean actual = converter.canWrite(DummyComponent.class, parseMediaType("text/plain"));
 		
 		assertThat(actual, is(true));
 	}
 	
 	@Test
-	public void canWriteWithSubcomponentAndHtmlReturnsTrue()
+	public void canWriteWithSubcomponentAndContentTypeReturnsTrue()
 	{
-		boolean actual = converter.canWrite(DummySubcomponent.class, MediaType.TEXT_HTML);
+		boolean actual = converter.canWrite(DummySubcomponent.class, parseMediaType("text/plain"));
 		
 		assertThat(actual, is(true));
 	}
 	
 	@Test
-	public void getSupportedMediaTypesReturnsHtml()
+	public void getSupportedMediaTypesReturnsContentType()
 	{
 		List<MediaType> actuals = converter.getSupportedMediaTypes();
 		
-		assertThat(actuals, contains(MediaType.TEXT_HTML));
+		assertThat(actuals, contains(parseMediaType("text/plain")));
 	}
 	
 	@Test(expected = HttpMessageNotReadableException.class)
@@ -118,7 +120,7 @@ public class SymmetryHttpMessageConverterTest
 		DummyComponent component = new DummyComponent();
 		MockHttpOutputMessage outputMessage = new MockHttpOutputMessage();
 		
-		converter.write(component, MediaType.TEXT_HTML, outputMessage);
+		converter.write(component, parseMediaType("text/plain"), outputMessage);
 		
 		assertThat(outputMessage.getBodyAsString(), is("<html/>"));
 	}

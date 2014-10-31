@@ -26,4 +26,6 @@ public interface Reflector<T>
 	// ----------------------------------------------------------------------------------------------------------------
 
 	Class<T> getComponentType();
+	
+	String getContentType();
 }

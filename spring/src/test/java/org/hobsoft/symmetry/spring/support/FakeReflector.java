@@ -29,4 +29,10 @@ public class FakeReflector implements Reflector<FakeComponent>
 	{
 		return FakeComponent.class;
 	}
+	
+	@Override
+	public String getContentType()
+	{
+		return "text/html";
+	}
 }
