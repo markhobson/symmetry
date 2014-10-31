@@ -106,10 +106,9 @@ public class SymmetryHttpMessageConverterTest
 	public void writeWithComponentWritesHtml() throws IOException
 	{
 		Reflector<DummyComponent> reflector = newReflector(DummyComponent.class, "x/y");
-		DummyComponent component = new DummyComponent();
 		MockHttpOutputMessage outputMessage = new MockHttpOutputMessage();
 		
-		newConverter(reflector).write(component, parseMediaType("x/y"), outputMessage);
+		newConverter(reflector).write(new DummyComponent(), parseMediaType("x/y"), outputMessage);
 		
 		assertThat(outputMessage.getBodyAsString(), is("<html/>"));
 	}
