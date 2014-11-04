@@ -15,13 +15,9 @@ package org.hobsoft.symmetry.ui.html;
 
 import java.io.IOException;
 import java.io.OutputStream;
-import java.io.OutputStreamWriter;
-import java.io.Writer;
 
 import org.hobsoft.symmetry.Reflector;
 import org.hobsoft.symmetry.ui.Component;
-
-import com.google.common.base.Charsets;
 
 /**
  * HTML reflector for UI components.
@@ -47,8 +43,6 @@ public class HtmlReflector implements Reflector<Component>
 	@Override
 	public void reflect(Component component, OutputStream outputStream) throws IOException
 	{
-		Writer writer = new OutputStreamWriter(outputStream, Charsets.UTF_8);
-		writer.write("<html/>");
-		writer.flush();
+		component.accept(new HtmlComponentVisitor(), outputStream);
 	}
 }

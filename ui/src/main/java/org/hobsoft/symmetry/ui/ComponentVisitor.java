@@ -14,17 +14,20 @@
 package org.hobsoft.symmetry.ui;
 
 /**
- * UI component that represents a window.
+ * Defines a visitor API for UI components.
+ * 
+ * @param <P>
+ *            the type of parameter required by this visitor
+ * @param <E>
+ *            the type of exception thrown by this visitor
  */
-public class Window implements Component
+public interface ComponentVisitor<P, E extends Exception>
 {
 	// ----------------------------------------------------------------------------------------------------------------
-	// Component methods
+	// public methods
 	// ----------------------------------------------------------------------------------------------------------------
 
-	@Override
-	public <P, E extends Exception> void accept(ComponentVisitor<P, E> visitor, P parameter) throws E
-	{
-		visitor.visit(this, parameter);
-	}
+	// CHECKSTYLE:OFF
+	void visit(Component component, P parameter) throws E;
+	// CHECKSTYLE:ON
 }

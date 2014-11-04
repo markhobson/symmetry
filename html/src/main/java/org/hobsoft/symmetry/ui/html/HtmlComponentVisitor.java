@@ -11,20 +11,32 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.hobsoft.symmetry.ui;
+package org.hobsoft.symmetry.ui.html;
+
+import java.io.IOException;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
+
+import org.hobsoft.symmetry.ui.Component;
+import org.hobsoft.symmetry.ui.ComponentVisitor;
+
+import com.google.common.base.Charsets;
 
 /**
- * UI component that represents a window.
+ * Visitor that dehydrates UI components to HTML.
  */
-public class Window implements Component
+public class HtmlComponentVisitor implements ComponentVisitor<OutputStream, IOException>
 {
 	// ----------------------------------------------------------------------------------------------------------------
-	// Component methods
+	// ComponentVisitor methods
 	// ----------------------------------------------------------------------------------------------------------------
 
 	@Override
-	public <P, E extends Exception> void accept(ComponentVisitor<P, E> visitor, P parameter) throws E
+	public void visit(Component component, OutputStream outputStream) throws IOException
 	{
-		visitor.visit(this, parameter);
+		Writer writer = new OutputStreamWriter(outputStream, Charsets.UTF_8);
+		writer.write("<html/>");
+		writer.flush();
 	}
 }

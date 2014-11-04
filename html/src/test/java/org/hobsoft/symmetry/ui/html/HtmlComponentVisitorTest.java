@@ -11,20 +11,36 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.hobsoft.symmetry.ui;
+package org.hobsoft.symmetry.ui.html;
+
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+
+import org.hobsoft.symmetry.ui.Component;
+import org.hobsoft.symmetry.ui.Window;
+import org.junit.Test;
+
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
 
 /**
- * UI component that represents a window.
+ * Tests {@code HtmlComponentVisitor}.
  */
-public class Window implements Component
+public class HtmlComponentVisitorTest
 {
 	// ----------------------------------------------------------------------------------------------------------------
-	// Component methods
+	// tests
 	// ----------------------------------------------------------------------------------------------------------------
 
-	@Override
-	public <P, E extends Exception> void accept(ComponentVisitor<P, E> visitor, P parameter) throws E
+	@Test
+	public void visitWritesHtml() throws IOException
 	{
-		visitor.visit(this, parameter);
+		HtmlComponentVisitor visitor = new HtmlComponentVisitor();
+		Component component = new Window();
+		ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+		
+		visitor.visit(component, outputStream);
+		
+		assertThat(outputStream.toString("UTF-8"), is("<html/>"));
 	}
 }

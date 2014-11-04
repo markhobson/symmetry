@@ -18,4 +18,9 @@ package org.hobsoft.symmetry.ui;
  */
 public interface Component
 {
+	// ----------------------------------------------------------------------------------------------------------------
+	// public methods
+	// ----------------------------------------------------------------------------------------------------------------
+
+	<P, E extends Exception> void accept(ComponentVisitor<P, E> visitor, P parameter) throws E;
 }

@@ -13,18 +13,28 @@
  */
 package org.hobsoft.symmetry.ui;
 
+import org.junit.Test;
+
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
+
 /**
- * UI component that represents a window.
+ * Tests {@code Window}.
  */
-public class Window implements Component
+public class WindowTest
 {
 	// ----------------------------------------------------------------------------------------------------------------
-	// Component methods
+	// tests
 	// ----------------------------------------------------------------------------------------------------------------
 
-	@Override
-	public <P, E extends Exception> void accept(ComponentVisitor<P, E> visitor, P parameter) throws E
+	@Test
+	public void acceptInvokesVisitor()
 	{
-		visitor.visit(this, parameter);
+		Window window = new Window();
+		ComponentVisitor<String, RuntimeException> visitor = mock(ComponentVisitor.class);
+		
+		window.accept(visitor, "p");
+		
+		verify(visitor).visit(window, "p");
 	}
 }
