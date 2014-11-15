@@ -28,6 +28,6 @@ public interface ComponentVisitor<P, E extends Exception>
 	// ----------------------------------------------------------------------------------------------------------------
 
 	// CHECKSTYLE:OFF
-	void visit(Component component, P parameter) throws E;
+	void visit(Window window, P parameter) throws E;
 	// CHECKSTYLE:ON
 }

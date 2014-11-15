@@ -16,7 +16,6 @@ package org.hobsoft.symmetry.ui.html;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
-import org.hobsoft.symmetry.ui.Component;
 import org.hobsoft.symmetry.ui.Window;
 import org.junit.Test;
 
@@ -33,13 +32,13 @@ public class HtmlComponentVisitorTest
 	// ----------------------------------------------------------------------------------------------------------------
 
 	@Test
-	public void visitWritesHtml() throws IOException
+	public void visitWindowWritesHtml() throws IOException
 	{
 		HtmlComponentVisitor visitor = new HtmlComponentVisitor();
-		Component component = new Window();
+		Window window = new Window();
 		ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
 		
-		visitor.visit(component, outputStream);
+		visitor.visit(window, outputStream);
 		
 		assertThat(outputStream.toString("UTF-8"), is("<html/>"));
 	}

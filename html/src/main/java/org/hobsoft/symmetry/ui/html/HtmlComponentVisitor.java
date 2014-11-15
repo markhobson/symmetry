@@ -18,8 +18,8 @@ import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
 
-import org.hobsoft.symmetry.ui.Component;
 import org.hobsoft.symmetry.ui.ComponentVisitor;
+import org.hobsoft.symmetry.ui.Window;
 
 import com.google.common.base.Charsets;
 
@@ -33,7 +33,7 @@ public class HtmlComponentVisitor implements ComponentVisitor<OutputStream, IOEx
 	// ----------------------------------------------------------------------------------------------------------------
 
 	@Override
-	public void visit(Component component, OutputStream outputStream) throws IOException
+	public void visit(Window window, OutputStream outputStream) throws IOException
 	{
 		Writer writer = new OutputStreamWriter(outputStream, Charsets.UTF_8);
 		writer.write("<html/>");
