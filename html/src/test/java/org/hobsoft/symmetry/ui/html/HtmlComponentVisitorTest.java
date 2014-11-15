@@ -40,6 +40,6 @@ public class HtmlComponentVisitorTest
 		
 		visitor.visit(window, outputStream);
 		
-		assertThat(outputStream.toString("UTF-8"), is("<html/>"));
+		assertThat(outputStream.toString("UTF-8"), is("<html></html>"));
 	}
 }

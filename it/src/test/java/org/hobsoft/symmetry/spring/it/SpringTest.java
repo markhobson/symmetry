@@ -65,6 +65,6 @@ public class SpringTest
 	{
 		mvc.perform(get("/"))
 			.andExpect(status().isOk())
-			.andExpect(content().string("<html/>"));
+			.andExpect(content().string("<html></html>"));
 	}
 }

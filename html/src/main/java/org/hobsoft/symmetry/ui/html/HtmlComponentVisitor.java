@@ -36,7 +36,8 @@ public class HtmlComponentVisitor implements ComponentVisitor<OutputStream, IOEx
 	public void visit(Window window, OutputStream outputStream) throws IOException
 	{
 		Writer writer = new OutputStreamWriter(outputStream, Charsets.UTF_8);
-		writer.write("<html/>");
+		writer.write("<html>");
+		writer.write("</html>");
 		writer.flush();
 	}
 }

@@ -72,6 +72,6 @@ public class HtmlReflectorTest
 		
 		reflector.reflect(new Window(), outputStream);
 		
-		assertThat(outputStream.toString("UTF-8"), is("<html/>"));
+		assertThat(outputStream.toString("UTF-8"), is("<html></html>"));
 	}
 }
