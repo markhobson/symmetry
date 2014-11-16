@@ -15,6 +15,7 @@ package org.hobsoft.symmetry.ui.html;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
 
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamWriter;
@@ -24,7 +25,9 @@ import org.hobsoft.symmetry.ui.Component;
 import org.hobsoft.symmetry.ui.ComponentVisitor;
 import org.hobsoft.symmetry.ui.Window;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
 import org.mockito.stubbing.Stubber;
@@ -33,6 +36,7 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.doAnswer;
+import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.mock;
 
 /**
@@ -46,6 +50,8 @@ public class XmlReflectorTest
 
 	private ComponentVisitor<XMLStreamWriter, XMLStreamException> visitor;
 	
+	private ExpectedException thrown = ExpectedException.none();
+	
 	// ----------------------------------------------------------------------------------------------------------------
 	// public methods
 	// ----------------------------------------------------------------------------------------------------------------
@@ -54,6 +60,12 @@ public class XmlReflectorTest
 	public void setUp()
 	{
 		visitor = mock(ComponentVisitor.class);
+	}
+
+	@Rule
+	public ExpectedException getThrown()
+	{
+		return thrown;
 	}
 
 	// ----------------------------------------------------------------------------------------------------------------
@@ -93,7 +105,19 @@ public class XmlReflectorTest
 		assertThat(outputStream.toString("UTF-8"), is("<x></x>"));
 	}
 	
-	// TODO: reflectWhenExceptionThrowsException
+	@Test
+	public void reflectWhenExceptionThrowsException() throws XMLStreamException, ReflectorException
+	{
+		XMLStreamException exception = new XMLStreamException();
+		doThrow(exception).when(visitor).visit(any(Window.class), any(XMLStreamWriter.class));
+		XmlReflector reflector = new XmlReflector(visitor, anyContentType());
+		
+		thrown.expect(ReflectorException.class);
+		thrown.expectMessage("Error reflecting component");
+		thrown.expectCause(is(exception));
+		
+		reflector.reflect(new Window(), mock(OutputStream.class));
+	}
 	
 	// ----------------------------------------------------------------------------------------------------------------
 	// private methods
