@@ -122,11 +122,14 @@ public class SymmetryHttpMessageConverterTest
 		assertThat(actuals, contains(parseMediaType("x/y")));
 	}
 	
-	@Test(expected = HttpMessageNotReadableException.class)
+	@Test
 	public void readWithComponentThrowsException() throws ReflectorException, IOException
 	{
 		Reflector<DummyComponent> reflector = newReflector(DummyComponent.class, anyContentType(), anyString());
 		MockHttpInputMessage inputMessage = new MockHttpInputMessage(new byte[0]);
+		
+		thrown.expect(HttpMessageNotReadableException.class);
+		thrown.expectMessage("Cannot read component");
 		
 		newConverter(reflector).read(DummyComponent.class, inputMessage);
 	}

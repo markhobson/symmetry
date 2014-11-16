@@ -72,7 +72,7 @@ public class SymmetryHttpMessageConverter<T> extends AbstractHttpMessageConverte
 	@Override
 	protected T readInternal(Class<? extends T> clazz, HttpInputMessage inputMessage) throws IOException
 	{
-		throw new HttpMessageNotReadableException("Cannot read components");
+		throw new HttpMessageNotReadableException("Cannot read component");
 	}
 
 	@Override
