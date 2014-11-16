@@ -37,6 +37,7 @@ public class HtmlComponentVisitor implements ComponentVisitor<OutputStream, IOEx
 	{
 		Writer writer = newWriter(outputStream);
 		writer.write("<html>");
+		writer.write("<body>");
 		writer.flush();
 	}
 
@@ -44,6 +45,7 @@ public class HtmlComponentVisitor implements ComponentVisitor<OutputStream, IOEx
 	public void endVisit(Window window, OutputStream outputStream) throws IOException
 	{
 		Writer writer = newWriter(outputStream);
+		writer.write("</body>");
 		writer.write("</html>");
 		writer.flush();
 	}

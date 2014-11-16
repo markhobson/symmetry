@@ -59,7 +59,7 @@ public class HtmlComponentVisitorTest
 		
 		visitor.visit(window, outputStream);
 		
-		assertThat(toUtf8String(outputStream), is("<html>"));
+		assertThat(toUtf8String(outputStream), is("<html><body>"));
 	}
 	
 	@Test
@@ -69,7 +69,7 @@ public class HtmlComponentVisitorTest
 		
 		visitor.endVisit(window, outputStream);
 		
-		assertThat(toUtf8String(outputStream), is("</html>"));
+		assertThat(toUtf8String(outputStream), is("</body></html>"));
 	}
 	
 	// ----------------------------------------------------------------------------------------------------------------
