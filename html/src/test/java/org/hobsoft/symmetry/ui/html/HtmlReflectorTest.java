@@ -16,6 +16,7 @@ package org.hobsoft.symmetry.ui.html;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
+import org.hobsoft.symmetry.ReflectorException;
 import org.hobsoft.symmetry.ui.Component;
 import org.hobsoft.symmetry.ui.Window;
 import org.junit.Before;
@@ -66,7 +67,7 @@ public class HtmlReflectorTest
 	}
 	
 	@Test
-	public void reflectWithWindowWritesHtml() throws IOException
+	public void reflectWithWindowWritesHtml() throws ReflectorException, IOException
 	{
 		ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
 		
@@ -74,4 +75,6 @@ public class HtmlReflectorTest
 		
 		assertThat(outputStream.toString("UTF-8"), is("<html><body></body></html>"));
 	}
+	
+	// TODO: reflectWhenExceptionThrowsException
 }

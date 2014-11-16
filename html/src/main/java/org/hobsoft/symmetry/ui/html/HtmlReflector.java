@@ -13,7 +13,6 @@
  */
 package org.hobsoft.symmetry.ui.html;
 
-import java.io.IOException;
 import java.io.OutputStream;
 
 import javax.xml.stream.XMLOutputFactory;
@@ -21,6 +20,7 @@ import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamWriter;
 
 import org.hobsoft.symmetry.Reflector;
+import org.hobsoft.symmetry.ReflectorException;
 import org.hobsoft.symmetry.ui.Component;
 
 /**
@@ -45,7 +45,7 @@ public class HtmlReflector implements Reflector<Component>
 	}
 	
 	@Override
-	public void reflect(Component component, OutputStream outputStream) throws IOException
+	public void reflect(Component component, OutputStream outputStream) throws ReflectorException
 	{
 		XMLOutputFactory factory = XMLOutputFactory.newFactory();
 		
@@ -56,8 +56,7 @@ public class HtmlReflector implements Reflector<Component>
 		}
 		catch (XMLStreamException exception)
 		{
-			// TODO: throw better exception
-			throw new IOException(exception);
+			throw new ReflectorException("Error reflecting component", exception);
 		}
 	}
 }

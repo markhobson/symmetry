@@ -13,23 +13,23 @@
  */
 package org.hobsoft.symmetry;
 
-import java.io.OutputStream;
-
 /**
- * Defines an API to dehydrate UI components.
- * 
- * @param <T>
- *            the component type
+ * Indicates an error was encountered when reflecting a component.
  */
-public interface Reflector<T>
+@SuppressWarnings("serial")
+public final class ReflectorException extends Exception
 {
 	// ----------------------------------------------------------------------------------------------------------------
-	// public methods
+	// constructors
 	// ----------------------------------------------------------------------------------------------------------------
 
-	Class<T> getComponentType();
+	public ReflectorException(String message)
+	{
+		super(message);
+	}
 	
-	String getContentType();
-	
-	void reflect(T component, OutputStream outputStream) throws ReflectorException;
+	public ReflectorException(String message, Throwable cause)
+	{
+		super(message, cause);
+	}
 }

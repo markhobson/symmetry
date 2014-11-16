@@ -13,23 +13,37 @@
  */
 package org.hobsoft.symmetry;
 
-import java.io.OutputStream;
+import org.junit.Test;
+
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.nullValue;
+import static org.junit.Assert.assertThat;
 
 /**
- * Defines an API to dehydrate UI components.
- * 
- * @param <T>
- *            the component type
+ * Tests {@code ReflectorException}.
  */
-public interface Reflector<T>
+public class ReflectorExceptionTest
 {
 	// ----------------------------------------------------------------------------------------------------------------
-	// public methods
+	// tests
 	// ----------------------------------------------------------------------------------------------------------------
 
-	Class<T> getComponentType();
+	@Test
+	public void constructorWithMessageSetsProperties()
+	{
+		ReflectorException actual = new ReflectorException("x");
+		
+		assertThat("message", actual.getMessage(), is("x"));
+		assertThat("cause", actual.getCause(), is(nullValue()));
+	}
 	
-	String getContentType();
-	
-	void reflect(T component, OutputStream outputStream) throws ReflectorException;
+	@Test
+	public void constructorWithMessageAndCauseSetsProperties()
+	{
+		Throwable cause = new Throwable();
+		ReflectorException actual = new ReflectorException("x", cause);
+		
+		assertThat("message", actual.getMessage(), is("x"));
+		assertThat("cause", actual.getCause(), is(cause));
+	}
 }
