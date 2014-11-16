@@ -35,13 +35,16 @@ public class HtmlReflector implements Reflector<Component>
 
 	private final ComponentVisitor<XMLStreamWriter, XMLStreamException> visitor;
 	
+	private final String contentType;
+	
 	// ----------------------------------------------------------------------------------------------------------------
 	// constructors
 	// ----------------------------------------------------------------------------------------------------------------
 
-	public HtmlReflector(ComponentVisitor<XMLStreamWriter, XMLStreamException> visitor)
+	public HtmlReflector(ComponentVisitor<XMLStreamWriter, XMLStreamException> visitor, String contentType)
 	{
 		this.visitor = visitor;
+		this.contentType = contentType;
 	}
 
 	// ----------------------------------------------------------------------------------------------------------------
@@ -57,7 +60,7 @@ public class HtmlReflector implements Reflector<Component>
 	@Override
 	public String getContentType()
 	{
-		return "text/html";
+		return contentType;
 	}
 	
 	@Override

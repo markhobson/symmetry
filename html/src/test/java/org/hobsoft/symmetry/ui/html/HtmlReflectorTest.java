@@ -46,8 +46,6 @@ public class HtmlReflectorTest
 
 	private ComponentVisitor<XMLStreamWriter, XMLStreamException> visitor;
 	
-	private HtmlReflector reflector;
-	
 	// ----------------------------------------------------------------------------------------------------------------
 	// public methods
 	// ----------------------------------------------------------------------------------------------------------------
@@ -56,7 +54,6 @@ public class HtmlReflectorTest
 	public void setUp()
 	{
 		visitor = mock(ComponentVisitor.class);
-		reflector = new HtmlReflector(visitor);
 	}
 
 	// ----------------------------------------------------------------------------------------------------------------
@@ -66,17 +63,21 @@ public class HtmlReflectorTest
 	@Test
 	public void getComponentTypeReturnsComponent()
 	{
+		HtmlReflector reflector = new HtmlReflector(mock(ComponentVisitor.class), anyContentType());
+		
 		Class<?> actual = reflector.getComponentType();
 		
 		assertThat(actual, is((Object) Component.class));
 	}
 	
 	@Test
-	public void getContentTypeReturnsHtml()
+	public void getContentTypeReturnsContentType()
 	{
+		HtmlReflector reflector = new HtmlReflector(mock(ComponentVisitor.class), "x/y");
+		
 		String actual = reflector.getContentType();
 		
-		assertThat(actual, is("text/html"));
+		assertThat(actual, is("x/y"));
 	}
 	
 	@Test
@@ -84,6 +85,7 @@ public class HtmlReflectorTest
 	{
 		doStartElement("x").when(visitor).visit(any(Window.class), any(XMLStreamWriter.class));
 		doEndElement().when(visitor).endVisit(any(Window.class), any(XMLStreamWriter.class));
+		HtmlReflector reflector = new HtmlReflector(visitor, anyContentType());
 		ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
 		
 		reflector.reflect(new Window(), outputStream);
@@ -97,6 +99,11 @@ public class HtmlReflectorTest
 	// private methods
 	// ----------------------------------------------------------------------------------------------------------------
 
+	private static String anyContentType()
+	{
+		return "_/_";
+	}
+	
 	private static Stubber doStartElement(final String localName)
 	{
 		return doAnswer(new Answer<Object>()
