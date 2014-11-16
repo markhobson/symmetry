@@ -22,12 +22,28 @@ import javax.xml.stream.XMLStreamWriter;
 import org.hobsoft.symmetry.Reflector;
 import org.hobsoft.symmetry.ReflectorException;
 import org.hobsoft.symmetry.ui.Component;
+import org.hobsoft.symmetry.ui.ComponentVisitor;
 
 /**
  * HTML reflector for UI components.
  */
 public class HtmlReflector implements Reflector<Component>
 {
+	// ----------------------------------------------------------------------------------------------------------------
+	// fields
+	// ----------------------------------------------------------------------------------------------------------------
+
+	private final ComponentVisitor<XMLStreamWriter, XMLStreamException> visitor;
+	
+	// ----------------------------------------------------------------------------------------------------------------
+	// constructors
+	// ----------------------------------------------------------------------------------------------------------------
+
+	public HtmlReflector(ComponentVisitor<XMLStreamWriter, XMLStreamException> visitor)
+	{
+		this.visitor = visitor;
+	}
+
 	// ----------------------------------------------------------------------------------------------------------------
 	// Reflector methods
 	// ----------------------------------------------------------------------------------------------------------------
@@ -52,7 +68,7 @@ public class HtmlReflector implements Reflector<Component>
 		try
 		{
 			XMLStreamWriter writer = factory.createXMLStreamWriter(outputStream);
-			component.accept(new HtmlComponentVisitor(), writer);
+			component.accept(visitor, writer);
 		}
 		catch (XMLStreamException exception)
 		{

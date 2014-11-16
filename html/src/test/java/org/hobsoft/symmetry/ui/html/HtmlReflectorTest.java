@@ -16,14 +16,24 @@ package org.hobsoft.symmetry.ui.html;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
+import javax.xml.stream.XMLStreamException;
+import javax.xml.stream.XMLStreamWriter;
+
 import org.hobsoft.symmetry.ReflectorException;
 import org.hobsoft.symmetry.ui.Component;
+import org.hobsoft.symmetry.ui.ComponentVisitor;
 import org.hobsoft.symmetry.ui.Window;
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.invocation.InvocationOnMock;
+import org.mockito.stubbing.Answer;
+import org.mockito.stubbing.Stubber;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
+import static org.mockito.Matchers.any;
+import static org.mockito.Mockito.doAnswer;
+import static org.mockito.Mockito.mock;
 
 /**
  * Tests {@code HtmlReflector}.
@@ -34,6 +44,8 @@ public class HtmlReflectorTest
 	// fields
 	// ----------------------------------------------------------------------------------------------------------------
 
+	private ComponentVisitor<XMLStreamWriter, XMLStreamException> visitor;
+	
 	private HtmlReflector reflector;
 	
 	// ----------------------------------------------------------------------------------------------------------------
@@ -43,7 +55,8 @@ public class HtmlReflectorTest
 	@Before
 	public void setUp()
 	{
-		reflector = new HtmlReflector();
+		visitor = mock(ComponentVisitor.class);
+		reflector = new HtmlReflector(visitor);
 	}
 
 	// ----------------------------------------------------------------------------------------------------------------
@@ -67,14 +80,48 @@ public class HtmlReflectorTest
 	}
 	
 	@Test
-	public void reflectWithWindowWritesHtml() throws ReflectorException, IOException
+	public void reflectWithWindowWritesHtml() throws XMLStreamException, ReflectorException, IOException
 	{
+		doStartElement("x").when(visitor).visit(any(Window.class), any(XMLStreamWriter.class));
+		doEndElement().when(visitor).endVisit(any(Window.class), any(XMLStreamWriter.class));
 		ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
 		
 		reflector.reflect(new Window(), outputStream);
 		
-		assertThat(outputStream.toString("UTF-8"), is("<html><body></body></html>"));
+		assertThat(outputStream.toString("UTF-8"), is("<x></x>"));
 	}
 	
 	// TODO: reflectWhenExceptionThrowsException
+	
+	// ----------------------------------------------------------------------------------------------------------------
+	// private methods
+	// ----------------------------------------------------------------------------------------------------------------
+
+	private static Stubber doStartElement(final String localName)
+	{
+		return doAnswer(new Answer<Object>()
+		{
+			@Override
+			public Object answer(InvocationOnMock invocation) throws XMLStreamException
+			{
+				XMLStreamWriter writer = invocation.getArgumentAt(1, XMLStreamWriter.class);
+				writer.writeStartElement(localName);
+				return null;
+			}
+		});
+	}
+	
+	private static Stubber doEndElement()
+	{
+		return doAnswer(new Answer<Object>()
+		{
+			@Override
+			public Object answer(InvocationOnMock invocation) throws XMLStreamException
+			{
+				XMLStreamWriter writer = invocation.getArgumentAt(1, XMLStreamWriter.class);
+				writer.writeEndElement();
+				return null;
+			}
+		});
+	}
 }
