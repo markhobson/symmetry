@@ -33,7 +33,6 @@ public class HtmlComponentVisitor implements ComponentVisitor<XMLStreamWriter, X
 	{
 		writer.writeStartElement("html");
 		writer.writeStartElement("body");
-		writer.flush();
 	}
 
 	@Override
@@ -43,6 +42,5 @@ public class HtmlComponentVisitor implements ComponentVisitor<XMLStreamWriter, X
 		writer.writeEndElement();
 		// html
 		writer.writeEndElement();
-		writer.flush();
 	}
 }
