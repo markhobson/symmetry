@@ -35,9 +35,25 @@ public class HtmlComponentVisitor implements ComponentVisitor<OutputStream, IOEx
 	@Override
 	public void visit(Window window, OutputStream outputStream) throws IOException
 	{
-		Writer writer = new OutputStreamWriter(outputStream, Charsets.UTF_8);
+		Writer writer = newWriter(outputStream);
 		writer.write("<html>");
+		writer.flush();
+	}
+
+	@Override
+	public void endVisit(Window window, OutputStream outputStream) throws IOException
+	{
+		Writer writer = newWriter(outputStream);
 		writer.write("</html>");
 		writer.flush();
+	}
+	
+	// ----------------------------------------------------------------------------------------------------------------
+	// private methods
+	// ----------------------------------------------------------------------------------------------------------------
+
+	private static Writer newWriter(OutputStream outputStream)
+	{
+		return new OutputStreamWriter(outputStream, Charsets.UTF_8);
 	}
 }

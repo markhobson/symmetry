@@ -15,8 +15,10 @@ package org.hobsoft.symmetry.ui.html;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 
 import org.hobsoft.symmetry.ui.Window;
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -28,18 +30,54 @@ import static org.junit.Assert.assertThat;
 public class HtmlComponentVisitorTest
 {
 	// ----------------------------------------------------------------------------------------------------------------
+	// fields
+	// ----------------------------------------------------------------------------------------------------------------
+
+	private HtmlComponentVisitor visitor;
+	
+	private ByteArrayOutputStream outputStream;
+	
+	// ----------------------------------------------------------------------------------------------------------------
+	// public methods
+	// ----------------------------------------------------------------------------------------------------------------
+
+	@Before
+	public void setUp()
+	{
+		visitor = new HtmlComponentVisitor();
+		outputStream = new ByteArrayOutputStream();
+	}
+
+	// ----------------------------------------------------------------------------------------------------------------
 	// tests
 	// ----------------------------------------------------------------------------------------------------------------
 
 	@Test
 	public void visitWindowWritesHtml() throws IOException
 	{
-		HtmlComponentVisitor visitor = new HtmlComponentVisitor();
 		Window window = new Window();
-		ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
 		
 		visitor.visit(window, outputStream);
 		
-		assertThat(outputStream.toString("UTF-8"), is("<html></html>"));
+		assertThat(toUtf8String(outputStream), is("<html>"));
+	}
+	
+	@Test
+	public void endVisitWindowWritesHtml() throws IOException
+	{
+		Window window = new Window();
+		
+		visitor.endVisit(window, outputStream);
+		
+		assertThat(toUtf8String(outputStream), is("</html>"));
+	}
+	
+	// ----------------------------------------------------------------------------------------------------------------
+	// private methods
+	// ----------------------------------------------------------------------------------------------------------------
+
+	private static String toUtf8String(ByteArrayOutputStream outputStream) throws UnsupportedEncodingException
+	{
+		return outputStream.toString("UTF-8");
 	}
 }

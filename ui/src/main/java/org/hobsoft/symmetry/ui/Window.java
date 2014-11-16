@@ -26,5 +26,7 @@ public class Window implements Component
 	public <P, E extends Exception> void accept(ComponentVisitor<P, E> visitor, P parameter) throws E
 	{
 		visitor.visit(this, parameter);
+		
+		visitor.endVisit(this, parameter);
 	}
 }

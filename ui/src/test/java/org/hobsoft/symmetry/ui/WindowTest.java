@@ -13,6 +13,7 @@
  */
 package org.hobsoft.symmetry.ui;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.mockito.Mockito.mock;
@@ -24,17 +25,42 @@ import static org.mockito.Mockito.verify;
 public class WindowTest
 {
 	// ----------------------------------------------------------------------------------------------------------------
+	// fields
+	// ----------------------------------------------------------------------------------------------------------------
+
+	private Window window;
+	
+	// ----------------------------------------------------------------------------------------------------------------
+	// public methods
+	// ----------------------------------------------------------------------------------------------------------------
+
+	@Before
+	public void setUp()
+	{
+		window = new Window();
+	}
+
+	// ----------------------------------------------------------------------------------------------------------------
 	// tests
 	// ----------------------------------------------------------------------------------------------------------------
 
 	@Test
-	public void acceptInvokesVisitor()
+	public void acceptInvokesVisitWindow()
 	{
-		Window window = new Window();
 		ComponentVisitor<String, RuntimeException> visitor = mock(ComponentVisitor.class);
 		
 		window.accept(visitor, "p");
 		
 		verify(visitor).visit(window, "p");
+	}
+	
+	@Test
+	public void acceptInvokesEndVisitWindow()
+	{
+		ComponentVisitor<String, RuntimeException> visitor = mock(ComponentVisitor.class);
+		
+		window.accept(visitor, "p");
+		
+		verify(visitor).endVisit(window, "p");
 	}
 }
