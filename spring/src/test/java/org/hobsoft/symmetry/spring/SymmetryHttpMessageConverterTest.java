@@ -25,6 +25,7 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
+import org.mockito.stubbing.Stubber;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.http.converter.HttpMessageNotWritableException;
@@ -180,8 +181,13 @@ public class SymmetryHttpMessageConverterTest
 		throws ReflectorException
 	{
 		Reflector<T> reflector = newReflector(componentType, contentType);
-		
-		doAnswer(new Answer<Object>()
+		doWrite(reflection).when(reflector).reflect(any(componentType), any(OutputStream.class));
+		return reflector;
+	}
+
+	private static Stubber doWrite(final String reflection)
+	{
+		return doAnswer(new Answer<Object>()
 		{
 			@Override
 			public Object answer(InvocationOnMock invocation) throws ReflectorException
@@ -190,9 +196,7 @@ public class SymmetryHttpMessageConverterTest
 				write(reflection, outputStream);
 				return null;
 			}
-		}).when(reflector).reflect(any(componentType), any(OutputStream.class));
-		
-		return reflector;
+		});
 	}
 	
 	private static void write(String reflection, OutputStream outputStream) throws ReflectorException
