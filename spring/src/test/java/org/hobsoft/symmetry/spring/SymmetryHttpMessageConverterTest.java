@@ -136,7 +136,7 @@ public class SymmetryHttpMessageConverterTest
 	}
 	
 	@Test
-	public void writeWithComponentWritesHtml() throws ReflectorException, IOException
+	public void writeWithComponentWritesReflection() throws ReflectorException, IOException
 	{
 		Reflector<DummyComponent> reflector = newReflector(DummyComponent.class, "x/y", "z");
 		MockHttpOutputMessage outputMessage = new MockHttpOutputMessage();
