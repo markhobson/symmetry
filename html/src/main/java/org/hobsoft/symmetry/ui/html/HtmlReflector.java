@@ -16,6 +16,10 @@ package org.hobsoft.symmetry.ui.html;
 import java.io.IOException;
 import java.io.OutputStream;
 
+import javax.xml.stream.XMLOutputFactory;
+import javax.xml.stream.XMLStreamException;
+import javax.xml.stream.XMLStreamWriter;
+
 import org.hobsoft.symmetry.Reflector;
 import org.hobsoft.symmetry.ui.Component;
 
@@ -43,6 +47,17 @@ public class HtmlReflector implements Reflector<Component>
 	@Override
 	public void reflect(Component component, OutputStream outputStream) throws IOException
 	{
-		component.accept(new HtmlComponentVisitor(), outputStream);
+		XMLOutputFactory factory = XMLOutputFactory.newFactory();
+		
+		try
+		{
+			XMLStreamWriter writer = factory.createXMLStreamWriter(outputStream);
+			component.accept(new HtmlComponentVisitor(), writer);
+		}
+		catch (XMLStreamException exception)
+		{
+			// TODO: throw better exception
+			throw new IOException(exception);
+		}
 	}
 }

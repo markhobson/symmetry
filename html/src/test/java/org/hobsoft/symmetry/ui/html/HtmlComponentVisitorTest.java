@@ -13,16 +13,16 @@
  */
 package org.hobsoft.symmetry.ui.html;
 
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
+import javax.xml.stream.XMLStreamException;
+import javax.xml.stream.XMLStreamWriter;
 
 import org.hobsoft.symmetry.ui.Window;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
 
 /**
  * Tests {@code HtmlComponentVisitor}.
@@ -35,7 +35,7 @@ public class HtmlComponentVisitorTest
 
 	private HtmlComponentVisitor visitor;
 	
-	private ByteArrayOutputStream outputStream;
+	private XMLStreamWriter writer;
 	
 	// ----------------------------------------------------------------------------------------------------------------
 	// public methods
@@ -45,7 +45,7 @@ public class HtmlComponentVisitorTest
 	public void setUp()
 	{
 		visitor = new HtmlComponentVisitor();
-		outputStream = new ByteArrayOutputStream();
+		writer = mock(XMLStreamWriter.class);
 	}
 
 	// ----------------------------------------------------------------------------------------------------------------
@@ -53,31 +53,23 @@ public class HtmlComponentVisitorTest
 	// ----------------------------------------------------------------------------------------------------------------
 
 	@Test
-	public void visitWindowWritesHtml() throws IOException
+	public void visitWindowWritesHtml() throws XMLStreamException
 	{
 		Window window = new Window();
 		
-		visitor.visit(window, outputStream);
+		visitor.visit(window, writer);
 		
-		assertThat(toUtf8String(outputStream), is("<html><body>"));
+		verify(writer).writeStartElement("html");
+		verify(writer).writeStartElement("body");
 	}
 	
 	@Test
-	public void endVisitWindowWritesHtml() throws IOException
+	public void endVisitWindowWritesHtml() throws XMLStreamException
 	{
 		Window window = new Window();
 		
-		visitor.endVisit(window, outputStream);
+		visitor.endVisit(window, writer);
 		
-		assertThat(toUtf8String(outputStream), is("</body></html>"));
-	}
-	
-	// ----------------------------------------------------------------------------------------------------------------
-	// private methods
-	// ----------------------------------------------------------------------------------------------------------------
-
-	private static String toUtf8String(ByteArrayOutputStream outputStream) throws UnsupportedEncodingException
-	{
-		return outputStream.toString("UTF-8");
+		verify(writer, times(2)).writeEndElement();
 	}
 }

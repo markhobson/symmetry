@@ -13,49 +13,36 @@
  */
 package org.hobsoft.symmetry.ui.html;
 
-import java.io.IOException;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
-import java.io.Writer;
+import javax.xml.stream.XMLStreamException;
+import javax.xml.stream.XMLStreamWriter;
 
 import org.hobsoft.symmetry.ui.ComponentVisitor;
 import org.hobsoft.symmetry.ui.Window;
 
-import com.google.common.base.Charsets;
-
 /**
  * Visitor that dehydrates UI components to HTML.
  */
-public class HtmlComponentVisitor implements ComponentVisitor<OutputStream, IOException>
+public class HtmlComponentVisitor implements ComponentVisitor<XMLStreamWriter, XMLStreamException>
 {
 	// ----------------------------------------------------------------------------------------------------------------
 	// ComponentVisitor methods
 	// ----------------------------------------------------------------------------------------------------------------
 
 	@Override
-	public void visit(Window window, OutputStream outputStream) throws IOException
+	public void visit(Window window, XMLStreamWriter writer) throws XMLStreamException
 	{
-		Writer writer = newWriter(outputStream);
-		writer.write("<html>");
-		writer.write("<body>");
+		writer.writeStartElement("html");
+		writer.writeStartElement("body");
 		writer.flush();
 	}
 
 	@Override
-	public void endVisit(Window window, OutputStream outputStream) throws IOException
+	public void endVisit(Window window, XMLStreamWriter writer) throws XMLStreamException
 	{
-		Writer writer = newWriter(outputStream);
-		writer.write("</body>");
-		writer.write("</html>");
+		// body
+		writer.writeEndElement();
+		// html
+		writer.writeEndElement();
 		writer.flush();
-	}
-	
-	// ----------------------------------------------------------------------------------------------------------------
-	// private methods
-	// ----------------------------------------------------------------------------------------------------------------
-
-	private static Writer newWriter(OutputStream outputStream)
-	{
-		return new OutputStreamWriter(outputStream, Charsets.UTF_8);
 	}
 }
