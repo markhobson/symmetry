@@ -36,9 +36,9 @@ import static org.mockito.Mockito.doAnswer;
 import static org.mockito.Mockito.mock;
 
 /**
- * Tests {@code HtmlReflector}.
+ * Tests {@code XmlReflector}.
  */
-public class HtmlReflectorTest
+public class XmlReflectorTest
 {
 	// ----------------------------------------------------------------------------------------------------------------
 	// fields
@@ -63,7 +63,7 @@ public class HtmlReflectorTest
 	@Test
 	public void getComponentTypeReturnsComponent()
 	{
-		HtmlReflector reflector = new HtmlReflector(mock(ComponentVisitor.class), anyContentType());
+		XmlReflector reflector = new XmlReflector(mock(ComponentVisitor.class), anyContentType());
 		
 		Class<?> actual = reflector.getComponentType();
 		
@@ -73,7 +73,7 @@ public class HtmlReflectorTest
 	@Test
 	public void getContentTypeReturnsContentType()
 	{
-		HtmlReflector reflector = new HtmlReflector(mock(ComponentVisitor.class), "x/y");
+		XmlReflector reflector = new XmlReflector(mock(ComponentVisitor.class), "x/y");
 		
 		String actual = reflector.getContentType();
 		
@@ -81,11 +81,11 @@ public class HtmlReflectorTest
 	}
 	
 	@Test
-	public void reflectWithWindowWritesHtml() throws XMLStreamException, ReflectorException, IOException
+	public void reflectWithWindowWritesXml() throws XMLStreamException, ReflectorException, IOException
 	{
 		doStartElement("x").when(visitor).visit(any(Window.class), any(XMLStreamWriter.class));
 		doEndElement().when(visitor).endVisit(any(Window.class), any(XMLStreamWriter.class));
-		HtmlReflector reflector = new HtmlReflector(visitor, anyContentType());
+		XmlReflector reflector = new XmlReflector(visitor, anyContentType());
 		ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
 		
 		reflector.reflect(new Window(), outputStream);

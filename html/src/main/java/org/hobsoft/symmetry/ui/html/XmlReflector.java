@@ -25,9 +25,9 @@ import org.hobsoft.symmetry.ui.Component;
 import org.hobsoft.symmetry.ui.ComponentVisitor;
 
 /**
- * HTML reflector for UI components.
+ * XML reflector for UI components.
  */
-public class HtmlReflector implements Reflector<Component>
+public class XmlReflector implements Reflector<Component>
 {
 	// ----------------------------------------------------------------------------------------------------------------
 	// fields
@@ -41,7 +41,7 @@ public class HtmlReflector implements Reflector<Component>
 	// constructors
 	// ----------------------------------------------------------------------------------------------------------------
 
-	public HtmlReflector(ComponentVisitor<XMLStreamWriter, XMLStreamException> visitor, String contentType)
+	public XmlReflector(ComponentVisitor<XMLStreamWriter, XMLStreamException> visitor, String contentType)
 	{
 		this.visitor = visitor;
 		this.contentType = contentType;
