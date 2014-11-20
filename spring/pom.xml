@@ -16,6 +16,14 @@
 	
 	<dependencies>
 	
+		<!-- Guava -->
+		
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<scope>test</scope>
+		</dependency>
+		
 		<!-- Spring -->
 	
 		<dependency>
@@ -41,6 +49,14 @@
 			<scope>test</scope>
 		</dependency>
 
+		<!-- Servlet -->
+		
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		
 		<!-- Symmetry -->
 		
 		<dependency>
@@ -51,14 +67,6 @@
 		<dependency>
 			<groupId>org.hobsoft.symmetry</groupId>
 			<artifactId>symmetry-html</artifactId>
-			<scope>test</scope>
-		</dependency>
-		
-		<!-- Guava -->
-		
-		<dependency>
-			<groupId>com.google.guava</groupId>
-			<artifactId>guava</artifactId>
 			<scope>test</scope>
 		</dependency>
 		
@@ -84,14 +92,6 @@
 			<groupId>org.mockito</groupId>
 			<artifactId>mockito-core</artifactId>
 			<scope>test</scope>
-		</dependency>
-		
-		<!-- Servlet -->
-		
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>javax.servlet-api</artifactId>
-			<scope>provided</scope>
 		</dependency>
 		
 		<!-- SLF4J -->
