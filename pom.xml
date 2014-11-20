@@ -168,7 +168,6 @@
 		<module>api</module>
 		<module>demo</module>
 		<module>html</module>
-		<module>it</module>
 		<module>spring</module>
 		<module>ui</module>
 	</modules>
