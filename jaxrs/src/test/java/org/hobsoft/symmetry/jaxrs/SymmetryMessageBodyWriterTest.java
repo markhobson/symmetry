@@ -30,6 +30,8 @@ import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
 import org.mockito.stubbing.Stubber;
 
+import com.google.common.base.Charsets;
+
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.doAnswer;
@@ -142,7 +144,7 @@ public class SymmetryMessageBodyWriterTest
 	
 	private static void write(String reflection, OutputStream outputStream) throws ReflectorException
 	{
-		OutputStreamWriter writer = new OutputStreamWriter(outputStream);
+		OutputStreamWriter writer = new OutputStreamWriter(outputStream, Charsets.UTF_8);
 		
 		try
 		{
