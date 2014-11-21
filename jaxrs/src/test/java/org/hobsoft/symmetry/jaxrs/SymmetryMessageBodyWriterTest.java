@@ -111,9 +111,7 @@ public class SymmetryMessageBodyWriterTest
 			public Object answer(InvocationOnMock invocation) throws IOException
 			{
 				OutputStream outputStream = invocation.getArgumentAt(1, OutputStream.class);
-				OutputStreamWriter outputWriter = new OutputStreamWriter(outputStream);
-				outputWriter.write("z");
-				outputWriter.flush();
+				write(outputStream, "z");
 				return null;
 			}
 		}).when(reflector).reflect(component, entityStream);
@@ -134,6 +132,13 @@ public class SymmetryMessageBodyWriterTest
 		when(reflector.getComponentType()).thenReturn(componentType);
 		when(reflector.getContentType()).thenReturn(contentType);
 		return reflector;
+	}
+	
+	private static void write(OutputStream outputStream, String string) throws IOException
+	{
+		OutputStreamWriter writer = new OutputStreamWriter(outputStream);
+		writer.write(string);
+		writer.flush();
 	}
 	
 	private static <T> SymmetryMessageBodyWriter<T> newWriter(Reflector<T> reflector)
