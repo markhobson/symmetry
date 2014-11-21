@@ -41,6 +41,7 @@ import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.doAnswer;
 import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static org.springframework.http.MediaType.parseMediaType;
 
@@ -114,6 +115,26 @@ public class SymmetryHttpMessageConverterTest
 	}
 	
 	@Test
+	public void canWriteWithDifferentClassReturnsFalse()
+	{
+		Reflector<DummyComponent> reflector = newReflector(DummyComponent.class, "x/y");
+		
+		boolean actual = newConverter(reflector).canWrite(Void.class, parseMediaType("x/y"));
+		
+		assertThat(actual, is(false));
+	}
+	
+	@Test
+	public void canWriteWithDifferentMediaTypeReturnsFalse()
+	{
+		Reflector<DummyComponent> reflector = newReflector(DummyComponent.class, "x/y");
+		
+		boolean actual = newConverter(reflector).canWrite(DummyComponent.class, parseMediaType("x/z"));
+		
+		assertThat(actual, is(false));
+	}
+	
+	@Test
 	public void getSupportedMediaTypesReturnsContentType()
 	{
 		Reflector<?> reflector = newReflector(anyComponentType(), "x/y");
@@ -133,6 +154,18 @@ public class SymmetryHttpMessageConverterTest
 		thrown.expectMessage("Cannot read component");
 		
 		newConverter(reflector).read(DummyComponent.class, inputMessage);
+	}
+	
+	@Test
+	public void writeWithComponentInvokesReflector() throws ReflectorException, IOException
+	{
+		Reflector<DummyComponent> reflector = newReflector(DummyComponent.class, "x/y");
+		DummyComponent component = new DummyComponent();
+		MockHttpOutputMessage outputMessage = new MockHttpOutputMessage();
+		
+		newConverter(reflector).write(component, parseMediaType("x/y"), outputMessage);
+		
+		verify(reflector).reflect(component, outputMessage.getBody());
 	}
 	
 	@Test
