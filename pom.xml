@@ -17,6 +17,7 @@
 	<name>Symmetry Parent</name>
 	
 	<properties>
+		<jerseyVersion>2.13</jerseyVersion>
 		<springVersion>4.1.2.RELEASE</springVersion>
 		<slf4jVersion>1.7.7</slf4jVersion>
 	</properties>
@@ -118,6 +119,20 @@
 				<version>3.1.0</version>
 			</dependency>
 			
+			<!-- Jersey -->
+			
+			<dependency>
+				<groupId>org.glassfish.jersey.test-framework</groupId>
+				<artifactId>jersey-test-framework-core</artifactId>
+				<version>${jerseyVersion}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.glassfish.jersey.test-framework.providers</groupId>
+				<artifactId>jersey-test-framework-provider-grizzly2</artifactId>
+				<version>${jerseyVersion}</version>
+			</dependency>
+			
 			<!-- Spring -->
 		
 			<dependency>
@@ -148,6 +163,12 @@
 			
 			<dependency>
 				<groupId>org.slf4j</groupId>
+				<artifactId>jul-to-slf4j</artifactId>
+				<version>${slf4jVersion}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.slf4j</groupId>
 				<artifactId>jcl-over-slf4j</artifactId>
 				<version>${slf4jVersion}</version>
 			</dependency>
@@ -168,6 +189,7 @@
 		<module>api</module>
 		<module>demo</module>
 		<module>html</module>
+		<module>jaxrs</module>
 		<module>spring</module>
 		<module>ui</module>
 	</modules>
