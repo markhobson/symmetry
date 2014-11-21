@@ -60,8 +60,8 @@ public class SymmetryMessageBodyWriterTest
 		when(reflector.getComponentType()).thenReturn(DummyComponent.class);
 		when(reflector.getContentType()).thenReturn("x/y");
 		
-		boolean actual = new SymmetryMessageBodyWriter<>(reflector)
-			.isWriteable(DummyComponent.class, DummyComponent.class, new Annotation[0], MediaType.valueOf("x/y"));
+		boolean actual = newWriter(reflector).isWriteable(DummyComponent.class, DummyComponent.class, new Annotation[0],
+			MediaType.valueOf("x/y"));
 		
 		assertThat(actual, is(true));
 	}
@@ -73,8 +73,8 @@ public class SymmetryMessageBodyWriterTest
 		when(reflector.getComponentType()).thenReturn(DummyComponent.class);
 		when(reflector.getContentType()).thenReturn("x/y");
 		
-		boolean actual = new SymmetryMessageBodyWriter<>(reflector)
-			.isWriteable(DummyComponent.class, DummyComponent.class, new Annotation[0], MediaType.valueOf("x/z"));
+		boolean actual = newWriter(reflector).isWriteable(DummyComponent.class, DummyComponent.class, new Annotation[0],
+			MediaType.valueOf("x/z"));
 		
 		assertThat(actual, is(false));
 	}
@@ -86,17 +86,19 @@ public class SymmetryMessageBodyWriterTest
 		when(reflector.getComponentType()).thenReturn(DummyComponent.class);
 		when(reflector.getContentType()).thenReturn("x/y");
 		
-		boolean actual = new SymmetryMessageBodyWriter<>(reflector)
-			.isWriteable(Void.class, Void.class, new Annotation[0], MediaType.valueOf("x/y"));
+		boolean actual = newWriter(reflector).isWriteable(Void.class, Void.class, new Annotation[0],
+			MediaType.valueOf("x/y"));
 		
 		assertThat(actual, is(false));
 	}
-	
+
 	@Test
 	public void getSizeReturnsUnknown()
 	{
-		long actual = new SymmetryMessageBodyWriter<>(mock(Reflector.class))
-			.getSize(anyComponent(), anyComponentType(), anyComponentType(), new Annotation[0], anyMediaType());
+		Reflector<Object> reflector = mock(Reflector.class);
+		
+		long actual = newWriter(reflector).getSize(anyComponent(), anyComponentType(), anyComponentType(),
+			new Annotation[0], anyMediaType());
 		
 		assertThat(actual, is(-1L));
 	}
@@ -124,9 +126,8 @@ public class SymmetryMessageBodyWriterTest
 			}
 		}).when(reflector).reflect(component, entityStream);
 		
-		new SymmetryMessageBodyWriter<>(reflector)
-			.writeTo(component, DummyComponent.class, DummyComponent.class, new Annotation[0], MediaType.valueOf("x/y"),
-				httpHeaders, entityStream);
+		newWriter(reflector).writeTo(component, DummyComponent.class, DummyComponent.class, new Annotation[0],
+			MediaType.valueOf("x/y"), httpHeaders, entityStream);
 		
 		assertThat(entityStream.toString("UTF-8"), is("z"));
 	}
@@ -135,6 +136,11 @@ public class SymmetryMessageBodyWriterTest
 	// private methods
 	// ----------------------------------------------------------------------------------------------------------------
 
+	private static <T> SymmetryMessageBodyWriter<T> newWriter(Reflector<T> reflector)
+	{
+		return new SymmetryMessageBodyWriter<>(reflector);
+	}
+	
 	private static Object anyComponent()
 	{
 		return new Object();
