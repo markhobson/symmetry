@@ -28,6 +28,7 @@ import org.hobsoft.symmetry.ReflectorException;
 import org.junit.Test;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
+import org.mockito.stubbing.Stubber;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
@@ -105,23 +106,14 @@ public class SymmetryMessageBodyWriterTest
 		ByteArrayOutputStream entityStream = new ByteArrayOutputStream();
 		
 		Reflector<DummyComponent> reflector = newReflector(DummyComponent.class, "x/y");
-		doAnswer(new Answer<Object>()
-		{
-			@Override
-			public Object answer(InvocationOnMock invocation) throws IOException
-			{
-				OutputStream outputStream = invocation.getArgumentAt(1, OutputStream.class);
-				write(outputStream, "z");
-				return null;
-			}
-		}).when(reflector).reflect(component, entityStream);
+		doWrite("z").when(reflector).reflect(component, entityStream);
 		
 		newWriter(reflector).writeTo(component, DummyComponent.class, DummyComponent.class, new Annotation[0],
 			MediaType.valueOf("x/y"), httpHeaders, entityStream);
 		
 		assertThat(entityStream.toString("UTF-8"), is("z"));
 	}
-	
+
 	// ----------------------------------------------------------------------------------------------------------------
 	// private methods
 	// ----------------------------------------------------------------------------------------------------------------
@@ -132,6 +124,20 @@ public class SymmetryMessageBodyWriterTest
 		when(reflector.getComponentType()).thenReturn(componentType);
 		when(reflector.getContentType()).thenReturn(contentType);
 		return reflector;
+	}
+	
+	private static Stubber doWrite(final String string)
+	{
+		return doAnswer(new Answer<Object>()
+		{
+			@Override
+			public Object answer(InvocationOnMock invocation) throws IOException
+			{
+				OutputStream outputStream = invocation.getArgumentAt(1, OutputStream.class);
+				write(outputStream, string);
+				return null;
+			}
+		});
 	}
 	
 	private static void write(OutputStream outputStream, String string) throws IOException
