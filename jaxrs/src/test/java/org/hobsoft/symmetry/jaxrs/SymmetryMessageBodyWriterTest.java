@@ -104,14 +104,13 @@ public class SymmetryMessageBodyWriterTest
 	public void writeToWithComponentWritesHtml() throws ReflectorException, IOException
 	{
 		DummyComponent component = new DummyComponent();
-		MultivaluedMap<String, Object> httpHeaders = new MultivaluedHashMap<>();
 		ByteArrayOutputStream entityStream = new ByteArrayOutputStream();
 		
 		Reflector<DummyComponent> reflector = newReflector(DummyComponent.class, "x/y");
 		doWrite("z").when(reflector).reflect(component, entityStream);
 		
 		newWriter(reflector).writeTo(component, DummyComponent.class, DummyComponent.class, new Annotation[0],
-			MediaType.valueOf("x/y"), httpHeaders, entityStream);
+			MediaType.valueOf("x/y"), anyHttpHeaders(), entityStream);
 		
 		assertThat(entityStream.toString("UTF-8"), is("z"));
 	}
@@ -175,5 +174,10 @@ public class SymmetryMessageBodyWriterTest
 	private static MediaType anyMediaType()
 	{
 		return MediaType.valueOf("_/_");
+	}
+
+	private static MultivaluedMap<String, Object> anyHttpHeaders()
+	{
+		return new MultivaluedHashMap<>();
 	}
 }
