@@ -15,23 +15,29 @@ package org.hobsoft.symmetry.jaxrs;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
 import java.lang.annotation.Annotation;
 
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.MultivaluedHashMap;
 import javax.ws.rs.core.MultivaluedMap;
 
+import org.hobsoft.symmetry.Reflector;
+import org.hobsoft.symmetry.ReflectorException;
 import org.hobsoft.symmetry.ui.Component;
 import org.hobsoft.symmetry.ui.Window;
-import org.hobsoft.symmetry.ui.html.HtmlComponentVisitor;
-import org.hobsoft.symmetry.ui.html.XmlReflector;
-import org.junit.Before;
 import org.junit.Test;
+import org.mockito.invocation.InvocationOnMock;
+import org.mockito.stubbing.Answer;
 
 import static javax.ws.rs.core.MediaType.TEXT_HTML_TYPE;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
+import static org.mockito.Mockito.doAnswer;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 /**
  * Tests {@code SymmetryMessageBodyWriter}.
@@ -39,29 +45,18 @@ import static org.junit.Assert.assertThat;
 public class SymmetryMessageBodyWriterTest
 {
 	// ----------------------------------------------------------------------------------------------------------------
-	// fields
-	// ----------------------------------------------------------------------------------------------------------------
-
-	private SymmetryMessageBodyWriter<Component> writer;
-	
-	// ----------------------------------------------------------------------------------------------------------------
-	// public methods
-	// ----------------------------------------------------------------------------------------------------------------
-
-	@Before
-	public void setUp()
-	{
-		writer = new SymmetryMessageBodyWriter<>(new XmlReflector(new HtmlComponentVisitor(), "text/html"));
-	}
-
-	// ----------------------------------------------------------------------------------------------------------------
 	// tests
 	// ----------------------------------------------------------------------------------------------------------------
 
 	@Test
 	public void isWriteableWithWindowAndHtmlReturnsTrue()
 	{
-		boolean actual = writer.isWriteable(Window.class, Window.class, new Annotation[0], TEXT_HTML_TYPE);
+		Reflector<Component> reflector = mock(Reflector.class);
+		when(reflector.getComponentType()).thenReturn(Component.class);
+		when(reflector.getContentType()).thenReturn("text/html");
+		
+		boolean actual = new SymmetryMessageBodyWriter<>(reflector)
+			.isWriteable(Window.class, Window.class, new Annotation[0], TEXT_HTML_TYPE);
 		
 		assertThat(actual, is(true));
 	}
@@ -69,7 +64,12 @@ public class SymmetryMessageBodyWriterTest
 	@Test
 	public void isWriteableWithDifferentMediaTypeReturnsFalse()
 	{
-		boolean actual = writer.isWriteable(Window.class, Window.class, new Annotation[0], MediaType.valueOf("x/y"));
+		Reflector<Component> reflector = mock(Reflector.class);
+		when(reflector.getComponentType()).thenReturn(Component.class);
+		when(reflector.getContentType()).thenReturn("text/html");
+		
+		boolean actual = new SymmetryMessageBodyWriter<>(reflector)
+			.isWriteable(Window.class, Window.class, new Annotation[0], MediaType.valueOf("x/y"));
 		
 		assertThat(actual, is(false));
 	}
@@ -77,7 +77,12 @@ public class SymmetryMessageBodyWriterTest
 	@Test
 	public void isWriteableWithDifferentTypeReturnsFalse()
 	{
-		boolean actual = writer.isWriteable(Void.class, Void.class, new Annotation[0], TEXT_HTML_TYPE);
+		Reflector<Component> reflector = mock(Reflector.class);
+		when(reflector.getComponentType()).thenReturn(Component.class);
+		when(reflector.getContentType()).thenReturn("text/html");
+		
+		boolean actual = new SymmetryMessageBodyWriter<>(reflector)
+			.isWriteable(Void.class, Void.class, new Annotation[0], TEXT_HTML_TYPE);
 		
 		assertThat(actual, is(false));
 	}
@@ -85,19 +90,38 @@ public class SymmetryMessageBodyWriterTest
 	@Test
 	public void getSizeReturnsUnknown()
 	{
-		long actual = writer.getSize(new Window(), Window.class, Window.class, new Annotation[0], TEXT_HTML_TYPE);
+		long actual = new SymmetryMessageBodyWriter<>(mock(Reflector.class))
+			.getSize(new Window(), Window.class, Window.class, new Annotation[0], TEXT_HTML_TYPE);
 		
 		assertThat(actual, is(-1L));
 	}
 	
 	@Test
-	public void writeToWithWindowWritesHtml() throws IOException
+	public void writeToWithWindowWritesHtml() throws ReflectorException, IOException
 	{
+		Window component = new Window();
 		MultivaluedMap<String, Object> httpHeaders = new MultivaluedHashMap<>();
 		ByteArrayOutputStream entityStream = new ByteArrayOutputStream();
 		
-		writer.writeTo(new Window(), Window.class, Window.class, new Annotation[0], TEXT_HTML_TYPE, httpHeaders,
-			entityStream);
+		Reflector<Component> reflector = mock(Reflector.class);
+		when(reflector.getComponentType()).thenReturn(Component.class);
+		when(reflector.getContentType()).thenReturn("text/html");
+		doAnswer(new Answer<Object>()
+		{
+			@Override
+			public Object answer(InvocationOnMock invocation) throws IOException
+			{
+				OutputStream outputStream = invocation.getArgumentAt(1, OutputStream.class);
+				OutputStreamWriter outputWriter = new OutputStreamWriter(outputStream);
+				outputWriter.write("<html><body></body></html>");
+				outputWriter.flush();
+				return null;
+			}
+		}).when(reflector).reflect(component, entityStream);
+		
+		new SymmetryMessageBodyWriter<>(reflector)
+			.writeTo(component, Window.class, Window.class, new Annotation[0], TEXT_HTML_TYPE, httpHeaders,
+				entityStream);
 		
 		assertThat(entityStream.toString("UTF-8"), is("<html><body></body></html>"));
 	}

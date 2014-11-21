@@ -19,6 +19,7 @@
 	<properties>
 		<jerseyVersion>2.13</jerseyVersion>
 		<springVersion>4.1.2.RELEASE</springVersion>
+		<hamcrestVersion>1.3</hamcrestVersion>
 		<slf4jVersion>1.7.7</slf4jVersion>
 	</properties>
 	
@@ -99,8 +100,14 @@
 			
 			<dependency>
 				<groupId>org.hamcrest</groupId>
+				<artifactId>hamcrest-core</artifactId>
+				<version>${hamcrestVersion}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.hamcrest</groupId>
 				<artifactId>hamcrest-library</artifactId>
-				<version>1.3</version>
+				<version>${hamcrestVersion}</version>
 			</dependency>
 			
 			<!-- Mockito -->
