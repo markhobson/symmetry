@@ -35,8 +35,10 @@ import com.google.common.base.Charsets;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
+import static org.mockito.Mockito.any;
 import static org.mockito.Mockito.doAnswer;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 /**
@@ -102,15 +104,27 @@ public class SymmetryMessageBodyWriterTest
 	}
 	
 	@Test
-	public void writeToWithComponentWritesHtml() throws ReflectorException, IOException
+	public void writeToWithComponentInvokesReflector() throws ReflectorException, IOException
 	{
+		Reflector<DummyComponent> reflector = newReflector(DummyComponent.class, "x/y");
 		DummyComponent component = new DummyComponent();
 		ByteArrayOutputStream entityStream = new ByteArrayOutputStream();
-		Reflector<DummyComponent> reflector = newReflector(DummyComponent.class, "x/y");
-		doWrite("z").when(reflector).reflect(component, entityStream);
 		
 		newWriter(reflector).writeTo(component, DummyComponent.class, DummyComponent.class, new Annotation[0],
 			MediaType.valueOf("x/y"), anyHttpHeaders(), entityStream);
+		
+		verify(reflector).reflect(component, entityStream);
+	}
+	
+	@Test
+	public void writeToWithComponentWritesHtml() throws ReflectorException, IOException
+	{
+		Reflector<DummyComponent> reflector = newReflector(DummyComponent.class, "x/y");
+		doWrite("z").when(reflector).reflect(any(DummyComponent.class), any(OutputStream.class));
+		ByteArrayOutputStream entityStream = new ByteArrayOutputStream();
+		
+		newWriter(reflector).writeTo(new DummyComponent(), DummyComponent.class, DummyComponent.class,
+			new Annotation[0], MediaType.valueOf("x/y"), anyHttpHeaders(), entityStream);
 		
 		assertThat(toString(entityStream), is("z"));
 	}
