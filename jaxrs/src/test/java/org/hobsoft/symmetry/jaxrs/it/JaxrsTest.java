@@ -18,6 +18,8 @@ import javax.ws.rs.core.Application;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.glassfish.jersey.test.JerseyTest;
 import org.hobsoft.symmetry.jaxrs.SymmetryMessageBodyWriter;
+import org.hobsoft.symmetry.ui.html.HtmlComponentVisitor;
+import org.hobsoft.symmetry.ui.html.XmlReflector;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.slf4j.bridge.SLF4JBridgeHandler;
@@ -49,7 +51,7 @@ public class JaxrsTest extends JerseyTest
 	protected Application configure()
 	{
 		return new ResourceConfig(JaxrsResource.class)
-			.register(SymmetryMessageBodyWriter.class);
+			.register(new SymmetryMessageBodyWriter<>(new XmlReflector(new HtmlComponentVisitor(), "text/html")));
 	}
 	
 	// ----------------------------------------------------------------------------------------------------------------

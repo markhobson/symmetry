@@ -24,29 +24,28 @@ import javax.ws.rs.ext.MessageBodyWriter;
 
 import org.hobsoft.symmetry.Reflector;
 import org.hobsoft.symmetry.ReflectorException;
-import org.hobsoft.symmetry.ui.Component;
-import org.hobsoft.symmetry.ui.Window;
-import org.hobsoft.symmetry.ui.html.HtmlComponentVisitor;
-import org.hobsoft.symmetry.ui.html.XmlReflector;
 
 /**
  * JAX-RS message body writer for UI components.
+ * 
+ * @param <T>
+ *            the component type
  */
-public class SymmetryMessageBodyWriter implements MessageBodyWriter<Window>
+public class SymmetryMessageBodyWriter<T> implements MessageBodyWriter<T>
 {
 	// ----------------------------------------------------------------------------------------------------------------
 	// fields
 	// ----------------------------------------------------------------------------------------------------------------
 
-	private Reflector<Component> reflector;
+	private final Reflector<T> reflector;
 
 	// ----------------------------------------------------------------------------------------------------------------
 	// constructors
 	// ----------------------------------------------------------------------------------------------------------------
 
-	public SymmetryMessageBodyWriter()
+	public SymmetryMessageBodyWriter(Reflector<T> reflector)
 	{
-		reflector = new XmlReflector(new HtmlComponentVisitor(), "text/html");
+		this.reflector = reflector;
 	}
 
 	// ----------------------------------------------------------------------------------------------------------------
@@ -61,18 +60,18 @@ public class SymmetryMessageBodyWriter implements MessageBodyWriter<Window>
 	}
 
 	@Override
-	public long getSize(Window object, Class<?> type, Type genericType, Annotation[] annotations, MediaType mediaType)
+	public long getSize(T component, Class<?> type, Type genericType, Annotation[] annotations, MediaType mediaType)
 	{
 		return -1;
 	}
 
 	@Override
-	public void writeTo(Window object, Class<?> type, Type genericType, Annotation[] annotations, MediaType mediaType,
+	public void writeTo(T component, Class<?> type, Type genericType, Annotation[] annotations, MediaType mediaType,
 		MultivaluedMap<String, Object> httpHeaders, OutputStream entityStream) throws IOException
 	{
 		try
 		{
-			reflector.reflect(object, entityStream);
+			reflector.reflect(component, entityStream);
 		}
 		catch (ReflectorException exception)
 		{

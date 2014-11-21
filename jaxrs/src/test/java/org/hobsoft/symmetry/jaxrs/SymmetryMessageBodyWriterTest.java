@@ -21,7 +21,10 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.MultivaluedHashMap;
 import javax.ws.rs.core.MultivaluedMap;
 
+import org.hobsoft.symmetry.ui.Component;
 import org.hobsoft.symmetry.ui.Window;
+import org.hobsoft.symmetry.ui.html.HtmlComponentVisitor;
+import org.hobsoft.symmetry.ui.html.XmlReflector;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -39,7 +42,7 @@ public class SymmetryMessageBodyWriterTest
 	// fields
 	// ----------------------------------------------------------------------------------------------------------------
 
-	private SymmetryMessageBodyWriter writer;
+	private SymmetryMessageBodyWriter<Component> writer;
 	
 	// ----------------------------------------------------------------------------------------------------------------
 	// public methods
@@ -48,7 +51,7 @@ public class SymmetryMessageBodyWriterTest
 	@Before
 	public void setUp()
 	{
-		writer = new SymmetryMessageBodyWriter();
+		writer = new SymmetryMessageBodyWriter<>(new XmlReflector(new HtmlComponentVisitor(), "text/html"));
 	}
 
 	// ----------------------------------------------------------------------------------------------------------------

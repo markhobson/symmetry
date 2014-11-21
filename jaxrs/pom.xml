@@ -41,12 +41,13 @@
 		
 		<dependency>
 			<groupId>org.hobsoft.symmetry</groupId>
-			<artifactId>symmetry-html</artifactId>
+			<artifactId>symmetry-api</artifactId>
 		</dependency>
 		
 		<dependency>
 			<groupId>org.hobsoft.symmetry</groupId>
-			<artifactId>symmetry-ui</artifactId>
+			<artifactId>symmetry-html</artifactId>
+			<scope>test</scope>
 		</dependency>
 		
 		<!-- SLF4J -->
