@@ -31,8 +31,6 @@ import org.junit.Test;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
 
-import static javax.ws.rs.core.MediaType.TEXT_HTML_TYPE;
-
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.doAnswer;
@@ -49,14 +47,14 @@ public class SymmetryMessageBodyWriterTest
 	// ----------------------------------------------------------------------------------------------------------------
 
 	@Test
-	public void isWriteableWithWindowAndHtmlReturnsTrue()
+	public void isWriteableWithWindowAndContentTypeReturnsTrue()
 	{
 		Reflector<Component> reflector = mock(Reflector.class);
 		when(reflector.getComponentType()).thenReturn(Component.class);
-		when(reflector.getContentType()).thenReturn("text/html");
+		when(reflector.getContentType()).thenReturn("x/y");
 		
 		boolean actual = new SymmetryMessageBodyWriter<>(reflector)
-			.isWriteable(Window.class, Window.class, new Annotation[0], TEXT_HTML_TYPE);
+			.isWriteable(Window.class, Window.class, new Annotation[0], MediaType.valueOf("x/y"));
 		
 		assertThat(actual, is(true));
 	}
@@ -66,10 +64,10 @@ public class SymmetryMessageBodyWriterTest
 	{
 		Reflector<Component> reflector = mock(Reflector.class);
 		when(reflector.getComponentType()).thenReturn(Component.class);
-		when(reflector.getContentType()).thenReturn("text/html");
+		when(reflector.getContentType()).thenReturn("x/y");
 		
 		boolean actual = new SymmetryMessageBodyWriter<>(reflector)
-			.isWriteable(Window.class, Window.class, new Annotation[0], MediaType.valueOf("x/y"));
+			.isWriteable(Window.class, Window.class, new Annotation[0], MediaType.valueOf("x/z"));
 		
 		assertThat(actual, is(false));
 	}
@@ -79,10 +77,10 @@ public class SymmetryMessageBodyWriterTest
 	{
 		Reflector<Component> reflector = mock(Reflector.class);
 		when(reflector.getComponentType()).thenReturn(Component.class);
-		when(reflector.getContentType()).thenReturn("text/html");
+		when(reflector.getContentType()).thenReturn("x/y");
 		
 		boolean actual = new SymmetryMessageBodyWriter<>(reflector)
-			.isWriteable(Void.class, Void.class, new Annotation[0], TEXT_HTML_TYPE);
+			.isWriteable(Void.class, Void.class, new Annotation[0], MediaType.valueOf("x/y"));
 		
 		assertThat(actual, is(false));
 	}
@@ -91,7 +89,7 @@ public class SymmetryMessageBodyWriterTest
 	public void getSizeReturnsUnknown()
 	{
 		long actual = new SymmetryMessageBodyWriter<>(mock(Reflector.class))
-			.getSize(new Window(), Window.class, Window.class, new Annotation[0], TEXT_HTML_TYPE);
+			.getSize(new Window(), Window.class, Window.class, new Annotation[0], anyMediaType());
 		
 		assertThat(actual, is(-1L));
 	}
@@ -105,7 +103,7 @@ public class SymmetryMessageBodyWriterTest
 		
 		Reflector<Component> reflector = mock(Reflector.class);
 		when(reflector.getComponentType()).thenReturn(Component.class);
-		when(reflector.getContentType()).thenReturn("text/html");
+		when(reflector.getContentType()).thenReturn("x/y");
 		doAnswer(new Answer<Object>()
 		{
 			@Override
@@ -120,9 +118,18 @@ public class SymmetryMessageBodyWriterTest
 		}).when(reflector).reflect(component, entityStream);
 		
 		new SymmetryMessageBodyWriter<>(reflector)
-			.writeTo(component, Window.class, Window.class, new Annotation[0], TEXT_HTML_TYPE, httpHeaders,
+			.writeTo(component, Window.class, Window.class, new Annotation[0], MediaType.valueOf("x/y"), httpHeaders,
 				entityStream);
 		
 		assertThat(entityStream.toString("UTF-8"), is("<html><body></body></html>"));
+	}
+	
+	// ----------------------------------------------------------------------------------------------------------------
+	// private methods
+	// ----------------------------------------------------------------------------------------------------------------
+
+	private static MediaType anyMediaType()
+	{
+		return MediaType.valueOf("_/_");
 	}
 }
