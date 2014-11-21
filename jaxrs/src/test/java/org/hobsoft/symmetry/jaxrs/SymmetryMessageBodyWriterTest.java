@@ -17,6 +17,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
+import java.io.UnsupportedEncodingException;
 import java.lang.annotation.Annotation;
 
 import javax.ws.rs.core.MediaType;
@@ -111,7 +112,7 @@ public class SymmetryMessageBodyWriterTest
 		newWriter(reflector).writeTo(component, DummyComponent.class, DummyComponent.class, new Annotation[0],
 			MediaType.valueOf("x/y"), anyHttpHeaders(), entityStream);
 		
-		assertThat(entityStream.toString("UTF-8"), is("z"));
+		assertThat(toString(entityStream), is("z"));
 	}
 
 	// ----------------------------------------------------------------------------------------------------------------
@@ -178,5 +179,10 @@ public class SymmetryMessageBodyWriterTest
 	private static MultivaluedMap<String, Object> anyHttpHeaders()
 	{
 		return new MultivaluedHashMap<>();
+	}
+
+	private static String toString(ByteArrayOutputStream entityStream) throws UnsupportedEncodingException
+	{
+		return entityStream.toString("UTF-8");
 	}
 }
