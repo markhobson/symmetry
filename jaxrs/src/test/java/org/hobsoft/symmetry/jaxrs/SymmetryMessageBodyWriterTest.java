@@ -118,7 +118,7 @@ public class SymmetryMessageBodyWriterTest
 			{
 				OutputStream outputStream = invocation.getArgumentAt(1, OutputStream.class);
 				OutputStreamWriter outputWriter = new OutputStreamWriter(outputStream);
-				outputWriter.write("<html><body></body></html>");
+				outputWriter.write("z");
 				outputWriter.flush();
 				return null;
 			}
@@ -128,7 +128,7 @@ public class SymmetryMessageBodyWriterTest
 			.writeTo(component, DummyComponent.class, DummyComponent.class, new Annotation[0], MediaType.valueOf("x/y"),
 				httpHeaders, entityStream);
 		
-		assertThat(entityStream.toString("UTF-8"), is("<html><body></body></html>"));
+		assertThat(entityStream.toString("UTF-8"), is("z"));
 	}
 	
 	// ----------------------------------------------------------------------------------------------------------------
