@@ -25,8 +25,6 @@ import javax.ws.rs.core.MultivaluedMap;
 
 import org.hobsoft.symmetry.Reflector;
 import org.hobsoft.symmetry.ReflectorException;
-import org.hobsoft.symmetry.ui.Component;
-import org.hobsoft.symmetry.ui.Window;
 import org.junit.Test;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
@@ -43,18 +41,27 @@ import static org.mockito.Mockito.when;
 public class SymmetryMessageBodyWriterTest
 {
 	// ----------------------------------------------------------------------------------------------------------------
+	// types
+	// ----------------------------------------------------------------------------------------------------------------
+
+	private static class DummyComponent
+	{
+		// dummy type
+	}
+
+	// ----------------------------------------------------------------------------------------------------------------
 	// tests
 	// ----------------------------------------------------------------------------------------------------------------
 
 	@Test
-	public void isWriteableWithWindowAndContentTypeReturnsTrue()
+	public void isWriteableWithComponentAndContentTypeReturnsTrue()
 	{
-		Reflector<Component> reflector = mock(Reflector.class);
-		when(reflector.getComponentType()).thenReturn(Component.class);
+		Reflector<DummyComponent> reflector = mock(Reflector.class);
+		when(reflector.getComponentType()).thenReturn(DummyComponent.class);
 		when(reflector.getContentType()).thenReturn("x/y");
 		
 		boolean actual = new SymmetryMessageBodyWriter<>(reflector)
-			.isWriteable(Window.class, Window.class, new Annotation[0], MediaType.valueOf("x/y"));
+			.isWriteable(DummyComponent.class, DummyComponent.class, new Annotation[0], MediaType.valueOf("x/y"));
 		
 		assertThat(actual, is(true));
 	}
@@ -62,12 +69,12 @@ public class SymmetryMessageBodyWriterTest
 	@Test
 	public void isWriteableWithDifferentMediaTypeReturnsFalse()
 	{
-		Reflector<Component> reflector = mock(Reflector.class);
-		when(reflector.getComponentType()).thenReturn(Component.class);
+		Reflector<DummyComponent> reflector = mock(Reflector.class);
+		when(reflector.getComponentType()).thenReturn(DummyComponent.class);
 		when(reflector.getContentType()).thenReturn("x/y");
 		
 		boolean actual = new SymmetryMessageBodyWriter<>(reflector)
-			.isWriteable(Window.class, Window.class, new Annotation[0], MediaType.valueOf("x/z"));
+			.isWriteable(DummyComponent.class, DummyComponent.class, new Annotation[0], MediaType.valueOf("x/z"));
 		
 		assertThat(actual, is(false));
 	}
@@ -75,8 +82,8 @@ public class SymmetryMessageBodyWriterTest
 	@Test
 	public void isWriteableWithDifferentTypeReturnsFalse()
 	{
-		Reflector<Component> reflector = mock(Reflector.class);
-		when(reflector.getComponentType()).thenReturn(Component.class);
+		Reflector<DummyComponent> reflector = mock(Reflector.class);
+		when(reflector.getComponentType()).thenReturn(DummyComponent.class);
 		when(reflector.getContentType()).thenReturn("x/y");
 		
 		boolean actual = new SymmetryMessageBodyWriter<>(reflector)
@@ -89,20 +96,20 @@ public class SymmetryMessageBodyWriterTest
 	public void getSizeReturnsUnknown()
 	{
 		long actual = new SymmetryMessageBodyWriter<>(mock(Reflector.class))
-			.getSize(new Window(), Window.class, Window.class, new Annotation[0], anyMediaType());
+			.getSize(anyComponent(), anyComponentType(), anyComponentType(), new Annotation[0], anyMediaType());
 		
 		assertThat(actual, is(-1L));
 	}
 	
 	@Test
-	public void writeToWithWindowWritesHtml() throws ReflectorException, IOException
+	public void writeToWithComponentWritesHtml() throws ReflectorException, IOException
 	{
-		Window component = new Window();
+		DummyComponent component = new DummyComponent();
 		MultivaluedMap<String, Object> httpHeaders = new MultivaluedHashMap<>();
 		ByteArrayOutputStream entityStream = new ByteArrayOutputStream();
 		
-		Reflector<Component> reflector = mock(Reflector.class);
-		when(reflector.getComponentType()).thenReturn(Component.class);
+		Reflector<DummyComponent> reflector = mock(Reflector.class);
+		when(reflector.getComponentType()).thenReturn(DummyComponent.class);
 		when(reflector.getContentType()).thenReturn("x/y");
 		doAnswer(new Answer<Object>()
 		{
@@ -118,8 +125,8 @@ public class SymmetryMessageBodyWriterTest
 		}).when(reflector).reflect(component, entityStream);
 		
 		new SymmetryMessageBodyWriter<>(reflector)
-			.writeTo(component, Window.class, Window.class, new Annotation[0], MediaType.valueOf("x/y"), httpHeaders,
-				entityStream);
+			.writeTo(component, DummyComponent.class, DummyComponent.class, new Annotation[0], MediaType.valueOf("x/y"),
+				httpHeaders, entityStream);
 		
 		assertThat(entityStream.toString("UTF-8"), is("<html><body></body></html>"));
 	}
@@ -127,6 +134,16 @@ public class SymmetryMessageBodyWriterTest
 	// ----------------------------------------------------------------------------------------------------------------
 	// private methods
 	// ----------------------------------------------------------------------------------------------------------------
+
+	private static Object anyComponent()
+	{
+		return new Object();
+	}
+
+	private static Class<?> anyComponentType()
+	{
+		return Object.class;
+	}
 
 	private static MediaType anyMediaType()
 	{
