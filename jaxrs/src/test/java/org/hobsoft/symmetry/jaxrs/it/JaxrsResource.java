@@ -16,6 +16,8 @@ package org.hobsoft.symmetry.jaxrs.it;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 
+import org.hobsoft.symmetry.ui.Window;
+
 /**
  * JAX-RS resource for integration tests.
  */
@@ -27,8 +29,8 @@ public class JaxrsResource
 	// ----------------------------------------------------------------------------------------------------------------
 
 	@GET
-	public String get()
+	public Window get()
 	{
-		return "<html><body></body></html>";
+		return new Window();
 	}
 }

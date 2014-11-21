@@ -16,6 +16,13 @@
 	
 	<dependencies>
 	
+		<!-- JAX-RS -->
+		
+		<dependency>
+			<groupId>javax.ws.rs</groupId>
+			<artifactId>javax.ws.rs-api</artifactId>
+		</dependency>
+	
 		<!-- Jersey -->
 	
 		<dependency>
@@ -28,6 +35,13 @@
 			<groupId>org.glassfish.jersey.test-framework.providers</groupId>
 			<artifactId>jersey-test-framework-provider-grizzly2</artifactId>
 			<scope>test</scope>
+		</dependency>
+		
+		<!-- Symmetry -->
+		
+		<dependency>
+			<groupId>org.hobsoft.symmetry</groupId>
+			<artifactId>symmetry-ui</artifactId>
 		</dependency>
 		
 		<!-- SLF4J -->
