@@ -138,7 +138,8 @@ public class SymmetryHttpMessageConverterTest
 	@Test
 	public void writeWithComponentWritesReflection() throws ReflectorException, IOException
 	{
-		Reflector<DummyComponent> reflector = newReflector(DummyComponent.class, "x/y", "z");
+		Reflector<DummyComponent> reflector = newReflector(DummyComponent.class, "x/y");
+		doWrite("z").when(reflector).reflect(any(DummyComponent.class), any(OutputStream.class));
 		MockHttpOutputMessage outputMessage = new MockHttpOutputMessage();
 		
 		newConverter(reflector).write(new DummyComponent(), parseMediaType("x/y"), outputMessage);
@@ -177,14 +178,6 @@ public class SymmetryHttpMessageConverterTest
 		return reflector;
 	}
 	
-	private static <T> Reflector<T> newReflector(Class<T> componentType, String contentType, String reflection)
-		throws ReflectorException
-	{
-		Reflector<T> reflector = newReflector(componentType, contentType);
-		doWrite(reflection).when(reflector).reflect(any(componentType), any(OutputStream.class));
-		return reflector;
-	}
-
 	private static Stubber doWrite(final String reflection)
 	{
 		return doAnswer(new Answer<Object>()
