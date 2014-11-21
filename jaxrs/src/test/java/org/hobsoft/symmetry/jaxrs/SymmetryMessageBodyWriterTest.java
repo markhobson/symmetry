@@ -105,7 +105,6 @@ public class SymmetryMessageBodyWriterTest
 	{
 		DummyComponent component = new DummyComponent();
 		ByteArrayOutputStream entityStream = new ByteArrayOutputStream();
-		
 		Reflector<DummyComponent> reflector = newReflector(DummyComponent.class, "x/y");
 		doWrite("z").when(reflector).reflect(component, entityStream);
 		
