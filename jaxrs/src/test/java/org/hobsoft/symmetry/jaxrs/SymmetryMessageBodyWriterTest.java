@@ -126,7 +126,7 @@ public class SymmetryMessageBodyWriterTest
 		return reflector;
 	}
 	
-	private static Stubber doWrite(final String string)
+	private static Stubber doWrite(final String reflection)
 	{
 		return doAnswer(new Answer<Object>()
 		{
@@ -134,19 +134,19 @@ public class SymmetryMessageBodyWriterTest
 			public Object answer(InvocationOnMock invocation) throws ReflectorException
 			{
 				OutputStream outputStream = invocation.getArgumentAt(1, OutputStream.class);
-				write(outputStream, string);
+				write(reflection, outputStream);
 				return null;
 			}
 		});
 	}
 	
-	private static void write(OutputStream outputStream, String string) throws ReflectorException
+	private static void write(String reflection, OutputStream outputStream) throws ReflectorException
 	{
 		OutputStreamWriter writer = new OutputStreamWriter(outputStream);
 		
 		try
 		{
-			writer.write(string);
+			writer.write(reflection);
 			writer.flush();
 		}
 		catch (IOException exception)
