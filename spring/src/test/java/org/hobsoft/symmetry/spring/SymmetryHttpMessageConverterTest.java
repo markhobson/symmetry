@@ -177,7 +177,7 @@ public class SymmetryHttpMessageConverterTest
 		return reflector;
 	}
 	
-	private static <T> Reflector<T> newReflector(Class<T> componentType, String contentType, final String reflection)
+	private static <T> Reflector<T> newReflector(Class<T> componentType, String contentType, String reflection)
 		throws ReflectorException
 	{
 		Reflector<T> reflector = newReflector(componentType, contentType);
