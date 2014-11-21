@@ -41,6 +41,11 @@
 		
 		<dependency>
 			<groupId>org.hobsoft.symmetry</groupId>
+			<artifactId>symmetry-html</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.hobsoft.symmetry</groupId>
 			<artifactId>symmetry-ui</artifactId>
 		</dependency>
 		

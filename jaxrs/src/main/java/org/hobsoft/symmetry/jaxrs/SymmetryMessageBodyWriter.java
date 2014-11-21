@@ -15,7 +15,6 @@ package org.hobsoft.symmetry.jaxrs;
 
 import java.io.IOException;
 import java.io.OutputStream;
-import java.io.OutputStreamWriter;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Type;
 
@@ -23,9 +22,12 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.MultivaluedMap;
 import javax.ws.rs.ext.MessageBodyWriter;
 
+import org.hobsoft.symmetry.Reflector;
+import org.hobsoft.symmetry.ReflectorException;
+import org.hobsoft.symmetry.ui.Component;
 import org.hobsoft.symmetry.ui.Window;
-
-import static javax.ws.rs.core.MediaType.TEXT_HTML_TYPE;
+import org.hobsoft.symmetry.ui.html.HtmlComponentVisitor;
+import org.hobsoft.symmetry.ui.html.XmlReflector;
 
 /**
  * JAX-RS message body writer for UI components.
@@ -33,13 +35,29 @@ import static javax.ws.rs.core.MediaType.TEXT_HTML_TYPE;
 public class SymmetryMessageBodyWriter implements MessageBodyWriter<Window>
 {
 	// ----------------------------------------------------------------------------------------------------------------
+	// fields
+	// ----------------------------------------------------------------------------------------------------------------
+
+	private Reflector<Component> reflector;
+
+	// ----------------------------------------------------------------------------------------------------------------
+	// constructors
+	// ----------------------------------------------------------------------------------------------------------------
+
+	public SymmetryMessageBodyWriter()
+	{
+		reflector = new XmlReflector(new HtmlComponentVisitor(), "text/html");
+	}
+
+	// ----------------------------------------------------------------------------------------------------------------
 	// MessageBodyWriter methods
 	// ----------------------------------------------------------------------------------------------------------------
 
 	@Override
 	public boolean isWriteable(Class<?> type, Type genericType, Annotation[] annotations, MediaType mediaType)
 	{
-		return Window.class.equals(type) && TEXT_HTML_TYPE.equals(mediaType);
+		return reflector.getComponentType().isAssignableFrom(type)
+			&& MediaType.valueOf(reflector.getContentType()).equals(mediaType);
 	}
 
 	@Override
@@ -52,9 +70,14 @@ public class SymmetryMessageBodyWriter implements MessageBodyWriter<Window>
 	public void writeTo(Window object, Class<?> type, Type genericType, Annotation[] annotations, MediaType mediaType,
 		MultivaluedMap<String, Object> httpHeaders, OutputStream entityStream) throws IOException
 	{
-		OutputStreamWriter entityWriter = new OutputStreamWriter(entityStream, "UTF-8");
-		
-		entityWriter.write("<html><body></body></html>");
-		entityWriter.flush();
+		try
+		{
+			reflector.reflect(object, entityStream);
+		}
+		catch (ReflectorException exception)
+		{
+			// TODO: handle
+			throw new AssertionError();
+		}
 	}
 }
