@@ -56,22 +56,18 @@ public class SymmetryMessageBodyWriterTest
 	@Test
 	public void isWriteableWithComponentAndContentTypeReturnsTrue()
 	{
-		Reflector<DummyComponent> reflector = mock(Reflector.class);
-		when(reflector.getComponentType()).thenReturn(DummyComponent.class);
-		when(reflector.getContentType()).thenReturn("x/y");
+		Reflector<DummyComponent> reflector = newReflector(DummyComponent.class, "x/y");
 		
 		boolean actual = newWriter(reflector).isWriteable(DummyComponent.class, DummyComponent.class, new Annotation[0],
 			MediaType.valueOf("x/y"));
 		
 		assertThat(actual, is(true));
 	}
-	
+
 	@Test
 	public void isWriteableWithDifferentMediaTypeReturnsFalse()
 	{
-		Reflector<DummyComponent> reflector = mock(Reflector.class);
-		when(reflector.getComponentType()).thenReturn(DummyComponent.class);
-		when(reflector.getContentType()).thenReturn("x/y");
+		Reflector<DummyComponent> reflector = newReflector(DummyComponent.class, "x/y");
 		
 		boolean actual = newWriter(reflector).isWriteable(DummyComponent.class, DummyComponent.class, new Annotation[0],
 			MediaType.valueOf("x/z"));
@@ -82,9 +78,7 @@ public class SymmetryMessageBodyWriterTest
 	@Test
 	public void isWriteableWithDifferentTypeReturnsFalse()
 	{
-		Reflector<DummyComponent> reflector = mock(Reflector.class);
-		when(reflector.getComponentType()).thenReturn(DummyComponent.class);
-		when(reflector.getContentType()).thenReturn("x/y");
+		Reflector<DummyComponent> reflector = newReflector(DummyComponent.class, "x/y");
 		
 		boolean actual = newWriter(reflector).isWriteable(Void.class, Void.class, new Annotation[0],
 			MediaType.valueOf("x/y"));
@@ -110,9 +104,7 @@ public class SymmetryMessageBodyWriterTest
 		MultivaluedMap<String, Object> httpHeaders = new MultivaluedHashMap<>();
 		ByteArrayOutputStream entityStream = new ByteArrayOutputStream();
 		
-		Reflector<DummyComponent> reflector = mock(Reflector.class);
-		when(reflector.getComponentType()).thenReturn(DummyComponent.class);
-		when(reflector.getContentType()).thenReturn("x/y");
+		Reflector<DummyComponent> reflector = newReflector(DummyComponent.class, "x/y");
 		doAnswer(new Answer<Object>()
 		{
 			@Override
@@ -136,6 +128,14 @@ public class SymmetryMessageBodyWriterTest
 	// private methods
 	// ----------------------------------------------------------------------------------------------------------------
 
+	private static <T> Reflector<T> newReflector(Class<T> componentType, String contentType)
+	{
+		Reflector<T> reflector = mock(Reflector.class);
+		when(reflector.getComponentType()).thenReturn(componentType);
+		when(reflector.getContentType()).thenReturn(contentType);
+		return reflector;
+	}
+	
 	private static <T> SymmetryMessageBodyWriter<T> newWriter(Reflector<T> reflector)
 	{
 		return new SymmetryMessageBodyWriter<>(reflector);
