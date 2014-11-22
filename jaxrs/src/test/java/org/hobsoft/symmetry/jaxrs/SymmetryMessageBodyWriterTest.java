@@ -173,7 +173,7 @@ public class SymmetryMessageBodyWriterTest
 		thrown.expect(is(exception));
 		
 		newWriter(reflector).writeTo(new DummyComponent(), DummyComponent.class, DummyComponent.class, anyAnnotations(),
-			MediaType.valueOf("x/y"), anyHttpHeaders(), new ByteArrayOutputStream());
+			MediaType.valueOf("x/y"), anyHttpHeaders(), anyOutputStream());
 	}
 	
 	@Test
@@ -188,7 +188,7 @@ public class SymmetryMessageBodyWriterTest
 		thrown.expectCause(is(exception));
 		
 		newWriter(reflector).writeTo(new DummyComponent(), DummyComponent.class, DummyComponent.class, anyAnnotations(),
-			MediaType.valueOf("x/y"), anyHttpHeaders(), new ByteArrayOutputStream());
+			MediaType.valueOf("x/y"), anyHttpHeaders(), anyOutputStream());
 	}
 
 	// ----------------------------------------------------------------------------------------------------------------
@@ -247,6 +247,11 @@ public class SymmetryMessageBodyWriterTest
 		return new MultivaluedHashMap<>();
 	}
 
+	private static OutputStream anyOutputStream()
+	{
+		return new ByteArrayOutputStream();
+	}
+	
 	private static String toString(ByteArrayOutputStream entityStream) throws UnsupportedEncodingException
 	{
 		return entityStream.toString("UTF-8");
