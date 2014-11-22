@@ -76,7 +76,7 @@ public class SymmetryMessageBodyWriter<T> implements MessageBodyWriter<T>
 		}
 		catch (ReflectorException exception)
 		{
-			throw new InternalServerErrorException("Cannot write component", exception);
+			throw new InternalServerErrorException("Error writing component", exception);
 		}
 	}
 }

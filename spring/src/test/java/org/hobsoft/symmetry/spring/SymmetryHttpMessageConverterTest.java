@@ -198,7 +198,7 @@ public class SymmetryHttpMessageConverterTest
 		doThrow(exception).when(reflector).reflect(any(DummyComponent.class), any(OutputStream.class));
 		
 		thrown.expect(HttpMessageNotWritableException.class);
-		thrown.expectMessage("Cannot write component");
+		thrown.expectMessage("Error writing component");
 		thrown.expectCause(is(exception));
 		
 		newConverter(reflector).write(new DummyComponent(), parseMediaType("x/y"), new MockHttpOutputMessage());

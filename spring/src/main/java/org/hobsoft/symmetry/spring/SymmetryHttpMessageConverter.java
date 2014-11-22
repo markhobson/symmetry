@@ -84,7 +84,7 @@ public class SymmetryHttpMessageConverter<T> extends AbstractHttpMessageConverte
 		}
 		catch (ReflectorException exception)
 		{
-			throw new HttpMessageNotWritableException("Cannot write component", exception);
+			throw new HttpMessageNotWritableException("Error writing component", exception);
 		}
 	}
 }

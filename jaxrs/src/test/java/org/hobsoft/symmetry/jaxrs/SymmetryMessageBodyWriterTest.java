@@ -184,7 +184,7 @@ public class SymmetryMessageBodyWriterTest
 		doThrow(exception).when(reflector).reflect(any(DummyComponent.class), any(OutputStream.class));
 		
 		thrown.expect(InternalServerErrorException.class);
-		thrown.expectMessage("Cannot write component");
+		thrown.expectMessage("Error writing component");
 		thrown.expectCause(is(exception));
 		
 		newWriter(reflector).writeTo(new DummyComponent(), DummyComponent.class, DummyComponent.class,
