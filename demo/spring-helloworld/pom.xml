@@ -27,7 +27,7 @@
 		
 		<dependency>
 			<groupId>org.hobsoft.symmetry</groupId>
-			<artifactId>symmetry-html</artifactId>
+			<artifactId>symmetry-ui-html</artifactId>
 		</dependency>
 		
 		<dependency>

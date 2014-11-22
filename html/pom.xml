@@ -9,10 +9,10 @@
 	</parent>
 	
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>symmetry-html</artifactId>
+	<artifactId>symmetry-ui-html</artifactId>
 	<packaging>jar</packaging>
 	
-	<name>Symmetry HTML Reflector</name>
+	<name>Symmetry UI HTML Reflector</name>
 	
 	<dependencies>
 	
