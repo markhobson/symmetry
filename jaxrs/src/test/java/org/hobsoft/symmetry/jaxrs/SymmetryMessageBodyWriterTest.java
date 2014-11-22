@@ -155,7 +155,7 @@ public class SymmetryMessageBodyWriterTest
 	public void writeToWithComponentWritesHtml() throws ReflectorException, IOException
 	{
 		Reflector<DummyComponent> reflector = newReflector(DummyComponent.class, "x/y");
-		doWrite("z").when(reflector).reflect(any(DummyComponent.class), any(OutputStream.class));
+		doWrite(1, "z").when(reflector).reflect(any(DummyComponent.class), any(OutputStream.class));
 		ByteArrayOutputStream entityStream = new ByteArrayOutputStream();
 		
 		newWriter(reflector).writeTo(new DummyComponent(), DummyComponent.class, DummyComponent.class, anyAnnotations(),
@@ -204,15 +204,15 @@ public class SymmetryMessageBodyWriterTest
 		return reflector;
 	}
 	
-	private static Stubber doWrite(final String reflection)
+	private static Stubber doWrite(final int outputStreamIndex, final String string)
 	{
 		return doAnswer(new Answer<Object>()
 		{
 			@Override
 			public Object answer(InvocationOnMock invocation) throws IOException
 			{
-				OutputStream outputStream = invocation.getArgumentAt(1, OutputStream.class);
-				outputStream.write(reflection.getBytes(Charsets.UTF_8));
+				OutputStream outputStream = invocation.getArgumentAt(outputStreamIndex, OutputStream.class);
+				outputStream.write(string.getBytes(Charsets.UTF_8));
 				return null;
 			}
 		});
