@@ -19,7 +19,7 @@ import org.hobsoft.symmetry.ui.html.HtmlComponentVisitor;
 import org.hobsoft.symmetry.ui.html.XmlReflector;
 
 /**
- * Spring HTTP message converter to reflect Symmetry UI components into HTML.
+ * Spring HTTP message converter that reflects Symmetry UI components into HTML.
  */
 public class HtmlComponentHttpMessageConverter extends SymmetryHttpMessageConverter<Component>
 {
