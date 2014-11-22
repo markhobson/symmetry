@@ -13,6 +13,7 @@
  */
 package org.hobsoft.symmetry.ui.html;
 
+import java.io.IOException;
 import java.io.OutputStream;
 
 import javax.xml.stream.XMLOutputFactory;
@@ -64,7 +65,7 @@ public class XmlReflector implements Reflector<Component>
 	}
 	
 	@Override
-	public void reflect(Component component, OutputStream outputStream) throws ReflectorException
+	public void reflect(Component component, OutputStream outputStream) throws IOException, ReflectorException
 	{
 		XMLOutputFactory factory = XMLOutputFactory.newFactory();
 		

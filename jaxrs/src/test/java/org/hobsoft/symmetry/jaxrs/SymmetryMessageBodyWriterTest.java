@@ -166,7 +166,20 @@ public class SymmetryMessageBodyWriterTest
 	}
 	
 	@Test
-	public void writeToWhenExceptionThrowsException() throws ReflectorException, IOException
+	public void writeToWhenIOExceptionThrowsException() throws ReflectorException, IOException
+	{
+		Reflector<DummyComponent> reflector = newReflector(DummyComponent.class, "x/y");
+		IOException exception = new IOException();
+		doThrow(exception).when(reflector).reflect(any(DummyComponent.class), any(OutputStream.class));
+		
+		thrown.expect(is(exception));
+		
+		newWriter(reflector).writeTo(new DummyComponent(), DummyComponent.class, DummyComponent.class, anyAnnotations(),
+			MediaType.valueOf("x/y"), anyHttpHeaders(), new ByteArrayOutputStream());
+	}
+	
+	@Test
+	public void writeToWhenReflectorExceptionThrowsJaxrsException() throws ReflectorException, IOException
 	{
 		Reflector<DummyComponent> reflector = newReflector(DummyComponent.class, "x/y");
 		ReflectorException exception = new ReflectorException("z");

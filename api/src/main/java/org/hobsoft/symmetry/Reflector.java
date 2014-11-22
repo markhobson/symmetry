@@ -13,6 +13,7 @@
  */
 package org.hobsoft.symmetry;
 
+import java.io.IOException;
 import java.io.OutputStream;
 
 /**
@@ -31,5 +32,5 @@ public interface Reflector<T>
 	
 	String getContentType();
 	
-	void reflect(T component, OutputStream outputStream) throws ReflectorException;
+	void reflect(T component, OutputStream outputStream) throws IOException, ReflectorException;
 }

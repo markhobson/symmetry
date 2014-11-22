@@ -181,7 +181,19 @@ public class SymmetryHttpMessageConverterTest
 	}
 	
 	@Test
-	public void writeWhenExceptionThrowsException() throws ReflectorException, IOException
+	public void writeWhenIOExceptionThrowsException() throws ReflectorException, IOException
+	{
+		Reflector<DummyComponent> reflector = newReflector(DummyComponent.class, "x/y");
+		IOException exception = new IOException();
+		doThrow(exception).when(reflector).reflect(any(DummyComponent.class), any(OutputStream.class));
+		
+		thrown.expect(is(exception));
+		
+		newConverter(reflector).write(new DummyComponent(), parseMediaType("x/y"), new MockHttpOutputMessage());
+	}
+	
+	@Test
+	public void writeWhenReflectorExceptionThrowsSpringException() throws ReflectorException, IOException
 	{
 		Reflector<DummyComponent> reflector = newReflector(DummyComponent.class, "x/y");
 		ReflectorException exception = new ReflectorException("z");

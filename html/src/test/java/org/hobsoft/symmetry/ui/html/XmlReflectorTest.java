@@ -106,7 +106,7 @@ public class XmlReflectorTest
 	}
 	
 	@Test
-	public void reflectWhenExceptionThrowsException() throws XMLStreamException, ReflectorException
+	public void reflectWhenExceptionThrowsException() throws XMLStreamException, ReflectorException, IOException
 	{
 		XMLStreamException exception = new XMLStreamException();
 		doThrow(exception).when(visitor).visit(any(Window.class), any(XMLStreamWriter.class));
