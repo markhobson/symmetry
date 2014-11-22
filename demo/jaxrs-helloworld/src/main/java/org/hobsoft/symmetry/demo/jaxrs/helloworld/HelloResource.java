@@ -11,30 +11,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.hobsoft.symmetry.demo.jaxrshelloworld;
+package org.hobsoft.symmetry.demo.jaxrs.helloworld;
 
-import java.util.HashSet;
-import java.util.Set;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
 
-import javax.ws.rs.ApplicationPath;
-import javax.ws.rs.core.Application;
+import org.hobsoft.symmetry.ui.Window;
 
 /**
- * JAX-RS application for this demo.
+ * JAX-RS resource to say hello world.
  */
-@ApplicationPath("/")
-public class DemoApplication extends Application
+@Path("/")
+public class HelloResource
 {
 	// ----------------------------------------------------------------------------------------------------------------
-	// Application methods
+	// public methods
 	// ----------------------------------------------------------------------------------------------------------------
 
-	@Override
-	public Set<Class<?>> getClasses()
+	@GET
+	public Window get()
 	{
-		Set<Class<?>> classes = new HashSet<>();
-		classes.add(HelloResource.class);
-		classes.add(HtmlComponentMessageBodyWriter.class);
-		return classes;
+		return new Window();
 	}
 }

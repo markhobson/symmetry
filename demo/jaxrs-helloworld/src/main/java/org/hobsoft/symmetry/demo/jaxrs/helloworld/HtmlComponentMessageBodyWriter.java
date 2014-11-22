@@ -11,7 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.hobsoft.symmetry.demo.jaxrshelloworld;
+package org.hobsoft.symmetry.demo.jaxrs.helloworld;
 
 import javax.ws.rs.ext.Provider;
 
