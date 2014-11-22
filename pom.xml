@@ -215,10 +215,10 @@
 	<modules>
 		<module>api</module>
 		<module>demo</module>
-		<module>html</module>
 		<module>jaxrs</module>
 		<module>spring</module>
 		<module>ui</module>
+		<module>ui-html</module>
 	</modules>
 	
 </project>
