@@ -11,31 +11,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.hobsoft.symmetry.demo.springhelloworld;
+package org.hobsoft.symmetry.demo.spring.helloworld;
 
-import java.util.List;
-
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.http.converter.HttpMessageConverter;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
+import org.hobsoft.symmetry.spring.SymmetryHttpMessageConverter;
+import org.hobsoft.symmetry.ui.Component;
+import org.hobsoft.symmetry.ui.html.HtmlComponentReflector;
 
 /**
- * Spring MVC configuration for this demo.
+ * Spring HTTP message converter that reflects Symmetry UI components into HTML.
  */
-@Configuration
-@ComponentScan
-public class DemoMvcConfig extends WebMvcConfigurationSupport
+public class HtmlComponentHttpMessageConverter extends SymmetryHttpMessageConverter<Component>
 {
 	// ----------------------------------------------------------------------------------------------------------------
-	// WebMvcConfigurationSupport methods
+	// constructors
 	// ----------------------------------------------------------------------------------------------------------------
 
-	@Override
-	protected void configureMessageConverters(List<HttpMessageConverter<?>> converters)
+	public HtmlComponentHttpMessageConverter()
 	{
-		addDefaultHttpMessageConverters(converters);
-		
-		converters.add(new HtmlComponentHttpMessageConverter());
+		super(new HtmlComponentReflector());
 	}
 }

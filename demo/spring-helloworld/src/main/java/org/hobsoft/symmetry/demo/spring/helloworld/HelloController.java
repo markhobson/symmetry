@@ -11,23 +11,29 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.hobsoft.symmetry.demo.springhelloworld;
+package org.hobsoft.symmetry.demo.spring.helloworld;
 
-import org.hobsoft.symmetry.spring.SymmetryHttpMessageConverter;
 import org.hobsoft.symmetry.ui.Component;
-import org.hobsoft.symmetry.ui.html.HtmlComponentReflector;
+import org.hobsoft.symmetry.ui.Window;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
- * Spring HTTP message converter that reflects Symmetry UI components into HTML.
+ * Spring MVC controller to say hello world.
  */
-public class HtmlComponentHttpMessageConverter extends SymmetryHttpMessageConverter<Component>
+@Controller
+public class HelloController
 {
 	// ----------------------------------------------------------------------------------------------------------------
-	// constructors
+	// public methods
 	// ----------------------------------------------------------------------------------------------------------------
 
-	public HtmlComponentHttpMessageConverter()
+	@RequestMapping(method = RequestMethod.GET, value = "/")
+	@ResponseBody
+	public Component get()
 	{
-		super(new HtmlComponentReflector());
+		return new Window();
 	}
 }

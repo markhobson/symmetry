@@ -11,29 +11,31 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.hobsoft.symmetry.demo.springhelloworld;
+package org.hobsoft.symmetry.demo.spring.helloworld;
 
-import org.hobsoft.symmetry.ui.Component;
-import org.hobsoft.symmetry.ui.Window;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import java.util.List;
+
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.http.converter.HttpMessageConverter;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 
 /**
- * Spring MVC controller to say hello world.
+ * Spring MVC configuration for this demo.
  */
-@Controller
-public class HelloController
+@Configuration
+@ComponentScan
+public class DemoMvcConfig extends WebMvcConfigurationSupport
 {
 	// ----------------------------------------------------------------------------------------------------------------
-	// public methods
+	// WebMvcConfigurationSupport methods
 	// ----------------------------------------------------------------------------------------------------------------
 
-	@RequestMapping(method = RequestMethod.GET, value = "/")
-	@ResponseBody
-	public Component get()
+	@Override
+	protected void configureMessageConverters(List<HttpMessageConverter<?>> converters)
 	{
-		return new Window();
+		addDefaultHttpMessageConverters(converters);
+		
+		converters.add(new HtmlComponentHttpMessageConverter());
 	}
 }
