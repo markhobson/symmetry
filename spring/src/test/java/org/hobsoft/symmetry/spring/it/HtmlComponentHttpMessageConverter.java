@@ -13,29 +13,22 @@
  */
 package org.hobsoft.symmetry.spring.it;
 
-import java.util.List;
-
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.http.converter.HttpMessageConverter;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
+import org.hobsoft.symmetry.spring.SymmetryHttpMessageConverter;
+import org.hobsoft.symmetry.ui.Component;
+import org.hobsoft.symmetry.ui.html.HtmlComponentVisitor;
+import org.hobsoft.symmetry.ui.html.XmlReflector;
 
 /**
- * Spring MVC configuration for integration tests.
+ * Spring HTTP message converter that reflects Symmetry UI components into HTML.
  */
-@Configuration
-@ComponentScan
-public class SpringConfig extends WebMvcConfigurationSupport
+public class HtmlComponentHttpMessageConverter extends SymmetryHttpMessageConverter<Component>
 {
 	// ----------------------------------------------------------------------------------------------------------------
-	// WebMvcConfigurationSupport methods
+	// constructors
 	// ----------------------------------------------------------------------------------------------------------------
 
-	@Override
-	protected void configureMessageConverters(List<HttpMessageConverter<?>> converters)
+	public HtmlComponentHttpMessageConverter()
 	{
-		addDefaultHttpMessageConverters(converters);
-		
-		converters.add(new HtmlComponentHttpMessageConverter());
+		super(new XmlReflector(new HtmlComponentVisitor(), "text/html"));
 	}
 }
