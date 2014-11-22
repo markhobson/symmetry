@@ -59,6 +59,11 @@ public class SymmetryMessageBodyWriterTest
 		// dummy type
 	}
 	
+	private static class DummySubcomponent extends DummyComponent
+	{
+		// dummy type
+	}
+	
 	// ----------------------------------------------------------------------------------------------------------------
 	// fields
 	// ----------------------------------------------------------------------------------------------------------------
@@ -86,6 +91,17 @@ public class SymmetryMessageBodyWriterTest
 		
 		boolean actual = newWriter(reflector).isWriteable(DummyComponent.class, DummyComponent.class, new Annotation[0],
 			MediaType.valueOf("x/y"));
+		
+		assertThat(actual, is(true));
+	}
+	
+	@Test
+	public void isWriteableWithSubcomponentAndContentTypeReturnsTrue()
+	{
+		Reflector<DummyComponent> reflector = newReflector(DummyComponent.class, "x/y");
+		
+		boolean actual = newWriter(reflector).isWriteable(DummySubcomponent.class, DummySubcomponent.class,
+			new Annotation[0], MediaType.valueOf("x/y"));
 		
 		assertThat(actual, is(true));
 	}
