@@ -30,7 +30,6 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
-import org.mockito.stubbing.Stubber;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
@@ -95,8 +94,8 @@ public class XmlReflectorTest
 	@Test
 	public void reflectWithWindowWritesXml() throws XMLStreamException, ReflectorException, IOException
 	{
-		doStartElement("x").when(visitor).visit(any(Window.class), any(XMLStreamWriter.class));
-		doEndElement().when(visitor).endVisit(any(Window.class), any(XMLStreamWriter.class));
+		doAnswer(startElement("x")).when(visitor).visit(any(Window.class), any(XMLStreamWriter.class));
+		doAnswer(endElement()).when(visitor).endVisit(any(Window.class), any(XMLStreamWriter.class));
 		XmlReflector reflector = new XmlReflector(visitor, someContentType());
 		ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
 		
@@ -128,9 +127,9 @@ public class XmlReflectorTest
 		return "_/_";
 	}
 	
-	private static Stubber doStartElement(final String localName)
+	private static Answer<Object> startElement(final String localName)
 	{
-		return doAnswer(new Answer<Object>()
+		return new Answer<Object>()
 		{
 			@Override
 			public Object answer(InvocationOnMock invocation) throws XMLStreamException
@@ -139,12 +138,12 @@ public class XmlReflectorTest
 				writer.writeStartElement(localName);
 				return null;
 			}
-		});
+		};
 	}
 	
-	private static Stubber doEndElement()
+	private static Answer<Object> endElement()
 	{
-		return doAnswer(new Answer<Object>()
+		return new Answer<Object>()
 		{
 			@Override
 			public Object answer(InvocationOnMock invocation) throws XMLStreamException
@@ -153,6 +152,6 @@ public class XmlReflectorTest
 				writer.writeEndElement();
 				return null;
 			}
-		});
+		};
 	}
 }
