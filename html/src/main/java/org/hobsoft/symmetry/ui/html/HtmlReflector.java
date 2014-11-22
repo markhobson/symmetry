@@ -16,7 +16,7 @@ package org.hobsoft.symmetry.ui.html;
 /**
  * HTML reflector for Symmetry UI components.
  */
-public class HtmlReflector extends XmlReflector
+public class HtmlReflector extends XmlComponentReflector
 {
 	// ----------------------------------------------------------------------------------------------------------------
 	// constructors

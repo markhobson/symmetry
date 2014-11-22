@@ -39,9 +39,9 @@ import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.mock;
 
 /**
- * Tests {@code XmlReflector}.
+ * Tests {@code XmlComponentReflector}.
  */
-public class XmlReflectorTest
+public class XmlComponentReflectorTest
 {
 	// ----------------------------------------------------------------------------------------------------------------
 	// fields
@@ -74,7 +74,7 @@ public class XmlReflectorTest
 	@Test
 	public void getComponentTypeReturnsComponent()
 	{
-		XmlReflector reflector = new XmlReflector(mock(ComponentVisitor.class), someContentType());
+		XmlComponentReflector reflector = new XmlComponentReflector(mock(ComponentVisitor.class), someContentType());
 		
 		Class<?> actual = reflector.getComponentType();
 		
@@ -84,7 +84,7 @@ public class XmlReflectorTest
 	@Test
 	public void getContentTypeReturnsContentType()
 	{
-		XmlReflector reflector = new XmlReflector(mock(ComponentVisitor.class), "x/y");
+		XmlComponentReflector reflector = new XmlComponentReflector(mock(ComponentVisitor.class), "x/y");
 		
 		String actual = reflector.getContentType();
 		
@@ -96,7 +96,7 @@ public class XmlReflectorTest
 	{
 		doAnswer(writeStartElement(1, "x")).when(visitor).visit(any(Window.class), any(XMLStreamWriter.class));
 		doAnswer(writeEndElement(1)).when(visitor).endVisit(any(Window.class), any(XMLStreamWriter.class));
-		XmlReflector reflector = new XmlReflector(visitor, someContentType());
+		XmlComponentReflector reflector = new XmlComponentReflector(visitor, someContentType());
 		ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
 		
 		reflector.reflect(new Window(), outputStream);
@@ -109,7 +109,7 @@ public class XmlReflectorTest
 	{
 		XMLStreamException exception = new XMLStreamException();
 		doThrow(exception).when(visitor).visit(any(Window.class), any(XMLStreamWriter.class));
-		XmlReflector reflector = new XmlReflector(visitor, someContentType());
+		XmlComponentReflector reflector = new XmlComponentReflector(visitor, someContentType());
 		
 		thrown.expect(ReflectorException.class);
 		thrown.expectMessage("Error reflecting component");
@@ -121,7 +121,7 @@ public class XmlReflectorTest
 	@Test
 	public void getComponentVisitorReturnsVisitor()
 	{
-		XmlReflector reflector = new XmlReflector(visitor, someContentType());
+		XmlComponentReflector reflector = new XmlComponentReflector(visitor, someContentType());
 		
 		ComponentVisitor<XMLStreamWriter, XMLStreamException> actual = reflector.getComponentVisitor();
 		
