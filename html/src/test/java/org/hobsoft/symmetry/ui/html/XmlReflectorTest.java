@@ -118,6 +118,16 @@ public class XmlReflectorTest
 		reflector.reflect(new Window(), mock(OutputStream.class));
 	}
 	
+	@Test
+	public void getComponentVisitorReturnsVisitor()
+	{
+		XmlReflector reflector = new XmlReflector(visitor, someContentType());
+		
+		ComponentVisitor<XMLStreamWriter, XMLStreamException> actual = reflector.getComponentVisitor();
+		
+		assertThat(actual, is(visitor));
+	}
+	
 	// ----------------------------------------------------------------------------------------------------------------
 	// private methods
 	// ----------------------------------------------------------------------------------------------------------------

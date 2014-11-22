@@ -79,4 +79,13 @@ public class XmlReflector implements Reflector<Component>
 			throw new ReflectorException("Error reflecting component", exception);
 		}
 	}
+	
+	// ----------------------------------------------------------------------------------------------------------------
+	// public methods
+	// ----------------------------------------------------------------------------------------------------------------
+
+	public ComponentVisitor<XMLStreamWriter, XMLStreamException> getComponentVisitor()
+	{
+		return visitor;
+	}
 }
