@@ -20,7 +20,7 @@ import java.io.OutputStream;
  * Defines an API to serialise UI components.
  * 
  * @param <T>
- *            the component type
+ *            the base component type
  */
 public interface Reflector<T>
 {

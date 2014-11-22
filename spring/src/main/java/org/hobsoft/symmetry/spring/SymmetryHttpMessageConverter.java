@@ -28,7 +28,7 @@ import org.springframework.http.converter.HttpMessageNotWritableException;
  * Spring HTTP message converter for UI components.
  * 
  * @param <T>
- *            the component type
+ *            the base component type
  */
 public class SymmetryHttpMessageConverter<T> extends AbstractHttpMessageConverter<T>
 {

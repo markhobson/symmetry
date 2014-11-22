@@ -26,7 +26,7 @@ import org.hobsoft.symmetry.ui.Component;
 import org.hobsoft.symmetry.ui.ComponentVisitor;
 
 /**
- * XML reflector for UI components.
+ * XML reflector for Symmetry UI components.
  */
 public class XmlReflector implements Reflector<Component>
 {

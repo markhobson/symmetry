@@ -14,7 +14,7 @@
 package org.hobsoft.symmetry.ui;
 
 /**
- * Defines a visitor API for UI components.
+ * Defines a visitor API for Symmetry UI components.
  * 
  * @param <P>
  *            the type of parameter required by this visitor

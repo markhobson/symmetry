@@ -30,7 +30,7 @@ import org.hobsoft.symmetry.ReflectorException;
  * JAX-RS message body writer for UI components.
  * 
  * @param <T>
- *            the component type
+ *            the base component type
  */
 public class SymmetryMessageBodyWriter<T> implements MessageBodyWriter<T>
 {

@@ -14,7 +14,7 @@
 package org.hobsoft.symmetry.ui;
 
 /**
- * UI component that represents a window.
+ * Symmetry UI component that represents a window.
  */
 public class Window implements Component
 {

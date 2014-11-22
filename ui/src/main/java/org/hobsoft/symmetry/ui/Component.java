@@ -14,7 +14,7 @@
 package org.hobsoft.symmetry.ui;
 
 /**
- * Defines a UI component.
+ * Defines a Symmetry UI component.
  */
 public interface Component
 {
@@ -22,5 +22,19 @@ public interface Component
 	// public methods
 	// ----------------------------------------------------------------------------------------------------------------
 
+	/**
+	 * Accepts the specified visitor on this component.
+	 * 
+	 * @param visitor
+	 *            the visitor to accept
+	 * @param parameter
+	 *            the parameter to supply to the visitor
+	 * @throws E
+	 *             if an error occurs visiting this component
+	 * @param <P>
+	 *            the type of parameter required by the visitor
+	 * @param <E>
+	 *            the type of exception thrown by the visitor
+	 */
 	<P, E extends Exception> void accept(ComponentVisitor<P, E> visitor, P parameter) throws E;
 }

@@ -21,7 +21,7 @@ import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 
 /**
- * Spring IoC configuration for MVC controllers.
+ * Spring MVC configuration for this demo.
  */
 @Configuration
 @ComponentScan
