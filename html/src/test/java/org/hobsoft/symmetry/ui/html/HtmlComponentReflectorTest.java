@@ -20,9 +20,9 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
 /**
- * Tests {@code HtmlReflector}.
+ * Tests {@code HtmlComponentReflector}.
  */
-public class HtmlReflectorTest
+public class HtmlComponentReflectorTest
 {
 	// ----------------------------------------------------------------------------------------------------------------
 	// tests
@@ -31,7 +31,7 @@ public class HtmlReflectorTest
 	@Test
 	public void constructorSetsComponentVisitor()
 	{
-		HtmlReflector reflector = new HtmlReflector();
+		HtmlComponentReflector reflector = new HtmlComponentReflector();
 		
 		assertThat(reflector.getComponentVisitor(), is(instanceOf(HtmlComponentVisitor.class)));
 	}
@@ -39,7 +39,7 @@ public class HtmlReflectorTest
 	@Test
 	public void constructorSetsContentType()
 	{
-		HtmlReflector reflector = new HtmlReflector();
+		HtmlComponentReflector reflector = new HtmlComponentReflector();
 		
 		assertThat(reflector.getContentType(), is("text/html"));
 	}

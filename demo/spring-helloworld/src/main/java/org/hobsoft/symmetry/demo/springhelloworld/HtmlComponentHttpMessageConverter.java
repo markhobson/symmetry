@@ -15,7 +15,7 @@ package org.hobsoft.symmetry.demo.springhelloworld;
 
 import org.hobsoft.symmetry.spring.SymmetryHttpMessageConverter;
 import org.hobsoft.symmetry.ui.Component;
-import org.hobsoft.symmetry.ui.html.HtmlReflector;
+import org.hobsoft.symmetry.ui.html.HtmlComponentReflector;
 
 /**
  * Spring HTTP message converter that reflects Symmetry UI components into HTML.
@@ -28,6 +28,6 @@ public class HtmlComponentHttpMessageConverter extends SymmetryHttpMessageConver
 
 	public HtmlComponentHttpMessageConverter()
 	{
-		super(new HtmlReflector());
+		super(new HtmlComponentReflector());
 	}
 }

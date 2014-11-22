@@ -16,13 +16,13 @@ package org.hobsoft.symmetry.ui.html;
 /**
  * HTML reflector for Symmetry UI components.
  */
-public class HtmlReflector extends XmlComponentReflector
+public class HtmlComponentReflector extends XmlComponentReflector
 {
 	// ----------------------------------------------------------------------------------------------------------------
 	// constructors
 	// ----------------------------------------------------------------------------------------------------------------
 
-	public HtmlReflector()
+	public HtmlComponentReflector()
 	{
 		super(new HtmlComponentVisitor(), "text/html");
 	}

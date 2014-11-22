@@ -17,7 +17,7 @@ import javax.ws.rs.ext.Provider;
 
 import org.hobsoft.symmetry.jaxrs.SymmetryMessageBodyWriter;
 import org.hobsoft.symmetry.ui.Component;
-import org.hobsoft.symmetry.ui.html.HtmlReflector;
+import org.hobsoft.symmetry.ui.html.HtmlComponentReflector;
 
 /**
  * JAX-RS message body writer that reflects Symmetry UI components into HTML.
@@ -31,6 +31,6 @@ public class HtmlComponentMessageBodyWriter extends SymmetryMessageBodyWriter<Co
 
 	public HtmlComponentMessageBodyWriter()
 	{
-		super(new HtmlReflector());
+		super(new HtmlComponentReflector());
 	}
 }
