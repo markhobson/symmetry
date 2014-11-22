@@ -94,8 +94,8 @@ public class XmlReflectorTest
 	@Test
 	public void reflectWithWindowWritesXml() throws XMLStreamException, ReflectorException, IOException
 	{
-		doAnswer(startElement(1, "x")).when(visitor).visit(any(Window.class), any(XMLStreamWriter.class));
-		doAnswer(endElement(1)).when(visitor).endVisit(any(Window.class), any(XMLStreamWriter.class));
+		doAnswer(writeStartElement(1, "x")).when(visitor).visit(any(Window.class), any(XMLStreamWriter.class));
+		doAnswer(writeEndElement(1)).when(visitor).endVisit(any(Window.class), any(XMLStreamWriter.class));
 		XmlReflector reflector = new XmlReflector(visitor, someContentType());
 		ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
 		
@@ -127,7 +127,7 @@ public class XmlReflectorTest
 		return "_/_";
 	}
 	
-	private static Answer<Object> startElement(final int writerIndex, final String localName)
+	private static Answer<Object> writeStartElement(final int writerIndex, final String localName)
 	{
 		return new Answer<Object>()
 		{
@@ -141,7 +141,7 @@ public class XmlReflectorTest
 		};
 	}
 	
-	private static Answer<Object> endElement(final int writerIndex)
+	private static Answer<Object> writeEndElement(final int writerIndex)
 	{
 		return new Answer<Object>()
 		{
