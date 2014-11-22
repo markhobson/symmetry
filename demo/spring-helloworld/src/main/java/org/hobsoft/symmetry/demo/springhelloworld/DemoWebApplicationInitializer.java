@@ -33,7 +33,7 @@ public class DemoWebApplicationInitializer extends AbstractAnnotationConfigDispa
 	@Override
 	protected Class<?>[] getServletConfigClasses()
 	{
-		return new Class<?>[] {ControllerConfig.class};
+		return new Class<?>[] {DemoMvcConfig.class};
 	}
 	
 	// ----------------------------------------------------------------------------------------------------------------

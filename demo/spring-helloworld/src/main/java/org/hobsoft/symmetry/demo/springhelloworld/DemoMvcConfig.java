@@ -25,7 +25,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupp
  */
 @Configuration
 @ComponentScan
-public class ControllerConfig extends WebMvcConfigurationSupport
+public class DemoMvcConfig extends WebMvcConfigurationSupport
 {
 	// ----------------------------------------------------------------------------------------------------------------
 	// WebMvcConfigurationSupport methods
