@@ -13,6 +13,27 @@
 	<packaging>pom</packaging>
 	
 	<name>Symmetry Demo Parent</name>
+	
+	<build>
+	
+		<pluginManagement>
+		
+			<plugins>
+			
+				<!-- Servlet 3 does not require web.xml -->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-war-plugin</artifactId>
+					<configuration>
+						<failOnMissingWebXml>false</failOnMissingWebXml>
+					</configuration>
+				</plugin>
+			
+			</plugins>
+		
+		</pluginManagement>
+	
+	</build>
 
 	<modules>
 		<module>jaxrs-helloworld</module>
