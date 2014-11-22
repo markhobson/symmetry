@@ -75,7 +75,7 @@ public class XmlReflectorTest
 	@Test
 	public void getComponentTypeReturnsComponent()
 	{
-		XmlReflector reflector = new XmlReflector(mock(ComponentVisitor.class), anyContentType());
+		XmlReflector reflector = new XmlReflector(mock(ComponentVisitor.class), someContentType());
 		
 		Class<?> actual = reflector.getComponentType();
 		
@@ -97,7 +97,7 @@ public class XmlReflectorTest
 	{
 		doStartElement("x").when(visitor).visit(any(Window.class), any(XMLStreamWriter.class));
 		doEndElement().when(visitor).endVisit(any(Window.class), any(XMLStreamWriter.class));
-		XmlReflector reflector = new XmlReflector(visitor, anyContentType());
+		XmlReflector reflector = new XmlReflector(visitor, someContentType());
 		ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
 		
 		reflector.reflect(new Window(), outputStream);
@@ -110,7 +110,7 @@ public class XmlReflectorTest
 	{
 		XMLStreamException exception = new XMLStreamException();
 		doThrow(exception).when(visitor).visit(any(Window.class), any(XMLStreamWriter.class));
-		XmlReflector reflector = new XmlReflector(visitor, anyContentType());
+		XmlReflector reflector = new XmlReflector(visitor, someContentType());
 		
 		thrown.expect(ReflectorException.class);
 		thrown.expectMessage("Error reflecting component");
@@ -123,7 +123,7 @@ public class XmlReflectorTest
 	// private methods
 	// ----------------------------------------------------------------------------------------------------------------
 
-	private static String anyContentType()
+	private static String someContentType()
 	{
 		return "_/_";
 	}

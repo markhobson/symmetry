@@ -135,7 +135,7 @@ public class SymmetryHttpMessageConverterTest
 	@Test
 	public void getSupportedMediaTypesReturnsContentType()
 	{
-		Reflector<?> reflector = newReflector(anyComponentType(), "x/y");
+		Reflector<?> reflector = newReflector(someComponentType(), "x/y");
 		
 		List<MediaType> actuals = newConverter(reflector).getSupportedMediaTypes();
 		
@@ -145,7 +145,7 @@ public class SymmetryHttpMessageConverterTest
 	@Test
 	public void readWithComponentThrowsException() throws IOException
 	{
-		Reflector<DummyComponent> reflector = newReflector(DummyComponent.class, anyContentType());
+		Reflector<DummyComponent> reflector = newReflector(DummyComponent.class, someContentType());
 		MockHttpInputMessage inputMessage = new MockHttpInputMessage(new byte[0]);
 		
 		thrown.expect(HttpMessageNotReadableException.class);
@@ -235,12 +235,12 @@ public class SymmetryHttpMessageConverterTest
 		};
 	}
 	
-	private static Class<?> anyComponentType()
+	private static Class<?> someComponentType()
 	{
 		return Object.class;
 	}
 	
-	private static String anyContentType()
+	private static String someContentType()
 	{
 		return "_/_";
 	}
