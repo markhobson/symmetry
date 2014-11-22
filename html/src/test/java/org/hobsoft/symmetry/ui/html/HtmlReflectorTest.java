@@ -11,26 +11,36 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.hobsoft.symmetry.demo.jaxrshelloworld;
+package org.hobsoft.symmetry.ui.html;
 
-import javax.ws.rs.ext.Provider;
+import org.junit.Test;
 
-import org.hobsoft.symmetry.jaxrs.SymmetryMessageBodyWriter;
-import org.hobsoft.symmetry.ui.Component;
-import org.hobsoft.symmetry.ui.html.HtmlReflector;
+import static org.hamcrest.CoreMatchers.instanceOf;
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
 
 /**
- * JAX-RS message body writer that reflects Symmetry UI components into HTML.
+ * Tests {@code HtmlReflector}.
  */
-@Provider
-public class HtmlComponentMessageBodyWriter extends SymmetryMessageBodyWriter<Component>
+public class HtmlReflectorTest
 {
 	// ----------------------------------------------------------------------------------------------------------------
-	// constructors
+	// tests
 	// ----------------------------------------------------------------------------------------------------------------
 
-	public HtmlComponentMessageBodyWriter()
+	@Test
+	public void constructorSetsComponentVisitor()
 	{
-		super(new HtmlReflector());
+		HtmlReflector reflector = new HtmlReflector();
+		
+		assertThat(reflector.getComponentVisitor(), is(instanceOf(HtmlComponentVisitor.class)));
+	}
+	
+	@Test
+	public void constructorSetsContentType()
+	{
+		HtmlReflector reflector = new HtmlReflector();
+		
+		assertThat(reflector.getContentType(), is("text/html"));
 	}
 }

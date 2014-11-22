@@ -11,26 +11,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.hobsoft.symmetry.demo.jaxrshelloworld;
-
-import javax.ws.rs.ext.Provider;
-
-import org.hobsoft.symmetry.jaxrs.SymmetryMessageBodyWriter;
-import org.hobsoft.symmetry.ui.Component;
-import org.hobsoft.symmetry.ui.html.HtmlReflector;
+package org.hobsoft.symmetry.ui.html;
 
 /**
- * JAX-RS message body writer that reflects Symmetry UI components into HTML.
+ * HTML reflector for Symmetry UI components.
  */
-@Provider
-public class HtmlComponentMessageBodyWriter extends SymmetryMessageBodyWriter<Component>
+public class HtmlReflector extends XmlReflector
 {
 	// ----------------------------------------------------------------------------------------------------------------
 	// constructors
 	// ----------------------------------------------------------------------------------------------------------------
 
-	public HtmlComponentMessageBodyWriter()
+	public HtmlReflector()
 	{
-		super(new HtmlReflector());
+		super(new HtmlComponentVisitor(), "text/html");
 	}
 }
