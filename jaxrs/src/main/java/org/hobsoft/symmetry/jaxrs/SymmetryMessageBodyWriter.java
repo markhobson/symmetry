@@ -18,6 +18,7 @@ import java.io.OutputStream;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Type;
 
+import javax.ws.rs.InternalServerErrorException;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.MultivaluedMap;
 import javax.ws.rs.ext.MessageBodyWriter;
@@ -75,8 +76,7 @@ public class SymmetryMessageBodyWriter<T> implements MessageBodyWriter<T>
 		}
 		catch (ReflectorException exception)
 		{
-			// TODO: handle
-			throw new AssertionError();
+			throw new InternalServerErrorException("Cannot write component", exception);
 		}
 	}
 }

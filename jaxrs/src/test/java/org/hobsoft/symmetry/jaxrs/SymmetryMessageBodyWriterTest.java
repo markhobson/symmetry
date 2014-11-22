@@ -20,13 +20,16 @@ import java.io.OutputStreamWriter;
 import java.io.UnsupportedEncodingException;
 import java.lang.annotation.Annotation;
 
+import javax.ws.rs.InternalServerErrorException;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.MultivaluedHashMap;
 import javax.ws.rs.core.MultivaluedMap;
 
 import org.hobsoft.symmetry.Reflector;
 import org.hobsoft.symmetry.ReflectorException;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
 import org.mockito.stubbing.Stubber;
@@ -35,8 +38,9 @@ import com.google.common.base.Charsets;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
-import static org.mockito.Mockito.any;
+import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.doAnswer;
+import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -53,6 +57,22 @@ public class SymmetryMessageBodyWriterTest
 	private static class DummyComponent
 	{
 		// dummy type
+	}
+	
+	// ----------------------------------------------------------------------------------------------------------------
+	// fields
+	// ----------------------------------------------------------------------------------------------------------------
+
+	private ExpectedException thrown = ExpectedException.none();
+	
+	// ----------------------------------------------------------------------------------------------------------------
+	// public methods
+	// ----------------------------------------------------------------------------------------------------------------
+
+	@Rule
+	public ExpectedException getThrown()
+	{
+		return thrown;
 	}
 
 	// ----------------------------------------------------------------------------------------------------------------
@@ -127,6 +147,21 @@ public class SymmetryMessageBodyWriterTest
 			new Annotation[0], MediaType.valueOf("x/y"), anyHttpHeaders(), entityStream);
 		
 		assertThat(toString(entityStream), is("z"));
+	}
+	
+	@Test
+	public void writeToWhenExceptionThrowsException() throws ReflectorException, IOException
+	{
+		Reflector<Object> reflector = mock(Reflector.class);
+		ReflectorException exception = new ReflectorException("x");
+		doThrow(exception).when(reflector).reflect(any(Object.class), any(OutputStream.class));
+		
+		thrown.expect(InternalServerErrorException.class);
+		thrown.expectMessage("Cannot write component");
+		thrown.expectCause(is(exception));
+		
+		newWriter(reflector).writeTo(anyComponent(), anyComponentType(), anyComponentType(), new Annotation[0],
+			anyMediaType(), anyHttpHeaders(), new ByteArrayOutputStream());
 	}
 
 	// ----------------------------------------------------------------------------------------------------------------
