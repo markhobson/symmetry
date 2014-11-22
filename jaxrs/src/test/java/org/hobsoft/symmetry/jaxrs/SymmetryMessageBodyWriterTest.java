@@ -168,16 +168,16 @@ public class SymmetryMessageBodyWriterTest
 	@Test
 	public void writeToWhenExceptionThrowsException() throws ReflectorException, IOException
 	{
-		Reflector<Object> reflector = mock(Reflector.class);
-		ReflectorException exception = new ReflectorException("x");
-		doThrow(exception).when(reflector).reflect(any(Object.class), any(OutputStream.class));
+		Reflector<DummyComponent> reflector = newReflector(DummyComponent.class, "x/y");
+		ReflectorException exception = new ReflectorException("z");
+		doThrow(exception).when(reflector).reflect(any(DummyComponent.class), any(OutputStream.class));
 		
 		thrown.expect(InternalServerErrorException.class);
 		thrown.expectMessage("Cannot write component");
 		thrown.expectCause(is(exception));
 		
-		newWriter(reflector).writeTo(anyComponent(), anyComponentType(), anyComponentType(), anyAnnotations(),
-			anyMediaType(), anyHttpHeaders(), new ByteArrayOutputStream());
+		newWriter(reflector).writeTo(new DummyComponent(), DummyComponent.class, DummyComponent.class, anyAnnotations(),
+			MediaType.valueOf("x/y"), anyHttpHeaders(), new ByteArrayOutputStream());
 	}
 
 	// ----------------------------------------------------------------------------------------------------------------
