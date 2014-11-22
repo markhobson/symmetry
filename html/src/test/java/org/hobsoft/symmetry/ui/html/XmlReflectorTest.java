@@ -94,8 +94,8 @@ public class XmlReflectorTest
 	@Test
 	public void reflectWithWindowWritesXml() throws XMLStreamException, ReflectorException, IOException
 	{
-		doAnswer(startElement("x")).when(visitor).visit(any(Window.class), any(XMLStreamWriter.class));
-		doAnswer(endElement()).when(visitor).endVisit(any(Window.class), any(XMLStreamWriter.class));
+		doAnswer(startElement(1, "x")).when(visitor).visit(any(Window.class), any(XMLStreamWriter.class));
+		doAnswer(endElement(1)).when(visitor).endVisit(any(Window.class), any(XMLStreamWriter.class));
 		XmlReflector reflector = new XmlReflector(visitor, someContentType());
 		ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
 		
@@ -127,28 +127,28 @@ public class XmlReflectorTest
 		return "_/_";
 	}
 	
-	private static Answer<Object> startElement(final String localName)
+	private static Answer<Object> startElement(final int writerIndex, final String localName)
 	{
 		return new Answer<Object>()
 		{
 			@Override
 			public Object answer(InvocationOnMock invocation) throws XMLStreamException
 			{
-				XMLStreamWriter writer = invocation.getArgumentAt(1, XMLStreamWriter.class);
+				XMLStreamWriter writer = invocation.getArgumentAt(writerIndex, XMLStreamWriter.class);
 				writer.writeStartElement(localName);
 				return null;
 			}
 		};
 	}
 	
-	private static Answer<Object> endElement()
+	private static Answer<Object> endElement(final int writerIndex)
 	{
 		return new Answer<Object>()
 		{
 			@Override
 			public Object answer(InvocationOnMock invocation) throws XMLStreamException
 			{
-				XMLStreamWriter writer = invocation.getArgumentAt(1, XMLStreamWriter.class);
+				XMLStreamWriter writer = invocation.getArgumentAt(writerIndex, XMLStreamWriter.class);
 				writer.writeEndElement();
 				return null;
 			}
