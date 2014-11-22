@@ -24,7 +24,6 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
-import org.mockito.stubbing.Stubber;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.http.converter.HttpMessageNotWritableException;
@@ -171,7 +170,7 @@ public class SymmetryHttpMessageConverterTest
 	public void writeWithComponentWritesReflection() throws ReflectorException, IOException
 	{
 		Reflector<DummyComponent> reflector = newReflector(DummyComponent.class, "x/y");
-		doWrite(1, "z").when(reflector).reflect(any(DummyComponent.class), any(OutputStream.class));
+		doAnswer(write(1, "z")).when(reflector).reflect(any(DummyComponent.class), any(OutputStream.class));
 		MockHttpOutputMessage outputMessage = new MockHttpOutputMessage();
 		
 		newConverter(reflector).write(new DummyComponent(), parseMediaType("x/y"), outputMessage);
@@ -222,9 +221,9 @@ public class SymmetryHttpMessageConverterTest
 		return reflector;
 	}
 	
-	private static Stubber doWrite(final int outputStreamIndex, final String string)
+	private static Answer<Object> write(final int outputStreamIndex, final String string)
 	{
-		return doAnswer(new Answer<Object>()
+		return new Answer<Object>()
 		{
 			@Override
 			public Object answer(InvocationOnMock invocation) throws IOException
@@ -233,7 +232,7 @@ public class SymmetryHttpMessageConverterTest
 				outputStream.write(string.getBytes(Charsets.UTF_8));
 				return null;
 			}
-		});
+		};
 	}
 	
 	private static Class<?> anyComponentType()

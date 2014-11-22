@@ -31,7 +31,6 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
-import org.mockito.stubbing.Stubber;
 
 import com.google.common.base.Charsets;
 
@@ -155,7 +154,7 @@ public class SymmetryMessageBodyWriterTest
 	public void writeToWithComponentWritesHtml() throws ReflectorException, IOException
 	{
 		Reflector<DummyComponent> reflector = newReflector(DummyComponent.class, "x/y");
-		doWrite(1, "z").when(reflector).reflect(any(DummyComponent.class), any(OutputStream.class));
+		doAnswer(write(1, "z")).when(reflector).reflect(any(DummyComponent.class), any(OutputStream.class));
 		ByteArrayOutputStream entityStream = new ByteArrayOutputStream();
 		
 		newWriter(reflector).writeTo(new DummyComponent(), DummyComponent.class, DummyComponent.class, anyAnnotations(),
@@ -204,9 +203,9 @@ public class SymmetryMessageBodyWriterTest
 		return reflector;
 	}
 	
-	private static Stubber doWrite(final int outputStreamIndex, final String string)
+	private static Answer<Object> write(final int outputStreamIndex, final String string)
 	{
-		return doAnswer(new Answer<Object>()
+		return new Answer<Object>()
 		{
 			@Override
 			public Object answer(InvocationOnMock invocation) throws IOException
@@ -215,7 +214,7 @@ public class SymmetryMessageBodyWriterTest
 				outputStream.write(string.getBytes(Charsets.UTF_8));
 				return null;
 			}
-		});
+		};
 	}
 	
 	private static <T> SymmetryMessageBodyWriter<T> newWriter(Reflector<T> reflector)
