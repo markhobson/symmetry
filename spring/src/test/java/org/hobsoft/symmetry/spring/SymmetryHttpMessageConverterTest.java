@@ -155,7 +155,7 @@ public class SymmetryHttpMessageConverterTest
 	}
 	
 	@Test
-	public void writeWithComponentInvokesReflector() throws ReflectorException, IOException
+	public void writeWithComponentInvokesReflector() throws IOException, ReflectorException
 	{
 		Reflector<DummyComponent> reflector = newReflector(DummyComponent.class, "x/y");
 		DummyComponent component = new DummyComponent();
@@ -167,7 +167,7 @@ public class SymmetryHttpMessageConverterTest
 	}
 	
 	@Test
-	public void writeWithComponentWritesReflection() throws ReflectorException, IOException
+	public void writeWithComponentWritesReflection() throws IOException, ReflectorException
 	{
 		Reflector<DummyComponent> reflector = newReflector(DummyComponent.class, "x/y");
 		doAnswer(write(1, "z")).when(reflector).reflect(any(DummyComponent.class), any(OutputStream.class));
@@ -179,7 +179,7 @@ public class SymmetryHttpMessageConverterTest
 	}
 	
 	@Test
-	public void writeWhenIOExceptionThrowsException() throws ReflectorException, IOException
+	public void writeWhenIOExceptionThrowsException() throws IOException, ReflectorException
 	{
 		Reflector<DummyComponent> reflector = newReflector(DummyComponent.class, "x/y");
 		IOException exception = new IOException();
@@ -191,7 +191,7 @@ public class SymmetryHttpMessageConverterTest
 	}
 	
 	@Test
-	public void writeWhenReflectorExceptionThrowsSpringException() throws ReflectorException, IOException
+	public void writeWhenReflectorExceptionThrowsSpringException() throws IOException, ReflectorException
 	{
 		Reflector<DummyComponent> reflector = newReflector(DummyComponent.class, "x/y");
 		ReflectorException exception = new ReflectorException("z");

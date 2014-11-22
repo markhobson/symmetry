@@ -92,7 +92,7 @@ public class XmlReflectorTest
 	}
 	
 	@Test
-	public void reflectWithWindowWritesXml() throws XMLStreamException, ReflectorException, IOException
+	public void reflectWithWindowWritesXml() throws XMLStreamException, IOException, ReflectorException
 	{
 		doAnswer(writeStartElement(1, "x")).when(visitor).visit(any(Window.class), any(XMLStreamWriter.class));
 		doAnswer(writeEndElement(1)).when(visitor).endVisit(any(Window.class), any(XMLStreamWriter.class));
@@ -105,7 +105,7 @@ public class XmlReflectorTest
 	}
 	
 	@Test
-	public void reflectWhenExceptionThrowsException() throws XMLStreamException, ReflectorException, IOException
+	public void reflectWhenExceptionThrowsException() throws XMLStreamException, IOException, ReflectorException
 	{
 		XMLStreamException exception = new XMLStreamException();
 		doThrow(exception).when(visitor).visit(any(Window.class), any(XMLStreamWriter.class));
