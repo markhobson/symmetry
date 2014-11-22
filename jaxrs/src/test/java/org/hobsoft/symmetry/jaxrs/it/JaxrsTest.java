@@ -15,7 +15,6 @@ package org.hobsoft.symmetry.jaxrs.it;
 
 import javax.ws.rs.core.Application;
 
-import org.glassfish.jersey.server.ResourceConfig;
 import org.glassfish.jersey.test.JerseyTest;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -47,8 +46,7 @@ public class JaxrsTest extends JerseyTest
 	@Override
 	protected Application configure()
 	{
-		return new ResourceConfig(JaxrsResource.class)
-			.register(HtmlComponentMessageBodyWriter.class);
+		return new JaxrsApplication();
 	}
 	
 	// ----------------------------------------------------------------------------------------------------------------
