@@ -210,7 +210,7 @@ public class SymmetryMessageBodyWriterTest
 		return doAnswer(new Answer<Object>()
 		{
 			@Override
-			public Object answer(InvocationOnMock invocation) throws ReflectorException
+			public Object answer(InvocationOnMock invocation) throws IOException
 			{
 				OutputStream outputStream = invocation.getArgumentAt(1, OutputStream.class);
 				write(reflection, outputStream);
@@ -219,19 +219,11 @@ public class SymmetryMessageBodyWriterTest
 		});
 	}
 	
-	private static void write(String reflection, OutputStream outputStream) throws ReflectorException
+	private static void write(String reflection, OutputStream outputStream) throws IOException
 	{
 		OutputStreamWriter writer = new OutputStreamWriter(outputStream, Charsets.UTF_8);
-		
-		try
-		{
-			writer.write(reflection);
-			writer.flush();
-		}
-		catch (IOException exception)
-		{
-			throw new ReflectorException("Error reflecting component", exception);
-		}
+		writer.write(reflection);
+		writer.flush();
 	}
 	
 	private static <T> SymmetryMessageBodyWriter<T> newWriter(Reflector<T> reflector)
