@@ -15,6 +15,7 @@
 	<name>Symmetry Demo Parent</name>
 
 	<modules>
+		<module>jaxrs-helloworld</module>
 		<module>spring-helloworld</module>
 	</modules>
 	
