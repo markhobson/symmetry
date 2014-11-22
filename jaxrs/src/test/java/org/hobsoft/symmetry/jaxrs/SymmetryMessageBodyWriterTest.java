@@ -173,7 +173,7 @@ public class SymmetryMessageBodyWriterTest
 		thrown.expect(is(exception));
 		
 		newWriter(reflector).writeTo(new DummyComponent(), DummyComponent.class, DummyComponent.class,
-			someAnnotations(), MediaType.valueOf("x/y"), someHttpHeaders(), someOutputStream());
+			someAnnotations(), MediaType.valueOf("x/y"), someHttpHeaders(), mock(OutputStream.class));
 	}
 	
 	@Test
@@ -188,7 +188,7 @@ public class SymmetryMessageBodyWriterTest
 		thrown.expectCause(is(exception));
 		
 		newWriter(reflector).writeTo(new DummyComponent(), DummyComponent.class, DummyComponent.class,
-			someAnnotations(), MediaType.valueOf("x/y"), someHttpHeaders(), someOutputStream());
+			someAnnotations(), MediaType.valueOf("x/y"), someHttpHeaders(), mock(OutputStream.class));
 	}
 
 	// ----------------------------------------------------------------------------------------------------------------
@@ -233,11 +233,6 @@ public class SymmetryMessageBodyWriterTest
 		return new MultivaluedHashMap<>();
 	}
 
-	private static OutputStream someOutputStream()
-	{
-		return new ByteArrayOutputStream();
-	}
-	
 	private static Answer<Object> write(final int outputStreamIndex, final String string)
 	{
 		return new Answer<Object>()
