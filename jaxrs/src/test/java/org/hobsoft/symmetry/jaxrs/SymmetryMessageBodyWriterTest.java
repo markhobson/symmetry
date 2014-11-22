@@ -203,20 +203,6 @@ public class SymmetryMessageBodyWriterTest
 		return reflector;
 	}
 	
-	private static Answer<Object> write(final int outputStreamIndex, final String string)
-	{
-		return new Answer<Object>()
-		{
-			@Override
-			public Object answer(InvocationOnMock invocation) throws IOException
-			{
-				OutputStream outputStream = invocation.getArgumentAt(outputStreamIndex, OutputStream.class);
-				outputStream.write(string.getBytes(Charsets.UTF_8));
-				return null;
-			}
-		};
-	}
-	
 	private static <T> SymmetryMessageBodyWriter<T> newWriter(Reflector<T> reflector)
 	{
 		return new SymmetryMessageBodyWriter<>(reflector);
@@ -250,6 +236,20 @@ public class SymmetryMessageBodyWriterTest
 	private static OutputStream someOutputStream()
 	{
 		return new ByteArrayOutputStream();
+	}
+	
+	private static Answer<Object> write(final int outputStreamIndex, final String string)
+	{
+		return new Answer<Object>()
+		{
+			@Override
+			public Object answer(InvocationOnMock invocation) throws IOException
+			{
+				OutputStream outputStream = invocation.getArgumentAt(outputStreamIndex, OutputStream.class);
+				outputStream.write(string.getBytes(Charsets.UTF_8));
+				return null;
+			}
+		};
 	}
 	
 	private static String toString(ByteArrayOutputStream entityStream) throws UnsupportedEncodingException

@@ -208,11 +208,6 @@ public class SymmetryHttpMessageConverterTest
 	// private methods
 	// ----------------------------------------------------------------------------------------------------------------
 
-	private static <T> SymmetryHttpMessageConverter<T> newConverter(Reflector<T> reflector)
-	{
-		return new SymmetryHttpMessageConverter<>(reflector);
-	}
-	
 	private static <T> Reflector<T> newReflector(Class<T> componentType, String contentType)
 	{
 		Reflector<T> reflector = mock(Reflector.class);
@@ -221,6 +216,21 @@ public class SymmetryHttpMessageConverterTest
 		return reflector;
 	}
 	
+	private static <T> SymmetryHttpMessageConverter<T> newConverter(Reflector<T> reflector)
+	{
+		return new SymmetryHttpMessageConverter<>(reflector);
+	}
+	
+	private static Class<?> someComponentType()
+	{
+		return Object.class;
+	}
+	
+	private static String someContentType()
+	{
+		return "_/_";
+	}
+
 	private static Answer<Object> write(final int outputStreamIndex, final String string)
 	{
 		return new Answer<Object>()
@@ -233,15 +243,5 @@ public class SymmetryHttpMessageConverterTest
 				return null;
 			}
 		};
-	}
-	
-	private static Class<?> someComponentType()
-	{
-		return Object.class;
-	}
-	
-	private static String someContentType()
-	{
-		return "_/_";
 	}
 }
