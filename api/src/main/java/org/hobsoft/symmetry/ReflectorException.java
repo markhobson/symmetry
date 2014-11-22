@@ -14,7 +14,7 @@
 package org.hobsoft.symmetry;
 
 /**
- * Indicates an error was encountered when reflecting a component.
+ * Indicates that an error was encountered when serialising a component.
  */
 @SuppressWarnings("serial")
 public final class ReflectorException extends Exception
