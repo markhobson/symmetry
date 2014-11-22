@@ -15,7 +15,6 @@ package org.hobsoft.symmetry.spring;
 
 import java.io.IOException;
 import java.io.OutputStream;
-import java.io.OutputStreamWriter;
 import java.util.List;
 
 import org.hobsoft.symmetry.Reflector;
@@ -239,9 +238,7 @@ public class SymmetryHttpMessageConverterTest
 	
 	private static void write(String reflection, OutputStream outputStream) throws IOException
 	{
-		OutputStreamWriter writer = new OutputStreamWriter(outputStream, Charsets.UTF_8);
-		writer.write(reflection);
-		writer.flush();
+		outputStream.write(reflection.getBytes(Charsets.UTF_8));
 	}
 	
 	private static Class<?> anyComponentType()

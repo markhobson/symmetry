@@ -16,7 +16,6 @@ package org.hobsoft.symmetry.jaxrs;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
-import java.io.OutputStreamWriter;
 import java.io.UnsupportedEncodingException;
 import java.lang.annotation.Annotation;
 
@@ -221,9 +220,7 @@ public class SymmetryMessageBodyWriterTest
 	
 	private static void write(String reflection, OutputStream outputStream) throws IOException
 	{
-		OutputStreamWriter writer = new OutputStreamWriter(outputStream, Charsets.UTF_8);
-		writer.write(reflection);
-		writer.flush();
+		outputStream.write(reflection.getBytes(Charsets.UTF_8));
 	}
 	
 	private static <T> SymmetryMessageBodyWriter<T> newWriter(Reflector<T> reflector)
