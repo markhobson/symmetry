@@ -212,15 +212,10 @@ public class SymmetryMessageBodyWriterTest
 			public Object answer(InvocationOnMock invocation) throws IOException
 			{
 				OutputStream outputStream = invocation.getArgumentAt(1, OutputStream.class);
-				write(reflection, outputStream);
+				outputStream.write(reflection.getBytes(Charsets.UTF_8));
 				return null;
 			}
 		});
-	}
-	
-	private static void write(String reflection, OutputStream outputStream) throws IOException
-	{
-		outputStream.write(reflection.getBytes(Charsets.UTF_8));
 	}
 	
 	private static <T> SymmetryMessageBodyWriter<T> newWriter(Reflector<T> reflector)
