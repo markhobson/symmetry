@@ -149,7 +149,7 @@ public class SymmetryHttpMessageConverterTest
 		MockHttpInputMessage inputMessage = new MockHttpInputMessage(new byte[0]);
 		
 		thrown.expect(HttpMessageNotReadableException.class);
-		thrown.expectMessage("Cannot read component");
+		thrown.expectMessage("SymmetryHttpMessageConverter cannot read components");
 		
 		newConverter(reflector).read(DummyComponent.class, inputMessage);
 	}
