@@ -17,7 +17,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 
 /**
- * Defines an API to dehydrate UI components.
+ * Defines an API to serialise UI components.
  * 
  * @param <T>
  *            the component type
@@ -28,9 +28,31 @@ public interface Reflector<T>
 	// public methods
 	// ----------------------------------------------------------------------------------------------------------------
 
+	/**
+	 * Gets the base component type that this reflector can reflect.
+	 * 
+	 * @return the component type
+	 */
 	Class<T> getComponentType();
-	
+
+	/**
+	 * Gets the content type that this reflector reflects to.
+	 * 
+	 * @return the content type
+	 */
 	String getContentType();
-	
+
+	/**
+	 * Serialises the specified component to the specified output stream.
+	 * 
+	 * @param component
+	 *            the component to reflect
+	 * @param outputStream
+	 *            the output stream to reflect into
+	 * @throws IOException
+	 *             if an I/O error occurs
+	 * @throws ReflectorException
+	 *             if an error occurs during reflection
+	 */
 	void reflect(T component, OutputStream outputStream) throws IOException, ReflectorException;
 }
