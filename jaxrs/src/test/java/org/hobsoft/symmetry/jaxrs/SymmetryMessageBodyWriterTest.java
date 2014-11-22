@@ -69,7 +69,7 @@ public class SymmetryMessageBodyWriterTest
 	private ExpectedException thrown = ExpectedException.none();
 	
 	// ----------------------------------------------------------------------------------------------------------------
-	// public methods
+	// JUnit methods
 	// ----------------------------------------------------------------------------------------------------------------
 
 	@Rule

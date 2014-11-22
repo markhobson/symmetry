@@ -69,7 +69,7 @@ public class SymmetryHttpMessageConverterTest
 	private ExpectedException thrown = ExpectedException.none();
 	
 	// ----------------------------------------------------------------------------------------------------------------
-	// public methods
+	// JUnit methods
 	// ----------------------------------------------------------------------------------------------------------------
 
 	@Rule
