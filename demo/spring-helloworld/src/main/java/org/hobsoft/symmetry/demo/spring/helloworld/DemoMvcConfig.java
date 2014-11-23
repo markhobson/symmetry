@@ -15,6 +15,8 @@ package org.hobsoft.symmetry.demo.spring.helloworld;
 
 import java.util.List;
 
+import org.hobsoft.symmetry.spring.SymmetryHttpMessageConverter;
+import org.hobsoft.symmetry.ui.html.HtmlComponentReflector;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.converter.HttpMessageConverter;
@@ -36,6 +38,6 @@ public class DemoMvcConfig extends WebMvcConfigurationSupport
 	{
 		addDefaultHttpMessageConverters(converters);
 		
-		converters.add(new HtmlComponentHttpMessageConverter());
+		converters.add(new SymmetryHttpMessageConverter<>(new HtmlComponentReflector()));
 	}
 }

@@ -19,6 +19,9 @@ import java.util.Set;
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
 
+import org.hobsoft.symmetry.jaxrs.SymmetryMessageBodyWriter;
+import org.hobsoft.symmetry.ui.html.HtmlComponentReflector;
+
 /**
  * JAX-RS application for this demo.
  */
@@ -34,7 +37,14 @@ public class DemoApplication extends Application
 	{
 		Set<Class<?>> classes = new HashSet<>();
 		classes.add(HelloResource.class);
-		classes.add(HtmlComponentMessageBodyWriter.class);
 		return classes;
+	}
+	
+	@Override
+	public Set<Object> getSingletons()
+	{
+		Set<Object> singletons = new HashSet<>();
+		singletons.add(new SymmetryMessageBodyWriter<>(new HtmlComponentReflector()));
+		return singletons;
 	}
 }
