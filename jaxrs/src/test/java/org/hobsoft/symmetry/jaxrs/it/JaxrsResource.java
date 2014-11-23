@@ -29,7 +29,8 @@ public class JaxrsResource
 	// ----------------------------------------------------------------------------------------------------------------
 
 	@GET
-	public Window get()
+	@Path("window")
+	public Window window()
 	{
 		return new Window();
 	}

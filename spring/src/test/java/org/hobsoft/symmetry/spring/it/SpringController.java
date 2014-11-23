@@ -30,9 +30,9 @@ public class SpringController
 	// public methods
 	// ----------------------------------------------------------------------------------------------------------------
 
-	@RequestMapping(method = RequestMethod.GET, value = "/")
+	@RequestMapping(method = RequestMethod.GET, value = "/window")
 	@ResponseBody
-	public Component get()
+	public Component window()
 	{
 		return new Window();
 	}

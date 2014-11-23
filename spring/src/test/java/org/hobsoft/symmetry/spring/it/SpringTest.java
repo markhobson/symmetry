@@ -63,7 +63,7 @@ public class SpringTest
 	@Test
 	public void getWindowReturnsHtml() throws Exception
 	{
-		mvc.perform(get("/"))
+		mvc.perform(get("/window"))
 			.andExpect(status().isOk())
 			.andExpect(content().string("<html><body></body></html>"));
 	}
