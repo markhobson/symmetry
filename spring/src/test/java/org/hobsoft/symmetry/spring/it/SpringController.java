@@ -25,20 +25,21 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * Spring MVC controller for integration tests.
  */
 @Controller
+@RequestMapping("/")
 public class SpringController
 {
 	// ----------------------------------------------------------------------------------------------------------------
 	// public methods
 	// ----------------------------------------------------------------------------------------------------------------
 
-	@RequestMapping(method = RequestMethod.GET, value = "/window")
+	@RequestMapping(method = RequestMethod.GET, value = "window")
 	@ResponseBody
 	public Component window()
 	{
 		return new Window();
 	}
 	
-	@RequestMapping(method = RequestMethod.GET, value = "/windowWithText")
+	@RequestMapping(method = RequestMethod.GET, value = "windowWithText")
 	@ResponseBody
 	public Component windowWithText()
 	{

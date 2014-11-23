@@ -25,13 +25,14 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * Spring MVC controller to say hello world.
  */
 @Controller
+@RequestMapping("/")
 public class HelloController
 {
 	// ----------------------------------------------------------------------------------------------------------------
 	// public methods
 	// ----------------------------------------------------------------------------------------------------------------
 
-	@RequestMapping(method = RequestMethod.GET, value = "/")
+	@RequestMapping(method = RequestMethod.GET)
 	@ResponseBody
 	public Component get()
 	{
