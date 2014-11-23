@@ -16,6 +16,7 @@ package org.hobsoft.symmetry.demo.jaxrs.helloworld;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 
+import org.hobsoft.symmetry.ui.Text;
 import org.hobsoft.symmetry.ui.Window;
 
 /**
@@ -31,6 +32,8 @@ public class HelloResource
 	@GET
 	public Window get()
 	{
-		return new Window();
+		Window window = new Window();
+		window.add(new Text("Hello world!"));
+		return window;
 	}
 }

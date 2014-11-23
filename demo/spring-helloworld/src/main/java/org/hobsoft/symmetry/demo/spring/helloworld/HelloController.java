@@ -14,6 +14,7 @@
 package org.hobsoft.symmetry.demo.spring.helloworld;
 
 import org.hobsoft.symmetry.ui.Component;
+import org.hobsoft.symmetry.ui.Text;
 import org.hobsoft.symmetry.ui.Window;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -34,6 +35,8 @@ public class HelloController
 	@ResponseBody
 	public Component get()
 	{
-		return new Window();
+		Window window = new Window();
+		window.add(new Text("Hello world!"));
+		return window;
 	}
 }
