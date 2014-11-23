@@ -13,9 +13,15 @@
  */
 package org.hobsoft.symmetry.ui;
 
-import org.junit.Before;
-import org.junit.Test;
+import java.util.List;
 
+import org.junit.Before;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.rules.ExpectedException;
+
+import static org.hamcrest.CoreMatchers.hasItem;
+import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
@@ -28,6 +34,8 @@ public class WindowTest
 	// fields
 	// ----------------------------------------------------------------------------------------------------------------
 
+	private ExpectedException thrown = ExpectedException.none();
+	
 	private Window window;
 	
 	// ----------------------------------------------------------------------------------------------------------------
@@ -38,6 +46,12 @@ public class WindowTest
 	public void setUp()
 	{
 		window = new Window();
+	}
+
+	@Rule
+	public ExpectedException getThrown()
+	{
+		return thrown;
 	}
 
 	// ----------------------------------------------------------------------------------------------------------------
@@ -55,6 +69,36 @@ public class WindowTest
 	}
 	
 	@Test
+	public void acceptInvokesAcceptOnChild()
+	{
+		Component child = mock(Component.class);
+		window.add(child);
+		ComponentVisitor<String, RuntimeException> visitor = mock(ComponentVisitor.class);
+		
+		window.accept(visitor, "p");
+		
+		verify(child).accept(visitor, "p");
+	}
+	
+	@Test
+	public void acceptInvokesAcceptOnChildren()
+	{
+		Component child1 = mock(Component.class);
+		window.add(child1);
+		Component child2 = mock(Component.class);
+		window.add(child2);
+		Component child3 = mock(Component.class);
+		window.add(child3);
+		ComponentVisitor<String, RuntimeException> visitor = mock(ComponentVisitor.class);
+		
+		window.accept(visitor, "p");
+		
+		verify(child1).accept(visitor, "p");
+		verify(child2).accept(visitor, "p");
+		verify(child3).accept(visitor, "p");
+	}
+	
+	@Test
 	public void acceptInvokesEndVisitWindow()
 	{
 		ComponentVisitor<String, RuntimeException> visitor = mock(ComponentVisitor.class);
@@ -62,5 +106,26 @@ public class WindowTest
 		window.accept(visitor, "p");
 		
 		verify(visitor).endVisit(window, "p");
+	}
+	
+	@Test
+	public void addWithComponentAddsComponent()
+	{
+		Component component = mock(Component.class);
+		
+		window.add(component);
+		
+		assertThat(window.getComponents(), hasItem(component));
+	}
+	
+	@Test
+	public void getComponentsReturnsImmutableList()
+	{
+		window.add(mock(Component.class));
+		
+		List<Component> actual = window.getComponents();
+		
+		thrown.expect(UnsupportedOperationException.class);
+		actual.add(mock(Component.class));
 	}
 }

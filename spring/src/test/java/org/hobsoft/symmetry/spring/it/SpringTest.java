@@ -67,4 +67,12 @@ public class SpringTest
 			.andExpect(status().isOk())
 			.andExpect(content().string("<html><body></body></html>"));
 	}
+	
+	@Test
+	public void getWindowWithTextReturnsHtml() throws Exception
+	{
+		mvc.perform(get("/windowWithText"))
+			.andExpect(status().isOk())
+			.andExpect(content().string("<html><body>x</body></html>"));
+	}
 }

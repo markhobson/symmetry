@@ -13,30 +13,31 @@
  */
 package org.hobsoft.symmetry.ui;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
 /**
- * Symmetry UI component that represents a window.
+ * Symmetry UI component that represents some plain text.
  */
-public class Window implements Component
+public class Text implements Component
 {
 	// ----------------------------------------------------------------------------------------------------------------
 	// fields
 	// ----------------------------------------------------------------------------------------------------------------
 
-	private final List<Component> components;
-	
+	private final String text;
+
 	// ----------------------------------------------------------------------------------------------------------------
 	// constructors
 	// ----------------------------------------------------------------------------------------------------------------
 
-	public Window()
+	public Text()
 	{
-		components = new ArrayList<>();
+		this("");
 	}
 
+	public Text(String text)
+	{
+		this.text = text;
+	}
+	
 	// ----------------------------------------------------------------------------------------------------------------
 	// Component methods
 	// ----------------------------------------------------------------------------------------------------------------
@@ -45,26 +46,14 @@ public class Window implements Component
 	public <P, E extends Exception> void accept(ComponentVisitor<P, E> visitor, P parameter) throws E
 	{
 		visitor.visit(this, parameter);
-		
-		for (Component component : components)
-		{
-			component.accept(visitor, parameter);
-		}
-		
-		visitor.endVisit(this, parameter);
 	}
 	
 	// ----------------------------------------------------------------------------------------------------------------
 	// public methods
 	// ----------------------------------------------------------------------------------------------------------------
 
-	public void add(Component component)
+	public String getText()
 	{
-		components.add(component);
-	}
-
-	public List<Component> getComponents()
-	{
-		return Collections.unmodifiableList(components);
+		return text;
 	}
 }

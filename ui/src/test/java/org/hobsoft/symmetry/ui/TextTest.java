@@ -11,37 +11,48 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.hobsoft.symmetry.jaxrs.it;
+package org.hobsoft.symmetry.ui;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
+import org.junit.Test;
 
-import org.hobsoft.symmetry.ui.Text;
-import org.hobsoft.symmetry.ui.Window;
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 
 /**
- * JAX-RS resource for integration tests.
+ * Tests {@code Text}.
  */
-@Path("/")
-public class JaxrsResource
+public class TextTest
 {
 	// ----------------------------------------------------------------------------------------------------------------
-	// public methods
+	// tests
 	// ----------------------------------------------------------------------------------------------------------------
-
-	@GET
-	@Path("window")
-	public Window window()
+	
+	@Test
+	public void defaultConstructorSetsProperties()
 	{
-		return new Window();
+		Text actual = new Text();
+		
+		assertThat("text", actual.getText(), is(""));
+	}
+
+	@Test
+	public void constructorWithTextSetsProperty()
+	{
+		Text text = new Text("x");
+		
+		assertThat(text.getText(), is("x"));
 	}
 	
-	@GET
-	@Path("windowWithText")
-	public Window windowWithText()
+	@Test
+	public void acceptInvokesVisitText()
 	{
-		Window window = new Window();
-		window.add(new Text("x"));
-		return window;
+		ComponentVisitor<String, RuntimeException> visitor = mock(ComponentVisitor.class);
+		Text text = new Text();
+		
+		text.accept(visitor, "p");
+		
+		verify(visitor).visit(text, "p");
 	}
 }

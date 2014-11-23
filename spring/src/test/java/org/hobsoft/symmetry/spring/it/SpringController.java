@@ -14,6 +14,7 @@
 package org.hobsoft.symmetry.spring.it;
 
 import org.hobsoft.symmetry.ui.Component;
+import org.hobsoft.symmetry.ui.Text;
 import org.hobsoft.symmetry.ui.Window;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -35,5 +36,14 @@ public class SpringController
 	public Component window()
 	{
 		return new Window();
+	}
+	
+	@RequestMapping(method = RequestMethod.GET, value = "/windowWithText")
+	@ResponseBody
+	public Component windowWithText()
+	{
+		Window window = new Window();
+		window.add(new Text("x"));
+		return window;
 	}
 }

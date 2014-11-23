@@ -34,4 +34,8 @@ public interface ComponentVisitor<P, E extends Exception>
 	// CHECKSTYLE:OFF
 	void endVisit(Window window, P parameter) throws E;
 	// CHECKSTYLE:ON
+
+	// CHECKSTYLE:OFF
+	void visit(Text text, P parameter) throws E;
+	// CHECKSTYLE:ON
 }

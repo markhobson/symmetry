@@ -16,6 +16,7 @@ package org.hobsoft.symmetry.ui.html;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamWriter;
 
+import org.hobsoft.symmetry.ui.Text;
 import org.hobsoft.symmetry.ui.Window;
 import org.junit.Before;
 import org.junit.Test;
@@ -71,5 +72,15 @@ public class HtmlComponentVisitorTest
 		visitor.endVisit(window, writer);
 		
 		verify(writer, times(2)).writeEndElement();
+	}
+	
+	@Test
+	public void visitTextWritesHtml() throws XMLStreamException
+	{
+		Text text = new Text("x");
+		
+		visitor.visit(text, writer);
+		
+		verify(writer).writeCharacters("x");
 	}
 }

@@ -17,6 +17,7 @@ import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamWriter;
 
 import org.hobsoft.symmetry.ui.ComponentVisitor;
+import org.hobsoft.symmetry.ui.Text;
 import org.hobsoft.symmetry.ui.Window;
 
 /**
@@ -42,5 +43,11 @@ public class HtmlComponentVisitor implements ComponentVisitor<XMLStreamWriter, X
 		writer.writeEndElement();
 		// html
 		writer.writeEndElement();
+	}
+	
+	@Override
+	public void visit(Text text, XMLStreamWriter writer) throws XMLStreamException
+	{
+		writer.writeCharacters(text.getText());
 	}
 }
