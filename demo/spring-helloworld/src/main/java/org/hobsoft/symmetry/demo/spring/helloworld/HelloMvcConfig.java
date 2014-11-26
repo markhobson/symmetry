@@ -13,36 +13,31 @@
  */
 package org.hobsoft.symmetry.demo.spring.helloworld;
 
-import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
+import java.util.List;
+
+import org.hobsoft.symmetry.spring.SymmetryHttpMessageConverter;
+import org.hobsoft.symmetry.ui.html.HtmlComponentReflector;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.http.converter.HttpMessageConverter;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 
 /**
- * Spring {@code WebApplicationInitializer} for this demo.
+ * Spring MVC configuration for this demo.
  */
-public class DemoWebApplicationInitializer extends AbstractAnnotationConfigDispatcherServletInitializer
+@Configuration
+@ComponentScan
+public class HelloMvcConfig extends WebMvcConfigurationSupport
 {
 	// ----------------------------------------------------------------------------------------------------------------
-	// AbstractAnnotationConfigDispatcherServletInitializer methods
+	// WebMvcConfigurationSupport methods
 	// ----------------------------------------------------------------------------------------------------------------
 
 	@Override
-	protected Class<?>[] getRootConfigClasses()
+	protected void configureMessageConverters(List<HttpMessageConverter<?>> converters)
 	{
-		return null;
-	}
-
-	@Override
-	protected Class<?>[] getServletConfigClasses()
-	{
-		return new Class<?>[] {DemoMvcConfig.class};
-	}
-	
-	// ----------------------------------------------------------------------------------------------------------------
-	// AbstractDispatcherServletInitializer methods
-	// ----------------------------------------------------------------------------------------------------------------
-
-	@Override
-	protected String[] getServletMappings()
-	{
-		return new String[] {"/"};
+		addDefaultHttpMessageConverters(converters);
+		
+		converters.add(new SymmetryHttpMessageConverter<>(new HtmlComponentReflector()));
 	}
 }

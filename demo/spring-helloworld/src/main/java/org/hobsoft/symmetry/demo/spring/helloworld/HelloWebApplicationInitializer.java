@@ -13,31 +13,36 @@
  */
 package org.hobsoft.symmetry.demo.spring.helloworld;
 
-import java.util.List;
-
-import org.hobsoft.symmetry.spring.SymmetryHttpMessageConverter;
-import org.hobsoft.symmetry.ui.html.HtmlComponentReflector;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.http.converter.HttpMessageConverter;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
+import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 /**
- * Spring MVC configuration for this demo.
+ * Spring {@code WebApplicationInitializer} for this demo.
  */
-@Configuration
-@ComponentScan
-public class DemoMvcConfig extends WebMvcConfigurationSupport
+public class HelloWebApplicationInitializer extends AbstractAnnotationConfigDispatcherServletInitializer
 {
 	// ----------------------------------------------------------------------------------------------------------------
-	// WebMvcConfigurationSupport methods
+	// AbstractAnnotationConfigDispatcherServletInitializer methods
 	// ----------------------------------------------------------------------------------------------------------------
 
 	@Override
-	protected void configureMessageConverters(List<HttpMessageConverter<?>> converters)
+	protected Class<?>[] getRootConfigClasses()
 	{
-		addDefaultHttpMessageConverters(converters);
-		
-		converters.add(new SymmetryHttpMessageConverter<>(new HtmlComponentReflector()));
+		return null;
+	}
+
+	@Override
+	protected Class<?>[] getServletConfigClasses()
+	{
+		return new Class<?>[] {HelloMvcConfig.class};
+	}
+	
+	// ----------------------------------------------------------------------------------------------------------------
+	// AbstractDispatcherServletInitializer methods
+	// ----------------------------------------------------------------------------------------------------------------
+
+	@Override
+	protected String[] getServletMappings()
+	{
+		return new String[] {"/"};
 	}
 }
