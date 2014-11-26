@@ -40,6 +40,14 @@
 			<scope>test</scope>
 		</dependency>
 			
+		<!-- Symmetry -->
+		
+		<dependency>
+			<groupId>org.hobsoft.symmetry</groupId>
+			<artifactId>symmetry-ui-html</artifactId>
+			<scope>test</scope>
+		</dependency>
+		
 		<!-- Jetty -->
 		
 		<dependency>

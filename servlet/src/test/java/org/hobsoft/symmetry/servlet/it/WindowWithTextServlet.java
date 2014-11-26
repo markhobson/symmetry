@@ -20,6 +20,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.hobsoft.symmetry.ReflectorException;
+import org.hobsoft.symmetry.ui.Text;
+import org.hobsoft.symmetry.ui.Window;
+import org.hobsoft.symmetry.ui.html.HtmlComponentReflector;
+
 /**
  * Servlet for integration tests.
  */
@@ -33,6 +38,16 @@ public class WindowWithTextServlet extends HttpServlet
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
-		response.getWriter().print("<html><body>x</body></html>");
+		Window window = new Window();
+		window.add(new Text("x"));
+		
+		try
+		{
+			new HtmlComponentReflector().reflect(window, response.getOutputStream());
+		}
+		catch (ReflectorException exception)
+		{
+			throw new ServletException("Error writing component", exception);
+		}
 	}
 }
