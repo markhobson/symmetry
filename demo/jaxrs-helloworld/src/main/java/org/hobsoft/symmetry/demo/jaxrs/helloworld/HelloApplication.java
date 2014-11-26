@@ -26,7 +26,7 @@ import org.hobsoft.symmetry.ui.html.HtmlComponentReflector;
  * JAX-RS application for this demo.
  */
 @ApplicationPath("/")
-public class DemoApplication extends Application
+public class HelloApplication extends Application
 {
 	// ----------------------------------------------------------------------------------------------------------------
 	// Application methods
