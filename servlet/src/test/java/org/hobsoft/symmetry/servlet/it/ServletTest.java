@@ -45,6 +45,16 @@ public class ServletTest
 	// ----------------------------------------------------------------------------------------------------------------
 
 	@Test
+	public void getWindowReturnsHtml() throws Exception
+	{
+		serverRule.startServlet(WindowServlet.class, "/");
+		
+		String actual = serverRule.get("/");
+		
+		assertThat(actual, is("<html><body></body></html>"));
+	}
+	
+	@Test
 	public void getWindowWithTextReturnsHtml() throws Exception
 	{
 		serverRule.startServlet(WindowWithTextServlet.class, "/");
