@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<taglib version="2.1"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"
+>
+	<description>Symmetry Tag Library</description>
+	<tlib-version>1.0</tlib-version>
+	<short-name>symmetry</short-name>
+	<uri>http://hobsoft.org/symmetry/taglib</uri>
+	
+	<tag>
+		<description>Serialises the specified component.</description>
+		<name>component</name>
+		<tag-class>org.hobsoft.symmetry.taglib.ComponentTag</tag-class>
+		<body-content>empty</body-content>
+	</tag>
+
+</taglib>

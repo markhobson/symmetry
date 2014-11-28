@@ -1,1 +1,1 @@
-<html><body>x</body></html>
+<%@taglib prefix="s" uri="http://hobsoft.org/symmetry/taglib"%><html><body><s:component/></body></html>

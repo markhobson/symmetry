@@ -67,6 +67,14 @@
 			<scope>test</scope>
 		</dependency>
 		
+		<!-- Symmetry -->
+		
+		<dependency>
+			<groupId>org.hobsoft.symmetry</groupId>
+			<artifactId>symmetry-taglib</artifactId>
+			<scope>test</scope>
+		</dependency>
+		
 		<!-- SLF4J -->
 		
 		<dependency>
