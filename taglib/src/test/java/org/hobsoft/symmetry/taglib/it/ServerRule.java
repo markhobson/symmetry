@@ -14,7 +14,6 @@
 package org.hobsoft.symmetry.taglib.it;
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.net.URL;
 
 import org.eclipse.jetty.server.Server;
@@ -22,7 +21,7 @@ import org.eclipse.jetty.webapp.WebAppContext;
 import org.junit.rules.ExternalResource;
 
 import com.google.common.base.Charsets;
-import com.google.common.io.ByteStreams;
+import com.google.common.io.Resources;
 
 /**
  * JUnit rule that manages a Jetty server.
@@ -74,20 +73,13 @@ public class ServerRule extends ExternalResource
 		URL serverUrl = server.getURI().toURL();
 		URL url = new URL(serverUrl, path);
 		
-		return toString(url);
+		return Resources.toString(url, Charsets.UTF_8);
 	}
 
 	// ----------------------------------------------------------------------------------------------------------------
 	// private methods
 	// ----------------------------------------------------------------------------------------------------------------
 
-	private static String toString(URL url) throws IOException
-	{
-		InputStream inputStream = url.openStream();
-		byte[] bytes = ByteStreams.toByteArray(inputStream);
-		return new String(bytes, Charsets.UTF_8);
-	}
-	
 	private void stopQuietly()
 	{
 		try
