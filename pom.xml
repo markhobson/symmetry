@@ -233,6 +233,7 @@
 		<module>jaxrs</module>
 		<module>servlet</module>
 		<module>spring</module>
+		<module>taglib</module>
 		<module>ui</module>
 		<module>ui-html</module>
 	</modules>
