@@ -246,6 +246,7 @@
 		<module>servlet</module>
 		<module>spring</module>
 		<module>taglib</module>
+		<module>taglib-it</module>
 		<module>ui</module>
 		<module>ui-html</module>
 	</modules>
