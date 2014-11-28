@@ -32,14 +32,6 @@
 			<scope>test</scope>
 		</dependency>
 		
-		<!-- Servlet -->
-		
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>javax.servlet-api</artifactId>
-			<scope>test</scope>
-		</dependency>
-			
 		<!-- Symmetry -->
 		
 		<dependency>
@@ -49,12 +41,6 @@
 		</dependency>
 		
 		<!-- Jetty -->
-		
-		<dependency>
-			<groupId>org.eclipse.jetty</groupId>
-			<artifactId>jetty-server</artifactId>
-			<scope>test</scope>
-		</dependency>
 		
 		<dependency>
 			<groupId>org.eclipse.jetty</groupId>
