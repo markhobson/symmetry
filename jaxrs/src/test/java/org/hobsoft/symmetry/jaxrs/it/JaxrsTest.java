@@ -19,9 +19,11 @@ import javax.ws.rs.core.Response;
 
 import org.glassfish.jersey.test.JerseyTest;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.slf4j.bridge.SLF4JBridgeHandler;
 
+import static java.net.HttpURLConnection.HTTP_NOT_ACCEPTABLE;
 import static java.net.HttpURLConnection.HTTP_OK;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -65,6 +67,25 @@ public class JaxrsTest extends JerseyTest
 		assertThat("status", actual.getStatus(), is(HTTP_OK));
 		assertThat("content type", actual.getMediaType(), is(MediaType.valueOf("text/html")));
 		assertThat("entity", actual.readEntity(String.class), is("<html><body></body></html>"));
+	}
+	
+	@Test
+	public void getWindowWithAcceptHtmlReturnsHtml()
+	{
+		Response actual = target("/window").request("text/html").get();
+		
+		assertThat("status", actual.getStatus(), is(HTTP_OK));
+		assertThat("content type", actual.getMediaType(), is(MediaType.valueOf("text/html")));
+		assertThat("entity", actual.readEntity(String.class), is("<html><body></body></html>"));
+	}
+	
+	@Test
+	@Ignore("Jersey returns 500 instead of 406")
+	public void getWindowWithAcceptOtherReturnsNotAcceptable()
+	{
+		Response actual = target("/window").request("x/y").get();
+		
+		assertThat(actual.getStatus(), is(HTTP_NOT_ACCEPTABLE));
 	}
 	
 	@Test
