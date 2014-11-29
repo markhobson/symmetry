@@ -51,7 +51,7 @@ public class TaglibTest
 	{
 		serverRule.startWebApp(getResource(getClass(), ""), "/");
 		
-		String actual = serverRule.get("/windowAndText.jsp");
+		String actual = serverRule.target("/windowAndText.jsp").request().get(String.class);
 		
 		assertThat(actual, is("<html><body>x</body></html>"));
 	}
