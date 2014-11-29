@@ -57,7 +57,7 @@ public class ServletTest
 		Response actual = serverRule.target("/").request().get();
 		
 		assertThat("status", actual.getStatus(), is(HTTP_OK));
-		assertThat("content type", actual.getMediaType(), is(MediaType.valueOf("text/html")));
+		assertThat("content type", actual.getMediaType(), is(MediaType.valueOf("text/html; charset=ISO-8859-1")));
 		assertThat("entity", actual.readEntity(String.class), is("<html><body></body></html>"));
 	}
 	
@@ -69,7 +69,7 @@ public class ServletTest
 		Response actual = serverRule.target("/").request().get();
 		
 		assertThat("status", actual.getStatus(), is(HTTP_OK));
-		assertThat("content type", actual.getMediaType(), is(MediaType.valueOf("text/html")));
+		assertThat("content type", actual.getMediaType(), is(MediaType.valueOf("text/html; charset=ISO-8859-1")));
 		assertThat("entity", actual.readEntity(String.class), is("<html><body>x</body></html>"));
 	}
 }

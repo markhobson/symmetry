@@ -14,6 +14,9 @@
 package org.hobsoft.symmetry.spring;
 
 import java.io.IOException;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
 
 import org.hobsoft.symmetry.Reflector;
 import org.hobsoft.symmetry.ReflectorException;
@@ -78,13 +81,19 @@ public class SymmetryHttpMessageConverter<T> extends AbstractHttpMessageConverte
 	@Override
 	protected void writeInternal(T component, HttpOutputMessage outputMessage) throws IOException
 	{
+		OutputStream bodyStream = outputMessage.getBody();
+		// TODO: encoding
+		Writer bodyWriter = new OutputStreamWriter(bodyStream);
+		
 		try
 		{
-			reflector.reflect(component, outputMessage.getBody());
+			reflector.reflect(component, bodyWriter);
 		}
 		catch (ReflectorException exception)
 		{
 			throw new HttpMessageNotWritableException("Error writing component", exception);
 		}
+		
+		bodyWriter.flush();
 	}
 }

@@ -14,7 +14,7 @@
 package org.hobsoft.symmetry;
 
 import java.io.IOException;
-import java.io.OutputStream;
+import java.io.Writer;
 
 /**
  * Defines an API to serialise UI components.
@@ -43,16 +43,19 @@ public interface Reflector<T>
 	String getContentType();
 
 	/**
-	 * Serialises the specified component to the specified output stream.
+	 * Serialises the specified component to the specified writer.
+	 * <p>
+	 * The character encoding used by the writer should be the {@code charset} parameter of the media type returned by
+	 * {@link #getContentType()}.
 	 * 
 	 * @param component
 	 *            the component to reflect
-	 * @param outputStream
-	 *            the output stream to reflect into
+	 * @param writer
+	 *            the writer to reflect into
 	 * @throws IOException
 	 *             if an I/O error occurs
 	 * @throws ReflectorException
 	 *             if an error occurs during reflection
 	 */
-	void reflect(T component, OutputStream outputStream) throws IOException, ReflectorException;
+	void reflect(T component, Writer writer) throws IOException, ReflectorException;
 }

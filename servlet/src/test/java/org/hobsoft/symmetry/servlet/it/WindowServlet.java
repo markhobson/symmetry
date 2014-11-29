@@ -44,7 +44,7 @@ public class WindowServlet extends HttpServlet
 		
 		try
 		{
-			reflector.reflect(new Window(), response.getOutputStream());
+			reflector.reflect(new Window(), response.getWriter());
 		}
 		catch (ReflectorException exception)
 		{

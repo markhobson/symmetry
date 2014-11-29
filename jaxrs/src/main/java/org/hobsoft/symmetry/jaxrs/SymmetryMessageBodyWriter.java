@@ -15,6 +15,8 @@ package org.hobsoft.symmetry.jaxrs;
 
 import java.io.IOException;
 import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Type;
 
@@ -70,13 +72,18 @@ public class SymmetryMessageBodyWriter<T> implements MessageBodyWriter<T>
 	public void writeTo(T component, Class<?> type, Type genericType, Annotation[] annotations, MediaType mediaType,
 		MultivaluedMap<String, Object> httpHeaders, OutputStream entityStream) throws IOException
 	{
+		// TODO: encoding
+		Writer entityWriter = new OutputStreamWriter(entityStream);
+		
 		try
 		{
-			reflector.reflect(component, entityStream);
+			reflector.reflect(component, entityWriter);
 		}
 		catch (ReflectorException exception)
 		{
 			throw new InternalServerErrorException("Error writing component", exception);
 		}
+		
+		entityWriter.flush();
 	}
 }

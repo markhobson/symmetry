@@ -13,9 +13,9 @@
  */
 package org.hobsoft.symmetry.ui.html;
 
-import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.io.OutputStream;
+import java.io.StringWriter;
+import java.io.Writer;
 
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamWriter;
@@ -97,11 +97,11 @@ public class XmlComponentReflectorTest
 		doAnswer(writeStartElement(1, "x")).when(visitor).visit(any(Window.class), any(XMLStreamWriter.class));
 		doAnswer(writeEndElement(1)).when(visitor).endVisit(any(Window.class), any(XMLStreamWriter.class));
 		XmlComponentReflector reflector = new XmlComponentReflector(visitor, someContentType());
-		ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+		StringWriter writer = new StringWriter();
 		
-		reflector.reflect(new Window(), outputStream);
+		reflector.reflect(new Window(), writer);
 		
-		assertThat(outputStream.toString("UTF-8"), is("<x></x>"));
+		assertThat(writer.toString(), is("<x></x>"));
 	}
 	
 	@Test
@@ -115,7 +115,7 @@ public class XmlComponentReflectorTest
 		thrown.expectMessage("Error reflecting component");
 		thrown.expectCause(is(exception));
 		
-		reflector.reflect(new Window(), mock(OutputStream.class));
+		reflector.reflect(new Window(), mock(Writer.class));
 	}
 	
 	@Test

@@ -14,7 +14,7 @@
 package org.hobsoft.symmetry.spring;
 
 import java.io.IOException;
-import java.io.OutputStream;
+import java.io.Writer;
 import java.util.List;
 
 import org.hobsoft.symmetry.Reflector;
@@ -30,12 +30,11 @@ import org.springframework.http.converter.HttpMessageNotWritableException;
 import org.springframework.mock.http.MockHttpInputMessage;
 import org.springframework.mock.http.MockHttpOutputMessage;
 
-import com.google.common.base.Charsets;
-
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.Matchers.contains;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Matchers.any;
+import static org.mockito.Matchers.eq;
 import static org.mockito.Mockito.doAnswer;
 import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.mock;
@@ -159,18 +158,17 @@ public class SymmetryHttpMessageConverterTest
 	{
 		Reflector<DummyComponent> reflector = newReflector(DummyComponent.class, "x/y");
 		DummyComponent component = new DummyComponent();
-		MockHttpOutputMessage outputMessage = new MockHttpOutputMessage();
 		
-		newConverter(reflector).write(component, parseMediaType("x/y"), outputMessage);
+		newConverter(reflector).write(component, parseMediaType("x/y"), new MockHttpOutputMessage());
 		
-		verify(reflector).reflect(component, outputMessage.getBody());
+		verify(reflector).reflect(eq(component), any(Writer.class));
 	}
 	
 	@Test
 	public void writeWithComponentWritesReflection() throws IOException, ReflectorException
 	{
 		Reflector<DummyComponent> reflector = newReflector(DummyComponent.class, "x/y");
-		doAnswer(write(1, "z")).when(reflector).reflect(any(DummyComponent.class), any(OutputStream.class));
+		doAnswer(write(1, "z")).when(reflector).reflect(any(DummyComponent.class), any(Writer.class));
 		MockHttpOutputMessage outputMessage = new MockHttpOutputMessage();
 		
 		newConverter(reflector).write(new DummyComponent(), parseMediaType("x/y"), outputMessage);
@@ -183,7 +181,7 @@ public class SymmetryHttpMessageConverterTest
 	{
 		Reflector<DummyComponent> reflector = newReflector(DummyComponent.class, "x/y");
 		IOException exception = new IOException();
-		doThrow(exception).when(reflector).reflect(any(DummyComponent.class), any(OutputStream.class));
+		doThrow(exception).when(reflector).reflect(any(DummyComponent.class), any(Writer.class));
 		
 		thrown.expect(is(exception));
 		
@@ -195,7 +193,7 @@ public class SymmetryHttpMessageConverterTest
 	{
 		Reflector<DummyComponent> reflector = newReflector(DummyComponent.class, "x/y");
 		ReflectorException exception = new ReflectorException("z");
-		doThrow(exception).when(reflector).reflect(any(DummyComponent.class), any(OutputStream.class));
+		doThrow(exception).when(reflector).reflect(any(DummyComponent.class), any(Writer.class));
 		
 		thrown.expect(HttpMessageNotWritableException.class);
 		thrown.expectMessage("Error writing component");
@@ -231,15 +229,15 @@ public class SymmetryHttpMessageConverterTest
 		return "_/_";
 	}
 
-	private static Answer<Object> write(final int outputStreamIndex, final String string)
+	private static Answer<Object> write(final int writerIndex, final String string)
 	{
 		return new Answer<Object>()
 		{
 			@Override
 			public Object answer(InvocationOnMock invocation) throws IOException
 			{
-				OutputStream outputStream = invocation.getArgumentAt(outputStreamIndex, OutputStream.class);
-				outputStream.write(string.getBytes(Charsets.UTF_8));
+				Writer writer = invocation.getArgumentAt(writerIndex, Writer.class);
+				writer.write(string);
 				return null;
 			}
 		};

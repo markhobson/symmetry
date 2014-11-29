@@ -17,6 +17,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
+import java.io.Writer;
 import java.lang.annotation.Annotation;
 
 import javax.ws.rs.InternalServerErrorException;
@@ -32,11 +33,10 @@ import org.junit.rules.ExpectedException;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
 
-import com.google.common.base.Charsets;
-
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Matchers.any;
+import static org.mockito.Matchers.eq;
 import static org.mockito.Mockito.doAnswer;
 import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.mock;
@@ -142,19 +142,18 @@ public class SymmetryMessageBodyWriterTest
 	{
 		Reflector<DummyComponent> reflector = newReflector(DummyComponent.class, "x/y");
 		DummyComponent component = new DummyComponent();
-		ByteArrayOutputStream entityStream = new ByteArrayOutputStream();
 		
 		newWriter(reflector).writeTo(component, DummyComponent.class, DummyComponent.class, someAnnotations(),
-			MediaType.valueOf("x/y"), someHttpHeaders(), entityStream);
+			MediaType.valueOf("x/y"), someHttpHeaders(), mock(OutputStream.class));
 		
-		verify(reflector).reflect(component, entityStream);
+		verify(reflector).reflect(eq(component), any(Writer.class));
 	}
 	
 	@Test
 	public void writeToWithComponentWritesHtml() throws IOException, ReflectorException
 	{
 		Reflector<DummyComponent> reflector = newReflector(DummyComponent.class, "x/y");
-		doAnswer(write(1, "z")).when(reflector).reflect(any(DummyComponent.class), any(OutputStream.class));
+		doAnswer(write(1, "z")).when(reflector).reflect(any(DummyComponent.class), any(Writer.class));
 		ByteArrayOutputStream entityStream = new ByteArrayOutputStream();
 		
 		newWriter(reflector).writeTo(new DummyComponent(), DummyComponent.class, DummyComponent.class,
@@ -168,7 +167,7 @@ public class SymmetryMessageBodyWriterTest
 	{
 		Reflector<DummyComponent> reflector = newReflector(DummyComponent.class, "x/y");
 		IOException exception = new IOException();
-		doThrow(exception).when(reflector).reflect(any(DummyComponent.class), any(OutputStream.class));
+		doThrow(exception).when(reflector).reflect(any(DummyComponent.class), any(Writer.class));
 		
 		thrown.expect(is(exception));
 		
@@ -181,7 +180,7 @@ public class SymmetryMessageBodyWriterTest
 	{
 		Reflector<DummyComponent> reflector = newReflector(DummyComponent.class, "x/y");
 		ReflectorException exception = new ReflectorException("z");
-		doThrow(exception).when(reflector).reflect(any(DummyComponent.class), any(OutputStream.class));
+		doThrow(exception).when(reflector).reflect(any(DummyComponent.class), any(Writer.class));
 		
 		thrown.expect(InternalServerErrorException.class);
 		thrown.expectMessage("Error writing component");
@@ -233,15 +232,15 @@ public class SymmetryMessageBodyWriterTest
 		return new MultivaluedHashMap<>();
 	}
 
-	private static Answer<Object> write(final int outputStreamIndex, final String string)
+	private static Answer<Object> write(final int writerIndex, final String string)
 	{
 		return new Answer<Object>()
 		{
 			@Override
 			public Object answer(InvocationOnMock invocation) throws IOException
 			{
-				OutputStream outputStream = invocation.getArgumentAt(outputStreamIndex, OutputStream.class);
-				outputStream.write(string.getBytes(Charsets.UTF_8));
+				Writer writer = invocation.getArgumentAt(writerIndex, Writer.class);
+				writer.write(string);
 				return null;
 			}
 		};
