@@ -14,11 +14,15 @@
 package org.hobsoft.symmetry.jaxrs.it;
 
 import javax.ws.rs.core.Application;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 
 import org.glassfish.jersey.test.JerseyTest;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.slf4j.bridge.SLF4JBridgeHandler;
+
+import static java.net.HttpURLConnection.HTTP_OK;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
@@ -56,16 +60,20 @@ public class JaxrsTest extends JerseyTest
 	@Test
 	public void getWindowReturnsHtml()
 	{
-		String actual = target("/window").request().get(String.class);
+		Response actual = target("/window").request().get();
 		
-		assertThat(actual, is("<html><body></body></html>"));
+		assertThat("status", actual.getStatus(), is(HTTP_OK));
+		assertThat("content type", actual.getMediaType(), is(MediaType.valueOf("text/html")));
+		assertThat("entity", actual.readEntity(String.class), is("<html><body></body></html>"));
 	}
 	
 	@Test
 	public void getWindowAndTextReturnsHtml()
 	{
-		String actual = target("/windowAndText").request().get(String.class);
+		Response actual = target("/windowAndText").request().get();
 		
-		assertThat(actual, is("<html><body>x</body></html>"));
+		assertThat("status", actual.getStatus(), is(HTTP_OK));
+		assertThat("content type", actual.getMediaType(), is(MediaType.valueOf("text/html")));
+		assertThat("entity", actual.readEntity(String.class), is("<html><body>x</body></html>"));
 	}
 }
