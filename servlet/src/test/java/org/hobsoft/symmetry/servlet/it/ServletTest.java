@@ -49,7 +49,7 @@ public class ServletTest
 	{
 		serverRule.startServlet(WindowServlet.class, "/");
 		
-		String actual = serverRule.get("/");
+		String actual = serverRule.target("/").request().get(String.class);
 		
 		assertThat(actual, is("<html><body></body></html>"));
 	}
@@ -59,7 +59,7 @@ public class ServletTest
 	{
 		serverRule.startServlet(WindowAndTextServlet.class, "/");
 		
-		String actual = serverRule.get("/");
+		String actual = serverRule.target("/").request().get(String.class);
 		
 		assertThat(actual, is("<html><body>x</body></html>"));
 	}

@@ -13,17 +13,13 @@
  */
 package org.hobsoft.symmetry.servlet.it;
 
-import java.io.IOException;
-import java.net.URL;
-
 import javax.servlet.Servlet;
+import javax.ws.rs.client.ClientBuilder;
+import javax.ws.rs.client.WebTarget;
 
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.servlet.ServletHandler;
 import org.junit.rules.ExternalResource;
-
-import com.google.common.base.Charsets;
-import com.google.common.io.Resources;
 
 /**
  * JUnit rule that manages a Jetty server.
@@ -73,12 +69,11 @@ public class ServerRule extends ExternalResource
 		server.start();
 	}
 
-	public String get(String path) throws IOException
+	public WebTarget target(String path)
 	{
-		URL serverUrl = server.getURI().toURL();
-		URL url = new URL(serverUrl, path);
-		
-		return Resources.toString(url, Charsets.UTF_8);
+		return ClientBuilder.newClient()
+			.target(server.getURI())
+			.path(path);
 	}
 
 	// ----------------------------------------------------------------------------------------------------------------

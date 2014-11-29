@@ -48,6 +48,14 @@
 			<scope>test</scope>
 		</dependency>
 			
+		<!-- Jersey -->
+	
+		<dependency>
+			<groupId>org.glassfish.jersey.core</groupId>
+			<artifactId>jersey-client</artifactId>
+			<scope>test</scope>
+		</dependency>
+
 		<!-- SLF4J -->
 		
 		<dependency>
