@@ -21,7 +21,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.hobsoft.symmetry.Reflector;
 import org.hobsoft.symmetry.ReflectorException;
+import org.hobsoft.symmetry.ui.Component;
 import org.hobsoft.symmetry.ui.Text;
 import org.hobsoft.symmetry.ui.Window;
 import org.hobsoft.symmetry.ui.html.HtmlComponentReflector;
@@ -43,9 +45,12 @@ public class HelloServlet extends HttpServlet
 		Window window = new Window();
 		window.add(new Text("Hello world!"));
 		
+		Reflector<Component> reflector = new HtmlComponentReflector();
+		response.setContentType(reflector.getContentType());
+		
 		try
 		{
-			new HtmlComponentReflector().reflect(window, response.getOutputStream());
+			reflector.reflect(window, response.getOutputStream());
 		}
 		catch (ReflectorException exception)
 		{
