@@ -65,6 +65,7 @@ public class SpringTest
 	{
 		mvc.perform(get("/window"))
 			.andExpect(status().isOk())
+			.andExpect(content().contentType("text/html"))
 			.andExpect(content().string("<html><body></body></html>"));
 	}
 	
@@ -73,6 +74,7 @@ public class SpringTest
 	{
 		mvc.perform(get("/windowWithText"))
 			.andExpect(status().isOk())
+			.andExpect(content().contentType("text/html"))
 			.andExpect(content().string("<html><body>x</body></html>"));
 	}
 }
