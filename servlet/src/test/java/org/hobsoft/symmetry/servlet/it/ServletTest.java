@@ -13,8 +13,13 @@
  */
 package org.hobsoft.symmetry.servlet.it;
 
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+
 import org.junit.Rule;
 import org.junit.Test;
+
+import static java.net.HttpURLConnection.HTTP_OK;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
@@ -49,9 +54,11 @@ public class ServletTest
 	{
 		serverRule.startServlet(WindowServlet.class, "/");
 		
-		String actual = serverRule.target("/").request().get(String.class);
+		Response actual = serverRule.target("/").request().get();
 		
-		assertThat(actual, is("<html><body></body></html>"));
+		assertThat("status", actual.getStatus(), is(HTTP_OK));
+		assertThat("content type", actual.getMediaType(), is(MediaType.valueOf("text/html")));
+		assertThat("entity", actual.readEntity(String.class), is("<html><body></body></html>"));
 	}
 	
 	@Test
@@ -59,8 +66,10 @@ public class ServletTest
 	{
 		serverRule.startServlet(WindowAndTextServlet.class, "/");
 		
-		String actual = serverRule.target("/").request().get(String.class);
+		Response actual = serverRule.target("/").request().get();
 		
-		assertThat(actual, is("<html><body>x</body></html>"));
+		assertThat("status", actual.getStatus(), is(HTTP_OK));
+		assertThat("content type", actual.getMediaType(), is(MediaType.valueOf("text/html")));
+		assertThat("entity", actual.readEntity(String.class), is("<html><body>x</body></html>"));
 	}
 }

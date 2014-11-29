@@ -20,7 +20,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.hobsoft.symmetry.Reflector;
 import org.hobsoft.symmetry.ReflectorException;
+import org.hobsoft.symmetry.ui.Component;
 import org.hobsoft.symmetry.ui.Window;
 import org.hobsoft.symmetry.ui.html.HtmlComponentReflector;
 
@@ -37,9 +39,12 @@ public class WindowServlet extends HttpServlet
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
+		Reflector<Component> reflector = new HtmlComponentReflector();
+		response.setContentType(reflector.getContentType());
+		
 		try
 		{
-			new HtmlComponentReflector().reflect(new Window(), response.getOutputStream());
+			reflector.reflect(new Window(), response.getOutputStream());
 		}
 		catch (ReflectorException exception)
 		{
