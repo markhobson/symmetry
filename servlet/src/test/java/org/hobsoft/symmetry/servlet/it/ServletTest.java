@@ -55,9 +55,9 @@ public class ServletTest
 	}
 	
 	@Test
-	public void getWindowWithTextReturnsHtml() throws Exception
+	public void getWindowAndTextReturnsHtml() throws Exception
 	{
-		serverRule.startServlet(WindowWithTextServlet.class, "/");
+		serverRule.startServlet(WindowAndTextServlet.class, "/");
 		
 		String actual = serverRule.get("/");
 		

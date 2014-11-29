@@ -47,11 +47,11 @@ public class TaglibTest
 	// ----------------------------------------------------------------------------------------------------------------
 
 	@Test
-	public void getWindowWithTextReturnsHtml() throws Exception
+	public void getWindowAndTextReturnsHtml() throws Exception
 	{
 		serverRule.startWebApp(getResource(getClass(), ""), "/");
 		
-		String actual = serverRule.get("/windowWithText.jsp");
+		String actual = serverRule.get("/windowAndText.jsp");
 		
 		assertThat(actual, is("<html><body>x</body></html>"));
 	}

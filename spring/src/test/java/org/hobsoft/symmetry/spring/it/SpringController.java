@@ -39,9 +39,9 @@ public class SpringController
 		return new Window();
 	}
 	
-	@RequestMapping(method = RequestMethod.GET, value = "windowWithText")
+	@RequestMapping(method = RequestMethod.GET, value = "windowAndText")
 	@ResponseBody
-	public Component windowWithText()
+	public Component windowAndText()
 	{
 		Window window = new Window();
 		window.add(new Text("x"));

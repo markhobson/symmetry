@@ -29,7 +29,7 @@ import org.hobsoft.symmetry.ui.html.HtmlComponentReflector;
  * Servlet for integration tests.
  */
 @SuppressWarnings("serial")
-public class WindowWithTextServlet extends HttpServlet
+public class WindowAndTextServlet extends HttpServlet
 {
 	// ----------------------------------------------------------------------------------------------------------------
 	// HttpServlet methods

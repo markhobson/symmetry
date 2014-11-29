@@ -70,9 +70,9 @@ public class SpringTest
 	}
 	
 	@Test
-	public void getWindowWithTextReturnsHtml() throws Exception
+	public void getWindowAndTextReturnsHtml() throws Exception
 	{
-		mvc.perform(get("/windowWithText").accept("text/html"))
+		mvc.perform(get("/windowAndText").accept("text/html"))
 			.andExpect(status().isOk())
 			.andExpect(content().contentType("text/html"))
 			.andExpect(content().string("<html><body>x</body></html>"));

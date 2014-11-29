@@ -37,8 +37,8 @@ public class JaxrsResource
 	}
 	
 	@GET
-	@Path("windowWithText")
-	public Window windowWithText()
+	@Path("windowAndText")
+	public Window windowAndText()
 	{
 		Window window = new Window();
 		window.add(new Text("x"));

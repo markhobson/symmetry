@@ -62,9 +62,9 @@ public class JaxrsTest extends JerseyTest
 	}
 	
 	@Test
-	public void getWindowWithTextReturnsHtml()
+	public void getWindowAndTextReturnsHtml()
 	{
-		String actual = target("/windowWithText").request().get(String.class);
+		String actual = target("/windowAndText").request().get(String.class);
 		
 		assertThat(actual, is("<html><body>x</body></html>"));
 	}
