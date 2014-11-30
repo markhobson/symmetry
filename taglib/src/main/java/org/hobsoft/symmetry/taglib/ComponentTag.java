@@ -53,7 +53,7 @@ public class ComponentTag extends SimpleTagSupport
 		}
 		catch (ReflectorException exception)
 		{
-			// TODO: handle
+			throw new JspException("Error writing component", exception);
 		}
 	}
 	

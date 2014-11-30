@@ -119,6 +119,20 @@ public class ComponentTagTest
 	}
 	
 	@Test
+	public void doTagWhenReflectorExceptionThrowsJspException() throws JspException, IOException, ReflectorException
+	{
+		Reflector<DummyComponent> reflector = mock(Reflector.class);
+		ReflectorException exception = new ReflectorException("x");
+		doThrow(exception).when(reflector).reflect(any(DummyComponent.class), any(Writer.class));
+		
+		thrown.expect(JspException.class);
+		thrown.expectMessage("Error writing component");
+		thrown.expectCause(is(exception));
+		
+		doTag(new DummyComponent(), reflector);
+	}
+	
+	@Test
 	public void setNameSetsProperty()
 	{
 		tag.setName("x");
