@@ -37,6 +37,7 @@
 
 	<modules>
 		<module>jaxrs-helloworld</module>
+		<module>jsp-helloworld</module>
 		<module>servlet-helloworld</module>
 		<module>spring-helloworld</module>
 	</modules>
