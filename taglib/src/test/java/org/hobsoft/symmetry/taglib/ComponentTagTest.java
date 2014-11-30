@@ -88,14 +88,9 @@ public class ComponentTagTest
 	public void doTagInvokesReflector() throws JspException, IOException, ReflectorException
 	{
 		DummyComponent component = new DummyComponent();
-		context.setAttribute("x", component);
-		tag.setName("x");
-		
 		Reflector<DummyComponent> reflector = mock(Reflector.class);
-		context.setAttribute("y", reflector);
-		tag.setReflectorName("y");
 		
-		tag.doTag();
+		doTag(component, reflector);
 		
 		verify(reflector).reflect(component, context.getOut());
 	}
@@ -103,15 +98,10 @@ public class ComponentTagTest
 	@Test
 	public void doTagWritesHtml() throws JspException, IOException, ReflectorException
 	{
-		context.setAttribute("x", new DummyComponent());
-		tag.setName("x");
-
 		Reflector<DummyComponent> reflector = mock(Reflector.class);
 		doAnswer(write(1, "z")).when(reflector).reflect(any(DummyComponent.class), any(Writer.class));
-		context.setAttribute("y", reflector);
-		tag.setReflectorName("y");
 		
-		tag.doTag();
+		doTag(new DummyComponent(), reflector);
 		
 		assertThat(getResponse().getContentAsString(), is("z"));
 	}
@@ -119,18 +109,13 @@ public class ComponentTagTest
 	@Test
 	public void doTagWhenIOExceptionThrowsException() throws JspException, IOException, ReflectorException
 	{
-		context.setAttribute("x", new DummyComponent());
-		tag.setName("x");
-		
 		Reflector<DummyComponent> reflector = mock(Reflector.class);
 		IOException exception = new IOException();
 		doThrow(exception).when(reflector).reflect(any(DummyComponent.class), any(Writer.class));
-		context.setAttribute("y", reflector);
-		tag.setReflectorName("y");
 
 		thrown.expect(is(exception));
-		
-		tag.doTag();
+
+		doTag(new DummyComponent(), reflector);
 	}
 	
 	@Test
@@ -153,6 +138,17 @@ public class ComponentTagTest
 	// private methods
 	// ----------------------------------------------------------------------------------------------------------------
 
+	private <T> void doTag(T component, Reflector<T> reflector) throws JspException, IOException
+	{
+		context.setAttribute("_component", component);
+		tag.setName("_component");
+		
+		context.setAttribute("_reflector", reflector);
+		tag.setReflectorName("_reflector");
+		
+		tag.doTag();
+	}
+	
 	private MockHttpServletResponse getResponse()
 	{
 		return (MockHttpServletResponse) context.getResponse();
