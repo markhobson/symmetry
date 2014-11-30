@@ -30,9 +30,9 @@ import org.springframework.mock.web.MockPageContext;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Matchers.any;
-import static org.mockito.Matchers.eq;
 import static org.mockito.Mockito.doAnswer;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 
 /**
  * Tests {@code ComponentTag}.
@@ -74,14 +74,29 @@ public class ComponentTagTest
 	// ----------------------------------------------------------------------------------------------------------------
 
 	@Test
-	public void doTagWritesHtml() throws JspException, IOException, ReflectorException
+	public void doTagInvokesReflector() throws JspException, IOException, ReflectorException
 	{
 		DummyComponent component = new DummyComponent();
 		context.setAttribute("x", component);
 		tag.setName("x");
 		
 		Reflector<DummyComponent> reflector = mock(Reflector.class);
-		doAnswer(write(1, "z")).when(reflector).reflect(eq(component), any(Writer.class));
+		context.setAttribute("y", reflector);
+		tag.setReflectorName("y");
+		
+		tag.doTag();
+		
+		verify(reflector).reflect(component, context.getOut());
+	}
+	
+	@Test
+	public void doTagWritesHtml() throws JspException, IOException, ReflectorException
+	{
+		context.setAttribute("x", new DummyComponent());
+		tag.setName("x");
+
+		Reflector<DummyComponent> reflector = mock(Reflector.class);
+		doAnswer(write(1, "z")).when(reflector).reflect(any(DummyComponent.class), any(Writer.class));
 		context.setAttribute("y", reflector);
 		tag.setReflectorName("y");
 		
