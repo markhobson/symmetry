@@ -99,11 +99,11 @@ public class ComponentTagTest
 	public void doTagWritesHtml() throws JspException, IOException, ReflectorException
 	{
 		Reflector<DummyComponent> reflector = mock(Reflector.class);
-		doAnswer(write(1, "z")).when(reflector).reflect(any(DummyComponent.class), any(Writer.class));
+		doAnswer(write(1, "x")).when(reflector).reflect(any(DummyComponent.class), any(Writer.class));
 		
 		doTag(new DummyComponent(), reflector);
 		
-		assertThat(getResponse().getContentAsString(), is("z"));
+		assertThat(getResponse().getContentAsString(), is("x"));
 	}
 	
 	@Test
