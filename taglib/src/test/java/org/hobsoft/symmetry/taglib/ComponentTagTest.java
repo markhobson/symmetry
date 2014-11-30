@@ -14,22 +14,40 @@
 package org.hobsoft.symmetry.taglib;
 
 import java.io.IOException;
+import java.io.Writer;
 
 import javax.servlet.jsp.JspException;
 
+import org.hobsoft.symmetry.Reflector;
+import org.hobsoft.symmetry.ReflectorException;
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.invocation.InvocationOnMock;
+import org.mockito.stubbing.Answer;
 import org.springframework.mock.web.MockHttpServletResponse;
 import org.springframework.mock.web.MockPageContext;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
+import static org.mockito.Matchers.any;
+import static org.mockito.Matchers.eq;
+import static org.mockito.Mockito.doAnswer;
+import static org.mockito.Mockito.mock;
 
 /**
  * Tests {@code ComponentTag}.
  */
 public class ComponentTagTest
 {
+	// ----------------------------------------------------------------------------------------------------------------
+	// types
+	// ----------------------------------------------------------------------------------------------------------------
+
+	private static class DummyComponent
+	{
+		// dummy type
+	}
+
 	// ----------------------------------------------------------------------------------------------------------------
 	// fields
 	// ----------------------------------------------------------------------------------------------------------------
@@ -56,11 +74,36 @@ public class ComponentTagTest
 	// ----------------------------------------------------------------------------------------------------------------
 
 	@Test
-	public void doTagWritesHtml() throws JspException, IOException
+	public void doTagWritesHtml() throws JspException, IOException, ReflectorException
 	{
+		DummyComponent component = new DummyComponent();
+		context.setAttribute("x", component);
+		tag.setName("x");
+		
+		Reflector<DummyComponent> reflector = mock(Reflector.class);
+		doAnswer(write(1, "z")).when(reflector).reflect(eq(component), any(Writer.class));
+		context.setAttribute("y", reflector);
+		tag.setReflectorName("y");
+		
 		tag.doTag();
 		
-		assertThat(getResponse().getContentAsString(), is("x"));
+		assertThat(getResponse().getContentAsString(), is("z"));
+	}
+	
+	@Test
+	public void setNameSetsProperty()
+	{
+		tag.setName("x");
+		
+		assertThat(tag.getName(), is("x"));
+	}
+	
+	@Test
+	public void setReflectorNameSetsProperty()
+	{
+		tag.setReflectorName("x");
+		
+		assertThat(tag.getReflectorName(), is("x"));
 	}
 	
 	// ----------------------------------------------------------------------------------------------------------------
@@ -70,5 +113,19 @@ public class ComponentTagTest
 	private MockHttpServletResponse getResponse()
 	{
 		return (MockHttpServletResponse) context.getResponse();
+	}
+
+	private static Answer<Object> write(final int writerIndex, final String string)
+	{
+		return new Answer<Object>()
+		{
+			@Override
+			public Object answer(InvocationOnMock invocation) throws IOException
+			{
+				Writer writer = invocation.getArgumentAt(writerIndex, Writer.class);
+				writer.write(string);
+				return null;
+			}
+		};
 	}
 }

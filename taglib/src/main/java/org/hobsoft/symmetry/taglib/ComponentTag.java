@@ -15,8 +15,12 @@ package org.hobsoft.symmetry.taglib;
 
 import java.io.IOException;
 
+import javax.servlet.jsp.JspContext;
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.tagext.SimpleTagSupport;
+
+import org.hobsoft.symmetry.Reflector;
+import org.hobsoft.symmetry.ReflectorException;
 
 /**
  * JSP tag that serialises a component.
@@ -24,12 +28,56 @@ import javax.servlet.jsp.tagext.SimpleTagSupport;
 public class ComponentTag extends SimpleTagSupport
 {
 	// ----------------------------------------------------------------------------------------------------------------
+	// fields
+	// ----------------------------------------------------------------------------------------------------------------
+
+	private String name;
+	
+	private String reflectorName;
+
+	// ----------------------------------------------------------------------------------------------------------------
 	// SimpleTag methods
 	// ----------------------------------------------------------------------------------------------------------------
 
 	@Override
 	public void doTag() throws JspException, IOException
 	{
-		getJspContext().getOut().write("x");
+		JspContext context = getJspContext();
+		
+		Object component = context.getAttribute(name);
+		Reflector<Object> reflector = (Reflector<Object>) context.getAttribute(reflectorName);
+		
+		try
+		{
+			reflector.reflect(component, context.getOut());
+		}
+		catch (ReflectorException exception)
+		{
+			// TODO: handle
+		}
+	}
+	
+	// ----------------------------------------------------------------------------------------------------------------
+	// public methods
+	// ----------------------------------------------------------------------------------------------------------------
+
+	public String getName()
+	{
+		return name;
+	}
+
+	public void setName(String name)
+	{
+		this.name = name;
+	}
+	
+	public String getReflectorName()
+	{
+		return reflectorName;
+	}
+	
+	public void setReflectorName(String reflectorName)
+	{
+		this.reflectorName = reflectorName;
 	}
 }

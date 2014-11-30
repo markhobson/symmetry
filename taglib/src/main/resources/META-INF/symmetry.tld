@@ -11,10 +11,24 @@
 	<uri>http://hobsoft.org/symmetry/taglib</uri>
 	
 	<tag>
+	
 		<description>Serialises the specified component.</description>
 		<name>component</name>
 		<tag-class>org.hobsoft.symmetry.taglib.ComponentTag</tag-class>
 		<body-content>empty</body-content>
+		
+		<attribute>
+			<description>The name of a component to serialise.</description>
+			<name>name</name>
+			<required>true</required>
+		</attribute>
+		
+		<attribute>
+			<description>The name of the reflector to use.</description>
+			<name>reflectorName</name>
+			<required>true</required>
+		</attribute>
+		
 	</tag>
 
 </taglib>
