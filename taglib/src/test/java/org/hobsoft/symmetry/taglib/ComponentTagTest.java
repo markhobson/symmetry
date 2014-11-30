@@ -21,7 +21,9 @@ import javax.servlet.jsp.JspException;
 import org.hobsoft.symmetry.Reflector;
 import org.hobsoft.symmetry.ReflectorException;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
 import org.springframework.mock.web.MockHttpServletResponse;
@@ -31,6 +33,7 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.doAnswer;
+import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
@@ -52,6 +55,8 @@ public class ComponentTagTest
 	// fields
 	// ----------------------------------------------------------------------------------------------------------------
 
+	private ExpectedException thrown = ExpectedException.none();
+
 	private MockPageContext context;
 	
 	private ComponentTag tag;
@@ -67,6 +72,12 @@ public class ComponentTagTest
 		
 		tag = new ComponentTag();
 		tag.setJspContext(context);
+	}
+
+	@Rule
+	public ExpectedException getThrown()
+	{
+		return thrown;
 	}
 
 	// ----------------------------------------------------------------------------------------------------------------
@@ -103,6 +114,23 @@ public class ComponentTagTest
 		tag.doTag();
 		
 		assertThat(getResponse().getContentAsString(), is("z"));
+	}
+	
+	@Test
+	public void doTagWhenIOExceptionThrowsException() throws JspException, IOException, ReflectorException
+	{
+		context.setAttribute("x", new DummyComponent());
+		tag.setName("x");
+		
+		Reflector<DummyComponent> reflector = mock(Reflector.class);
+		IOException exception = new IOException();
+		doThrow(exception).when(reflector).reflect(any(DummyComponent.class), any(Writer.class));
+		context.setAttribute("y", reflector);
+		tag.setReflectorName("y");
+
+		thrown.expect(is(exception));
+		
+		tag.doTag();
 	}
 	
 	@Test
