@@ -84,7 +84,7 @@ public class SymmetryHttpMessageConverterTest
 	@Test
 	public void canReadWithComponentAndContentTypeReturnsFalse()
 	{
-		Reflector<DummyComponent> reflector = newReflector(DummyComponent.class, "x/y");
+		Reflector<DummyComponent> reflector = mockReflector(DummyComponent.class, "x/y");
 		
 		boolean actual = newConverter(reflector).canRead(DummyComponent.class, parseMediaType("x/y"));
 		
@@ -94,7 +94,7 @@ public class SymmetryHttpMessageConverterTest
 	@Test
 	public void canWriteWithComponentAndContentTypeReturnsTrue()
 	{
-		Reflector<DummyComponent> reflector = newReflector(DummyComponent.class, "x/y");
+		Reflector<DummyComponent> reflector = mockReflector(DummyComponent.class, "x/y");
 		
 		boolean actual = newConverter(reflector).canWrite(DummyComponent.class, parseMediaType("x/y"));
 		
@@ -104,7 +104,7 @@ public class SymmetryHttpMessageConverterTest
 	@Test
 	public void canWriteWithSubcomponentAndContentTypeReturnsTrue()
 	{
-		Reflector<DummyComponent> reflector = newReflector(DummyComponent.class, "x/y");
+		Reflector<DummyComponent> reflector = mockReflector(DummyComponent.class, "x/y");
 		
 		boolean actual = newConverter(reflector).canWrite(DummySubcomponent.class, parseMediaType("x/y"));
 		
@@ -114,7 +114,7 @@ public class SymmetryHttpMessageConverterTest
 	@Test
 	public void canWriteWithDifferentClassReturnsFalse()
 	{
-		Reflector<DummyComponent> reflector = newReflector(DummyComponent.class, "x/y");
+		Reflector<DummyComponent> reflector = mockReflector(DummyComponent.class, "x/y");
 		
 		boolean actual = newConverter(reflector).canWrite(Void.class, parseMediaType("x/y"));
 		
@@ -124,7 +124,7 @@ public class SymmetryHttpMessageConverterTest
 	@Test
 	public void canWriteWithDifferentMediaTypeReturnsFalse()
 	{
-		Reflector<DummyComponent> reflector = newReflector(DummyComponent.class, "x/y");
+		Reflector<DummyComponent> reflector = mockReflector(DummyComponent.class, "x/y");
 		
 		boolean actual = newConverter(reflector).canWrite(DummyComponent.class, parseMediaType("x/z"));
 		
@@ -134,7 +134,7 @@ public class SymmetryHttpMessageConverterTest
 	@Test
 	public void getSupportedMediaTypesReturnsContentType()
 	{
-		Reflector<?> reflector = newReflector(someComponentType(), "x/y");
+		Reflector<?> reflector = mockReflector(someComponentType(), "x/y");
 		
 		List<MediaType> actuals = newConverter(reflector).getSupportedMediaTypes();
 		
@@ -144,7 +144,7 @@ public class SymmetryHttpMessageConverterTest
 	@Test
 	public void readWithComponentThrowsException() throws IOException
 	{
-		Reflector<DummyComponent> reflector = newReflector(DummyComponent.class, someContentType());
+		Reflector<DummyComponent> reflector = mockReflector(DummyComponent.class, someContentType());
 		MockHttpInputMessage inputMessage = new MockHttpInputMessage(new byte[0]);
 		
 		thrown.expect(HttpMessageNotReadableException.class);
@@ -156,7 +156,7 @@ public class SymmetryHttpMessageConverterTest
 	@Test
 	public void writeWithComponentInvokesReflector() throws IOException, ReflectorException
 	{
-		Reflector<DummyComponent> reflector = newReflector(DummyComponent.class, "x/y");
+		Reflector<DummyComponent> reflector = mockReflector(DummyComponent.class, "x/y");
 		DummyComponent component = new DummyComponent();
 		
 		newConverter(reflector).write(component, parseMediaType("x/y"), new MockHttpOutputMessage());
@@ -167,7 +167,7 @@ public class SymmetryHttpMessageConverterTest
 	@Test
 	public void writeWithComponentWritesReflection() throws IOException, ReflectorException
 	{
-		Reflector<DummyComponent> reflector = newReflector(DummyComponent.class, "x/y");
+		Reflector<DummyComponent> reflector = mockReflector(DummyComponent.class, "x/y");
 		doAnswer(write(1, "z")).when(reflector).reflect(any(DummyComponent.class), any(Writer.class));
 		MockHttpOutputMessage outputMessage = new MockHttpOutputMessage();
 		
@@ -179,7 +179,7 @@ public class SymmetryHttpMessageConverterTest
 	@Test
 	public void writeWhenIOExceptionThrowsException() throws IOException, ReflectorException
 	{
-		Reflector<DummyComponent> reflector = newReflector(DummyComponent.class, "x/y");
+		Reflector<DummyComponent> reflector = mockReflector(DummyComponent.class, "x/y");
 		IOException exception = new IOException();
 		doThrow(exception).when(reflector).reflect(any(DummyComponent.class), any(Writer.class));
 		
@@ -191,7 +191,7 @@ public class SymmetryHttpMessageConverterTest
 	@Test
 	public void writeWhenReflectorExceptionThrowsSpringException() throws IOException, ReflectorException
 	{
-		Reflector<DummyComponent> reflector = newReflector(DummyComponent.class, "x/y");
+		Reflector<DummyComponent> reflector = mockReflector(DummyComponent.class, "x/y");
 		ReflectorException exception = new ReflectorException("z");
 		doThrow(exception).when(reflector).reflect(any(DummyComponent.class), any(Writer.class));
 		
@@ -206,7 +206,7 @@ public class SymmetryHttpMessageConverterTest
 	// private methods
 	// ----------------------------------------------------------------------------------------------------------------
 
-	private static <T> Reflector<T> newReflector(Class<T> componentType, String contentType)
+	private static <T> Reflector<T> mockReflector(Class<T> componentType, String contentType)
 	{
 		Reflector<T> reflector = mock(Reflector.class);
 		when(reflector.getComponentType()).thenReturn(componentType);

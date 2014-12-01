@@ -85,7 +85,7 @@ public class SymmetryMessageBodyWriterTest
 	@Test
 	public void isWriteableWithComponentAndContentTypeReturnsTrue()
 	{
-		Reflector<DummyComponent> reflector = newReflector(DummyComponent.class, "x/y");
+		Reflector<DummyComponent> reflector = mockReflector(DummyComponent.class, "x/y");
 		
 		boolean actual = newWriter(reflector).isWriteable(DummyComponent.class, DummyComponent.class, someAnnotations(),
 			MediaType.valueOf("x/y"));
@@ -96,7 +96,7 @@ public class SymmetryMessageBodyWriterTest
 	@Test
 	public void isWriteableWithSubcomponentAndContentTypeReturnsTrue()
 	{
-		Reflector<DummyComponent> reflector = newReflector(DummyComponent.class, "x/y");
+		Reflector<DummyComponent> reflector = mockReflector(DummyComponent.class, "x/y");
 		
 		boolean actual = newWriter(reflector).isWriteable(DummySubcomponent.class, DummySubcomponent.class,
 			someAnnotations(), MediaType.valueOf("x/y"));
@@ -107,7 +107,7 @@ public class SymmetryMessageBodyWriterTest
 	@Test
 	public void isWriteableWithDifferentMediaTypeReturnsFalse()
 	{
-		Reflector<DummyComponent> reflector = newReflector(DummyComponent.class, "x/y");
+		Reflector<DummyComponent> reflector = mockReflector(DummyComponent.class, "x/y");
 		
 		boolean actual = newWriter(reflector).isWriteable(DummyComponent.class, DummyComponent.class, someAnnotations(),
 			MediaType.valueOf("x/z"));
@@ -118,7 +118,7 @@ public class SymmetryMessageBodyWriterTest
 	@Test
 	public void isWriteableWithDifferentTypeReturnsFalse()
 	{
-		Reflector<DummyComponent> reflector = newReflector(DummyComponent.class, "x/y");
+		Reflector<DummyComponent> reflector = mockReflector(DummyComponent.class, "x/y");
 		
 		boolean actual = newWriter(reflector).isWriteable(Void.class, Void.class, someAnnotations(),
 			MediaType.valueOf("x/y"));
@@ -140,7 +140,7 @@ public class SymmetryMessageBodyWriterTest
 	@Test
 	public void writeToWithComponentInvokesReflector() throws IOException, ReflectorException
 	{
-		Reflector<DummyComponent> reflector = newReflector(DummyComponent.class, "x/y");
+		Reflector<DummyComponent> reflector = mockReflector(DummyComponent.class, "x/y");
 		DummyComponent component = new DummyComponent();
 		
 		newWriter(reflector).writeTo(component, DummyComponent.class, DummyComponent.class, someAnnotations(),
@@ -152,7 +152,7 @@ public class SymmetryMessageBodyWriterTest
 	@Test
 	public void writeToWithComponentWritesHtml() throws IOException, ReflectorException
 	{
-		Reflector<DummyComponent> reflector = newReflector(DummyComponent.class, "x/y");
+		Reflector<DummyComponent> reflector = mockReflector(DummyComponent.class, "x/y");
 		doAnswer(write(1, "z")).when(reflector).reflect(any(DummyComponent.class), any(Writer.class));
 		ByteArrayOutputStream entityStream = new ByteArrayOutputStream();
 		
@@ -165,7 +165,7 @@ public class SymmetryMessageBodyWriterTest
 	@Test
 	public void writeToWhenIOExceptionThrowsException() throws IOException, ReflectorException
 	{
-		Reflector<DummyComponent> reflector = newReflector(DummyComponent.class, "x/y");
+		Reflector<DummyComponent> reflector = mockReflector(DummyComponent.class, "x/y");
 		IOException exception = new IOException();
 		doThrow(exception).when(reflector).reflect(any(DummyComponent.class), any(Writer.class));
 		
@@ -178,7 +178,7 @@ public class SymmetryMessageBodyWriterTest
 	@Test
 	public void writeToWhenReflectorExceptionThrowsJaxrsException() throws IOException, ReflectorException
 	{
-		Reflector<DummyComponent> reflector = newReflector(DummyComponent.class, "x/y");
+		Reflector<DummyComponent> reflector = mockReflector(DummyComponent.class, "x/y");
 		ReflectorException exception = new ReflectorException("z");
 		doThrow(exception).when(reflector).reflect(any(DummyComponent.class), any(Writer.class));
 		
@@ -194,7 +194,7 @@ public class SymmetryMessageBodyWriterTest
 	// private methods
 	// ----------------------------------------------------------------------------------------------------------------
 
-	private static <T> Reflector<T> newReflector(Class<T> componentType, String contentType)
+	private static <T> Reflector<T> mockReflector(Class<T> componentType, String contentType)
 	{
 		Reflector<T> reflector = mock(Reflector.class);
 		when(reflector.getComponentType()).thenReturn(componentType);
