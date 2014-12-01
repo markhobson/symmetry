@@ -45,20 +45,8 @@ public class ComponentTag extends SimpleTagSupport
 	public void doTag() throws JspException, IOException
 	{
 		JspContext context = getJspContext();
-		
-		Object component = context.getAttribute(name);
-		
-		if (component == null)
-		{
-			throw new JspTagException("Cannot find component: " + name);
-		}
-		
-		Reflector<?> reflector = (Reflector<?>) context.getAttribute(reflectorName);
-		
-		if (reflector == null)
-		{
-			throw new JspTagException("Cannot find reflector: " + reflectorName);
-		}
+		Object component = getComponent(context);
+		Reflector<?> reflector = getReflector(context);
 		
 		try
 		{
@@ -98,6 +86,30 @@ public class ComponentTag extends SimpleTagSupport
 	// private methods
 	// ----------------------------------------------------------------------------------------------------------------
 
+	private Object getComponent(JspContext context) throws JspTagException
+	{
+		Object component = context.getAttribute(name);
+		
+		if (component == null)
+		{
+			throw new JspTagException("Cannot find component: " + name);
+		}
+		
+		return component;
+	}
+	
+	private Reflector<?> getReflector(JspContext context) throws JspTagException
+	{
+		Reflector<?> reflector = (Reflector<?>) context.getAttribute(reflectorName);
+		
+		if (reflector == null)
+		{
+			throw new JspTagException("Cannot find reflector: " + reflectorName);
+		}
+		
+		return reflector;
+	}
+	
 	private static <T> void reflect(Reflector<T> reflector, Object component, Writer writer) throws IOException,
 		ReflectorException
 	{
