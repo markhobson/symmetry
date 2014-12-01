@@ -52,14 +52,14 @@ public class TaglibTest
 	// ----------------------------------------------------------------------------------------------------------------
 
 	@Test
-	public void getWindowAndTextReturnsHtml() throws Exception
+	public void getWindowReturnsHtml() throws Exception
 	{
 		serverRule.startWebApp(getResource(getClass(), ""), "/");
 		
-		Response actual = serverRule.target("/windowAndText.jsp").request().get();
+		Response actual = serverRule.target("/window.jsp").request().get();
 		
 		assertThat("status", actual.getStatus(), is(HTTP_OK));
 		assertThat("content type", actual.getMediaType(), is(MediaType.valueOf("text/html; charset=ISO-8859-1")));
-		assertThat("entity", actual.readEntity(String.class), is("\n<html><body>x</body></html>\n"));
+		assertThat("entity", actual.readEntity(String.class), is("<html><body></body></html>"));
 	}
 }

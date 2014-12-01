@@ -13,19 +13,12 @@
  */
 package org.hobsoft.symmetry.taglib.it;
 
-import org.hobsoft.symmetry.ui.Text;
+import org.hobsoft.symmetry.ui.Window;
 
 /**
  * Component for integration tests.
  */
-public class TextBean extends Text
+public class WindowBean extends Window
 {
-	// ----------------------------------------------------------------------------------------------------------------
-	// constructors
-	// ----------------------------------------------------------------------------------------------------------------
-
-	public TextBean()
-	{
-		super("x");
-	}
+	// no components
 }
