@@ -45,6 +45,12 @@ public class ComponentTag extends SimpleTagSupport
 		JspContext context = getJspContext();
 		
 		Object component = context.getAttribute(name);
+		
+		if (component == null)
+		{
+			throw new JspException("Cannot find component: " + name);
+		}
+		
 		Reflector<Object> reflector = (Reflector<Object>) context.getAttribute(reflectorName);
 		
 		try
