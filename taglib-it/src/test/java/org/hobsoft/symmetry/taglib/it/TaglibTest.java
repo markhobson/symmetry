@@ -52,11 +52,11 @@ public class TaglibTest
 	// ----------------------------------------------------------------------------------------------------------------
 
 	@Test
-	public void getWindowReturnsHtml() throws Exception
+	public void getWindowWithPageScopeReturnsHtml() throws Exception
 	{
 		serverRule.startWebApp(getResource(getClass(), ""), "/");
 		
-		Response actual = serverRule.target("/window.jsp").request().get();
+		Response actual = serverRule.target("/windowWithPageScope.jsp").request().get();
 		
 		assertThat("status", actual.getStatus(), is(HTTP_OK));
 		assertThat("content type", actual.getMediaType(), is(MediaType.valueOf("text/html; charset=ISO-8859-1")));
