@@ -121,6 +121,19 @@ public class ComponentTagTest
 	}
 	
 	@Test
+	public void doTagWhenReflectorNotFoundThrowsException() throws JspException, IOException
+	{
+		context.setAttribute("x", new DummyComponent());
+		tag.setName("x");
+		tag.setReflectorName("y");
+		
+		thrown.expect(JspTagException.class);
+		thrown.expectMessage("Cannot find reflector: y");
+		
+		tag.doTag();
+	}
+	
+	@Test
 	public void doTagWhenIOExceptionThrowsException() throws JspException, IOException, ReflectorException
 	{
 		Reflector<DummyComponent> reflector = mock(Reflector.class);
