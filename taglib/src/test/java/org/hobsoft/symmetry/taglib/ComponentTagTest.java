@@ -30,6 +30,7 @@ import org.mockito.stubbing.Answer;
 import org.springframework.mock.web.MockHttpServletResponse;
 import org.springframework.mock.web.MockPageContext;
 
+import static javax.servlet.jsp.PageContext.APPLICATION_SCOPE;
 import static javax.servlet.jsp.PageContext.PAGE_SCOPE;
 import static javax.servlet.jsp.PageContext.REQUEST_SCOPE;
 import static javax.servlet.jsp.PageContext.SESSION_SCOPE;
@@ -119,6 +120,17 @@ public class ComponentTagTest
 		Reflector<DummyComponent> reflector = mockReflector(DummyComponent.class);
 		
 		doTag(component, reflector, SESSION_SCOPE);
+		
+		verify(reflector).reflect(component, context.getOut());
+	}
+	
+	@Test
+	public void doTagWhenApplicationScopeInvokesReflector() throws JspException, IOException, ReflectorException
+	{
+		DummyComponent component = new DummyComponent();
+		Reflector<DummyComponent> reflector = mockReflector(DummyComponent.class);
+		
+		doTag(component, reflector, APPLICATION_SCOPE);
 		
 		verify(reflector).reflect(component, context.getOut());
 	}

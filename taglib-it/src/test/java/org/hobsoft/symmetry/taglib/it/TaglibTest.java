@@ -86,4 +86,16 @@ public class TaglibTest
 		assertThat("content type", actual.getMediaType(), is(MediaType.valueOf("text/html; charset=ISO-8859-1")));
 		assertThat("entity", actual.readEntity(String.class), is("<html><body></body></html>"));
 	}
+	
+	@Test
+	public void getWindowWithApplicationScopeReturnsHtml() throws Exception
+	{
+		serverRule.startWebApp(getResource(getClass(), ""), "/");
+		
+		Response actual = serverRule.target("/windowWithApplicationScope.jsp").request().get();
+		
+		assertThat("status", actual.getStatus(), is(HTTP_OK));
+		assertThat("content type", actual.getMediaType(), is(MediaType.valueOf("text/html; charset=ISO-8859-1")));
+		assertThat("entity", actual.readEntity(String.class), is("<html><body></body></html>"));
+	}
 }
