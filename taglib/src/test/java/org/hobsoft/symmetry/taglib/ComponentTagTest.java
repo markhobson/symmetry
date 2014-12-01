@@ -30,6 +30,9 @@ import org.mockito.stubbing.Answer;
 import org.springframework.mock.web.MockHttpServletResponse;
 import org.springframework.mock.web.MockPageContext;
 
+import static javax.servlet.jsp.PageContext.PAGE_SCOPE;
+import static javax.servlet.jsp.PageContext.REQUEST_SCOPE;
+
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Matchers.any;
@@ -87,12 +90,23 @@ public class ComponentTagTest
 	// ----------------------------------------------------------------------------------------------------------------
 
 	@Test
-	public void doTagInvokesReflector() throws JspException, IOException, ReflectorException
+	public void doTagWhenPageScopeInvokesReflector() throws JspException, IOException, ReflectorException
 	{
 		DummyComponent component = new DummyComponent();
 		Reflector<DummyComponent> reflector = mockReflector(DummyComponent.class);
 		
-		doTag(component, reflector);
+		doTag(component, reflector, PAGE_SCOPE);
+		
+		verify(reflector).reflect(component, context.getOut());
+	}
+	
+	@Test
+	public void doTagWhenRequestScopeInvokesReflector() throws JspException, IOException, ReflectorException
+	{
+		DummyComponent component = new DummyComponent();
+		Reflector<DummyComponent> reflector = mockReflector(DummyComponent.class);
+		
+		doTag(component, reflector, REQUEST_SCOPE);
 		
 		verify(reflector).reflect(component, context.getOut());
 	}
@@ -189,10 +203,15 @@ public class ComponentTagTest
 	
 	private <T> void doTag(T component, Reflector<T> reflector) throws JspException, IOException
 	{
-		context.setAttribute("_component", component);
+		doTag(component, reflector, PAGE_SCOPE);
+	}
+	
+	private <T> void doTag(T component, Reflector<T> reflector, int scope) throws JspException, IOException
+	{
+		context.setAttribute("_component", component, scope);
 		tag.setName("_component");
 		
-		context.setAttribute("_reflector", reflector);
+		context.setAttribute("_reflector", reflector, scope);
 		tag.setReflectorName("_reflector");
 		
 		tag.doTag();

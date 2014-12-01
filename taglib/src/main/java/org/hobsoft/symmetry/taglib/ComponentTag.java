@@ -88,26 +88,26 @@ public class ComponentTag extends SimpleTagSupport
 
 	private Object getComponent(JspContext context) throws JspTagException
 	{
-		Object component = context.getAttribute(name);
-		
-		if (component == null)
+		int scope = context.getAttributesScope(name);
+
+		if (scope == 0)
 		{
 			throw new JspTagException("Cannot find component: " + name);
 		}
 		
-		return component;
+		return context.getAttribute(name, scope);
 	}
 	
 	private Reflector<?> getReflector(JspContext context) throws JspTagException
 	{
-		Reflector<?> reflector = (Reflector<?>) context.getAttribute(reflectorName);
+		int scope = context.getAttributesScope(reflectorName);
 		
-		if (reflector == null)
+		if (scope == 0)
 		{
 			throw new JspTagException("Cannot find reflector: " + reflectorName);
 		}
 		
-		return reflector;
+		return (Reflector<?>) context.getAttribute(reflectorName, scope);
 	}
 	
 	private static <T> void reflect(Reflector<T> reflector, Object component, Writer writer) throws IOException,
