@@ -37,6 +37,7 @@ import static org.mockito.Mockito.doAnswer;
 import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 /**
  * Tests {@code ComponentTag}.
@@ -89,7 +90,7 @@ public class ComponentTagTest
 	public void doTagInvokesReflector() throws JspException, IOException, ReflectorException
 	{
 		DummyComponent component = new DummyComponent();
-		Reflector<DummyComponent> reflector = mock(Reflector.class);
+		Reflector<DummyComponent> reflector = mockReflector(DummyComponent.class);
 		
 		doTag(component, reflector);
 		
@@ -99,7 +100,7 @@ public class ComponentTagTest
 	@Test
 	public void doTagWritesHtml() throws JspException, IOException, ReflectorException
 	{
-		Reflector<DummyComponent> reflector = mock(Reflector.class);
+		Reflector<DummyComponent> reflector = mockReflector(DummyComponent.class);
 		doAnswer(write(1, "x")).when(reflector).reflect(any(DummyComponent.class), any(Writer.class));
 		
 		doTag(new DummyComponent(), reflector);
@@ -136,7 +137,7 @@ public class ComponentTagTest
 	@Test
 	public void doTagWhenIOExceptionThrowsException() throws JspException, IOException, ReflectorException
 	{
-		Reflector<DummyComponent> reflector = mock(Reflector.class);
+		Reflector<DummyComponent> reflector = mockReflector(DummyComponent.class);
 		IOException exception = new IOException();
 		doThrow(exception).when(reflector).reflect(any(DummyComponent.class), any(Writer.class));
 
@@ -148,7 +149,7 @@ public class ComponentTagTest
 	@Test
 	public void doTagWhenReflectorExceptionThrowsJspTagException() throws JspException, IOException, ReflectorException
 	{
-		Reflector<DummyComponent> reflector = mock(Reflector.class);
+		Reflector<DummyComponent> reflector = mockReflector(DummyComponent.class);
 		ReflectorException exception = new ReflectorException("x");
 		doThrow(exception).when(reflector).reflect(any(DummyComponent.class), any(Writer.class));
 		
@@ -179,6 +180,13 @@ public class ComponentTagTest
 	// private methods
 	// ----------------------------------------------------------------------------------------------------------------
 
+	private static <T> Reflector<T> mockReflector(Class<T> componentType)
+	{
+		Reflector<T> reflector = mock(Reflector.class);
+		when(reflector.getComponentType()).thenReturn(componentType);
+		return reflector;
+	}
+	
 	private <T> void doTag(T component, Reflector<T> reflector) throws JspException, IOException
 	{
 		context.setAttribute("_component", component);

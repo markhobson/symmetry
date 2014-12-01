@@ -14,6 +14,7 @@
 package org.hobsoft.symmetry.taglib;
 
 import java.io.IOException;
+import java.io.Writer;
 
 import javax.servlet.jsp.JspContext;
 import javax.servlet.jsp.JspException;
@@ -52,7 +53,7 @@ public class ComponentTag extends SimpleTagSupport
 			throw new JspTagException("Cannot find component: " + name);
 		}
 		
-		Reflector<Object> reflector = (Reflector<Object>) context.getAttribute(reflectorName);
+		Reflector<?> reflector = (Reflector<?>) context.getAttribute(reflectorName);
 		
 		if (reflector == null)
 		{
@@ -61,7 +62,7 @@ public class ComponentTag extends SimpleTagSupport
 		
 		try
 		{
-			reflector.reflect(component, context.getOut());
+			reflect(reflector, component, context.getOut());
 		}
 		catch (ReflectorException exception)
 		{
@@ -91,5 +92,17 @@ public class ComponentTag extends SimpleTagSupport
 	public void setReflectorName(String reflectorName)
 	{
 		this.reflectorName = reflectorName;
+	}
+	
+	// ----------------------------------------------------------------------------------------------------------------
+	// private methods
+	// ----------------------------------------------------------------------------------------------------------------
+
+	private static <T> void reflect(Reflector<T> reflector, Object component, Writer writer) throws IOException,
+		ReflectorException
+	{
+		T typedComponent = reflector.getComponentType().cast(component);
+		
+		reflector.reflect(typedComponent, writer);
 	}
 }
