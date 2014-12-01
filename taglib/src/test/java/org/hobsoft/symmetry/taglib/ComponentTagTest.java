@@ -17,6 +17,7 @@ import java.io.IOException;
 import java.io.Writer;
 
 import javax.servlet.jsp.JspException;
+import javax.servlet.jsp.JspTagException;
 
 import org.hobsoft.symmetry.Reflector;
 import org.hobsoft.symmetry.ReflectorException;
@@ -113,7 +114,7 @@ public class ComponentTagTest
 		context.setAttribute("y", mock(Reflector.class));
 		tag.setReflectorName("y");
 		
-		thrown.expect(JspException.class);
+		thrown.expect(JspTagException.class);
 		thrown.expectMessage("Cannot find component: x");
 		
 		tag.doTag();
@@ -132,13 +133,13 @@ public class ComponentTagTest
 	}
 	
 	@Test
-	public void doTagWhenReflectorExceptionThrowsJspException() throws JspException, IOException, ReflectorException
+	public void doTagWhenReflectorExceptionThrowsJspTagException() throws JspException, IOException, ReflectorException
 	{
 		Reflector<DummyComponent> reflector = mock(Reflector.class);
 		ReflectorException exception = new ReflectorException("x");
 		doThrow(exception).when(reflector).reflect(any(DummyComponent.class), any(Writer.class));
 		
-		thrown.expect(JspException.class);
+		thrown.expect(JspTagException.class);
 		thrown.expectMessage("Error writing component");
 		thrown.expectCause(is(exception));
 		

@@ -17,6 +17,7 @@ import java.io.IOException;
 
 import javax.servlet.jsp.JspContext;
 import javax.servlet.jsp.JspException;
+import javax.servlet.jsp.JspTagException;
 import javax.servlet.jsp.tagext.SimpleTagSupport;
 
 import org.hobsoft.symmetry.Reflector;
@@ -48,7 +49,7 @@ public class ComponentTag extends SimpleTagSupport
 		
 		if (component == null)
 		{
-			throw new JspException("Cannot find component: " + name);
+			throw new JspTagException("Cannot find component: " + name);
 		}
 		
 		Reflector<Object> reflector = (Reflector<Object>) context.getAttribute(reflectorName);
@@ -59,7 +60,7 @@ public class ComponentTag extends SimpleTagSupport
 		}
 		catch (ReflectorException exception)
 		{
-			throw new JspException("Error writing component", exception);
+			throw new JspTagException("Error writing component", exception);
 		}
 	}
 	
