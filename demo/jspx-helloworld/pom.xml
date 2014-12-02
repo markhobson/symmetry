@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<parent>
+		<groupId>org.hobsoft.symmetry</groupId>
+		<artifactId>symmetry-demo-parent</artifactId>
+		<version>0.3.0-SNAPSHOT</version>
+	</parent>
+	
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>symmetry-demo-jspx-helloworld</artifactId>
+	<packaging>war</packaging>
+	
+	<name>Symmetry Demo JSPX Hello World</name>
+	
+	<dependencies>
+	
+		<!-- Servlet -->
+		
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- Symmetry -->
+		
+		<dependency>
+			<groupId>org.hobsoft.symmetry</groupId>
+			<artifactId>symmetry-taglib</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.hobsoft.symmetry</groupId>
+			<artifactId>symmetry-ui</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.hobsoft.symmetry</groupId>
+			<artifactId>symmetry-ui-html</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		
+	</dependencies>
+	
+</project>

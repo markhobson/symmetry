@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<jsp:root version="2.1" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:s="http://hobsoft.org/symmetry/taglib">
+	<jsp:directive.page contentType="text/html"/>
+	<jsp:useBean id="component" class="org.hobsoft.symmetry.demo.jspx.helloworld.HelloBean"/>
+	<jsp:useBean id="reflector" class="org.hobsoft.symmetry.ui.html.HtmlComponentReflector"/>
+	
+	<s:component name="component" reflectorName="reflector"/>
+	
+</jsp:root>
