@@ -27,7 +27,7 @@ import static org.junit.Assert.assertThat;
 import static com.google.common.io.Resources.getResource;
 
 /**
- * Integration test for tag library integration.
+ * Integration test for JSP tag library integration.
  */
 public class JspTest
 {
