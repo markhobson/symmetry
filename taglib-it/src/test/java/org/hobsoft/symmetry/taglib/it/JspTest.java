@@ -29,7 +29,7 @@ import static com.google.common.io.Resources.getResource;
 /**
  * Integration test for tag library integration.
  */
-public class TaglibTest
+public class JspTest
 {
 	// ----------------------------------------------------------------------------------------------------------------
 	// fields
