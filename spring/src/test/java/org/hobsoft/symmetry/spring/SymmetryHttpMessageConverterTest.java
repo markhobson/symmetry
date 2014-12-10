@@ -30,6 +30,8 @@ import org.springframework.http.converter.HttpMessageNotWritableException;
 import org.springframework.mock.http.MockHttpInputMessage;
 import org.springframework.mock.http.MockHttpOutputMessage;
 
+import static java.nio.charset.StandardCharsets.ISO_8859_1;
+
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.Matchers.contains;
 import static org.junit.Assert.assertThat;
@@ -184,6 +186,18 @@ public class SymmetryHttpMessageConverterTest
 		newConverter(reflector).write(new DummyComponent(), parseMediaType("x/y"), outputMessage);
 		
 		assertThat(outputMessage.getBodyAsString(), is("z"));
+	}
+	
+	@Test
+	public void writeWithoutCharsetEncodesReflectionUsingIso88591() throws IOException, ReflectorException
+	{
+		Reflector<DummyComponent> reflector = mockReflector(DummyComponent.class, "x/y");
+		doAnswer(write(1, "\u20AC")).when(reflector).reflect(any(DummyComponent.class), any(Writer.class));
+		MockHttpOutputMessage outputMessage = new MockHttpOutputMessage();
+		
+		newConverter(reflector).write(new DummyComponent(), parseMediaType("x/y"), outputMessage);
+		
+		assertThat(outputMessage.getBodyAsString(ISO_8859_1), is("?"));
 	}
 	
 	@Test

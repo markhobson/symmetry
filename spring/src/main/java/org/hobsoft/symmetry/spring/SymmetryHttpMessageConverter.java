@@ -17,6 +17,8 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 
 import org.hobsoft.symmetry.Reflector;
 import org.hobsoft.symmetry.ReflectorException;
@@ -35,6 +37,12 @@ import org.springframework.http.converter.HttpMessageNotWritableException;
  */
 public class SymmetryHttpMessageConverter<T> extends AbstractHttpMessageConverter<T>
 {
+	// ----------------------------------------------------------------------------------------------------------------
+	// constants
+	// ----------------------------------------------------------------------------------------------------------------
+
+	private static final Charset DEFAULT_CHARSET = StandardCharsets.ISO_8859_1;
+	
 	// ----------------------------------------------------------------------------------------------------------------
 	// fields
 	// ----------------------------------------------------------------------------------------------------------------
@@ -82,8 +90,7 @@ public class SymmetryHttpMessageConverter<T> extends AbstractHttpMessageConverte
 	protected void writeInternal(T component, HttpOutputMessage outputMessage) throws IOException
 	{
 		OutputStream bodyStream = outputMessage.getBody();
-		// TODO: encoding
-		Writer bodyWriter = new OutputStreamWriter(bodyStream);
+		Writer bodyWriter = new OutputStreamWriter(bodyStream, DEFAULT_CHARSET);
 		
 		try
 		{

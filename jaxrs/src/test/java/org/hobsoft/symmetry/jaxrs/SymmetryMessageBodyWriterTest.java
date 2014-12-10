@@ -16,7 +16,6 @@ package org.hobsoft.symmetry.jaxrs;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
-import java.io.UnsupportedEncodingException;
 import java.io.Writer;
 import java.lang.annotation.Annotation;
 
@@ -170,7 +169,20 @@ public class SymmetryMessageBodyWriterTest
 		newWriter(reflector).writeTo(new DummyComponent(), DummyComponent.class, DummyComponent.class,
 			someAnnotations(), MediaType.valueOf("x/y"), someHttpHeaders(), entityStream);
 		
-		assertThat(toString(entityStream), is("z"));
+		assertThat(entityStream.toString("UTF-8"), is("z"));
+	}
+	
+	@Test
+	public void writeToWithoutCharsetWritesReflectionUsingIso88591() throws IOException, ReflectorException
+	{
+		Reflector<DummyComponent> reflector = mockReflector(DummyComponent.class, "x/y");
+		doAnswer(write(1, "\u20AC")).when(reflector).reflect(any(DummyComponent.class), any(Writer.class));
+		ByteArrayOutputStream entityStream = new ByteArrayOutputStream();
+		
+		newWriter(reflector).writeTo(new DummyComponent(), DummyComponent.class, DummyComponent.class,
+			someAnnotations(), MediaType.valueOf("x/y"), someHttpHeaders(), entityStream);
+		
+		assertThat(entityStream.toString("ISO-8859-1"), is("?"));
 	}
 	
 	@Test
@@ -255,10 +267,5 @@ public class SymmetryMessageBodyWriterTest
 				return null;
 			}
 		};
-	}
-	
-	private static String toString(ByteArrayOutputStream entityStream) throws UnsupportedEncodingException
-	{
-		return entityStream.toString("UTF-8");
 	}
 }

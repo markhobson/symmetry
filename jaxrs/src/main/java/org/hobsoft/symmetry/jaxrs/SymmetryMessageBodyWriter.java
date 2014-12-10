@@ -19,6 +19,8 @@ import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Type;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 
 import javax.ws.rs.InternalServerErrorException;
 import javax.ws.rs.core.MediaType;
@@ -36,6 +38,12 @@ import org.hobsoft.symmetry.ReflectorException;
  */
 public class SymmetryMessageBodyWriter<T> implements MessageBodyWriter<T>
 {
+	// ----------------------------------------------------------------------------------------------------------------
+	// constants
+	// ----------------------------------------------------------------------------------------------------------------
+
+	private static final Charset DEFAULT_CHARSET = StandardCharsets.ISO_8859_1;
+	
 	// ----------------------------------------------------------------------------------------------------------------
 	// fields
 	// ----------------------------------------------------------------------------------------------------------------
@@ -72,8 +80,7 @@ public class SymmetryMessageBodyWriter<T> implements MessageBodyWriter<T>
 	public void writeTo(T component, Class<?> type, Type genericType, Annotation[] annotations, MediaType mediaType,
 		MultivaluedMap<String, Object> httpHeaders, OutputStream entityStream) throws IOException
 	{
-		// TODO: encoding
-		Writer entityWriter = new OutputStreamWriter(entityStream);
+		Writer entityWriter = new OutputStreamWriter(entityStream, DEFAULT_CHARSET);
 		
 		try
 		{
