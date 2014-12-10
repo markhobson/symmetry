@@ -103,6 +103,17 @@ public class SymmetryMessageBodyWriterTest
 		
 		assertThat(actual, is(true));
 	}
+	
+	@Test
+	public void isWriteableWithComponentAndCompatibleContentTypeReturnsTrue()
+	{
+		Reflector<DummyComponent> reflector = mockReflector(DummyComponent.class, "x/y");
+		
+		boolean actual = newWriter(reflector).isWriteable(DummySubcomponent.class, DummySubcomponent.class,
+			someAnnotations(), MediaType.valueOf("x/*"));
+		
+		assertThat(actual, is(true));
+	}
 
 	@Test
 	public void isWriteableWithDifferentMediaTypeReturnsFalse()

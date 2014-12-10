@@ -59,7 +59,7 @@ public class SymmetryMessageBodyWriter<T> implements MessageBodyWriter<T>
 	public boolean isWriteable(Class<?> type, Type genericType, Annotation[] annotations, MediaType mediaType)
 	{
 		return reflector.getComponentType().isAssignableFrom(type)
-			&& MediaType.valueOf(reflector.getContentType()).equals(mediaType);
+			&& MediaType.valueOf(reflector.getContentType()).isCompatible(mediaType);
 	}
 
 	@Override
