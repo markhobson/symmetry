@@ -161,7 +161,7 @@ public class SymmetryMessageBodyWriterTest
 	}
 	
 	@Test
-	public void writeToWithComponentWritesHtml() throws IOException, ReflectorException
+	public void writeToWithComponentWritesReflection() throws IOException, ReflectorException
 	{
 		Reflector<DummyComponent> reflector = mockReflector(DummyComponent.class, "x/y");
 		doAnswer(write(1, "z")).when(reflector).reflect(any(DummyComponent.class), any(Writer.class));
