@@ -79,6 +79,15 @@ public class SpringTest
 	}
 	
 	@Test
+	public void getWindowWithAcceptCompatibleReturnsHtml() throws Exception
+	{
+		mvc.perform(get("/window").accept("text/html; x=y"))
+			.andExpect(status().isOk())
+			.andExpect(content().contentType("text/html; x=y"))
+			.andExpect(content().string("<html><body></body></html>"));
+	}
+	
+	@Test
 	public void getWindowWithAcceptOtherReturnsNotAcceptable() throws Exception
 	{
 		mvc.perform(get("/window").accept("x/y"))
