@@ -31,6 +31,7 @@ import org.springframework.mock.http.MockHttpInputMessage;
 import org.springframework.mock.http.MockHttpOutputMessage;
 
 import static java.nio.charset.StandardCharsets.ISO_8859_1;
+import static java.nio.charset.StandardCharsets.UTF_8;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.Matchers.contains;
@@ -198,6 +199,18 @@ public class SymmetryHttpMessageConverterTest
 		newConverter(reflector).write(new DummyComponent(), parseMediaType("x/y"), outputMessage);
 		
 		assertThat(outputMessage.getBodyAsString(ISO_8859_1), is("?"));
+	}
+	
+	@Test
+	public void writeWithCharsetEncodesReflectionUsingCharset() throws IOException, ReflectorException
+	{
+		Reflector<DummyComponent> reflector = mockReflector(DummyComponent.class, "x/y; charset=UTF-8");
+		doAnswer(write(1, "\u20AC")).when(reflector).reflect(any(DummyComponent.class), any(Writer.class));
+		MockHttpOutputMessage outputMessage = new MockHttpOutputMessage();
+		
+		newConverter(reflector).write(new DummyComponent(), parseMediaType("x/y; charset=UTF-8"), outputMessage);
+		
+		assertThat(outputMessage.getBodyAsString(UTF_8), is("\u20AC"));
 	}
 	
 	@Test

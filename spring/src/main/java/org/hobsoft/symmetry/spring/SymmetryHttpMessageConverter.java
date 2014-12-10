@@ -90,7 +90,8 @@ public class SymmetryHttpMessageConverter<T> extends AbstractHttpMessageConverte
 	protected void writeInternal(T component, HttpOutputMessage outputMessage) throws IOException
 	{
 		OutputStream bodyStream = outputMessage.getBody();
-		Writer bodyWriter = new OutputStreamWriter(bodyStream, DEFAULT_CHARSET);
+		Charset charset = getCharset(outputMessage);
+		Writer bodyWriter = new OutputStreamWriter(bodyStream, charset);
 		
 		try
 		{
@@ -102,5 +103,21 @@ public class SymmetryHttpMessageConverter<T> extends AbstractHttpMessageConverte
 		}
 		
 		bodyWriter.flush();
+	}
+	
+	// ----------------------------------------------------------------------------------------------------------------
+	// private methods
+	// ----------------------------------------------------------------------------------------------------------------
+
+	private static Charset getCharset(HttpOutputMessage outputMessage)
+	{
+		Charset charset = outputMessage.getHeaders().getContentType().getCharSet();
+		
+		if (charset == null)
+		{
+			charset = DEFAULT_CHARSET;
+		}
+		
+		return charset;
 	}
 }

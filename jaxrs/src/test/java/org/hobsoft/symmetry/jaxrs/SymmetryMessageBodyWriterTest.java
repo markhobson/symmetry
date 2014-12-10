@@ -186,6 +186,19 @@ public class SymmetryMessageBodyWriterTest
 	}
 	
 	@Test
+	public void writeToWithCharsetWritesReflectionUsingCharset() throws IOException, ReflectorException
+	{
+		Reflector<DummyComponent> reflector = mockReflector(DummyComponent.class, "x/y; charset=UTF-8");
+		doAnswer(write(1, "\u20AC")).when(reflector).reflect(any(DummyComponent.class), any(Writer.class));
+		ByteArrayOutputStream entityStream = new ByteArrayOutputStream();
+		
+		newWriter(reflector).writeTo(new DummyComponent(), DummyComponent.class, DummyComponent.class,
+			someAnnotations(), MediaType.valueOf("x/y; charset=UTF-8"), someHttpHeaders(), entityStream);
+		
+		assertThat(entityStream.toString("UTF-8"), is("\u20AC"));
+	}
+	
+	@Test
 	public void writeToWhenIOExceptionThrowsException() throws IOException, ReflectorException
 	{
 		Reflector<DummyComponent> reflector = mockReflector(DummyComponent.class, "x/y");

@@ -80,7 +80,8 @@ public class SymmetryMessageBodyWriter<T> implements MessageBodyWriter<T>
 	public void writeTo(T component, Class<?> type, Type genericType, Annotation[] annotations, MediaType mediaType,
 		MultivaluedMap<String, Object> httpHeaders, OutputStream entityStream) throws IOException
 	{
-		Writer entityWriter = new OutputStreamWriter(entityStream, DEFAULT_CHARSET);
+		Charset charset = getCharset(mediaType);
+		Writer entityWriter = new OutputStreamWriter(entityStream, charset);
 		
 		try
 		{
@@ -92,5 +93,26 @@ public class SymmetryMessageBodyWriter<T> implements MessageBodyWriter<T>
 		}
 		
 		entityWriter.flush();
+	}
+
+	// ----------------------------------------------------------------------------------------------------------------
+	// private methods
+	// ----------------------------------------------------------------------------------------------------------------
+
+	private static Charset getCharset(MediaType mediaType)
+	{
+		String charsetName = mediaType.getParameters().get(MediaType.CHARSET_PARAMETER);
+		Charset charset;
+		
+		if (charsetName != null)
+		{
+			charset = Charset.forName(charsetName);
+		}
+		else
+		{
+			charset = DEFAULT_CHARSET;
+		}
+		
+		return charset;
 	}
 }
