@@ -65,17 +65,17 @@ public class JaxrsTest extends JerseyTest
 		Response actual = target("/window").request().get();
 		
 		assertThat("status", actual.getStatus(), is(HTTP_OK));
-		assertThat("content type", actual.getMediaType(), is(MediaType.valueOf("text/html")));
+		assertThat("content type", actual.getMediaType(), is(MediaType.valueOf("text/html; charset=UTF-8")));
 		assertThat("entity", actual.readEntity(String.class), is("<html><body></body></html>"));
 	}
 	
 	@Test
 	public void getWindowWithAcceptHtmlReturnsHtml()
 	{
-		Response actual = target("/window").request("text/html").get();
+		Response actual = target("/window").request("text/html; charset=UTF-8").get();
 		
 		assertThat("status", actual.getStatus(), is(HTTP_OK));
-		assertThat("content type", actual.getMediaType(), is(MediaType.valueOf("text/html")));
+		assertThat("content type", actual.getMediaType(), is(MediaType.valueOf("text/html; charset=UTF-8")));
 		assertThat("entity", actual.readEntity(String.class), is("<html><body></body></html>"));
 	}
 	
@@ -85,7 +85,7 @@ public class JaxrsTest extends JerseyTest
 		Response actual = target("/window").request("text/html; x=y").get();
 		
 		assertThat("status", actual.getStatus(), is(HTTP_OK));
-		assertThat("content type", actual.getMediaType(), is(MediaType.valueOf("text/html")));
+		assertThat("content type", actual.getMediaType(), is(MediaType.valueOf("text/html; charset=UTF-8")));
 		assertThat("entity", actual.readEntity(String.class), is("<html><body></body></html>"));
 	}
 	
@@ -104,7 +104,17 @@ public class JaxrsTest extends JerseyTest
 		Response actual = target("/windowAndText").request().get();
 		
 		assertThat("status", actual.getStatus(), is(HTTP_OK));
-		assertThat("content type", actual.getMediaType(), is(MediaType.valueOf("text/html")));
+		assertThat("content type", actual.getMediaType(), is(MediaType.valueOf("text/html; charset=UTF-8")));
 		assertThat("entity", actual.readEntity(String.class), is("<html><body>x</body></html>"));
+	}
+	
+	@Test
+	public void getTextUnicodeEncodesText()
+	{
+		Response actual = target("/textUnicode").request().get();
+		
+		assertThat("status", actual.getStatus(), is(HTTP_OK));
+		assertThat("content type", actual.getMediaType(), is(MediaType.valueOf("text/html; charset=UTF-8")));
+		assertThat("entity", actual.readEntity(String.class), is("<html><body>\u20AC</body></html>"));
 	}
 }

@@ -44,4 +44,13 @@ public class JaxrsResource
 		window.add(new Text("x"));
 		return window;
 	}
+	
+	@GET
+	@Path("textUnicode")
+	public Window textUnicode()
+	{
+		Window window = new Window();
+		window.add(new Text("\u20AC"));
+		return window;
+	}
 }

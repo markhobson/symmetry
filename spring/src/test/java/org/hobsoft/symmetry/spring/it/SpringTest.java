@@ -65,16 +65,16 @@ public class SpringTest
 	{
 		mvc.perform(get("/window"))
 			.andExpect(status().isOk())
-			.andExpect(content().contentType("text/html"))
+			.andExpect(content().contentType("text/html; charset=UTF-8"))
 			.andExpect(content().string("<html><body></body></html>"));
 	}
 	
 	@Test
 	public void getWindowWithAcceptHtmlReturnsHtml() throws Exception
 	{
-		mvc.perform(get("/window").accept("text/html"))
+		mvc.perform(get("/window").accept("text/html; charset=UTF-8"))
 			.andExpect(status().isOk())
-			.andExpect(content().contentType("text/html"))
+			.andExpect(content().contentType("text/html; charset=UTF-8"))
 			.andExpect(content().string("<html><body></body></html>"));
 	}
 	
@@ -97,9 +97,18 @@ public class SpringTest
 	@Test
 	public void getWindowAndTextReturnsHtml() throws Exception
 	{
-		mvc.perform(get("/windowAndText").accept("text/html"))
+		mvc.perform(get("/windowAndText").accept("text/html; charset=UTF-8"))
 			.andExpect(status().isOk())
-			.andExpect(content().contentType("text/html"))
+			.andExpect(content().contentType("text/html; charset=UTF-8"))
 			.andExpect(content().string("<html><body>x</body></html>"));
+	}
+	
+	@Test
+	public void getTextUnicodeEncodesText() throws Exception
+	{
+		mvc.perform(get("/textUnicode").accept("text/html; charset=UTF-8"))
+			.andExpect(status().isOk())
+			.andExpect(content().contentType("text/html; charset=UTF-8"))
+			.andExpect(content().string("<html><body>\u20AC</body></html>"));
 	}
 }

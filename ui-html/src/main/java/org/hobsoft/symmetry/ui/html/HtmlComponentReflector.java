@@ -24,6 +24,6 @@ public class HtmlComponentReflector extends XmlComponentReflector
 
 	public HtmlComponentReflector()
 	{
-		super(new HtmlComponentVisitor(), "text/html");
+		super(new HtmlComponentVisitor(), "text/html; charset=UTF-8");
 	}
 }

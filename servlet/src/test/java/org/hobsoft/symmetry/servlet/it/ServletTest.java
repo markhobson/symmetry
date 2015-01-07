@@ -57,7 +57,7 @@ public class ServletTest
 		Response actual = serverRule.target("/").request().get();
 		
 		assertThat("status", actual.getStatus(), is(HTTP_OK));
-		assertThat("content type", actual.getMediaType(), is(MediaType.valueOf("text/html; charset=ISO-8859-1")));
+		assertThat("content type", actual.getMediaType(), is(MediaType.valueOf("text/html; charset=UTF-8")));
 		assertThat("entity", actual.readEntity(String.class), is("<html><body></body></html>"));
 	}
 	
@@ -69,7 +69,19 @@ public class ServletTest
 		Response actual = serverRule.target("/").request().get();
 		
 		assertThat("status", actual.getStatus(), is(HTTP_OK));
-		assertThat("content type", actual.getMediaType(), is(MediaType.valueOf("text/html; charset=ISO-8859-1")));
+		assertThat("content type", actual.getMediaType(), is(MediaType.valueOf("text/html; charset=UTF-8")));
 		assertThat("entity", actual.readEntity(String.class), is("<html><body>x</body></html>"));
+	}
+	
+	@Test
+	public void getTextUnicodeEncodesText() throws Exception
+	{
+		serverRule.startServlet(TextUnicodeServlet.class, "/");
+		
+		Response actual = serverRule.target("/").request().get();
+		
+		assertThat("status", actual.getStatus(), is(HTTP_OK));
+		assertThat("content type", actual.getMediaType(), is(MediaType.valueOf("text/html; charset=UTF-8")));
+		assertThat("entity", actual.readEntity(String.class), is("<html><body>\u20AC</body></html>"));
 	}
 }

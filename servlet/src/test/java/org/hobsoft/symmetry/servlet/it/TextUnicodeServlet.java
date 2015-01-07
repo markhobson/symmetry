@@ -11,49 +11,48 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.hobsoft.symmetry.spring.it;
+package org.hobsoft.symmetry.servlet.it;
 
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.hobsoft.symmetry.Reflector;
+import org.hobsoft.symmetry.ReflectorException;
 import org.hobsoft.symmetry.ui.Component;
 import org.hobsoft.symmetry.ui.Text;
 import org.hobsoft.symmetry.ui.Window;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.hobsoft.symmetry.ui.html.HtmlComponentReflector;
 
 /**
- * Spring MVC controller for integration tests.
+ * Servlet for integration tests.
  */
-@Controller
-@RequestMapping("/")
-public class SpringController
+@SuppressWarnings("serial")
+public class TextUnicodeServlet extends HttpServlet
 {
 	// ----------------------------------------------------------------------------------------------------------------
-	// public methods
+	// HttpServlet methods
 	// ----------------------------------------------------------------------------------------------------------------
 
-	@RequestMapping(method = RequestMethod.GET, value = "window")
-	@ResponseBody
-	public Component window()
-	{
-		return new Window();
-	}
-	
-	@RequestMapping(method = RequestMethod.GET, value = "windowAndText")
-	@ResponseBody
-	public Component windowAndText()
-	{
-		Window window = new Window();
-		window.add(new Text("x"));
-		return window;
-	}
-	
-	@RequestMapping(method = RequestMethod.GET, value = "textUnicode")
-	@ResponseBody
-	public Component textUnicode()
+	@Override
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
 		Window window = new Window();
 		window.add(new Text("\u20AC"));
-		return window;
+		
+		Reflector<Component> reflector = new HtmlComponentReflector();
+		response.setContentType(reflector.getContentType());
+		
+		try
+		{
+			reflector.reflect(window, response.getWriter());
+		}
+		catch (ReflectorException exception)
+		{
+			throw new ServletException("Error writing component", exception);
+		}
 	}
 }

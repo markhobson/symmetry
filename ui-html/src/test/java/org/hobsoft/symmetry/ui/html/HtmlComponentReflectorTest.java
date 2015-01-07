@@ -41,6 +41,6 @@ public class HtmlComponentReflectorTest
 	{
 		HtmlComponentReflector reflector = new HtmlComponentReflector();
 		
-		assertThat(reflector.getContentType(), is("text/html"));
+		assertThat(reflector.getContentType(), is("text/html; charset=UTF-8"));
 	}
 }
