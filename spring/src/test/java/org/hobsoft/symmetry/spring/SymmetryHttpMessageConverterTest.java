@@ -194,12 +194,12 @@ public class SymmetryHttpMessageConverterTest
 	public void writeWithComponentWritesReflection() throws IOException, ReflectorException
 	{
 		Reflector<DummyComponent> reflector = mockReflector(DummyComponent.class, someContentType());
-		doAnswer(write(1, "z")).when(reflector).reflect(any(DummyComponent.class), any(Writer.class));
+		doAnswer(write(1, "x")).when(reflector).reflect(any(DummyComponent.class), any(Writer.class));
 		MockHttpOutputMessage outputMessage = new MockHttpOutputMessage();
 		
 		newConverter(reflector).write(new DummyComponent(), null, outputMessage);
 		
-		assertThat(outputMessage.getBodyAsString(), is("z"));
+		assertThat(outputMessage.getBodyAsString(), is("x"));
 	}
 	
 	@Test
@@ -242,7 +242,7 @@ public class SymmetryHttpMessageConverterTest
 	public void writeWhenReflectorExceptionThrowsSpringException() throws IOException, ReflectorException
 	{
 		Reflector<DummyComponent> reflector = mockReflector(DummyComponent.class, someContentType());
-		ReflectorException exception = new ReflectorException("z");
+		ReflectorException exception = new ReflectorException("x");
 		doThrow(exception).when(reflector).reflect(any(DummyComponent.class), any(Writer.class));
 		
 		thrown.expect(HttpMessageNotWritableException.class);
