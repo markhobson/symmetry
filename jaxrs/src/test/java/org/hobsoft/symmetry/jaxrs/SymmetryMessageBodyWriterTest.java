@@ -95,7 +95,7 @@ public class SymmetryMessageBodyWriterTest
 	}
 	
 	@Test
-	public void isWriteableWithSubcomponentAndContentTypeReturnsTrue()
+	public void isWriteableWithSubtypeComponentReturnsTrue()
 	{
 		Reflector<DummyComponent> reflector = mockReflector(DummyComponent.class, "x/y");
 		
@@ -106,7 +106,7 @@ public class SymmetryMessageBodyWriterTest
 	}
 	
 	@Test
-	public void isWriteableWithComponentAndCompatibleContentTypeReturnsTrue()
+	public void isWriteableWithCompatibleContentTypeReturnsTrue()
 	{
 		Reflector<DummyComponent> reflector = mockReflector(DummyComponent.class, "x/y");
 		
@@ -117,7 +117,7 @@ public class SymmetryMessageBodyWriterTest
 	}
 
 	@Test
-	public void isWriteableWithDifferentMediaTypeReturnsFalse()
+	public void isWriteableWithDifferentContentTypeReturnsFalse()
 	{
 		Reflector<DummyComponent> reflector = mockReflector(DummyComponent.class, "x/y");
 		
@@ -128,7 +128,7 @@ public class SymmetryMessageBodyWriterTest
 	}
 	
 	@Test
-	public void isWriteableWithDifferentTypeReturnsFalse()
+	public void isWriteableWithDifferentComponentReturnsFalse()
 	{
 		Reflector<DummyComponent> reflector = mockReflector(DummyComponent.class, "x/y");
 		
