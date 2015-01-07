@@ -107,7 +107,7 @@ public class SymmetryHttpMessageConverterTest
 	}
 	
 	@Test
-	public void canWriteWithSubcomponentAndContentTypeReturnsTrue()
+	public void canWriteWithSubtypeComponentReturnsTrue()
 	{
 		Reflector<DummyComponent> reflector = mockReflector(DummyComponent.class, "x/y");
 		
@@ -117,7 +117,7 @@ public class SymmetryHttpMessageConverterTest
 	}
 	
 	@Test
-	public void canWriteWithComponentAndCompatibleContentTypeReturnsTrue()
+	public void canWriteWithCompatibleContentTypeReturnsTrue()
 	{
 		Reflector<DummyComponent> reflector = mockReflector(DummyComponent.class, "x/y");
 		
@@ -127,7 +127,7 @@ public class SymmetryHttpMessageConverterTest
 	}
 	
 	@Test
-	public void canWriteWithDifferentClassReturnsFalse()
+	public void canWriteWithDifferentComponentReturnsFalse()
 	{
 		Reflector<DummyComponent> reflector = mockReflector(DummyComponent.class, "x/y");
 		
@@ -137,7 +137,7 @@ public class SymmetryHttpMessageConverterTest
 	}
 	
 	@Test
-	public void canWriteWithDifferentMediaTypeReturnsFalse()
+	public void canWriteWithDifferentContentTypeReturnsFalse()
 	{
 		Reflector<DummyComponent> reflector = mockReflector(DummyComponent.class, "x/y");
 		
