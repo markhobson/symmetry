@@ -117,16 +117,6 @@ public class SymmetryHttpMessageConverterTest
 	}
 	
 	@Test
-	public void canWriteWithCompatibleContentTypeReturnsTrue()
-	{
-		Reflector<DummyComponent> reflector = mockReflector(DummyComponent.class, "x/y");
-		
-		boolean actual = newConverter(reflector).canWrite(DummyComponent.class, parseMediaType("x/*"));
-		
-		assertThat(actual, is(true));
-	}
-	
-	@Test
 	public void canWriteWithDifferentComponentReturnsFalse()
 	{
 		Reflector<DummyComponent> reflector = mockReflector(DummyComponent.class, "x/y");
@@ -134,6 +124,16 @@ public class SymmetryHttpMessageConverterTest
 		boolean actual = newConverter(reflector).canWrite(Void.class, parseMediaType("x/y"));
 		
 		assertThat(actual, is(false));
+	}
+	
+	@Test
+	public void canWriteWithCompatibleContentTypeReturnsTrue()
+	{
+		Reflector<DummyComponent> reflector = mockReflector(DummyComponent.class, "x/y");
+		
+		boolean actual = newConverter(reflector).canWrite(DummyComponent.class, parseMediaType("x/*"));
+		
+		assertThat(actual, is(true));
 	}
 	
 	@Test
