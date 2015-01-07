@@ -18,6 +18,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.io.Writer;
 import java.lang.annotation.Annotation;
+import java.util.Collections;
 
 import javax.ws.rs.InternalServerErrorException;
 import javax.ws.rs.core.MediaType;
@@ -33,6 +34,7 @@ import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
 
 import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.Matchers.hasEntry;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Matchers.any;
 import static org.mockito.Matchers.eq;
@@ -145,6 +147,18 @@ public class SymmetryMessageBodyWriterTest
 			someAnnotations(), someMediaType());
 		
 		assertThat(actual, is(-1L));
+	}
+	
+	@Test
+	public void writeToSetsContentType() throws IOException
+	{
+		Reflector<Object> reflector = mockReflector(Object.class, "x/y");
+		MultivaluedMap<String, Object> httpHeaders = new MultivaluedHashMap<>();
+		
+		newWriter(reflector).writeTo(someComponent(), someComponentType(), someComponentType(), someAnnotations(),
+			someMediaType(), httpHeaders, mock(OutputStream.class));
+		
+		assertThat(httpHeaders, hasEntry("Content-Type", Collections.<Object>singletonList(MediaType.valueOf("x/y"))));
 	}
 	
 	@Test

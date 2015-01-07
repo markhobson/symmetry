@@ -15,6 +15,7 @@ package org.hobsoft.symmetry.spring;
 
 import java.io.IOException;
 import java.io.Writer;
+import java.util.Collections;
 import java.util.List;
 
 import org.hobsoft.symmetry.Reflector;
@@ -35,6 +36,7 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.Matchers.contains;
+import static org.hamcrest.Matchers.hasEntry;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Matchers.any;
 import static org.mockito.Matchers.eq;
@@ -167,6 +169,17 @@ public class SymmetryHttpMessageConverterTest
 	}
 	
 	@Test
+	public void writeSetsContentType() throws IOException
+	{
+		Reflector<Object> reflector = mockReflector(someComponentType(), "x/y");
+		MockHttpOutputMessage outputMessage = new MockHttpOutputMessage();
+		
+		newConverter(reflector).write(someComponent(), null, outputMessage);
+		
+		assertThat(outputMessage.getHeaders(), hasEntry("Content-Type", Collections.singletonList("x/y")));
+	}
+	
+	@Test
 	public void writeWithComponentInvokesReflector() throws IOException, ReflectorException
 	{
 		Reflector<DummyComponent> reflector = mockReflector(DummyComponent.class, "x/y");
@@ -256,7 +269,12 @@ public class SymmetryHttpMessageConverterTest
 		return new SymmetryHttpMessageConverter<>(reflector);
 	}
 	
-	private static Class<?> someComponentType()
+	private static Object someComponent()
+	{
+		return new Object();
+	}
+	
+	private static Class<Object> someComponentType()
 	{
 		return Object.class;
 	}

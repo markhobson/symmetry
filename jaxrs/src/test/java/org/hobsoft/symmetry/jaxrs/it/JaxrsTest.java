@@ -85,7 +85,7 @@ public class JaxrsTest extends JerseyTest
 		Response actual = target("/window").request("text/html; x=y").get();
 		
 		assertThat("status", actual.getStatus(), is(HTTP_OK));
-		assertThat("content type", actual.getMediaType(), is(MediaType.valueOf("text/html; x=y")));
+		assertThat("content type", actual.getMediaType(), is(MediaType.valueOf("text/html")));
 		assertThat("entity", actual.readEntity(String.class), is("<html><body></body></html>"));
 	}
 	

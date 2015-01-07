@@ -21,6 +21,7 @@ import java.lang.annotation.Annotation;
 import java.lang.reflect.Type;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
+import java.util.Collections;
 
 import javax.ws.rs.InternalServerErrorException;
 import javax.ws.rs.core.MediaType;
@@ -29,6 +30,8 @@ import javax.ws.rs.ext.MessageBodyWriter;
 
 import org.hobsoft.symmetry.Reflector;
 import org.hobsoft.symmetry.ReflectorException;
+
+import static javax.ws.rs.core.HttpHeaders.CONTENT_TYPE;
 
 /**
  * JAX-RS message body writer for UI components.
@@ -80,7 +83,10 @@ public class SymmetryMessageBodyWriter<T> implements MessageBodyWriter<T>
 	public void writeTo(T component, Class<?> type, Type genericType, Annotation[] annotations, MediaType mediaType,
 		MultivaluedMap<String, Object> httpHeaders, OutputStream entityStream) throws IOException
 	{
-		Charset charset = getCharset(mediaType);
+		MediaType contentType = MediaType.valueOf(reflector.getContentType());
+		httpHeaders.put(CONTENT_TYPE, Collections.<Object>singletonList(contentType));
+		
+		Charset charset = getCharset(contentType);
 		Writer entityWriter = new OutputStreamWriter(entityStream, charset);
 		
 		try
