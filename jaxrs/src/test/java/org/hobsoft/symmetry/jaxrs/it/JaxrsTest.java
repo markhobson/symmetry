@@ -91,7 +91,7 @@ public class JaxrsTest extends JerseyTest
 	}
 	
 	@Test
-	@Ignore("Jersey returns 500 instead of 406")
+	@Ignore("TODO: Jersey returns 500 instead of 406")
 	public void getWindowWithAcceptOtherReturnsNotAcceptable()
 	{
 		Response actual = target("/window").request("x/y").get();
