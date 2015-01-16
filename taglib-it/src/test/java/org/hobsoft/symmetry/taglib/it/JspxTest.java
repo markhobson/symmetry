@@ -13,13 +13,10 @@
  */
 package org.hobsoft.symmetry.taglib.it;
 
-import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import org.junit.Rule;
 import org.junit.Test;
-
-import static java.net.HttpURLConnection.HTTP_OK;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
@@ -58,8 +55,6 @@ public class JspxTest
 		
 		Response actual = serverRule.target("/windowWithPageScope.jspx").request().get();
 		
-		assertThat("status", actual.getStatus(), is(HTTP_OK));
-		assertThat("content type", actual.getMediaType(), is(MediaType.valueOf("text/html; charset=ISO-8859-1")));
-		assertThat("entity", actual.readEntity(String.class), is("<html><body></body></html>"));
+		assertThat(actual.readEntity(String.class), is("<html><body></body></html>"));
 	}
 }

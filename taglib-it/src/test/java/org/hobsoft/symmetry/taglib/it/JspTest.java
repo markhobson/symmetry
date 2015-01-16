@@ -13,13 +13,10 @@
  */
 package org.hobsoft.symmetry.taglib.it;
 
-import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import org.junit.Rule;
 import org.junit.Test;
-
-import static java.net.HttpURLConnection.HTTP_OK;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
@@ -58,9 +55,7 @@ public class JspTest
 		
 		Response actual = serverRule.target("/windowWithPageScope.jsp").request().get();
 		
-		assertThat("status", actual.getStatus(), is(HTTP_OK));
-		assertThat("content type", actual.getMediaType(), is(MediaType.valueOf("text/html; charset=ISO-8859-1")));
-		assertThat("entity", actual.readEntity(String.class), is("<html><body></body></html>"));
+		assertThat(actual.readEntity(String.class), is("<html><body></body></html>"));
 	}
 	
 	@Test
@@ -70,9 +65,7 @@ public class JspTest
 		
 		Response actual = serverRule.target("/windowWithRequestScope.jsp").request().get();
 		
-		assertThat("status", actual.getStatus(), is(HTTP_OK));
-		assertThat("content type", actual.getMediaType(), is(MediaType.valueOf("text/html; charset=ISO-8859-1")));
-		assertThat("entity", actual.readEntity(String.class), is("<html><body></body></html>"));
+		assertThat(actual.readEntity(String.class), is("<html><body></body></html>"));
 	}
 	
 	@Test
@@ -82,9 +75,7 @@ public class JspTest
 		
 		Response actual = serverRule.target("/windowWithSessionScope.jsp").request().get();
 		
-		assertThat("status", actual.getStatus(), is(HTTP_OK));
-		assertThat("content type", actual.getMediaType(), is(MediaType.valueOf("text/html; charset=ISO-8859-1")));
-		assertThat("entity", actual.readEntity(String.class), is("<html><body></body></html>"));
+		assertThat(actual.readEntity(String.class), is("<html><body></body></html>"));
 	}
 	
 	@Test
@@ -94,8 +85,6 @@ public class JspTest
 		
 		Response actual = serverRule.target("/windowWithApplicationScope.jsp").request().get();
 		
-		assertThat("status", actual.getStatus(), is(HTTP_OK));
-		assertThat("content type", actual.getMediaType(), is(MediaType.valueOf("text/html; charset=ISO-8859-1")));
-		assertThat("entity", actual.readEntity(String.class), is("<html><body></body></html>"));
+		assertThat(actual.readEntity(String.class), is("<html><body></body></html>"));
 	}
 }
