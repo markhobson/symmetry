@@ -1,4 +1,4 @@
-symmetry
+Symmetry
 ========
 
-A server-side UI web framework for Java.
+A server-side UI library for Java.
