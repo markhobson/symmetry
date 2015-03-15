@@ -28,6 +28,7 @@
 	<version>0.3.0-SNAPSHOT</version>
 	
 	<name>Symmetry Parent</name>
+	<url>https://github.com/markhobson/symmetry</url>
 	
 	<licenses>
 		<license>
@@ -36,6 +37,35 @@
 			<distribution>repo</distribution>
 		</license>
 	</licenses>
+	
+	<developers>
+		<developer>
+			<id>markhobson</id>
+			<name>Mark Hobson</name>
+			<email>markhobson@gmail.com</email>
+			<roles>
+				<role>Project Lead</role>
+			</roles>
+			<timezone>0</timezone>
+		</developer>
+	</developers>
+	
+	<scm>
+		<connection>scm:git:git@github.com:markhobson/symmetry.git</connection>
+		<developerConnection>scm:git:git@github.com:markhobson/symmetry.git</developerConnection>
+		<tag>HEAD</tag>
+		<url>https://github.com/markhobson/symmetry</url>
+	</scm>
+	
+	<issueManagement>
+		<system>GitHub</system>
+		<url>https://github.com/markhobson/symmetry/issues</url>
+	</issueManagement>
+	
+	<ciManagement>
+		<system>Travis CI</system>
+		<url>https://travis-ci.org/markhobson/symmetry</url>
+	</ciManagement>
 	
 	<properties>
 		<jerseyVersion>2.13</jerseyVersion>
