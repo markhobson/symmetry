@@ -44,6 +44,7 @@ public class WindowAndTextServlet extends HttpServlet
 		window.add(new Text("x"));
 		
 		Reflector<Component> reflector = new HtmlComponentReflector();
+		reflector.absorb(window, request.getParameterMap());
 		response.setContentType(reflector.getContentType());
 		
 		try

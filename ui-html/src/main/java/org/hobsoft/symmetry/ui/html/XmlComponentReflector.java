@@ -15,6 +15,7 @@ package org.hobsoft.symmetry.ui.html;
 
 import java.io.IOException;
 import java.io.Writer;
+import java.util.Map;
 
 import javax.xml.stream.XMLOutputFactory;
 import javax.xml.stream.XMLStreamException;
@@ -24,6 +25,8 @@ import org.hobsoft.symmetry.Reflector;
 import org.hobsoft.symmetry.ReflectorException;
 import org.hobsoft.symmetry.ui.Component;
 import org.hobsoft.symmetry.ui.ComponentVisitor;
+import org.hobsoft.symmetry.ui.Text;
+import org.hobsoft.symmetry.ui.Window;
 
 /**
  * XML reflector for Symmetry UI components.
@@ -62,6 +65,18 @@ public class XmlComponentReflector implements Reflector<Component>
 	public String getContentType()
 	{
 		return contentType;
+	}
+	
+	@Override
+	public void absorb(Component component, Map<String, String[]> state)
+	{
+		// TODO: implement
+		if (!state.isEmpty())
+		{
+			Window window = (Window) component;
+			Text text = (Text) window.getComponents().get(0);
+			text.setText("y");
+		}
 	}
 	
 	@Override

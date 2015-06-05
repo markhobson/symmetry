@@ -15,6 +15,7 @@ package org.hobsoft.symmetry;
 
 import java.io.IOException;
 import java.io.Writer;
+import java.util.Map;
 
 /**
  * Defines an API to serialise UI components.
@@ -41,6 +42,16 @@ public interface Reflector<T>
 	 * @return the content type
 	 */
 	String getContentType();
+
+	/**
+	 * Configures the specified component for the specified state.
+	 * 
+	 * @param component
+	 *            the component to absorb into
+	 * @param state
+	 *            the state to absorb
+	 */
+	void absorb(T component, Map<String, String[]> state);
 
 	/**
 	 * Serialises the specified component to the specified writer.

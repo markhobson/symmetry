@@ -13,7 +13,9 @@
  */
 package org.hobsoft.symmetry.ui;
 
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
@@ -25,6 +27,22 @@ import static org.mockito.Mockito.verify;
  */
 public class TextTest
 {
+	// ----------------------------------------------------------------------------------------------------------------
+	// fields
+	// ----------------------------------------------------------------------------------------------------------------
+
+	private ExpectedException thrown = ExpectedException.none();
+	
+	// ----------------------------------------------------------------------------------------------------------------
+	// JUnit methods
+	// ----------------------------------------------------------------------------------------------------------------
+
+	@Rule
+	public ExpectedException getThrown()
+	{
+		return thrown;
+	}
+
 	// ----------------------------------------------------------------------------------------------------------------
 	// tests
 	// ----------------------------------------------------------------------------------------------------------------
@@ -54,5 +72,26 @@ public class TextTest
 		text.accept(visitor, "p");
 		
 		verify(visitor).visit(text, "p");
+	}
+	
+	@Test
+	public void setTextSetsProperty()
+	{
+		Text text = new Text();
+		
+		text.setText("x");
+		
+		assertThat(text.getText(), is("x"));
+	}
+	
+	@Test
+	public void setTextWithNullThrowsException()
+	{
+		Text text = new Text();
+		
+		thrown.expect(NullPointerException.class);
+		thrown.expectMessage("text");
+		
+		text.setText(null);
 	}
 }

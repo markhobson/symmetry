@@ -13,6 +13,8 @@
  */
 package org.hobsoft.symmetry.ui;
 
+import static java.util.Objects.requireNonNull;
+
 /**
  * Symmetry UI component that represents some plain text.
  */
@@ -22,7 +24,7 @@ public class Text implements Component
 	// fields
 	// ----------------------------------------------------------------------------------------------------------------
 
-	private final String text;
+	private String text;
 
 	// ----------------------------------------------------------------------------------------------------------------
 	// constructors
@@ -55,5 +57,10 @@ public class Text implements Component
 	public String getText()
 	{
 		return text;
+	}
+
+	public void setText(String text)
+	{
+		this.text = requireNonNull(text, "text");
 	}
 }

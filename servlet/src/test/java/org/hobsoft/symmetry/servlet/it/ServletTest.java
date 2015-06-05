@@ -72,6 +72,18 @@ public class ServletTest
 		assertThat("content type", actual.getMediaType(), is(MediaType.valueOf("text/html; charset=UTF-8")));
 		assertThat("entity", actual.readEntity(String.class), is("<html><body>x</body></html>"));
 	}
+
+	@Test
+	public void getWindowAndTextWithTextReturnsHtml() throws Exception
+	{
+		serverRule.startServlet(WindowAndTextServlet.class, "/");
+		
+		Response actual = serverRule.target("/").queryParam("text", "y").request().get();
+		
+		assertThat("status", actual.getStatus(), is(HTTP_OK));
+		assertThat("content type", actual.getMediaType(), is(MediaType.valueOf("text/html; charset=UTF-8")));
+		assertThat("entity", actual.readEntity(String.class), is("<html><body>y</body></html>"));
+	}
 	
 	@Test
 	public void getTextUnicodeEncodesText() throws Exception
