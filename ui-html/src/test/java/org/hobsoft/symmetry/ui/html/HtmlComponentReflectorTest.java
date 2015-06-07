@@ -29,6 +29,14 @@ public class HtmlComponentReflectorTest
 	// ----------------------------------------------------------------------------------------------------------------
 
 	@Test
+	public void constructorSetsAbsorbVisitor()
+	{
+		HtmlComponentReflector reflector = new HtmlComponentReflector();
+		
+		assertThat(reflector.getAbsorbVisitor(), is(instanceOf(HtmlAbsorbingVisitor.class)));
+	}
+	
+	@Test
 	public void constructorSetsReflectVisitor()
 	{
 		HtmlComponentReflector reflector = new HtmlComponentReflector();

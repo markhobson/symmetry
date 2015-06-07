@@ -98,6 +98,12 @@ public class XmlComponentReflector implements Reflector<Component>
 	// ----------------------------------------------------------------------------------------------------------------
 
 	@VisibleForTesting
+	ComponentVisitor<Map<String, String[]>, RuntimeException> getAbsorbVisitor()
+	{
+		return absorbVisitor;
+	}
+	
+	@VisibleForTesting
 	ComponentVisitor<XMLStreamWriter, XMLStreamException> getReflectVisitor()
 	{
 		return reflectVisitor;
