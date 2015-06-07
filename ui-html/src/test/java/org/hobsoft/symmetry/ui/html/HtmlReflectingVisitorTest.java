@@ -26,15 +26,15 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
 /**
- * Tests {@code HtmlComponentVisitor}.
+ * Tests {@code HtmlReflectingVisitor}.
  */
-public class HtmlComponentVisitorTest
+public class HtmlReflectingVisitorTest
 {
 	// ----------------------------------------------------------------------------------------------------------------
 	// fields
 	// ----------------------------------------------------------------------------------------------------------------
 
-	private HtmlComponentVisitor visitor;
+	private HtmlReflectingVisitor visitor;
 	
 	private XMLStreamWriter writer;
 	
@@ -45,7 +45,7 @@ public class HtmlComponentVisitorTest
 	@Before
 	public void setUp()
 	{
-		visitor = new HtmlComponentVisitor();
+		visitor = new HtmlReflectingVisitor();
 		writer = mock(XMLStreamWriter.class);
 	}
 

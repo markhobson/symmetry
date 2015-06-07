@@ -33,7 +33,7 @@ public class HtmlComponentReflectorTest
 	{
 		HtmlComponentReflector reflector = new HtmlComponentReflector();
 		
-		assertThat(reflector.getReflectVisitor(), is(instanceOf(HtmlComponentVisitor.class)));
+		assertThat(reflector.getReflectVisitor(), is(instanceOf(HtmlReflectingVisitor.class)));
 	}
 	
 	@Test

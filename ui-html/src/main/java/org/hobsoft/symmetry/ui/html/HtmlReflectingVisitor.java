@@ -23,7 +23,7 @@ import org.hobsoft.symmetry.ui.Window;
 /**
  * Visitor that serialises UI components to HTML.
  */
-public class HtmlComponentVisitor implements ComponentVisitor<XMLStreamWriter, XMLStreamException>
+public class HtmlReflectingVisitor implements ComponentVisitor<XMLStreamWriter, XMLStreamException>
 {
 	// ----------------------------------------------------------------------------------------------------------------
 	// ComponentVisitor methods
