@@ -43,10 +43,9 @@ public class HtmlAbsorbingVisitor implements ComponentVisitor<Map<String, String
 	@Override
 	public void visit(Text text, Map<String, String[]> state) throws RuntimeException
 	{
-		// TODO: implement
-		if (!state.isEmpty())
+		if (state.containsKey("text"))
 		{
-			text.setText("y");
+			text.setText(state.get("text")[0]);
 		}
 	}
 }
