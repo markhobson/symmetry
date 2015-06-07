@@ -26,6 +26,8 @@ import org.hobsoft.symmetry.ReflectorException;
 import org.hobsoft.symmetry.ui.Component;
 import org.hobsoft.symmetry.ui.ComponentVisitor;
 
+import com.google.common.annotations.VisibleForTesting;
+
 /**
  * XML reflector for Symmetry UI components.
  */
@@ -92,10 +94,11 @@ public class XmlComponentReflector implements Reflector<Component>
 	}
 	
 	// ----------------------------------------------------------------------------------------------------------------
-	// public methods
+	// package methods
 	// ----------------------------------------------------------------------------------------------------------------
 
-	public ComponentVisitor<XMLStreamWriter, XMLStreamException> getReflectVisitor()
+	@VisibleForTesting
+	ComponentVisitor<XMLStreamWriter, XMLStreamException> getReflectVisitor()
 	{
 		return reflectVisitor;
 	}
