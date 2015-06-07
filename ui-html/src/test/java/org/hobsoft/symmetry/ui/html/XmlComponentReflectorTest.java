@@ -16,6 +16,8 @@ package org.hobsoft.symmetry.ui.html;
 import java.io.IOException;
 import java.io.StringWriter;
 import java.io.Writer;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamWriter;
@@ -37,6 +39,7 @@ import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.doAnswer;
 import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 
 /**
  * Tests {@code XmlComponentReflector}.
@@ -74,7 +77,8 @@ public class XmlComponentReflectorTest
 	@Test
 	public void getComponentTypeReturnsComponent()
 	{
-		XmlComponentReflector reflector = new XmlComponentReflector(mock(ComponentVisitor.class), someContentType());
+		XmlComponentReflector reflector = new XmlComponentReflector(mock(ComponentVisitor.class),
+			mock(ComponentVisitor.class), someContentType());
 		
 		Class<?> actual = reflector.getComponentType();
 		
@@ -84,7 +88,8 @@ public class XmlComponentReflectorTest
 	@Test
 	public void getContentTypeReturnsContentType()
 	{
-		XmlComponentReflector reflector = new XmlComponentReflector(mock(ComponentVisitor.class), "x/y");
+		XmlComponentReflector reflector = new XmlComponentReflector(mock(ComponentVisitor.class),
+			mock(ComponentVisitor.class), "x/y");
 		
 		String actual = reflector.getContentType();
 		
@@ -92,11 +97,26 @@ public class XmlComponentReflectorTest
 	}
 	
 	@Test
+	public void absorbAcceptsVisitor()
+	{
+		ComponentVisitor<Map<String, String[]>, RuntimeException> absorbVisitor = mock(ComponentVisitor.class);
+		XmlComponentReflector reflector = new XmlComponentReflector(absorbVisitor, mock(ComponentVisitor.class),
+			someContentType());
+		Component component = mock(Component.class);
+		Map<String, String[]> state = new HashMap<>();
+		
+		reflector.absorb(component, state);
+		
+		verify(component).accept(absorbVisitor, state);
+	}
+	
+	@Test
 	public void reflectWithWindowWritesXml() throws XMLStreamException, IOException, ReflectorException
 	{
 		doAnswer(writeStartElement(1, "x")).when(visitor).visit(any(Window.class), any(XMLStreamWriter.class));
 		doAnswer(writeEndElement(1)).when(visitor).endVisit(any(Window.class), any(XMLStreamWriter.class));
-		XmlComponentReflector reflector = new XmlComponentReflector(visitor, someContentType());
+		XmlComponentReflector reflector = new XmlComponentReflector(mock(ComponentVisitor.class), visitor,
+			someContentType());
 		StringWriter writer = new StringWriter();
 		
 		reflector.reflect(new Window(), writer);
@@ -109,7 +129,8 @@ public class XmlComponentReflectorTest
 	{
 		XMLStreamException exception = new XMLStreamException();
 		doThrow(exception).when(visitor).visit(any(Window.class), any(XMLStreamWriter.class));
-		XmlComponentReflector reflector = new XmlComponentReflector(visitor, someContentType());
+		XmlComponentReflector reflector = new XmlComponentReflector(mock(ComponentVisitor.class), visitor,
+			someContentType());
 		
 		thrown.expect(ReflectorException.class);
 		thrown.expectMessage("Error reflecting component");
@@ -121,7 +142,8 @@ public class XmlComponentReflectorTest
 	@Test
 	public void getComponentVisitorReturnsVisitor()
 	{
-		XmlComponentReflector reflector = new XmlComponentReflector(visitor, someContentType());
+		XmlComponentReflector reflector = new XmlComponentReflector(mock(ComponentVisitor.class), visitor,
+			someContentType());
 		
 		ComponentVisitor<XMLStreamWriter, XMLStreamException> actual = reflector.getComponentVisitor();
 		

@@ -13,17 +13,40 @@
  */
 package org.hobsoft.symmetry.ui.html;
 
+import java.util.Map;
+
+import org.hobsoft.symmetry.ui.ComponentVisitor;
+import org.hobsoft.symmetry.ui.Text;
+import org.hobsoft.symmetry.ui.Window;
+
 /**
- * HTML reflector for Symmetry UI components.
+ * Visitor that configures UI components from HTTP state.
  */
-public class HtmlComponentReflector extends XmlComponentReflector
+public class HtmlAbsorbingVisitor implements ComponentVisitor<Map<String, String[]>, RuntimeException>
 {
 	// ----------------------------------------------------------------------------------------------------------------
-	// constructors
+	// ComponentVisitor methods
 	// ----------------------------------------------------------------------------------------------------------------
 
-	public HtmlComponentReflector()
+	@Override
+	public void visit(Window window, Map<String, String[]> state) throws RuntimeException
 	{
-		super(new HtmlAbsorbingVisitor(), new HtmlComponentVisitor(), "text/html; charset=UTF-8");
+		// TODO: implement
+	}
+
+	@Override
+	public void endVisit(Window window, Map<String, String[]> state) throws RuntimeException
+	{
+		// TODO: implement
+	}
+
+	@Override
+	public void visit(Text text, Map<String, String[]> state) throws RuntimeException
+	{
+		// TODO: implement
+		if (!state.isEmpty())
+		{
+			text.setText("y");
+		}
 	}
 }

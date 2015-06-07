@@ -25,8 +25,6 @@ import org.hobsoft.symmetry.Reflector;
 import org.hobsoft.symmetry.ReflectorException;
 import org.hobsoft.symmetry.ui.Component;
 import org.hobsoft.symmetry.ui.ComponentVisitor;
-import org.hobsoft.symmetry.ui.Text;
-import org.hobsoft.symmetry.ui.Window;
 
 /**
  * XML reflector for Symmetry UI components.
@@ -36,6 +34,8 @@ public class XmlComponentReflector implements Reflector<Component>
 	// ----------------------------------------------------------------------------------------------------------------
 	// fields
 	// ----------------------------------------------------------------------------------------------------------------
+	
+	private final ComponentVisitor<Map<String, String[]>, RuntimeException> absorbVisitor;
 
 	private final ComponentVisitor<XMLStreamWriter, XMLStreamException> visitor;
 	
@@ -45,8 +45,10 @@ public class XmlComponentReflector implements Reflector<Component>
 	// constructors
 	// ----------------------------------------------------------------------------------------------------------------
 
-	public XmlComponentReflector(ComponentVisitor<XMLStreamWriter, XMLStreamException> visitor, String contentType)
+	public XmlComponentReflector(ComponentVisitor<Map<String, String[]>, RuntimeException> absorbVisitor,
+		ComponentVisitor<XMLStreamWriter, XMLStreamException> visitor, String contentType)
 	{
+		this.absorbVisitor = absorbVisitor;
 		this.visitor = visitor;
 		this.contentType = contentType;
 	}
@@ -70,13 +72,7 @@ public class XmlComponentReflector implements Reflector<Component>
 	@Override
 	public void absorb(Component component, Map<String, String[]> state)
 	{
-		// TODO: implement
-		if (!state.isEmpty())
-		{
-			Window window = (Window) component;
-			Text text = (Text) window.getComponents().get(0);
-			text.setText("y");
-		}
+		component.accept(absorbVisitor, state);
 	}
 	
 	@Override
