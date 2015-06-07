@@ -21,7 +21,7 @@ import org.hobsoft.symmetry.ui.Text;
 import org.hobsoft.symmetry.ui.Window;
 
 /**
- * Visitor that dehydrates UI components to HTML.
+ * Visitor that serialises UI components to HTML.
  */
 public class HtmlComponentVisitor implements ComponentVisitor<XMLStreamWriter, XMLStreamException>
 {
