@@ -29,11 +29,11 @@ public class HtmlComponentReflectorTest
 	// ----------------------------------------------------------------------------------------------------------------
 
 	@Test
-	public void constructorSetsComponentVisitor()
+	public void constructorSetsReflectVisitor()
 	{
 		HtmlComponentReflector reflector = new HtmlComponentReflector();
 		
-		assertThat(reflector.getComponentVisitor(), is(instanceOf(HtmlComponentVisitor.class)));
+		assertThat(reflector.getReflectVisitor(), is(instanceOf(HtmlComponentVisitor.class)));
 	}
 	
 	@Test

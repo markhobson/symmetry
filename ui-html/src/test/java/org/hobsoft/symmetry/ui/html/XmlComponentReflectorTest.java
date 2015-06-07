@@ -50,7 +50,7 @@ public class XmlComponentReflectorTest
 	// fields
 	// ----------------------------------------------------------------------------------------------------------------
 
-	private ComponentVisitor<XMLStreamWriter, XMLStreamException> visitor;
+	private ComponentVisitor<XMLStreamWriter, XMLStreamException> reflectVisitor;
 	
 	private ExpectedException thrown = ExpectedException.none();
 	
@@ -61,7 +61,7 @@ public class XmlComponentReflectorTest
 	@Before
 	public void setUp()
 	{
-		visitor = mock(ComponentVisitor.class);
+		reflectVisitor = mock(ComponentVisitor.class);
 	}
 
 	@Rule
@@ -113,9 +113,9 @@ public class XmlComponentReflectorTest
 	@Test
 	public void reflectWithWindowWritesXml() throws XMLStreamException, IOException, ReflectorException
 	{
-		doAnswer(writeStartElement(1, "x")).when(visitor).visit(any(Window.class), any(XMLStreamWriter.class));
-		doAnswer(writeEndElement(1)).when(visitor).endVisit(any(Window.class), any(XMLStreamWriter.class));
-		XmlComponentReflector reflector = new XmlComponentReflector(mock(ComponentVisitor.class), visitor,
+		doAnswer(writeStartElement(1, "x")).when(reflectVisitor).visit(any(Window.class), any(XMLStreamWriter.class));
+		doAnswer(writeEndElement(1)).when(reflectVisitor).endVisit(any(Window.class), any(XMLStreamWriter.class));
+		XmlComponentReflector reflector = new XmlComponentReflector(mock(ComponentVisitor.class), reflectVisitor,
 			someContentType());
 		StringWriter writer = new StringWriter();
 		
@@ -128,8 +128,8 @@ public class XmlComponentReflectorTest
 	public void reflectWhenExceptionThrowsException() throws XMLStreamException, IOException, ReflectorException
 	{
 		XMLStreamException exception = new XMLStreamException();
-		doThrow(exception).when(visitor).visit(any(Window.class), any(XMLStreamWriter.class));
-		XmlComponentReflector reflector = new XmlComponentReflector(mock(ComponentVisitor.class), visitor,
+		doThrow(exception).when(reflectVisitor).visit(any(Window.class), any(XMLStreamWriter.class));
+		XmlComponentReflector reflector = new XmlComponentReflector(mock(ComponentVisitor.class), reflectVisitor,
 			someContentType());
 		
 		thrown.expect(ReflectorException.class);
@@ -140,14 +140,14 @@ public class XmlComponentReflectorTest
 	}
 	
 	@Test
-	public void getComponentVisitorReturnsVisitor()
+	public void getReflectVisitorReturnsVisitor()
 	{
-		XmlComponentReflector reflector = new XmlComponentReflector(mock(ComponentVisitor.class), visitor,
+		XmlComponentReflector reflector = new XmlComponentReflector(mock(ComponentVisitor.class), reflectVisitor,
 			someContentType());
 		
-		ComponentVisitor<XMLStreamWriter, XMLStreamException> actual = reflector.getComponentVisitor();
+		ComponentVisitor<XMLStreamWriter, XMLStreamException> actual = reflector.getReflectVisitor();
 		
-		assertThat(actual, is(visitor));
+		assertThat(actual, is(reflectVisitor));
 	}
 	
 	// ----------------------------------------------------------------------------------------------------------------

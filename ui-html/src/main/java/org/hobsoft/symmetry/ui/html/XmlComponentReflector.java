@@ -37,7 +37,7 @@ public class XmlComponentReflector implements Reflector<Component>
 	
 	private final ComponentVisitor<Map<String, String[]>, RuntimeException> absorbVisitor;
 
-	private final ComponentVisitor<XMLStreamWriter, XMLStreamException> visitor;
+	private final ComponentVisitor<XMLStreamWriter, XMLStreamException> reflectVisitor;
 	
 	private final String contentType;
 	
@@ -46,10 +46,10 @@ public class XmlComponentReflector implements Reflector<Component>
 	// ----------------------------------------------------------------------------------------------------------------
 
 	public XmlComponentReflector(ComponentVisitor<Map<String, String[]>, RuntimeException> absorbVisitor,
-		ComponentVisitor<XMLStreamWriter, XMLStreamException> visitor, String contentType)
+		ComponentVisitor<XMLStreamWriter, XMLStreamException> reflectVisitor, String contentType)
 	{
 		this.absorbVisitor = absorbVisitor;
-		this.visitor = visitor;
+		this.reflectVisitor = reflectVisitor;
 		this.contentType = contentType;
 	}
 
@@ -83,7 +83,7 @@ public class XmlComponentReflector implements Reflector<Component>
 		try
 		{
 			XMLStreamWriter xmlWriter = factory.createXMLStreamWriter(writer);
-			component.accept(visitor, xmlWriter);
+			component.accept(reflectVisitor, xmlWriter);
 		}
 		catch (XMLStreamException exception)
 		{
@@ -95,8 +95,8 @@ public class XmlComponentReflector implements Reflector<Component>
 	// public methods
 	// ----------------------------------------------------------------------------------------------------------------
 
-	public ComponentVisitor<XMLStreamWriter, XMLStreamException> getComponentVisitor()
+	public ComponentVisitor<XMLStreamWriter, XMLStreamException> getReflectVisitor()
 	{
-		return visitor;
+		return reflectVisitor;
 	}
 }
