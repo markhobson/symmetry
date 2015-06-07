@@ -16,7 +16,6 @@ package org.hobsoft.symmetry.ui.html;
 import java.io.IOException;
 import java.io.StringWriter;
 import java.io.Writer;
-import java.util.HashMap;
 import java.util.Map;
 
 import javax.xml.stream.XMLStreamException;
@@ -105,7 +104,7 @@ public class XmlComponentReflectorTest
 		XmlComponentReflector reflector = new XmlComponentReflector(absorbVisitor, mock(ComponentVisitor.class),
 			someContentType());
 		Component component = mock(Component.class);
-		Map<String, String[]> state = new HashMap<>();
+		Map<String, String[]> state = mock(Map.class);
 		
 		reflector.absorb(component, state);
 		
