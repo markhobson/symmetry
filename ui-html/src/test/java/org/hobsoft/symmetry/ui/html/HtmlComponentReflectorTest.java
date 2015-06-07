@@ -13,6 +13,7 @@
  */
 package org.hobsoft.symmetry.ui.html;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.instanceOf;
@@ -25,30 +26,40 @@ import static org.junit.Assert.assertThat;
 public class HtmlComponentReflectorTest
 {
 	// ----------------------------------------------------------------------------------------------------------------
+	// fields
+	// ----------------------------------------------------------------------------------------------------------------
+
+	private HtmlComponentReflector reflector;
+	
+	// ----------------------------------------------------------------------------------------------------------------
+	// JUnit methods
+	// ----------------------------------------------------------------------------------------------------------------
+
+	@Before
+	public void setUp()
+	{
+		reflector = new HtmlComponentReflector();
+	}
+
+	// ----------------------------------------------------------------------------------------------------------------
 	// tests
 	// ----------------------------------------------------------------------------------------------------------------
 
 	@Test
 	public void constructorSetsAbsorbVisitor()
 	{
-		HtmlComponentReflector reflector = new HtmlComponentReflector();
-		
 		assertThat(reflector.getAbsorbVisitor(), is(instanceOf(HtmlAbsorbingVisitor.class)));
 	}
 	
 	@Test
 	public void constructorSetsReflectVisitor()
 	{
-		HtmlComponentReflector reflector = new HtmlComponentReflector();
-		
 		assertThat(reflector.getReflectVisitor(), is(instanceOf(HtmlReflectingVisitor.class)));
 	}
 	
 	@Test
 	public void constructorSetsContentType()
 	{
-		HtmlComponentReflector reflector = new HtmlComponentReflector();
-		
 		assertThat(reflector.getContentType(), is("text/html; charset=UTF-8"));
 	}
 }
