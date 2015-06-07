@@ -50,6 +50,8 @@ public class XmlComponentReflectorTest
 	// fields
 	// ----------------------------------------------------------------------------------------------------------------
 
+	private ComponentVisitor<Map<String, String[]>, RuntimeException> absorbVisitor;
+
 	private ComponentVisitor<XMLStreamWriter, XMLStreamException> reflectVisitor;
 	
 	private ExpectedException thrown = ExpectedException.none();
@@ -61,6 +63,7 @@ public class XmlComponentReflectorTest
 	@Before
 	public void setUp()
 	{
+		absorbVisitor = mock(ComponentVisitor.class);
 		reflectVisitor = mock(ComponentVisitor.class);
 	}
 
@@ -99,7 +102,6 @@ public class XmlComponentReflectorTest
 	@Test
 	public void absorbAcceptsVisitor()
 	{
-		ComponentVisitor<Map<String, String[]>, RuntimeException> absorbVisitor = mock(ComponentVisitor.class);
 		XmlComponentReflector reflector = new XmlComponentReflector(absorbVisitor, mock(ComponentVisitor.class),
 			someContentType());
 		Component component = mock(Component.class);
