@@ -46,7 +46,6 @@ public class HelloServlet extends HttpServlet
 		window.add(new Text("Hello world!"));
 		
 		Reflector<Component> reflector = new HtmlComponentReflector();
-		reflector.absorb(window, request.getParameterMap());
 		response.setContentType(reflector.getContentType());
 		
 		try
