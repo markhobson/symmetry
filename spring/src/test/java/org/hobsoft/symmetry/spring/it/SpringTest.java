@@ -104,6 +104,15 @@ public class SpringTest
 	}
 	
 	@Test
+	public void getWindowAndTextWithTextReturnsHtml() throws Exception
+	{
+		mvc.perform(get("/windowAndTextWithState").param("text", "y"))
+			.andExpect(status().isOk())
+			.andExpect(content().contentType("text/html; charset=UTF-8"))
+			.andExpect(content().string("<html><body>y</body></html>"));
+	}
+	
+	@Test
 	public void getTextUnicodeEncodesText() throws Exception
 	{
 		mvc.perform(get("/textUnicode"))

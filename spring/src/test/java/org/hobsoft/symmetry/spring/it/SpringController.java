@@ -48,6 +48,13 @@ public class SpringController
 		return window;
 	}
 	
+	@RequestMapping(method = RequestMethod.GET, value = "windowAndTextWithState")
+	@ResponseBody
+	public Component windowAndTextWithState(WindowAndText window)
+	{
+		return window;
+	}
+	
 	@RequestMapping(method = RequestMethod.GET, value = "textUnicode")
 	@ResponseBody
 	public Component textUnicode()
