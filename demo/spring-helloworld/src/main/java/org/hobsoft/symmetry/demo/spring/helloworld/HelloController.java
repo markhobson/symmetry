@@ -26,6 +26,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  */
 @Controller
 @RequestMapping("/")
+@ResponseBody
 public class HelloController
 {
 	// ----------------------------------------------------------------------------------------------------------------
@@ -33,7 +34,6 @@ public class HelloController
 	// ----------------------------------------------------------------------------------------------------------------
 
 	@RequestMapping(method = RequestMethod.GET)
-	@ResponseBody
 	public Component get()
 	{
 		Window window = new Window();

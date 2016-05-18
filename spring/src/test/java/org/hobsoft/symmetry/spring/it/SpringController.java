@@ -26,6 +26,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  */
 @Controller
 @RequestMapping("/")
+@ResponseBody
 public class SpringController
 {
 	// ----------------------------------------------------------------------------------------------------------------
@@ -33,14 +34,12 @@ public class SpringController
 	// ----------------------------------------------------------------------------------------------------------------
 
 	@RequestMapping(method = RequestMethod.GET, value = "window")
-	@ResponseBody
 	public Component window()
 	{
 		return new Window();
 	}
 	
 	@RequestMapping(method = RequestMethod.GET, value = "windowAndText")
-	@ResponseBody
 	public Component windowAndText()
 	{
 		Window window = new Window();
@@ -49,14 +48,12 @@ public class SpringController
 	}
 	
 	@RequestMapping(method = RequestMethod.GET, value = "windowAndTextWithState")
-	@ResponseBody
 	public Component windowAndTextWithState(WindowAndText window)
 	{
 		return window;
 	}
 	
 	@RequestMapping(method = RequestMethod.GET, value = "textUnicode")
-	@ResponseBody
 	public Component textUnicode()
 	{
 		Window window = new Window();
