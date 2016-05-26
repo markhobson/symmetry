@@ -13,13 +13,13 @@
  */
 package org.hobsoft.symmetry.jaxrs.it;
 
-import javax.ws.rs.core.Application;
+import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import org.glassfish.jersey.test.JerseyTest;
 import org.junit.BeforeClass;
 import org.junit.Ignore;
+import org.junit.Rule;
 import org.junit.Test;
 import org.slf4j.bridge.SLF4JBridgeHandler;
 
@@ -32,8 +32,14 @@ import static org.junit.Assert.assertThat;
 /**
  * Integration test for JAX-RS integration.
  */
-public class JaxrsTest extends JerseyTest
+public class JaxrsTest
 {
+	// ----------------------------------------------------------------------------------------------------------------
+	// fields
+	// ----------------------------------------------------------------------------------------------------------------
+
+	private JerseyTestRule jerseyTestRule = new JerseyTestRule(new JaxrsApplication());
+	
 	// ----------------------------------------------------------------------------------------------------------------
 	// JUnit methods
 	// ----------------------------------------------------------------------------------------------------------------
@@ -45,16 +51,12 @@ public class JaxrsTest extends JerseyTest
 		SLF4JBridgeHandler.install();
 	}
 
-	// ----------------------------------------------------------------------------------------------------------------
-	// JerseyTest methods
-	// ----------------------------------------------------------------------------------------------------------------
-
-	@Override
-	protected Application configure()
+	@Rule
+	public JerseyTestRule getJerseyTestRule()
 	{
-		return new JaxrsApplication();
+		return jerseyTestRule;
 	}
-	
+
 	// ----------------------------------------------------------------------------------------------------------------
 	// tests
 	// ----------------------------------------------------------------------------------------------------------------
@@ -117,5 +119,14 @@ public class JaxrsTest extends JerseyTest
 		assertThat("status", actual.getStatus(), is(HTTP_OK));
 		assertThat("content type", actual.getMediaType(), is(MediaType.valueOf("text/html; charset=UTF-8")));
 		assertThat("entity", actual.readEntity(String.class), is("<html><body>\u20AC</body></html>"));
+	}
+	
+	// ----------------------------------------------------------------------------------------------------------------
+	// private methods
+	// ----------------------------------------------------------------------------------------------------------------
+
+	private WebTarget target(String path)
+	{
+		return jerseyTestRule.target(path);
 	}
 }
